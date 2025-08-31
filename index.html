@@ -28797,6 +28797,9 @@
         removeTalentsById("1.6", "hunter", "Survival", [
             "monster_slaying",
             "humanoid_slaying",
+            "savage_strikes",
+            "clever_traps",
+            "survivalist",
             "improved_feign_death",
             "killer_instinct"
         ]);
@@ -29027,7 +29030,8 @@
         ]);
 
         removeTalentsById("1.10", "mage", "Arcane", [
-            "magic_absorption"
+            "magic_absorption",
+            "arcane_resilience"
         ]);
 
         bulkInsertTalents("1.10", "mage", "Arcane", [
@@ -34629,38 +34633,38 @@
             }, 3000); // auto-hide after 3 seconds
         }
 
-        function generateBuildStringFromBuild(build) {
-            const { version, class: classKey, talents } = build;
-            const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
+    function generateBuildStringFromBuild(build) {
+        const { version, class: classKey, talents } = build;
+        const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
 
-            // Get actual talent definitions (with row/col info)
-            const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
+        // Get actual talent definitions (with row/col info)
+        const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
 
-            const treeStrings = trees.map((tree) => {
-                const treeTalents = classTalents[tree] || [];
-                const invested = talents[classKey]?.[tree] || {};
+        const treeStrings = trees.map((tree) => {
+            const treeTalents = classTalents[tree] || [];
+            const invested = talents[classKey]?.[tree] || {};
 
-                // Sort by row first, then col
-                const sorted = [...treeTalents].sort((a, b) => {
-                    if (a.row !== b.row) return a.row - b.row;
-                    return a.col - b.col;
-                });
-
-                let s = "";
-                let lastNonZero = -1;
-
-                sorted.forEach((talent, idx) => {
-                    const val = invested[talent.id] || 0;
-                    s += val;
-                    if (val > 0) lastNonZero = idx;
-                });
-
-                // Trim trailing zeros
-                return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
+            // Sort by row first, then col
+            const sorted = [...treeTalents].sort((a, b) => {
+                if (a.row !== b.row) return a.row - b.row;
+                return a.col - b.col;
             });
 
-            return treeStrings.join("-");
-        }
+            let s = "";
+            let lastNonZero = -1;
+
+            sorted.forEach((talent, idx) => {
+                const val = invested[talent.id] || 0;
+                s += val;
+                if (val > 0) lastNonZero = idx;
+            });
+
+            // Trim trailing zeros
+            return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
+        });
+
+        return treeStrings.join("-");
+    }
 
         function compressBuild(build) {
             const parts = [];
