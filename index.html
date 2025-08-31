@@ -194,15 +194,14 @@
         */
 
         /* Vertical part (down arrows) */
-        /**/
+        /* */
         /* .arrow-down, .arrow-leftdown, .arrow-rightdown { */
         /* border-bottom-left-radius: 4px; */ /* for leftdown */
         /* border-bottom-right-radius: 4px; */ /* for rightdown */
         /* border-top-left-radius: 0; */
         /* border-top-right-radius: 0; */
-        /*
-        }
-        */
+        /* } */
+        /* */
 
         .build-card {
         transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -34096,6 +34095,7 @@
         }
 
         // Compress the current build into a single string
+        /*
         const compressed = compressBuild({
             version: currentState.version,
             class: currentState.class,
@@ -34103,10 +34103,22 @@
             [currentState.class]: currentState.talents[currentState.class]
             }
         });
+        */
 
+        /*
         const buildData = {
             name: buildName,
             compressed
+        };
+        */
+
+        const buildData = {
+            name: buildName,
+            version: currentState.version,
+            class: currentState.class,
+            talents: {
+                [currentState.class]: currentState.talents[currentState.class]
+            }
         };
 
         // Check if build with this name already exists
@@ -34552,12 +34564,53 @@
         function exportBuild(index) {
             try {
                 const build = currentState.builds[index];
-                const buildString = exportBuildString();
+                if (!build || !build.version || !build.class) {
+                    throw new Error("Cannot export: invalid build data.");
+                }
+
+                const buildString = generateBuildStringFromBuild(build);
+
+                if (!buildString.replace(/-/g, "")) {
+                    throw new Error("Cannot export: no talents selected.");
+                }
+
                 navigator.clipboard.writeText(buildString);
                 showMessage(`Build "${build.name}" copied to clipboard!`);
             } catch (err) {
-                showMessage(err.message, true); // only here we show user-facing errors
+                showMessage(err.message, true);
             }
+        }
+
+        function showMessage(message, isError = false) {
+            const msgBox = document.createElement("div");
+            msgBox.className = `fixed bottom-4 right-4 px-4 py-2 rounded shadow-lg text-white z-50 ${
+                isError ? "bg-red-600" : "bg-green-600"
+            }`;
+            msgBox.innerText = message;
+
+            document.body.appendChild(msgBox);
+
+            setTimeout(() => {
+                msgBox.remove();
+            }, 3000); // auto-hide after 3 seconds
+        }
+
+        function generateBuildStringFromBuild(build) {
+            const { version, class: classKey, talents } = build;
+            const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
+
+            const treeStrings = trees.map((tree) => {
+                const t = talents[classKey]?.[tree] || {};
+                const ids = Object.keys(t).sort();
+                let s = "";
+                for (const id of ids) {
+                    const val = t[id] || 0;
+                    s += val > 0 ? val : "";
+                }
+                return s;
+            });
+
+            return treeStrings.join("-");
         }
 
         function compressBuild(build) {
@@ -34784,7 +34837,7 @@
         // UPDATE URL HASH
         // ----------------------------
         function updateURLHash() {
-            // if (!currentState.version || !currentState.class) return;
+            if (!currentState.version /* || !currentState.class */) return;
             const hash = generateBuildString(); // no errors
             location.hash = hash;
         }
