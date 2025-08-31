@@ -34532,6 +34532,7 @@
         }, 20); // Slight delay for version setup
         }
 
+        /*
         function exportBuild(index) {
         const build = currentState.builds[index];
         const buildJson = JSON.stringify(build, null, 2);
@@ -34546,8 +34547,8 @@
 
         alert("Build copied to clipboard! You can now share it with others.");
         }
+        */
 
-        /*
         function exportBuild(index) {
             try {
                 const build = currentState.builds[index];
@@ -34558,7 +34559,6 @@
                 showMessage(err.message, true); // only here we show user-facing errors
             }
         }
-        */
 
         function compressBuild(build) {
         const parts = [];
@@ -34784,7 +34784,7 @@
         // UPDATE URL HASH
         // ----------------------------
         function updateURLHash() {
-            if (!currentState.version || !currentState.class) return;
+            // if (!currentState.version || !currentState.class) return;
             const hash = generateBuildString(); // no errors
             location.hash = hash;
         }
