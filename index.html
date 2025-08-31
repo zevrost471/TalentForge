@@ -34631,26 +34631,32 @@
 
         function generateBuildStringFromBuild(build) {
             const { version, class: classKey, talents } = build;
-
-            // Get the talent trees for this class/version
             const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
 
-            // Build a string for each tree
+            // Get actual talent definitions (with row/col info)
+            const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
+
             const treeStrings = trees.map((tree) => {
-                const treeTalents = talents[classKey]?.[tree] || {};
+                const treeTalents = classTalents[tree] || [];
+                const invested = talents[classKey]?.[tree] || {};
 
-                // Sort talent IDs numerically
-                const ids = Object.keys(treeTalents)
-                    .map(Number)
-                    .sort((a, b) => a - b);
+                // Sort by row first, then col
+                const sorted = [...treeTalents].sort((a, b) => {
+                    if (a.row !== b.row) return a.row - b.row;
+                    return a.col - b.col;
+                });
 
-                // Concatenate values; use 0 for missing talent points
                 let s = "";
-                for (const id of ids) {
-                    s += treeTalents[id] ?? 0;
-                }
+                let lastNonZero = -1;
 
-                return s;
+                sorted.forEach((talent, idx) => {
+                    const val = invested[talent.id] || 0;
+                    s += val;
+                    if (val > 0) lastNonZero = idx;
+                });
+
+                // Trim trailing zeros
+                return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
             });
 
             return treeStrings.join("-");
