@@ -34529,6 +34529,17 @@
                 return;
             }
 
+            // Determine the expansion the build belongs to
+            const targetExpansion = getExpansionFromPatch(build.version);
+
+            // Set the expansion first if needed
+            if (expansionSelect.value !== targetExpansion) {
+                expansionSelect.value = targetExpansion;
+                // Trigger change to load the patch/version options
+                const event = new Event("change");
+                expansionSelect.dispatchEvent(event);
+            }
+
             // Set the version and trigger talent data load
             versionSelect.value = build.version;
             handleVersionChange();
@@ -34539,7 +34550,9 @@
                 currentState.version = build.version;
                 currentState.class = classKey;
                 currentState.talents = JSON.parse(JSON.stringify(build.talents));
-                currentState.pointsTotal = build.pointsTotal || 51;
+                // Use the maxPoints for the current version
+                const versionData = talentTreeData[currentState.version];
+                currentState.pointsTotal = versionData ? versionData.maxPoints : 51;
 
                 // Handle custom version display
                 if (currentState.version === "custom") {
@@ -34633,38 +34646,38 @@
             }, 3000); // auto-hide after 3 seconds
         }
 
-    function generateBuildStringFromBuild(build) {
-        const { version, class: classKey, talents } = build;
-        const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
+        function generateBuildStringFromBuild(build) {
+            const { version, class: classKey, talents } = build;
+            const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
 
-        // Get actual talent definitions (with row/col info)
-        const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
+            // Get actual talent definitions (with row/col info)
+            const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
 
-        const treeStrings = trees.map((tree) => {
-            const treeTalents = classTalents[tree] || [];
-            const invested = talents[classKey]?.[tree] || {};
+            const treeStrings = trees.map((tree) => {
+                const treeTalents = classTalents[tree] || [];
+                const invested = talents[classKey]?.[tree] || {};
 
-            // Sort by row first, then col
-            const sorted = [...treeTalents].sort((a, b) => {
-                if (a.row !== b.row) return a.row - b.row;
-                return a.col - b.col;
+                // Sort by row first, then col
+                const sorted = [...treeTalents].sort((a, b) => {
+                    if (a.row !== b.row) return a.row - b.row;
+                    return a.col - b.col;
+                });
+
+                let s = "";
+                let lastNonZero = -1;
+
+                sorted.forEach((talent, idx) => {
+                    const val = invested[talent.id] || 0;
+                    s += val;
+                    if (val > 0) lastNonZero = idx;
+                });
+
+                // Trim trailing zeros
+                return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
             });
 
-            let s = "";
-            let lastNonZero = -1;
-
-            sorted.forEach((talent, idx) => {
-                const val = invested[talent.id] || 0;
-                s += val;
-                if (val > 0) lastNonZero = idx;
-            });
-
-            // Trim trailing zeros
-            return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
-        });
-
-        return treeStrings.join("-");
-    }
+            return treeStrings.join("-");
+        }
 
         function compressBuild(build) {
             const parts = [];
