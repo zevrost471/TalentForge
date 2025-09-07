@@ -32700,7 +32700,7 @@
                 return;
             }
 
-            if (!currentState.class || (currentState.class === "deathknight" && (currentExpansion !== "wotlk" || currentExpansion !== "cataclysm"))) {
+            if (!currentState.class || (currentState.class === "deathknight" && (currentExpansion !== "wotlk" && currentExpansion !== "cataclysm"))) {
                 talentPlaceholder.innerHTML = `
                         <h2 class="text-2xl text-yellow-400 mb-2">Select a class</h2>
                         <p class="text-gray-400">Click on any class icon to start building your talent tree</p>
