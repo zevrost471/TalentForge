@@ -32604,7 +32604,7 @@
                 }
             }
 
-            if (currentExpansion === "wotlk") {
+            if (currentExpansion === "wotlk" || currentExpansion === "cataclysm") {
                 document.getElementById("deathknight-button").classList.remove("hidden");
             } else {
                 document.getElementById("deathknight-button").classList.add("hidden");
@@ -32700,7 +32700,7 @@
                 return;
             }
 
-            if (!currentState.class || (currentState.class === "deathknight" && currentExpansion !== "wotlk")) {
+            if (!currentState.class || (currentState.class === "deathknight" && (currentExpansion !== "wotlk" || currentExpansion !== "cataclysm"))) {
                 talentPlaceholder.innerHTML = `
                         <h2 class="text-2xl text-yellow-400 mb-2">Select a class</h2>
                         <p class="text-gray-400">Click on any class icon to start building your talent tree</p>
