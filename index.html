@@ -825,6 +825,7 @@
             "custom1",
             "1.0.0e",
             "1.16.0t",
+            "1.16.1t",
             "1.17.2t"
         ];
 
@@ -868,7 +869,7 @@
             ],
             turtlewow: [
                 { value: "1.16.0t", label: "Patch 1.16.0: Mysteries of Azeroth" },
-                // { value: "1.16.1t", label: "Patch 1.16.1: Hateforge Quarry" },
+                { value: "1.16.1t", label: "Patch 1.16.1: Hateforge Quarry" },
                 // { value: "1.16.4t", label: "Patch 1.16.4: Anchor's Fall" },
                 // { value: "1.17.0t", label: "Patch 1.17.0: Beyond the Greymane Wall" },
                 // { value: "1.17.1t", label: "Patch 1.17.1: Labor and Legacy" },
@@ -28192,6 +28193,7 @@
             1.12: cloneDeep(baseTalents.vanilla),
             1.13: cloneDeep(baseTalents.vanilla),
             "1.16.0t": cloneDeep(baseTalents.vanilla),
+            "1.16.1t": cloneDeep(baseTalents.vanilla),
             "1.17.2t": cloneDeep(baseTalents.vanilla),
             "1.0.0e": cloneDeep(baseTalents.tbc),
             2.4: cloneDeep(baseTalents.tbc),
@@ -31418,14 +31420,14 @@
             ]
         });
 
-        // turtle wow changes (1.16.0)
+        // turtle wow changes (1.16.1)
 
-        removeTalentsByIdOld("1.16.0t", "hunter", "Survival", [
+        removeTalentsByIdOld("1.16.1t", "hunter", "Survival", [
             "monster_slaying",
             "humanoid_slaying"
         ]);
 
-        bulkInsertTalentsOld("1.16.0t", "hunter", "Survival", [
+        bulkInsertTalentsOld("1.16.1t", "hunter", "Survival", [
             {
                 id: "improved_slaying",
                 name: "Improved Slaying",
@@ -31454,6 +31456,117 @@
                     {
                         value: [0.2, 0.4, 0.6, 0.8, 1]
                     }
+                ]
+            }
+        ]);
+
+        replaceTalent("1.16.1t", "mage", "Arcane", "improved_arcane_explosion", {
+            name: "Arcane Impact",
+            description: [
+                "Increases the critical strike chance of your Arcane Explosion and Arcane Missiles spells by an additional {value}%.",
+                {
+                    value: [2, 4, 6]
+                }
+            ]
+        });
+
+        bulkInsertTalentsOld("1.16.1t", "mage", "Arcane", [
+            {
+                id: "arcane_potency",
+                name: "Arcane Potency",
+                icon: "inv_enchant_essencemagiclarge",
+                row: 5,
+                col: 2,
+                ranks: 3,
+                requiresTalents: "arcane_mind",
+                description: [
+                    "Increases the critical strike damage bonus of your Arcane spells by {value}%.",
+                    {
+                        value: [18, 36, 50]
+                    }
+                ]
+            },
+            {
+                id: "brilliance_aura",
+                name: "Brilliance Aura",
+                icon: "inv_staff_07",
+                row: 6,
+                col: 2,
+                ranks: 1,
+                requiresTalents: "arcane_potency",
+                description: [
+                    "Gives Mana regeneration to party members equal to 15% of the Mage's mana regeneration within 30 yards. Lasts 30 minutes."
+                ]
+            }
+        ]);
+
+        removeTalentsByIdOld("1.16.1t", "shaman", "Enhancement", [
+            "two_handed_axes_and_maces",
+            "anticipation",
+            "toughness",
+            "parry"
+        ]);
+
+        replaceTalent("1.16.1t", "shaman", "Enhancement", "stormstrike", {
+            row: 4, 
+            col: 2,
+            requiresTalents: null
+        });
+
+        bulkInsertTalentsOld("1.16.1t", "shaman", "Enhancement", [
+            {
+                id: "thunderhead",
+                name: "Thunderhead",
+                icon: "spell_nature_swiftness",
+                row: 2,
+                col: 2,
+                ranks: 1,
+                requiresTalents: "improved_lightning_shield",
+                description: [
+                    "Allows your Lightning Shield to be cast on allies and reduces its mana cost by 20%."
+                ]
+            },
+            {
+                id: "ancestral_guidance",
+                name: "Ancestral Guidance",
+                icon: "ability_druid_enrage",
+                row: 2,
+                col: 3,
+                ranks: 5,
+                requiresTalents: null,
+                description: [
+                    "Increases your armor value from items by {value1}% and chance to dodge by an additional {value2}%.",
+                    {
+                        value1: [2, 4, 6, 8, 10],
+                        value2: [1, 2, 3, 4, 5]
+                    }
+                ]
+            },
+            {
+                id: "spirit_armor",
+                name: "Spirit Armor",
+                icon: "spell_nature_spiritarmor",
+                row: 3,
+                col: 2,
+                ranks: 3,
+                requiresTalents: null,
+                description: [
+                    "Increases the armor gained from Shields by {value}%.",
+                    {
+                        value: [10, 20, 30]
+                    }
+                ]
+            },
+            {
+                id: "bloodlust",
+                name: "Bloodlust",
+                icon: "spell_nature_bloodlust",
+                row: 6,
+                col: 1,
+                ranks: 1,
+                requiresTalents: "elemental_weapons",
+                description: [
+                    "Increases melee, ranged, and spell casting speed by 15% for a party member within 30 yards. Lasts 15 sec."
                 ]
             }
         ]);
@@ -34309,6 +34422,9 @@
 
             // Re-render
             renderTalentTrees();
+
+            // Update URL
+            updateURLHash();
         }
 
         function handleTalentRightClick(e) {
@@ -34386,6 +34502,9 @@
 
             // Re-render
             renderTalentTrees();
+
+            // Update URL
+            updateURLHash();
         }
 
         function renderBuildsList() {
@@ -34588,6 +34707,7 @@
 
                 updatePointsDisplay();
                 renderTalentTrees();
+                updateURLHash();
 
                 // Set build name in input field
                 buildNameInput.value = build.name;
@@ -34679,6 +34799,7 @@
             return treeStrings.join("-");
         }
 
+        /*
         function compressBuild(build) {
             const parts = [];
 
@@ -34710,6 +34831,7 @@
 
             return parts.join(":"); // version/class : talents
         }
+        */
 
         function decompressBuild(str) {
             const [meta, talentStr] = str.split(":");
