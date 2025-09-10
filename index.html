@@ -35464,9 +35464,9 @@
                 let s = "";
                 for (const id of ids) {
                     const val = talents[id] || 0;
-                    s += val > 0 ? val : "";
+                    s += val.toString();
                 }
-                return s; // empty string if no points in this tree
+                return s.replace(/0+$/, ""); // Trim trailing zeros so the string ends at the last picked talent
             });
 
             return treeStrings.join("-");
@@ -35582,7 +35582,7 @@
         // ----------------------------
         function updateURLHash() {
             if (!currentState.version /* || !currentState.class */) return;
-            const hash = generateBuildString(); // no errors
+            const hash = generateBuildString();
             location.hash = hash;
         }
 
