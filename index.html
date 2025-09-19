@@ -35596,18 +35596,34 @@
         function generateBuildString() {
             if (!currentState.version || !currentState.class) return "";
 
+            const version = currentState.version;    
             const classKey = currentState.class;
-            const trees = talentTreeData[currentState.version]?.classes?.[classKey]?.trees || [];
+            const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
+
+            // Get actual talent definitions (with row/col info)
+            const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
 
             const treeStrings = trees.map((tree) => {
-                const talents = currentState.talents[classKey]?.[tree] || {};
-                const ids = Object.keys(talents).sort();
+                const treeTalents = classTalents[tree] || [];
+                const invested = currentState.talents[classKey]?.[tree] || {};
+
+                // Sort talents by row first, then col
+                const sorted = [...treeTalents].sort((a, b) => {
+                    if (a.row !== b.row) return a.row - b.row;
+                    return a.col - b.col;
+                });
+
                 let s = "";
-                for (const id of ids) {
-                    const val = talents[id] || 0;
-                    s += val > 0 ? val : "";
-                }
-                return s; // empty string if no points in this tree
+                let lastNonZero = -1;
+
+                sorted.forEach((talent, idx) => {
+                    const val = invested[talent.id] || 0;
+                    s += val;
+                    if (val > 0) lastNonZero = idx;
+                });
+
+                // Trim trailing zeros
+                return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
             });
 
             return treeStrings.join("-");
