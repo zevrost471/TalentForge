@@ -33164,8 +33164,6 @@
             }
 
             currentState.version = version;
-            // Reset URL hash when changing version
-            if (location.hash) location.hash = "";
 
             pointsBox.classList.remove("hidden");
 
@@ -33222,6 +33220,9 @@
                 btn.disabled = false;
                 btn.classList.remove("opacity-50", "cursor-not-allowed");
             });
+
+            // Reset URL hash when changing version
+            if (location.hash) location.hash = "";
 
             // Reset state
             currentState.pointsSpent = 0;
@@ -33379,10 +33380,10 @@
             }
             */
 
-            // Reset all state regardless of whether data already exists
             // Reset URL hash when changing class
             if (location.hash) location.hash = "";
-            
+
+            // Reset all state regardless of whether data already exists
             currentState.class = newClassKey;
             currentState.pointsSpent = 0;
             currentState.talentOrder = [];
