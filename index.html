@@ -16379,6 +16379,22 @@
                             ]
                         },
                         {
+                            id: "annihilation",
+                            name: "Annihilation",
+                            icon: "inv_weapon_hand_18",
+                            row: 2,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical strike chance of your melee special abilities by {value1}%.  In addition, there is a {value2}% chance that your Obliterate will do its damage without consuming diseases.",
+                                {
+                                    value1: [1, 2, 3],
+                                    value2: [33, 66, 100]
+                                }
+                            ]
+                        },
+                        {
                             id: "killing_machine",
                             name: "Killing Machine",
                             icon: "inv_sword_122",
@@ -16479,6 +16495,21 @@
                             ]
                         },
                         {
+                            id: "merciless_combat",
+                            name: "Merciless Combat",
+                            icon: "inv_sword_112",
+                            row: 5,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Icy Touch, Howling Blast, Obliterate and Frost Strike do an additional {value}% damage when striking targets with less than 35% health.",
+                                {
+                                    value: [6, 12]
+                                }
+                            ]
+                        },
+                        {
                             id: "rime",
                             name: "Rime",
                             icon: "spell_frost_freezingbreath",
@@ -16548,6 +16579,22 @@
                                 "When dual-wielding, your Death Strikes, Obliterates, Plague Strikes, Rune Strikes, Blood Strikes and Frost Strikes have a {value}% chance to also deal damage with your offhand weapon.",
                                 {
                                     value: [30, 60, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "blood_of_the_north",
+                            name: "Blood of the North",
+                            icon: "inv_weapon_shortblade_79",
+                            row: 7,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases Blood Strike and Frost Strike damage by {value1}%.  In addition, whenever you hit with Blood Strike or Pestilence there is a {value2}% chance that the Blood Rune will become a Death Rune when it activates.  Death Runes count as a Blood, Frost or Unholy Rune.",
+                                {
+                                    value1: [3, 6, 10],
+                                    value2: [30, 60, 100]
                                 }
                             ]
                         },
@@ -16789,6 +16836,36 @@
                             ]
                         },
                         {
+                            id: "on_a_pale_horse",
+                            name: "On a Pale Horse",
+                            icon: "spell_deathknight_summondeathcharger",
+                            row: 3,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "You become as hard to stop as death itself.  The duration of all Stun and Fear effects used against you is reduced by {value}%, and your mounted speed is increased by {value}%.  This does not stack with other movement speed increasing effects.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "blood_caked_blade",
+                            name: "Blood-Caked Blade",
+                            icon: "ability_criticalstrike",
+                            row: 3,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your auto attacks have a {value}% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 12.5% for each of your diseases on the target.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
                             id: "night_of_the_dead",
                             name: "Night of the Dead",
                             icon: "spell_deathknight_armyofthedead",
@@ -16847,6 +16924,21 @@
                             ]
                         },
                         {
+                            id: "desecration",
+                            name: "Desecration",
+                            icon: "spell_shadow_shadowfiend",
+                            row: 5,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Plague Strikes and Scourge Strikes cause the Desecrated Ground effect.  Targets in the area are slowed by {value}% by the grasping arms of the dead while standing on the unholy ground.  Lasts 20 sec.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
                             id: "magic_suppression",
                             name: "Magic Suppression",
                             icon: "spell_shadow_antimagicshell",
@@ -16859,6 +16951,21 @@
                                 {
                                     value1: [2, 4, 6],
                                     value2: [8, 16, 25]
+                                }
+                            ]
+                        },
+                        {
+                            id: "reaping",
+                            name: "Reaping",
+                            icon: "spell_shadow_shadetruesight",
+                            row: 5,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Whenever you hit with Blood Strike or Pestilence there is a {value}% chance that the Blood Rune becomes a Death Rune when it activates.  Death Runes count as a Blood, Frost or Unholy Rune.",
+                                {
+                                    value: [33, 66, 100]
                                 }
                             ]
                         },
@@ -16954,6 +17061,21 @@
                             requiresTalents: null,
                             description: [
                                 "The Death Knight is surrounded by 3 whirling bones.  While at least 1 bone remains, he takes 20% less damage from all sources and deals 2% more damage with all attacks, spells and abilities.  Each damaging attack that lands consumes 1 bone.  Lasts 5 min."
+                            ]
+                        },
+                        {
+                            id: "wandering_plague",
+                            name: "Wandering Plague",
+                            icon: "spell_shadow_callofbone",
+                            row: 8,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When your diseases damage an enemy, there is a chance equal to your melee critical strike chance that they will cause {value}% additional damage to the target and all enemies within 8 yards.  Ignores any target under the effect of a spell that is cancelled by taking damage.",
+                                {
+                                    value: [33, 66, 100]
+                                }
                             ]
                         },
                         {
@@ -34240,8 +34362,6 @@
                 }
                 */
 
-
-
                 // Position and size the arrow
                 if (direction === "down") {
                     arrow.style.position = "absolute";
@@ -35430,7 +35550,6 @@
             }
         }
 
-
         // ----------------------------
         // ERROR HANDLING
         // ----------------------------
@@ -35464,9 +35583,9 @@
                 let s = "";
                 for (const id of ids) {
                     const val = talents[id] || 0;
-                    s += val.toString();
+                    s += val > 0 ? val : "";
                 }
-                return s.replace(/0+$/, ""); // Trim trailing zeros so the string ends at the last picked talent
+                return s; // empty string if no points in this tree
             });
 
             return treeStrings.join("-");
