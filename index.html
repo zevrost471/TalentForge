@@ -33164,6 +33164,8 @@
             }
 
             currentState.version = version;
+            // Reset URL hash when changing version
+            if (location.hash) location.hash = "";
 
             pointsBox.classList.remove("hidden");
 
@@ -33378,6 +33380,9 @@
             */
 
             // Reset all state regardless of whether data already exists
+            // Reset URL hash when changing class
+            if (location.hash) location.hash = "";
+            
             currentState.class = newClassKey;
             currentState.pointsSpent = 0;
             currentState.talentOrder = [];
