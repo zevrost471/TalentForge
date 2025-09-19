@@ -328,7 +328,7 @@
     <div class="container mx-auto px-4 py-8">
         <header id="main-header" class="text-center mb-8 transition-all duration-500 overflow-hidden">
             <h1 class="text-4xl font-bold text-yellow-400 mb-2">TalentForge</h1>
-            <p class="text-gray-400">Create and share talent builds or create brand new talent trees!</p>
+            <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!</p>
         </header>
 
         <!-- Class selection row -->
@@ -595,6 +595,9 @@
         // script.js
 
         // DOM elements
+        const headerEl = document.getElementById("main-header");
+        const captionEl = document.getElementById("main-caption");
+        const selectClassHeader = document.getElementById("select-class-header");
         const expansionSelect = document.getElementById("expansion-select");
         const versionSelect = document.getElementById("version-select");
         const applyVersionBtn = document.getElementById("apply-version");
@@ -713,6 +716,11 @@
                 icon.style.transform = "rotate(0deg)"; // point down
                 toggleBuildManagerButton.title = "Collapse Build Manager";
             }
+        });
+
+        // Reset URL hash on page load
+        window.addEventListener('DOMContentLoaded', function() {
+            if (location.hash) location.hash = '';
         });
 
         /*
@@ -33330,10 +33338,6 @@
         function handleClassSelect(e) {
             const newClassKey = e.currentTarget.dataset.class;
 
-            // Smoothly collapse the main header
-            const headerEl = document.getElementById("main-header");
-            const selectClassHeader = document.getElementById("select-class-header");
-
             if (newClassKey) {
                 // headerEl?.classList.add("collapsed");
                 selectClassHeader?.classList.add("collapsed");
@@ -33342,6 +33346,7 @@
                 selectClassHeader?.classList.remove("collapsed");
             }
 
+            // Smoothly collapse the main header
             /*
             if (!newClassKey) {
                 // No class selected → uncollapse the header
@@ -33350,6 +33355,17 @@
     
             if (headerEl && !headerEl.classList.contains("collapsed")) {
                 headerEl.classList.add("collapsed");
+            }
+            */
+            
+            /*
+            if (!newClassKey) {
+                // No class selected → uncollapse the header
+                if (captionEl) captionEl.classList.remove("collapsed");
+            }
+    
+            if (captionEl && !captionEl.classList.contains("collapsed")) {
+                captionEl.classList.add("collapsed");
             }
             */
 
