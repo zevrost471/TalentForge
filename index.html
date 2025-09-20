@@ -28933,7 +28933,9 @@
             "clever_traps",
             "survivalist",
             "improved_feign_death",
-            "killer_instinct"
+            "killer_instinct",
+            "lightning_reflexes",
+            "wyvern_sting"
         ]);
 
         /*
@@ -33197,6 +33199,11 @@
                 document.getElementById("deathknight-button").classList.remove("hidden");
             } else {
                 document.getElementById("deathknight-button").classList.add("hidden");
+            }
+
+            const availableClasses = Object.keys(talentTreeData[version]?.classes || {});
+            if (!availableClasses.includes(currentState.class)) {
+                currentState.class = null;
             }
 
             // Only reset selected class highlight if expansion changed
