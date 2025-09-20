@@ -33950,6 +33950,7 @@
 
             updatePointsDisplay();
             renderTalentTrees();
+            updateURLHash();
         }
 
         function getClassIndex(classKey) {
@@ -34931,6 +34932,7 @@
 
             updatePointsDisplay();
             renderTalentTrees();
+            updateURLHash();
         }
 
         function saveBuild() {
@@ -35226,13 +35228,13 @@
                 )}</p>
                                         </div>
                                         <div class="flex gap-2">
-                                            <button class="load-build-btn px-2 py-1 bg-blue-600 hover:bg-blue-700 rounded text-xs" data-index="${index}">
+                                            <button title="Load Build" class="load-build-btn px-2 py-1 bg-blue-600 hover:bg-blue-700 rounded text-xs" data-index="${index}">
                                                 <i class="fas fa-play"></i>
                                             </button>
-                                            <button class="export-build-btn px-2 py-1 bg-green-600 hover:bg-green-700 rounded text-xs" data-index="${index}">
+                                            <button title="Export Build" class="export-build-btn px-2 py-1 bg-green-600 hover:bg-green-700 rounded text-xs" data-index="${index}">
                                                 <i class="fas fa-share"></i>
                                             </button>
-                                            <button class="delete-build-btn px-2 py-1 bg-red-600 hover:bg-red-700 rounded text-xs" data-index="${index}">
+                                            <button  title="Delete Build" class="delete-build-btn px-2 py-1 bg-red-600 hover:bg-red-700 rounded text-xs" data-index="${index}">
                                                 <i class="fas fa-trash"></i>
                                             </button>
                                         </div>
