@@ -35376,57 +35376,55 @@
             versionSelect.value = build.version;
             handleVersionChange();
 
-            setTimeout(() => {
-                const classKey = build.class;
+            const classKey = build.class;
 
-                currentState.version = build.version;
-                currentState.class = classKey;
-                currentState.talents = JSON.parse(JSON.stringify(build.talents));
-                // Use the maxPoints for the current version
-                const versionData = talentTreeData[currentState.version];
-                currentState.pointsTotal = versionData ? versionData.maxPoints : 51;
+            currentState.version = build.version;
+            currentState.class = classKey;
+            currentState.talents = JSON.parse(JSON.stringify(build.talents));
+            // Use the maxPoints for the current version
+            const versionData = talentTreeData[currentState.version];
+            currentState.pointsTotal = versionData ? versionData.maxPoints : 51;
 
-                // Handle custom version display
-                if (currentState.version === "custom") {
-                    customPoints.value = currentState.pointsTotal;
-                    customVersionOptions.classList.remove("hidden");
-                } else {
-                    customVersionOptions.classList.add("hidden");
+            // Handle custom version display
+            if (currentState.version === "custom") {
+                customPoints.value = currentState.pointsTotal;
+                customVersionOptions.classList.remove("hidden");
+            } else {
+                customVersionOptions.classList.add("hidden");
+            }
+
+            // Style class buttons
+            classButtons.forEach((btn) => {
+                const isSelected = btn.dataset.class === classKey;
+                // btn.classList.toggle("bg-yellow-600", isSelected);
+                // btn.classList.toggle("text-white", isSelected);
+                // btn.classList.toggle("bg-gray-700", !isSelected);
+                // btn.classList.toggle("hover:bg-gray-600", !isSelected);
+            });
+
+            // Calculate points spent
+            currentState.pointsSpent = 0;
+            const trees =
+                talentTreeData[currentState.version]?.classes?.[classKey]?.trees || [];
+
+            trees.forEach((tree) => {
+                const treeTalents = currentState.talents[classKey][tree];
+                if (treeTalents) {
+                    currentState.pointsSpent += Object.values(treeTalents).reduce(
+                        (sum, pts) => sum + pts,
+                        0
+                    );
                 }
+            });
 
-                // Style class buttons
-                classButtons.forEach((btn) => {
-                    const isSelected = btn.dataset.class === classKey;
-                    // btn.classList.toggle("bg-yellow-600", isSelected);
-                    // btn.classList.toggle("text-white", isSelected);
-                    // btn.classList.toggle("bg-gray-700", !isSelected);
-                    // btn.classList.toggle("hover:bg-gray-600", !isSelected);
-                });
+            updatePointsDisplay();
+            renderTalentTrees();
+            updateURLHash();
 
-                // Calculate points spent
-                currentState.pointsSpent = 0;
-                const trees =
-                    talentTreeData[currentState.version]?.classes?.[classKey]?.trees || [];
+            // Set build name in input field
+            buildNameInput.value = build.name;
 
-                trees.forEach((tree) => {
-                    const treeTalents = currentState.talents[classKey][tree];
-                    if (treeTalents) {
-                        currentState.pointsSpent += Object.values(treeTalents).reduce(
-                            (sum, pts) => sum + pts,
-                            0
-                        );
-                    }
-                });
-
-                updatePointsDisplay();
-                renderTalentTrees();
-                updateURLHash();
-
-                // Set build name in input field
-                buildNameInput.value = build.name;
-
-                alert(`✅ Loaded build: ${build.name}`);
-            }, 20); // Slight delay for version setup
+            alert(`✅ Loaded build: ${build.name}`);
         }
 
         /*

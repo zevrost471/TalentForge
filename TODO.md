@@ -17,7 +17,7 @@ These should be done first because other features depend on them or they fix cor
 
     - Trees should never overflow their container at smaller screen widths.
 
-4. Fix renderLevelTimeline not appearing when a build is loaded
+4. Fix ```renderLevelTimeline``` not appearing when a build is loaded
 
     - Important bug fix for consistency.
 
@@ -69,7 +69,7 @@ Nice-to-have, improves personalization but not critical.
 
     - More complex, should wait until UI is stable.
 
-15. Change Browser Tab Icon (Favicon)
+15. Change Browser Tab Icon (Favicon) ✅
 
 16. Change Font to Better Match Warcraft Theme
 
