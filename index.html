@@ -33201,7 +33201,7 @@
                 document.getElementById("deathknight-button").classList.add("hidden");
             }
 
-            const availableClasses = Object.keys(talentTreeData[version]?.classes || {});
+            const availableClasses = Object.keys(talentsAttributedByVersion[version] || {});
             if (!availableClasses.includes(currentState.class)) {
                 currentState.class = null;
             }
