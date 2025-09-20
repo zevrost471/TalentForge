@@ -35739,8 +35739,19 @@
         // ----------------------------
         function updateURLHash() {
             if (!currentState.version /* || !currentState.class */) return;
-            const hash = generateBuildString();
-            location.hash = hash;
+
+            const version = currentState.version;
+            const classKey = currentState.class;
+            const buildString = generateBuildString();
+
+            // Only update if there is a valid build string
+            if (buildString) {
+                location.hash = `${version}/${classKey}/${buildString}`;
+            } else if (classKey) {
+                location.hash = `${version}/${classKey}`;
+            } else if (version) {
+                location.hash = `${version}`;
+            }
         }
 
         // ----------------------------
