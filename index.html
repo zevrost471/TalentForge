@@ -15927,7 +15927,7 @@
                             ranks: 3,
                             requiresTalents: null,
                             description: [
-                                "You have a 15% chance after dodging, parrying or taking  direct damage to gain the Scent of Blood effect, causing your next {value} to generate 10 runic power.",
+                                "You have a 15% chance after dodging, parrying or taking direct damage to gain the Scent of Blood effect, causing your next {value} to generate 10 runic power.",
                                 {
                                     value: ["melee hit", "2 melee hits", "3 melee hits"]
                                 }
@@ -18601,10 +18601,11 @@
                             ranks: 2,
                             requiresTalents: null,
                             description: [
-                                "While your pet is active, you and your pet will regenerate {value}% of total health every 10 sec.",
+                                "While your pet is active, you and your pet will regenerate {value1}% of total health every 10 sec., and increases healing done by you and your pet by {value2}%.",
                                 {
-                                    value: [1, 2]
-                                }
+                                    value1: [1, 2],
+                                    value2: [5, 10]
+                                },
                             ]
                         },
                         {
@@ -27712,7 +27713,7 @@
                             ]
                         },
                         {
-                            id: "blood_surge",
+                            id: "bloodsurge",
                             name: "Bloodsurge",
                             icon: "ability_warrior_bloodsurge",
                             row: 8,
@@ -28163,12 +28164,296 @@
                 deathknight: {
                     // deathknight - cataclysm
                     Blood: [
+                        {
+                            id: "butchery",
+                            name: "Butchery",
+                            icon: "inv_axe_68",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Whenever you kill an enemy that grants experience or honor, you generate up to {kill} Runic Power.  In addition, you generate {incombat} Runic Power per 5 sec while in combat.",
+                                {
+                                    kill: [10, 20],
+                                    incombat: [1, 2]
+                                }
+                            ]
+                        },
+                        {
+                            id: "blade_barrier",
+                            name: "Blade Barrier",
+                            icon: "ability_upgrademoonglaive",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "You take {value}% less damage from all sources.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "bladed_armor",
+                            name: "Bladed Armor",
+                            icon: "inv_shoulder_36",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your attack power by {value} for every 180 armor value you have.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "scent_of_blood",
+                            name: "Scent of Blood",
+                            icon: "ability_rogue_bloodyeye",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "You have a 15% chance after dodging, parrying or taking direct damage to gain the Scent of Blood effect, causing your next {value} to generate 10 Runic Power.",
+                                {
+                                    value: ["melee hit", "2 melee hits", "3 melee hits"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "blood_caked_blade",
+                            name: "Blood-Caked Blade",
+                            icon: "ability_criticalstrike",
+                            row: 2,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your auto attacks have a {value}% chance to cause a Blood-Caked Strike, which hits for 25% weapon damage plus 12.5% for each of your diseases on the target.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "bone_shield",
+                            name: "Bone Shield",
+                            icon: "ability_deathknight_boneshield",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Surrounds you with a barrier of whirling bones.  The shield begins with 6 charges, and each damaging attack consumes a charge.  While at least 1 charge remains, you take 20% less damage from all sources and deal 2% more damage with all attacks, spells and abilities.  Lasts 5 min."
+                            ]
+                        },
+                        {
+                            id: "toughness",
+                            name: "Toughness",
+                            icon: "spell_holy_devotion",
+                            row: 2,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your armor value from items by {value}%.",
+                                {
+                                    value1: [3, 7, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "rune_tap",
+                            name: "Rune Tap",
+                            icon: "spell_deathknight_runetap",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Converts 1 Blood Rune into 10% of your maximum health."
+                            ]
+                        },
+                        {
+                            id: "vampiric_blood",
+                            name: "Vampiric Blood",
+                            icon: "spell_shadow_lifedrain",
+                            row: 4,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Temporarily grants the Death Knight 15% of maximum health and increases the amount of health received from healing spells and effects by 25% for 10 sec.  After the effect expires, the health is lost."
+                            ]
+                        },
+                        {
+                            id: "dancing_rune_weapon",
+                            name: "Dancing Rune Weapon",
+                            icon: "inv_sword_07",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Summons a second rune weapon that fights on its own for 12 sec, mirroring the Death Knight's attacks. The rune weapon also assists in defense of its master, granting an additional 20% parry chance while active."
+                            ]
+                        }
                     ],
                     // deathknight - cataclysm
                     Frost: [
+                        {
+                            id: "runic_power_mastery",
+                            name: "Runic Power Mastery",
+                            icon: "spell_arcane_arcane01",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your maximum Runic Power by {value}.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "icy_reach",
+                            name: "Icy Reach",
+                            icon: "spell_frost_manarecharge",
+                            row: 0,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the range of your Icy Touch, Chains of Ice and Howling Blast by {value} yards.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "nerves_of_cold_steel",
+                            name: "Nerves of Cold Steel",
+                            icon: "ability_dualwield",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your chance to hit with one-handed melee weapons by {value1}% and increases the damage done by your off-hand weapon by {value2}%.",
+                                {
+                                    value1: [1, 2, 3],
+                                    value2: [8, 16, 25]
+                                }
+                            ]
+                        },
+                        {
+                            id: "lichborne",
+                            name: "Lichborne",
+                            icon: "spell_shadow_raisedead",
+                            row: 1,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Draw upon unholy energy to become undead for 10 sec.  While undead, you are immune to Charm, Fear and Sleep effects."
+                            ]
+                        },
+                        {
+                            id: "endless_winter",
+                            name: "Endless Winter",
+                            icon: "spell_shadow_twilight",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "{value} Runic Power.",
+                                {
+                                    value: ["The cost of your Mind Freeze is reduced to 10", "Your Mind Freeze no longer costs"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "pillar_of_frost",
+                            name: "Pillar of Frost",
+                            icon: "ability_deathknight_pillaroffrost",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Calls upon the power of Frost to increase the Death Knight's Strength by 20%.  Icy crystals hang heavy upon the Death Knight's body, providing immunity against external movement such as knockbacks.  Lasts 20 sec."
+                            ]
+                        },
+                        {
+                            id: "hungering_cold",
+                            name: "Hungering Cold",
+                            icon: "inv_staff_15",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Purges the earth around the Death Knight of all heat.  Enemies within 10 yards are afflicted with Frost Fever and trapped in ice, preventing them from performing any action for 10 sec.  Enemies are considered Frozen, but any damage other than diseases will break the ice."
+                            ]
+                        },
+                        {
+                            id: "howling_blast",
+                            name: "Howling Blast",
+                            icon: "spell_frost_arcticwinds",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "hungering_cold",
+                            description: [
+                                "Blast the target with a frigid wind, dealing [((197 + 197) / 2) + (Attack power * 0.44)] Frost damage to that foe, and [(0.5 * (((197 + 197) / 2) + (Attack power * 0.44)))] Frost damage to all other enemies within 10 yards."
+                            ]
+                        }
                     ],
                     // deathknight - cataclysm
                     Unholy: [
+                        {
+                            id: "unholy_frenzy",
+                            name: "Unholy Frenzy",
+                            icon: "spell_shadow_unholyfrenzy",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Induces a friendly party or raid member into a killing frenzy for 30 sec.  The target is Enraged, increasing their melee and ranged haste by 20%, but causes them to lose health equal to 2% of their maximum health every 3 sec."
+                            ]
+                        },
+                        {
+                            id: "unholy_blight",
+                            name: "Unholy Blight",
+                            icon: "spell_shadow_contagion",
+                            row: 4,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Causes the victims of your Death Coil to be surrounded by a vile swarm of unholy insects, taking 10% of the damage done by the Death Coil over 10 sec, and preventing any diseases on the victim from being dispelled."
+                            ]
+                        },
+                        {
+                            id: "summon_gargoyle",
+                            name: "Summon Gargoyle",
+                            icon: "ability_deathknight_summongargoyle",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "A Gargoyle flies into the area and bombards the target with Nature damage modified by the Death Knight's attack power.  Persists for 30 sec."
+                            ]
+                        }
                     ]
                 },
                 druid: {
@@ -28186,6 +28471,142 @@
                     // hunter - cataclysm
                     "Beast Mastery": [
                         {
+                            id: "improved_kill_command",
+                            name: "Improved Kill Command",
+                            icon: "ability_hunter_silenthunter",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical strike chance of your Kill Command by {value}%.",
+                                {
+                                    value: [5, 10]
+                                },
+                            ]
+                        },
+                        {
+                            id: "spirit_bond",
+                            name: "Spirit Bond",
+                            icon: "ability_druid_demoralizingroar",
+                            row: 1,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "While your pet is active, you and your pet will regenerate {value1}% of total health every 10 sec., and increases healing done by you and your pet by {value2}%.",
+                                {
+                                    value1: [1, 2],
+                                    value2: [5, 10]
+                                },
+                            ]
+                        },
+                        {
+                            id: "frenzy",
+                            name: "Frenzy",
+                            icon: "inv_misc_monsterclaw_03",
+                            row: 1,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your pet gains {value}% attack speed after attacking with a Basic Attack, lasting for 10 sec and stacking up to 5 times.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "fervor",
+                            name: "Fervor",
+                            icon: "ability_hunter_aspectoftheviper",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Instantly restores 50 Focus to you and your pet."
+                            ]
+                        },
+                        {
+                            id: "focus_fire",
+                            name: "Focus Fire",
+                            icon: "ability_hunter_focusfire",
+                            row: 2,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: "frenzy",
+                            description: [
+                                "Consumes your pet's Frenzy Effect stack, restoring 4 Focus to your pet and increasing your ranged haste by 3% for each Frenzy Effect stack consumed. Lasts for 20 sec."
+                            ]
+                        },
+                        {
+                            id: "longevity",
+                            name: "Longevity",
+                            icon: "ability_hunter_longevity",
+                            row: 3,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Bestial Wrath, Intimidation and Pet Special Abilities by {value}%.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "bestial_wrath",
+                            name: "Bestial Wrath",
+                            icon: "ability_druid_ferociousbite",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "fervor",
+                            description: [
+                                "Send your pet into a rage causing 20% additional damage for 10 sec.  The beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
+                            ]
+                        },
+                        {
+                            id: "ferocious_inspiration",
+                            name: "Ferocious Inspiration",
+                            icon: "ability_hunter_ferociousinspiration",
+                            row: 4,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "All party and raid members have all damage increased by 3% within 100 yards of your pet."
+                            ]
+                        },
+                        {
+                            id: "the_beast_within",
+                            name: "The Beast Within",
+                            icon: "ability_hunter_beastwithin",
+                            row: 5,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "bestial_wrath",
+                            description: [
+                                "While your pet is under the effects of Bestial Wrath, you also go into a rage causing 10% additional damage and reducing the focus cost of all shots and abilities by 50% for 10 sec."
+                            ]
+                        },
+                        {
+                            id: "invigoration",
+                            name: "Invigoration",
+                            icon: "ability_hunter_invigeration",
+                            row: 5,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "ferocious_inspiration",
+                            description: [
+                                "When your pet scores a critical hit with a Basic Attack, you instantly regenerate {value} Focus.",
+                                {
+                                    value: [3, 6]
+                                }
+                            ]
+                        },
+                        {
                             id: "beast_mastery",
                             name: "Beast Mastery",
                             icon: "ability_hunter_beastmastery",
@@ -28201,6 +28622,87 @@
                     // hunter - cataclysm
                     Marksmanship: [
                         {
+                            id: "go_for_the_throat",
+                            name: "Go for the Throat",
+                            icon: "ability_hunter_goforthethroat",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your ranged auto-shot critical hits cause your pet to generate {value} Focus.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "silencing_shot",
+                            name: "Silencing Shot",
+                            icon: "ability_theblackarrow",
+                            row: 2,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "A shot that silences the target and interrupts spellcasting for 3 sec."
+                            ]
+                        },
+                        {
+                            id: "concussive_barrage",
+                            name: "Concussive Barrage",
+                            icon: "ability_hunter_efficiency",
+                            row: 2,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your successful Chimera Shot and Multi-Shot attacks have a {value}% chance to daze the target for 4 sec.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "piercing_shots",
+                            name: "Piercing Shots",
+                            icon: "ability_hunter_piercingshots",
+                            row: 2,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your critical Aimed, Steady and Chimera Shots cause the target to bleed for {value}% of the damage dealt over 8 sec.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "trueshot_aura",
+                            name: "Trueshot Aura",
+                            icon: "ability_trueshot",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Increases melee attack power by 20% and ranged attack power by 10% of party and raid members within 100 yards."
+                            ]
+                        },
+                        {
+                            id: "readiness",
+                            name: "Readiness",
+                            icon: "ability_hunter_readiness",
+                            row: 4,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When activated, this ability immediately finishes the cooldown on all Hunter abilities."
+                            ]
+                        },
+                        {
                             id: "chimera_shot",
                             name: "Chimera Shot",
                             icon: "ability_hunter_chimerashot2",
@@ -28215,6 +28717,209 @@
                     ],
                     // hunter - cataclysm
                     Survival: [
+                        {
+                            id: "hunter_vs_wild",
+                            name: "Hunter vs. Wild",
+                            icon: "ability_hunter_huntervswild",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your total Stamina by {value}%.",
+                                {
+                                    value: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "pathing",
+                            name: "Pathing",
+                            icon: "ability_hunter_improvedtracking",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases ranged haste by {value}%.",
+                                {
+                                    value: [1, 2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "survival_tactics",
+                            name: "Survival Tactics",
+                            icon: "ability_rogue_feigndeath",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the chance that your trap spells will be resisted by {value}%, and reduces the cooldown of your Disengage ability by {value} sec.",
+                                {
+                                    value: [2, 4]
+                                }
+                            ]
+                        },
+                        {
+                            id: "trap_mastery",
+                            name: "Trap Mastery",
+                            icon: "ability_ensnare",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Ice Trap and Freezing Trap - Increases the duration by {value}%.<br><br>Immolation Trap, Explosive Trap and Black Arrow - Increases the periodic damage done by {value}%.<br><br>Snake Trap - Increases the number of snakes summoned by {snakes}.",
+                                {
+                                    value: [10, 20, 30],
+                                    snakes: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "entrapment",
+                            name: "Entrapment",
+                            icon: "spell_nature_stranglevines",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When your Ice Trap or Snake Trap are triggered you entrap all afflicted targets, preventing them from moving for {value} sec.",
+                                {
+                                    value: [2, 4]
+                                }
+                            ]
+                        },
+                        {
+                            id: "point_of_no_escape",
+                            name: "Point of No Escape",
+                            icon: "ability_hunter_pointofnoescape",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the ranged critical strike chance of all of your attacks on targets affected by your Ice Trap and Freezing Trap by {value}%.",
+                                {
+                                    value: [3, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "thrill_of_the_hunt",
+                            name: "Thrill of the Hunt",
+                            icon: "ability_hunter_thrillofthehunt",
+                            row: 2,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "You have a {value}% chance when you use Arcane Shot, Explosive Shot or Black Arrow to instantly regain 40% of the base Focus cost of the shot.",
+                                {
+                                    value: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "counterattack",
+                            name: "Counterattack",
+                            icon: "ability_warrior_challange",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "A strike that becomes active after parrying an opponent's attack.  This attack deals (Attack power * 0.2 + 321) damage and immobilizes the target for 5 sec.  Counterattack cannot be blocked, dodged, or parried."
+                            ]
+                        },
+                        {
+                            id: "resourcefulness",
+                            name: "Resourcefulness",
+                            icon: "ability_hunter_resourcefulness",
+                            row: 3,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of all traps and Black Arrow by {value} sec.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "mirrored_blades",
+                            name: "Mirrored Blades",
+                            icon: "inv_weapon_shortblade_99",
+                            row: 3,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When attacked by a spell while in Deterrence, you have a {value}% chance to reflect it back at the attacker.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "toxicology",
+                            name: "Toxicology",
+                            icon: "inv_alchemy_enchantedvial",
+                            row: 4,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the periodic critical damage of your Serpent Sting and Black Arrow by {value}%.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "wyvern_sting",
+                            name: "Wyvern Sting",
+                            icon: "inv_spear_02",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "A stinging shot that puts the target to sleep for 30 sec.  Any damage will cancel the effect.  When the target wakes up, the Sting causes 2738 Nature damage over 6 sec.  Only one Sting per Hunter can be active on the target at a time."
+                            ]
+                        },
+                        {
+                            id: "noxious_stings",
+                            name: "Noxious Stings",
+                            icon: "ability_hunter_potentvenom",
+                            row: 4,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "wyvern_sting",
+                            description: [
+                                "Increases your ranged damage done on targets afflicted by your Serpent Sting by {damage}%.<br><br>If Wyvern Sting is dispelled, the dispeller is also afflicted by Wyvern Sting lasting {duration}% of the duration remaining.",
+                                {
+                                    damage: [5, 10],
+                                    duration: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "hunting_party",
+                            name: "Hunting Party",
+                            icon: "ability_hunter_huntingparty",
+                            row: 4,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your total Agility by an additional 2%, and increases the ranged and melee attack speed of all party and raid members by 10%."
+                            ]
+                        },
                         {
                             id: "black_arrow",
                             name: "Black Arrow",
@@ -28232,12 +28937,204 @@
                 mage: {
                     // mage - cataclysm
                     Arcane: [
+                        {
+                            id: "presence_of_mind",
+                            name: "Presence of Mind",
+                            icon: "spell_nature_enchantarmor",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell."
+                            ]
+                        },
+                        {
+                            id: "arcane_tactics",
+                            name: "Arcane Tactics",
+                            icon: "spell_arcane_arcanetactics",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "presence_of_mind",
+                            description: [
+                                "Increases the damage of all party and raid members within 100 yards by 3%."
+                            ]
+                        },
+                        {
+                            id: "slow",
+                            name: "Slow",
+                            icon: "spell_nature_slow",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces target's movement speed by 60%, increases the time between ranged attacks by 60% and increases casting time by 30%.  Lasts 15 sec.  Slow can only affect one target at a time."
+                            ]
+                        },
+                        {
+                            id: "focus_magic",
+                            name: "Focus Magic",
+                            icon: "spell_arcane_studentofmagic",
+                            row: 5,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the target's chance to critically hit with spells by 3% for 30 min.  When the target critically hits your chance to critically hit with spells is increased by 3% for 10 sec.  Cannot be cast on self.  Limit 1 target."
+                            ]
+                        },
+                        {
+                            id: "arcane_power",
+                            name: "Arcane Power",
+                            icon: "spell_nature_lightning",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "slow",
+                            description: [
+                                "When activated, you deal 20% more spell damage and damaging spells cost 10% more mana to cast.  This effect lasts 15 sec."
+                            ]
+                        }
                     ],
                     // mage - cataclysm
                     Fire: [
+                        {
+                            id: "blast_wave",
+                            name: "Blast Wave",
+                            icon: "spell_holy_excorcism_02",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "A wave of flame radiates outward from the target location, damaging all enemies caught within the blast for 928 Fire damage and are slowed by 70% for 3 sec."
+                            ]
+                        },
+                        {
+                            id: "hot_streak",
+                            name: "Hot Streak",
+                            icon: "ability_mage_hotstreak",
+                            row: 2,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your spells no longer trigger Arcane Missiles.  Instead, your critical strikes with Fireball, Frostfire Bolt, Scorch, Pyroblast, or Fire Blast have a chance to cause your next Pyroblast spell cast within 15 sec to be instant cast and cost no mana."
+                            ]
+                        },
+                        {
+                            id: "molten_shields",
+                            name: "Molten Shields",
+                            icon: "spell_fire_firearmor",
+                            row: 3,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the global cooldown of your Mage Ward spell by 1 sec and your Blazing Speed also removes any movement slowing effects when triggered and is also triggered any time Mage Ward dissipates from absorbing damage."
+                            ]
+                        },
+                        {
+                            id: "combustion",
+                            name: "Combustion",
+                            icon: "spell_fire_sealoffire",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Combines your damaging periodic Fire effects on an enemy target but does not consume them, instantly dealing 23 Fire damage and creating a new periodic effect that lasts 10 sec and deals damage per time equal to the sum of the combined effects."
+                            ]
+                        },
+                        {
+                            id: "firestarter",
+                            name: "Firestarter",
+                            icon: "ability_mage_firestarter",
+                            row: 3,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Allows you to cast the Scorch spell while moving."
+                            ]
+                        },
+                        {
+                            id: "dragons_breath",
+                            name: "Dragon's Breath",
+                            icon: "inv_misc_head_dragon_01",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Targets in a cone in front of the caster take 1292 Fire damage and are disoriented for 5 sec.  Any direct damaging attack will revive targets."
+                            ]
+                        },
+                        {
+                            id: "living_bomb",
+                            name: "Living Bomb",
+                            icon: "ability_mage_livingbomb",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "dragons_breath",
+                            description: [
+                                "The target becomes a Living Bomb, taking 839 Fire damage over 12 sec.  After 12 sec, the target explodes dealing 420 Fire damage to up to 3 enemies within 10 yards.  Limit 3 targets."
+                            ]
+                        }
                     ],
                     // mage - cataclysm
                     Frost: [
+                        {
+                            id: "icy_veins",
+                            name: "Icy Veins",
+                            icon: "spell_frost_coldhearted",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Hastens your spellcasting, increasing spell casting speed by 20% and reduces the pushback suffered from damaging attacks while casting by 100%.  Lasts 20 sec."
+                            ]
+                        },
+                        {
+                            id: "cold_snap",
+                            name: "Cold Snap",
+                            icon: "spell_frost_wizardmark",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When activated, this spell finishes the cooldown on all Frost spells you recently cast."
+                            ]
+                        },
+                        {
+                            id: "ice_barrier",
+                            name: "Ice Barrier",
+                            icon: "spell_ice_lament",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Instantly shields you, absorbing ((8089 + Spell power * 0.87)) damage.  Lasts 1 min.  While the shield holds, spellcasting will not be delayed by damage."
+                            ]
+                        },
+                        {
+                            id: "deep_freeze",
+                            name: "Deep Freeze",
+                            icon: "ability_mage_deepfreeze",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "ice_barrier",
+                            description: [
+                                "Stuns the target for 5 sec.  Only usable on Frozen targets.  Deals 1037 to 1299 damage to targets that are permanently immune to stuns."
+                            ]
+                        }
                     ]
                 },
                 paladin: {
@@ -28265,12 +29162,48 @@
                 rogue: {
                     // rogue - cataclysm
                     Assassination: [
+                        {
+                            id: "vendetta",
+                            name: "Vendetta",
+                            icon: "ability_rogue_deadliness",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Marks an enemy for death, increasing all damage you deal to the target by 20% and granting you unerring vision of your target, regardless of concealments such as stealth and invisibility.  Lasts 30 sec."
+                            ]
+                        }
                     ],
                     // rogue - cataclysm
                     Combat: [
+                        {
+                            id: "killing_spree",
+                            name: "Killing Spree",
+                            icon: "ability_rogue_murderspree",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "adrenaline_rush",
+                            description: [
+                                "Step through the shadows from enemy to enemy within 10 yards, attacking an enemy every 0.5 sec with both weapons until 5 assaults are made, and increasing all damage done by 20% for the duration.  Can hit the same target multiple times.  Cannot hit invisible or stealthed targets."
+                            ]
+                        }
                     ],
                     // rogue - cataclysm
                     Subtlety: [
+                        {
+                            id: "shadow_dance",
+                            name: "Shadow Dance",
+                            icon: "ability_rogue_shadowdance",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Enter the Shadow Dance for 6 sec, allowing the use of Sap, Garrote, Ambush, Cheap Shot, Premeditation, Pick Pocket and Disarm Trap regardless of being stealthed."
+                            ]
+                        }
                     ]
                 },
                 shaman: {
@@ -28287,23 +29220,736 @@
                 warlock: {
                     // warlock - cataclysm
                     Affliction: [
+                        {
+                            id: "haunt",
+                            name: "Haunt",
+                            icon: "ability_warlock_haunt",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You send a ghostly soul into the target, dealing [((Spell power * 0.5577) * 1.25) + 992] Shadow damage and increasing all damage done by your Shadow damage-over-time effects on the target by 20% for 12 sec. When the Haunt spell ends or is dispelled, the soul returns to you, healing you for 100% of the damage it did to the target."
+                            ]
+                        }
                     ],
                     // warlock - cataclysm
                     Demonology: [
+                        {
+                            id: "metamorphosis",
+                            name: "Metamorphosis",
+                            icon: "spell_shadow_demonform",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You transform into a Demon for 30 sec.  This form increases your armor contribution from items by 600%, damage by 20%, reduces the chance you'll be critically hit by melee attacks by 6% and reduces the duration of stun and snare effects by 50%.  You gain some unique demon abilities in addition to your normal abilities."
+                            ]
+                        }
                     ],
                     // warlock - cataclysm
                     Destruction: [
+                        {
+                            id: "chaos_bolt",
+                            name: "Chaos Bolt",
+                            icon: "ability_warlock_chaosbolt",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "fire_and_brimstone",
+                            description: [
+                                "Sends a bolt of chaotic fire at the enemy, dealing 1489 Fire damage. Chaos Bolt cannot be resisted, and pierces through all absorption effects."
+                            ]
+                        }
                     ]
                 },
                 warrior: {
                     // warrior - cataclysm
                     Arms: [
+                        {
+                            id: "field_dressing",
+                            name: "Field Dressing",
+                            icon: "inv_misc_bandage_05",
+                            row: 0,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases all healing received by {value1}%, and the effectiveness of your self-healing abilities by an additional {value2}%.",
+                                {
+                                    value1: [3, 6],
+                                    value2: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "tactical_mastery",
+                            name: "Tactical Mastery",
+                            icon: "spell_nature_enchantarmor",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "You retain up to an additional {value} Rage when you change stances.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "second_wind",
+                            name: "Second Wind",
+                            icon: "ability_hunter_harass",
+                            row: 1,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Whenever you are struck by a Stun or Immobilize effect you generate {value1} Rage and {value2}% of your total health over 10 sec.",
+                                {
+                                    value1: [10, 20],
+                                    value2: [2, 5]
+                                }
+                            ]
+                        },
+                        {
+                            id: "deep_wounds",
+                            name: "Deep Wounds",
+                            icon: "ability_backstab",
+                            row: 1,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your critical strikes cause the opponent to bleed, dealing {value}% of your melee weapon's average damage over 6 sec.",
+                                {
+                                    value: [16, 32, 48]
+                                }
+                            ]
+                        },
+                        {
+                            id: "taste_for_blood",
+                            name: "Taste for Blood",
+                            icon: "ability_rogue_hungerforblood",
+                            row: 2,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your Overpower critical strike chance by {value1}%. In addition, whenever your Rend ability causes damage, you have a {value2}% chance of allowing the use of Overpower for 9 sec.  This effect will not occur more than once every 5 sec.",
+                                {
+                                    value1: [20, 40, 60],
+                                    value2: [33, 66, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "sweeping_strikes",
+                            name: "Sweeping Strikes",
+                            icon: "ability_rogue_slicedice",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your melee attacks strike an additional nearby opponent.  Lasts 10 sec."
+                            ]
+                        },
+                        {
+                            id: "impale",
+                            name: "Impale",
+                            icon: "ability_searingarrow",
+                            row: 2,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "deep_wounds",
+                            description: [
+                                "Increases the critical strike damage bonus of Mortal Strike, Slam and Overpower by {value}%.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_hamstring",
+                            name: "Improved Hamstring",
+                            icon: "ability_shockwave",
+                            row: 2,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When reapplying Hamstring, you immobilize the target for 5 sec. This effect cannot occur more than once every {value1} sec.  In addition, reduces the global cooldown of your Hamstring by {value2} sec.",
+                                {
+                                    value1: [60, 30],
+                                    value2: [0.25, 0.5]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_slam",
+                            name: "Improved Slam",
+                            icon: "ability_warrior_decisivestrike",
+                            row: 3,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Decreases the swing time of Slam by {value1} sec and increases its damage by {value2}%.",
+                                {
+                                    value1: [0.5, 1],
+                                    value2: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "deadly_calm",
+                            name: "Deadly Calm",
+                            icon: "achievement_boss_kingymiron",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "For the next 10 sec, none of your abilities cost rage, but you continue to generate rage. Cannot be used during Inner Rage."
+                            ]
+                        },
+                        {
+                            id: "juggernaut",
+                            name: "Juggernaut",
+                            icon: "ability_warrior_bullrush",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Charge ability is now usable while in combat and in all stances, and the cooldown of your Charge is reduced by 2 sec.  Following a Charge, your next Slam or Mortal Strike has an additional 25% chance to critically hit if used within 10 sec.  However, Charge and Intercept now share a cooldown."
+                            ]
+                        },
+                        {
+                            id: "sudden_death",
+                            name: "Sudden Death",
+                            icon: "ability_warrior_improveddisciplines",
+                            row: 4,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your melee hits have a {value1}% chance of resetting the cooldown on your Colossus Smash, and you keep {value2} rage after using Execute.",
+                                {
+                                    value1: [3, 6],
+                                    value2: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "wrecking_crew",
+                            name: "Wrecking Crew",
+                            icon: "ability_warrior_trauma",
+                            row: 5,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Mortal Strike critical hits have a {value}% chance to Enrage you, increasing physical damage caused by {value2}% for 12 sec.",
+                                {
+                                    value1: [50, 100],
+                                    value2: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "throwdown",
+                            name: "Throwdown",
+                            icon: "inv_mace_62",
+                            row: 5,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: "juggernaut",
+                            description: [
+                                "Knocks the target to the ground and stuns it for 5 sec."
+                            ]
+                        },
+                        {
+                            id: "bladestorm",
+                            name: "Bladestorm",
+                            icon: "ability_warrior_bladestorm",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "juggernaut",
+                            description: [
+                                "You become a whirling storm of destructive force, instantly striking all nearby targets for 150% weapon damage and continuing to perform a whirlwind attack every 1 sec for 6 sec.  While under the effects of Bladestorm, you do not feel pity or remorse or fear and you cannot be stopped unless killed or disarmed, but you cannot perform any other abilities."
+                            ]
+                        }
                     ],
                     // warrior - cataclysm
                     Fury: [
+                        {
+                            id: "blood_craze",
+                            name: "Blood Craze",
+                            icon: "spell_shadow_summonimp",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "After taking any damage, you have a 10% chance to regenerate {value}% of your total Health over 5 sec.",
+                                {
+                                    value: [1, 2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "battle_trance",
+                            name: "Battle Trance",
+                            icon: "inv_helmet_06",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your Bloodthirst, Mortal Strike and Shield Slam hits have a {value}% chance to make your next special attack that costs more than 5 Rage consume no Rage.",
+                                {
+                                    value: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "cruelty",
+                            name: "Cruelty",
+                            icon: "ability_rogue_eviscerate",
+                            row: 0,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical strike chance of Bloodthirst, Mortal Strike and Shield Slam by {value}%.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "booming_voice",
+                            name: "Booming Voice",
+                            icon: "spell_nature_purge",
+                            row: 1,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Battle Shout and Commanding Shout by {value1} sec and causes those abilities to generate {value2} additional Rage.",
+                                {
+                                    value1: [15, 30],
+                                    value2: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "piercing_howl",
+                            name: "Piercing Howl",
+                            icon: "spell_shadow_deathscream",
+                            row: 1,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Causes all enemies within 10 yards to be Dazed, reducing movement speed by 50% for 6 sec."
+                            ]
+                        },
+                        {
+                            id: "flurry",
+                            name: "Flurry",
+                            icon: "ability_ghoulfrenzy",
+                            row: 2,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your attack speed by {value}% for your next 3 swings after dealing a melee critical strike.",
+                                {
+                                    value: [8, 16, 25]
+                                }
+                            ]
+                        },
+                        {
+                            id: "death_wish",
+                            name: "Death Wish",
+                            icon: "spell_shadow_deathpact",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When activated you become Enraged, increasing your physical damage by 20% but increasing all damage taken by 20%.  Lasts 30 sec."
+                            ]
+                        },
+                        {
+                            id: "enrage",
+                            name: "Enrage",
+                            icon: "spell_shadow_unholyfrenzy",
+                            row: 2,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your melee hits have a {value1}% change to Enrage you, giving you a {value2}% physical damage bonus for 9 sec.",
+                                {
+                                    value1: [3, 6, 9],
+                                    value2: [3, 7, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "raging_blow",
+                            name: "Raging Blow",
+                            icon: "ability_hunter_swiftstrike",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "death_wish",
+                            description: [
+                                "A mighty blow that deals 100% weapon damage from both melee weapons.  Can only be used while Enraged."
+                            ]
+                        },
+                        {
+                            id: "rampage",
+                            name: "Rampage",
+                            icon: "ability_warrior_rampage",
+                            row: 3,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: "raging_blow",
+                            description: [
+                                "Increases the critical strike chance of all party and raid members within 100 yds by 5%.  In addition, improves your critical strike chance by an additional 2%."
+                            ]
+                        },
+                        {
+                            id: "heroic_fury",
+                            name: "Heroic Fury",
+                            icon: "warrior_talent_icon_deadlycalm",
+                            row: 3,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Removes any Immobilization effects and refreshes the cooldown of your Intercept ability."
+                            ]
+                        },
+                        {
+                            id: "furious_attacks",
+                            name: "Furious Attacks",
+                            icon: "ability_warrior_furiousresolve",
+                            row: 4,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your autoattacks have a chance to reduce all healing done to the target by 25% for 10 sec."
+                            ]
+                        },
+                        {
+                            id: "intensify_rage",
+                            name: "Intensify Rage",
+                            icon: "warrior_talent_icon_furyintheblood",
+                            row: 4,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Berserker Rage, Recklessness and Death Wish abilities by {value}%.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "bloodsurge",
+                            name: "Bloodsurge",
+                            icon: "ability_warrior_bloodsurge",
+                            row: 5,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: "raging_blow",
+                            description: [
+                                "Your Bloodthirst hits have a {value}% chance of making your next Slam instant, free, and deal 20% more damage for 10 sec.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "titans_grip",
+                            name: "Titan's Grip",
+                            icon: "ability_warrior_titansgrip",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Allows you to equip two-handed axes, maces and swords in one hand."
+                            ]
+                        },
+                        {
+                            id: "single_minded_fury",
+                            name: "Single-Minded Fury",
+                            icon: "warrior_talent_icon_singlemindedfury",
+                            row: 6,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When you dual-wield one-handed weapons, you deal 20% additional damage and Slam hits with both weapons."
+                            ]
+                        }
                     ],
                     // warrior - cataclysm
                     Protection: [
+                        {
+                            id: "incite",
+                            name: "Incite",
+                            icon: "ability_warrior_incite",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical strike chance of your Heroic Strike by {value1}%, and gives your Heroic Strike criticals a {value2}% chance to cause the next Heroic Strike to also be a critical strike. These guaranteed critical strikes cannot re-trigger the Incite effect.",
+                                {
+                                    value1: [5, 10, 15],
+                                    value2: [33, 66, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "toughness",
+                            name: "Toughness",
+                            icon: "spell_holy_devotion",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your armor value from items by {value}%.",
+                                {
+                                    value: [3, 6, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "blood_and_thunder",
+                            name: "Blood and Thunder",
+                            icon: "warrior_talent_icon_bloodandthunder",
+                            row: 0,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When you Thunder Clap a target affected by your Rend, you have a {value}% chance to affect every target with Rend.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shield_specialization",
+                            name: "Shield Specialization",
+                            icon: "inv_shield_06",
+                            row: 1,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "You generate {value1} extra Rage when you block an attack. You generate {value2} extra Rage when you Spell Reflect a magic attack.",
+                                {
+                                    value1: [5, 10, 15],
+                                    value2: [20, 40, 60]
+                                }
+                            ]
+                        },
+                        {
+                            id: "hold_the_line",
+                            name: "Hold the Line",
+                            icon: "achievement_bg_defendxtowers_av",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Improves your critical strike and critical block chance by 10% for {value} sec following a successful parry.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "gag_order",
+                            name: "Gag Order",
+                            icon: "inv_axe_66",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Gives your Pummel and Heroic Throw a {value1}% chance to silence the target for 3 sec.  Also lowers the cooldown on Heroic Throw by {value2} sec.",
+                                {
+                                    value1: [50, 100],
+                                    value2: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "last_stand",
+                            name: "Last Stand",
+                            icon: "spell_holy_ashestoashes",
+                            row: 2,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Temporarily grants you 30% of your maximum health for 20 sec.  After the effect expires, the health is lost."
+                            ]
+                        },
+                        {
+                            id: "concussion_blow",
+                            name: "Concussion Blow",
+                            icon: "ability_thunderbolt",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Stuns the opponent for 5 sec and deals (75 / 100 * Attack power) damage (based on attack power)."
+                            ]
+                        },
+                        {
+                            id: "warbringer",
+                            name: "Warbringer",
+                            icon: "ability_warrior_warbringer",
+                            row: 2,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Charge, Intercept and Intervene abilities are now usable while in combat and in any stance.  In addition, your Intervene ability will remove all movement impairing effects."
+                            ]
+                        },
+                        {
+                            id: "improved_revenge",
+                            name: "Improved Revenge",
+                            icon: "ability_warrior_revenge",
+                            row: 3,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases damage of your Revenge ability by {value1}% and causes Revenge to strike an additional target{value2}.",
+                                {
+                                    value1: [30, 60],
+                                    value2: [" for 50% damage", ""]
+                                }
+                            ]
+                        },
+                        {
+                            id: "devastate",
+                            name: "Devastate",
+                            icon: "inv_sword_11",
+                            row: 3,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Sunder the target's armor causing the Sunder Armor effect.  In addition, causes 150% of weapon damage plus 19 for each application of Sunder Armor on the target.  The Sunder Armor effect can stack up to 3 times."
+                            ]
+                        },
+                        {
+                            id: "impending_victory",
+                            name: "Impending Victory",
+                            icon: "ability_warrior_devastate",
+                            row: 3,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: "devastate",
+                            description: [
+                                "Using Devastate on a target with 20% or less health has a {value}% chance to allow the use of Victory Rush but that Victory Rush only heals for 5% of your health.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "vigilance",
+                            name: "Vigilance",
+                            icon: "ability_warrior_vigilance",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "concussion_blow",
+                            description: [
+                                "Focus your protective gaze on a party or raid member. Each time they are hit by an attack, your Taunt cooldown is refreshed and you gain Vengeance as if 20% of the damage was done to you.  Lasts 30 min.  This effect can only be on one target at a time."
+                            ]
+                        },
+                        {
+                            id: "heavy_repercussions",
+                            name: "Heavy Repercussions",
+                            icon: "inv_shield_01",
+                            row: 4,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "While your Shield Block is active, your Shield Slam hits for an additional {value}% damage.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "safeguard",
+                            name: "Safeguard",
+                            icon: "ability_warrior_safeguard",
+                            row: 5,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces damage taken by the target of your Intervene ability by {value}% for 6 sec.",
+                                {
+                                    value: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "sword_and_board",
+                            name: "Sword and Board",
+                            icon: "ability_warrior_swordandboard",
+                            row: 5,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: "devastate",
+                            description: [
+                                "Increases the critical strike chance of Devastate by {crit}%. In addition, when your Devastate or Revenge deal damage, they have a {other}% chance of refreshing the cooldown of your Shield Slam and reducing its cost by 100% for 5 sec.",
+                                {
+                                    crit: [5, 10, 15],
+                                    other: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shockwave",
+                            name: "Shockwave",
+                            icon: "ability_warrior_shockwave",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Sends a wave of force in front of you, causing (75 / 100 * Attack power) damage (based on attack power) and stunning all enemy targets within 10 yards in a frontal cone for 4 sec."
+                            ]
+                        }
                     ]
                 }
             },
@@ -33939,28 +35585,22 @@
 
             if (!classKey || !treeName) return;
 
-            const removedCount = currentState.talentOrder.filter(
-                (entry) => entry.tree === treeName
-            ).length;
-
-            // Remove the tree's talents
+            // Remove all talents in this tree
             currentState.talents[classKey][treeName] = {};
 
             // Remove talentOrder entries related to this tree
-            currentState.talentOrder = currentState.talentOrder
-                .filter((entry) => entry.tree !== treeName)
-                .map((entry, index) => ({
-                    ...entry,
-                    // Shift levels downward by number of removed points
-                    level: 10 + index
-                }));
+            currentState.talentOrder = currentState.talentOrder.filter(
+                (entry) => entry.tree !== treeName
+            );
 
             // Recalculate total points spent
             const trees = talentTreeData[currentState.version].classes[classKey].trees;
             currentState.pointsSpent = trees.reduce((total, tree) => {
                 const treePoints = Object.values(currentState.talents[classKey][tree] || {}).reduce((sum, val) => sum + val, 0);
                 return total + treePoints;
-            }, 0);
+            }, 0);  
+
+            recalculateTalentOrder();
 
             updatePointsDisplay();
             renderTalentTrees();
@@ -35126,9 +36766,10 @@
                 id: talent.id,
                 tree,
                 classKey,
-                icon: talent.icon,
-                level: 9 + currentState.pointsSpent
+                icon: talent.icon
             });
+
+            recalculateTalentOrder();
 
             // Update bar and count
             updatePointsDisplay();
@@ -35209,6 +36850,8 @@
             if (currentState.talents[classKey][tree][id] === 0) {
                 delete currentState.talents[classKey][tree][id];
             }
+
+            recalculateTalentOrder();
 
             // Update bar and count
             updatePointsDisplay();
@@ -35336,14 +36979,66 @@
                 item.className =
                     "flex items-center text-xs text-white gap-1 bg-gray-900 px-2 py-1 rounded border border-gray-600";
                 item.innerHTML = `
-                <img src="${iconUrl}" alt="${talent.name}" class="w-4 h-4 rounded" />
-                <span>${levelText}</span>
-            `;
+                    <img src="${iconUrl}" alt="${talent.name}" class="w-4 h-4 rounded" />
+                    <span>${levelText}</span>
+                `;
                 orderBox.appendChild(item);
             });
 
             container.appendChild(orderBox);
         }
+
+        function recalculateTalentOrder() {
+            // Assign levels based on order in talentOrder
+            currentState.talentOrder.forEach((entry, index) => {
+                entry.level = 10 + index;
+            });
+        }
+
+        // Compact and reassign levels
+        /*
+        function recalculateTalentOrder() {
+            const { class: classKey, version } = currentState;
+            if (!classKey) return;
+
+            let newOrder = [];
+            let level = 10;
+            let pointsSpentInTree = {};
+
+            for (const entry of currentState.talentOrder) {
+                const talents = getTalents(version, classKey, entry.tree);
+                const talent = talents.find(t => t.id === entry.id);
+                if (!talent) continue;
+
+                if (!pointsSpentInTree[entry.tree]) pointsSpentInTree[entry.tree] = 0;
+
+                // Minimum level this talent can be placed at, based on tier requirement
+                const requiredPoints = talent.row * 5;
+                const minLevel = 10 + requiredPoints; 
+
+                // Ensure enough points have been spent in this tree already
+                if (pointsSpentInTree[entry.tree] < requiredPoints) {
+                    // Delay until requirement is satisfied
+                    const missing = requiredPoints - pointsSpentInTree[entry.tree];
+                    level = 10 + pointsSpentInTree[entry.tree] + missing;
+                }
+
+                // Assign new level
+                entry.level = Math.max(level, minLevel);
+
+                // Record the updated entry
+                newOrder.push(entry);
+
+                // Increase spent points in this tree
+                pointsSpentInTree[entry.tree]++;
+
+                // Next level is one higher
+                level = entry.level + 1;
+            }
+
+            currentState.talentOrder = newOrder;
+        }
+        */
 
         function getBuildClassAndVersionLabel(build) {
             if (build.compressed) {
