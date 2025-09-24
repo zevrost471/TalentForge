@@ -13488,7 +13488,7 @@
                             ranks: 5,
                             requiresTalents: null,
                             description: [
-                                "Increases your armor value from items by {armor}%, and reduces the duration of movement slowing effects on you by 10%.",
+                                "Increases your armor value from items by {armor}%, and reduces the duration of movement slowing effects on you by {slow}%.",
                                 {
                                     armor: [2, 4, 6, 8, 10],
                                     slow: [10, 20, 30, 40, 50]
@@ -25068,9 +25068,9 @@
                             ranks: 5,
                             requiresTalents: null,
                             description: [
-                                "Increases your Stamina by {armor}%, and reduces the duration of movement slowing effects on you by 10%.",
+                                "Increases your Stamina by {stamina}%, and reduces the duration of movement slowing effects on you by {slow}%.",
                                 {
-                                    armor: [2, 4, 6, 8, 10],
+                                    stamina: [2, 4, 6, 8, 10],
                                     slow: [6, 12, 18, 24, 30]
                                 }
                             ]
@@ -29209,12 +29209,345 @@
                 shaman: {
                     // shaman - cataclysm
                     Elemental: [
+                        {
+                            id: "elemental_mastery",
+                            name: "Elemental Mastery",
+                            icon: "spell_nature_wispheal",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When activated, your next Lightning Bolt, Chain Lightning or Lava Burst spell becomes an instant cast spell. In addition, your Fire, Frost, and Nature damage is increased by 15% and you gain 20% spell haste for 15 sec."
+                            ]
+                        },
+                        {
+                            id: "totemic_wrath",
+                            name: "Totemic Wrath",
+                            icon: "spell_fire_totemofwrath",
+                            row: 4,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Causes your Fire totems to increase the spell power of party and raid members within 100 yards by 10%."
+                            ]
+                        },
+                        {
+                            id: "earthquake",
+                            name: "Earthquake",
+                            icon: "spell_shaman_earthquake",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You cause the earth at the target location to tremble and break, dealing (325 + Spell power * 0.11) Physical damage every 1 sec to enemies in an 8 yard radius, with a 10% chance of knocking down affected targets. Lasts 10 sec."
+                            ]
+                        }
                     ],
                     // shaman - cataclysm
                     Enhancement: [
+                        {
+                            id: "elemental_weapons",
+                            name: "Elemental Weapons",
+                            icon: "spell_fire_flametounge",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the passive bonuses granted by your Flametongue Weapon and Earthliving Weapon abilities by {value1}%, the damage of your extra attacks from Windfury Weapon by {value1}%, and the effectiveness of the ongoing benefits of your Unleash Elements ability by {value2}%.",
+                                {
+                                    value1: [20, 40],
+                                    value2: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_shields",
+                            name: "Improved Shields",
+                            icon: "spell_nature_lightningshield",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your Lightning Shield orbs by {value}%, increases the amount of mana gained from your Water Shield orbs by {value}%, and increases the amount of healing done by your Earth Shield orbs by {value}%.",
+                                {
+                                    value: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "elemental_devastation",
+                            name: "Elemental Devastation",
+                            icon: "classic_spell_fire_elementaldevastation",
+                            row: 1,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When you deal critical damage with a non-periodic spell, your chance to get a critical strike with melee attacks increases by {value}% for 10 sec.",
+                                {
+                                    value: [3, 6, 9]
+                                }
+                            ]
+                        },
+                        {
+                            id: "flurry",
+                            name: "Flurry",
+                            icon: "ability_ghoulfrenzy",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your attack speed by {value}% for your next 3 swings after dealing a critical strike.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "toughness",
+                            name: "Toughness",
+                            icon: "spell_holy_devotion",
+                            row: 2,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your Stamina by {stamina}%, and reduces the duration of movement slowing effects on you by {slow}%.",
+                                {
+                                    stamina: [3, 7, 10],
+                                    slow: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "stormstrike",
+                            name: "Stormstrike",
+                            icon: "ability_shaman_stormstrike",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Instantly strike an enemy with both weapons, dealing 225% weapon damage and granting you an additional 25% chance to critically strike that enemy with your Lightning Bolt, Chain Lightning, Lightning Shield, and Earth Shock spells for 15 sec."
+                            ]
+                        },
+                        {
+                            id: "static_shock",
+                            name: "Static Shock",
+                            icon: "spell_shaman_staticshock",
+                            row: 2,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When you use your Primal Strike, Stormstrike, or Lava Lash abilities while having Lightning Shield active, you have a {value}% chance to deal damage equal to a Lightning Shield orb without consuming a charge.",
+                                {
+                                    value: [15, 30, 45]
+                                }
+                            ]
+                        },
+                        {
+                            id: "frozen_power",
+                            name: "Frozen Power",
+                            icon: "spell_fire_bluecano",
+                            row: 3,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your Lightning Bolt, Chain Lightning, Lava Lash, and Shock spells by {damage}% on targets afflicted by your Frostbrand Attack effect, and your Frost Shock has a {root}% chance to root the target in ice for 5 sec. when used on targets at or further than 15 yards from you.",
+                                {
+                                    damage: [5, 10],
+                                    root: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "earthen_power",
+                            name: "Earthen Power",
+                            icon: "spell_nature_earthelemental_totem",
+                            row: 4,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Earthbind Totem's pulses have a {earthbind}% chance to also remove all snare effects from you and nearby friendly targets.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shamanistic_rage",
+                            name: "Shamanistic Rage",
+                            icon: "spell_nature_shamanrage",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces all damage taken by 30% and causes your skills, totems, and offensive spells to consume no mana for 15 sec.  This spell is usable while stunned."
+                            ]
+                        },
+                        {
+                            id: "unleashed_rage",
+                            name: "Unleashed Rage",
+                            icon: "spell_nature_unleashedrage",
+                            row: 4,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your expertise by {expertise}, and increases all party and raid members' melee attack power by {meleeap}% and ranged attack power by {rangedap}% while within 100 yards of the Shaman.",
+                                {
+                                    expertise: [4, 8],
+                                    meleeap: [10, 20],
+                                    rangedap: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "maelstrom_weapon",
+                            name: "Maelstrom Weapon",
+                            icon: "spell_shaman_maelstromweapon",
+                            row: 5,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When you deal damage with a melee weapon, you have a chance {value} reduce the cast time and mana cost of your next Lightning Bolt, Chain Lightning, Hex, or any healing spell by 20%. Stacks up to 5 times. Lasts 30 sec.",
+                                {
+                                    value: ["to", "(higher than rank 1) to", "(higher than rank 2) to"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "feral_spirit",
+                            name: "Feral Spirit",
+                            icon: "spell_shaman_feralspirit",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Summons two Spirit Wolves under the command of the Shaman, lasting 30 sec."
+                            ]
+                        }
                     ],
                     // shaman - cataclysm
                     Restoration: [
+                        {
+                            id: "tidal_focus",
+                            name: "Tidal Focus",
+                            icon: "spell_frost_manarecharge",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the mana cost of your healing spells by {value}%.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "totemic_focus",
+                            name: "Totemic Focus",
+                            icon: "spell_nature_moonglow",
+                            row: 1,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the mana cost of your totems by {value1}% and increases their duration by {value2}%.",
+                                {
+                                    value1: [15, 30],
+                                    value2: [20, 40]
+                                }
+                            ]
+                        },
+                        {
+                            id: "natures_guardian",
+                            name: "Nature's Guardian",
+                            icon: "spell_nature_natureguardian",
+                            row: 1,
+                            col: 3,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Whenever a damaging attack brings you below 30% health, your maximum health is increased by {value}% for 10 sec and your threat level towards the attacker is reduced.  30 second cooldown.",
+                                {
+                                    value: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "natures_swiftness",
+                            name: "Nature's Swiftness",
+                            icon: "spell_nature_ravenform",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell."
+                            ]
+                        },
+                        {
+                            id: "improved_cleanse_spirit",
+                            name: "Improved Cleanse Spirit",
+                            icon: "ability_shaman_cleansespirit",
+                            row: 3,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Empowers your Cleanse Spirit spell to also remove a magic effect from a friendly target."
+                            ]
+                        },
+                        {
+                            id: "mana_tide_totem",
+                            name: "Mana Tide Totem",
+                            icon: "spell_frost_summonwaterelemental",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Summons a Mana Tide Totem with 10% of the caster's health at the feet of the caster for 12 sec.  Party and raid members within 40 yards of the totem gain 200% of the caster's Spirit (excluding short-duration Spirit bonuses)."
+                            ]
+                        },
+                        {
+                            id: "spirit_link_totem",
+                            name: "Spirit Link Totem",
+                            icon: "spell_shaman_spiritlink",
+                            row: 4,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Summons a Spirit Link Totem with 5 health at the feet of the caster. The totem reduces damage taken by all party and raid members within 10 yards by 10%. Every 1 sec, the health of all affected players is redistributed, such that each player ends up with the same percentage of their maximum health. Lasts 6 sec."
+                            ]
+                        },
+                        {
+                            id: "riptide",
+                            name: "Riptide",
+                            icon: "spell_nature_riptide",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Heals a friendly target for 2364 and another 665 over 15 sec.  Your next Chain Heal cast on that primary target within 15 sec will consume the healing over time effect and increase the amount of the Chain Heal by 25%."
+                            ]
+                        }
                     ]
                 },
                 warlock: {
