@@ -16,6 +16,7 @@ These should be done first because other features depend on them or they fix cor
 3. Fix Responsive Layout Issue
 
     - Trees should never overflow their container at smaller screen widths.
+    - Some class buttons are not fully visible at smaller screen widths.
 
 4. Fix ```renderLevelTimeline``` not appearing when a build is loaded
 
