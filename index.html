@@ -8372,9 +8372,10 @@
                             ranks: 2,
                             requiresTalents: null,
                             description: [
-                                "Gives the Mend Pet spell a {value}% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.",
+                                "Reduces the mana cost of your Mend Pet spell by {value1}% and gives the Mend Pet spell a {value2}% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.",
                                 {
-                                    value: [15, 50]
+                                    value1: [10, 20],
+                                    value2: [25, 50]
                                 }
                             ]
                         },
@@ -18571,9 +18572,10 @@
                             ranks: 2,
                             requiresTalents: null,
                             description: [
-                                "Gives the Mend Pet spell a {value}% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.",
+                                "Reduces the mana cost of your Mend Pet spell by {value1}% and gives the Mend Pet spell a {value2}% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.",
                                 {
-                                    value: [15, 50]
+                                    value1: [10, 20],
+                                    value2: [25, 50]
                                 }
                             ]
                         },
@@ -19386,7 +19388,7 @@
                             ranks: 3,
                             requiresTalents: null,
                             description: [
-                                "Increases the damage done by your Explosive Shot,  Explosive Trap, Black Arrow and Immolation Trap by {value}%.",
+                                "Increases the damage done by your Explosive Shot, Explosive Trap, Black Arrow and Immolation Trap by {value}%.",
                                 {
                                     value: [2, 4, 6]
                                 }
@@ -28570,7 +28572,7 @@
                             ranks: 1,
                             requiresTalents: null,
                             description: [
-                                "Causes you to charge an enemy, immobilizing them for 4 sec."
+                                "Teaches Feral Charge (Bear) and Feral Charge (Cat).<br><br>Feral Charge (Bear) - Causes you to charge an enemy, immobilizing them for 4 sec. 15 second cooldown.<br><br>Feral Charge (Cat) - Causes you to leap behind an enemy, dazing them for 3 sec. 30 second cooldown."
                             ]
                         },
                         {
@@ -28625,6 +28627,112 @@
                     // druid - cataclysm
                     Restoration: [
                         {
+                            id: "perseverance",
+                            name: "Perseverance",
+                            icon: "achievement_zone_darnassus",
+                            row: 1,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces all spell damage taken by {value}%.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "master_shapeshifter",
+                            name: "Master Shapeshifter",
+                            icon: "ability_druid_mastershapeshifter",
+                            row: 1,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "natural_shapeshifter",
+                            description: [
+                                "Grants an effect which lasts while the Druid is within the respective shapeshift form.<br><br>Bear Form - Increases physical damage by 4%.<br><br>Cat Form - Increases critical strike chance by 4%.<br><br>Moonkin Form - Increases spell damage by 4%.<br><br>Tree of Life/Caster Form - Increases healing by 4%."
+                            ]
+                        },
+                        {
+                            id: "improved_rejuvenation",
+                            name: "Improved Rejuvenation",
+                            icon: "spell_nature_rejuvenation",
+                            row: 1,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the effect of your Rejuvenation and Swiftmend spells by {value}%.",
+                                {
+                                    value: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "natures_swiftness",
+                            name: "Nature's Swiftness",
+                            icon: "spell_nature_ravenform",
+                            row: 2,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell.  If that spell is a healing spell, the amount healed will be increased by 50%."
+                            ]
+                        },
+                        {
+                            id: "fury_of_stormrage",
+                            name: "Fury of Stormrage",
+                            icon: "inv_staff_90",
+                            row: 2,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the mana cost of your Wrath spell by {value1}%, and when you deal damage with your Wrath spell you have a {value2}% chance to cause your next Starfire to be instant cast within 8 sec.",
+                                {
+                                    value1: [50, 100],
+                                    value2: [6, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "wild_growth",
+                            name: "Wild Growth",
+                            icon: "ability_druid_flourish",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Heals up to 5 friendly party or raid members within 30 yards of the target for 2977 over 7 sec.  Prioritizes healing most injured party members.  The amount healed is applied quickly at first, and slows down as the Wild Growth reaches its full duration."
+                            ]
+                        },
+                        {
+                            id: "natures_cure",
+                            name: "Nature's Cure",
+                            icon: "ability_shaman_cleansespirit",
+                            row: 4,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Empowers your Remove Corruption spell to also remove a magic effect from a friendly target."
+                            ]
+                        },
+                        {
+                            id: "swift_rejuvenation",
+                            name: "Swift Rejuvenation",
+                            icon: "ability_druid_empoweredrejuvination",
+                            row: 5,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the global cooldown of your Rejuvenation by 0.5 sec."
+                            ]
+                        },
+                        {
                             id: "tree_of_life",
                             name: "Tree of Life",
                             icon: "ability_druid_treeoflife",
@@ -28657,6 +28765,53 @@
                             ]
                         },
                         {
+                            id: "one_with_nature",
+                            name: "One with Nature",
+                            icon: "ability_hunter_onewithnature",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the attack power bonus of your Aspect of the Hawk by {value1}%, and increases the amount of Focus restored by your Aspect of the Fox by {value2}.",
+                                {
+                                    value1: [10, 20, 30],
+                                    value2: [1, 2, 3]
+                                },
+                            ]
+                        },
+                        {
+                            id: "bestial_discipline",
+                            name: "Bestial Discipline",
+                            icon: "ability_hunter_bestialdiscipline",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the Focus regeneration of your pets by {value}%.",
+                                {
+                                    value: [10, 20, 30]
+                                },
+                            ]
+                        },
+                        {
+                            id: "pathfinding",
+                            name: "Pathfinding",
+                            icon: "ability_hunter_pathfinding2",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the speed bonus of your Aspect of the Cheetah and Aspect of the Pack by {value1}%, and increases your speed while mounted by {value2}%. The mounted movement speed increase does not stack with other effects.",
+                                {
+                                    value1: [4, 8],
+                                    value2: [5, 10]
+                                },
+                            ]
+                        },
+                        {
                             id: "spirit_bond",
                             name: "Spirit Bond",
                             icon: "ability_druid_demoralizingroar",
@@ -28684,6 +28839,36 @@
                                 "Your pet gains {value}% attack speed after attacking with a Basic Attack, lasting for 10 sec and stacking up to 5 times.",
                                 {
                                     value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_mend_pet",
+                            name: "Improved Mend Pet",
+                            icon: "ability_hunter_mendpet",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Gives the Mend Pet ability a {value}% chance of cleansing 1 Curse, Disease, Magic or Poison effect from the pet each tick.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "cobra_strikes",
+                            name: "Cobra Strikes",
+                            icon: "ability_hunter_cobrastrikes",
+                            row: 2,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "You have a {value}% chance when you hit with Arcane Shot to cause your pet's next 2 Basic Attacks to critically hit.",
+                                {
+                                    value: [5, 10, 15]
                                 }
                             ]
                         },
@@ -28727,6 +28912,38 @@
                             ]
                         },
                         {
+                            id: "killing_streak",
+                            name: "Killing Streak",
+                            icon: "achievement_bg_kill_carrier_opposing_flagroom",
+                            row: 3,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When you score two Kill Command critical hits in a row, your third will deal {value1}% more damage and have its cost reduced by {value2} Focus.",
+                                {
+                                    value1: [10, 20],
+                                    value2: [5, 10]
+                                },
+                            ]
+                        },
+                        {
+                            id: "crouching_tiger_hidden_chimera",
+                            name: "Crouching Tiger, Hidden Chimera",
+                            icon: "ability_hunter_pet_chimera",
+                            row: 4,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Whenever you are hit by a melee attack, the cooldown of your Disengage is instantly reduced by {value1} sec.<br><br>Whenever you are hit by a ranged attack or spell, the cooldown of your Deterrence is instantly reduced by {value2} sec.<br><br>These effects have a 2 sec cooldown.",
+                                {
+                                    value1: [2, 4],
+                                    value2: [4, 8]
+                                },
+                            ]
+                        },
+                        {
                             id: "bestial_wrath",
                             name: "Bestial Wrath",
                             icon: "ability_druid_ferociousbite",
@@ -28748,6 +28965,21 @@
                             requiresTalents: null,
                             description: [
                                 "All party and raid members have all damage increased by 3% within 100 yards of your pet."
+                            ]
+                        },
+                        {
+                            id: "kindred_spirits",
+                            name: "Kindred Spirits",
+                            icon: "ability_hunter_separationanxiety",
+                            row: 5,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases you and your pet's maximum Focus by {value}.",
+                                {
+                                    value: [5, 10]
+                                }
                             ]
                         },
                         {
@@ -28808,6 +29040,82 @@
                             ]
                         },
                         {
+                            id: "efficiency",
+                            name: "Efficiency",
+                            icon: "ability_hunter_focusedaim",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the Focus cost of your Arcane Shot by {value1}, and your Explosive Shot and Chimera Shot by {value2}.",
+                                {
+                                    value1: [1, 2, 3],
+                                    value2: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "rapid_killing",
+                            name: "Rapid Killing",
+                            icon: "ability_hunter_rapidkilling",
+                            row: 0,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "After killing an opponent that yields experience or honor, your next Aimed Shot, Steady Shot or Cobra Shot causes {value}% additional damage.  Lasts 20 sec.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "sic_em",
+                            name: "Sic 'Em!",
+                            icon: "ability_hunter_sickem",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: "go_for_the_throat",
+                            description: [
+                                "When you critically hit with your Arcane Shot, Aimed Shot or Explosive Shot the Focus cost of your pet's next Basic Attack is reduced by {value}% for 12 sec.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_steady_shot",
+                            name: "Improved Steady Shot",
+                            icon: "ability_hunter_improvedsteadyshot",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When you Steady Shot twice in a row, your ranged attack speed will be increased by {value}% for 8 sec.",
+                                {
+                                    value: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "careful_aim",
+                            name: "Careful Aim",
+                            icon: "ability_hunter_zenarchery",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical strike chance of your Steady Shot, Cobra Shot and Aimed Shot by {value}% on targets who are above 90% health.",
+                                {
+                                    value: [30, 60]
+                                }
+                            ]
+                        },
+                        {
                             id: "silencing_shot",
                             name: "Silencing Shot",
                             icon: "ability_theblackarrow",
@@ -28850,6 +29158,21 @@
                             ]
                         },
                         {
+                            id: "bombardment",
+                            name: "Bombardment",
+                            icon: "ability_marksmanship",
+                            row: 3,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When you critically hit with Multi-Shot, the focus cost of Multi-Shot is reduced by {value}% for 5 sec.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
                             id: "trueshot_aura",
                             name: "Trueshot Aura",
                             icon: "ability_trueshot",
@@ -28862,6 +29185,67 @@
                             ]
                         },
                         {
+                            id: "termination",
+                            name: "Termination",
+                            icon: "ability_warrior_focusedrage",
+                            row: 3,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Steady Shot and Cobra Shot abilities grant an additional {value} Focus when dealt on targets at or below 25% health.",
+                                {
+                                    value: [3, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "resistance_is_futile",
+                            name: "Resistance is Futile",
+                            icon: "ability_hunter_resistanceisfutile",
+                            row: 3,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When your marked target attempts to run, flee or move, you have a {value}% chance to cause your next Kill Command on the marked target within 8 sec to refund the Focus cost.",
+                                {
+                                    value: [4, 8]
+                                }
+                            ]
+                        },
+                        {
+                            id: "rapid_recuperation",
+                            name: "Rapid Recuperation",
+                            icon: "ability_hunter_rapidregeneration",
+                            row: 4,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "You gain {value1} Focus every 3 sec while under the effect of Rapid Fire, and you gain {value2} Focus instantly when you gain Rapid Killing.",
+                                {
+                                    value1: [6, 12],
+                                    value2: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "master_marksman",
+                            name: "Master Marksman",
+                            icon: "ability_hunter_mastermarksman",
+                            row: 4,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "You have a {value}% chance when you Steady Shot to gain the Master Marksman effect, lasting 30 sec. After reaching 5 stacks, your next Aimed Shot's cast time and focus cost are reduced by 100% for 10 sec.",
+                                {
+                                    value: [20, 40, 60]
+                                }
+                            ]
+                        },
+                        {
                             id: "readiness",
                             name: "Readiness",
                             icon: "ability_hunter_readiness",
@@ -28871,6 +29255,37 @@
                             requiresTalents: null,
                             description: [
                                 "When activated, this ability immediately finishes the cooldown on all Hunter abilities."
+                            ]
+                        },
+                        {
+                            id: "posthaste",
+                            name: "Posthaste",
+                            icon: "ability_hunter_posthaste",
+                            row: 5,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Rapid Fire by {value1} min, and your movement speed is increased by {value2}% for 4 sec after you use Disengage.",
+                                {
+                                    value1: [1, 2],
+                                    value2: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "marked_for_death",
+                            name: "Marked for Death",
+                            icon: "ability_hunter_assassinate",
+                            row: 5,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "master_marksman",
+                            description: [
+                                "Your Arcane Shot and Chimera Shot have a {value}% chance to automatically apply the Marked for Death effect.<br><br>Marked for Death is the same as Hunter's Mark, but is undispellable, does not grant unerring sight of the target, and lasts for 15 sec.",
+                                {
+                                    value: [50, 100]
+                                }
                             ]
                         },
                         {
@@ -28915,6 +29330,22 @@
                                 "Increases ranged haste by {value}%.",
                                 {
                                     value: [1, 2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_serpent_sting",
+                            name: "Improved Serpent Sting",
+                            icon: "ability_hunter_quickshot",
+                            row: 0,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Serpent Sting also does instant damage equal to {value1}% of its total periodic effect.<br><br>Also increases the periodic critical strike chance of your Serpent Sting by {value2}%.",
+                                {
+                                    value1: [15, 30],
+                                    value2: [5, 10]
                                 }
                             ]
                         },
@@ -29007,6 +29438,21 @@
                             ]
                         },
                         {
+                            id: "lock_and_load",
+                            name: "Lock and Load",
+                            icon: "ability_hunter_lockandload",
+                            row: 2,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "You have a {value}% chance when you trap a target with Freezing Trap or Ice Trap to cause your next two Explosive Shots to cost no Focus and trigger no cooldown. Effect lasts for 12 sec.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
                             id: "resourcefulness",
                             name: "Resourcefulness",
                             icon: "ability_hunter_resourcefulness",
@@ -29033,6 +29479,21 @@
                                 "When attacked by a spell while in Deterrence, you have a {value}% chance to reflect it back at the attacker.",
                                 {
                                     value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "tnt",
+                            name: "T.N.T.",
+                            icon: "inv_misc_bomb_05",
+                            row: 3,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "lock_and_load",
+                            description: [
+                                "When you deal periodic damage with your Immolation Trap, Explosive Trap or Black Arrow you have a {value}% chance to trigger Lock and Load.",
+                                {
+                                    value: [10, 20]
                                 }
                             ]
                         },
@@ -29089,6 +29550,37 @@
                             requiresTalents: null,
                             description: [
                                 "Increases your total Agility by an additional 2%, and increases the ranged and melee attack speed of all party and raid members by 10%."
+                            ]
+                        },
+                        {
+                            id: "sniper_training",
+                            name: "Sniper Training",
+                            icon: "ability_hunter_longshots",
+                            row: 5,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical strike chance of your Kill Shot ability by {value1}%, and after remaining stationary for 6 sec, your Steady Shot and Cobra Shot deal {value2}% more damage for 15 sec.",
+                                {
+                                    value1: [5, 10, 15],
+                                    value2: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "serpent_spread",
+                            name: "Serpent Spread",
+                            icon: "ability_hunter_serpentswiftness",
+                            row: 5,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Targets hit by your Multi-Shot are also afflicted by your Serpent Sting equal to {value} sec of its total duration.",
+                                {
+                                    value: [6, 9]
+                                }
                             ]
                         },
                         {
@@ -36298,10 +36790,10 @@
                             const reachedMax = unlocked && maxPointsReached && points === 0;
 
                             if (reachedMax) {
-                                borderClass = "border-gray-600 grayscale-[100%] brightness-[100%] cursor-not-allowed";
+                                borderClass = "border-gray-600 grayscale-[100%] brightness-[100%]";
                                 rankTextColor = "text-gray-400";
                             } else if ((!unlocked && !isMaxed)) {
-                                borderClass = "border-gray-600 grayscale-[100%] brightness-[100%] cursor-not-allowed";
+                                borderClass = "border-gray-600 grayscale-[100%] brightness-[100%]";
                                 rankTextColor = "text-gray-400";
                             } else if (!isMaxed) {
                                 borderClass = "border-green-500 cursor-pointer";
