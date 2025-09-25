@@ -28459,12 +28459,183 @@
                 druid: {
                     // druid - cataclysm
                     Balance: [
+                        {
+                            id: "moonglow",
+                            name: "Moonglow",
+                            icon: "spell_nature_sentinal",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the mana cost of your damage and healing spells by {value}%",
+                                {
+                                    value: [3, 6, 9]
+                                }
+                            ]
+                        },
+                        {
+                            id: "moonkin_form",
+                            name: "Moonkin Form",
+                            icon: "spell_nature_forceofnature",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Shapeshift into Moonkin Form, increasing Arcane and Nature spell damage by 10%, reducing all damage taken by 15%, and increases spell haste of all party and raid members by 5%. The Moonkin can not cast healing or resurrection spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of movement impairing effects."
+                            ]
+                        },
+                        {
+                            id: "typhoon",
+                            name: "Typhoon",
+                            icon: "ability_druid_typhoon",
+                            row: 2,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You summon a violent Typhoon that does 400 Nature damage to targets in front of the caster within 30 yards, knocking them back and dazing them for 6 sec."
+                            ]
+                        },
+                        {
+                            id: "solar_beam",
+                            name: "Solar Beam",
+                            icon: "ability_vehicle_sonicshockwave",
+                            row: 3,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You summon a beam of solar light over an enemy target's location, interrupting the target and silencing all enemies under the beam while it is active. Solar Beam lasts for 10 sec."
+                            ]
+                        },
+                        {
+                            id: "force_of_nature",
+                            name: "Force of Nature",
+                            icon: "ability_druid_forceofnature",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Summons 3 treants to attack enemy targets for 30 sec."
+                            ]
+                        },
+                        {
+                            id: "sunfire",
+                            name: "Sunfire",
+                            icon: "ability_mage_firestarter",
+                            row: 4,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "While in Solar Eclipse, your Moonfire spell will morph into Sunfire."
+                            ]
+                        },
+                        {
+                            id: "earth_and_moon",
+                            name: "Earth and Moon",
+                            icon: "ability_druid_earthandsky",
+                            row: 4,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Wrath, Starfire and Wild Mushroom: Detonate spells apply the Earth and Moon effect, which increases spell damage taken by 8% for 15 sec.  Also increases your spell damage by 2%."
+                            ]
+                        },
+                        {
+                            id: "starfall",
+                            name: "Starfall",
+                            icon: "ability_druid_starfall",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You summon a flurry of stars from the sky on all targets within 40 yards of the caster that you're in combat with, each dealing 399 Arcane damage. Maximum 20 stars. Lasts 10 sec.<br><br>Shapeshifting into an animal form or mounting cancels the effect. Any effect which causes you to lose control of your character will suppress the starfall effect."
+                            ]
+                        }
                     ],
                     // druid - cataclysm
                     "Feral Combat": [
+                        {
+                            id: "feral_charge",
+                            name: "Feral Charge",
+                            icon: "ability_hunter_pet_bear",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Causes you to charge an enemy, immobilizing them for 4 sec."
+                            ]
+                        },
+                        {
+                            id: "leader_of_the_pack",
+                            name: "Leader of the Pack",
+                            icon: "spell_nature_unyeildingstamina",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "While in Cat Form or Bear Form, the Leader of the Pack increases critical strike chance of all party and raid members within 100 yards by 5%.  In addition, your melee critical strikes in Cat Form and Bear Form cause you to heal for 4% of your total health and gain 4% of your maximum mana.  This effect cannot occur more than once every 6 sec."
+                            ]
+                        },
+                        {
+                            id: "survival_instincts",
+                            name: "Survival Instincts",
+                            icon: "ability_druid_tigersroar",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces all damage taken by 50% for 12 sec.  Only usable while in Bear Form or Cat Form."
+                            ]
+                        },
+                        {
+                            id: "pulverize",
+                            name: "Pulverize",
+                            icon: "ability_smash",
+                            row: 5,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: "rend_and_tear",
+                            description: [
+                                "Deals 60% weapon damage plus additional 471.6 damage for each of your Lacerate applications on the target, and increases your melee critical strike chance by 3% for each Lacerate application consumed for 10 sec."
+                            ]
+                        },
+                        {
+                            id: "berserk",
+                            name: "Berserk",
+                            icon: "ability_druid_berserk",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Lacerate periodic damage has a 50% chance to refresh the cooldown of your Mangle (Bear) ability and make it cost no rage.<br><br>In addition, when activated this ability causes your Mangle (Bear) ability to hit up to 3 targets and have no cooldown, and reduces the energy cost of all your Cat Form abilities by 50%.  Lasts 15 sec.  You cannot use Tiger's Fury while Berserk is active."
+                            ]
+                        }
                     ],
                     // druid - cataclysm
-                    Restpration: [
+                    Restoration: [
+                        {
+                            id: "tree_of_life",
+                            name: "Tree of Life",
+                            icon: "ability_druid_treeoflife",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "wild_growth",
+                            description: [
+                                "Shapeshift into the tree of life, increasing healing done by 15% and increasing your armor by 15%. Also protects the caster from Polymorph effects. In addition, some of your spells are temporarily enhanced while shapeshifted. Lasts 25 sec.<br><br>Enhanced spells: Lifebloom, Wild Growth, Regrowth, Entangling Roots, Wrath"
+                            ]
+                        }
                     ]
                 },
                 hunter: {
@@ -29140,23 +29311,538 @@
                 paladin: {
                     // paladin - cataclysm
                     Holy: [
+                        {
+                            id: "arbiter_of_the_light",
+                            name: "Arbiter of the Light",
+                            icon: "spell_holy_healingaura",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical effect chance of your Judgement and Templar's Verdict by {value}%.",
+                                {
+                                    value: [6, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "clarity_of_purpose",
+                            name: "Clarity of Purpose",
+                            icon: "spell_paladin_clarityofpurpose",
+                            row: 1,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by {value} sec.",
+                                {
+                                    value: [0.15, 0.3, 0.5]
+                                }
+                            ]
+                        },
+                        {
+                            id: "blazing_light",
+                            name: "Blazing Light",
+                            icon: "spell_holy_holybolt",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage of your Holy Shock and Exorcism by {value}%.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "divine_favor",
+                            name: "Divine Favor",
+                            icon: "spell_holy_divineillumination",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your spell casting haste by 20% and spell critical chance by 20% for 20 sec."
+                            ]
+                        },
+                        {
+                            id: "beacon_of_light",
+                            name: "Beacon of Light",
+                            icon: "ability_paladin_beaconoflight",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "The target becomes a Beacon of Light to all targets within a 60 yard radius.  Your Word of Glory, Holy Shock, Flash of Light, Divine Light and Light of Dawn will also heal the Beacon for 50% of the amount healed.  Holy Light will heal for 100% of the amount.  Only one target can be the Beacon of Light at a time. Lasts 5 min."
+                            ]
+                        },
+                        {
+                            id: "sacred_cleansing",
+                            name: "Sacred Cleansing",
+                            icon: "ability_paladin_sacredcleansing",
+                            row: 3,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Cleanse spell now also dispels 1 Magic effect."
+                            ]
+                        },
+                        {
+                            id: "aura_mastery",
+                            name: "Aura Mastery",
+                            icon: "spell_holy_auramastery",
+                            row: 4,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Causes your Concentration Aura to make all affected targets immune to Silence and Interrupt effects and improve the effect of Devotion Aura, Resistance Aura, and Retribution Aura by 100%.  Lasts 6 sec."
+                            ]
+                        },
+                        {
+                            id: "light_of_dawn",
+                            name: "Light of Dawn",
+                            icon: "spell_paladin_lightofdawn",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Consumes all Holy Power to send a wave of healing energy before you, healing up to 4 of the most injured targets in your party or raid within a 30 yard frontal cone for 640 per charge of Holy Power."
+                            ]
+                        }
                     ],
                     // paladin - cataclysm
                     Protection: [
+                        {
+                            id: "divinity",
+                            name: "Divinity",
+                            icon: "spell_holy_blindingheal",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases all healing done by you and all healing effects on you by {value}%.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "seals_of_the_pure",
+                            name: "Seals of the Pure",
+                            icon: "inv_mace_46",
+                            row: 0,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your Seal of Righteousness, Seal of Truth, and Seal of Justice by {value}%.",
+                                {
+                                    value: [6, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "eternal_glory",
+                            name: "Eternal Glory",
+                            icon: "inv_torch_thrown",
+                            row: 0,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Word of Glory has a {value}% chance not to consume Holy Power.",
+                                {
+                                    value: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "judgements_of_the_just",
+                            name: "Judgements of the Just",
+                            icon: "ability_paladin_judgementsofthejust",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Judgement reduces the melee and ranged attack speed of the target by {value1}% for 20 sec.  In addition, increases the duration of your Seal of Justice effect by {value2} sec.",
+                                {
+                                    value1: [10, 20],
+                                    value2: [0.5, 1]
+                                }
+                            ]
+                        },
+                        {
+                            id: "toughness",
+                            name: "Toughness",
+                            icon: "spell_holy_devotion",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your armor value from items by {value}%.",
+                                {
+                                    value: [3, 6, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_hammer_of_justice",
+                            name: "Improved Hammer of Justice",
+                            icon: "spell_holy_sealofmight",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Decreases the cooldown of your Hammer of Justice spell by {value} sec.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "hallowed_ground",
+                            name: "Hallowed Ground",
+                            icon: "spell_holy_innerfire",
+                            row: 2,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage of your Consecration by {value1}% and decreases its mana cost by {value2}%.",
+                                {
+                                    value1: [20, 40],
+                                    value2: [40, 80]
+                                }
+                            ]
+                        },
+                        {
+                            id: "sanctuary",
+                            name: "Sanctuary",
+                            icon: "spell_nature_lightningshield",
+                            row: 2,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the chance you'll be critically hit by melee attacks by {value1}% and reduces all damage taken by {value2}%. In addition when you block or dodge a melee attack you gain {value3}% of maximum mana.",
+                                {
+                                    value1: [2, 4, 6],
+                                    value2: [3, 7, 10],
+                                    value3: [1, 2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "hammer_of_the_righteous",
+                            name: "Hammer of the Righteous",
+                            icon: "ability_paladin_hammeroftherighteous",
+                            row: 2,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Hammer the current target for 30% weapon damage, causing a wave of light that hits all targets within 8 yards for 729 Holy damage. Grants a charge of Holy Power."
+                            ]
+                        },
+                        {
+                            id: "wrath_of_the_lightbringer",
+                            name: "Wrath of the Lightbringer",
+                            icon: "inv_mace_82",
+                            row: 2,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage of your Crusader Strike and Judgement abilities by {value1}%, and increases the critical strike chance of your Holy Wrath and Hammer of Wrath spells by {value2}%.",
+                                {
+                                    value1: [50, 100],
+                                    value2: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "reckoning",
+                            name: "Reckoning",
+                            icon: "spell_holy_blessingofstrength",
+                            row: 3,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "You have a {value}% chance after blocking an attack for your next 4 weapon swings within 8 sec to generate an additional attack.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shield_of_the_righteous",
+                            name: "Shield of the Righteous",
+                            icon: "ability_paladin_shieldofvengeance",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "sanctuary",
+                            description: [
+                                "Slam the target with your shield, causing Holy damage.  Consumes all charges of Holy Power to determine damage dealt:<br><br>1 Holy Power: 609 damage<br>2 Holy Power: 1827 damage<br>3 Holy Power: 3654 damage"
+                            ]
+                        },
+                        {
+                            id: "grand_crusader",
+                            name: "Grand Crusader",
+                            icon: "inv_helmet_74",
+                            row: 3,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "hammer_of_the_righteous",
+                            description: [
+                                "When your Crusader Strike or Hammer of the Righteous deal damage to your primary target, they have a {value}% chance of refreshing the cooldown on your next Avenger's Shield  and causing it to generate a charge of Holy Power if used within 6 sec.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "vindication",
+                            name: "Vindication",
+                            icon: "spell_holy_vindication",
+                            row: 4,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Crusader Strike and Hammer of the Righteous reduce physical damage done by their primary targets by 10% for 30 sec."
+                            ]
+                        },
+                        {
+                            id: "holy_shield",
+                            name: "Holy Shield",
+                            icon: "classic_spell_holy_blessingofprotection",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "shield_of_the_righteous",
+                            description: [
+                                "Increases the amount your shield blocks by an additional 20% for 10 sec."
+                            ]
+                        },
+                        {
+                            id: "guarded_by_the_light",
+                            name: "Guarded by the Light",
+                            icon: "ability_paladin_gaurdedbythelight",
+                            row: 4,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your Word of Glory by {value1}% when used to heal yourself.{value2}",
+                                {
+                                    value1: [5, 10],
+                                    value2: ["", "  In addition, any overhealing will create a protective shield equal to the amount of overhealing that lasts for 6 sec."]
+                                }
+                            ]
+                        },
+                        {
+                            id: "divine_guardian",
+                            name: "Divine Guardian",
+                            icon: "spell_holy_powerwordbarrier",
+                            row: 4,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "All party or raid members within 30 yards, excluding the Paladin, take 20% reduced damage for 6 sec."
+                            ]
+                        },
+                        {
+                            id: "sacred_duty",
+                            name: "Sacred Duty",
+                            icon: "inv_hammer_02",
+                            row: 5,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: "holy_shield",
+                            description: [
+                                "Your Judgement and Avenger's Shield have a {value}% chance of making your next Shield of the Righteous a critical strike.  Lasts 10 sec.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shield_of_the_templar",
+                            name: "Shield of the Templar",
+                            icon: "ability_paladin_shieldofthetemplar",
+                            row: 5,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of Avenging Wrath by {value1} sec and Guardian of Ancient Kings by {value2} sec.  In addition, your Divine Plea will generate {value3} Holy Power.",
+                                {
+                                    value1: [20, 40, 60],
+                                    value2: [40, 80, 120],
+                                    value3: [1, 2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "ardent_defender",
+                            name: "Ardent Defender",
+                            icon: "spell_holy_ardentdefender",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Reduce damage taken by 20% for 10 sec. While Ardent Defender is active, the next attack that would otherwise kill you will instead cause you to be healed for 15% of your maximum health."
+                            ]
+                        }
                     ],
                     // paladin - cataclysm
                     Retribution: [
+                        {
+                            id: "communion",
+                            name: "Communion",
+                            icon: "ability_paladin_judgementofthewise",
+                            row: 2,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your auras increase your party and raid's damage dealt by 3%, and your own damage is increased by an additional 2% at all times.  In addition, your Judgement causes Replenishment.<br><br>Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec."
+                            ]
+                        },
+                        {
+                            id: "divine_storm",
+                            name: "Divine Storm",
+                            icon: "ability_paladin_divinestorm",
+                            row: 2,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "An instant attack that causes 100% weapon damage to all enemies within 8 yards.  The Divine Storm heals up to 3 party or raid members totaling 25% of the damage caused, and will grant a charge of Holy Power if it hits 4 or more targets."
+                            ]
+                        },
+                        {
+                            id: "sacred_shield",
+                            name: "Sacred Shield",
+                            icon: "ability_paladin_blessedmending",
+                            row: 3,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "When reduced below 30% health, you gain the Sacred Shield effect. The Sacred Shield absorbs [(1) + (Attack power * 2.8)] damage and increases healing received by 20%.  Lasts 15 sec.  This effect cannot occur more than once every 60 sec."
+                            ]
+                        },
+                        {
+                            id: "sanctity_of_battle",
+                            name: "Sanctity of Battle",
+                            icon: "inv_sword_136",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Haste effects lower the cooldown of your Crusader Strike and Divine Storm abilities."
+                            ]
+                        },
+                        {
+                            id: "seals_of_command",
+                            name: "Seals of Command",
+                            icon: "ability_warrior_innerrage",
+                            row: 3,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Seal of Righteousness, Seal of Truth, and Seal of Justice now also deal 7% weapon damage when triggered. In addition, your Seal of Righteousness now hits all enemy targets within melee range."
+                            ]
+                        },
+                        {
+                            id: "repentance",
+                            name: "Repentance",
+                            icon: "spell_holy_prayerofhealing",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Puts the enemy target in a state of meditation, incapacitating them for up to 1 min.  Any damage from sources other than Censure will awaken the target.  Usable against Demons, Dragonkin, Giants, Humanoids and Undead."
+                            ]
+                        },
+                        {
+                            id: "zealotry",
+                            name: "Zealotry",
+                            icon: "spell_holy_proclaimchampion_02",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Your Crusader Strike generates 3 charges of Holy Power per strike for the next 20 sec.  Requires 3 Holy Power to use, but does not consume Holy Power."
+                            ]
+                        }
                     ]
                 },
                 priest: {
                     // priest - cataclysm
                     Discipline: [
+                        {
+                            id: "power_word_barrier",
+                            name: "Power Word: Barrier",
+                            icon: "spell_holy_powerwordbarrier",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "divine_aegis",
+                            description: [
+                                "Summons a holy barrier on the target location that reduces all damage done to friendly targets by 25%. While within the barrier, spellcasting will not be interrupted by damage. The barrier lasts for 10 sec."
+                            ]
+                        }
                     ],
                     // priest - cataclysm
                     Holy: [
+                        {
+                            id: "guardian_spirit",
+                            name: "Guardian Spirit",
+                            icon: "spell_holy_guardianspirit",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Calls upon a guardian spirit to watch over the friendly target. The spirit increases the healing received by the target by 60%, and also prevents the target from dying by sacrificing itself.  This sacrifice terminates the effect but heals the target of 50% of their maximum health. Lasts 10 sec."
+                            ]
+                        }
                     ],
                     // priest - cataclysm
                     Shadow: [
+                        {
+                            id: "dispersion",
+                            name: "Dispersion",
+                            icon: "spell_shadow_dispersion",
+                            row: 6,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You disperse into pure Shadow energy, reducing all damage taken by 90%.  You are unable to attack or cast spells, but you regenerate 6% mana every 1 sec for 6 sec.<br><br>Dispersion can be cast while stunned, feared or silenced. Clears all snare and movement impairing effects when cast, and makes you immune to them while dispersed."
+                            ]
+                        }
                     ]
                 },
                 rogue: {
@@ -30297,7 +30983,11 @@
         // ==============================
 
         const talentsAttributedByVersion = {
+            1.1: cloneDeep(baseTalents.vanilla),
+            1.2: cloneDeep(baseTalents.vanilla),
+            1.3: cloneDeep(baseTalents.vanilla),
             1.4: cloneDeep(baseTalents.vanilla),
+            1.5: cloneDeep(baseTalents.vanilla),
             1.6: cloneDeep(baseTalents.vanilla),
             1.7: cloneDeep(baseTalents.vanilla),
             1.8: cloneDeep(baseTalents.vanilla),
