@@ -519,6 +519,7 @@
                         <p class="text-gray-400">Use the dropdown to choose a game version</p>
                     </div>
                     <div id="talent-trees"></div>
+                    <div id="cata-spec-selection-panel" class="hidden"></div>
                     <!-- Druid Talent Icons Preview -->
                     <!--
           <div class="grid grid-cols-4 gap-4 mt-8 hidden" id="druid-talents-preview">
@@ -616,6 +617,7 @@
         const talentContainer = document.getElementById("talent-container");
         const talentTrees = document.getElementById("talent-trees");
         const talentPlaceholder = document.getElementById("talent-placeholder");
+        const cataSpecSelectionPanel = document.getElementById("cata-spec-selection-panel");
         const buildNameInput = document.getElementById("build-name");
         const saveBuildBtn = document.getElementById("save-build");
         const importBuildBtn = document.getElementById("import-build");
@@ -910,7 +912,9 @@
             talentTreeData[version] = JSON.parse(JSON.stringify(baseTreeData));
 
             // Assign expansion-specific maxPoints
-            if (version.startsWith("3.")) {
+            if (version.startsWith("4.")) {
+                talentTreeData[version].maxPoints = 41; // Cataclysm
+            } else if (version.startsWith("3.")) {
                 talentTreeData[version].maxPoints = 71; // Wrath of the Lich King
             } else if (version.startsWith("2.") || version.endsWith("e")) {
                 talentTreeData[version].maxPoints = 61; // The Burning Crusade
@@ -36069,6 +36073,1141 @@
 
         // const talents = talentsAttributedByVersion[currentState.version]?.[currentState.class]?.[treeName] || [];
 
+        const cataSpecCards = {
+            cataclysm: {
+                deathknight: {
+                    Blood: {
+                        specIcon: "spell_deathknight_bloodpresence",
+                        primary: 
+                        [
+                            {
+                                name: "Heart Strike",
+                                icon: "inv_weapon_shortblade_40",
+                                description: [
+                                    "Instantly strike the target and up to two additional nearby enemies, causing 175% weapon damage plus 819 on the primary target, with each additional enemy struck taking 25% less damage than the previous target.  Damage dealt to each target is increased by an additional 15% for each of your diseases present."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Veteran of the Third War",
+                                icon: "spell_misc_warsongfocus",
+                                description: [
+                                    "Increases your total Stamina by 9%, your expertise by 6, and reduces the cooldown of Outbreak by 30 sec."
+                                ]
+                            },
+                            {
+                                name: "Blood Rites",
+                                icon: "spell_deathknight_bloodtap",
+                                description: [
+                                    "Whenever you hit with Death Strike or Obliterate, the Frost and Unholy Runes will become Death Runes when they activate.  Death Runes count as a Blood, Frost or Unholy Rune."
+                                ]
+                            },
+                            {
+                                name: "Vengeance",
+                                icon: "ability_paladin_shieldofvengeance",
+                                description: [
+                                    "Each time you take damage, you gain 5% of the damage taken as attack power, up to a maximum of 10% of your health."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Blood Shield",
+                                icon: "spell_deathknight_deathstrike",
+                                description: [
+                                    "Each time you heal yourself with Death Strike while in Blood Presence, you gain 50% of the amount healed as a damage absorption shield.  Each point of Mastery increases the shield by an additional 6.25%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A dark guardian who manipulates and corrupts life energy to sustain &lt;him/her&gt;self in the face of an enemy onslaught."
+                    },
+                    Frost: {
+                        specIcon: "spell_deathknight_frostpresence",
+                        primary: 
+                        [
+                            {
+                                name: "Frost Strike",
+                                icon: "spell_deathknight_empowerruneblade2",
+                                description: [
+                                    "Instantly strike the enemy, causing 130% weapon damage plus 278 as Frost damage."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Icy Talons",
+                                icon: "spell_deathknight_icytalons",
+                                description: [
+                                    "Your melee attack speed is increased by 20%."
+                                ]
+                            },
+                            {
+                                name: "Blood of the North",
+                                icon: "inv_weapon_shortblade_79",
+                                description: [
+                                    "Permanently transforms your Blood Runes into Death Runes. Death Runes count as a Blood, Frost, or Unholy Rune."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Frozen Heart",
+                                icon: "inv_misc_gem_sapphire_01",
+                                description: [
+                                    "Increases all Frost damage done by 16%.  Each point of Mastery increases Frost damage by an additional 2.0%."
+                                ]
+                            }
+                        ],
+                        specDescription: "An icy harbinger of doom, channeling runic power and delivering rapid weapon strikes."
+                    },
+                    Unholy: {
+                        specIcon: "spell_deathknight_unholypresence",
+                        primary: 
+                        [
+                            {
+                                name: "Scourge Strike",
+                                icon: "spell_deathknight_scourgestrike",
+                                description: [
+                                    "An unholy strike that deals 100% of weapon damage as Physical damage plus 625.  In addition, for each of your diseases on your target, you deal an additional 18% of the Physical damage done as Shadow damage."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Master of Ghouls",
+                                icon: "spell_shadow_animatedead",
+                                description: [
+                                    "Reduces the cooldown on Raise Dead by 60 sec, and the Ghoul summoned by your Raise Dead spell is considered a pet under your control.  Unlike normal Death Knight Ghouls, your pet does not have a limited duration."
+                                ]
+                            },
+                            {
+                                name: "Reaping",
+                                icon: "spell_shadow_shadetruesight",
+                                description: [
+                                    "Whenever you hit with Blood Strike, Pestilence, or Festering Strike, the Runes spent will become Death Runes when they activate.  Death Runes count as a Blood, Frost or Unholy Rune."
+                                ]
+                            },
+                            {
+                                name: "Unholy Might",
+                                icon: "spell_shadow_unholystrength",
+                                description: [
+                                    "Dark power courses through your limbs, increasing your Strength by 25%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Dreadblade",
+                                icon: "achievement_zone_westernplaguelands_01",
+                                description: [
+                                    "Increases all Shadow damage done by 20%.  Each point of Mastery increases Shadow damage by an additional 2.5%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A master of death and decay, spreading infection and controlling undead minions to do &lt;his/her&gt; bidding."
+                    }
+                },
+                druid: {
+                    Balance: {
+                        specIcon: "spell_nature_starfall",
+                        primary: 
+                        [
+                            {
+                                name: "Starsurge",
+                                icon: "spell_arcane_arcane03",
+                                description: [
+                                    "You fuse the power of the moon and sun, launching a devastating blast of energy at the target. Causes 1212 Spellstorm damage to the target and generates 15 Lunar or Solar energy, whichever is more beneficial to you."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Moonfury",
+                                icon: "spell_nature_moonglow",
+                                description: [
+                                    "Arcane and Nature spell damage increased by 10%.<br><br>Increases the critical strike damage bonus of your Wrath, Moonfire, Starfire, Starsurge, Insect Swarm and Starfall spells by 100%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Total Eclipse",
+                                icon: "ability_druid_eclipse",
+                                description: [
+                                    "Increases the bonus damage from Eclipse by 16%.  Each point of Mastery increases the bonus by an additional 2.0%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Can take on the form of a powerful Moonkin, balancing the power of Arcane and Nature magic to destroy enemies at a distance."
+                    },
+                    "Feral Combat": {
+                        specIcon: "ability_racial_bearform",
+                        primary: 
+                        [
+                            {
+                                name: "Aggression",
+                                icon: "ability_druid_predatoryinstincts",
+                                description: [
+                                    "Increases your attack power by 25%."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Vengeance",
+                                icon: "ability_paladin_shieldofvengeance",
+                                description: [
+                                    "Each time you take damage while in Bear Form, you gain 5% of the damage taken as attack power, up to a maximum of 10% of your health.  Entering Cat Form will cancel this effect."
+                                ]
+                            },
+                            {
+                                name: "Mangle",
+                                icon: "ability_druid_mangle2",
+                                description: [
+                                    "Mangle the target, inflicting damage and causing the target to take additional damage from bleed effects for 1 min.  This ability can be used in Cat Form or Bear Form."
+                                ]
+                            },
+                            {
+                                name: "Feral Instinct",
+                                icon: "ability_ambush",
+                                description: [
+                                    "Reduces the chance enemies have to detect you while Prowling."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Savage Defender",
+                                icon: "ability_racial_cannibalize",
+                                description: [
+                                    "Increases the damage absorbed by your Savage Defense ability by 32%.    Each point of Mastery increases the absorb by an additional 4%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Razor Claws",
+                                icon: "inv_misc_monsterclaw_05",
+                                description: [
+                                    "Increases the damage done by your bleed abilities by 25%.  Each point of Mastery increases bleed damage by an additional 3.1%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Takes on the form of a great cat to deal damage with bleeds and bites or a mighty bear to absorb damage and protect allies."
+                    },
+                    Restoration: {
+                        specIcon: "spell_nature_healingtouch",
+                        primary: 
+                        [
+                            {
+                                name: "Swiftmend",
+                                icon: "inv_relics_idolofrejuvenation",
+                                description: [
+                                    "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal the target for 5229."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Meditation",
+                                icon: "spell_nature_sleep",
+                                description: [
+                                    "Allows 50% of your mana regeneration from Spirit to continue while in combat."
+                                ]
+                            },
+                            {
+                                name: "Gift of Nature",
+                                icon: "spell_nature_spiritarmor",
+                                description: [
+                                    "Healing increased by 25%."
+                                ]
+                            },
+                            {
+                                name: "Disentanglement",
+                                icon: "ability_hunter_animalhandler",
+                                description: [
+                                    "Allows the druid to clear all roots when Shapeshifting in addition to snares."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Harmony",
+                                icon: "classic_spell_nature_healingway",
+                                description: [
+                                    "Your direct healing is increased by an additional 10% and casting your direct healing spells grants you an additional 10% bonus to periodic healing for 10 sec.  Each point of Mastery increases each bonus by an additional 1.25%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Uses heal-over-time Nature spells to keep allies alive, taking on the form of a tree when the need is most urgent."
+                    }
+                },
+                hunter: {
+                    "Beast Mastery": {
+                        specIcon: "ability_hunter_bestialdiscipline",
+                        primary: 
+                        [
+                            {
+                                name: "Intimidation",
+                                icon: "ability_devour",
+                                description: [
+                                    "Command your pet to intimidate the target, causing a high amount of threat and stunning the target for 3 sec. Lasts 15 sec."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Animal Handler",
+                                icon: "ability_hunter_animalhandler",
+                                description: [
+                                    "Attack Power increased by 30%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Master of Beasts",
+                                icon: "ability_hunter_beasttaming",
+                                description: [
+                                    "Increases the damage done by your pets by 13.36%.  Each point of Mastery increases pet damage by an additional 1.67%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A master of the wild who can tame a wide variety of beasts to assist <him/her> in combat."
+                    },
+                    Marksmanship: {
+                        specIcon: "ability_hunter_focusedaim",
+                        primary: 
+                        [
+                            {
+                                name: "Aimed Shot",
+                                icon: "inv_spear_07",
+                                description: [
+                                    "A powerful aimed shot that deals 160% ranged weapon damage plus [(Ranged attack power * 0.724) + 777]."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Artisan Quiver",
+                                icon: "inv_misc_quiver_06",
+                                description: [
+                                    "Auto Shot damage increased by 15%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Wild Quiver",
+                                icon: "ability_hunter_wildquiver",
+                                description: [
+                                    "Grants a 16.8% chance for your ranged attacks to also instantly fire an additional ranged shot.  Each point of Mastery increases the chance by an additional 2.1%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A master archer or sharpshooter who excels in bringing down enemies from afar."
+                    },
+                    Survival: {
+                        specIcon: "ability_hunter_camouflage",
+                        primary: 
+                        [
+                            {
+                                name: "Explosive Shot",
+                                icon: "ability_hunter_explosiveshot",
+                                description: [
+                                    "You fire an explosive charge into the enemy target, dealing (Ranged attack power * 0.273 + 449) Fire damage. The charge will blast the target every second for an additional 2 sec."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Into the Wilderness",
+                                icon: "achievement_zone_alteracmountains_01",
+                                description: [
+                                    "Agility increased by 10%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Essence of the Viper",
+                                icon: "spell_frost_arcticwinds",
+                                description: [
+                                    "Increases all magical damage you deal by 8%.  Each point of Mastery increases magical damage by an additional 1.0%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A rugged tracker who favors using animal venom, explosives and traps as deadly weapons."
+                    }
+                },
+                mage: {
+                    Arcane: {
+                        specIcon: "spell_holy_magicalsentry",
+                        primary: 
+                        [
+                            {
+                                name: "Arcane Barrage",
+                                icon: "ability_mage_arcanebarrage",
+                                description: [
+                                    "Launches bolts of arcane energy at the enemy target, causing 1186 Arcane damage."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Arcane Specialization",
+                                icon: "spell_fire_twilightfire",
+                                description: [
+                                    "Increases the damage of your Arcane spells by 25%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Mana Adept",
+                                icon: "spell_arcane_manatap",
+                                description: [
+                                    "Increases all spell damage done by up to 12%, based on the amount of mana the Mage has unspent.  Each point of Mastery increases damage done by up to an additional 1.5%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Manipulates arcane energies, playing with the very fabric of time and space."
+                    },
+                    Fire: {
+                        specIcon: "spell_fire_firebolt02",
+                        primary: 
+                        [
+                            {
+                                name: "Pyroblast",
+                                icon: "spell_fire_fireball02",
+                                description: [
+                                    "Hurls an immense fiery boulder that causes 1259 Fire damage and an additional 56 Fire damage over 12 sec."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Fire Specialization",
+                                icon: "spell_fire_fire",
+                                description: [
+                                    "Increases the damage of your Fire spells by 25%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Flashburn",
+                                icon: "spell_fire_selfdestruct",
+                                description: [
+                                    "Increases the damage done by all your periodic fire damage effects by 22.4%.  Each point of Mastery increases periodic damage done by an additional 2.8%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Ignites enemies with balls of fire and the breath of dragons."
+                    },
+                    Frost: {
+                        specIcon: "spell_frost_frostbolt02",
+                        primary: 
+                        [
+                            {
+                                name: "Summon Water Elemental",
+                                icon: "spell_frost_summonwaterelemental_2",
+                                description: [
+                                    "Summon a Water Elemental to fight for the caster."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Frost Specialization",
+                                icon: "spell_fire_bluefire",
+                                description: [
+                                    "Increases the damage of your Frost spells by 25% and of your Frostbolt spell by an additional 15%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Frostburn",
+                                icon: "spell_frost_frostarmor",
+                                description: [
+                                    "All your spells deal 5% increased damage against Frozen targets. Each point of Mastery increases damage by an additional 2.5%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Freezes enemies in their tracks and shatters them with Frost magic."
+                    }
+                },
+                paladin: {
+                    Holy: {
+                        specIcon: "spell_holy_holybolt",
+                        primary: 
+                        [
+                            {
+                                name: "Holy Shock",
+                                icon: "spell_holy_searinglight",
+                                description: [
+                                    "Blasts the target with Holy energy, causing 1458 Holy damage to an enemy, or 2738 healing to an ally, and grants a charge of Holy Power."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Walk in the Light",
+                                icon: "spell_holy_championsgrace",
+                                description: [
+                                    "Increases the effectiveness of your healing spells by 10%, the effectiveness of your Word of Glory by 30%, and removes the cooldown on Word of Glory."
+                                ]
+                            },
+                            {
+                                name: "Meditation",
+                                icon: "spell_nature_sleep",
+                                description: [
+                                    "Allows 50% of your mana regeneration from Spirit to continue while in combat."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Illuminated Healing",
+                                icon: "spell_holy_absolution",
+                                description: [
+                                    "Your direct healing spells also place an absorb shield on your target for 12% of the amount healed lasting 15 sec.  Each point of Mastery increases the absorb amount by an additional 1.50%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Invokes the power of the Light to protect and to heal."
+                    },
+                    Protection: {
+                        specIcon: "ability_paladin_shieldofthetemplar",
+                        primary: 
+                        [
+                            {
+                                name: "Avenger's Shield",
+                                icon: "spell_holy_avengersshield",
+                                description: [
+                                    "Hurls a holy shield at the enemy, dealing 2791 Holy damage, silencing and interrupting spellcasting for 3 sec, and then jumping to additional nearby enemies.  Affects 3 total targets."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Vengeance",
+                                icon: "ability_paladin_shieldofvengeance",
+                                description: [
+                                    "Each time you take damage, you gain 5% of the damage taken as attack power, up to a maximum of 10% of your health."
+                                ]
+                            },
+                            {
+                                name: "Touched by the Light",
+                                icon: "ability_paladin_touchedbylight",
+                                description: [
+                                    "Increases your total Stamina by 15%, increases your spell hit by 8%, and increases your spell power by an amount equal to 60% of your Strength."
+                                ]
+                            },
+                            {
+                                name: "Judgements of the Wise",
+                                icon: "ability_paladin_judgementofthewise",
+                                description: [
+                                    "Using your Judgement ability grants you 30% of your base mana over 10 sec."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Divine Bulwark",
+                                icon: "spell_holy_holyprotection",
+                                description: [
+                                    "Increases your chance to block melee attacks by 18%.  Each point of Mastery increases block chance by an additional 2.25%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Uses Holy magic to shield &lt;himself/herself&gt; and defend allies from attackers."
+                    },
+                    Retribution: {
+                        specIcon: "spell_holy_auraoflight",
+                        primary: 
+                        [
+                            {
+                                name: "Templar's Verdict",
+                                icon: "spell_paladin_templarsverdict",
+                                description: [
+                                    "An instant weapon attack that causes a percentage of weapon damage.  Consumes all charges of Holy Power to increase damage dealt:<br><br>1 Holy Power: 30% Weapon Damage<br>2 Holy Power: 30% Weapon Damage<br>3 Holy Power: 90% Weapon Damage"
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Sheath of Light",
+                                icon: "ability_paladin_sheathoflight",
+                                description: [
+                                    "Increases your spell power by an amount equal to 30% of your attack power and increases your chance to hit with spells by 8%."
+                                ]
+                            },
+                            {
+                                name: "Two-Handed Weapon Specialization",
+                                icon: "inv_hammer_04",
+                                description: [
+                                    "Increases the damage you deal with two-handed melee weapons by 25%."
+                                ]
+                            },
+                            {
+                                name: "Judgements of the Bold",
+                                icon: "ability_paladin_judgementofthewise",
+                                description: [
+                                    "Your Judgement grants you 25% of your base mana over 10 sec."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Hand of Light",
+                                icon: "ability_paladin_blessedhands",
+                                description: [
+                                    "Your Templar's Verdict, Crusader Strike, and Divine Storm deal 16.8% additional damage as Holy damage.  Each point of Mastery increases the damage by an additional 2.1%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A righteous crusader who judges and punishes opponents with weapons and Holy magic."
+                    }
+                },
+                priest: {
+                    Discipline: {
+                        specIcon: "spell_holy_powerwordshield",
+                        primary: 
+                        [
+                            {
+                                name: "Penance",
+                                icon: "spell_holy_penance",
+                                description: [
+                                    "Launches a volley of holy light at the target, causing 745 Holy damage to an enemy, or 3006 healing to an ally instantly and every 1 sec for 2 sec."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Enlightenment",
+                                icon: "spell_arcane_mindmastery",
+                                description: [
+                                    "Intellect increased by 15%."
+                                ]
+                            },
+                            {
+                                name: "Meditation",
+                                icon: "spell_nature_sleep",
+                                description: [
+                                    "Allows 50% of your mana regeneration from Spirit to continue while in combat."
+                                ]
+                            },
+                            {
+                                name: "Absolution",
+                                icon: "spell_holy_absolution",
+                                description: [
+                                    "Enables your Dispel Magic spell to be cast on friendly targets to remove 2 harmful magical effects."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Shield Discipline",
+                                icon: "spell_holy_powerwordshield",
+                                description: [
+                                    "Increases  the potency of all your damage absorption spells by 20%.  Each point of Mastery increases the potency of absorbs by an additional 2.5%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Uses magic to shield allies from taking damage as well as heal their wounds."
+                    },
+                    Holy: {
+                        specIcon: "spell_holy_guardianspirit",
+                        primary: 
+                        [
+                            {
+                                name: "Spiritual Healing",
+                                icon: "spell_holy_impholyconcentration",
+                                description: [
+                                    "Healing increased by 15%."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Holy Word: Chastise",
+                                icon: "spell_holy_chastise",
+                                description: [
+                                    "Chastise the target for 598 Holy damage, and disorients them for 3 sec."
+                                ]
+                            },
+                            {
+                                name: "Meditation",
+                                icon: "spell_nature_sleep",
+                                description: [
+                                    "Allows 50% of your mana regeneration from Spirit to continue while in combat."
+                                ]
+                            },
+                            {
+                                name: "Absolution",
+                                icon: "spell_holy_absolution",
+                                description: [
+                                    "Enables your Dispel Magic spell to be cast on friendly targets to remove 2 harmful magical effects."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Echo of Light",
+                                icon: "spell_holy_aspiration",
+                                description: [
+                                    "Your direct healing spells heal for an additional 10% over 6 sec.  Each point of Mastery provides an additional 1.25% healing over 6 sec."
+                                ]
+                            }
+                        ],
+                        specDescription: "A versatile healer who can reverse damage on individuals or groups and even heal from beyond the grave."
+                    },
+                    Shadow: {
+                        specIcon: "spell_shadow_shadowwordpain",
+                        primary: 
+                        [
+                            {
+                                name: "Mind Flay",
+                                icon: "spell_shadow_siphonmana",
+                                description: [
+                                    "Assault the target's mind with Shadow energy, causing 561 Shadow damage over 3 sec and slowing their movement speed by 50%."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Shadow Power",
+                                icon: "spell_shadow_shadowpower",
+                                description: [
+                                    "Spell damage increased by 15%.<br><br>Increases the critical damage of your Shadow spells by 100%."
+                                ]
+                            },
+                            {
+                                name: "Shadow Orbs",
+                                icon: "spell_priest_shadoworbs",
+                                description: [
+                                    "You have a 10% chance for your Shadow Word: Pain and Mind Flay spells to grant you a Shadow Orb each time they deal damage.  Casting your Mind Blast or Mind Spike spell consumes all Shadow Orbs, increasing damage of that spell by 22% per Shadow Orb, and granting 22% increased damage on your periodic Shadow spells for 15 sec.  You can have up to a maximum of 3 orbs."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Shadow Orb Power",
+                                icon: "inv_chaos_orb",
+                                description: [
+                                    "Increases the damage done by your Shadow Orbs by 11.6%. Each point of Mastery increases damage by an additional 1.45%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Uses sinister Shadow magic, especially damage-over-time spells, to eradicate enemies."
+                    }
+                },
+                rogue: {
+                    Assassination: {
+                        specIcon: "ability_rogue_eviscerate",
+                        primary: 
+                        [
+                            {
+                                name: "Mutilate",
+                                icon: "ability_rogue_shadowstrikes",
+                                description: [
+                                    "Instantly attacks with both weapons for 180% weapon damage plus an additional 201 with each weapon.  Awards 2 combo points."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Improved Poisons",
+                                icon: "ability_poisons",
+                                description: [
+                                    "Increases the chance to apply Deadly Poison to your target by 20% and the frequency of applying Instant Poison to your target by 50%."
+                                ]
+                            },
+                            {
+                                name: "Assassin's Resolve",
+                                icon: "ability_rogue_sinistercalling",
+                                description: [
+                                    "While wielding daggers, your maximum Energy is increased by 20 and your melee damage is increased by 20%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Potent Poisons",
+                                icon: "trade_brewpoison",
+                                description: [
+                                    "Increases the damage done by your poisons by 28%.  Each point of Mastery increases damage by an additional 3.5%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A deadly master of poisons who dispatches victims with vicious dagger strikes."
+                    },
+                    Combat: {
+                        specIcon: "ability_backstab",
+                        primary: 
+                        [
+                            {
+                                name: "Blade Flurry",
+                                icon: "ability_warrior_punishingblow",
+                                description: [
+                                    "While active, the rogue's attacks strike an additional nearby opponent, but energy regeneration is reduced by 30%.  Lasts until canceled."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Vitality",
+                                icon: "ability_warrior_revenge",
+                                description: [
+                                    "Increases your Energy regeneration rate by 25% and your Attack Power by 30%."
+                                ]
+                            },
+                            {
+                                name: "Ambidexterity",
+                                icon: "ability_dualwield",
+                                description: [
+                                    "Increases the damage done by your off-hand weapon, and the damage of your Throw, Deadly Throw, and Fan of Knives abilities, by 75%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Main Gauche",
+                                icon: "inv_weapon_shortblade_15",
+                                description: [
+                                    "Your main-hand attacks have a 16% chance to grant you an attack that deals damage equal to 100% of a main-hand attack.  Each point of Mastery increases the chance by an additional 2.00%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A swashbuckler who uses agility and guile to stand toe-to-toe with enemies."
+                    },
+                    Subtlety: {
+                        specIcon: "ability_stealth",
+                        primary: 
+                        [
+                            {
+                                name: "Shadowstep",
+                                icon: "ability_rogue_shadowstep",
+                                description: [
+                                    "Causes you to step through the shadows and appear behind an enemy target.  Your next Ambush or Garrote delivered within 10 sec will deal 30% additional damage, and your movement speed is increased by 70% for 3 sec."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Master of Subtlety",
+                                icon: "ability_rogue_masterofsubtlety",
+                                description: [
+                                    "Attacks made while stealthed and for 6 seconds after breaking stealth cause an additional 10% damage."
+                                ]
+                            },
+                            {
+                                name: "Sinister Calling",
+                                icon: "ability_rogue_sinistercalling",
+                                description: [
+                                    "Increases your total Agility by 30% and increases the percentage damage bonus of Backstab and Hemorrhage by 40%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Executioner",
+                                icon: "inv_axe_06",
+                                description: [
+                                    "Increases the damage done by your finishing moves, and the effectiveness of your Slice and Dice, by 20%.  Each point of Mastery increases damage by an additional 0.1%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A dark stalker who leaps from the shadows to ambush &lt;his/her&gt; unsuspecting prey."
+                    }
+                },
+                shaman: {
+                    Elemental: {
+                        specIcon: "spell_nature_lightning",
+                        primary: 
+                        [
+                            {
+                                name: "Thunderstorm",
+                                icon: "spell_shaman_thunderstorm",
+                                description: [
+                                    "You call down a bolt of lightning, energizing you and damaging nearby enemies within 10 yards. Restores 8% mana to you and deals 1638 Nature damage to all nearby enemies, reducing their movement speed by 40% for 5 sec and knocking them back 20 yards. This spell is usable while stunned."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Elemental Fury",
+                                icon: "spell_fire_volcano",
+                                description: [
+                                    "Increases the critical strike damage bonus of your Searing and Magma Totems and your Fire, Frost, and Nature spells by 100%, and removes the cooldown from your Chain Lightning spell."
+                                ]
+                            },
+                            {
+                                name: "Shamanism",
+                                icon: "spell_unused2",
+                                description: [
+                                    "Your Lightning Bolt, Chain Lightning, and Lava Burst spells gain an additional 36% benefit from your spell power, and their casting time is reduced by 0.5 sec."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Elemental Overload",
+                                icon: "spell_nature_lightningoverload",
+                                description: [
+                                    "Grants a 16% chance for Elemental Overload to occur.  Elemental Overload causes a Lightning Bolt, Chain Lightning, or Lava Burst spell you cast to trigger a second, similar spell on the same target at no additional cost that causes 75% of normal damage and no threat.  Each point of Mastery increases the chance of Elemental Overload by an additional 2%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A spellcaster who harnesses the destructive forces of nature and the elements."
+                    },
+                    Enhancement: {
+                        specIcon: "spell_nature_lightningshield",
+                        primary: 
+                        [
+                            {
+                                name: "Lava Lash",
+                                icon: "ability_shaman_lavalash",
+                                description: [
+                                    "You charge your off-hand weapon with lava, instantly dealing 260% of that weapon's damage to an enemy target.  Damage is increased by 40% if your off-hand weapon is enchanted with Flametongue."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Mental Quickness",
+                                icon: "spell_nature_mentalquickness",
+                                description: [
+                                    "Your spell power is now equal to 55% of your attack power, and you no longer benefit from other sources of spell power. Also, your instant beneficial, damaging, and totem spells cost 55% less mana."
+                                ]
+                            },
+                            {
+                                name: "Dual Wield",
+                                icon: "ability_dualwield",
+                                description: [
+                                    "Allows one-hand and off-hand weapons to be equipped in your off-hand, allows you to parry frontal melee attacks, and increases your chance to hit with melee attacks by 6%."
+                                ]
+                            },
+                            {
+                                name: "Primal Wisdom",
+                                icon: "spell_shaman_spectraltransformation",
+                                description: [
+                                    "Your melee attacks have a 40% chance to immediately restore 5% of your base mana."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Enhanced Elements",
+                                icon: "spell_nature_elementalprecision_2",
+                                description: [
+                                    "Increases all Fire, Frost, and Nature damage done by 20%.  Each point of Mastery increases damage by an additional 2.5%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A totemic warrior who strikes foes with weapons imbued with elemental power."
+                    },
+                    Restoration: {
+                        specIcon: "spell_nature_magicimmunity",
+                        primary: 
+                        [
+                            {
+                                name: "Earth Shield",
+                                icon: "spell_nature_skinofearth",
+                                description: [
+                                    "Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30%  and causing attacks to heal the shielded target for 1416.  This effect can only occur once every few seconds.  9 charges.  Lasts 10 min.  Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Purification",
+                                icon: "spell_frost_wizardmark",
+                                description: [
+                                    "Increases the effectiveness of your healing spells by 25%, and reduces the casting time of your Healing Wave and Greater Healing Wave spells by 0.5 sec."
+                                ]
+                            },
+                            {
+                                name: "Meditation",
+                                icon: "spell_nature_sleep",
+                                description: [
+                                    "Allows 50% of your mana regeneration from Spirit to continue while in combat."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Deep Healing",
+                                icon: "spell_nature_healingtouch",
+                                description: [
+                                    "Increases the potency of your healing spells by up to 24%, based on the current health level of your target (lower health targets are healed for more).  Each point of Mastery increases healing by up to an additional 3.0%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A healer who calls upon ancestral spirits and the cleansing power of water to mend allies' wounds."
+                    }
+                },
+                warlock: {
+                    Affliction: {
+                        specIcon: "spell_shadow_deathcoil",
+                        primary: 
+                        [
+                            {
+                                name: "Unstable Affliction",
+                                icon: "spell_shadow_unstableaffliction_3",
+                                description: [
+                                    "Shadow energy slowly destroys the target, causing 550 damage over 15 sec.  In addition, if the Unstable Affliction is dispelled it will cause 110 damage to the dispeller and silence them for 4 sec.  Only one Unstable Affliction or Immolate per Warlock can be active on any one target."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Shadow Mastery",
+                                icon: "spell_shadow_spectralsight",
+                                description: [
+                                    "Increases Shadow spell damage by 30%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Potent Afflictions",
+                                icon: "ability_warlock_everlastingaffliction",
+                                description: [
+                                    "Increases all periodic shadow damage you deal by 13%.  Each point of Mastery increases periodic shadow damage by an additional 1.63%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A master of Shadow magic who specializes in fear, drains and damage-over-time spells."
+                    },
+                    Demonology: {
+                        specIcon: "spell_shadow_metamorphosis",
+                        primary: 
+                        [
+                            {
+                                name: "Summon Felguard",
+                                icon: "spell_shadow_summonfelguard",
+                                description: [
+                                    "Summons a Felguard under the command of the Warlock."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Demonic Knowledge",
+                                icon: "spell_fire_twilightimmolation",
+                                description: [
+                                    "Increases your Fire and Shadow spell damage by 15%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Master Demonologist",
+                                icon: "spell_shadow_shadowpact",
+                                description: [
+                                    "Increases the damage done by your demon servants and damage you deal while transformed into a demon by 18.4%.  Each point of Mastery increases damage by an additional 2.3%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A warlock who uses both Fire and Shadow magic along with powerful demons."
+                    },
+                    Destruction: {
+                        specIcon: "spell_shadow_rainoffire",
+                        primary: 
+                        [
+                            {
+                                name: "Conflagrate",
+                                icon: "spell_fire_fireball",
+                                description: [
+                                    "Instantly deals fire damage equal to 60% of your Immolate's periodic damage on the target."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Cataclysm",
+                                icon: "spell_fire_meteorstorm",
+                                description: [
+                                    "Increases Fire spell damage by 25%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Fiery Apocalypse",
+                                icon: "spell_fire_moltenblood",
+                                description: [
+                                    "Increases all fire damage you deal by 10.8%.  Each point of Mastery increases fire damage by an additional 1.35%."
+                                ]
+                            }
+                        ],
+                        specDescription: "Calls down demonic fire to burn and demolish enemies."
+                    }
+                },
+                warrior: {
+                    Arms: {
+                        specIcon: "ability_warrior_savageblow",
+                        primary: 
+                        [
+                            {
+                                name: "Mortal Strike",
+                                icon: "ability_warrior_savageblow",
+                                description: [
+                                    "A vicious strike that deals 150% weapon damage plus 94 and wounds the target, reducing the effectiveness of any healing received for 10 sec."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Anger Management",
+                                icon: "ability_warrior_endlessrage",
+                                description: [
+                                    "You gain 1 Rage every 3 seconds while in combat, and generate 25% extra Rage from damage dealt."
+                                ]
+                            },
+                            {
+                                name: "Two-Handed Weapon Specialization",
+                                icon: "inv_axe_09",
+                                description: [
+                                    "Increases the damage you deal with two-handed melee weapons by 12%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Strikes of Opportunity",
+                                icon: "ability_backstab",
+                                description: [
+                                    "Grants a 17.6% chance for your melee attacks to instantly trigger an additional melee attack for 100% normal damage.  Each point of Mastery increases this chance by 2.2%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A battle-hardened master of two-handed weapons, using mobility and overpowering attacks to strike &lt;his/her&gt; opponents down."
+                    },
+                    Fury: {
+                        specIcon: "ability_warrior_innerrage",
+                        primary: 
+                        [
+                            {
+                                name: "Bloodthirst",
+                                icon: "spell_nature_bloodlust",
+                                description: [
+                                    "Instantly attack the target causing (Attack power * 81 / 100) damage.  In addition, the next 3 successful melee attacks will restore [0.55 / 0.5]% of max health.  This effect lasts 8 sec.  Damage is based on your attack power."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Dual Wield Specialization",
+                                icon: "ability_dualwield",
+                                description: [
+                                    "Allows you to equip one-hand and off-hand weapons in your off-hand.  Increases the damage of your off-hand attacks by an additional 25%."
+                                ]
+                            },
+                            {
+                                name: "Precision",
+                                icon: "ability_marksmanship",
+                                description: [
+                                    "Increases your chance to hit with your attacks by 3% and increases autoattack damage by 40%."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Unshackled Fury",
+                                icon: "ability_warrior_endlessrage",
+                                description: [
+                                    "Increases the benefit of abilities that cause or require you to be enraged by 11.2%. Each point of Mastery increases enrage effects by an additional 5.60%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A furious berserker wielding a weapon in each hand, unleashing a flurry of attacks to carve &lt;his/her&gt; opponents to pieces."
+                    },
+                    Protection: {
+                        specIcon: "ability_warrior_defensivestance",
+                        primary: 
+                        [
+                            {
+                                name: "Shield Slam",
+                                icon: "inv_shield_05",
+                                description: [
+                                    "Slam the target with your shield, causing 293 damage (based on attack power) and dispelling 1 magic effect on the target."
+                                ]
+                            }
+                        ],
+                        secondary: [
+                            {
+                                name: "Sentinel",
+                                icon: "inv_helmet_21",
+                                description: [
+                                    "Increases your total Stamina by 15% and your block chance by 15%.  You also generate 50% additional Rage from attacking targets that are not targeting you."
+                                ]
+                            },
+                            {
+                                name: "Vengeance",
+                                icon: "ability_paladin_shieldofvengeance",
+                                description: [
+                                    "Each time you take damage, you gain 5% of the damage taken as attack power, up to a maximum of 10% of your health."
+                                ]
+                            },
+                            {
+                                name: "Mastery: Critical Block",
+                                icon: "ability_warrior_criticalblock",
+                                description: [
+                                    "Increases your chance to block by 12% and your chance to critically block by 12%.  Each point of Mastery increases your block chance by an additional 1.5% and your critical block chance by an additional 1.5%."
+                                ]
+                            }
+                        ],
+                        specDescription: "A stalwart protector who uses a shield to safeguard &lt;himself/herself&gt; and &lt;his/her&gt; allies."
+                    }
+                }
+            }
+        };
+
         // Load saved builds from localStorage
         loadBuilds();
 
@@ -36316,7 +37455,7 @@
 
         let previousExpansion = null;
 
-        function handleVersionChange() {
+        function handleVersionChange(loadingBuild = false) {
             const version = versionSelect.value;
             const pointsBox = document.getElementById("talent-points-box");
 
@@ -36405,7 +37544,21 @@
             currentState.talentOrder = [];
 
             updatePointsDisplay();
-            renderTalentTrees();
+
+            if (currentExpansion === "cataclysm") {
+                // Reset spec each time version is changed (respec flow)
+                chosenSpec = null;
+
+                updatePlaceholder();
+                if (!loadingBuild) {
+                    renderSpecSelectionPanel();
+                } else {
+                    renderTalentTrees();
+                }
+            } else {
+                renderTalentTrees();
+            }
+
             updateURLHash();
         }
 
@@ -36462,6 +37615,7 @@
                         `;
                 talentPlaceholder.classList.remove("hidden");
                 talentTrees.classList.add("hidden");
+                cataSpecSelectionPanel.classList.add("hidden");
                 return;
             }
 
@@ -36472,12 +37626,25 @@
                         `;
                 talentPlaceholder.classList.remove("hidden");
                 talentTrees.classList.add("hidden");
+                cataSpecSelectionPanel.classList.add("hidden");
                 return;
             }
 
             // Hide placeholder if both version and class are selected
             talentPlaceholder.classList.add("hidden");
-            talentTrees.classList.remove("hidden");
+            
+            if (currentExpansion === "cataclysm") {
+                if (!chosenSpec) {
+                    cataSpecSelectionPanel.classList.remove("hidden");
+                    talentTrees.classList.add("hidden");
+                } else {
+                    cataSpecSelectionPanel.classList.add("hidden");
+                    talentTrees.classList.remove("hidden");
+                }
+            } else {
+                cataSpecSelectionPanel.classList.add("hidden");
+                talentTrees.classList.remove("hidden");
+            }
         }
 
         function moveClassButtons(toPlaceholder) {
@@ -36510,6 +37677,9 @@
                 renderTalentTrees();
             }
         }
+
+        // Tracks the chosen specialization per class in Cataclysm
+        let chosenSpec = null;
 
         function handleClassSelect(e) {
             const newClassKey = e.currentTarget.dataset.class;
@@ -36581,8 +37751,141 @@
             });
 
             updatePointsDisplay();
-            renderTalentTrees();
+            
+            const currentExpansion = getCurrentExpansion();
+
+            if (currentExpansion === "cataclysm") {
+                // Reset spec each time class is clicked (respec flow)
+                chosenSpec = null;
+                
+                updatePlaceholder();
+                renderSpecSelectionPanel();
+            } else {
+                renderTalentTrees();
+            }
+
             updateURLHash();
+        }
+
+        function renderSpecSelectionPanel() {
+
+            const classKey = currentState.class;
+            const version = currentState.version;
+
+            if (!version || !classKey) return;
+
+            const specs = cataSpecCards?.cataclysm?.[classKey];
+
+            cataSpecSelectionPanel.innerHTML = ""; // clear existing UI
+
+            if (!chosenSpec && specs && currentState.pointsSpent === 0) {
+                cataSpecSelectionPanel.classList.remove("hidden");
+                talentTrees.classList.add("hidden");
+            } 
+            else {
+                cataSpecSelectionPanel.classList.add("hidden");
+                talentTrees.classList.remove("hidden");
+            }
+
+            // === Container wrapper ===
+            const container = document.createElement("div");
+            container.className = "flex flex-col md:flex-row gap-6 justify-center";
+            
+            Object.entries(specs).forEach(([specKey, specInfo]) => {
+                // specKey is "Arms" / "Fury" / "Protection"
+                // specInfo is the object containing specIcon, primary[], secondary[], specDescription
+
+                const primary = specInfo.primary?.[0] || {};
+                const primaryDesc = Array.isArray(primary.description) 
+                    ? primary.description.join(" ") 
+                    : (primary.description || "");
+
+                const secondaryHTML = (specInfo.secondary || [])
+                .map(p => {
+                    const pdesc = Array.isArray(p.description) 
+                    ? p.description.join(" ") 
+                    : (p.description || "");
+                    const iconPath = p.icon ? `https://wow.zamimg.com/images/wow/icons/large/${p.icon}.jpg` : "";
+                    return `
+                    <li class="flex items-start gap-2 mb-2">
+                        ${ iconPath ? `<img src="${iconPath}" alt="${p.name}" class="w-5 h-5 rounded">` : "" }
+                        <div>
+                        <strong>${p.name}</strong>
+                        <div class="text-sm text-gray-300">${pdesc}</div>
+                        </div>
+                    </li>
+                    `;
+                }).join("");
+
+                const specIconPath = specInfo.specIcon ? `https://wow.zamimg.com/images/wow/icons/large/${specInfo.specIcon}.jpg` : "";
+
+                // === Spec wrapper ===
+                const specWrapper = document.createElement("div");
+                specWrapper.className = "flex flex-col items-center";
+
+                // === Spec card ===
+                const specEl = document.createElement("div");
+                specEl.className =
+                "bg-gray-900 h-full p-4 pt-4 pb-1 rounded-lg w-[340px] shadow-lg border border-gray-700 flex flex-col items-center";
+
+                const card = document.createElement("div");
+                card.className = "spec-card p-3 bg-gray-800 rounded-md border border-gray-700 mb-3";
+
+                specEl.innerHTML = `
+                    <div class="flex items-center justify-between mb-3 px-2 py-1 rounded bg-gray-800 border border-gray-700 w-full">
+                        <div class="flex items-center gap-2">
+                            ${ specIconPath ? `<img src="${specIconPath}" class="w-6 h-6"/>` : "" }
+                            <span class="text-white font-medium text-base">${specKey}</span>
+                        </div>
+                    </div>
+
+                    <p class="text-sm text-gray-300 mb-3">${specInfo.specDescription || ""}</p>
+
+                    <div class="mb-3 w-full">
+                        <h4 class="text-sm font-medium">Primary</h4>
+                        <div class="flex items-start gap-2">
+                            ${ primary.icon ? `<img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg" class="w-6 h-6"/>` : "" }
+                            <div>
+                                <strong>${primary.name || ""}</strong>
+                                <div class="text-sm text-gray-300">${primaryDesc}</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-3 w-full">
+                        <h4 class="text-sm font-medium">Secondary</h4>
+                        <ul class="mt-2">${secondaryHTML}</ul>
+                    </div>
+                `;
+
+                // === Select button ===
+                const selectBtn = document.createElement("button");
+                selectBtn.className = `
+                    mt-2 w-[310px] bg-yellow-600 hover:bg-yellow-700
+                    text-black font-semibold px-3 py-1 rounded
+                `.trim();
+                selectBtn.dataset.spec = specKey;
+                selectBtn.innerText = `${specKey}`;
+
+                // button handler
+                selectBtn.addEventListener("click", () => {
+                    // todo: lock the other trees until 31 points are picked and currentLevel is 69
+
+                    chosenSpec = specKey;
+
+                    // hide panel, show trees
+                    cataSpecSelectionPanel.classList.add("hidden");
+                    talentTrees.classList.remove("hidden");
+                    renderTalentTrees();
+                });
+
+                specWrapper.appendChild(specEl);
+                specWrapper.appendChild(selectBtn);
+
+                container.appendChild(specWrapper);
+            });
+
+            cataSpecSelectionPanel.appendChild(container);
         }
 
         const sharedIcon = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAAUDBAQEAwUEBAQFBQUGBwwIBwcHBw8LCwkMEQ8SEhEPERETFhwXExQaFRERGCEYGh0dHx8fExciJCIeJBweHx7/2wBDAQUFBQcGBw4ICA4eFBEUHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh4eHh7/wAARCAA4ADgDASIAAhEBAxEB/8QAHAAAAQUBAQEAAAAAAAAAAAAAAAIEBQcIBgMB/8QALxAAAgEDBAECBAUFAQAAAAAAAQIDBAURAAYSITEHEwhBUWEUIjIzcUJSgZHR4f/EABoBAAMAAwEAAAAAAAAAAAAAAAQFBgIDBwH/xAAzEQABAwMBBQUFCQAAAAAAAAABAgMRAAQhMQUSQVFhBhNxkbEUIoHh8SMyM2KCocHR8P/aAAwDAQACEQMRAD8A6Lblsho6KGihVikQyxLEtI7EliSSSWZiSSSSSSdL3PJU1GLBaYJJ2QB6v2kJIPkISPkD2fvj5jUxT0tbFQzzUywU707KslTWyLFBTFjgySs3QCjsDyTgapT1O9bLVtqlqrD6XTzTVMy8KzcrgpLIWUhxAG7Unlj3OiPzcfPM9QVdIZO8BO7oOA6k9BoNSfOsk3CUL7yJI0HCeZ8OHGegqztl2N5pfxE6ESZIVGBHEfMnXlv/ANVfTixW6W13Hc8lTKhCTUVkjaeVx4ZfePGIYP6sPk+B96Q9T9+etmy3G2d0brlqkutvFRHKJYarnTzKVJjmwXQHDKeJXOM9ggmnY2QKBjB+uPOhw+raLpV3gTGkZ9QKEvnHLl7vFnHADh/vDrVtbr+ITeVQRbNkwjZ1qTGIKIqaibA6eWcryZvPjiMdY61peywWveT2vfcLwyxXS3Q1JREwsc4ykgIPzWRHXyf05yc9YHrcdAYB7/nWm/hY3Bd5fSLdlrCVMMFpqEqqGtKlkDS4EsAJOAcKrgAf1OTjIyAgONXZQhWTgmBoceODqZNZJU4fwzBOJ6HFXNvK42KO3tbrgBOrD9mJyHVgQVYMCCjBgGDAhlIBBBAOjVY+SSSST2STkk/fRqnRsS1j7Qbx56U+Y2LbtohUqPOYrOe49/b23Vaaa0bg3PeLrQU0pqIoq2reUCQjHI8iSxAJAznAZsYyc8+aYOSZpW89BBgaRSchGCe8gH+Ne/keNC2lmy6wFOJycxoPIQPrU0pZCsUzrI4oo8o8hJPQY6+yrCjcF/EcgoLEYIORnS7l+x/ka0H8KxtsuwN8pXWSguojqrdK0VXGHXr3ypAPWQQT2CCCQQQSNJrtlLd6pppIE7kY5zOqv3nTFePXSWGC6vQVzPpb6Ty095ob9v2jol25iOZqWerPuXCGSPIMPsOG6DK3LIUHo5wy6tfY2x4dl2DdNHty9Pc7Te5qOSijdwaiMx+57kTqoHeJEJcBQQBkA5US0i1tznM1dKwUdInELxHyAwOgP406p4YYV4QwgAfPHf8An/3TNrZDLDiXZlYM9PWk21+19hspSW21B11JyExuDjBVxPD3Z40wprZkB6ggj+0Hofyf+aNStQ0cKiSSRQD1yJ6/2ev9aNN+8cXkVJO9oe0O0ll9CnI/IFBI6e6PXPOsUU5Qx5RgR40sH5ajaeUIjKc/UaVBVMuQ/efn9NS1p2iYDbaXMEjMaCPSa6UpkyYpxX9wkfTvVsfCruqksO9ai03WdIqO8QpT8n7T3QT7YP2PJ176/MNU9PUmQEBcD6/bRFK6BW4nkvg/b6aWXO0Ld++71JMRkweB/rI8uNabuyF1art14Ch5cj8DFbQvd9t1tqp6XlzkgPF1A7XrPgf91KXCxVt6pKe32m80S3tYYZa6hCFjTRzDmnIEflbjxOcEAnBx+UtmnbnrHuW22+CkqKC0XyKlRUpZLpS+5JAB/SrAhiPHknwMa5+/7s3Let4V+7aq71MN4r3Zpp6aRoyFI48FIOQgXCgf2gDVcLhThSq1ExmdQeWoGNT9Mwdj2LaZQUvD3hoqZB/TiPiTnwzpja+/6Tc/xD3D0yiBum1qqI2+nleT9qWlhkdp48ZB5MrLkEZHBvsTWUtuXu47Uv8ASXvbtfNRXWklEkEsR/MreDnPRBBIKkEMCQQQSNGpN5u7bVuNmSNd2VCesA56a1b+zKbAFurdHiR8fnUBIjxyNHIrI6khlYYII+R0nRo1JU2pUf6x/OnqxDiCV8+NGjVP2fZQ4hZUJj5VoeJEV6YSnXk5x9Bq0Nl+hHqDu/bsd+At9it88YmpjcpXjeeIjIlCqrERnGQxADDsZHejRo3al243dmxbO6gcsE4nJ/gRS6+eWxal5H3sa54gV1Ppv6e7W9OtwDdG8dzWe+NbiZaOht5eVJJ1x7bNlRzwx6RccjxywAIJo0abv7Kt2ld2BgaajrzpKsuOnfdWST4CPIV//9k=";
@@ -36636,9 +37939,37 @@
                 return Object.values(talents).reduce((sum, val) => sum + val, 0);
             });
 
-            // Calculate required level
+            // Calculate total points spent
             const totalPoints = treePoints.reduce((a, b) => a + b, 0);
-            const requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
+
+            // Calculate required level
+            // const requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
+
+            // === CHANGE: cataclysm-specific required level logic ===
+            let requiredLevel;
+            if (version.startsWith("4.")) {
+                // Mapping: number of points spent -> minimum level
+                const pointsToLevelMap = [
+                    10, // 1st point
+                    11, // 2nd
+                    13, // 3rd
+                    15, // 4th
+                    17, // 5th
+                    19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85 // remaining points
+                ];
+
+                if (totalPoints === 0) {
+                    requiredLevel = "-";
+                } else {
+                    // Cap totalPoints to avoid going out of bounds
+                    const index = Math.min(totalPoints - 1, pointsToLevelMap.length - 1);
+                    requiredLevel = pointsToLevelMap[index];
+                }
+            } else {
+                // Old logic for other expansions
+                requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
+            }
+            // === END CHANGE ===
 
             // Calculate points left
             const pointsLeft = currentState.pointsTotal - totalPoints;
@@ -36681,7 +38012,8 @@
                                 </div>
                             </div>
                         </div>
-                    `;
+            `;
+
             talentTrees.innerHTML = headerHTML;
 
             const container = document.createElement("div");
@@ -36712,6 +38044,17 @@
                     "bg-gray-900 h-full p-4 pt-4 pb-1 rounded-lg w-[340px] shadow-lg border border-gray-700 flex flex-col items-center";
                 treeEl.setAttribute("data-tree-container", treeName);
 
+                // === CHANGE: Lock / gray out non-chosen trees in Cataclysm ===
+                let isLocked = false;
+                if (version.startsWith("4.") && chosenSpec && treeName !== chosenSpec) {
+                    const pointsInChosen = treePoints[trees.indexOf(chosenSpec)]; // points spent in chosen tree
+                    if (pointsInChosen < 31 || requiredLevel < 69) {
+                        isLocked = true;
+                        treeEl.classList.add("opacity-40", "pointer-events-none"); // gray out + block clicks
+                    }
+                }
+                // === END CHANGE ===
+
                 // Add background image
                 const bgImage = backgroundImages?.[classKey]?.[treeName];
                 if (bgImage) {
@@ -36733,7 +38076,8 @@
                         <div class="flex items-center gap-2">
                             <img src="https://wow.zamimg.com/images/wow/icons/large/${getTreeIcon(
                     classKey,
-                    treeName
+                    treeName,
+                    version
                 )}.jpg"
                                 alt="${treeName}" class="w-6 h-6" />
                             <span class="${pointsInTree === 0 ? "text-gray-400" : "text-white"
@@ -36746,7 +38090,7 @@
                             <span>${currentState.pointsTotal}</span>
                         </div>
                 </div>
-            `;
+                `;
 
                 // ======= NEW: Wrap the grid in a fixed width div to keep cell spacing tight =======
                 const gridWrapper = document.createElement("div");
@@ -37100,6 +38444,15 @@
 
             if (!classKey || !treeName) return;
 
+            const expansion = getExpansionFromPatch(currentState.version);
+
+            // Check if we're in Cataclysm and resetting the chosen spec tree
+            if (expansion === "cataclysm" && treeName === chosenSpec) {
+                // Reset all trees instead of just this one
+                resetTalents();
+                return; // Already handled everything
+            }
+
             // Remove all talents in this tree
             currentState.talents[classKey][treeName] = {};
 
@@ -37138,8 +38491,9 @@
             return classOrder.indexOf(classKey) + 1;
         }
 
-        function getTreeIcon(classKey, tree) {
-            const icons = {
+        function getTreeIcon(classKey, tree, version) {
+            // Default icons (Vanilla/TBC/WotLK)
+            const defaultIcons = {
                 druid: {
                     Balance: { icon: "spell_nature_starfall" },
                     "Feral Combat": { icon: "ability_racial_bearform" },
@@ -37194,7 +38548,32 @@
                     Unholy: { icon: "spell_deathknight_unholypresence" }
                 }
             };
-            return icons[classKey][tree]?.icon || "inv_misc_questionmark"; // fallback icon
+
+            // Expansion-specific overrides
+            const cataOverrides = {
+                hunter: {
+                    "Beast Mastery": { icon: "ability_hunter_bestialdiscipline" },
+                    Marksmanship: { icon: "ability_hunter_focusedaim" },
+                    Survival: { icon: "ability_hunter_camouflage" }
+                },
+                paladin: {
+                    Protection: { icon: "ability_paladin_shieldofthetemplar" }
+                },
+                priest: {
+                    Discipline: { icon: "spell_holy_powerwordshield" }
+                }
+                // add only those that differ
+            };
+
+            let icon = defaultIcons[classKey]?.[tree]?.icon;
+
+            if (version.startsWith("4.")) {
+                // if override exists, replace base
+                const override = cataOverrides[classKey]?.[tree]?.icon;
+                if (override) icon = override;
+            }
+
+            return icon || "inv_misc_questionmark"; // fallback icon
         }
 
         const backgroundImages = {
@@ -38138,7 +39517,9 @@
                 name: buildName,
                 version: currentState.version,
                 class: currentState.class,
-                talents: JSON.parse(JSON.stringify(currentState.talents))
+                talents: JSON.parse(JSON.stringify(currentState.talents)),
+                pointsSpent: currentState.pointsSpent,
+                talentOrder: JSON.parse(JSON.stringify(currentState.talentOrder))
             };
 
             // Check if build with this name already exists
@@ -38177,7 +39558,7 @@
 
                 // Set version and trigger logic
                 versionSelect.value = buildData.version;
-                handleVersionChange();
+                handleVersionChange(true);
 
                 // Delay to ensure talentTreeData is updated before rendering
                 setTimeout(() => {
@@ -38281,7 +39662,8 @@
                 id: talent.id,
                 tree,
                 classKey,
-                icon: talent.icon
+                icon: talent.icon,
+                level: getNextTalentLevel()
             });
 
             recalculateTalentOrder();
@@ -38294,6 +39676,28 @@
 
             // Update URL
             updateURLHash();
+        }
+
+        function getNextTalentLevel() {
+            const expansion = getExpansionFromPatch(currentState.version);
+            const order = currentState.talentOrder;
+
+            if (expansion === "cataclysm") {
+                // Precomputed Cataclysm talent levels
+                const cataLevels = [
+                    10, 11, 13, 15, 17, 19, 21, 23, 25, 27,
+                    29, 31, 33, 35, 37, 39, 41, 43, 45, 47,
+                    49, 51, 53, 55, 57, 59, 61, 63, 65, 67,
+                    69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85
+                ];
+                const index = order.length; // 0-based
+                return cataLevels[index] || 85; // fallback to 85 if overflow
+            } else {
+                // Classic/TBC/WotLK logic: 1 point per level starting at 10
+                return order.length > 0
+                    ? order[order.length - 1].level + 1
+                    : 10;
+            }
         }
 
         function handleTalentRightClick(e) {
@@ -38459,6 +39863,95 @@
 
             const timeline = [];
 
+            // Get current expansion
+            const expansion = getExpansionFromPatch(currentState.version);
+
+            // Precomputed Cataclysm levels
+            const cataLevels = [
+                10, 11, 13, 15, 17, 19, 21, 23, 25, 27,
+                29, 31, 33, 35, 37, 39, 41, 43, 45, 47,
+                49, 51, 53, 55, 57, 59, 61, 63, 65, 67,
+                69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85
+            ];
+
+            // Group sequential levels for the same talent
+            talentOrder.forEach((entry, index) => {
+                // Determine the "display level" according to expansion
+                let displayLevel;
+                if (expansion === "cataclysm") {
+                    displayLevel = cataLevels[index] || 85;
+                } else {
+                    displayLevel = entry.level;
+                }
+
+                const last = timeline[timeline.length - 1];
+                if (
+                    last &&
+                    last.id === entry.id &&
+                    last.tree === entry.tree &&
+                    last.classKey === entry.classKey &&
+                    last.endLevel === displayLevel - 1
+                ) {
+                    last.endLevel = displayLevel;
+                } else {
+                    timeline.push({
+                        ...entry,
+                        startLevel: displayLevel,
+                        endLevel: displayLevel
+                    });
+                }
+            });
+
+            // Render grouped entries
+            timeline.forEach((entry) => {
+                const talent = getTalentById(entry.classKey, entry.tree, entry.id);
+                const iconUrl =
+                    iconOverrideById[talent.id] ||
+                    `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`;
+                const levelText =
+                    entry.startLevel === entry.endLevel
+                        ? `${entry.startLevel}`
+                        : `${entry.startLevel} - ${entry.endLevel}`;
+
+                const item = document.createElement("div");
+                item.className =
+                    "flex items-center text-xs text-white gap-1 bg-gray-900 px-2 py-1 rounded border border-gray-600";
+                item.innerHTML = `
+                    <img src="${iconUrl}" alt="${talent.name}" class="w-4 h-4 rounded" />
+                    <span>${levelText}</span>
+                `;
+                orderBox.appendChild(item);
+            });
+
+            container.appendChild(orderBox);
+        }
+        
+        function renderTalentOrderTimeline() {
+            const { class: classKey, talentOrder } = currentState;
+            if (!classKey || talentOrder.length === 0) return;
+
+            // Container inside talent container
+            const talentContainer = document.getElementById("talent-trees");
+            if (!talentContainer) return;
+
+            // Look for existing timeline container or create it
+            let container = document.getElementById("talent-order-timeline");
+            if (!container) {
+                container = document.createElement("div");
+                container.id = "talent-order-timeline";
+                // Insert timeline after talent trees
+                talentContainer.parentNode.insertBefore(container, talentContainer.nextSibling);
+            }
+
+            // Clear previous timeline
+            container.innerHTML = "";
+
+            const orderBox = document.createElement("div");
+            orderBox.className =
+                "mt-6 p-3 rounded bg-gray-800 border border-gray-700 flex flex-wrap gap-2 justify-start";
+
+            const timeline = [];
+
             // Group sequential levels for the same talent
             for (const entry of talentOrder) {
                 const last = timeline[timeline.length - 1];
@@ -38584,16 +40077,33 @@
 
             // Set the version and trigger talent data load
             versionSelect.value = build.version;
-            handleVersionChange();
+            handleVersionChange(true);
 
             const classKey = build.class;
-
             currentState.version = build.version;
             currentState.class = classKey;
             currentState.talents = JSON.parse(JSON.stringify(build.talents));
+
             // Use the maxPoints for the current version
             const versionData = talentTreeData[currentState.version];
             currentState.pointsTotal = versionData ? versionData.maxPoints : 51;
+            currentState.pointsSpent = build.pointsSpent || 0;
+
+            // restore talentOrder directly instead of rebuilding
+            currentState.talentOrder = build.talentOrder 
+                ? JSON.parse(JSON.stringify(build.talentOrder)) 
+                : [];
+
+
+            // Ensure talentOrder keeps original level progression
+            if (currentState.talentOrder.length > 0) {
+                // If levels already exist, keep them.
+                // If missing (old saves), recalc fallback levels.
+                const hasLevels = currentState.talentOrder.some(entry => entry.level !== undefined);
+                if (!hasLevels) {
+                    recalculateTalentOrder();
+                }
+            }
 
             // Handle custom version display
             if (currentState.version === "custom") {
@@ -38613,19 +40123,36 @@
             });
 
             // Calculate points spent
-            currentState.pointsSpent = 0;
-            const trees =
-                talentTreeData[currentState.version]?.classes?.[classKey]?.trees || [];
+            // currentState.pointsSpent = 0;
+
+            const trees = talentTreeData[currentState.version]?.classes?.[classKey]?.trees || [];
+            let dominantTree = null;
+            let mostPoints = 0;
 
             trees.forEach((tree) => {
                 const treeTalents = currentState.talents[classKey][tree];
                 if (treeTalents) {
-                    currentState.pointsSpent += Object.values(treeTalents).reduce(
+                    const treePoints = Object.values(treeTalents).reduce(
                         (sum, pts) => sum + pts,
                         0
                     );
+                    // currentState.pointsSpent += treePoints;
+
+                    if (treePoints > mostPoints) {
+                        mostPoints = treePoints;
+                        dominantTree = tree;
+                    }
                 }
             });
+
+            // Auto-select chosenSpec in Cataclysm
+            const expansion = getExpansionFromPatch(build.version);
+            if (expansion === "cataclysm" && dominantTree) {
+                chosenSpec = dominantTree;
+            }
+            
+            // Assign levels to talentOrder
+            // recalculateTalentOrder();
 
             updatePointsDisplay();
             renderTalentTrees();
