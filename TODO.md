@@ -26,29 +26,31 @@ These should be done first because other features depend on them or they fix cor
 
     - Will make future features easier to implement.
 
+6. Fix issue concerning talents not displaying when patch 1.10 is selected
+
 ### 🔹 Tier 2: Medium Priority / Usability Enhancements
 
 These improve the user experience significantly.
 
-6. Multi-Build Tabs (View multiple builds in one session)
+1. Multi-Build Tabs (View multiple builds in one session)
 
     - Useful for comparison.
 
     - Depends on stable save/load system.
 
-7. Premade/Saved Builds Loader
+2. Premade/Saved Builds Loader
 
     - Builds on Export/Import and Save/Load features.
 
-8. Add Titles/Tooltips to Buttons (Save, Load, Export, etc.)
+3. Add Titles/Tooltips to Buttons (Save, Load, Export, etc.)
 
     - Improves clarity for first-time users.
 
-9. Add Popup for Loading Builds
+4. Add Popup for Loading Builds
 
     - Should be implemented similar to export popup.
 
-10. Keyboard Shortcuts
+5. Keyboard Shortcuts
 
     - Quality of life feature for advanced users.
 
@@ -56,31 +58,33 @@ These improve the user experience significantly.
 
 Nice-to-have, improves personalization but not critical.
 
-11. Option to Set Favorite Versions (Quick Access)
+1. Option to Set Favorite Versions (Quick Access)
 
     - Depends on version/expansion selection system.
 
-12. Add Button to Print Build (Print-Friendly Trees + Summary)
+2. Add Button to Print Build (Print-Friendly Trees + Summary)
 
-13. Add Option to Change Color Theme of UI
+3. Add Option to Change Color Theme of UI
 
     - Could include a Warcraft-style palette switcher.
 
-14. Add Option to Change Layout of UI (Drag/Drop Boxes)
+4. Add Option to Change Layout of UI (Drag/Drop Boxes)
 
     - More complex, should wait until UI is stable.
 
-15. Change Browser Tab Icon (Favicon) ✅
+5. Change Browser Tab Icon (Favicon) ✅
 
-16. Change Font to Better Match Warcraft Theme
+6. Change Font to Better Match Warcraft Theme
+
+7. Add Cataclysm Spec Selection Panel & expansion-specific talent logic
 
 ### 🔹 Tier 4: Content & Informational Features
 
-17. Patch History View
+1. Patch History View
 
     - Show changes in talents across versions.
 
-18. Patch Notes Viewer
+2. Patch Notes Viewer
 
     - Separate UI panel that displays patch-specific notes.
 
@@ -90,11 +94,11 @@ Nice-to-have, improves personalization but not critical.
 
     - Should allow filtering by class, tree, or patch version.
 
-19. Tooltip Word Search
+3. Tooltip Word Search
 
     - Search for keywords across all talents.
 
-20. Leveling Planner
+4. Leveling Planner
 
     - Plan talents per level (depends on timeline display).
 
