@@ -333,7 +333,8 @@
     <div class="container mx-auto px-4 py-8">
         <header id="main-header" class="text-center mb-8 transition-all duration-500 overflow-hidden">
             <h1 class="text-4xl font-bold text-yellow-400 mb-2">TalentForge</h1>
-            <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!</p>
+            <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!
+            </p>
         </header>
 
         <!-- Class selection row -->
@@ -511,81 +512,86 @@
                 </div>
             </div>
 
-            <!-- Talent trees -->
-            <div id="talent-wrapper" class="w-full lg:w-3/4 duration-300 ease-in-out">
-                <div id="talent-container" class="bg-gray-800 rounded-lg p-4">
-                    <div id="talent-placeholder" class="text-center py-12">
-                        <h2 class="text-2xl text-yellow-400 mb-2">Select a version</h2>
-                        <p class="text-gray-400">Use the dropdown to choose a game version</p>
-                    </div>
-                    <div id="talent-trees"></div>
-                    <div id="cata-spec-selection-panel" class="hidden"></div>
-                    <!-- Druid Talent Icons Preview -->
-                    <!--
-          <div class="grid grid-cols-4 gap-4 mt-8 hidden" id="druid-talents-preview">
-          -->
-                    <!-- Balance -->
-                    <!-- 
-            <div class="text-center">
-              <h3 class="text-lg font-semibold mb-2 text-yellow-400">Balance</h3>
-              <div class="flex flex-wrap justify-center gap-2">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_abolishmagic.jpg" alt="Improved Wrath" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_natureswrath.jpg" alt="Nature's Grasp" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_thorns.jpg" alt="Improved Thorns" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_crystalball.jpg" alt="Omen of Clarity" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_purge.jpg" alt="Vengeance" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_starfire.jpg" alt="Improved Starfire" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_naturesblessing.jpg" alt="Nature's Grace" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_moonglow.jpg" alt="Moonfury" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_forceofnature.jpg" alt="Moonkin Form" class="w-10 h-10">
-              </div>
-            </div>
+            <div id="talent-section" class="w-full lg:w-3/4 duration-300 ease-in-out">
+                <!-- Talent trees -->
+                <div id="talent-wrapper">
+                    <div id="talent-container" class="bg-gray-800 rounded-lg p-4">
+                        <div id="talent-placeholder" class="text-center py-12">
+                            <h2 class="text-2xl text-yellow-400 mb-2">Select a version</h2>
+                            <p class="text-gray-400">Use the dropdown to choose a game version</p>
+                        </div>
+                        <div id="talent-trees"></div>
+                        <div id="cata-spec-selection-panel" class="hidden"></div>
+                        <!-- Druid Talent Icons Preview -->
+                        <!--
+            <div class="grid grid-cols-4 gap-4 mt-8 hidden" id="druid-talents-preview">
             -->
-
-                    <!-- Feral Combat -->
-                    <!-- 
-            <div class="text-center">
-              <h3 class="text-lg font-semibold mb-2 text-yellow-400">Feral Combat</h3>
-              <div class="flex flex-wrap justify-center gap-2">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_pet_hyena.jpg" alt="Ferocity" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_demoralizingroar.jpg" alt="Feral Aggression" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_ambush.jpg" alt="Feral Instinct" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_bash.jpg" alt="Brutal Impact" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_pelt_bear_03.jpg" alt="Thick Hide" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_spiritwolf.jpg" alt="Feral Swiftness" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_monsterclaw_04.jpg" alt="Sharpened Claws" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_pet_cat.jpg" alt="Predatory Strikes" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_racial_cannibalize.jpg" alt="Primal Fury" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_ravage.jpg" alt="Savage Fury" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_faeriefire.jpg" alt="Faerie Fire (Feral)" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_blessingofagility.jpg" alt="Heart of the Wild" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_unyeildingstamina.jpg" alt="Leader of the Pack" class="w-10 h-10">
-              </div>
-            </div>
-            -->
-
-                    <!-- Restoration -->
-                    <!-- 
-            <div class="text-center">
-              <h3 class="text-lg font-semibold mb-2 text-yellow-400">Restoration</h3>
-              <div class="flex flex-wrap justify-center gap-2">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_regeneration.jpg" alt="Improved Mark of the Wild" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_unyeildingstamina.jpg" alt="Furor" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg" alt="Improved Healing Touch" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingwavegreater.jpg" alt="Nature's Focus" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_enrage.jpg" alt="Improved Enrage" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_windwalkon.jpg" alt="Reflection" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/ability_eyeoftheowl.jpg" alt="Subtlety" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_elunesgrace.jpg" alt="Tranquil Spirit" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_rejuvenation.jpg" alt="Improved Rejuvenation" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_ravenform.jpg" alt="Nature's Swiftness" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_protectionformnature.jpg" alt="Gift of Nature" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_tranquility.jpg" alt="Improved Tranquility" class="w-10 h-10">
-                <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_resistnature.jpg" alt="Improved Regrowth" class="w-10 h-10">
-              </div>
-            </div>
-            -->
+                        <!-- Balance -->
+                        <!-- 
+                <div class="text-center">
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Balance</h3>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_abolishmagic.jpg" alt="Improved Wrath" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_natureswrath.jpg" alt="Nature's Grasp" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_thorns.jpg" alt="Improved Thorns" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_crystalball.jpg" alt="Omen of Clarity" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_purge.jpg" alt="Vengeance" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_starfire.jpg" alt="Improved Starfire" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_naturesblessing.jpg" alt="Nature's Grace" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_moonglow.jpg" alt="Moonfury" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_forceofnature.jpg" alt="Moonkin Form" class="w-10 h-10">
                 </div>
+                </div>
+                -->
+
+                        <!-- Feral Combat -->
+                        <!-- 
+                <div class="text-center">
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Feral Combat</h3>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_pet_hyena.jpg" alt="Ferocity" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_demoralizingroar.jpg" alt="Feral Aggression" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_ambush.jpg" alt="Feral Instinct" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_bash.jpg" alt="Brutal Impact" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_pelt_bear_03.jpg" alt="Thick Hide" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_spiritwolf.jpg" alt="Feral Swiftness" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_monsterclaw_04.jpg" alt="Sharpened Claws" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_pet_cat.jpg" alt="Predatory Strikes" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_racial_cannibalize.jpg" alt="Primal Fury" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_ravage.jpg" alt="Savage Fury" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_faeriefire.jpg" alt="Faerie Fire (Feral)" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_blessingofagility.jpg" alt="Heart of the Wild" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_unyeildingstamina.jpg" alt="Leader of the Pack" class="w-10 h-10">
+                </div>
+                </div>
+                -->
+
+                        <!-- Restoration -->
+                        <!-- 
+                <div class="text-center">
+                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Restoration</h3>
+                <div class="flex flex-wrap justify-center gap-2">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_regeneration.jpg" alt="Improved Mark of the Wild" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_unyeildingstamina.jpg" alt="Furor" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg" alt="Improved Healing Touch" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingwavegreater.jpg" alt="Nature's Focus" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_enrage.jpg" alt="Improved Enrage" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_windwalkon.jpg" alt="Reflection" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_eyeoftheowl.jpg" alt="Subtlety" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_elunesgrace.jpg" alt="Tranquil Spirit" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_rejuvenation.jpg" alt="Improved Rejuvenation" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_ravenform.jpg" alt="Nature's Swiftness" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_protectionformnature.jpg" alt="Gift of Nature" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_tranquility.jpg" alt="Improved Tranquility" class="w-10 h-10">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_resistnature.jpg" alt="Improved Regrowth" class="w-10 h-10">
+                </div>
+                </div>
+                -->
+                    </div>  
+                </div>
+
+                <!-- Talent Order Timeline -->
+                <div id="timeline-wrapper" class="w-full flex justify-center mt-6"></div>
             </div>
         </div>
 
@@ -618,6 +624,7 @@
         const talentTrees = document.getElementById("talent-trees");
         const talentPlaceholder = document.getElementById("talent-placeholder");
         const cataSpecSelectionPanel = document.getElementById("cata-spec-selection-panel");
+        const timelineWrapper = document.getElementById("timeline-wrapper");
         const buildNameInput = document.getElementById("build-name");
         const saveBuildBtn = document.getElementById("save-build");
         const importBuildBtn = document.getElementById("import-build");
@@ -625,6 +632,7 @@
         const sidebar = document.getElementById('sidebar');
         const toggleSidebarButton = document.getElementById('toggle-sidebar');
         const sidebarContent = document.getElementById('sidebar-content');
+        const talentSection = document.getElementById("talent-section");
         const talentWrapper = document.getElementById("talent-wrapper");
         const toggleBuildManagerButton = document.getElementById("toggle-build-manager");
         const buildManagerWrapper = document.getElementById("build-manager-wrapper");
@@ -684,8 +692,8 @@
                 toggleSidebarButton.title = "Show Sidebar";
 
                 // Make talent area centered
-                talentWrapper.classList.remove('lg:w-3/4');
-                talentWrapper.classList.add('w-full', 'justify-center');
+                talentSection.classList.remove('lg:w-3/4');
+                talentSection.classList.add('w-full', 'justify-center');
             } else {
                 sidebar.classList.remove('w-12');
                 sidebar.classList.add('w-full', 'lg:w-1/4');
@@ -693,8 +701,8 @@
                 toggleSidebarButton.title = "Hide Sidebar";
 
                 // Restore talent layout
-                talentWrapper.classList.remove('w-full', 'justify-center');
-                talentWrapper.classList.add('lg:w-3/4');
+                talentSection.classList.remove('w-full', 'justify-center');
+                talentSection.classList.add('lg:w-3/4');
             }
         });
 
@@ -726,7 +734,7 @@
         });
 
         // Reset URL hash on page load
-        window.addEventListener('DOMContentLoaded', function() {
+        window.addEventListener('DOMContentLoaded', function () {
             if (location.hash) location.hash = '';
         });
 
@@ -34791,7 +34799,7 @@
         ]);
 
         replaceTalentOld("1.16.1t", "druid", "Restoration", "subtlety", {
-            row: 1, 
+            row: 1,
             col: 2,
             description: [
                 "Reduces the threat generated by your spells by {value}%.",
@@ -35090,7 +35098,7 @@
                 ]
             }
         ]);
-        
+
         removeTalentsByIdOld("1.16.1t", "priest", "Discipline", [
             "divine_spirit"
         ]);
@@ -35201,7 +35209,7 @@
         moveTalentOld("1.16.1t", "shaman", "Enhancement", "improved_ghost_wolf", 1, 3);
 
         replaceTalentOld("1.16.1t", "shaman", "Enhancement", "stormstrike", {
-            row: 4, 
+            row: 4,
             col: 2,
             requiresTalents: null
         });
@@ -36078,16 +36086,16 @@
                 deathknight: {
                     Blood: {
                         specIcon: "spell_deathknight_bloodpresence",
-                        primary: 
-                        [
-                            {
-                                name: "Heart Strike",
-                                icon: "inv_weapon_shortblade_40",
-                                description: [
-                                    "Instantly strike the target and up to two additional nearby enemies, causing 175% weapon damage plus 819 on the primary target, with each additional enemy struck taking 25% less damage than the previous target.  Damage dealt to each target is increased by an additional 15% for each of your diseases present."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Heart Strike",
+                                    icon: "inv_weapon_shortblade_40",
+                                    description: [
+                                        "Instantly strike the target and up to two additional nearby enemies, causing 175% weapon damage plus 819 on the primary target, with each additional enemy struck taking 25% less damage than the previous target.  Damage dealt to each target is increased by an additional 15% for each of your diseases present."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Veteran of the Third War",
@@ -36122,16 +36130,16 @@
                     },
                     Frost: {
                         specIcon: "spell_deathknight_frostpresence",
-                        primary: 
-                        [
-                            {
-                                name: "Frost Strike",
-                                icon: "spell_deathknight_empowerruneblade2",
-                                description: [
-                                    "Instantly strike the enemy, causing 130% weapon damage plus 278 as Frost damage."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Frost Strike",
+                                    icon: "spell_deathknight_empowerruneblade2",
+                                    description: [
+                                        "Instantly strike the enemy, causing 130% weapon damage plus 278 as Frost damage."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Icy Talons",
@@ -36159,16 +36167,16 @@
                     },
                     Unholy: {
                         specIcon: "spell_deathknight_unholypresence",
-                        primary: 
-                        [
-                            {
-                                name: "Scourge Strike",
-                                icon: "spell_deathknight_scourgestrike",
-                                description: [
-                                    "An unholy strike that deals 100% of weapon damage as Physical damage plus 625.  In addition, for each of your diseases on your target, you deal an additional 18% of the Physical damage done as Shadow damage."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Scourge Strike",
+                                    icon: "spell_deathknight_scourgestrike",
+                                    description: [
+                                        "An unholy strike that deals 100% of weapon damage as Physical damage plus 625.  In addition, for each of your diseases on your target, you deal an additional 18% of the Physical damage done as Shadow damage."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Master of Ghouls",
@@ -36205,16 +36213,16 @@
                 druid: {
                     Balance: {
                         specIcon: "spell_nature_starfall",
-                        primary: 
-                        [
-                            {
-                                name: "Starsurge",
-                                icon: "spell_arcane_arcane03",
-                                description: [
-                                    "You fuse the power of the moon and sun, launching a devastating blast of energy at the target. Causes 1212 Spellstorm damage to the target and generates 15 Lunar or Solar energy, whichever is more beneficial to you."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Starsurge",
+                                    icon: "spell_arcane_arcane03",
+                                    description: [
+                                        "You fuse the power of the moon and sun, launching a devastating blast of energy at the target. Causes 1212 Spellstorm damage to the target and generates 15 Lunar or Solar energy, whichever is more beneficial to you."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Moonfury",
@@ -36235,16 +36243,16 @@
                     },
                     "Feral Combat": {
                         specIcon: "ability_racial_bearform",
-                        primary: 
-                        [
-                            {
-                                name: "Aggression",
-                                icon: "ability_druid_predatoryinstincts",
-                                description: [
-                                    "Increases your attack power by 25%."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Aggression",
+                                    icon: "ability_druid_predatoryinstincts",
+                                    description: [
+                                        "Increases your attack power by 25%."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Vengeance",
@@ -36286,16 +36294,16 @@
                     },
                     Restoration: {
                         specIcon: "spell_nature_healingtouch",
-                        primary: 
-                        [
-                            {
-                                name: "Swiftmend",
-                                icon: "inv_relics_idolofrejuvenation",
-                                description: [
-                                    "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal the target for 5229."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Swiftmend",
+                                    icon: "inv_relics_idolofrejuvenation",
+                                    description: [
+                                        "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal the target for 5229."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Meditation",
@@ -36332,16 +36340,16 @@
                 hunter: {
                     "Beast Mastery": {
                         specIcon: "ability_hunter_bestialdiscipline",
-                        primary: 
-                        [
-                            {
-                                name: "Intimidation",
-                                icon: "ability_devour",
-                                description: [
-                                    "Command your pet to intimidate the target, causing a high amount of threat and stunning the target for 3 sec. Lasts 15 sec."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Intimidation",
+                                    icon: "ability_devour",
+                                    description: [
+                                        "Command your pet to intimidate the target, causing a high amount of threat and stunning the target for 3 sec. Lasts 15 sec."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Animal Handler",
@@ -36362,16 +36370,16 @@
                     },
                     Marksmanship: {
                         specIcon: "ability_hunter_focusedaim",
-                        primary: 
-                        [
-                            {
-                                name: "Aimed Shot",
-                                icon: "inv_spear_07",
-                                description: [
-                                    "A powerful aimed shot that deals 160% ranged weapon damage plus [(Ranged attack power * 0.724) + 777]."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Aimed Shot",
+                                    icon: "inv_spear_07",
+                                    description: [
+                                        "A powerful aimed shot that deals 160% ranged weapon damage plus [(Ranged attack power * 0.724) + 777]."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Artisan Quiver",
@@ -36392,16 +36400,16 @@
                     },
                     Survival: {
                         specIcon: "ability_hunter_camouflage",
-                        primary: 
-                        [
-                            {
-                                name: "Explosive Shot",
-                                icon: "ability_hunter_explosiveshot",
-                                description: [
-                                    "You fire an explosive charge into the enemy target, dealing (Ranged attack power * 0.273 + 449) Fire damage. The charge will blast the target every second for an additional 2 sec."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Explosive Shot",
+                                    icon: "ability_hunter_explosiveshot",
+                                    description: [
+                                        "You fire an explosive charge into the enemy target, dealing (Ranged attack power * 0.273 + 449) Fire damage. The charge will blast the target every second for an additional 2 sec."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Into the Wilderness",
@@ -36424,16 +36432,16 @@
                 mage: {
                     Arcane: {
                         specIcon: "spell_holy_magicalsentry",
-                        primary: 
-                        [
-                            {
-                                name: "Arcane Barrage",
-                                icon: "ability_mage_arcanebarrage",
-                                description: [
-                                    "Launches bolts of arcane energy at the enemy target, causing 1186 Arcane damage."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Arcane Barrage",
+                                    icon: "ability_mage_arcanebarrage",
+                                    description: [
+                                        "Launches bolts of arcane energy at the enemy target, causing 1186 Arcane damage."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Arcane Specialization",
@@ -36454,16 +36462,16 @@
                     },
                     Fire: {
                         specIcon: "spell_fire_firebolt02",
-                        primary: 
-                        [
-                            {
-                                name: "Pyroblast",
-                                icon: "spell_fire_fireball02",
-                                description: [
-                                    "Hurls an immense fiery boulder that causes 1259 Fire damage and an additional 56 Fire damage over 12 sec."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Pyroblast",
+                                    icon: "spell_fire_fireball02",
+                                    description: [
+                                        "Hurls an immense fiery boulder that causes 1259 Fire damage and an additional 56 Fire damage over 12 sec."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Fire Specialization",
@@ -36484,16 +36492,16 @@
                     },
                     Frost: {
                         specIcon: "spell_frost_frostbolt02",
-                        primary: 
-                        [
-                            {
-                                name: "Summon Water Elemental",
-                                icon: "spell_frost_summonwaterelemental_2",
-                                description: [
-                                    "Summon a Water Elemental to fight for the caster."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Summon Water Elemental",
+                                    icon: "spell_frost_summonwaterelemental_2",
+                                    description: [
+                                        "Summon a Water Elemental to fight for the caster."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Frost Specialization",
@@ -36516,16 +36524,16 @@
                 paladin: {
                     Holy: {
                         specIcon: "spell_holy_holybolt",
-                        primary: 
-                        [
-                            {
-                                name: "Holy Shock",
-                                icon: "spell_holy_searinglight",
-                                description: [
-                                    "Blasts the target with Holy energy, causing 1458 Holy damage to an enemy, or 2738 healing to an ally, and grants a charge of Holy Power."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Holy Shock",
+                                    icon: "spell_holy_searinglight",
+                                    description: [
+                                        "Blasts the target with Holy energy, causing 1458 Holy damage to an enemy, or 2738 healing to an ally, and grants a charge of Holy Power."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Walk in the Light",
@@ -36553,16 +36561,16 @@
                     },
                     Protection: {
                         specIcon: "ability_paladin_shieldofthetemplar",
-                        primary: 
-                        [
-                            {
-                                name: "Avenger's Shield",
-                                icon: "spell_holy_avengersshield",
-                                description: [
-                                    "Hurls a holy shield at the enemy, dealing 2791 Holy damage, silencing and interrupting spellcasting for 3 sec, and then jumping to additional nearby enemies.  Affects 3 total targets."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Avenger's Shield",
+                                    icon: "spell_holy_avengersshield",
+                                    description: [
+                                        "Hurls a holy shield at the enemy, dealing 2791 Holy damage, silencing and interrupting spellcasting for 3 sec, and then jumping to additional nearby enemies.  Affects 3 total targets."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Vengeance",
@@ -36597,16 +36605,16 @@
                     },
                     Retribution: {
                         specIcon: "spell_holy_auraoflight",
-                        primary: 
-                        [
-                            {
-                                name: "Templar's Verdict",
-                                icon: "spell_paladin_templarsverdict",
-                                description: [
-                                    "An instant weapon attack that causes a percentage of weapon damage.  Consumes all charges of Holy Power to increase damage dealt:<br><br>1 Holy Power: 30% Weapon Damage<br>2 Holy Power: 30% Weapon Damage<br>3 Holy Power: 90% Weapon Damage"
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Templar's Verdict",
+                                    icon: "spell_paladin_templarsverdict",
+                                    description: [
+                                        "An instant weapon attack that causes a percentage of weapon damage.  Consumes all charges of Holy Power to increase damage dealt:<br><br>1 Holy Power: 30% Weapon Damage<br>2 Holy Power: 30% Weapon Damage<br>3 Holy Power: 90% Weapon Damage"
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Sheath of Light",
@@ -36643,16 +36651,16 @@
                 priest: {
                     Discipline: {
                         specIcon: "spell_holy_powerwordshield",
-                        primary: 
-                        [
-                            {
-                                name: "Penance",
-                                icon: "spell_holy_penance",
-                                description: [
-                                    "Launches a volley of holy light at the target, causing 745 Holy damage to an enemy, or 3006 healing to an ally instantly and every 1 sec for 2 sec."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Penance",
+                                    icon: "spell_holy_penance",
+                                    description: [
+                                        "Launches a volley of holy light at the target, causing 745 Holy damage to an enemy, or 3006 healing to an ally instantly and every 1 sec for 2 sec."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Enlightenment",
@@ -36687,16 +36695,16 @@
                     },
                     Holy: {
                         specIcon: "spell_holy_guardianspirit",
-                        primary: 
-                        [
-                            {
-                                name: "Spiritual Healing",
-                                icon: "spell_holy_impholyconcentration",
-                                description: [
-                                    "Healing increased by 15%."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Spiritual Healing",
+                                    icon: "spell_holy_impholyconcentration",
+                                    description: [
+                                        "Healing increased by 15%."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Holy Word: Chastise",
@@ -36731,16 +36739,16 @@
                     },
                     Shadow: {
                         specIcon: "spell_shadow_shadowwordpain",
-                        primary: 
-                        [
-                            {
-                                name: "Mind Flay",
-                                icon: "spell_shadow_siphonmana",
-                                description: [
-                                    "Assault the target's mind with Shadow energy, causing 561 Shadow damage over 3 sec and slowing their movement speed by 50%."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Mind Flay",
+                                    icon: "spell_shadow_siphonmana",
+                                    description: [
+                                        "Assault the target's mind with Shadow energy, causing 561 Shadow damage over 3 sec and slowing their movement speed by 50%."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Shadow Power",
@@ -36770,16 +36778,16 @@
                 rogue: {
                     Assassination: {
                         specIcon: "ability_rogue_eviscerate",
-                        primary: 
-                        [
-                            {
-                                name: "Mutilate",
-                                icon: "ability_rogue_shadowstrikes",
-                                description: [
-                                    "Instantly attacks with both weapons for 180% weapon damage plus an additional 201 with each weapon.  Awards 2 combo points."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Mutilate",
+                                    icon: "ability_rogue_shadowstrikes",
+                                    description: [
+                                        "Instantly attacks with both weapons for 180% weapon damage plus an additional 201 with each weapon.  Awards 2 combo points."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Improved Poisons",
@@ -36807,16 +36815,16 @@
                     },
                     Combat: {
                         specIcon: "ability_backstab",
-                        primary: 
-                        [
-                            {
-                                name: "Blade Flurry",
-                                icon: "ability_warrior_punishingblow",
-                                description: [
-                                    "While active, the rogue's attacks strike an additional nearby opponent, but energy regeneration is reduced by 30%.  Lasts until canceled."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Blade Flurry",
+                                    icon: "ability_warrior_punishingblow",
+                                    description: [
+                                        "While active, the rogue's attacks strike an additional nearby opponent, but energy regeneration is reduced by 30%.  Lasts until canceled."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Vitality",
@@ -36844,16 +36852,16 @@
                     },
                     Subtlety: {
                         specIcon: "ability_stealth",
-                        primary: 
-                        [
-                            {
-                                name: "Shadowstep",
-                                icon: "ability_rogue_shadowstep",
-                                description: [
-                                    "Causes you to step through the shadows and appear behind an enemy target.  Your next Ambush or Garrote delivered within 10 sec will deal 30% additional damage, and your movement speed is increased by 70% for 3 sec."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Shadowstep",
+                                    icon: "ability_rogue_shadowstep",
+                                    description: [
+                                        "Causes you to step through the shadows and appear behind an enemy target.  Your next Ambush or Garrote delivered within 10 sec will deal 30% additional damage, and your movement speed is increased by 70% for 3 sec."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Master of Subtlety",
@@ -36883,16 +36891,16 @@
                 shaman: {
                     Elemental: {
                         specIcon: "spell_nature_lightning",
-                        primary: 
-                        [
-                            {
-                                name: "Thunderstorm",
-                                icon: "spell_shaman_thunderstorm",
-                                description: [
-                                    "You call down a bolt of lightning, energizing you and damaging nearby enemies within 10 yards. Restores 8% mana to you and deals 1638 Nature damage to all nearby enemies, reducing their movement speed by 40% for 5 sec and knocking them back 20 yards. This spell is usable while stunned."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Thunderstorm",
+                                    icon: "spell_shaman_thunderstorm",
+                                    description: [
+                                        "You call down a bolt of lightning, energizing you and damaging nearby enemies within 10 yards. Restores 8% mana to you and deals 1638 Nature damage to all nearby enemies, reducing their movement speed by 40% for 5 sec and knocking them back 20 yards. This spell is usable while stunned."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Elemental Fury",
@@ -36920,16 +36928,16 @@
                     },
                     Enhancement: {
                         specIcon: "spell_nature_lightningshield",
-                        primary: 
-                        [
-                            {
-                                name: "Lava Lash",
-                                icon: "ability_shaman_lavalash",
-                                description: [
-                                    "You charge your off-hand weapon with lava, instantly dealing 260% of that weapon's damage to an enemy target.  Damage is increased by 40% if your off-hand weapon is enchanted with Flametongue."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Lava Lash",
+                                    icon: "ability_shaman_lavalash",
+                                    description: [
+                                        "You charge your off-hand weapon with lava, instantly dealing 260% of that weapon's damage to an enemy target.  Damage is increased by 40% if your off-hand weapon is enchanted with Flametongue."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Mental Quickness",
@@ -36964,16 +36972,16 @@
                     },
                     Restoration: {
                         specIcon: "spell_nature_magicimmunity",
-                        primary: 
-                        [
-                            {
-                                name: "Earth Shield",
-                                icon: "spell_nature_skinofearth",
-                                description: [
-                                    "Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30%  and causing attacks to heal the shielded target for 1416.  This effect can only occur once every few seconds.  9 charges.  Lasts 10 min.  Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Earth Shield",
+                                    icon: "spell_nature_skinofearth",
+                                    description: [
+                                        "Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30%  and causing attacks to heal the shielded target for 1416.  This effect can only occur once every few seconds.  9 charges.  Lasts 10 min.  Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Purification",
@@ -37003,16 +37011,16 @@
                 warlock: {
                     Affliction: {
                         specIcon: "spell_shadow_deathcoil",
-                        primary: 
-                        [
-                            {
-                                name: "Unstable Affliction",
-                                icon: "spell_shadow_unstableaffliction_3",
-                                description: [
-                                    "Shadow energy slowly destroys the target, causing 550 damage over 15 sec.  In addition, if the Unstable Affliction is dispelled it will cause 110 damage to the dispeller and silence them for 4 sec.  Only one Unstable Affliction or Immolate per Warlock can be active on any one target."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Unstable Affliction",
+                                    icon: "spell_shadow_unstableaffliction_3",
+                                    description: [
+                                        "Shadow energy slowly destroys the target, causing 550 damage over 15 sec.  In addition, if the Unstable Affliction is dispelled it will cause 110 damage to the dispeller and silence them for 4 sec.  Only one Unstable Affliction or Immolate per Warlock can be active on any one target."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Shadow Mastery",
@@ -37033,16 +37041,16 @@
                     },
                     Demonology: {
                         specIcon: "spell_shadow_metamorphosis",
-                        primary: 
-                        [
-                            {
-                                name: "Summon Felguard",
-                                icon: "spell_shadow_summonfelguard",
-                                description: [
-                                    "Summons a Felguard under the command of the Warlock."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Summon Felguard",
+                                    icon: "spell_shadow_summonfelguard",
+                                    description: [
+                                        "Summons a Felguard under the command of the Warlock."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Demonic Knowledge",
@@ -37063,16 +37071,16 @@
                     },
                     Destruction: {
                         specIcon: "spell_shadow_rainoffire",
-                        primary: 
-                        [
-                            {
-                                name: "Conflagrate",
-                                icon: "spell_fire_fireball",
-                                description: [
-                                    "Instantly deals fire damage equal to 60% of your Immolate's periodic damage on the target."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Conflagrate",
+                                    icon: "spell_fire_fireball",
+                                    description: [
+                                        "Instantly deals fire damage equal to 60% of your Immolate's periodic damage on the target."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Cataclysm",
@@ -37095,16 +37103,16 @@
                 warrior: {
                     Arms: {
                         specIcon: "ability_warrior_savageblow",
-                        primary: 
-                        [
-                            {
-                                name: "Mortal Strike",
-                                icon: "ability_warrior_savageblow",
-                                description: [
-                                    "A vicious strike that deals 150% weapon damage plus 94 and wounds the target, reducing the effectiveness of any healing received for 10 sec."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Mortal Strike",
+                                    icon: "ability_warrior_savageblow",
+                                    description: [
+                                        "A vicious strike that deals 150% weapon damage plus 94 and wounds the target, reducing the effectiveness of any healing received for 10 sec."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Anger Management",
@@ -37132,16 +37140,16 @@
                     },
                     Fury: {
                         specIcon: "ability_warrior_innerrage",
-                        primary: 
-                        [
-                            {
-                                name: "Bloodthirst",
-                                icon: "spell_nature_bloodlust",
-                                description: [
-                                    "Instantly attack the target causing (Attack power * 81 / 100) damage.  In addition, the next 3 successful melee attacks will restore [0.55 / 0.5]% of max health.  This effect lasts 8 sec.  Damage is based on your attack power."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Bloodthirst",
+                                    icon: "spell_nature_bloodlust",
+                                    description: [
+                                        "Instantly attack the target causing (Attack power * 81 / 100) damage.  In addition, the next 3 successful melee attacks will restore [0.55 / 0.5]% of max health.  This effect lasts 8 sec.  Damage is based on your attack power."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Dual Wield Specialization",
@@ -37169,16 +37177,16 @@
                     },
                     Protection: {
                         specIcon: "ability_warrior_defensivestance",
-                        primary: 
-                        [
-                            {
-                                name: "Shield Slam",
-                                icon: "inv_shield_05",
-                                description: [
-                                    "Slam the target with your shield, causing 293 damage (based on attack power) and dispelling 1 magic effect on the target."
-                                ]
-                            }
-                        ],
+                        primary:
+                            [
+                                {
+                                    name: "Shield Slam",
+                                    icon: "inv_shield_05",
+                                    description: [
+                                        "Slam the target with your shield, causing 293 damage (based on attack power) and dispelling 1 magic effect on the target."
+                                    ]
+                                }
+                            ],
                         secondary: [
                             {
                                 name: "Sentinel",
@@ -37453,6 +37461,37 @@
             return lines.join("\n");
         }
 
+        function getCataBaseTalentTooltip(talent, classKey) {
+            if (!talent) return "";
+
+            const lines = [];
+
+            // 1. Talent Name
+            let talentName = talent.name || "";
+            if (talentName.startsWith("Mastery: ")) {
+                talentName = talentName.replace("Mastery: ", ""); // strip prefix
+            }
+            lines.push(`<div class="text-[15px] text-white">${talentName}</div>`);
+
+            // 2. "Talent" label
+            lines.push(`<div class="text-sm text-gray-400">Talent</div>`);
+
+            // 3. "Requires [Class]"
+            const classDisplayName = talentTreeData[currentState.version].classes[classKey].name;
+            lines.push(`<div class="text-sm text-white">Requires ${classDisplayName}</div>`);
+
+            // 4. Description
+            if (Array.isArray(talent.description)) {
+                lines.push(`<div class="text-sm text-yellow-300">${talent.description.join("<br>")}</div>`);
+            } else if (typeof talent.description === "string") {
+                lines.push(`<div class="text-sm text-yellow-300">${talent.description}</div>`);
+            } else {
+                lines.push(`<div class="text-sm text-yellow-300 italic">No description available</div>`);
+            }
+
+            return lines.join("\n");
+        }
+
         let previousExpansion = null;
 
         function handleVersionChange(loadingBuild = false) {
@@ -37632,7 +37671,7 @@
 
             // Hide placeholder if both version and class are selected
             talentPlaceholder.classList.add("hidden");
-            
+
             if (currentExpansion === "cataclysm") {
                 if (!chosenSpec) {
                     cataSpecSelectionPanel.classList.remove("hidden");
@@ -37647,6 +37686,7 @@
             }
         }
 
+        /*
         function moveClassButtons(toPlaceholder) {
             const classSelection = document.querySelector(".class-selection");
             const selectClassContainer = document.getElementById("select-class-container");
@@ -37668,6 +37708,7 @@
                 selectClassContainer.style.display = "";
             }
         }
+        */
 
         function handleCustomPointsChange() {
             currentState.pointsTotal = parseInt(customPoints.value);
@@ -37703,7 +37744,7 @@
                 headerEl.classList.add("collapsed");
             }
             */
-            
+
             /*
             if (!newClassKey) {
                 // No class selected → uncollapse the header
@@ -37751,13 +37792,13 @@
             });
 
             updatePointsDisplay();
-            
+
             const currentExpansion = getCurrentExpansion();
 
             if (currentExpansion === "cataclysm") {
                 // Reset spec each time class is clicked (respec flow)
                 chosenSpec = null;
-                
+
                 updatePlaceholder();
                 renderSpecSelectionPanel();
             } else {
@@ -37776,48 +37817,121 @@
 
             const specs = cataSpecCards?.cataclysm?.[classKey];
 
-            cataSpecSelectionPanel.innerHTML = ""; // clear existing UI
+            // clear existing UI
+            if (cataSpecSelectionPanel) {
+                cataSpecSelectionPanel.innerHTML = ""; 
+            }
+
+            if (timelineWrapper) {
+                timelineWrapper.innerHTML = "";
+            }
 
             if (!chosenSpec && specs && currentState.pointsSpent === 0) {
                 cataSpecSelectionPanel.classList.remove("hidden");
                 talentTrees.classList.add("hidden");
-            } 
+            }
             else {
                 cataSpecSelectionPanel.classList.add("hidden");
                 talentTrees.classList.remove("hidden");
             }
 
-            // === Container wrapper ===
+            // === Build header/info box (always visible) ===
+            const classData = talentTreeData[version].classes[classKey];
+            const trees = classData.trees;
+
+            const treePoints = trees.map(tree => {
+                const talents = currentState.talents[classKey]?.[tree] || {};
+                return Object.values(talents).reduce((sum, val) => sum + val, 0);
+            });
+            const totalPoints = treePoints.reduce((a, b) => a + b, 0);
+
+            let requiredLevel;
+            if (version.startsWith("4.")) {
+                const pointsToLevelMap = [10, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85];
+                requiredLevel = totalPoints === 0 ? "-" : pointsToLevelMap[Math.min(totalPoints - 1, pointsToLevelMap.length - 1)];
+            } else {
+                requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
+            }
+            const pointsLeft = currentState.pointsTotal - totalPoints;
+
+            const classIconUrl = `https://wow.zamimg.com/images/wow/icons/large/classicon_${classKey}.jpg`;
+            const classColor = classColors[classKey] || "#FFF";
+
+            const headerHTML = `
+                <div class="w-full py-4 px-6 rounded-md bg-gray-800 text-gray-100 shadow flex flex-col md:flex-row justify-between items-center gap-4 border border-gray-700">
+                    <div class="flex items-center gap-3">
+                        <img src="${classIconUrl}" alt="${classData.name}" class="w-8 h-8 rounded border border-gray-500" />
+                        <span class="text-lg font-semibold">
+                            <span style="color: ${classColor}">${classData.name}:</span>
+                            ${treePoints.map((points, i) => `
+                                <span class="${points === 0 ? "text-gray-400" : "text-white"}">${points}</span>
+                                ${i < treePoints.length - 1 ? '<span class="text-gray-500"> / </span>' : ""}
+                            `).join("")}
+                        </span>
+                    </div>
+                    <div class="flex gap-4 text-sm">
+                        <div>
+                            <span class="text-gray-400 font-semibold">Required level:</span>
+                            <span class="font-semibold">${requiredLevel}</span>
+                        </div>
+                        <div>
+                            <span class="text-gray-400 font-semibold">Points left:</span>
+                            <span class="font-semibold">${pointsLeft}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            cataSpecSelectionPanel.insertAdjacentHTML("beforeend", headerHTML);
+
+            // === Container wrapper for spec summary cards ===
             const container = document.createElement("div");
-            container.className = "flex flex-col md:flex-row gap-6 justify-center";
-            
+            container.className = "flex flex-col md:flex-row gap-6 justify-center mt-4";
+
             Object.entries(specs).forEach(([specKey, specInfo]) => {
                 // specKey is "Arms" / "Fury" / "Protection"
                 // specInfo is the object containing specIcon, primary[], secondary[], specDescription
 
                 const primary = specInfo.primary?.[0] || {};
-                const primaryDesc = Array.isArray(primary.description) 
-                    ? primary.description.join(" ") 
+                const primaryDesc = Array.isArray(primary.description)
+                    ? primary.description.join(" ")
                     : (primary.description || "");
 
                 const secondaryHTML = (specInfo.secondary || [])
-                .map(p => {
-                    const pdesc = Array.isArray(p.description) 
-                    ? p.description.join(" ") 
-                    : (p.description || "");
-                    const iconPath = p.icon ? `https://wow.zamimg.com/images/wow/icons/large/${p.icon}.jpg` : "";
-                    return `
-                    <li class="flex items-start gap-2 mb-2">
-                        ${ iconPath ? `<img src="${iconPath}" alt="${p.name}" class="w-5 h-5 rounded">` : "" }
-                        <div>
-                        <strong>${p.name}</strong>
-                        <div class="text-sm text-gray-300">${pdesc}</div>
-                        </div>
-                    </li>
-                    `;
-                }).join("");
+                    .map(p => {
+                        const tooltip = getCataBaseTalentTooltip(p, classKey); // <-- Added tooltip for secondary abilities
+                        const pdesc = Array.isArray(p.description)
+                            ? p.description.join(" ")
+                            : (p.description || "");
+                        const iconPath = p.icon ? `https://wow.zamimg.com/images/wow/icons/large/${p.icon}.jpg` : "";
+                        return `
+                            <li class="flex items-center gap-2 mb-2">
+                                <!-- Icon with tooltip -->
+                                ${iconPath ? `
+                                <div class="relative group">    
+                                    <img src="${iconPath}" alt="${p.name}" class="w-5 h-5 rounded border border-gray-600 cursor-pointer">
+                                    <!-- Tooltip -->
+                                    <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                                                p-2 bg-black border border-gray-600 rounded w-64">
+                                        ${tooltip}
+                                    </div>
+                                </div>` : ""}
+                                <!-- Name with tooltip -->
+                                <div class="relative group inline-block">
+                                    <strong class="text-sm font-normal cursor-pointer" style="color:#e4cc81;">${p.name}</strong>
+                                    <!-- <div class="text-sm text-gray-300">${pdesc}</div> -->
+                                    <!-- Tooltip -->
+                                    <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                                                p-2 bg-black border border-gray-600 rounded w-64">
+                                        ${tooltip}
+                                    </div>
+                                </div>
+                            </li>
+                        `;
+                    }).join("");
 
-                const specIconPath = specInfo.specIcon ? `https://wow.zamimg.com/images/wow/icons/large/${specInfo.specIcon}.jpg` : "";
+                const specIconPath = specInfo.specIcon 
+                    ? `https://wow.zamimg.com/images/wow/icons/large/${specInfo.specIcon}.jpg` 
+                    : "";
 
                 // === Spec wrapper ===
                 const specWrapper = document.createElement("div");
@@ -37825,63 +37939,80 @@
 
                 // === Spec card ===
                 const specEl = document.createElement("div");
-                specEl.className =
-                "bg-gray-900 h-full p-4 pt-4 pb-1 rounded-lg w-[340px] shadow-lg border border-gray-700 flex flex-col items-center";
-
-                const card = document.createElement("div");
-                card.className = "spec-card p-3 bg-gray-800 rounded-md border border-gray-700 mb-3";
+                specEl.className = `
+                    bg-gray-900 p-4 rounded-lg w-[340px] h-[550px]
+                    shadow-lg border border-gray-700 relative flex flex-col
+                `.trim();
 
                 specEl.innerHTML = `
-                    <div class="flex items-center justify-between mb-3 px-2 py-1 rounded bg-gray-800 border border-gray-700 w-full">
-                        <div class="flex items-center gap-2">
-                            ${ specIconPath ? `<img src="${specIconPath}" class="w-6 h-6"/>` : "" }
-                            <span class="text-white font-medium text-base">${specKey}</span>
-                        </div>
+                    <!-- Select button at top -->
+                    <button data-spec="${specKey}"
+                        class="mb-3 w-full bg-yellow-600 hover:bg-yellow-500
+                            text-black text-xl font-semibold px-3 py-2 rounded transition-colors">
+                        ${specKey}
+                    </button>
+
+                    <!-- Spec icon -->
+                    <div class="flex flex-col items-center py-6 mb-4 cursor-pointer select-spec" data-spec="${specKey}">
+                        ${specIconPath ? `
+                            <img src="${specIconPath}"
+                                 class="w-16 h-16 rounded-full border-2 border-gray-600 mb-2
+                                        transition-transform transform hover:brightness-110"/>
+                        ` : ""}
                     </div>
 
-                    <p class="text-sm text-gray-300 mb-3">${specInfo.specDescription || ""}</p>
+                    <!-- Summary abilities container -->
+                    <div class="flex flex-col gap-2" style="min-height: 240px; max-height: 240px;">
+                        <!-- Primary ability -->
+                        <div class="mt-0 mb-0 flex items-center gap-3">
+                            <!-- Icon with tooltip -->
+                            ${primary.icon ? `
+                            <div class="relative group">
+                                <img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg" 
+                                     class="w-10 h-10 rounded border border-gray-600 cursor-pointer"/>
+                                <!-- Tooltip -->
+                                <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                                            p-2 bg-black border border-gray-600 rounded w-64">
+                                    ${getCataBaseTalentTooltip(primary, classKey)}
+                                </div>
+                            </div>` : ""}
 
-                    <div class="mb-3 w-full">
-                        <h4 class="text-sm font-medium">Primary</h4>
-                        <div class="flex items-start gap-2">
-                            ${ primary.icon ? `<img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg" class="w-6 h-6"/>` : "" }
-                            <div>
-                                <strong>${primary.name || ""}</strong>
-                                <div class="text-sm text-gray-300">${primaryDesc}</div>
+                            <!-- Name with tooltip -->
+                            <div class="relative group inline-block">
+                                <strong class="text-lg font-normal cursor-pointer" style="color:#e4cc81;">${primary.name || ""}</strong>
+                                <!-- Tooltip -->
+                                <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                                            p-2 bg-black border border-gray-600 rounded w-64">
+                                    ${getCataBaseTalentTooltip(primary, classKey)}
+                                </div>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="mb-3 w-full">
-                        <h4 class="text-sm font-medium">Secondary</h4>
-                        <ul class="mt-2">${secondaryHTML}</ul>
+                        <!-- Secondary abilities -->
+                        <div class="mt-0 mb-8">
+                            <ul class="mt-2">${secondaryHTML}</ul>
+                        </div>
+                    </div>
+                    
+                    <!-- Spec description at bottom -->
+                    <div class="mt-0">
+                        <p class="text-sm text-gray-300">
+                            ${specInfo.specDescription || ""}
+                        </p>
                     </div>
                 `;
 
-                // === Select button ===
-                const selectBtn = document.createElement("button");
-                selectBtn.className = `
-                    mt-2 w-[310px] bg-yellow-600 hover:bg-yellow-700
-                    text-black font-semibold px-3 py-1 rounded
-                `.trim();
-                selectBtn.dataset.spec = specKey;
-                selectBtn.innerText = `${specKey}`;
-
-                // button handler
-                selectBtn.addEventListener("click", () => {
-                    // todo: lock the other trees until 31 points are picked and currentLevel is 69
-
-                    chosenSpec = specKey;
-
-                    // hide panel, show trees
-                    cataSpecSelectionPanel.classList.add("hidden");
-                    talentTrees.classList.remove("hidden");
-                    renderTalentTrees();
+                // === Attach click handlers for both select button & icon ===
+                specEl.querySelectorAll("[data-spec]").forEach(el => {
+                    el.addEventListener("click", () => {
+                        chosenSpec = specKey;
+                        cataSpecSelectionPanel.classList.add("hidden");
+                        talentTrees.classList.remove("hidden");
+                        renderTalentTrees();
+                    });
                 });
 
                 specWrapper.appendChild(specEl);
-                specWrapper.appendChild(selectBtn);
-
                 container.appendChild(specWrapper);
             });
 
@@ -37980,7 +38111,7 @@
 
             // Build info box
             const headerHTML = `
-                        <div class="w-full py-4 px-6 mb-4 rounded-md bg-gray-800 text-gray-100 shadow flex flex-col md:flex-row justify-between items-center gap-4 border border-gray-700">
+                        <div class="w-full py-4 px-6 rounded-md bg-gray-800 text-gray-100 shadow flex flex-col md:flex-row justify-between items-center gap-4 border border-gray-700">
                             <div class="flex items-center gap-3">
                                 <img src="${classIconUrl}" alt="${classData.name
                 }" class="w-8 h-8 rounded border border-gray-500" />
@@ -38017,7 +38148,7 @@
             talentTrees.innerHTML = headerHTML;
 
             const container = document.createElement("div");
-            container.className = "flex flex-col md:flex-row gap-6 justify-center";
+            container.className = "flex flex-col md:flex-row gap-6 justify-center mt-4";
 
             trees.forEach((treeName) => {
                 const talents = getTalents(version, classKey, treeName);
@@ -38204,7 +38335,14 @@
             });
 
             talentTrees.appendChild(container);
-            renderLevelTimeline(talentTrees);
+            
+            // === NEW: render timeline outside talent-wrapper ===
+            // Get the top-level timeline wrapper
+            if (timelineWrapper) {
+                timelineWrapper.innerHTML = ""; // clear any previous timeline
+                renderLevelTimeline(timelineWrapper); // render timeline inside top-level wrapper
+            }
+            // ==================================================
 
             // Add click handlers
             document.querySelectorAll(".talent-icon").forEach((icon) => {
@@ -38466,7 +38604,7 @@
             currentState.pointsSpent = trees.reduce((total, tree) => {
                 const treePoints = Object.values(currentState.talents[classKey][tree] || {}).reduce((sum, val) => sum + val, 0);
                 return total + treePoints;
-            }, 0);  
+            }, 0);
 
             recalculateTalentOrder();
 
@@ -39859,7 +39997,44 @@
 
             const orderBox = document.createElement("div");
             orderBox.className =
-                "mt-6 p-3 rounded bg-gray-800 border border-gray-700 flex flex-wrap gap-2 justify-start";
+                "w-full mt-6 p-3 rounded bg-gray-800 border border-gray-700 shadow-lg";
+
+            // Add header
+            const header = document.createElement("div");
+            header.className = "flex justify-between items-center mb-2";
+
+            const title = document.createElement("div");
+            title.className = "text-white text-base font-semibold";
+            title.textContent = "Talent Order";
+
+            const toggleBtn = document.createElement("button");
+            toggleBtn.className =
+                "text-white p-1 rounded transition-colors";
+            toggleBtn.title = "Hide Talent Order";
+            // toggleBtn.title = "Keep this open to include its data in the link URL.";
+            toggleBtn.innerHTML = `<i class="fa fa-angle-down text-lg"></i>`;
+
+            header.appendChild(title);
+            header.appendChild(toggleBtn);
+            orderBox.appendChild(header);
+
+            // Container for the timeline entries
+            const itemsContainer = document.createElement("div");
+            itemsContainer.className = "flex flex-wrap gap-2 justify-start";
+            orderBox.appendChild(itemsContainer);
+
+            // Toggle logic
+            toggleBtn.addEventListener("click", () => {
+                const hidden = itemsContainer.classList.toggle("hidden");
+                
+                if (hidden) {
+                    toggleBtn.innerHTML = `<i class="fa fa-angle-up text-lg"></i>`;
+                    toggleBtn.title = "Show Talent Order"; // update title when hidden
+                } else {
+                    toggleBtn.innerHTML = `<i class="fa fa-angle-down text-lg"></i>`;
+                    toggleBtn.title = "Hide Talent Order"; // update title when shown
+                }
+            });
 
             const timeline = [];
 
@@ -39920,12 +40095,12 @@
                     <img src="${iconUrl}" alt="${talent.name}" class="w-4 h-4 rounded" />
                     <span>${levelText}</span>
                 `;
-                orderBox.appendChild(item);
+                itemsContainer.appendChild(item);
             });
 
             container.appendChild(orderBox);
         }
-        
+
         function renderTalentOrderTimeline() {
             const { class: classKey, talentOrder } = currentState;
             if (!classKey || talentOrder.length === 0) return;
@@ -40090,8 +40265,8 @@
             currentState.pointsSpent = build.pointsSpent || 0;
 
             // restore talentOrder directly instead of rebuilding
-            currentState.talentOrder = build.talentOrder 
-                ? JSON.parse(JSON.stringify(build.talentOrder)) 
+            currentState.talentOrder = build.talentOrder
+                ? JSON.parse(JSON.stringify(build.talentOrder))
                 : [];
 
 
@@ -40150,7 +40325,7 @@
             if (expansion === "cataclysm" && dominantTree) {
                 chosenSpec = dominantTree;
             }
-            
+
             // Assign levels to talentOrder
             // recalculateTalentOrder();
 
@@ -40346,7 +40521,7 @@
         function generateBuildString() {
             if (!currentState.version || !currentState.class) return "";
 
-            const version = currentState.version;    
+            const version = currentState.version;
             const classKey = currentState.class;
             const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
 
