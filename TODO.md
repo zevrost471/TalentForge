@@ -16,7 +16,7 @@ These should be done first because other features depend on them or they fix cor
 3. Fix Responsive Layout Issue
 
     - Trees should never overflow their container at smaller screen widths.
-    - Some class buttons are not fully visible at smaller screen widths.
+    - Some class buttons are not fully visible at smaller screen widths. ✅
 
 4. Fix ```renderLevelTimeline``` not appearing when a build is loaded
 
@@ -76,7 +76,7 @@ Nice-to-have, improves personalization but not critical.
 
 6. Change Font to Better Match Warcraft Theme
 
-7. Add Cataclysm Spec Selection Panel & expansion-specific talent logic
+7. Add Cataclysm Spec Selection Panel & expansion-specific talent logic ✅
 
 ### 🔹 Tier 4: Content & Informational Features
 
