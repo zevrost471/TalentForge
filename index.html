@@ -31439,6 +31439,21 @@
                             ]
                         },
                         {
+                            id: "focused_strikes",
+                            name: "Focused Strikes",
+                            icon: "spell_shaman_focusedstrikes",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage dealt by your Primal Strike and Stormstrike abilities by {value}%.",
+                                {
+                                    value: [15, 30, 45]
+                                }
+                            ]
+                        },
+                        {
                             id: "improved_shields",
                             name: "Improved Shields",
                             icon: "spell_nature_lightningshield",
@@ -31574,6 +31589,21 @@
                             ]
                         },
                         {
+                            id: "seasoned_winds",
+                            name: "Seasoned Winds",
+                            icon: "spell_nature_elementalabsorption",
+                            row: 3,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When you successfully interrupt an enemy spellcast with Wind Shear, you gain {value} resistance to that spell's magical school for 10 sec.",
+                                {
+                                    value: [97, 195]
+                                }
+                            ]
+                        },
+                        {
                             id: "searing_flames",
                             name: "Searing Flames",
                             icon: "spell_fire_searingtotem",
@@ -31678,6 +31708,21 @@
                     // shaman - cataclysm
                     Restoration: [
                         {
+                            id: "ancestral_resolve",
+                            name: "Ancestral Resolve",
+                            icon: "spell_nature_rune",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces damage taken while casting spells by {value}%.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
                             id: "tidal_focus",
                             name: "Tidal Focus",
                             icon: "spell_frost_manarecharge",
@@ -31689,6 +31734,22 @@
                                 "Reduces the mana cost of your healing spells by {value}%.",
                                 {
                                     value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "spark_of_life",
+                            name: "Spark of Life",
+                            icon: "spell_nature_wispsplodegreen",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your healing done by {value1}% and your healing received by {value2}%.",
+                                {
+                                    value1: [2, 4, 6],
+                                    value2: [5, 10, 15]
                                 }
                             ]
                         },
@@ -31724,6 +31785,21 @@
                             ]
                         },
                         {
+                            id: "ancestral_healing",
+                            name: "Ancestral Healing",
+                            icon: "spell_nature_undyingstrength",
+                            row: 2,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your critical heals reduce physical damage taken by {value}% for 15 sec, and heals you cast increase allies' maximum health by {value}% of the amount healed, up to a maximum of 10% of their health.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
                             id: "natures_swiftness",
                             name: "Nature's Swiftness",
                             icon: "spell_nature_ravenform",
@@ -31736,6 +31812,37 @@
                             ]
                         },
                         {
+                            id: "natures_blessing",
+                            name: "Nature's Blessing",
+                            icon: "spell_nature_natureblessing",
+                            row: 2,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the effectiveness of your direct heals on Earth Shielded targets by {value}%.",
+                                {
+                                    value: [6, 12, 18]
+                                }
+                            ]
+                        },
+                        {
+                            id: "soothing_rains",
+                            name: "Soothing Rains",
+                            icon: "spell_nature_giftofthewaterspirit",
+                            row: 3,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the amount healed by your Healing Stream Totem by {value1}%, and your Healing Rain spell by {value2}%.",
+                                {
+                                    value1: [25, 50],
+                                    value2: [15, 30]
+                                }
+                            ]
+                        },
+                        {
                             id: "improved_cleanse_spirit",
                             name: "Improved Cleanse Spirit",
                             icon: "ability_shaman_cleansespirit",
@@ -31745,6 +31852,37 @@
                             requiresTalents: null,
                             description: [
                                 "Empowers your Cleanse Spirit spell to also remove a magic effect from a friendly target."
+                            ]
+                        },
+                        {
+                            id: "cleansing_waters",
+                            name: "Cleansing Waters",
+                            icon: "spell_nature_regeneration_02",
+                            row: 3,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: "improved_cleanse_spirit",
+                            description: [
+                                "Reduces the cost of Cleanse Spirit by {value1}%, and when your Cleanse Spirit successfully removes a harmful effect, you also heal the target for {value2}.  The heal effect can only occur once every 6 seconds.",
+                                {
+                                    value1: [20, 40],
+                                    value2: [1402, 2803]
+                                }
+                            ]
+                        },
+                        {
+                            id: "ancestral_awakening",
+                            name: "Ancestral Awakening",
+                            icon: "spell_shaman_ancestralawakening",
+                            row: 4,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: "ancestral_healing",
+                            description: [
+                                "When you critically heal with a single-target direct heal, you summon an Ancestral spirit to aid you, instantly healing the lowest percentage health friendly party or raid target within 40 yards for {value}% of the amount healed.",
+                                {
+                                    value: [10, 20, 30]
+                                }
                             ]
                         },
                         {
@@ -31769,6 +31907,21 @@
                             requiresTalents: null,
                             description: [
                                 "Summons a Spirit Link Totem with 5 health at the feet of the caster. The totem reduces damage taken by all party and raid members within 10 yards by 10%. Every 1 sec, the health of all affected players is redistributed, such that each player ends up with the same percentage of their maximum health. Lasts 6 sec."
+                            ]
+                        },
+                        {
+                            id: "tidal_waves",
+                            name: "Tidal Waves",
+                            icon: "spell_shaman_tidalwaves",
+                            row: 5,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When you cast Chain Heal or Riptide, you gain the Tidal Waves effect, which reduces the cast time of your Healing Wave and Greater Healing Wave spells by {value}% and increases the critical effect chance of your Healing Surge spell by {value}%. 2 charges.",
+                                {
+                                    value: [10, 20, 30]
+                                }
                             ]
                         },
                         {
