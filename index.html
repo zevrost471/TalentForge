@@ -28225,6 +28225,21 @@
                             ]
                         },
                         {
+                            id: "improved_blood_tap",
+                            name: "Improved Blood Tap",
+                            icon: "spell_deathknight_bloodtap",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Blood Tap ability by {value} sec.",
+                                {
+                                    value: [15, 30]
+                                }
+                            ]
+                        },
+                        {
                             id: "scent_of_blood",
                             name: "Scent of Blood",
                             icon: "ability_rogue_bloodyeye",
@@ -28236,6 +28251,21 @@
                                 "You have a 15% chance after dodging, parrying or taking direct damage to gain the Scent of Blood effect, causing your next {value} to generate 10 Runic Power.",
                                 {
                                     value: ["melee hit", "2 melee hits", "3 melee hits"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "hand_of_doom",
+                            name: "Hand of Doom",
+                            icon: "ability_deathknight_desolation",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Strangulate ability by {value} sec.",
+                                {
+                                    value: [30, 60]
                                 }
                             ]
                         },
@@ -28282,6 +28312,69 @@
                             ]
                         },
                         {
+                            id: "abominations_might",
+                            name: "Abomination's Might",
+                            icon: "ability_warrior_intensifyrage",
+                            row: 2,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases melee attack power by {value1}% and ranged attack power by {value2}% of party and raid members within 100 yards.  Also increases your total Strength by {value3}%.",
+                                {
+                                    value1: [10, 20],
+                                    value2: [5, 10],
+                                    value3: [1, 2]
+                                }
+                            ]
+                        },
+                        {
+                            id: "blood_parasite",
+                            name: "Blood Parasite",
+                            icon: "spell_shadow_soulleech",
+                            row: 3,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your melee attacks have a {value}% chance to spawn a Bloodworm. The Bloodworm attacks your enemies, gorging itself with blood until it bursts to heal nearby allies.  Lasts up to 20 sec.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_blood_presence",
+                            name: "Improved Blood Presence",
+                            icon: "spell_deathknight_bloodpresence",
+                            row: 3,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your rune regeneration by {value1}% and reduces the chance that you will be critically hit by melee attacks while in Blood Presence by {value2}%.  In addition, while in Frost Presence or Unholy Presence, you retain {value3}% damage reduction from Blood Presence.",
+                                {
+                                    value1: [10, 20],
+                                    value2: [3, 6],
+                                    value3: [2, 4]
+                                }
+                            ]
+                        },{
+                            id: "will_of_the_necropolis",
+                            name: "Will of the Necropolis",
+                            icon: "ability_creature_cursed_02",
+                            row: 4,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: "rune_tap",
+                            description: [
+                                "When a damaging attack brings you below 30% of your maximum health, the cooldown on your Rune Tap ability is refreshed and your next Rune Tap has no cost, and all damage taken is reduced by {value}% for 8 sec.  This effect cannot occur more than once every 45 seconds.",
+                                {
+                                    value: [8, 16, 25]
+                                }
+                            ]
+                        },
+                        {
                             id: "rune_tap",
                             name: "Rune Tap",
                             icon: "spell_deathknight_runetap",
@@ -28303,6 +28396,23 @@
                             requiresTalents: null,
                             description: [
                                 "Temporarily grants the Death Knight 15% of maximum health and increases the amount of health received from healing spells and effects by 25% for 10 sec.  After the effect expires, the health is lost."
+                            ]
+                        },
+                        {
+                            id: "improved_death_strike",
+                            name: "Improved Death Strike",
+                            icon: "spell_deathknight_butcher2",
+                            row: 5,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your Death Strike by {value1}%, its critical strike chance by {value2}%, and its amount healed by {value3}%.",
+                                {
+                                    value1: [40, 80, 120],
+                                    value2: [10, 20, 30],
+                                    value3: [15, 30, 45]
+                                }
                             ]
                         },
                         {
@@ -28367,6 +28477,21 @@
                             ]
                         },
                         {
+                            id: "annihilation",
+                            name: "Annihilation",
+                            icon: "inv_weapon_hand_18",
+                            row: 1,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage dealt by your Obliterate ability by {value}%.",
+                                {
+                                    value: [15, 30, 45]
+                                }
+                            ]
+                        },
+                        {
                             id: "lichborne",
                             name: "Lichborne",
                             icon: "spell_shadow_raisedead",
@@ -28376,6 +28501,22 @@
                             requiresTalents: null,
                             description: [
                                 "Draw upon unholy energy to become undead for 10 sec.  While undead, you are immune to Charm, Fear and Sleep effects."
+                            ]
+                        },
+                        {
+                            id: "on_a_pale_horse",
+                            name: "On a Pale Horse",
+                            icon: "ability_mount_undeadhorse",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "You become as hard to stop as death itself.  The duration of movement-slowing effects used against you is reduced by {value1}%, and your mounted speed is increased by {value2}%.  This does not stack with other movement speed increasing effects.",
+                                {
+                                    value1: [15, 30],
+                                    value2: [10, 20]
+                                }
                             ]
                         },
                         {
@@ -28394,6 +28535,66 @@
                             ]
                         },
                         {
+                            id: "merciless_combat",
+                            name: "Merciless Combat",
+                            icon: "inv_sword_112",
+                            row: 2,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Icy Touch, Howling Blast, Obliterate and Frost Strike do an additional {value}% damage when striking targets with less than 35% health.",
+                                {
+                                    value: [6, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "chill_of_the_grave",
+                            name: "Chill of the Grave",
+                            icon: "spell_frost_frostshock",
+                            row: 2,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Chains of Ice, Howling Blast, Icy Touch and Obliterate generate {value} additional Runic Power.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "killing_machine",
+                            name: "Killing Machine",
+                            icon: "inv_sword_122",
+                            row: 2,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your autoattacks have a chance to grant a 100% critical strike bonus to your next Obliterate or Frost Strike.{value}",
+                                {
+                                    value: ["", "  Effect occurs more often than Killing Machine (Rank 1).", "  Effect occurs more often than Killing Machine (Rank 2).", "  Effect occurs more often than Killing Machine (Rank 3).", "  Effect occurs more often than Killing Machine (Rank 4)."]
+                                }
+                            ]
+                        },
+                        {
+                            id: "rime",
+                            name: "Rime",
+                            icon: "spell_frost_freezingbreath",
+                            row: 3,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your Obliterate has a {value}% chance to cause your next Howling Blast or Icy Touch to consume no runes.",
+                                {
+                                    value: [15, 30, 45]
+                                }
+                            ]
+                        },
+                        {
                             id: "pillar_of_frost",
                             name: "Pillar of Frost",
                             icon: "ability_deathknight_pillaroffrost",
@@ -28406,6 +28607,49 @@
                             ]
                         },
                         {
+                            id: "improved_icy_talons",
+                            name: "Improved Icy Talons",
+                            icon: "spell_deathknight_icytalons",
+                            row: 3,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the melee and ranged attack speed of all party and raid members within 100 yards by 10%, and your own attack speed by an additional 5%."
+                            ]
+                        },
+                        {
+                            id: "brittle_bones",
+                            name: "Brittle Bones",
+                            icon: "ability_deathknight_brittlebones",
+                            row: 3,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Strength is increased by {value}% and your Frost Fever chills the bones of its victims, increasing their physical damage taken by {value}%.",
+                                {
+                                    value: [2, 4]
+                                }
+                            ]
+                        },
+                        {
+                            id: "chilblains",
+                            name: "Chilblains",
+                            icon: "spell_frost_wisp",
+                            row: 4,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Victims of your Frost Fever disease are Chilled, reducing movement speed by {value1}% for 10 sec, and your Chains of Ice immobilizes targets for {value2} sec.",
+                                {
+                                    value1: [25, 50],
+                                    value2: ["1.50", "3"]
+                                }
+                            ]
+                        },
+                        {
                             id: "hungering_cold",
                             name: "Hungering Cold",
                             icon: "inv_staff_15",
@@ -28415,6 +28659,53 @@
                             requiresTalents: null,
                             description: [
                                 "Purges the earth around the Death Knight of all heat.  Enemies within 10 yards are afflicted with Frost Fever and trapped in ice, preventing them from performing any action for 10 sec.  Enemies are considered Frozen, but any damage other than diseases will break the ice."
+                            ]
+                        },
+                        {
+                            id: "improved_frost_presence",
+                            name: "Improved Frost Presence",
+                            icon: "spell_deathknight_frostpresence",
+                            row: 4,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your bonus damage while in Frost Presence by an additional {value1}%.  In addition, while in Blood Presence or Unholy Presence, you retain {value2}% increased Runic Power generation from Frost Presence.",
+                                {
+                                    value1: [2, 5],
+                                    value2: [2, 4]
+                                }
+                            ]
+                        },
+                        {
+                            id: "threat_of_thassarian",
+                            name: "Threat of Thassarian",
+                            icon: "ability_dualwieldspecialization",
+                            row: 5,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When dual-wielding, your Death Strikes, Obliterates, Plague Strikes, Rune Strikes, Blood Strikes and Frost Strikes have a {value}% chance to also deal damage with your off-hand weapon. Off-hand strikes from Rune Strike generate increased threat.",
+                                {
+                                    value: [30, 60, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "might_of_the_frozen_wastes",
+                            name: "Might of the Frozen Wastes",
+                            icon: "inv_sword_120",
+                            row: 5,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When wielding a two-handed weapon, your melee attacks deal an additional {value1}% damage and your autoattacks have a {value2}% chance to generate 10 Runic Power.",
+                                {
+                                    value1: [3, 7, 10],
+                                    value2: [15, 30, 45]
+                                }
                             ]
                         },
                         {
@@ -28433,6 +28724,114 @@
                     // deathknight - cataclysm
                     Unholy: [
                         {
+                            id: "unholy_command",
+                            name: "Unholy Command",
+                            icon: "spell_deathknight_strangulate",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Death Grip ability by {value1} sec, and gives you a {value2}% chance to refresh its cooldown when dealing a killing blow to a target that grants experience or honor.",
+                                {
+                                    value1: [5, 10],
+                                    value2: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "virulence",
+                            name: "Virulence",
+                            icon: "spell_shadow_burningspirit",
+                            row: 0,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your diseases by {value}%.",
+                                {
+                                    value: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "epidemic",
+                            name: "Epidemic",
+                            icon: "spell_shadow_shadowwordpain",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the duration of Blood Plague and Frost Fever by {value} sec.",
+                                {
+                                    value: [4, 8, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "desecration",
+                            name: "Desecration",
+                            icon: "spell_shadow_shadowfiend",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Plague, Scourge, and Necrotic Strikes defile the ground within 7 yards of your target. Enemies in the area are slowed by {value}% while standing on the unholy ground. Does not trigger against targets that are immune to movement-slowing effects. Lasts 20 sec.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "resilient_infection",
+                            name: "Resilient Infection",
+                            icon: "ability_creature_disease_05",
+                            row: 1,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When your diseases are dispelled by an enemy, you have a {value}% chance to activate a Frost Rune if Frost Fever was removed, or an Unholy Rune if Blood Plague was removed.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "morbidity",
+                            name: "Morbidity",
+                            icon: "spell_shadow_deathanddecay",
+                            row: 1,
+                            col: 3,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage and healing of Death Coil by {value1}% and Death and Decay by {value2}%.",
+                                {
+                                    value1: [5, 10, 15],
+                                    value2: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "runic_corruption",
+                            name: "Runic Corruption",
+                            icon: "spell_shadow_rune",
+                            row: 2,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cost of your Death Coil by {value1}, and causes your Runic Empowerment ability to no longer refresh a depleted rune, but instead to increase your rune regeneration rate by {value2}% for 3 sec.",
+                                {
+                                    value1: [3, 6],
+                                    value2: [50, 100]
+                                }
+                            ]
+                        },
+                        {
                             id: "unholy_frenzy",
                             name: "Unholy Frenzy",
                             icon: "spell_shadow_unholyfrenzy",
@@ -28445,6 +28844,81 @@
                             ]
                         },
                         {
+                            id: "contagion",
+                            name: "Contagion",
+                            icon: "spell_shadow_plaguecloud",
+                            row: 2,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "epidemic",
+                            description: [
+                                "Increases the damage of your diseases spread via Pestilence by {value}%.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shadow_infusion",
+                            name: "Shadow Infusion",
+                            icon: "spell_shadow_requiem",
+                            row: 2,
+                            col: 3,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Grants your successful Death Coils a {value}% chance to empower your active Ghoul, increasing its damage dealt by 6% for 30 sec.  Stacks up to 5 times.",
+                                {
+                                    value: [33, 66, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "deaths_advance",
+                            name: "Death's Advance",
+                            icon: "spell_shadow_demonicempathy",
+                            row: 3,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "While your Unholy Runes are both depleted, movement-impairing effects may not reduce you below {value}% of normal movement speed.",
+                                {
+                                    value: [60, 75]
+                                }
+                            ]
+                        },
+                        {
+                            id: "magic_suppression",
+                            name: "Magic Suppression",
+                            icon: "spell_shadow_antimagicshell",
+                            row: 3,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the spell damage absorption of your Anti-Magic Shell by an additional {value}%, and causes damage absorbed by Anti-Magic Shell to energize the Death Knight with Runic Power.",
+                                {
+                                    value: [8, 16, 25]
+                                }
+                            ]
+                        },
+                        {
+                            id: "rage_of_rivendare",
+                            name: "Rage of Rivendare",
+                            icon: "inv_weapon_halberd14",
+                            row: 3,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage of your Plague Strike, Scourge Strike, and Festering Strike abilities by {value}%.",
+                                {
+                                    value: [15, 30, 45]
+                                }
+                            ]
+                        },
+                        {
                             id: "unholy_blight",
                             name: "Unholy Blight",
                             icon: "spell_shadow_contagion",
@@ -28454,6 +28928,76 @@
                             requiresTalents: null,
                             description: [
                                 "Causes the victims of your Death Coil to be surrounded by a vile swarm of unholy insects, taking 10% of the damage done by the Death Coil over 10 sec, and preventing any diseases on the victim from being dispelled."
+                            ]
+                        },
+                        {
+                            id: "anti_magic_zone",
+                            name: "Anti-Magic Zone",
+                            icon: "spell_deathknight_antimagiczone",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "magic_suppression",
+                            description: [
+                                "Places a large, stationary Anti-Magic Zone that reduces spell damage done to party or raid members inside it by 75%.  The Anti-Magic Zone lasts for 10 sec or until it absorbs (10000 + 2 * Attack power) spell damage."
+                            ]
+                        },
+                        {
+                            id: "improved_unholy_presence",
+                            name: "Improved Unholy Presence",
+                            icon: "spell_deathknight_unholypresence",
+                            row: 4,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Grants you an additional {value1}% haste while in Unholy Presence.  In addition, while in Blood Presence or Frost Presence, you retain {value2}% increased movement speed from Unholy Presence.",
+                                {
+                                    value1: [5, 10],
+                                    value2: [8, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "dark_transformation",
+                            name: "Dark Transformation",
+                            icon: "achievement_boss_festergutrotface",
+                            row: 4,
+                            col: 3,
+                            ranks: 1,
+                            requiresTalents: "shadow_infusion",
+                            description: [
+                                "Consume 5 charges of Shadow Infusion on your Ghoul to transform it into a powerful undead monstrosity for 30 sec.  The Ghoul's abilities are empowered and take on new functions while the transformation is active."
+                            ]
+                        },
+                        {
+                            id: "ebon_plaguebringer",
+                            name: "Ebon Plaguebringer",
+                            icon: "ability_creature_cursed_03",
+                            row: 5,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Plague Strike, Icy Touch, Chains of Ice, and Outbreak abilities also infect their target with Ebon Plague, which increases damage taken from your diseases by {value}% and all magic damage taken by an additional 8%.",
+                                {
+                                    value: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "sudden_doom",
+                            name: "Sudden Doom",
+                            icon: "spell_shadow_painspike",
+                            row: 5,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your main-hand autoattacks have a chance {value} make your next Death Coil cost no Runic Power.",
+                                {
+                                    value: ["to", "(higher than rank 1) to", "(higher than rank 2) to"]
+                                }
                             ]
                         },
                         {
@@ -30336,6 +30880,253 @@
                     // priest - cataclysm
                     Shadow: [
                         {
+                            id: "darkness",
+                            name: "Darkness",
+                            icon: "ability_priest_darkness",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Spell haste increased by {value}%.",
+                                {
+                                    value: [1, 2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_shadow_word_pain",
+                            name: "Improved Shadow Word: Pain",
+                            icon: "spell_shadow_shadowwordpain",
+                            row: 0,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage of your Shadow Word: Pain spell by {value}%.",
+                                {
+                                    value: [3, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "veiled_shadows",
+                            name: "Veiled Shadows",
+                            icon: "spell_magic_lesserinvisibilty",
+                            row: 0,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Decreases the cooldown of your Fade ability by {value} sec, and reduces the cooldown of your Shadowfiend ability by {value2} sec.",
+                                {
+                                    value1: [3, 6],
+                                    value2: [30, 60]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_psychic_scream",
+                            name: "Improved Psychic Scream",
+                            icon: "spell_shadow_psychicscream",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Psychic Scream spell by {value} sec.",
+                                {
+                                    value: [2, 4]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_mind_blast",
+                            name: "Improved Mind Blast",
+                            icon: "spell_shadow_unholyfrenzy",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Mind Blast spell by {value1} sec., and while in Shadowform your Mind Blast also has a {value2}% chance to reduce all healing done to the target by 10% for 10 sec.",
+                                {
+                                    value1: [0.5, 1, 1.5],
+                                    value2: [33, 66, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_devouring_plague",
+                            name: "Improved Devouring Plague",
+                            icon: "spell_shadow_devouringplague",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Devouring Plague instantly deals damage equal to {value}% of its total periodic effect.",
+                                {
+                                    value: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "twisted_faith",
+                            name: "Twisted Faith",
+                            icon: "spell_shadow_mindtwisting",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your Shadow spell damage by {value1}%, and grants you spell hit rating equal to {value2}% of any Spirit gained from items or effects.",
+                                {
+                                    value1: [1, 2],
+                                    value2: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shadowform",
+                            name: "Shadowform",
+                            icon: "spell_shadow_shadowform",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Assume a Shadowform, increasing your Shadow damage by 15%, reducing all damage done to you by 15%, and increasing all party and raid members spell haste by 5%. However, you may not cast Holy spells while in this form."
+                            ]
+                        },
+                        {
+                            id: "silence",
+                            name: "Silence",
+                            icon: "ability_priest_silence",
+                            row: 3,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: "improved_psychic_scream",
+                            description: [
+                                "Silences the target, preventing them from casting spells for 5 sec.  Non-player victim spellcasting is also interrupted for 3 sec."
+                            ]
+                        },
+                        {
+                            id: "vampiric_embrace",
+                            name: "Vampiric Embrace",
+                            icon: "spell_shadow_unsummonbuilding",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Fills you with the embrace of Shadow energy, causing you to be healed for 6% and other party members to be healed for 3% of any single-target Shadow spell damage you deal."
+                            ]
+                        },
+                        {
+                            id: "masochism",
+                            name: "Masochism",
+                            icon: "spell_shadow_misery",
+                            row: 3,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "vampiric_embrace",
+                            description: [
+                                "When you take a damaging attack equal to or greater than 10% of your total health or damage yourself with your Shadow Word: Death, you instantly gain {value}% of your total mana.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "mind_melt",
+                            name: "Mind Melt",
+                            icon: "spell_shadow_skull",
+                            row: 3,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done with your Shadow Word: Death by {value1}% on targets at or below 25% health, and when you deal damage with Mind Spike, the cast time of your next Mind Blast is reduced by {value2}% lasting 6 sec. Mind Melt can stack up to 2 times.",
+                                {
+                                    value1: [15, 30],
+                                    value2: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "pain_and_suffering",
+                            name: "Pain and Suffering",
+                            icon: "spell_shadow_painandsuffering",
+                            row: 4,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Mind Flay has a {value1}% chance to refresh the duration of your Shadow Word: Pain on the target, and reduces the damage you take from your own Shadow Word: Death by {value2}%.",
+                                {
+                                    value1: [30, 60],
+                                    value2: [20, 40]
+                                }
+                            ]
+                        },
+                        {
+                            id: "vampiric_touch",
+                            name: "Vampiric Touch",
+                            icon: "spell_holy_stoicism",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "vampiric_embrace",
+                            description: [
+                                "Causes 450 Shadow damage over 15 sec, and when you deal damage with Mind Blast to an affected target you cause up to 10 party or raid members to gain 1% of their maximum mana per 10 sec."
+                            ]
+                        },
+                        {
+                            id: "psychic_horror",
+                            name: "Psychic Horror",
+                            icon: "spell_shadow_psychichorrors",
+                            row: 5,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "You terrify the target, causing them to tremble in horror for 3 sec and drop their main hand and ranged weapons for 10 sec."
+                            ]
+                        },
+                        {
+                            id: "sin_and_punishment",
+                            name: "Sin and Punishment",
+                            icon: "spell_holy_prayerofshadowprotection",
+                            row: 5,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: "vampiric_touch",
+                            description: [
+                                "When your Vampiric Touch is dispelled, the dispeller and all nearby enemy targets within 6 yards have a {value1}% chance to be instantly feared in horror for 3 sec.<br><br>When your Mind Flay critically hits, the cooldown of your Shadowfiend is reduced by {value2} sec.",
+                                {
+                                    value1: [50, 100],
+                                    value2: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "shadowy_apparition",
+                            name: "Shadowy Apparition",
+                            icon: "ability_priest_shadowyapparition",
+                            row: 5,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When you deal periodic damage with your Shadow Word: Pain, you have a {value1}% chance to summon a shadow version of yourself which will slowly move towards a target which is afflicted by your Shadow Word: Pain. Once reaching the target, it will instantly deal 486 shadow damage.<br><br>While moving, the chance to summon the shadowy apparation is increased to {value2}%. You can have up to 4 Shadowy Apparitions active at a time.",
+                                {
+                                    value1: [4, 8, 12],
+                                    value2: [20, 40, 60]
+                                }
+                            ]
+                        },
+                        {
                             id: "dispersion",
                             name: "Dispersion",
                             icon: "spell_shadow_dispersion",
@@ -30400,6 +31191,169 @@
                     // shaman - cataclysm
                     Elemental: [
                         {
+                            id: "acuity",
+                            name: "Acuity",
+                            icon: "spell_nature_astralrecalgroup",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your critical strike chance with all spells and attacks by {value}%.",
+                                {
+                                    value: [1, 2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "convection",
+                            name: "Convection",
+                            icon: "spell_shaman_convection",
+                            row: 0,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the mana cost of your damaging offensive spells by {value}%.",
+                                {
+                                    value: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "concussion",
+                            name: "Concussion",
+                            icon: "spell_fire_fireball",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your Lightning Bolt, Chain Lightning, Thunderstorm, Lava Burst and Shock spells by {value}%.",
+                                {
+                                    value: [2, 4, 6]
+                                }
+                            ]
+                        },
+                        {
+                            id: "call_of_flame",
+                            name: "Call of Flame",
+                            icon: "spell_fire_immolation",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your Fire Totems and Fire Nova by {value1}%, and damage done by your Lava Burst spell by {value2}%.",
+                                {
+                                    value1: [10, 20],
+                                    value2: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "elemental_warding",
+                            name: "Elemental Warding",
+                            icon: "spell_nature_spiritarmor",
+                            row: 1,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces magical damage taken by {value}%.",
+                                {
+                                    value: [4, 8, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "reverberation",
+                            name: "Reverberation",
+                            icon: "spell_frost_frostward",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cooldown of your Shock spells by {value1} sec and Wind Shear by {value2} sec.",
+                                {
+                                    value1: [0.5, 1],
+                                    value2: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "elemental_precision",
+                            name: "Elemental Precision",
+                            icon: "spell_nature_elementalprecision_1",
+                            row: 1,
+                            col: 3,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your Fire, Frost and Nature damage by {value1}% and grants you spell hit rating equal to {value2}% of any Spirit gained from items or effects.",
+                                {
+                                    value1: [1, 2, 3],
+                                    value2: [33, 66, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "rolling_thunder",
+                            name: "Rolling Thunder",
+                            icon: "spell_nature_callstorm",
+                            row: 2,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When you deal damage with Lightning Bolt or Chain Lightning while your Lightning Shield ability is active, you have a {value}% chance to recover 2% of your mana and to generate an additional Lightning Shield charge, up to a maximum of 9 charges.",
+                                {
+                                    value: [30, 60]
+                                }
+                            ]
+                        },
+                        {
+                            id: "elemental_focus",
+                            name: "Elemental Focus",
+                            icon: "spell_shadow_manaburn",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "After landing a non-periodic critical strike with a Fire, Frost, or Nature damage spell, you enter a Clearcasting state.  The Clearcasting state reduces the mana cost of your next 2 damage or healing spells by 40%."
+                            ]
+                        },
+                        {
+                            id: "elemental_oath",
+                            name: "Elemental Oath",
+                            icon: "spell_shaman_elementaloath",
+                            row: 3,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: "elemental_focus",
+                            description: [
+                                "While Clearcasting from Elemental Focus is active, you deal {value1}% more spell damage. In addition, party and raid members within 100 yards receive a {value2}% bonus to their critical strike chance.",
+                                {
+                                    value1: [5, 10],
+                                    value2: [3, 5]
+                                }
+                            ]
+                        },
+                        {
+                            id: "fulmination",
+                            name: "Fulmination",
+                            icon: "spell_nature_unrelentingstorm",
+                            row: 4,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: "rolling_thunder",
+                            description: [
+                                "When you have more than 3 Lightning Shield charges active, your Earth Shock spell will consume any surplus charges, instantly dealing their total damage to the enemy target."
+                            ]
+                        },
+                        {
                             id: "elemental_mastery",
                             name: "Elemental Mastery",
                             icon: "spell_nature_wispheal",
@@ -30412,6 +31366,21 @@
                             ]
                         },
                         {
+                            id: "earths_grasp",
+                            name: "Earth's Grasp",
+                            icon: "spell_nature_stranglevines",
+                            row: 4,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Grants your Earthbind Totem a {value}% chance to root nearby targets for 5 sec when cast.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
                             id: "totemic_wrath",
                             name: "Totemic Wrath",
                             icon: "spell_fire_totemofwrath",
@@ -30421,6 +31390,21 @@
                             requiresTalents: null,
                             description: [
                                 "Causes your Fire totems to increase the spell power of party and raid members within 100 yards by 10%."
+                            ]
+                        },
+                        {
+                            id: "feedback",
+                            name: "Feedback",
+                            icon: "ability_vehicle_electrocharge",
+                            row: 5,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: "elemental_mastery",
+                            description: [
+                                "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by {value} sec.",
+                                {
+                                    value: [1, 2, 3]
+                                }
                             ]
                         },
                         {
@@ -30500,6 +31484,37 @@
                             ]
                         },
                         {
+                            id: "ancestral_swiftness",
+                            name: "Ancestral Swiftness",
+                            icon: "spell_lifegivingspeed",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the cast time of your Ghost Wolf spell by {value1} sec and increases movement speed by {value2}%.  This does not stack with other movement speed increasing effects.",
+                                {
+                                    value1: [1, 2],
+                                    value2: [7, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "totemic_reach",
+                            name: "Totemic Reach",
+                            icon: "spell_nature_agitatingtotem",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the range of your totems' effects by {value}%.",
+                                {
+                                    value: [15, 30]
+                                }
+                            ]
+                        },
+                        {
                             id: "toughness",
                             name: "Toughness",
                             icon: "spell_holy_devotion",
@@ -30559,6 +31574,21 @@
                             ]
                         },
                         {
+                            id: "searing_flames",
+                            name: "Searing Flames",
+                            icon: "spell_fire_searingtotem",
+                            row: 3,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Causes the Searing Bolts from your Searing Totem to have a {value}% chance to set their targets aflame, dealing damage equal to the Searing Bolt's impact damage over 15 sec. Stacks up to 5 times.",
+                                {
+                                    value: [33, 67, 100]
+                                }
+                            ]
+                        },
+                        {
                             id: "earthen_power",
                             name: "Earthen Power",
                             icon: "spell_nature_earthelemental_totem",
@@ -30614,6 +31644,21 @@
                                 "When you deal damage with a melee weapon, you have a chance {value} reduce the cast time and mana cost of your next Lightning Bolt, Chain Lightning, Hex, or any healing spell by 20%. Stacks up to 5 times. Lasts 30 sec.",
                                 {
                                     value: ["to", "(higher than rank 1) to", "(higher than rank 2) to"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_lava_lash",
+                            name: "Improved Lava Lash",
+                            icon: "spell_shaman_improvelavalash",
+                            row: 5,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "searing_flames",
+                            description: [
+                                "Increases the damage of your Lava Lash ability by {value}% for each application of your Searing Flames on the target, consuming them in the process, and causes your Lava Lash to spread your Flame Shock from the target to up to four enemies within 12 yards.",
+                                {
+                                    value: [10, 20]
                                 }
                             ]
                         },
@@ -30744,6 +31789,257 @@
                     // warlock - cataclysm
                     Affliction: [
                         {
+                            id: "doom_and_gloom",
+                            name: "Doom and Gloom",
+                            icon: "spell_shadow_curseofsargeras",
+                            row: 0,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical strike chance of your Bane of Agony and Bane of Doom by {value}%.",
+                                {
+                                    value: [4, 8]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_life_tap",
+                            name: "Improved Life Tap",
+                            icon: "spell_shadow_burningspirit",
+                            row: 0,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the amount of Mana awarded by your Life Tap spell by {value}%.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_corruption",
+                            name: "Improved Corruption",
+                            icon: "spell_shadow_abominationexplosion",
+                            row: 0,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the damage done by your Corruption by {value}%.",
+                                {
+                                    value: [4, 8, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "jinx",
+                            name: "Jinx",
+                            icon: "ability_warlock_jinx",
+                            row: 1,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Your Curse of the Elements also affects up to 15 nearby enemy targets within {value1} yards of the cursed target.<br><br>Also, your Curse of Weakness increases the target's energy, rage, focus or runic power costs of abilities by {value2}% while active.",
+                                {
+                                    value1: [20, 40],
+                                    value2: [5, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "soul_siphon",
+                            name: "Soul Siphon",
+                            icon: "ability_warlock_soulsiphon",
+                            row: 1,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the amount drained by your Drain Life and Drain Soul spells by an additional {value1}% for each of your Affliction effects on the target, up to a maximum of {value2}% additional effect.",
+                                {
+                                    value1: [3, 6],
+                                    value2: [9, 18]
+                                }
+                            ]
+                        },
+                        {
+                            id: "siphon_life",
+                            name: "Siphon Life",
+                            icon: "spell_shadow_requiem",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "soul_siphon",
+                            description: [
+                                "When you deal damage with your Corruption spell, you have a {value}% chance to be healed for 2% of your total health.",
+                                {
+                                    value: [25, 50]
+                                }
+                            ]
+                        },
+                        {
+                            id: "curse_of_exhaustion",
+                            name: "Curse of Exhaustion",
+                            icon: "spell_shadow_grimward",
+                            row: 2,
+                            col: 0,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the target's movement speed by 30% for 30 sec.  Only one Curse per Warlock can be active on any one target."
+                            ]
+                        },
+                        {
+                            id: "improved_fear",
+                            name: "Improved Fear",
+                            icon: "spell_shadow_possession",
+                            row: 2,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Causes your Fear spell to inflict a Nightmare on the target when the fear effect ends. The Nightmare effect reduces the target's movement speed by {value}% for 5 sec.",
+                                {
+                                    value: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "eradication",
+                            name: "Eradication",
+                            icon: "ability_warlock_eradication",
+                            row: 2,
+                            col: 3,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "When you deal damage with Corruption, you have 6% chance to increase your spell casting speed by {value}% for 10 sec.",
+                                {
+                                    value: [6, 12, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "improved_howl_of_terror",
+                            name: "Improved Howl of Terror",
+                            icon: "spell_shadow_deathscream",
+                            row: 3,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the casting time of your Howl of Terror spell by {value} sec.",
+                                {
+                                    value: [0.8, 1.5]
+                                }
+                            ]
+                        },
+                        {
+                            id: "soul_swap",
+                            name: "Soul Swap",
+                            icon: "ability_warlock_soulswap",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "soul_siphon",
+                            description: [
+                                "You instantly deal 167 damage, and remove your Shadow damage-over-time effects from the target.<br><br>For 20 sec afterwards, the next target you cast Soul Swap: Exhale on will be afflicted by the Shadow damage-over-time effects and suffer 167 damage.<br><br>You cannot Soul Swap to the same target."
+                            ]
+                        },
+                        {
+                            id: "shadow_embrace",
+                            name: "Shadow Embrace",
+                            icon: "spell_shadow_shadowembrace",
+                            row: 3,
+                            col: 2,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Your Shadow Bolt and Haunt spells apply the Shadow Embrace effect, increasing all Shadow periodic damage dealt to the target by you by {value}%. Lasts for 12 sec. Stacks up to 3  times.",
+                                {
+                                    value: [3, 4, 5]
+                                }
+                            ]
+                        },
+                        {
+                            id: "deaths_embrace",
+                            name: "Death's Embrace",
+                            icon: "spell_shadow_deathsembrace",
+                            row: 4,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "While at or below 25% health, your Drain Life heals an additional {value1}% of your total health.<br><br>Increases the damage done by your Shadow Spells by {value2}% when your target is at or below 25% health.",
+                                {
+                                    value1: [1, 2, 3],
+                                    value2: [4, 8, 12]
+                                }
+                            ]
+                        },
+                        {
+                            id: "nightfall",
+                            name: "Nightfall",
+                            icon: "spell_shadow_twilight",
+                            row: 4,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Gives your Corruption and Drain Life spells a {value}% chance to cause you to enter a Shadow Trance state after damaging the opponent.  The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%.",
+                                {
+                                    value: [2, 4]
+                                }
+                            ]
+                        },
+                        {
+                            id: "soulburn_seed_of_corruption",
+                            name: "Soulburn: Seed of Corruption",
+                            icon: "spell_shadow_seedofdestruction",
+                            row: 4,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Grants the Soulburn empowerment to your Seed of Corruption spell.<br><br>Your Seed of Corruption detonation effect will afflict Corruption on all enemy targets. The Soul Shard will be refunded if the detonation is successful."
+                            ]
+                        },
+                        {
+                            id: "everlasting_affliction",
+                            name: "Everlasting Affliction",
+                            icon: "ability_warlock_everlastingaffliction",
+                            row: 5,
+                            col: 1,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the critical effect chance of your Corruption, Seed of Corruption and Unstable Affliction by {value1}%.<br><br>And your Drain Life, Drain Soul, and Haunt spells have a {value2}% chance to reset the duration of your Corruption spell on the target.",
+                                {
+                                    value1: [5, 10, 15],
+                                    value2: [33, 66, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "pandemic",
+                            name: "Pandemic",
+                            icon: "spell_shadow_unstableaffliction_2",
+                            row: 5,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the global cooldown of your Bane and Curse spells by {value1} sec.<br><br>Your Drain Soul has a {value2}% chance to refresh the duration of your Unstable Affliction spell when dealing damage on targets below 25% health.",
+                                {
+                                    value1: [".25", ".5"],
+                                    value2: [50, 100]
+                                }
+                            ]
+                        },
+                        {
                             id: "haunt",
                             name: "Haunt",
                             icon: "ability_warlock_haunt",
@@ -30759,6 +32055,242 @@
                     // warlock - cataclysm
                     Demonology: [
                         {
+                            id: "demonic_embrace",
+                            name: "Demonic Embrace",
+                            icon: "spell_shadow_metamorphosis",
+                            row: 0,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your total Stamina by {value}%.",
+                                {
+                                    value: [4, 7, 10]
+                                }
+                            ]
+                        },
+                        {
+                            id: "fel_synergy",
+                            name: "Fel Synergy",
+                            icon: "spell_shadow_felmending",
+                            row: 0,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "You have a {value}% chance to heal your pet for 15% of the amount of spell damage done by you.",
+                                {
+                                    value: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "mana_feed",
+                            name: "Mana Feed",
+                            icon: "spell_shadow_manafeed",
+                            row: 1,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When your summoned demon critically hits with its Basic Attack, you instantly gain {value1}% total mana.<br><br>When you gain mana from Life Tap, your summoned demon gains {value2}% of the mana you gain.",
+                                {
+                                    value1: [2, 4],
+                                    value2: [30, 60]
+                                }
+                            ]
+                        },
+                        {
+                            id: "demonic_aegis",
+                            name: "Demonic Aegis",
+                            icon: "spell_shadow_ragingscream",
+                            row: 1,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the amount of health generated through spells and effects granted by your Demon Armor by an additional {value1}%, and increases the amount of health returned by your Fel Armor by {value2}%.",
+                                {
+                                    value1: [5, 10],
+                                    value2: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "master_summoner",
+                            name: "Master Summoner",
+                            icon: "spell_shadow_impphaseshift",
+                            row: 1,
+                            col: 3,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Reduces the casting time of your Imp, Voidwalker, Succubus, Felhunter and Felguard Summoning spells by {casttime} sec and the Mana cost by {cost}%.",
+                                {
+                                    casttime: [0.5, 1],
+                                    cost: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "impending_doom",
+                            name: "Impending Doom",
+                            icon: "spell_nature_removecurse",
+                            row: 2,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the chance for your Bane of Doom to summon a demon by {value1}% when it deals damage.<br><br>Also grants your Shadow Bolt, Hand of Gul'dan, Soul Fire, and Incinerate spells a {value2}% chance to reduce the cooldown of your Demon Form by 15 sec.",
+                                {
+                                    value1: [10, 20, 30],
+                                    value2: [5, 10, 15]
+                                }
+                            ]
+                        },
+                        {
+                            id: "demonic_empowerment",
+                            name: "Demonic Empowerment",
+                            icon: "ability_warlock_demonicempowerment",
+                            row: 2,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Grants the Warlock's summoned demon Empowerment.<br><br>Imp - Instantly heals the Imp for 30% of its total health.<br><br>Voidwalker - Increases the Voidwalker's health by 20%, and its threat generated from spells and attacks by 20% for 20 sec.<br><br>Succubus - Instantly vanishes, causing the Succubus to go into an improved Invisibility state. The vanish effect removes all stuns, snares and movement impairing effects from the Succubus.<br><br>Felhunter - Dispels all magical effects from the Felhunter.<br><br>Felguard - Instantly removes all stun, snare, fear, banish, or horror and movement impairing effects from your Felguard and makes your Felguard immune to them for 15 sec."
+                            ]
+                        },
+                        {
+                            id: "improved_health_funnel",
+                            name: "Improved Health Funnel",
+                            icon: "spell_shadow_lifedrain",
+                            row: 2,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the amount of Health transferred by your Health Funnel spell by {effectiveness}% and reduces the health cost by {effectiveness}%. In addition, your summoned Demon takes {damage}% less damage while under the effect of your Health Funnel.",
+                                {
+                                    effectiveness: [10, 20],
+                                    damage: [15, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "molten_core",
+                            name: "Molten Core",
+                            icon: "ability_warlock_moltencore",
+                            row: 3,
+                            col: 0,
+                            ranks: 3,
+                            requiresTalents: null,
+                            description: [
+                                "You have a {value1}% chance to gain the Molten Core effect when your Immolate deals damage. The Molten Core effect empowers your next 3 Incinerate spells cast within 15 sec, increasing damage done by {value2}% and reducing cast time by {value3}%.",
+                                {
+                                    value1: [2, 4, 6],
+                                    value2: [6, 12, 18],
+                                    value3: [10, 20, 30]
+                                }
+                            ]
+                        },
+                        {
+                            id: "hand_of_guldan",
+                            name: "Hand of Gul'dan",
+                            icon: "inv_summerfest_firespirit",
+                            row: 3,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Summons a falling meteor down upon the enemy target, dealing 1533 Shadowflame damage and erupts an aura of magic within 4 yards, causing all targets within it to have a 10% increased  chance to be critically hit by the abilities of any Warlock demon pets. The aura lasts for 15 sec."
+                            ]
+                        },
+                        {
+                            id: "aura_of_foreboding",
+                            name: "Aura of Foreboding",
+                            icon: "spell_shadow_sealofkings",
+                            row: 3,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: "hand_of_guldan",
+                            description: [
+                                "When your Hand of Gul'dan lands, all enemies within 4 yards will be rooted for {value} sec and stunned for the same duration if they are still within the Curse of Gul'dan aura 6 sec afterward.",
+                                {
+                                    value: [2, 3]
+                                }
+                            ]
+                        },
+                        {
+                            id: "ancient_grimoire",
+                            name: "Ancient Grimoire",
+                            icon: "ability_warlock_ancientgrimoire",
+                            row: 4,
+                            col: 0,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "Increases the duration of your Infernal and Doomguard summons by {value} sec.",
+                                {
+                                    value: [10, 20]
+                                }
+                            ]
+                        },
+                        {
+                            id: "inferno",
+                            name: "Inferno",
+                            icon: "ability_warlock_inferno",
+                            row: 4,
+                            col: 1,
+                            ranks: 1,
+                            requiresTalents: "hand_of_guldan",
+                            description: [
+                                "Enables you to channel Hellfire while moving, and increases the duration of your Immolate by 6 sec."
+                            ]
+                        },
+                        {
+                            id: "decimation",
+                            name: "Decimation",
+                            icon: "spell_fire_fireball02",
+                            row: 4,
+                            col: 2,
+                            ranks: 2,
+                            requiresTalents: null,
+                            description: [
+                                "When you Shadowbolt, Incinerate or Soul Fire a target that is at or below 25% health, the cast time of your Soul Fire spell is reduced by {value}% for 10 sec.",
+                                {
+                                    value: [20, 40]
+                                }
+                            ]
+                        },
+                        {
+                            id: "cremation",
+                            name: "Cremation",
+                            icon: "ability_warlock_cremation",
+                            row: 5,
+                            col: 1,
+                            ranks: 2,
+                            requiresTalents: "inferno",
+                            description: [
+                                "Increases the damage done by your Hellfire by {value1}%, and your Hand of Gul'dan has a {value2}% chance to refresh the duration of your Immolate on the target.",
+                                {
+                                    value1: [15, 30],
+                                    value2: [50, 100]
+                                }
+                            ]
+                        },
+                        {
+                            id: "demonic_pact",
+                            name: "Demonic Pact",
+                            icon: "spell_shadow_demonicpact",
+                            row: 5,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Increases your spell damage by 2%, and your summoned demon grants the Demonic Pact effect to all nearby friendly party and raid members.<br><br>The Demonic Pact effect increases spell power by 10%."
+                            ]
+                        },
+                        {
                             id: "metamorphosis",
                             name: "Metamorphosis",
                             icon: "spell_shadow_demonform",
@@ -30773,6 +32305,30 @@
                     ],
                     // warlock - cataclysm
                     Destruction: [
+                        {
+                            id: "shadowburn",
+                            name: "Shadowburn",
+                            icon: "spell_shadow_scourgebuild",
+                            row: 2,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Instantly blasts the target for 1 Shadowflame damage.  If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains 3 Soul Shards. Only usable on enemies that have less than 20% health."
+                            ]
+                        },
+                        {
+                            id: "shadowfury",
+                            name: "Shadowfury",
+                            icon: "spell_shadow_shadowfury",
+                            row: 4,
+                            col: 2,
+                            ranks: 1,
+                            requiresTalents: null,
+                            description: [
+                                "Shadowfury is unleashed, causing 754 Shadow damage and stunning all enemies within 8 yds for 3 sec."
+                            ]
+                        },
                         {
                             id: "chaos_bolt",
                             name: "Chaos Bolt",
