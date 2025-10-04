@@ -885,7 +885,7 @@
             ],
             cataclysm: [
                 // { value: "4.1", label: "Patch 4.1" },
-                { value: "4.2.0", label: "Patch 4.2.0" },
+                // { value: "4.2.0", label: "Patch 4.2.0" },
                 // { value: "4.3", label: "Patch 4.3" },
                 { value: "4.3.5", label: "Patch 4.3.5 (Cataclysm Classic)" }
                 // ...
@@ -42321,7 +42321,11 @@
                     throw new Error("Cannot export: no talents selected.");
                 }
 
-                navigator.clipboard.writeText(buildString);
+                // Construct full URL
+                const baseUrl = window.location.origin + window.location.pathname;
+                const fullUrl = `${baseUrl}#${build.version}/${build.class}/${buildString}`;
+
+                navigator.clipboard.writeText(fullUrl);
                 showMessage(`Build "${build.name}" copied to clipboard!`);
             } catch (err) {
                 showMessage(err.message, true);
@@ -42510,7 +42514,7 @@
         // EXPORT BUILD
         // Returns a string like "5-503-5500535100233105031051" to form the path "2.4/paladin/5-503-5500535100233105031051"
         // ----------------------------
-
+        /*
         function exportBuildString() {
             if (!currentState.version || !currentState.class) {
                 throw new Error("Cannot export: version or class not selected.");
@@ -42524,6 +42528,7 @@
 
             return buildString;
         }
+        */
 
         /*
         function exportBuildString() {
