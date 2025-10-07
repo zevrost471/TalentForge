@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TalentForge</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <link rel="icon" type="image/png" sizes="64x64" href="favicon-64.png">
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16.png">
@@ -14,6 +14,34 @@
 
     <style>
         /* styles.css */
+
+        :root {
+            --fa6-font-solid: normal 900 1em/1 "Font Awesome 6 Free";
+            --fa6-font-regular: normal 400 1em/1 "Font Awesome 6 Free";
+            --fa6-font-light: normal 300 1em/1 "Font Awesome 6 Pro";
+            --fa6-font-thin: normal 100 1em/1 "Font Awesome 6 Pro";
+            --fa6-font-duotone: normal 900 1em/1 "Font Awesome 6 Duotone";
+            --fa6-font-duotone-regular: normal 400 1em/1 "Font Awesome 6 Duotone";
+            --fa6-font-duotone-light: normal 300 1em/1 "Font Awesome 6 Duotone";
+            --fa6-font-duotone-thin: normal 100 1em/1 "Font Awesome 6 Duotone";
+            --fa6-font-brands: normal 400 1em/1 "Font Awesome 6 Brands";
+            --fa6-font-sharp-solid: normal 900 1em/1 "Font Awesome 6 Sharp";
+            --fa6-font-sharp-regular: normal 400 1em/1 "Font Awesome 6 Sharp";
+            --fa6-font-sharp-light: normal 300 1em/1 "Font Awesome 6 Sharp";
+            --fa6-font-sharp-thin: normal 100 1em/1 "Font Awesome 6 Sharp";
+            --fa6-font-sharp-duotone-solid: normal 900 1em/1 "Font Awesome 6 Sharp Duotone";
+            --fa6-font-sharp-duotone-regular: normal 400 1em/1 "Font Awesome 6 Sharp Duotone";
+            --fa6-font-sharp-duotone-light: normal 300 1em/1 "Font Awesome 6 Sharp Duotone";
+            --fa6-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 6 Sharp Duotone";
+        }
+
+        /*
+        body {
+            font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 6 Duotone", "Font Awesome 6 Brands", "Font Awesome 6 Sharp", "Font Awesome 6 Sharp Duotone", serif;
+            font-weight: normal;
+            color: #fff;
+        }
+        */
 
         #main-header.collapsed {
             max-height: 0;
@@ -326,6 +354,149 @@
             -webkit-overflow-scrolling: touch;
             /* For smooth scrolling on iOS */
         }
+
+        .glyphs-section {
+            display: none; /* hidden by default */
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding: 1rem;
+            background: #1f2937;
+            /* border: 1px solid #374151; */
+            border-radius: 0.5rem;
+            width: 100%;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3),
+                0 4px 6px -2px rgba(0, 0, 0, 0.25);
+        }
+
+        .glyph-type-section h3 {
+            margin-bottom: 0.6rem;
+            font-size: 1rem;
+            font-weight: 600;
+            color: #ffcc00;
+        }
+
+        .glyph-slots {
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 0.75rem;
+            justify-content: space-between; /* distribute slots evenly */
+            width: 100%;
+        }
+
+        .glyph-slot {
+            display: flex;
+            flex: 1;
+            max-width: 400px;
+            width: 100%;
+            height: 72px;
+            /* border: 1px solid #444; */
+            background: #374151;
+            border-radius: 4px;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: flex-start;
+            gap: 8px; /* space between image and text */
+            cursor: pointer;
+            padding: 4px 8px;
+        }
+
+        .glyph-slot:hover {
+            background: #4b5563; /* hover:bg-gray-600 */
+        }
+
+        .glyph-slot img {
+            width: 48px;
+            height: 48px;
+            border: 2px solid #444;
+            border-radius: 4px;
+            object-fit: contain;
+        }
+
+        .glyph-slot-name {
+            font-size: 0.95rem;
+            font-weight: bold;
+            color: #ccc;
+            margin-top: 4px;
+            text-align: center;
+        }
+
+        .glyph-selection-popup {
+            position: fixed;
+            z-index: 9999;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 500px;
+            max-height: 500px;
+            overflow-y: auto;
+
+            background: rgba(10, 10, 10, 0.95);
+            color: #fff;
+            padding: 12px;
+            border: 1px solid #c9a634;
+            border-radius: 10px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(6px);
+        }
+
+        .glyph-selection-popup .glyph-selection-header {
+            font-size: 1.1rem;
+            color: #ffcc33;
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        /* Glyph list container */
+        .glyph-selection-popup .glyph-selection-list {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        /* Individual glyph item */
+        .glyph-selection-popup .glyph-list-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background-color: #1a1a1a;
+            border: 1px solid transparent;
+            border-radius: 6px;
+            padding: 6px;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+        }
+
+        .glyph-selection-popup .glyph-list-item:hover {
+            background-color: #2a2a2a;
+            border-color: #c9a634;
+        }
+
+        /* Glyph icon */
+        .glyph-selection-popup .glyph-list-item img {
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+        }
+
+        /* Glyph name and description */
+        .glyph-selection-popup .glyph-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .glyph-selection-popup .glyph-name {
+            color: #ffd700;
+            font-size: 0.95rem;
+        }
+
+        .glyph-selection-popup .glyph-desc {
+            color: #ccc;
+            font-size: 0.85rem;
+            margin-top: 2px;
+            line-height: 1.2;
+        }
     </style>
 </head>
 
@@ -522,76 +693,12 @@
                         </div>
                         <div id="talent-trees"></div>
                         <div id="cata-spec-selection-panel" class="hidden"></div>
-                        <!-- Druid Talent Icons Preview -->
-                        <!--
-            <div class="grid grid-cols-4 gap-4 mt-8 hidden" id="druid-talents-preview">
-            -->
-                        <!-- Balance -->
-                        <!-- 
-                <div class="text-center">
-                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Balance</h3>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_abolishmagic.jpg" alt="Improved Wrath" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_natureswrath.jpg" alt="Nature's Grasp" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_thorns.jpg" alt="Improved Thorns" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_crystalball.jpg" alt="Omen of Clarity" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_purge.jpg" alt="Vengeance" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_arcane_starfire.jpg" alt="Improved Starfire" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_naturesblessing.jpg" alt="Nature's Grace" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_moonglow.jpg" alt="Moonfury" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_forceofnature.jpg" alt="Moonkin Form" class="w-10 h-10">
-                </div>
-                </div>
-                -->
-
-                        <!-- Feral Combat -->
-                        <!-- 
-                <div class="text-center">
-                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Feral Combat</h3>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_pet_hyena.jpg" alt="Ferocity" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_demoralizingroar.jpg" alt="Feral Aggression" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_ambush.jpg" alt="Feral Instinct" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_bash.jpg" alt="Brutal Impact" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_pelt_bear_03.jpg" alt="Thick Hide" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_spiritwolf.jpg" alt="Feral Swiftness" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/inv_misc_monsterclaw_04.jpg" alt="Sharpened Claws" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_hunter_pet_cat.jpg" alt="Predatory Strikes" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_racial_cannibalize.jpg" alt="Primal Fury" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_ravage.jpg" alt="Savage Fury" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_faeriefire.jpg" alt="Faerie Fire (Feral)" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_blessingofagility.jpg" alt="Heart of the Wild" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_unyeildingstamina.jpg" alt="Leader of the Pack" class="w-10 h-10">
-                </div>
-                </div>
-                -->
-
-                        <!-- Restoration -->
-                        <!-- 
-                <div class="text-center">
-                <h3 class="text-lg font-semibold mb-2 text-yellow-400">Restoration</h3>
-                <div class="flex flex-wrap justify-center gap-2">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_regeneration.jpg" alt="Improved Mark of the Wild" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_unyeildingstamina.jpg" alt="Furor" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingtouch.jpg" alt="Improved Healing Touch" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_healingwavegreater.jpg" alt="Nature's Focus" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_druid_enrage.jpg" alt="Improved Enrage" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_frost_windwalkon.jpg" alt="Reflection" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/ability_eyeoftheowl.jpg" alt="Subtlety" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_holy_elunesgrace.jpg" alt="Tranquil Spirit" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_rejuvenation.jpg" alt="Improved Rejuvenation" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_ravenform.jpg" alt="Nature's Swiftness" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_protectionformnature.jpg" alt="Gift of Nature" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_tranquility.jpg" alt="Improved Tranquility" class="w-10 h-10">
-                    <img src="https://wow.zamimg.com/images/wow/icons/large/spell_nature_resistnature.jpg" alt="Improved Regrowth" class="w-10 h-10">
-                </div>
-                </div>
-                -->
-                    </div>  
+                    </div> 
                 </div>
 
                 <!-- Talent Order Timeline -->
-                <div id="timeline-wrapper" class="w-full flex justify-center mt-6"></div>
+                <div id="timeline-wrapper" class="w-full flex justify-center mt-4"></div>
+                <div id="glyphs-wrapper" class="glyphs-section w-full justify-center mt-4"></div>
             </div>
         </div>
 
@@ -625,6 +732,7 @@
         const talentPlaceholder = document.getElementById("talent-placeholder");
         const cataSpecSelectionPanel = document.getElementById("cata-spec-selection-panel");
         const timelineWrapper = document.getElementById("timeline-wrapper");
+        const glyphsWrapper = document.getElementById("glyphs-wrapper");
         const buildNameInput = document.getElementById("build-name");
         const saveBuildBtn = document.getElementById("save-build");
         const importBuildBtn = document.getElementById("import-build");
@@ -28307,7 +28415,7 @@
                             description: [
                                 "Increases your armor value from items by {value}%.",
                                 {
-                                    value1: [3, 7, 10]
+                                    value: [3, 7, 10]
                                 }
                             ]
                         },
@@ -39202,6 +39310,857 @@
             }
         };
 
+        const glyphs = {
+            base: {
+                deathknight: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                druid: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                hunter: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                mage: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                paladin: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                priest: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                rogue: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                shaman: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                warlock: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                warrior: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                }
+            },
+            wotlk: {
+                deathknight: {
+                    major: [
+                        {
+                            name: "Anti-Magic Shell",
+                            icon: "spell_shadow_antimagicshell",
+                            description: [
+                                "Increases the duration of your Anti-Magic Shell by 2 sec."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Blood Strike",
+                            icon: "spell_deathknight_deathstrike",
+                            description: [
+                                "Your Blood Strike causes an additional 20% damage to snared targets."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Bone Shield",
+                            icon: "inv_chest_leather_13",
+                            description: [
+                                "Adds 1 additional charge to your Bone Shield."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Chains of Ice",
+                            icon: "spell_deathknight_deathstrike",
+                            description: [
+                                "Your Chains of Ice also causes 144 to 156 Frost damage, increased by your attack power."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Dancing Rune Weapon",
+                            icon: "inv_sword_07",
+                            description: [
+                                "Increases the duration of Dancing Rune Weapon by 5 sec."
+                            ],
+                            level: 60
+                        },
+                        {
+                            name: "Dark Command",
+                            icon: "spell_nature_shamanrage",
+                            description: [
+                                "Increases the chance for your Dark Command ability to work successfully by 8%."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Dark Death",
+                            icon: "spell_shadow_deathcoil",
+                            description: [
+                                "Increases the damage or healing done by Death Coil by 15%."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Death and Decay",
+                            icon: "spell_shadow_deathanddecay",
+                            description: [
+                                "Damage of your Death and Decay spell increased by 20%."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Death Grip",
+                            icon: "spell_deathknight_strangulate",
+                            description: [
+                                "When you deal a killing blow that grants honor or experience, the cooldown of your Death Grip is refreshed."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Death Strike",
+                            icon: "spell_deathknight_butcher2",
+                            description: [
+                                "Increases your Death Strike's damage by 1% for every 1 runic power you currently have (up to a maximum of 25%). The runic power is not consumed by this effect."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Disease",
+                            icon: "spell_shadow_plaguecloud",
+                            description: [
+                                "Your Pestilence ability now refreshes disease durations and secondary effects of diseases on your primary target back to their maximum duration."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Frost Strike",
+                            icon: "spell_deathknight_empowerruneblade2",
+                            description: [
+                                "Reduces the cost of your Frost Strike by 8 Runic Power."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Heart Strike",
+                            icon: "inv_weapon_shortblade_40",
+                            description: [
+                                "Your Heart Strike also reduces the movement speed of your target by 50% for 10 sec."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Howling Blast",
+                            icon: "spell_frost_arcticwinds",
+                            description: [
+                                "Your Howling Blast ability now infects your targets with Frost Fever."
+                            ],
+                            level: 60
+                        },
+                        {
+                            name: "Hungering Cold",
+                            icon: "inv_staff_15",
+                            description: [
+                                "Reduces the cost of Hungering Cold by 40 runic power."
+                            ],
+                            level: 60
+                        },
+                        {
+                            name: "Icebound Fortitude",
+                            icon: "spell_deathknight_iceboundfortitude",
+                            description: [
+                                "Your Icebound Fortitude now always grants at least 40% damage reduction, regardless of your defense skill."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Icy Touch",
+                            icon: "spell_deathknight_icetouch",
+                            description: [
+                                "Your Frost Fever disease deals 20% additional damage."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Obliterate",
+                            icon: "spell_deathknight_classicon",
+                            description: [
+                                "Increases the damage of your Obliterate ability by 25%."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Plague Strike",
+                            icon: "spell_deathknight_empowerruneblade",
+                            description: [
+                                "Your Plague Strike does 20% additional damage."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Rune Strike",
+                            icon: "spell_deathknight_darkconviction",
+                            description: [
+                                "Increases the critical strike chance of your Rune Strike by 10%."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Rune Tap",
+                            icon: "spell_deathknight_runetap",
+                            description: [
+                                "Your Rune Tap now heals you for an additional 1% of your maximum health, and also heals your party for 10% of their maximum health."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Scourge Strike",
+                            icon: "spell_deathknight_scourgestrike",
+                            description: [
+                                "Your Scourge Strike increases the duration of your diseases on the target by 3 sec, up to a maximum of 9 additional seconds."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Strangulate",
+                            icon: "spell_shadow_soulleech_3",
+                            description: [
+                                "Reduces the cooldown of your Strangulate by 20 sec."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "the Ghoul",
+                            icon: "spell_shadow_animatedead",
+                            description: [
+                                "Your Ghoul receives an additional 40% of your Strength and 40% of your Stamina."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Unbreakable Armor",
+                            icon: "inv_armor_helm_plate_naxxramas_raidwarrior_c_01",
+                            description: [
+                                "Increases the total armor granted by Unbreakable Armor to 30%."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Unholy Blight",
+                            icon: "spell_shadow_contagion",
+                            description: [
+                                "Increases the damage done by Unholy Blight by 40%."
+                            ],
+                            level: 60
+                        },
+                        {
+                            name: "Vampiric Blood",
+                            icon: "spell_shadow_lifedrain",
+                            description: [
+                                "Increases the duration of your Vampiric Blood by 5 sec."
+                            ],
+                            level: 55
+                        }
+                    ],
+                    minor: [
+                        {
+                            name: "Blood Tap",
+                            icon: "spell_deathknight_bloodtap",
+                            description: [
+                                "Your Blood Tap no longer causes damage to you."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Corpse Explosion",
+                            icon: "ability_creature_disease_02",
+                            description: [
+                                "Increases the radius of effect on Corpse Explosion by 5 yards."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Death's Embrace",
+                            icon: "spell_shadow_deathcoil",
+                            description: [
+                                "Your Death Coil refunds 20 runic power when used to heal."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Horn of Winter",
+                            icon: "inv_misc_horn_02",
+                            description: [
+                                "Increases the duration of your Horn of Winter ability by 1 min."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Pestilence",
+                            icon: "spell_shadow_plaguecloud",
+                            description: [
+                                "Increases the radius of your Pestilence effect by 5 yards."
+                            ],
+                            level: 55
+                        },
+                        {
+                            name: "Raise Dead",
+                            icon: "spell_shadow_animatedead",
+                            description: [
+                                "Your Raise Dead spell no longer requires a reagent."
+                            ],
+                            level: 55
+                        }
+                    ],
+                },
+                druid: {
+                    major: [
+                        {
+                            name: "Barkskin",
+                            icon: "spell_nature_stoneclawtotem",
+                            description: [
+                                "Reduces the chance you'll be critically hit by 25% while Barkskin is active."
+                            ],
+                            level: 44
+                        },
+                        {
+                            name: "Berserk",
+                            icon: "ability_druid_berserk",
+                            description: [
+                                "Increases the duration of Berserk by 5 sec."
+                            ],
+                            level: 60
+                        },
+                        {
+                            name: "Claw",
+                            icon: "ability_druid_rake",
+                            description: [
+                                "Reduces the energy cost of your Claw ability by 5."
+                            ],
+                            level: 20
+                        },
+                        {
+                            name: "Entangling Roots",
+                            icon: "spell_nature_stranglevines",
+                            description: [
+                                "Increases the damage your Entangling Roots victims can take before the Entangling Roots automatically breaks by 20%."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Focus",
+                            icon: "ability_druid_starfall",
+                            description: [
+                                "Increases the damage done by Starfall by 10%, but decreases its radius by 50%."
+                            ],
+                            level: 70
+                        },
+                        {
+                            name: "Frenzied Regeneration",
+                            icon: "ability_bullrush",
+                            description: [
+                                "While Frenzied Regeneration is active, healing effects on you are 20% more powerful."
+                            ],
+                            level: 36
+                        },
+                        {
+                            name: "Growling",
+                            icon: "ability_physical_taunt",
+                            description: [
+                                "Increases the chance for your Growl ability to work successfully by 8%."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Healing Touch",
+                            icon: "spell_nature_healingtouch",
+                            description: [
+                                "Decreases the cast time of Healing Touch by 1.5 sec, the mana cost by 25%, and the amount healed by 50%."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Hurricane",
+                            icon: "spell_nature_cyclone",
+                            description: [
+                                "Your Hurricane ability now also slows the movement speed of its victims by 20%."
+                            ],
+                            level: 40
+                        },
+                        {
+                            name: "Innervate",
+                            icon: "spell_nature_lightning",
+                            description: [
+                                "Innervate now grants the caster 45% of his base mana pool over 10 sec in addition to the normal effects of Innervate."
+                            ],
+                            level: 40
+                        },
+                        {
+                            name: "Insect Swarm",
+                            icon: "spell_nature_insectswarm",
+                            description: [
+                                "Increases the damage of your Insect Swarm ability by 30%, but it no longer affects your victim's chance to hit."
+                            ],
+                            level: 20
+                        },
+                        {
+                            name: "Lifebloom",
+                            icon: "inv_misc_herb_felblossom",
+                            description: [
+                                "Increases the duration of Lifebloom by 1 sec."
+                            ],
+                            level: 64
+                        },
+                        {
+                            name: "Mangle",
+                            icon: "ability_druid_mangle2",
+                            description: [
+                                "Increases the damage done by Mangle by 10%."
+                            ],
+                            level: 50
+                        },
+                        {
+                            name: "Maul",
+                            icon: "ability_druid_maul",
+                            description: [
+                                "Your Maul ability now hits 1 additional target."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Monsoon",
+                            icon: "ability_druid_typhoon",
+                            description: [
+                                "Reduces the cooldown of your Typhoon spell by 3 sec."
+                            ],
+                            level: 50
+                        },
+                        {
+                            name: "Moonfire",
+                            icon: "spell_nature_starfall",
+                            description: [
+                                "Increases the periodic damage of your Moonfire ability by 75%, but initial damage is decreased by 90%."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Nourish",
+                            icon: "ability_druid_nourish",
+                            description: [
+                                "Your Nourish heals an additional 6% for each of your heal over time effects present on the target."
+                            ],
+                            level: 80
+                        },
+                        {
+                            name: "Omen of Clarity",
+                            icon: "spell_nature_crystalball",
+                            description: [
+                                "Your Omen of Clarity talent has a 100% chance to be triggered by successfully casting Faerie Fire (Feral). Does not trigger on players or player-controlled pets."
+                            ],
+                            level: 75
+                        },
+                        {
+                            name: "Rake",
+                            icon: "ability_druid_disembowel",
+                            description: [
+                                "Your Rake ability prevents targets from fleeing."
+                            ],
+                            level: 24
+                        },
+                        {
+                            name: "Rapid Rejuvenation",
+                            icon: "spell_nature_rejuvenation",
+                            description: [
+                                "Your haste now reduces the time between the periodic healing ticks of your Rejuvenation spell."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Rebirth",
+                            icon: "spell_nature_reincarnation",
+                            description: [
+                                "Players resurrected by Rebirth are returned to life with 100% health."
+                            ],
+                            level: 20
+                        },
+                        {
+                            name: "Regrowth",
+                            icon: "spell_nature_resistnature",
+                            description: [
+                                "Increases the healing of your Regrowth spell by 20% if your Regrowth effect is still active on the target."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Rejuvenation",
+                            icon: "spell_nature_rejuvenation",
+                            description: [
+                                "While your Rejuvenation targets are below 50% health, you will heal them for an additional 50% health."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Rip",
+                            icon: "ability_ghoulfrenzy",
+                            description: [
+                                "Increases the duration of your Rip ability by 4 sec."
+                            ],
+                            level: 20
+                        },
+                        {
+                            name: "Savage Roar",
+                            icon: "ability_druid_skinteeth",
+                            description: [
+                                "Your Savage Roar ability grants an additional 3% bonus damage done."
+                            ],
+                            level: 75
+                        },
+                        {
+                            name: "Shred",
+                            icon: "spell_shadow_vampiricaura",
+                            description: [
+                                "Each time you Shred, the duration of your Rip on the target is extended 2 sec, up to a maximum of 6 sec."
+                            ],
+                            level: 22
+                        },
+                        {
+                            name: "Starfall",
+                            icon: "ability_druid_starfall",
+                            description: [
+                                "Reduces the cooldown of Starfall by 30 sec."
+                            ],
+                            level: 60
+                        },
+                        {
+                            name: "Starfire",
+                            icon: "spell_arcane_starfire",
+                            description: [
+                                "Your Starfire ability increases the duration of your Moonfire effect on the target by 3 sec, up to a maximum of 9 additional seconds."
+                            ],
+                            level: 20
+                        },
+                        {
+                            name: "Survival Instincts",
+                            icon: "ability_druid_tigersroar",
+                            description: [
+                                "Your Survival Instincts ability grants an additional 15% of your maximum health."
+                            ],
+                            level: 20
+                        },
+                        {
+                            name: "Swiftmend",
+                            icon: "inv_relics_idolofrejuvenation",
+                            description: [
+                                "Your Swiftmend ability no longer consumes a Rejuvenation or Regrowth effect from the target."
+                            ],
+                            level: 40
+                        },
+                        {
+                            name: "Wild Growth",
+                            icon: "ability_druid_flourish",
+                            description: [
+                                "Wild Growth can affect 1 additional target."
+                            ],
+                            level: 60
+                        },
+                        {
+                            name: "Wrath",
+                            icon: "spell_nature_abolishmagic",
+                            description: [
+                                "Reduces the pushback suffered from damaging attacks while casting your Wrath spell by 50%."
+                            ],
+                            level: 15
+                        }
+                    ],
+                    minor: [
+                        {
+                            name: "Aquatic Form",
+                            icon: "ability_druid_aquaticform",
+                            description: [
+                                "Increases your swim speed by 50% while in Aquatic Form."
+                            ],
+                            level: 16
+                        },
+                        {
+                            name: "Challenging Roar",
+                            icon: "ability_druid_challangingroar",
+                            description: [
+                                "Reduces the cooldown of your Challenging Roar ability by 30 sec."
+                            ],
+                            level: 28
+                        },
+                        {
+                            name: "Dash",
+                            icon: "ability_druid_dash",
+                            description: [
+                                "Reduces the cooldown of your Dash ability by 20%."
+                            ],
+                            level: 16
+                        },
+                        {
+                            name: "the Wild",
+                            icon: "spell_nature_regeneration",
+                            description: [
+                                "Mana cost of your Mark of the Wild and Gift of the Wild spells reduced by 50%."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Thorns",
+                            icon: "spell_nature_thorns",
+                            description: [
+                                "Increases the duration of your Thorns ability by 50 min when cast on yourself."
+                            ],
+                            level: 15
+                        },
+                        {
+                            name: "Typhoon",
+                            icon: "ability_druid_typhoon",
+                            description: [
+                                "Reduces the cost of your Typhoon spell by 8% and increases its radius by 10 yards, but it no longer knocks enemies back."
+                            ],
+                            level: 70
+                        },
+                        {
+                            name: "Unburdened Rebirth",
+                            icon: "spell_nature_reincarnation",
+                            description: [
+                                "Your Rebirth spell no longer requires a reagent."
+                            ],
+                            level: 20
+                        }
+                    ],
+                },
+                hunter: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                mage: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                paladin: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                priest: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                rogue: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                shaman: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                warlock: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                warrior: {
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                }
+            },
+            cataclysm: {
+                deathknight: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                druid: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                hunter: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                mage: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                paladin: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                priest: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                rogue: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                shaman: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                warlock: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                },
+                warrior: {
+                    prime: [
+
+                    ],
+                    major: [
+
+                    ],
+                    minor: [
+
+                    ],
+                }
+            }
+        };
+
         // Load saved builds from localStorage
         loadBuilds();
 
@@ -39645,6 +40604,12 @@
                 currentState.class = null;
             }
 
+            // Always clear glyphs before checking expansion
+            if (glyphsWrapper) {
+                glyphsWrapper.innerHTML = "";
+                glyphsWrapper.style.display = "none";
+            }
+
             // Only reset selected class highlight if expansion changed
 
             /*
@@ -39687,6 +40652,10 @@
                 } else {
                     renderTalentTrees();
                 }
+                renderGlyphsContainer();
+            } else if (currentExpansion === "wotlk") {
+                renderTalentTrees();
+                renderGlyphsContainer();
             } else {
                 renderTalentTrees();
             }
@@ -39873,6 +40842,12 @@
                 currentState.talents[newClassKey][tree] = {};
             });
 
+            // Always clear glyphs before checking expansion
+            if (glyphsWrapper) {
+                glyphsWrapper.innerHTML = "";
+                glyphsWrapper.style.display = "none";
+            }
+
             // Update active class button
             classButtons.forEach((btn) => {
                 const isSelected = btn.dataset.class === newClassKey;
@@ -39894,6 +40869,10 @@
 
                 updatePlaceholder();
                 renderSpecSelectionPanel();
+                renderGlyphsContainer();
+            } else if (currentExpansion === "wotlk") {
+                renderTalentTrees();
+                renderGlyphsContainer();
             } else {
                 renderTalentTrees();
             }
@@ -40114,6 +41093,7 @@
                         cataSpecSelectionPanel.classList.add("hidden");
                         talentTrees.classList.remove("hidden");
                         renderTalentTrees();
+                        renderGlyphsContainer();
                     });
                 });
 
@@ -40181,7 +41161,6 @@
             // Calculate required level
             // const requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
 
-            // === CHANGE: cataclysm-specific required level logic ===
             let requiredLevel;
             if (version.startsWith("4.")) {
                 // Mapping: number of points spent -> minimum level
@@ -40205,7 +41184,6 @@
                 // Old logic for other expansions
                 requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
             }
-            // === END CHANGE ===
 
             // Calculate points left
             const pointsLeft = currentState.pointsTotal - totalPoints;
@@ -41841,6 +42819,7 @@
 
                     updatePointsDisplay();
                     renderTalentTrees();
+                    renderGlyphsContainer();
 
                     alert(`✅ Successfully imported build: ${buildData.name}`);
                 }, 20); // Slight delay to wait for version setup
@@ -42102,14 +43081,15 @@
 
             const orderBox = document.createElement("div");
             orderBox.className =
-                "w-full mt-6 p-3 rounded bg-gray-800 border border-gray-700 shadow-lg";
+                "w-full p-3 rounded-lg bg-gray-800 shadow-lg";
+            // "w-full mt-6 p-3 rounded bg-gray-800 border border-gray-700 shadow-lg";
 
             // Add header
             const header = document.createElement("div");
             header.className = "flex justify-between items-center mb-2";
 
             const title = document.createElement("div");
-            title.className = "text-white text-base font-semibold";
+            title.className = "text-yellow-400 text-base font-semibold";
             title.textContent = "Talent Order";
 
             const toggleBtn = document.createElement("button");
@@ -42328,6 +43308,248 @@
         }
         */
 
+        function initCurrentGlyphs() {
+            if (!currentState.glyphs) {
+                currentState.glyphs = {};
+                /* showMessage(currentState.glyphs); */ /* output: [object Object] */
+            }
+
+            const currentExpansion = getCurrentExpansion(); // "wotlk" or "cataclysm"
+            const classKey = currentState.class;
+            const types = [];
+
+            if (currentExpansion === "cataclysm") {
+                types.push("prime", "major", "minor");
+            } else if (currentExpansion === "wotlk") {
+                types.push("major", "minor");
+            }
+
+            types.forEach(type => {
+                if (!currentState.glyphs[type]) {
+                    currentState.glyphs[type] = [null, null, null]; // 3 slots
+                    /* showMessage(`Initialized slots for type: ${type}`); */ /* output: Initialized slots for type: primeInitialized slots for type: majorInitialized slots for type: minor */ 
+                }
+            });
+        }
+
+        function renderGlyphsContainer() {
+            
+            const currentExpansion = getCurrentExpansion();
+            const playerClass = currentState.class;
+            
+            if (!glyphsWrapper || !currentExpansion || !playerClass) return;
+
+            /* if (!glyphsWrapper) return showMessage("glyphsWrapper not found", true);  */ /* no output */
+            /* if (!currentExpansion) return showMessage("currentExpansion not set", true); */ /* no output */
+            /* if (!playerClass) return showMessage("currentState.class not set", true); */ /* no output */
+
+            initCurrentGlyphs();
+
+            // Always clear previous content
+            glyphsWrapper.innerHTML = "";
+
+            let glyphTypes = [];
+            
+            if (currentExpansion === "cataclysm") {
+                glyphTypes = ["Prime Glyphs", "Major Glyphs", "Minor Glyphs"];
+            } else if (currentExpansion === "wotlk") {
+                glyphTypes = ["Major Glyphs", "Minor Glyphs"];
+            } else {
+                glyphsWrapper.style.display = "none";
+                // For any other expansion, don't render glyphs
+                return;
+            }
+
+            // Show wrapper since glyphs exist for this expansion
+            glyphsWrapper.style.display = "block";
+            
+            glyphTypes.forEach(type => {
+                const section = document.createElement("div");
+                section.classList.add("glyph-type-section");
+                
+                const header = document.createElement("h3");
+                header.textContent = type;
+                section.appendChild(header);
+                
+                const slots = document.createElement("div");
+                slots.classList.add("glyph-slots");
+                
+                for (let i = 0; i < 3; i++) {
+                    const slot = document.createElement("div");
+                    slot.classList.add("glyph-slot");
+                    slot.dataset.type = type.toLowerCase().replace(" glyphs", "");
+                    slot.dataset.index = i;
+                    
+                    // Placeholder content
+                    const placeholderImg = document.createElement("img");
+                    placeholderImg.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
+                    placeholderImg.alt = "Empty Slot";
+                    
+                    const placeholderText = document.createElement("span");
+                    placeholderText.classList.add("glyph-slot-name");
+                    placeholderText.textContent = "Empty";
+                    
+                    slot.appendChild(placeholderImg);
+                    slot.appendChild(placeholderText);
+
+                    // Event to open glyph selection
+                    slot.addEventListener("click", () => {
+                        /* showMessage(`Clicked slot ${i} of ${type}`); */ /* output example: "Clicked slot 2 of Prime Glyphs" (it works) */
+                        openGlyphSelection(type, playerClass, i);
+                    });
+
+                    slots.appendChild(slot);
+                }
+                
+                section.appendChild(slots);
+                glyphsWrapper.appendChild(section);
+            });
+        }
+
+        function openGlyphSelection(glyphType, playerClass, slotIndex) {
+
+            /* showMessage(`Opening glyph selection for ${glyphType}, class ${playerClass}, slot ${slotIndex}`); */ /* output example: "Opening glyph selection for Prime Glyphs, class deathknight, slot 2" (it shows this message despite not showing anything) */
+            const allGlyphs = [];
+
+            const typeKey = getGlyphTypeKey(glyphType);
+
+            // Add base glyphs first (if exist)
+            if (glyphs.base[playerClass] && glyphs.base[playerClass][typeKey]) {
+                allGlyphs.push(...glyphs.base[playerClass][typeKey]);
+                /* showMessage(`Found ${glyphs.base[playerClass][typeKey].length} base glyphs`); */
+                /* output example: (no message was displayed when i clicked on a prime glyph slot which is normal since there are no prime glyphs in base structure) */
+                /* output example: "Found 27 base glyphs" (this message was displayed when i clicked on a major glyph slot which is normal since there are 27 major glyphs for deathknight in base structure) */
+                /* output example: "Found 6 base glyphs" (this message was displayed when i clicked on a minor glyph slot which is normal since there are 6 minor glyphs for deathknight in base structure) */
+            }
+
+            // Then expansion-specific glyphs
+            const currentExpansion = getCurrentExpansion(); // e.g., "wotlk" or "cataclysm"
+            if (glyphs[currentExpansion] && glyphs[currentExpansion][playerClass] && glyphs[currentExpansion][playerClass][typeKey]) {
+                allGlyphs.push(...glyphs[currentExpansion][playerClass][typeKey]);
+                /* showMessage(`Found ${glyphs[currentExpansion][playerClass][typeKey].length} expansion glyphs`); */
+                /* output example: "Found 4 expansion glyphs" (this message was displayed when i clicked on a prime glyph slot which is normal since there are 4 prime glyphs for deathknight in cataclysm structure) */
+                /* output example: "Found 3 expansion glyphs" (this message was displayed when i clicked on a major glyph slot which is normal since there are 3 major glyphs for deathknight in cataclysm structure) */
+                /* output example: "Found 4 expansion glyphs" (this message was displayed when i clicked on a minor glyph slot which is normal since there are 4 minor glyphs for deathknight in cataclysm structure) */
+            }
+
+            /* showMessage(`About to render glyph list: ${allGlyphs.length} total glyphs`); */
+            renderGlyphSelectionList(allGlyphs, glyphType, playerClass, slotIndex);
+        }
+
+        function getGlyphTypeKey(typeString) {
+            return typeString.toLowerCase().replace(" glyphs", "");
+        }
+
+        function renderGlyphSelectionList(glyphList, glyphType, playerClass, slotIndex) {
+            /* showMessage(`Rendering ${glyphList.length} glyphs for ${glyphType}`); */
+            /*
+            as it turns out, this showMessage call works after all. as an example, it displays:
+            "Rendering 30 glyphs for Major Glyphs" when i click on a major glyph slot, which makes sense since base major glyphs for deathknight were 27 and cataclysm major glyphs for deathknight were 3.
+            and also
+            "Rendering 10 glyphs for Minor Glyphs" when i click on a minor glyph slot, which makes sense since base minor glyphs for deathknight were 6 and cataclysm minor glyphs for deathknight were 4.
+            */
+            // Remove existing list if open
+            const existingList = document.getElementById("glyph-selection-popup");
+            if (existingList) existingList.remove();
+
+            const popup = document.createElement("div");
+            popup.id = "glyph-selection-popup";
+            popup.classList.add("glyph-selection-popup");
+
+            const header = document.createElement("div");
+            header.classList.add("glyph-selection-header");
+
+            const currentClass = baseTreeData.classes[playerClass]
+                ? baseTreeData.classes[playerClass].name
+                : playerClass;
+
+            header.textContent = `Select ${glyphType.replace("Glyphs", "Glyph")} for ${currentClass}`;
+            popup.appendChild(header);
+
+            const list = document.createElement("div");
+            list.classList.add("glyph-selection-list");
+
+            glyphList.forEach(g => {
+                const item = document.createElement("div");
+                item.classList.add("glyph-list-item");
+                item.style.cursor = "pointer";
+
+                const icon = document.createElement("img");
+                icon.src = `https://wow.zamimg.com/images/wow/icons/medium/${g.icon}.jpg`;
+                icon.alt = g.name;
+
+                const info = document.createElement("div");
+                info.classList.add("glyph-info");
+
+                const name = document.createElement("span");
+                name.classList.add("glyph-name");
+                name.textContent = `Glyph of ${g.name}`;
+
+                const desc = document.createElement("p");
+                desc.classList.add("glyph-desc");
+                desc.textContent = g.description.join(" ");
+
+                info.appendChild(name);
+                info.appendChild(desc);
+
+                item.appendChild(icon);
+                item.appendChild(info);
+
+                // Click to select glyph
+                item.addEventListener("click", (e) => {
+                    e.stopPropagation(); // prevent closing the popup immediately
+                    selectGlyph(glyphType, slotIndex, g);
+                    popup.remove();
+                });
+
+                list.appendChild(item);
+            });
+
+            popup.appendChild(list);
+            document.body.appendChild(popup);
+            /* showMessage(`Popup added to DOM. Body children: ${document.body.children.length}`); */
+
+            // Close popup when clicking outside
+            setTimeout(() => {
+                const outsideClickHandler = (e) => {
+                    if (!popup.contains(e.target) && !e.target.closest(".glyph-slot")) {
+                        popup.remove();
+                        document.removeEventListener("click", outsideClickHandler);
+                    }
+                };
+                document.addEventListener("click", outsideClickHandler);
+            }, 0);
+        }
+
+        function selectGlyph(glyphType, slotIndex, glyphData) {
+            const typeKey = getGlyphTypeKey(glyphType);
+
+            // Safely overwrite slot in currentState.glyphs
+            if (!currentState.glyphs[typeKey]) currentState.glyphs[typeKey] = [null, null, null];
+            currentState.glyphs[typeKey][slotIndex] = glyphData;
+
+            const slot = glyphsWrapper.querySelector(`.glyph-slot[data-type="${typeKey}"][data-index="${slotIndex}"]`);
+            if (!slot) return;
+
+            slot.innerHTML = ""; // clear placeholder
+
+            const img = document.createElement("img");
+            img.src = `https://wow.zamimg.com/images/wow/icons/medium/${glyphData.icon}.jpg`;
+            img.alt = glyphData.name;
+
+            const name = document.createElement("span");
+            name.classList.add("glyph-slot-name");
+            name.textContent = `Glyph of ${glyphData.name}`;
+
+            slot.appendChild(img);
+            slot.appendChild(name);
+        }
+
+        function capitalize(str) {
+            if (!str) return "";
+            return str.charAt(0).toUpperCase() + str.slice(1);
+        }
+
         function getBuildClassAndVersionLabel(build) {
             if (build.compressed) {
                 const [meta] = build.compressed.split(":");
@@ -42436,6 +43658,7 @@
 
             updatePointsDisplay();
             renderTalentTrees();
+            renderGlyphsContainer();
             updateURLHash();
 
             // Set build name in input field
@@ -42767,6 +43990,7 @@
             });
 
             renderTalentTrees();
+            renderGlyphsContainer();
         }
 
         // ----------------------------
