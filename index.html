@@ -356,7 +356,8 @@
         }
 
         .glyphs-section {
-            display: none; /* hidden by default */
+            display: none;
+            /* hidden by default */
             flex-direction: column;
             gap: 1rem;
             margin-top: 1.5rem;
@@ -380,7 +381,8 @@
             margin-bottom: 1.5rem;
             display: flex;
             gap: 0.75rem;
-            justify-content: space-between; /* distribute slots evenly */
+            justify-content: space-between;
+            /* distribute slots evenly */
             width: 100%;
         }
 
@@ -397,13 +399,15 @@
             flex-direction: row;
             align-items: center;
             justify-content: flex-start;
-            gap: 8px; /* space between image and text */
+            gap: 8px;
+            /* space between image and text */
             cursor: pointer;
             padding: 4px 8px;
         }
 
         .glyph-slot:hover {
-            background: #4b5563; /* hover:bg-gray-600 */
+            background: #4b5563;
+            /* hover:bg-gray-600 */
         }
 
         .glyph-slot img {
@@ -693,7 +697,7 @@
                         </div>
                         <div id="talent-trees"></div>
                         <div id="cata-spec-selection-panel" class="hidden"></div>
-                    </div> 
+                    </div>
                 </div>
 
                 <!-- Talent Order Timeline -->
@@ -21579,7 +21583,7 @@
                             ranks: 3,
                             requiresTalents: null,
                             description: [
-                                "Increases the armor bonus of your Devotion Aura by {value}% and increases the amount healed on any target affected by any of your Auras by {value2}%.",
+                                "Increases the armor bonus of your Devotion Aura by {value1}% and increases the amount healed on any target affected by any of your Auras by {value2}%.",
                                 {
                                     value1: [17, 34, 50],
                                     value2: [2, 4, 6]
@@ -23157,7 +23161,7 @@
                             ranks: 2,
                             requiresTalents: null,
                             description: [
-                                "Decreases the cooldown of your Fade ability by {value} sec, and reduces the cooldown of your Shadowfiend ability by {value2}.",
+                                "Decreases the cooldown of your Fade ability by {value1} sec, and reduces the cooldown of your Shadowfiend ability by {value2}.",
                                 {
                                     value1: [3, 6],
                                     value2: ["1 minute", "2 minutes"]
@@ -28467,7 +28471,8 @@
                                     value3: [2, 4]
                                 }
                             ]
-                        },{
+                        }, 
+                        {
                             id: "will_of_the_necropolis",
                             name: "Will of the Necropolis",
                             icon: "ability_creature_cursed_02",
@@ -31026,7 +31031,7 @@
                             ranks: 2,
                             requiresTalents: null,
                             description: [
-                                "Decreases the cooldown of your Fade ability by {value} sec, and reduces the cooldown of your Shadowfiend ability by {value2} sec.",
+                                "Decreases the cooldown of your Fade ability by {value1} sec, and reduces the cooldown of your Shadowfiend ability by {value2} sec.",
                                 {
                                     value1: [3, 6],
                                     value2: [30, 60]
@@ -32793,7 +32798,7 @@
                             ranks: 2,
                             requiresTalents: null,
                             description: [
-                                "Your Mortal Strike critical hits have a {value}% chance to Enrage you, increasing physical damage caused by {value2}% for 12 sec.",
+                                "Your Mortal Strike critical hits have a {value1}% chance to Enrage you, increasing physical damage caused by {value2}% for 12 sec.",
                                 {
                                     value1: [50, 100],
                                     value2: [5, 10]
@@ -35303,7 +35308,7 @@
             description: [
                 "Increases the damage dealt by your poisons by {value}%.",
                 {
-                    value1: [3, 6, 9, 12, 15]
+                    value: [3, 6, 9, 12, 15]
                 }
             ]
         });
@@ -35501,10 +35506,10 @@
                 ranks: 2,
                 requiresTalents: "opportunity",
                 description: [
-                    "Increases the duration of your Garrote ability by {value1} seconds, but reduces the damage by {value1}%.",
+                    "Increases the duration of your Garrote ability by {value1} seconds, but reduces the damage by {value2}%.",
                     {
                         value1: [3, 6],
-                        value1: [5, 10]
+                        value2: [5, 10]
                     }
                 ]
             },
@@ -43645,7 +43650,7 @@
 
             // clear existing UI
             if (cataSpecSelectionPanel) {
-                cataSpecSelectionPanel.innerHTML = ""; 
+                cataSpecSelectionPanel.innerHTML = "";
             }
 
             if (timelineWrapper) {
@@ -43761,8 +43766,8 @@
                         `;
                     }).join("");
 
-                const specIconPath = specInfo.specIcon 
-                    ? `https://wow.zamimg.com/images/wow/icons/large/${specInfo.specIcon}.jpg` 
+                const specIconPath = specInfo.specIcon
+                    ? `https://wow.zamimg.com/images/wow/icons/large/${specInfo.specIcon}.jpg`
                     : "";
 
                 // === Spec wrapper ===
@@ -44172,7 +44177,7 @@
             });
 
             talentTrees.appendChild(container);
-            
+
             // === NEW: render timeline outside talent-wrapper ===
             // Get the top-level timeline wrapper
             if (timelineWrapper) {
@@ -45865,7 +45870,7 @@
             // Toggle logic
             toggleBtn.addEventListener("click", () => {
                 const hidden = itemsContainer.classList.toggle("hidden");
-                
+
                 if (hidden) {
                     toggleBtn.innerHTML = `<i class="fa fa-angle-up text-lg"></i>`;
                     toggleBtn.title = "Show Talent Order"; // update title when hidden
@@ -46081,16 +46086,16 @@
             types.forEach(type => {
                 if (!currentState.glyphs[type]) {
                     currentState.glyphs[type] = [null, null, null]; // 3 slots
-                    /* showMessage(`Initialized slots for type: ${type}`); */ /* output: Initialized slots for type: primeInitialized slots for type: majorInitialized slots for type: minor */ 
+                    /* showMessage(`Initialized slots for type: ${type}`); */ /* output: Initialized slots for type: primeInitialized slots for type: majorInitialized slots for type: minor */
                 }
             });
         }
 
         function renderGlyphsContainer() {
-            
+
             const currentExpansion = getCurrentExpansion();
             const playerClass = currentState.class;
-            
+
             if (!glyphsWrapper || !currentExpansion || !playerClass) return;
 
             /* if (!glyphsWrapper) return showMessage("glyphsWrapper not found", true);  */ /* no output */
@@ -46103,7 +46108,7 @@
             glyphsWrapper.innerHTML = "";
 
             let glyphTypes = [];
-            
+
             if (currentExpansion === "cataclysm") {
                 glyphTypes = ["Prime Glyphs", "Major Glyphs", "Minor Glyphs"];
             } else if (currentExpansion === "wotlk") {
@@ -46116,33 +46121,33 @@
 
             // Show wrapper since glyphs exist for this expansion
             glyphsWrapper.style.display = "block";
-            
+
             glyphTypes.forEach(type => {
                 const section = document.createElement("div");
                 section.classList.add("glyph-type-section");
-                
+
                 const header = document.createElement("h3");
                 header.textContent = type;
                 section.appendChild(header);
-                
+
                 const slots = document.createElement("div");
                 slots.classList.add("glyph-slots");
-                
+
                 for (let i = 0; i < 3; i++) {
                     const slot = document.createElement("div");
                     slot.classList.add("glyph-slot");
                     slot.dataset.type = type.toLowerCase().replace(" glyphs", "");
                     slot.dataset.index = i;
-                    
+
                     // Placeholder content
                     const placeholderImg = document.createElement("img");
                     placeholderImg.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
                     placeholderImg.alt = "Empty Slot";
-                    
+
                     const placeholderText = document.createElement("span");
                     placeholderText.classList.add("glyph-slot-name");
                     placeholderText.textContent = "Empty";
-                    
+
                     slot.appendChild(placeholderImg);
                     slot.appendChild(placeholderText);
 
@@ -46154,7 +46159,7 @@
 
                     slots.appendChild(slot);
                 }
-                
+
                 section.appendChild(slots);
                 glyphsWrapper.appendChild(section);
             });
@@ -46222,6 +46227,41 @@
 
             const list = document.createElement("div");
             list.classList.add("glyph-selection-list");
+
+            // Add "None" option at the start
+            const noneItem = document.createElement("div");
+            noneItem.classList.add("glyph-list-item");
+            noneItem.style.cursor = "pointer";
+
+            const noneIcon = document.createElement("img");
+            noneIcon.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
+            noneIcon.alt = "None";
+
+            const noneInfo = document.createElement("div");
+            noneInfo.classList.add("glyph-info");
+
+            const noneName = document.createElement("span");
+            noneName.classList.add("glyph-name");
+            noneName.textContent = "None";
+
+            const noneDesc = document.createElement("p");
+            noneDesc.classList.add("glyph-desc");
+            noneDesc.textContent = "Remove the glyph from this slot.";
+
+            noneInfo.appendChild(noneName);
+            noneInfo.appendChild(noneDesc);
+
+            noneItem.appendChild(noneIcon);
+            noneItem.appendChild(noneInfo);
+
+            // Click to clear glyph
+            noneItem.addEventListener("click", (e) => {
+                e.stopPropagation();
+                removeGlyph(glyphType, slotIndex);
+                popup.remove();
+            });
+
+            list.appendChild(noneItem);
 
             glyphList.forEach(g => {
                 const item = document.createElement("div");
@@ -46297,6 +46337,30 @@
 
             slot.appendChild(img);
             slot.appendChild(name);
+        }
+
+        function removeGlyph(glyphType, slotIndex) {
+            const typeKey = getGlyphTypeKey(glyphType);
+
+            if (!currentState.glyphs[typeKey]) return;
+
+            currentState.glyphs[typeKey][slotIndex] = null;
+
+            const slot = glyphsWrapper.querySelector(`.glyph-slot[data-type="${typeKey}"][data-index="${slotIndex}"]`);
+            if (!slot) return;
+
+            slot.innerHTML = "";
+
+            const placeholderImg = document.createElement("img");
+            placeholderImg.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
+            placeholderImg.alt = "Empty Slot";
+
+            const placeholderText = document.createElement("span");
+            placeholderText.classList.add("glyph-slot-name");
+            placeholderText.textContent = "Empty";
+
+            slot.appendChild(placeholderImg);
+            slot.appendChild(placeholderText);
         }
 
         function capitalize(str) {
