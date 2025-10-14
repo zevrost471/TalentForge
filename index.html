@@ -392,7 +392,7 @@
             max-width: 400px;
             width: 100%;
             height: 72px;
-            /* border: 1px solid #444; */
+            border: 1px solid #374151;
             background: #374151;
             border-radius: 4px;
             display: flex;
@@ -432,8 +432,8 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 500px;
-            max-height: 500px;
+            width: 1000px;
+            max-height: 730px;
             overflow-y: auto;
 
             background: rgba(10, 10, 10, 0.95);
@@ -445,6 +445,20 @@
             backdrop-filter: blur(6px);
         }
 
+        .glyph-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background-color: rgba(0, 0, 0, 0.5); /* semi-transparent dark overlay */
+            z-index: 9998; /* just below the popup (popup uses 9999) */
+        }
+
+        .body-no-scroll {
+            overflow: hidden;
+        }
+
         .glyph-selection-popup .glyph-selection-header {
             font-size: 1.1rem;
             color: #ffcc33;
@@ -453,7 +467,7 @@
         }
 
         /* Glyph list container */
-        .glyph-selection-popup .glyph-selection-list {
+        .glyph-selection-popup .glyph-selection-table {
             display: flex;
             flex-direction: column;
             gap: 6px;
@@ -464,12 +478,51 @@
             display: flex;
             align-items: flex-start;
             gap: 10px;
-            background-color: #1a1a1a;
+            background-color: #212020;
             border: 1px solid transparent;
             border-radius: 6px;
             padding: 6px;
             cursor: pointer;
             transition: all 0.15s ease-in-out;
+        }
+
+        /* Unified column layout for header + rows */
+        .glyph-selection-popup .glyph-table-header,
+        .glyph-selection-popup .glyph-table-row {
+            display: grid;
+            grid-template-columns: 1.9fr 5fr 0.6fr; /* name | description | level */
+            align-items: center;
+            padding: 6px 10px;
+        }
+
+        .glyph-selection-popup .glyph-table-header {
+            background-color: #303031;
+            color: #ffffff;
+            font-size: 0.95rem;
+            font-weight: bold;
+            letter-spacing: 0.5px;
+        }
+
+        .glyph-selection-popup .glyph-table-row {
+            border-bottom: 1px solid #333;
+        }
+
+        .glyph-selection-popup .glyph-table-cell {
+            padding: 6px 10px;
+            width: 100%; 
+        }
+
+        .glyph-selection-popup .glyph-table-header .glyph-table-cell {
+            /* Prevent text selection */
+            user-select: none;       /* standard */
+            -webkit-user-select: none; /* Safari/Chrome */
+            -moz-user-select: none;    /* Firefox */
+            -ms-user-select: none;     /* IE/Edge */
+        }
+
+        .glyph-selection-popup .glyph-table-header .glyph-table-cell:hover {
+            background-color: #2a2a2a;
+            border-radius: 4px;
         }
 
         .glyph-selection-popup .glyph-list-item:hover {
@@ -484,23 +537,53 @@
             border-radius: 4px;
         }
 
-        /* Glyph name and description */
-        .glyph-selection-popup .glyph-info {
+        .glyph-selection-popup .glyph-name-cell {
             display: flex;
-            flex-direction: column;
+            align-items: center;  /* centers the text vertically with the icon */
+            gap: 15px;             /* small space between icon and text */
+        }
+
+        .glyph-selection-popup .glyph-icon {
+            border: 1px solid #3d3c40;
+            flex-shrink: 0; /* keep icon from shrinking on narrow screens */
+            border-radius: 4px;
+            width: 50%;
+            height: 50%;
         }
 
         .glyph-selection-popup .glyph-name {
             color: #ffd700;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
+            display: flex;
+            flex-direction: column;
+            line-height: 1; /* prevent extra vertical spacing */
         }
 
         .glyph-selection-popup .glyph-desc {
             color: #ccc;
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             margin-top: 2px;
             line-height: 1.2;
         }
+
+        .glyph-selection-popup .glyph-level {
+            text-align: center;
+            color: #ccc;
+            font-size: 0.9rem;
+        }
+
+        .glyph-sort-arrow {
+            display: inline-block;
+            color: #6e6d6d;           /* grey color */
+            transition: all 0.2s ease;
+            transition: transform 0.2s ease, color 0.2s ease;
+            font-size: 0.85rem;
+            line-height: 1;
+            transform: scaleX(1.5);
+            transform-origin: center center;
+            margin-left: 3px;
+        }
+
     </style>
 </head>
 
@@ -46207,99 +46290,164 @@
             and also
             "Rendering 10 glyphs for Minor Glyphs" when i click on a minor glyph slot, which makes sense since base minor glyphs for deathknight were 6 and cataclysm minor glyphs for deathknight were 4.
             */
-            // Remove existing list if open
+            // Remove existing list and overlay if open
             const existingList = document.getElementById("glyph-selection-popup");
+            const existingOverlay = document.getElementById("glyph-overlay");
             if (existingList) existingList.remove();
+            if (existingOverlay) existingOverlay.remove();
 
+            // Disable body scroll
+            document.body.classList.add("body-no-scroll");
+
+            // Create overlay
+            const overlay = document.createElement("div");
+            overlay.id = "glyph-overlay";
+            overlay.classList.add("glyph-overlay");
+            document.body.appendChild(overlay);
+
+            // Filter out glyphs that are already selected in other slots of the same type
+            const typeKey = getGlyphTypeKey(glyphType);
+            const selectedGlyphs = currentState.glyphs[typeKey]
+                .filter((g, idx) => g && idx !== slotIndex)
+                .map(g => g.name); // store names of already selected glyphs
+
+            const availableGlyphs = glyphList.filter(g => !selectedGlyphs.includes(g.name));
+
+            // Create popup
             const popup = document.createElement("div");
             popup.id = "glyph-selection-popup";
             popup.classList.add("glyph-selection-popup");
-
-            const header = document.createElement("div");
-            header.classList.add("glyph-selection-header");
 
             const currentClass = baseTreeData.classes[playerClass]
                 ? baseTreeData.classes[playerClass].name
                 : playerClass;
 
+            const header = document.createElement("div");
+            header.classList.add("glyph-selection-header");
             header.textContent = `Select ${glyphType.replace("Glyphs", "Glyph")} for ${currentClass}`;
             popup.appendChild(header);
 
-            const list = document.createElement("div");
-            list.classList.add("glyph-selection-list");
+            // Create the table container
+            const table = document.createElement("div");
+            table.classList.add("glyph-selection-table");
 
-            // Add "None" option at the start
-            const noneItem = document.createElement("div");
-            noneItem.classList.add("glyph-list-item");
-            noneItem.style.cursor = "pointer";
+            // Table header row
+            const headerRow = document.createElement("div");
+            headerRow.classList.add("glyph-table-row", "glyph-table-header");
+
+            ["Name", "Description", "Level"].forEach((label, colIndex) => {
+                const cell = document.createElement("div");
+                cell.classList.add("glyph-table-cell");
+                cell.textContent = label;
+
+                let ascending = true;
+                const arrow = document.createElement("span");
+                arrow.classList.add("glyph-sort-arrow");
+                arrow.textContent = "";
+                cell.appendChild(arrow);
+
+                cell.style.cursor = "pointer";
+                cell.addEventListener("click", () => {
+                    // sort glyphs
+                    sortGlyphRows(table, colIndex, ascending);
+
+                    // update arrow
+                    arrow.textContent = ascending ? "▴" : "▾";
+
+                    // reset other arrows
+                    table.querySelectorAll(".glyph-sort-arrow").forEach(a => {
+                        if (a !== arrow) a.textContent = "";
+                    });
+
+                    ascending = !ascending; // toggle direction
+                });
+
+                headerRow.appendChild(cell);
+            });
+
+            table.appendChild(headerRow);
+
+            // "None" option row
+            const noneRow = document.createElement("div");
+            noneRow.classList.add("glyph-table-row", "glyph-list-item", "none-row");
+            noneRow.style.cursor = "pointer";
+
+            const noneNameCell = document.createElement("div");
+            noneNameCell.classList.add("glyph-table-cell", "glyph-name-cell");
 
             const noneIcon = document.createElement("img");
             noneIcon.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
             noneIcon.alt = "None";
+            noneIcon.classList.add("glyph-icon");
 
-            const noneInfo = document.createElement("div");
-            noneInfo.classList.add("glyph-info");
-
-            const noneName = document.createElement("span");
+            const noneName = document.createElement("div");
             noneName.classList.add("glyph-name");
             noneName.textContent = "None";
 
-            const noneDesc = document.createElement("p");
-            noneDesc.classList.add("glyph-desc");
+            noneNameCell.append(noneIcon, noneName);
+
+            const noneDesc = document.createElement("div");
+            noneDesc.classList.add("glyph-table-cell", "glyph-desc");
             noneDesc.textContent = "Remove the glyph from this slot.";
 
-            noneInfo.appendChild(noneName);
-            noneInfo.appendChild(noneDesc);
+            const noneLevel = document.createElement("div");
+            noneLevel.classList.add("glyph-table-cell", "glyph-level");
+            noneLevel.textContent = "-";
 
-            noneItem.appendChild(noneIcon);
-            noneItem.appendChild(noneInfo);
+            noneRow.append(noneNameCell, noneDesc, noneLevel);
 
             // Click to clear glyph
-            noneItem.addEventListener("click", (e) => {
+            noneRow.addEventListener("click", (e) => {
                 e.stopPropagation();
                 removeGlyph(glyphType, slotIndex);
-                popup.remove();
+                if (popup) popup.remove();
+                if (overlay) overlay.remove();
+                document.body.classList.remove("body-no-scroll");
             });
 
-            list.appendChild(noneItem);
+            table.appendChild(noneRow);
 
-            glyphList.forEach(g => {
-                const item = document.createElement("div");
-                item.classList.add("glyph-list-item");
-                item.style.cursor = "pointer";
+            availableGlyphs.forEach(g => {
+                const row = document.createElement("div");
+                row.classList.add("glyph-table-row", "glyph-list-item");
+                row.style.cursor = "pointer";
+
+                const nameCell = document.createElement("div");
+                nameCell.classList.add("glyph-table-cell", "glyph-name-cell");
 
                 const icon = document.createElement("img");
                 icon.src = `https://wow.zamimg.com/images/wow/icons/medium/${g.icon}.jpg`;
                 icon.alt = g.name;
+                icon.classList.add("glyph-icon");
 
-                const info = document.createElement("div");
-                info.classList.add("glyph-info");
+                const nameText = document.createElement("span");
+                nameText.classList.add("glyph-name");
+                nameText.textContent = `Glyph of ${g.name}`;
+                nameCell.append(icon, nameText);
 
-                const name = document.createElement("span");
-                name.classList.add("glyph-name");
-                name.textContent = `Glyph of ${g.name}`;
+                const descCell = document.createElement("div");
+                descCell.classList.add("glyph-table-cell", "glyph-desc");
+                descCell.textContent = g.description.join(" ");
 
-                const desc = document.createElement("p");
-                desc.classList.add("glyph-desc");
-                desc.textContent = g.description.join(" ");
+                const levelCell = document.createElement("div");
+                levelCell.classList.add("glyph-table-cell", "glyph-level");
+                levelCell.textContent = g.level || "-";
 
-                info.appendChild(name);
-                info.appendChild(desc);
-
-                item.appendChild(icon);
-                item.appendChild(info);
+                row.append(nameCell, descCell, levelCell);
 
                 // Click to select glyph
-                item.addEventListener("click", (e) => {
+                row.addEventListener("click", (e) => {
                     e.stopPropagation(); // prevent closing the popup immediately
                     selectGlyph(glyphType, slotIndex, g);
-                    popup.remove();
+                    if (popup) popup.remove();
+                    if (overlay) overlay.remove();
+                    document.body.classList.remove("body-no-scroll"); // restore scrolling
                 });
 
-                list.appendChild(item);
+                table.appendChild(row);
             });
 
-            popup.appendChild(list);
+            popup.appendChild(table);
             document.body.appendChild(popup);
             /* showMessage(`Popup added to DOM. Body children: ${document.body.children.length}`); */
 
@@ -46308,11 +46456,38 @@
                 const outsideClickHandler = (e) => {
                     if (!popup.contains(e.target) && !e.target.closest(".glyph-slot")) {
                         popup.remove();
+                        overlay.remove();
+                        document.body.classList.remove("body-no-scroll"); // restore scrolling
                         document.removeEventListener("click", outsideClickHandler);
                     }
                 };
                 document.addEventListener("click", outsideClickHandler);
             }, 0);
+        }
+
+        function sortGlyphRows(table, columnIndex, ascending = true) {
+            // Get all glyph rows except the "None" row
+            const rows = Array.from(table.querySelectorAll('.glyph-table-row.glyph-list-item'))
+                .filter(row => !row.classList.contains('none-row'));
+
+            rows.sort((a, b) => {
+                const aText = a.children[columnIndex].textContent.trim();
+                const bText = b.children[columnIndex].textContent.trim();
+
+                if (!isNaN(aText) && !isNaN(bText)) {
+                    return ascending ? aText - bText : bText - aText;
+                }
+                return ascending
+                    ? aText.localeCompare(bText)
+                    : bText.localeCompare(aText);
+            });
+
+            // Append in new order, after the header and "None" row
+            const headerRow = table.querySelector('.glyph-table-header');
+            const noneRow = table.querySelector('.none-row');
+
+            rows.forEach(row => table.appendChild(row));
+            if (noneRow) table.insertBefore(noneRow, rows[0]); // keep "None" row on top
         }
 
         function selectGlyph(glyphType, slotIndex, glyphData) {
