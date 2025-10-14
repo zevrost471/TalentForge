@@ -75,6 +75,12 @@
             position: relative;
         }
 
+        /* Make trees shrink responsively */
+        [data-tree-container] {
+            max-width: 100%;
+            width: 100%; /* allow shrink */
+        }
+
         .talent-icon {
             width: 44px;
             height: 44px;
@@ -389,7 +395,7 @@
         .glyph-slot {
             display: flex;
             flex: 1;
-            max-width: 400px;
+            max-width: 500px;
             width: 100%;
             height: 72px;
             border: 1px solid #374151;
@@ -44073,7 +44079,7 @@
             talentTrees.innerHTML = headerHTML;
 
             const container = document.createElement("div");
-            container.className = "flex flex-col md:flex-row gap-6 justify-center mt-4";
+            container.className = "flex flex-wrap md:flex-row md:items-start gap-6 justify-center mt-4";
 
             trees.forEach((treeName) => {
                 const talents = getTalents(version, classKey, treeName);
@@ -44097,7 +44103,7 @@
 
                 const treeEl = document.createElement("div");
                 treeEl.className =
-                    "bg-gray-900 h-full p-4 pt-4 pb-1 rounded-lg w-[340px] shadow-lg border border-gray-700 flex flex-col items-center";
+                    "bg-gray-900 h-full p-4 pt-4 pb-1 rounded-lg w-full sm:w-[300px] md:w-[340px] shadow-lg border border-gray-700 flex flex-col items-center";
                 treeEl.setAttribute("data-tree-container", treeName);
 
                 // === CHANGE: Lock / gray out non-chosen trees in Cataclysm ===
@@ -44298,6 +44304,32 @@
             });
 
             // renderDependencyArrows(grid, treeEl, classKey, treeName);
+
+            // === Auto-redraw arrows when the window resizes ===
+            let resizeActive = false;
+
+            window.addEventListener("resize", () => {
+            if (!resizeActive) {
+                resizeActive = true;
+
+                // Continuously re-render until resizing stops
+                const loop = () => {
+                trees.forEach(treeName => {
+                    renderDependencyArrows(treeName, currentState.class, currentState.version);
+                });
+
+                if (resizeActive) requestAnimationFrame(loop);
+                };
+                requestAnimationFrame(loop);
+            }
+
+            // Stop after user finishes resizing
+            clearTimeout(window._resizeStopTimeout);
+            window._resizeStopTimeout = setTimeout(() => {
+                resizeActive = false;
+            }, 150);
+            });
+
         }
 
         const tooltip = document.getElementById("talent-tooltip");
