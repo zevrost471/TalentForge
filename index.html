@@ -39510,7 +39510,7 @@
                         },
                         {
                             name: "Chains of Ice",
-                            icon: "spell_deathknight_deathstrike",
+                            icon: "spell_frost_chainsofice",
                             description: [
                                 "Your Chains of Ice also causes 144 to 156 Frost damage, increased by your attack power."
                             ],
@@ -46151,10 +46151,8 @@
         */
 
         function initCurrentGlyphs() {
-            if (!currentState.glyphs) {
-                currentState.glyphs = {};
-                /* showMessage(currentState.glyphs); */ /* output: [object Object] */
-            }
+            currentState.glyphs = {};
+            /* showMessage(currentState.glyphs); */ /* output: [object Object] */
 
             const currentExpansion = getCurrentExpansion(); // "wotlk" or "cataclysm"
             const classKey = currentState.class;
@@ -46224,7 +46222,7 @@
 
                     // Placeholder content
                     const placeholderImg = document.createElement("img");
-                    placeholderImg.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
+                    placeholderImg.src = "https://wow.zamimg.com/images/wow/icons/large/inventoryslot_empty.jpg";
                     placeholderImg.alt = "Empty Slot";
 
                     const placeholderText = document.createElement("span");
@@ -46376,7 +46374,7 @@
             noneNameCell.classList.add("glyph-table-cell", "glyph-name-cell");
 
             const noneIcon = document.createElement("img");
-            noneIcon.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
+            noneIcon.src = "https://wow.zamimg.com/images/wow/icons/large/inventoryslot_empty.jpg";
             noneIcon.alt = "None";
             noneIcon.classList.add("glyph-icon");
 
@@ -46416,7 +46414,7 @@
                 nameCell.classList.add("glyph-table-cell", "glyph-name-cell");
 
                 const icon = document.createElement("img");
-                icon.src = `https://wow.zamimg.com/images/wow/icons/medium/${g.icon}.jpg`;
+                icon.src = `https://wow.zamimg.com/images/wow/icons/large/${g.icon}.jpg`;
                 icon.alt = g.name;
                 icon.classList.add("glyph-icon");
 
@@ -46503,7 +46501,7 @@
             slot.innerHTML = ""; // clear placeholder
 
             const img = document.createElement("img");
-            img.src = `https://wow.zamimg.com/images/wow/icons/medium/${glyphData.icon}.jpg`;
+            img.src = `https://wow.zamimg.com/images/wow/icons/large/${glyphData.icon}.jpg`;
             img.alt = glyphData.name;
 
             const name = document.createElement("span");
@@ -46527,7 +46525,7 @@
             slot.innerHTML = "";
 
             const placeholderImg = document.createElement("img");
-            placeholderImg.src = "https://wow.zamimg.com/images/wow/icons/medium/inventoryslot_empty.jpg";
+            placeholderImg.src = "https://wow.zamimg.com/images/wow/icons/large/inventoryslot_empty.jpg";
             placeholderImg.alt = "Empty Slot";
 
             const placeholderText = document.createElement("span");
