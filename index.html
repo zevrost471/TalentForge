@@ -95,7 +95,7 @@
         }
 
         .talent-icon:hover {
-            transform: scale(1.1);
+            /* transform: scale(1.1); */
             box-shadow: 0 0 10px gold;
             z-index: 2;
         }
@@ -46464,20 +46464,29 @@
                                 : "";
 
                             cell.innerHTML = `
-                            <div
-                                class="talent-icon relative w-full h-full border rounded ${borderClass} hover:brightness-110"
+                            <div 
+                                class="relative group w-full h-full"
                                 data-tree="${treeName}" data-id="${talent.id}"
                             >
-                                <img
-                                    src="${iconOverrideById[talent.id] ||
-                                `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`
-                                }"
-                                    class="w-full h-full rounded"
-                                    alt="${talent.name}"
-                                />
-                                ${rankHTML}
+                                <div class="talent-icon w-full h-full border rounded ${borderClass} hover:brightness-110"
+                                     data-tree="${treeName}" data-id="${talent.id}">
+                                    <img
+                                        src="${iconOverrideById[talent.id] ||
+                                    `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`
+                                    }"
+                                        class="w-full h-full rounded"
+                                        alt="${talent.name}"
+                                    />
+                                    ${rankHTML}
+                                </div>
+
+                                <!-- Tooltip -->
+                                <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50
+                                            p-2 bg-black border border-gray-600 rounded w-80 text-sm shadow-lg">
+                                    ${tooltipText}
+                                </div>
                             </div>
-                        `;
+                            `;
                         }
 
                         rowEl.appendChild(cell);
@@ -46578,6 +46587,7 @@
 
         }
 
+        /*
         const tooltip = document.getElementById("talent-tooltip");
 
         document.addEventListener("mouseover", (e) => {
@@ -46640,6 +46650,7 @@
                 tooltip.classList.add("hidden");
             }
         });
+        */
 
         /*
                 function renderTalentTrees() {
