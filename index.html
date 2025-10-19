@@ -1134,6 +1134,7 @@
 
         // Modify just 1.11 (e.g., remove one tree from Priest)
         // talentTreeData["1.11"].classes.priest.trees = ["Discipline", "Holy"];  // Shadow not yet available
+
         talentTreeData["0.12"].classes.hunter.trees = [
             "Beast Mastery",
             "Ranged Combat",
@@ -35493,24 +35494,24 @@
         // ==============================
 
         const talentsAttributedByVersion = {
-            1.1: cloneDeep(baseTalents.vanilla),
-            1.2: cloneDeep(baseTalents.vanilla),
-            1.3: cloneDeep(baseTalents.vanilla),
-            1.4: cloneDeep(baseTalents.vanilla),
-            1.5: cloneDeep(baseTalents.vanilla),
-            1.6: cloneDeep(baseTalents.vanilla),
-            1.7: cloneDeep(baseTalents.vanilla),
-            1.8: cloneDeep(baseTalents.vanilla),
-            1.9: cloneDeep(baseTalents.vanilla),
-            1.10: cloneDeep(baseTalents.vanilla),
-            1.11: cloneDeep(baseTalents.vanilla),
-            1.12: cloneDeep(baseTalents.vanilla),
-            1.13: cloneDeep(baseTalents.vanilla),
+            "1.1": cloneDeep(baseTalents.vanilla),
+            "1.2": cloneDeep(baseTalents.vanilla),
+            "1.3": cloneDeep(baseTalents.vanilla),
+            "1.4": cloneDeep(baseTalents.vanilla),
+            "1.5": cloneDeep(baseTalents.vanilla),
+            "1.6": cloneDeep(baseTalents.vanilla),
+            "1.7": cloneDeep(baseTalents.vanilla),
+            "1.8": cloneDeep(baseTalents.vanilla),
+            "1.9": cloneDeep(baseTalents.vanilla),
+            "1.10": cloneDeep(baseTalents.vanilla),
+            "1.11": cloneDeep(baseTalents.vanilla),
+            "1.12": cloneDeep(baseTalents.vanilla),
+            "1.13": cloneDeep(baseTalents.vanilla),
             "1.16.0t": cloneDeep(baseTalents.vanilla),
             "1.16.1t": cloneDeep(baseTalents.vanilla),
             "1.17.2t": cloneDeep(baseTalents.vanilla),
             "1.0.0e": cloneDeep(baseTalents.tbc),
-            2.4: cloneDeep(baseTalents.tbc),
+            "2.4": cloneDeep(baseTalents.tbc),
             "3.2.0": cloneDeep(baseTalents.wotlk),
             "3.3.5": cloneDeep(baseTalents.wotlk),
             "4.3.5": cloneDeep(baseTalents.cataclysm),
@@ -45245,6 +45246,13 @@
 
             return treePoints >= talent.row * 5 && requirementsMet;
         }
+        
+        function getTreePoints(tree) {
+            if (!currentState.class || !currentState.talents[currentState.class])
+                return 0;
+            const treeTalents = currentState.talents[currentState.class][tree];
+            return Object.values(treeTalents).reduce((sum, points) => sum + points, 0);
+        }
 
         function getTreePoints(classKey, treeName) {
             const tree = currentState.talents?.[classKey]?.[treeName] || {};
@@ -45633,6 +45641,8 @@
             if (currentState.class === 'shaman') {
                 if (talent.requiresWaterTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Water Totem");
                 if (talent.requiresFireTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Fire Totem");
+                if (talent.requiresAirTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Air Totem");
+                if (talent.requiresEarthTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Earth Totem");
             }
 
             return requirements.join(", ");
@@ -45704,20 +45714,6 @@
                 glyphsWrapper.style.display = "none";
             }
 
-            // Only reset selected class highlight if expansion changed
-
-            /*
-            if (previousExpansion !== currentExpansion) {
-                currentState.class = null; // Clear selected class
-                classButtons.forEach((btn) => {
-                    btn.classList.remove("bg-yellow-600", "text-white");
-                    btn.classList.add("bg-gray-700", "hover:bg-gray-600");
-                });
-            }
-            */
-
-            // handleExpansionEffects(currentExpansion);
-
             previousExpansion = currentExpansion; // Update tracker
 
             // Enable class buttons
@@ -45756,27 +45752,6 @@
 
             updateURLHash();
         }
-
-        /*
-        function handleExpansionEffects(currentExpansion) {
-            if (currentExpansion === "wotlk") {
-                dkBtn.classList.remove("hidden");
-            } else {
-                dkBtn.classList.add("hidden");
-
-                // If DK is selected and expansion isn't WotLK, reset selection
-                if (currentState.class === "deathknight") {
-                    currentState.class = null;
-                    talentContainer.innerHTML = `
-                        <div id="talent-placeholder" class="text-center py-12">
-                            <h2 class="text-2xl text-yellow-400 mb-2">Select a class to begin</h2>
-                            <p class="text-gray-400">Click on any class icon to start building your talent tree</p>
-                        </div>
-                    `;
-                }
-            }
-        }
-        */
 
         function getExpansionFromPatch(patch) {
             for (const [expansion, patches] of Object.entries(patchOptions)) {
@@ -45842,30 +45817,6 @@
             }
         }
 
-        /*
-        function moveClassButtons(toPlaceholder) {
-            const classSelection = document.querySelector(".class-selection");
-            const selectClassContainer = document.getElementById("select-class-container");
-            const talentPlaceholder = document.getElementById("talent-placeholder");
-
-            if (!classSelection || !selectClassContainer || !talentPlaceholder) return;
-
-            if (toPlaceholder) {
-                // Move class buttons inside the placeholder
-                talentPlaceholder.appendChild(classSelection);
-
-                // Optionally hide the "Select Class" header above (optional)
-                selectClassContainer.style.display = "none";
-            } else {
-                // Move class buttons back to original container
-                selectClassContainer.appendChild(classSelection);
-
-                // Show the header again
-                selectClassContainer.style.display = "";
-            }
-        }
-        */
-
         function handleCustomPointsChange() {
             currentState.pointsTotal = parseInt(customPoints.value);
             updatePointsDisplay();
@@ -45888,37 +45839,6 @@
                 // headerEl?.classList.remove("collapsed");
                 selectClassHeader?.classList.remove("collapsed");
             }
-
-            // Smoothly collapse the main header
-            /*
-            if (!newClassKey) {
-                // No class selected → uncollapse the header
-                if (headerEl) headerEl.classList.remove("collapsed");
-            }
-    
-            if (headerEl && !headerEl.classList.contains("collapsed")) {
-                headerEl.classList.add("collapsed");
-            }
-            */
-
-            /*
-            if (!newClassKey) {
-                // No class selected → uncollapse the header
-                if (captionEl) captionEl.classList.remove("collapsed");
-            }
-    
-            if (captionEl && !captionEl.classList.contains("collapsed")) {
-                captionEl.classList.add("collapsed");
-            }
-            */
-
-            /*
-            // If already selected a class and spent points, confirm before switching
-            if (currentState.class && currentState.pointsSpent > 0 && currentState.class !== newClassKey) {
-                const confirmSwitch = confirm("You have unsaved talent points in your current build.\n\nSwitching classes will reset your current selections.\n\nIf you want to keep this build, make sure to save it first.\n\nDo you want to proceed?");
-                if (!confirmSwitch) return;
-            }
-            */
 
             // Reset URL hash when changing class
             if (location.hash) location.hash = "";
@@ -46232,16 +46152,6 @@
                     currentState.talents[classKey][tree] = {};
                 });
             }
-
-            // Add class header + icon row
-            /*
-                        const headerHTML = `
-                            <div class="text-center w-full py-4">
-                            <h2 class="text-2xl font-bold text-yellow-400">${classData.name} Talents</h2>
-                            </div>
-                        `;
-                        talentTrees.innerHTML = headerHTML;
-                        */
 
             // Count points in each tree
             const treePoints = trees.map((tree) => {
@@ -46587,210 +46497,6 @@
 
         }
 
-        /*
-        const tooltip = document.getElementById("talent-tooltip");
-
-        document.addEventListener("mouseover", (e) => {
-            const target = e.target.closest("[data-id][data-tree]");
-            if (!target) return;
-
-            const classKey = currentState.class;
-            const id = target.dataset.id;
-            const tree = target.dataset.tree;
-
-            const talent = getTalentById(classKey, tree, id);
-            if (!talent) return;
-
-            const points = currentState.talents?.[classKey]?.[tree]?.[id] || 0;
-            const html = getTalentTooltip(talent, points, classKey, tree); // Now returns HTML
-            tooltip.innerHTML = html;
-            tooltip.classList.remove("hidden");
-        });
-
-        document.addEventListener("mousemove", (e) => {
-            if (tooltip.classList.contains("hidden")) return;
-
-            const padding = 12; // Prevent tooltip from hugging edge
-            const offset = 15;
-
-            // Temporarily position tooltip off-screen to measure it accurately
-            tooltip.style.top = `-9999px`;
-            tooltip.style.left = `-9999px`;
-
-            const tooltipRect = tooltip.getBoundingClientRect();
-            const viewportWidth = window.innerWidth;
-            const viewportHeight = window.innerHeight;
-
-            let top = e.clientY + offset;
-            let left = e.clientX + offset;
-
-            // Flip vertically if overflowing bottom
-            if (top + tooltipRect.height + padding > viewportHeight) {
-                top = e.clientY - tooltipRect.height - offset;
-                tooltip.setAttribute("data-position", "top");
-            } else {
-                tooltip.setAttribute("data-position", "bottom");
-            }
-
-            // Flip horizontally if overflowing right
-            if (left + tooltipRect.width + padding > viewportWidth) {
-                left = e.clientX - tooltipRect.width - offset;
-            }
-
-            // Clamp to ensure it doesn’t go off top or left edge
-            top = Math.max(padding, top);
-            left = Math.max(padding, left);
-
-            tooltip.style.top = `${top}px`;
-            tooltip.style.left = `${left}px`;
-        });
-
-        document.addEventListener("mouseout", (e) => {
-            if (e.target.closest("[data-id][data-tree]")) {
-                tooltip.classList.add("hidden");
-            }
-        });
-        */
-
-        /*
-                function renderTalentTrees() {
-                    const container = document.getElementById("talent-container");
-                    container.innerHTML = "";
-
-                    if (!currentState.class) {
-                        container.innerHTML = `<div class="text-center py-12">
-                        <h2 class="text-2xl text-yellow-400 mb-2">Select a class to begin</h2>
-                        <p class="text-gray-400">Click on any class icon to the left to start building your talent tree</p>
-                        </div>`;
-                        return;
-                    }
-
-                    const classKey = currentState.class;
-                    const classData = talentTreeData[currentState.version].classes[classKey];
-                    const trees = classData.trees;
-
-                    const wrapper = document.createElement("div");
-                    wrapper.className = "flex flex-col md:flex-row gap-6 justify-center";
-
-                    trees.forEach(treeName => {
-                        const treeDiv = document.createElement("div");
-                        treeDiv.className = "relative bg-gray-900 rounded-lg p-4 w-[264px] h-[352px] shadow-lg border border-gray-700";
-
-                        const header = document.createElement("h3");
-                        header.className = "text-center text-yellow-400 font-semibold mb-2";
-                        header.textContent = treeName;
-                        treeDiv.appendChild(header);
-
-                        const talents = getTalents(currentState.version, classKey, treeName);
-
-                        talents.forEach(talent => {
-                            const iconDiv = document.createElement("div");
-                            iconDiv.className = "talent-icon absolute w-[44px] h-[44px] bg-cover border border-gray-600 hover:border-yellow-400 cursor-pointer";
-                            iconDiv.dataset.tree = treeName;
-                            iconDiv.dataset.id = talent.id;
-
-                            iconDiv.style.left = `${10 + talent.col * 44}px`;
-                            iconDiv.style.top = `${10 + talent.row * 44}px`;
-                            iconDiv.style.backgroundImage = `url('https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg')`;
-
-                            const currentPoints = currentState.talents[classKey]?.[treeName]?.[talent.id] || 0;
-                            const pointsSpan = document.createElement("span");
-                            pointsSpan.className = "absolute bottom-0 right-0 text-xs text-white bg-black bg-opacity-70 px-1 rounded";
-                            pointsSpan.textContent = currentPoints;
-
-                            iconDiv.appendChild(pointsSpan);
-                            iconDiv.addEventListener("click", handleTalentClick);
-
-                            treeDiv.appendChild(iconDiv);
-                        });
-
-                        wrapper.appendChild(treeDiv);
-                    });
-
-                    container.appendChild(wrapper);
-                }
-                */
-
-        /*
-                function renderTalentTrees() {
-                    talentContainer.innerHTML = "";
-                    
-                    if (!currentState.class) {
-                        // document.getElementById("druid-talents-preview").classList.add("hidden");
-                        talentContainer.innerHTML = `<div class="text-center py-12">
-                                <h2 class="text-2xl text-yellow-400 mb-2">Select a class to begin</h2>
-                                <p class="text-gray-400">Click on any class icon to the left to start building your talent tree</p>
-                            </div>`;
-                        return;
-                    }
-
-
-                    const classKey = currentState.class;
-                    const version = currentState.version;
-                    const classData = talentTreeData[version].classes[classKey];
-                    const trees = classData.trees;
-                    const talentsByTree = talentTreeData[version]?.[classKey] || {};
-                    
-                    const wrapper = document.createElement("div");
-                    wrapper.className = "flex flex-col md:flex-row gap-6 justify-center";
-
-                    let html = `
-                                    <div class="talent-tree-container flex flex-col md:flex-row gap-4">
-                                        <div class="text-center w-full py-4">
-                                            <h2 class="text-2xl font-bold text-yellow-400">${
-                                            classData.name
-                                            } Specializations</h2>
-                                            <div class="flex justify-center gap-8 mt-4">
-                                                ${trees
-                                                .map(
-                                                    (tree) => `
-                                                    <div class="flex items-center gap-2">
-                                                        <img src="https://wow.zamimg.com/images/wow/icons/large/${getTreeIcon(
-                                                        currentState.class,
-                                                        tree
-                                                        )}.jpg" 
-                                                            alt="${tree}" class="w-8 h-8">
-                                                        <span>${tree}</span>
-                                                    </div>
-                                                `
-                                                )
-                                                .join("")}
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="flex flex-col md:flex-row gap-4 mt-4">
-                                `;
-
-                    talentContainer.innerHTML = `<div class="text-center py-4">
-                            <h2 class="text-2xl font-bold text-yellow-400">${
-                            classData.name
-                            } Talents</h2>
-                            <div class="flex justify-center gap-8 mt-4">
-                                ${trees.map((tree) => `<span>${tree}</span>`).join("")}
-                            </div>
-                        </div>`;
-
-                    html += `</div>`; // Close the flex container
-
-                    /*
-                    //            // Show druid talents preview if druid is selected
-                    //            if (currentState.class === 'druid') {
-                    //                document.getElementById('druid-talents-preview').classList.remove('hidden');
-                    //            } else {
-                    //                document.getElementById('druid-talents-preview').classList.add('hidden');
-                    //            }
-                    */
-
-        /*
-                    talentContainer.innerHTML = html;
-
-                    // Add click handlers to talent icons
-                    document.querySelectorAll(".talent-icon").forEach((icon) => {
-                        icon.addEventListener("click", handleTalentClick);
-                    });
-                }
-                */
-
         function resetTree(treeName) {
             const classKey = currentState.class;
 
@@ -47029,180 +46735,6 @@
             deathknight: "#C41F3B"
         };
 
-        function getTreePoints(tree) {
-            if (!currentState.class || !currentState.talents[currentState.class])
-                return 0;
-            const treeTalents = currentState.talents[currentState.class][tree];
-            return Object.values(treeTalents).reduce((sum, points) => sum + points, 0);
-        }
-
-        function renderTalentsForTree(tree) {
-            if (!currentState.class) return "";
-
-            const talents = getTalentsForClassAndTree(currentState.class, tree);
-            let html = "";
-
-            talents.forEach((talent) => {
-                const pointsSpent =
-                    currentState.talents[currentState.class][tree][talent.id] || 0;
-                const isActive = pointsSpent > 0;
-                const isMaxed = pointsSpent >= talent.ranks;
-                const isDisabled = !isActive && !canLearnTalent(talent, tree);
-
-                html += `
-                                    <div class="talent-icon absolute ${isActive ? "active" : ""
-                    } ${isMaxed ? "maxed" : ""} ${isDisabled ? "disabled" : ""
-                    }" 
-                                        style="left: ${talent.col * 44 + 10}px; top: ${talent.row * 44 + 10
-                    }px; 
-                                        background-image: url('https://wow.zamimg.com/images/wow/talents/icons/vanilla.jpg');
-                                        background-position: ${getIconPosition(
-                        talent.icon
-                    )}"
-                                        data-tree="${tree}" data-id="${talent.id
-                    }" data-ranks="${talent.ranks}" data-requires="${talent.requires || ""}">
-                                        <div class="talent-points">${pointsSpent}/${talent.ranks
-                    }</div>
-                                    </div>
-                                `;
-
-                // Render arrows if needed
-                if (talent.requires) {
-                    const reqTalent = talents.find((t) => t.id === talent.requires);
-                    if (reqTalent) {
-                        const arrowX = (talent.col + reqTalent.col) * 30;
-                        const arrowY = (talent.row + reqTalent.row) * 30;
-                        const arrowRotation = getArrowRotation(talent, reqTalent);
-
-                        html += `
-                                            <div class="arrow absolute" 
-                                                style="left: ${arrowX}px; top: ${arrowY}px; transform: rotate(${arrowRotation}deg)"></div>
-                                        `;
-                    }
-                }
-            });
-
-            return html;
-        }
-
-        // Helper to find talent's position in the grid by ID
-        function findTalentPosition(grid, talentId) {
-            for (let r = 0; r < grid.length; r++) {
-                for (let c = 0; c < grid[r].length; c++) {
-                    if (grid[r][c] && grid[r][c].id === talentId) {
-                        return { row: r, col: c };
-                    }
-                }
-            }
-            return null;
-        }
-
-        // Add this inside your renderTalentTrees() after talents are rendered
-        /*
-        function renderDependencyArrows(grid, treeEl, classKey, treeName) {
-        const talentIconSize = 44; // width and height of each talent icon (in px)
-        const gap = 10; // your CSS gap between talents (px)
-        const cellSize = talentIconSize + gap;
-
-        // Flatten all talent elements in treeEl to map from id to element
-        const talentElements = {};
-        treeEl.querySelectorAll(".talent-icon").forEach((el) => {
-            const id = el.getAttribute("data-talent-id");
-            if (id) talentElements[id] = el;
-        });
-
-        grid.forEach((rowArr, row) => {
-            rowArr.forEach((talent, col) => {
-            if (!talent || !talent.requiresTalents) return;
-
-            const currentTalentId = talent.id;
-            const currentEl = talentElements[currentTalentId];
-            if (!currentEl) return;
-
-            // Prereq can be array or single id
-            const prereqs = Array.isArray(talent.requiresTalents) ? talent.requiresTalents : [talent.requiresTalents];
-
-            prereqs.forEach((prereqId) => {
-                const prereqPos = findTalentPosition(grid, prereqId);
-                if (!prereqPos) return;
-
-                const prereqEl = talentElements[prereqId];
-                if (!prereqEl) return;
-
-                // Determine arrow direction
-                let direction = null;
-                if (prereqPos.col === col) {
-                // Same column
-                if (prereqPos.row < row) direction = "arrow-down";
-                } else if (prereqPos.row === row) {
-                // Same row
-                if (prereqPos.col < col) direction = "arrow-right";
-                else if (prereqPos.col > col) direction = "arrow-left";
-                } else if (prereqPos.row < row) {
-                // Diagonal down
-                if (prereqPos.col < col) direction = "arrow-rightdown";
-                else if (prereqPos.col > col) direction = "arrow-leftdown";
-                }
-
-                if (!direction) return;
-
-                // Determine if unlocked or locked
-                // Here unlocked means prereq talent has at least 1 point
-                const prereqPoints = currentState.talents?.[classKey]?.[treeName]?.[prereqId] || 0;
-                const unlocked = prereqPoints > 0;
-
-                // Create arrow element
-                const arrow = document.createElement("div");
-                arrow.classList.add("arrow", direction);
-                arrow.classList.add(unlocked ? "unlocked" : "locked");
-
-                // Position arrow absolutely between prerequisite and current talent icons
-                // Get bounding rect of both talent elements relative to tree container
-                const containerRect = treeEl.getBoundingClientRect();
-                const prereqRect = prereqEl.getBoundingClientRect();
-                const currentRect = currentEl.getBoundingClientRect();
-
-                // Calculate center points relative to tree container
-                const startX = prereqRect.left + prereqRect.width / 2 - containerRect.left;
-                const startY = prereqRect.top + prereqRect.height / 2 - containerRect.top;
-
-                const endX = currentRect.left + currentRect.width / 2 - containerRect.left;
-                const endY = currentRect.top + currentRect.height / 2 - containerRect.top;
-
-                // Position arrow near midpoint, with an offset depending on direction to align nicely
-                const midX = (startX + endX) / 2;
-                const midY = (startY + endY) / 2;
-
-                arrow.style.position = "absolute";
-                arrow.style.left = `${midX - 15}px`;  // 15px is half arrow width (30px/2)
-                arrow.style.top = `${midY - 15}px`;   // 15px is half arrow height
-
-                // Optionally adjust offsets based on direction for better visual alignment:
-                if (direction === "arrow-down") {
-                arrow.style.left = `${startX - 15}px`;
-                arrow.style.top = `${startY + talentIconSize / 2}px`;
-                } else if (direction === "arrow-right") {
-                arrow.style.left = `${startX + talentIconSize / 2}px`;
-                arrow.style.top = `${startY - 15}px`;
-                } else if (direction === "arrow-left") {
-                arrow.style.left = `${startX - talentIconSize / 2 - 30}px`; // 30 arrow width
-                arrow.style.top = `${startY - 15}px`;
-                } else if (direction === "arrow-rightdown") {
-                arrow.style.left = `${midX}px`;
-                arrow.style.top = `${midY}px`;
-                } else if (direction === "arrow-leftdown") {
-                arrow.style.left = `${midX - 30}px`;
-                arrow.style.top = `${midY}px`;
-                }
-
-                // Append arrow to the tree container
-                treeEl.appendChild(arrow);
-            });
-            });
-        });
-        }
-        */
-
         function renderDependencyArrows(treeName, classKey, version) {
             const container = document.querySelector(`[data-tree-container="${treeName}"]`);
             if (!container) return;
@@ -47224,24 +46756,6 @@
                 const fromEl = container.querySelector(`[data-id="${requiredId}"]`);
                 const toEl = container.querySelector(`[data-id="${talent.id}"]`);
                 if (!fromEl || !toEl) continue;
-
-                /*
-                const containerRect = container.getBoundingClientRect();
-                const fromRect = fromEl.getBoundingClientRect();
-                const toRect = toEl.getBoundingClientRect();
-                */
-
-                /*
-                const fromCenter = {
-                x: fromRect.left + fromRect.width / 2 - containerRect.left,
-                y: fromRect.top + fromRect.height / 2 - containerRect.top
-                };
-    
-                const toCenter = {
-                x: toRect.left + toRect.width / 2 - containerRect.left,
-                y: toRect.top + toRect.height / 2 - containerRect.top
-                };
-                */
 
                 // Use offsetLeft/Top for container-relative positioning
                 const fromCenter = {
@@ -47269,20 +46783,6 @@
 
                 const isUnlocked = (currentState.talents[classKey]?.[treeName]?.[requiredId] || 0) >= (requiredTalent.ranks || 1);
                 arrow.classList.add(isUnlocked ? "unlocked" : "locked");
-
-                /*
-                if (direction === "down") {
-                arrow.style.top = `${fromRect.bottom - containerRect.top}px`;
-                arrow.style.left = `${fromCenter.x - 15}px`; // center minus half arrow width
-                arrow.style.height = `${toRect.top - fromRect.bottom}px`;
-                } else if (direction === "left") {
-                arrow.style.top = `${fromCenter.y - 15}px`;
-                arrow.style.left = `${toRect.right - containerRect.left}px`;
-                } else if (direction === "right") {
-                arrow.style.top = `${fromCenter.y - 15}px`;
-                arrow.style.left = `${fromRect.right - containerRect.left}px`;
-                }
-                */
 
                 // Position and size the arrow
                 if (direction === "down") {
@@ -47371,368 +46871,6 @@
 
             return arrowHead;
         }
-
-
-        /*
-                function getTalentsForClassAndSpecialization(classKey, tree) {
-                // This is a simplified version - in a real app this would contain all talents with their positions
-                const talents = {
-                    druid: {
-                    Balance: [
-                        {
-                        id: "improved_wrath",
-                        name: "Improved Wrath",
-                        icon: "spell_nature_abolishmagic",
-                        row: 0,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "natures_grasp",
-                        name: "Nature's Grasp",
-                        icon: "spell_nature_natureswrath",
-                        row: 1,
-                        col: 1,
-                        ranks: 1,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "improved_natures_grasp",
-                        name: "Improved Nature's Grasp",
-                        icon: "spell_nature_natureswrath",
-                        row: 1,
-                        col: 2,
-                        ranks: 4,
-                        requiresTalents: "natures_grasp"
-                        },
-                        {
-                        id: "improved_thorns",
-                        name: "Improved Thorns",
-                        icon: "spell_nature_thorns",
-                        row: 2,
-                        col: 0,
-                        ranks: 3,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "omen_of_clarity",
-                        name: "Omen of Clarity",
-                        icon: "spell_nature_crystalball",
-                        row: 2,
-                        col: 1,
-                        ranks: 1,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "natures_reach",
-                        name: "Nature's Reach",
-                        icon: "spell_nature_naturetouchgrow",
-                        row: 2,
-                        col: 2,
-                        ranks: 2,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "vengeance",
-                        name: "Vengeance",
-                        icon: "spell_nature_purge",
-                        row: 3,
-                        col: 0,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "improved_starfire",
-                        name: "Improved Starfire",
-                        icon: "spell_arcane_starfire",
-                        row: 3,
-                        col: 2,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "natures_grace",
-                        name: "Nature's Grace",
-                        icon: "spell_nature_naturesblessing",
-                        row: 4,
-                        col: 1,
-                        ranks: 1,
-                        requiresTalents: "omen_of_clarity"
-                        },
-                        {
-                        id: "moonglow",
-                        name: "Moonglow",
-                        icon: "spell_nature_sentinal",
-                        row: 4,
-                        col: 2,
-                        ranks: 3,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "moonfury",
-                        name: "Moonfury",
-                        icon: "spell_nature_moonglow",
-                        row: 5,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: "natures_grace"
-                        },
-                        {
-                        id: "moonkin_form",
-                        name: "Moonkin Form",
-                        icon: "spell_nature_forceofnature",
-                        row: 6,
-                        col: 1,
-                        ranks: 1,
-                        requiresTalents: "moonfury"
-                        }
-                    ],
-                    "Feral Combat": [
-                        {
-                        id: "ferocity",
-                        name: "Ferocity",
-                        icon: "ability_hunter_pet_hyena",
-                        row: 0,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "feral_aggression",
-                        name: "Feral Aggression",
-                        icon: "ability_druid_demoralizingroar",
-                        row: 1,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "feral_instinct",
-                        name: "Feral Instinct",
-                        icon: "ability_ambush",
-                        row: 1,
-                        col: 2,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "brutal_impact",
-                        name: "Brutal Impact",
-                        icon: "ability_druid_bash",
-                        row: 2,
-                        col: 0,
-                        ranks: 2,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "thick_hide",
-                        name: "Thick Hide",
-                        icon: "inv_misc_pelt_bear_03",
-                        row: 2,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "feral_swiftness",
-                        name: "Feral Swiftness",
-                        icon: "spell_nature_spiritwolf",
-                        row: 2,
-                        col: 2,
-                        ranks: 2,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "sharpened_claws",
-                        name: "Sharpened Claws",
-                        icon: "inv_misc_monsterclaw_04",
-                        row: 3,
-                        col: 0,
-                        ranks: 3,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "predatory_strikes",
-                        name: "Predatory Strikes",
-                        icon: "ability_hunter_pet_cat",
-                        row: 3,
-                        col: 1,
-                        ranks: 3,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "primal_fury",
-                        name: "Primal Fury",
-                        icon: "ability_racial_cannibalize",
-                        row: 3,
-                        col: 2,
-                        ranks: 2,
-                        requiresTalents: "feral_instinct"
-                        },
-                        {
-                        id: "savage_fury",
-                        name: "Savage Fury",
-                        icon: "ability_druid_ravage",
-                        row: 4,
-                        col: 0,
-                        ranks: 2,
-                        requiresTalents: "sharpened_claws"
-                        },
-                        {
-                        id: "faerie_fire_feral",
-                        name: "Faerie Fire (Feral)",
-                        icon: "spell_nature_faeriefire",
-                        row: 4,
-                        col: 1,
-                        ranks: 1,
-                        requiresTalents: "predatory_strikes"
-                        },
-                        {
-                        id: "heart_of_the_wild",
-                        name: "Heart of the Wild",
-                        icon: "spell_holy_blessingofagility",
-                        row: 5,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: "faerie_fire_feral"
-                        },
-                        {
-                        id: "leader_of_the_pack",
-                        name: "Leader of the Pack",
-                        icon: "spell_nature_unyeildingstamina",
-                        row: 6,
-                        col: 1,
-                        ranks: 1,
-                        requiresTalents: "heart_of_the_wild"
-                        }
-                    ],
-                    Restoration: [
-                        {
-                        id: "improved_mark_of_the_wild",
-                        name: "Improved Mark of the Wild",
-                        icon: "spell_nature_regeneration",
-                        row: 0,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "furor",
-                        name: "Furor",
-                        icon: "spell_nature_unyeildingstamina",
-                        row: 1,
-                        col: 1,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "improved_healing_touch",
-                        name: "Improved Healing Touch",
-                        icon: "spell_nature_healingtouch",
-                        row: 1,
-                        col: 2,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "natures_focus",
-                        name: "Nature's Focus",
-                        icon: "spell_nature_healingwavegreater",
-                        row: 2,
-                        col: 0,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "improved_enrage",
-                        name: "Improved Enrage",
-                        icon: "ability_druid_enrage",
-                        row: 2,
-                        col: 1,
-                        ranks: 2,
-                        requiresTalents: "furor"
-                        },
-                        {
-                        id: "reflection",
-                        name: "Reflection",
-                        icon: "spell_frost_windwalkon",
-                        row: 2,
-                        col: 2,
-                        ranks: 3,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "subtlety",
-                        name: "Subtlety",
-                        icon: "ability_eyeoftheowl",
-                        row: 3,
-                        col: 0,
-                        ranks: 5,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "tranquil_spirit",
-                        name: "Tranquil Spirit",
-                        icon: "spell_holy_elunesgrace",
-                        row: 3,
-                        col: 2,
-                        ranks: 5,
-                        requiresTalents: "improved_healing_touch"
-                        },
-                        {
-                        id: "improved_rejuvenation",
-                        name: "Improved Rejuvenation",
-                        icon: "spell_nature_rejuvenation",
-                        row: 4,
-                        col: 1,
-                        ranks: 3,
-                        requiresTalents: null
-                        },
-                        {
-                        id: "natures_swiftness",
-                        name: "Nature's Swiftness",
-                        icon: "spell_nature_ravenform",
-                        row: 5,
-                        col: 1,
-                        ranks: 1,
-                        requiresTalents: "improved_rejuvenation"
-                        },
-                        {
-                        id: "gift_of_nature",
-                        name: "Gift of Nature",
-                        icon: "spell_nature_protectionformnature",
-                        row: 5,
-                        col: 2,
-                        ranks: 5,
-                        requiresTalents: "tranquil_spirit"
-                        },
-                        {
-                        id: "improved_tranquility",
-                        name: "Improved Tranquility",
-                        icon: "spell_nature_tranquility",
-                        row: 6,
-                        col: 0,
-                        ranks: 2,
-                        requiresTalents: "subtlety"
-                        },
-                        {
-                        id: "improved_regrowth",
-                        name: "Improved Regrowth",
-                        icon: "spell_nature_resistnature",
-                        row: 6,
-                        col: 2,
-                        ranks: 5,
-                        requiresTalents: "gift_of_nature"
-                        }
-                    ]
-                    }
-                    // ... other classes
-                };
-
-                return talents[classKey][tree] || [];
-                }
-                */
 
         function getIconPosition(iconName) {
             // Simplified icon positions for demo
@@ -47987,19 +47125,6 @@
 
             // Can we learn it?
             if (!canLearnTalent(talent, classKey, tree)) return;
-
-            /*
-                        if (
-                            currentPoints < maxRanks &&
-                            currentState.pointsSpent < currentState.pointsTotal
-                        ) {
-                            currentState.talents[currentState.class][tree][id] =
-                            currentPoints + 1;
-                            currentState.pointsSpent++;
-                            updatePointsDisplay();
-                            renderTalentTrees();
-                        }
-                        */
 
             // Already maxed out globally?
             if (currentState.pointsSpent >= currentState.pointsTotal) return;
@@ -48317,6 +47442,7 @@
             container.appendChild(orderBox);
         }
 
+        /*
         function renderTalentOrderTimeline() {
             const { class: classKey, talentOrder } = currentState;
             if (!classKey || talentOrder.length === 0) return;
@@ -48386,6 +47512,7 @@
 
             container.appendChild(orderBox);
         }
+        */
 
         function recalculateTalentOrder() {
             // Assign levels based on order in talentOrder
@@ -48394,54 +47521,8 @@
             });
         }
 
-        // Compact and reassign levels
-        /*
-        function recalculateTalentOrder() {
-            const { class: classKey, version } = currentState;
-            if (!classKey) return;
-
-            let newOrder = [];
-            let level = 10;
-            let pointsSpentInTree = {};
-
-            for (const entry of currentState.talentOrder) {
-                const talents = getTalents(version, classKey, entry.tree);
-                const talent = talents.find(t => t.id === entry.id);
-                if (!talent) continue;
-
-                if (!pointsSpentInTree[entry.tree]) pointsSpentInTree[entry.tree] = 0;
-
-                // Minimum level this talent can be placed at, based on tier requirement
-                const requiredPoints = talent.row * 5;
-                const minLevel = 10 + requiredPoints; 
-
-                // Ensure enough points have been spent in this tree already
-                if (pointsSpentInTree[entry.tree] < requiredPoints) {
-                    // Delay until requirement is satisfied
-                    const missing = requiredPoints - pointsSpentInTree[entry.tree];
-                    level = 10 + pointsSpentInTree[entry.tree] + missing;
-                }
-
-                // Assign new level
-                entry.level = Math.max(level, minLevel);
-
-                // Record the updated entry
-                newOrder.push(entry);
-
-                // Increase spent points in this tree
-                pointsSpentInTree[entry.tree]++;
-
-                // Next level is one higher
-                level = entry.level + 1;
-            }
-
-            currentState.talentOrder = newOrder;
-        }
-        */
-
         function initCurrentGlyphs() {
             currentState.glyphs = {};
-            /* showMessage(currentState.glyphs); */ /* output: [object Object] */
 
             const currentExpansion = getCurrentExpansion(); // "wotlk" or "cataclysm"
             const classKey = currentState.class;
@@ -48456,7 +47537,6 @@
             types.forEach(type => {
                 if (!currentState.glyphs[type]) {
                     currentState.glyphs[type] = [null, null, null]; // 3 slots
-                    /* showMessage(`Initialized slots for type: ${type}`); */ /* output: Initialized slots for type: primeInitialized slots for type: majorInitialized slots for type: minor */
                 }
             });
         }
@@ -48467,10 +47547,6 @@
             const playerClass = currentState.class;
 
             if (!glyphsWrapper || !currentExpansion || !playerClass) return;
-
-            /* if (!glyphsWrapper) return showMessage("glyphsWrapper not found", true);  */ /* no output */
-            /* if (!currentExpansion) return showMessage("currentExpansion not set", true); */ /* no output */
-            /* if (!playerClass) return showMessage("currentState.class not set", true); */ /* no output */
 
             initCurrentGlyphs();
 
@@ -48523,7 +47599,6 @@
 
                     // Event to open glyph selection
                     slot.addEventListener("click", () => {
-                        /* showMessage(`Clicked slot ${i} of ${type}`); */ /* output example: "Clicked slot 2 of Prime Glyphs" (it works) */
                         openGlyphSelection(type, playerClass, i);
                     });
 
@@ -48537,7 +47612,6 @@
 
         function openGlyphSelection(glyphType, playerClass, slotIndex) {
 
-            /* showMessage(`Opening glyph selection for ${glyphType}, class ${playerClass}, slot ${slotIndex}`); */ /* output example: "Opening glyph selection for Prime Glyphs, class deathknight, slot 2" (it shows this message despite not showing anything) */
             const allGlyphs = [];
 
             const typeKey = getGlyphTypeKey(glyphType);
@@ -48545,23 +47619,14 @@
             // Add base glyphs first (if exist)
             if (glyphs.base[playerClass] && glyphs.base[playerClass][typeKey]) {
                 allGlyphs.push(...glyphs.base[playerClass][typeKey]);
-                /* showMessage(`Found ${glyphs.base[playerClass][typeKey].length} base glyphs`); */
-                /* output example: (no message was displayed when i clicked on a prime glyph slot which is normal since there are no prime glyphs in base structure) */
-                /* output example: "Found 27 base glyphs" (this message was displayed when i clicked on a major glyph slot which is normal since there are 27 major glyphs for deathknight in base structure) */
-                /* output example: "Found 6 base glyphs" (this message was displayed when i clicked on a minor glyph slot which is normal since there are 6 minor glyphs for deathknight in base structure) */
             }
 
             // Then expansion-specific glyphs
             const currentExpansion = getCurrentExpansion(); // e.g., "wotlk" or "cataclysm"
             if (glyphs[currentExpansion] && glyphs[currentExpansion][playerClass] && glyphs[currentExpansion][playerClass][typeKey]) {
                 allGlyphs.push(...glyphs[currentExpansion][playerClass][typeKey]);
-                /* showMessage(`Found ${glyphs[currentExpansion][playerClass][typeKey].length} expansion glyphs`); */
-                /* output example: "Found 4 expansion glyphs" (this message was displayed when i clicked on a prime glyph slot which is normal since there are 4 prime glyphs for deathknight in cataclysm structure) */
-                /* output example: "Found 3 expansion glyphs" (this message was displayed when i clicked on a major glyph slot which is normal since there are 3 major glyphs for deathknight in cataclysm structure) */
-                /* output example: "Found 4 expansion glyphs" (this message was displayed when i clicked on a minor glyph slot which is normal since there are 4 minor glyphs for deathknight in cataclysm structure) */
             }
 
-            /* showMessage(`About to render glyph list: ${allGlyphs.length} total glyphs`); */
             renderGlyphSelectionList(allGlyphs, glyphType, playerClass, slotIndex);
         }
 
@@ -48570,13 +47635,6 @@
         }
 
         function renderGlyphSelectionList(glyphList, glyphType, playerClass, slotIndex) {
-            /* showMessage(`Rendering ${glyphList.length} glyphs for ${glyphType}`); */
-            /*
-            as it turns out, this showMessage call works after all. as an example, it displays:
-            "Rendering 30 glyphs for Major Glyphs" when i click on a major glyph slot, which makes sense since base major glyphs for deathknight were 27 and cataclysm major glyphs for deathknight were 3.
-            and also
-            "Rendering 10 glyphs for Minor Glyphs" when i click on a minor glyph slot, which makes sense since base minor glyphs for deathknight were 6 and cataclysm minor glyphs for deathknight were 4.
-            */
             // Remove existing list and overlay if open
             const existingList = document.getElementById("glyph-selection-popup");
             const existingOverlay = document.getElementById("glyph-overlay");
@@ -48736,7 +47794,6 @@
 
             popup.appendChild(table);
             document.body.appendChild(popup);
-            /* showMessage(`Popup added to DOM. Body children: ${document.body.children.length}`); */
 
             // Close popup when clicking outside
             setTimeout(() => {
@@ -48947,23 +48004,6 @@
             alert(`✅ Loaded build: ${build.name}`);
         }
 
-        /*
-        function exportBuild(index) {
-        const build = currentState.builds[index];
-        const buildJson = JSON.stringify(build, null, 2);
-
-        // Create a temporary textarea to copy from
-        const textarea = document.createElement("textarea");
-        textarea.value = buildJson;
-        document.body.appendChild(textarea);
-        textarea.select();
-        document.execCommand("copy");
-        document.body.removeChild(textarea);
-
-        alert("Build copied to clipboard! You can now share it with others.");
-        }
-        */
-
         function exportBuild(index) {
             try {
                 const build = currentState.builds[index];
@@ -49033,40 +48073,6 @@
 
             return treeStrings.join("-");
         }
-
-        /*
-        function compressBuild(build) {
-            const parts = [];
-
-            // Version/Class
-            parts.push(`${build.version}/${build.class}`);
-
-            // Talents
-            const classKey = build.class;
-            const trees = build.talents[classKey];
-            const treeParts = [];
-
-            for (const tree in trees) {
-                const talents = trees[tree];
-                const talentParts = [];
-
-                for (const talentId in talents) {
-                    const points = talents[talentId];
-                    if (points > 0) {
-                        talentParts.push(`${talentId}.${points}`);
-                    }
-                }
-
-                if (talentParts.length > 0) {
-                    treeParts.push(`${tree}=${talentParts.join(",")}`);
-                }
-            }
-
-            parts.push(treeParts.join(";"));
-
-            return parts.join(":"); // version/class : talents
-        }
-        */
 
         function decompressBuild(str) {
             const [meta, talentStr] = str.split(":");
@@ -49165,58 +48171,6 @@
 
             return treeStrings.join("-");
         }
-
-        // ----------------------------
-        // EXPORT BUILD
-        // Returns a string like "5-503-5500535100233105031051" to form the path "2.4/paladin/5-503-5500535100233105031051"
-        // ----------------------------
-        /*
-        function exportBuildString() {
-            if (!currentState.version || !currentState.class) {
-                throw new Error("Cannot export: version or class not selected.");
-            }
-
-            const buildString = generateBuildString();
-
-            if (!buildString.replace(/-/g, "")) {
-                throw new Error("Cannot export: no talents selected.");
-            }
-
-            return buildString;
-        }
-        */
-
-        /*
-        function exportBuildString() {
-            if (!currentState.class || !currentState.version) {
-                showError("Cannot export: version or class not selected.");
-                return "";
-            }
-
-            const classKey = currentState.class;
-            const version = currentState.version;
-            const classTrees = talentTreeData[version].classes[classKey].trees;
-
-            const treeStrings = classTrees.map(treeName => {
-                const treeTalents = currentState.talents[classKey]?.[treeName] || {};
-                const maxIndex = Object.keys(treeTalents).length ? Math.max(...Object.keys(treeTalents)) : -1;
-                if (maxIndex === -1) return ""; // no talents picked
-
-                let str = "";
-                for (let i = 0; i <= maxIndex; i++) {
-                    str += treeTalents[i] || 0; // trailing zeros only for picked talents
-                }
-                return str;
-            });
-
-            if (treeStrings.every(str => str === "")) {
-                showError("Cannot export: no talents selected.");
-                return "";
-            }
-
-            return `${version}/${classKey}/${treeStrings.join("-")}`;
-        }
-        */
 
         // ----------------------------
         // IMPORT BUILD

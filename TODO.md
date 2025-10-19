@@ -28,7 +28,7 @@ These should be done first because other features depend on them or they fix cor
 
     - Will make future features easier to implement.
 
-6. Fix issue concerning talents not displaying when patch 1.10 is selected
+6. Fix issue concerning talents not displaying when patch 1.10 is selected ✅
 
 ### 🔹 Tier 2: Medium Priority / Usability Enhancements
 
