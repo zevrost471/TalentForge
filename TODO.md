@@ -9,6 +9,8 @@ These should be done first because other features depend on them or they fix cor
 
     - Dependency: Required before Import Links (Task 2).
 
+    - Add glyphs/runes to build data in build export feature
+
 2. Import Links (Parse Shared Build URL)
 
     - Depends on Task 1.
@@ -18,7 +20,7 @@ These should be done first because other features depend on them or they fix cor
     - Trees should never overflow their container at smaller screen widths.
     - Some class buttons are not fully visible at smaller screen widths. ✅
 
-4. Fix ```renderLevelTimeline``` not appearing when a build is loaded
+4. Fix ```renderLevelTimeline``` not appearing when a build is loaded ✅
 
     - Important bug fix for consistency.
 
@@ -101,6 +103,8 @@ Nice-to-have, improves personalization but not critical.
 4. Leveling Planner
 
     - Plan talents per level (depends on timeline display).
+
+5. Add vanilla patch for Season of Discovery and add rune system to it
 
 ### 🔹 Future Considerations
 
