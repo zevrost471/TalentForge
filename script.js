@@ -1,38 +1,5 @@
 // script.js
 
-// DOM elements
-const headerEl = document.getElementById("main-header");
-const captionEl = document.getElementById("main-caption");
-const selectClassHeader = document.getElementById("select-class-header");
-const expansionSelect = document.getElementById("expansion-select");
-const versionSelect = document.getElementById("version-select");
-const applyVersionBtn = document.getElementById("apply-version");
-const customVersionOptions = document.getElementById("custom-version-options");
-const customPoints = document.getElementById("custom-points");
-const classButtons = document.querySelectorAll(".class-btn");
-const pointsSpentEl = document.getElementById("points-spent");
-const pointsTotalEl = document.getElementById("points-total");
-const pointsBar = document.getElementById("points-bar");
-const resetTalentsBtn = document.getElementById("reset-talents");
-const talentContainer = document.getElementById("talent-container");
-const talentTrees = document.getElementById("talent-trees");
-const talentPlaceholder = document.getElementById("talent-placeholder");
-const cataSpecSelectionPanel = document.getElementById("cata-spec-selection-panel");
-const timelineWrapper = document.getElementById("timeline-wrapper");
-const glyphsWrapper = document.getElementById("glyphs-wrapper");
-const buildNameInput = document.getElementById("build-name");
-const saveBuildBtn = document.getElementById("save-build");
-const importBuildBtn = document.getElementById("import-build");
-const buildsList = document.getElementById("builds-list");
-const sidebar = document.getElementById('sidebar');
-const toggleSidebarButton = document.getElementById('toggle-sidebar');
-const sidebarContent = document.getElementById('sidebar-content');
-const talentSection = document.getElementById("talent-section");
-const talentWrapper = document.getElementById("talent-wrapper");
-const toggleBuildManagerButton = document.getElementById("toggle-build-manager");
-const buildManagerWrapper = document.getElementById("build-manager-wrapper");
-const buildManagerContent = document.getElementById("build-manager-content");
-
 // Event listeners
 // versionSelect.addEventListener("change", handleVersionChange);
 customPoints.addEventListener("change", handleCustomPointsChange);
@@ -133,61 +100,6 @@ window.addEventListener('DOMContentLoaded', function () {
     if (location.hash) location.hash = '';
 });
 
-/*
-expansionSelect.addEventListener("change", () => {
-    const selectedExpansion = expansionSelect.value;
-
-    // Reset patch dropdown
-    versionSelect.innerHTML = '<option value="" disabled selected>Select patch</option>';
-    versionSelect.disabled = true;
-
-    if (patchOptions[selectedExpansion]) {
-        patchOptions[selectedExpansion].forEach(patch => {
-        const opt = document.createElement("option");
-        opt.value = patch.value;
-        opt.textContent = patch.label;
-        versionSelect.appendChild(opt);
-        });
-        versionSelect.disabled = false;
-    }
-
-    // Reset UI and state when changing expansion
-    currentState.version = null;
-    currentState.class = null;
-    currentState.pointsSpent = 0;
-    currentState.talentOrder = [];
-    currentState.talents = {};
-
-        // Remove yellow highlights
-    classButtons.forEach((btn) => {
-        btn.classList.remove("bg-yellow-600", "text-white");
-        btn.classList.add("bg-gray-700", "hover:bg-gray-600");
-        btn.disabled = true; // disable until patch selected
-        btn.classList.add("opacity-50", "cursor-not-allowed");
-    });
-
-    updatePointsDisplay();
-
-    // Restore placeholder message
-    talentContainer.innerHTML = `
-        <div id="talent-placeholder" class="text-center py-12">
-        <h2 class="text-2xl text-yellow-400 mb-2">Select a version to begin</h2>
-        <p class="text-gray-400">Use the dropdown to choose a game version</p>
-        </div>
-    `;
-
-    // Hide points box again
-    document.getElementById("talent-points-box").classList.add("hidden");
-
-    // Disable class buttons again
-    classButtons.forEach((btn) => {
-        btn.disabled = true;
-        btn.classList.add("opacity-50", "cursor-not-allowed");
-    });
-    customVersionOptions.classList.add("hidden");
-});
-*/
-
 // Disable all class buttons on initial load
 classButtons.forEach((btn) => {
     btn.disabled = true;
@@ -246,67 +158,6 @@ const sharedVersions = [
     "1.16.1t",
     "1.17.2t"
 ];
-
-const patchOptions = {
-    vanilla: [
-        { value: "0.12", label: "Patch 0.12 (pre-Launch)" },
-        { value: "1.1", label: "Patch 1.1 (Launch)" },
-        { value: "1.2", label: "Patch 1.2 (Mysteries of Maraudon)" },
-        { value: "1.3", label: "Patch 1.3 (Ruins of the Dire Maul)" },
-        { value: "1.4", label: "Patch 1.4 (The Call to War)" },
-        { value: "1.5", label: "Patch 1.5 (Battlegrounds)" },
-        { value: "1.6", label: "Patch 1.6 (Assault on Blackwing Lair)" },
-        { value: "1.7", label: "Patch 1.7 (Rise of the Blood God)" },
-        { value: "1.8", label: "Patch 1.8 (Dragons of Nightmare)" },
-        { value: "1.9", label: "Patch 1.9 (The Gates of Ahn'Qiraj)" },
-        { value: "1.10", label: "Patch 1.10 (Storms of Azeroth)" },
-        { value: "1.11", label: "Patch 1.11 (Shadow of the Necropolis)" },
-        { value: "1.12", label: "Patch 1.12 (Drums of War)" },
-        { value: "1.13", label: "Patch 1.13 (Classic Era)" }
-    ],
-    tbc: [
-        // { value: "2.1", label: "Patch 2.1" },
-        // { value: "2.2", label: "Patch 2.2" },
-        // { value: "2.3", label: "Patch 2.3" },
-        { value: "2.4", label: "Patch 2.4 (TBC Classic)" }
-        // ...
-    ],
-    wotlk: [
-        // { value: "3.1", label: "Patch 3.1" },
-        { value: "3.2.0", label: "Patch 3.2.0" },
-        // { value: "3.3", label: "Patch 3.3" },
-        { value: "3.3.5", label: "Patch 3.3.5 (WotLK Classic)" }
-        // ...
-    ],
-    cataclysm: [
-        // { value: "4.1", label: "Patch 4.1" },
-        // { value: "4.2.0", label: "Patch 4.2.0" },
-        // { value: "4.3", label: "Patch 4.3" },
-        { value: "4.3.5", label: "Patch 4.3.5 (Cataclysm Classic)" }
-        // ...
-    ],
-    turtlewow: [
-        { value: "1.16.0t", label: "Patch 1.16.0: Mysteries of Azeroth" },
-        { value: "1.16.1t", label: "Patch 1.16.1: Hateforge Quarry" },
-        // { value: "1.16.4t", label: "Patch 1.16.4: Anchor's Fall" },
-        // { value: "1.17.0t", label: "Patch 1.17.0: Beyond the Greymane Wall" },
-        // { value: "1.17.1t", label: "Patch 1.17.1: Labor and Legacy" },
-        { value: "1.17.2t", label: "Patch 1.17.2: Tower of Karazhan" },
-        // { value: "1.18.0t", label: "Patch 1.18.0: Scars of the Past" }
-    ],
-    epoch: [
-        { value: "1.0.0e", label: "Patch 1.0.0: Launch" },
-        // { value: "1.0.5e", label: "Patch 1.0.5: Into the Flames" },
-        // { value: "1.1.0e", label: "Patch 1.1.0: The Call to War" },
-        // { value: "1.2.0e", label: "Patch 1.2.0: Echoes of Stonetalon" },
-        // { value: "1.2.5e", label: "Patch 1.2.5: Deck of Delights" },
-        // { value: "1.3.0e", label: "Patch 1.3.0: Secrets of Uldum" }
-    ],
-    custom: [
-        { value: "custom1", label: "Custom 1" },
-        // { value: "custom2", label: "Custom 2" }
-    ]
-};
 
 const talentTreeData = {};
 
@@ -929,7 +780,6 @@ let previousExpansion = null;
 
 function handleVersionChange(loadingBuild = false) {
     const version = versionSelect.value;
-    const pointsBox = document.getElementById("talent-points-box");
 
     if (!version) {
         // Hide or disable custom options
@@ -1745,8 +1595,6 @@ function renderTalentTrees() {
         });
     });
 
-    // renderDependencyArrows(grid, treeEl, classKey, treeName);
-
     // === Auto-redraw arrows when the window resizes ===
     let resizeActive = false;
 
@@ -1827,78 +1675,6 @@ function getClassIndex(classKey) {
 }
 
 function getTreeIcon(classKey, tree, version) {
-    // Default icons (Vanilla/TBC/WotLK)
-    const defaultIcons = {
-        druid: {
-            Balance: { icon: "spell_nature_starfall" },
-            "Feral Combat": { icon: "ability_racial_bearform" },
-            Restoration: { icon: "spell_nature_healingtouch" }
-        },
-        hunter: {
-            "Beast Mastery": { icon: "ability_hunter_beasttaming" },
-            Marksmanship: { icon: "ability_marksmanship" },
-            Survival: { icon: "ability_hunter_swiftstrike" },
-            // old names for MM and SV
-            "Ranged Combat": { icon: "ability_marksmanship" },
-            Outdoorsmanship: { icon: "ability_hunter_swiftstrike" }
-        },
-        mage: {
-            Arcane: { icon: "spell_holy_magicalsentry" },
-            Fire: { icon: "spell_fire_firebolt02" },
-            Frost: { icon: "spell_frost_frostbolt02" }
-        },
-        paladin: {
-            Holy: { icon: "spell_holy_holybolt" },
-            Protection: { icon: "spell_holy_devotionaura" },
-            Retribution: { icon: "spell_holy_auraoflight" }
-        },
-        priest: {
-            Discipline: { icon: "spell_holy_wordfortitude" },
-            Holy: { icon: "spell_holy_guardianspirit" },
-            Shadow: { icon: "spell_shadow_shadowwordpain" }
-        },
-        rogue: {
-            Assassination: { icon: "ability_rogue_eviscerate" },
-            Combat: { icon: "ability_backstab" },
-            Subtlety: { icon: "ability_stealth" }
-        },
-        shaman: {
-            Elemental: { icon: "spell_nature_lightning" },
-            Enhancement: { icon: "spell_nature_lightningshield" },
-            Restoration: { icon: "spell_nature_magicimmunity" }
-        },
-        warlock: {
-            Affliction: { icon: "spell_shadow_deathcoil" },
-            Demonology: { icon: "spell_shadow_metamorphosis" },
-            Destruction: { icon: "spell_shadow_rainoffire" }
-        },
-        warrior: {
-            Arms: { icon: "ability_warrior_savageblow" },
-            Fury: { icon: "ability_warrior_innerrage" },
-            Protection: { icon: "ability_warrior_defensivestance" }
-        },
-        deathknight: {
-            Blood: { icon: "spell_deathknight_bloodpresence" },
-            Frost: { icon: "spell_deathknight_frostpresence" },
-            Unholy: { icon: "spell_deathknight_unholypresence" }
-        }
-    };
-
-    // Expansion-specific overrides
-    const cataOverrides = {
-        hunter: {
-            "Beast Mastery": { icon: "ability_hunter_bestialdiscipline" },
-            Marksmanship: { icon: "ability_hunter_focusedaim" },
-            Survival: { icon: "ability_hunter_camouflage" }
-        },
-        paladin: {
-            Protection: { icon: "ability_paladin_shieldofthetemplar" }
-        },
-        priest: {
-            Discipline: { icon: "spell_holy_powerwordshield" }
-        }
-        // add only those that differ
-    };
 
     let icon = defaultIcons[classKey]?.[tree]?.icon;
 
@@ -1910,107 +1686,6 @@ function getTreeIcon(classKey, tree, version) {
 
     return icon || "inv_misc_questionmark"; // fallback icon
 }
-
-const backgroundImages = {
-    druid: {
-        Balance:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/283.jpg",
-        "Feral Combat":
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/281.jpg",
-        Restoration:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/282.jpg"
-    },
-    hunter: {
-        "Beast Mastery":
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/361.jpg",
-        Marksmanship:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/363.jpg",
-        Survival:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/362.jpg",
-        "Ranged Combat":
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/363.jpg",
-        Outdoorsmanship:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/362.jpg"
-    },
-    mage: {
-        Arcane:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/81.jpg",
-        Fire:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/41.jpg",
-        Frost:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/61.jpg"
-    },
-    paladin: {
-        Holy:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/382.jpg",
-        Protection:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/383.jpg",
-        Retribution:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/381.jpg"
-    },
-    priest: {
-        Discipline:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/201.jpg",
-        Holy:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/202.jpg",
-        Shadow:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/203.jpg"
-    },
-    rogue: {
-        Assassination:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/182.jpg",
-        Combat:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/181.jpg",
-        Subtlety:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/183.jpg"
-    },
-    shaman: {
-        Elemental:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/261.jpg",
-        Enhancement:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/263.jpg",
-        Restoration:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/262.jpg"
-    },
-    warlock: {
-        Affliction:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/302.jpg",
-        Demonology:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/303.jpg",
-        Destruction:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/301.jpg"
-    },
-    warrior: {
-        Arms:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/161.jpg",
-        Fury:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/164.jpg",
-        Protection:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/classic/163.jpg"
-    },
-    deathknight: {
-        Blood:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/wrath/398.jpg",
-        Frost:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/wrath/399.jpg",
-        Unholy:
-            "https://wow.zamimg.com/images/wow/talents/backgrounds/wrath/400.jpg"
-    }
-};
-
-// Class-specific colors
-const classColors = {
-    warrior: "#C79C6E",
-    hunter: "#ABD473",
-    mage: "#69CCF0",
-    rogue: "#FFF569",
-    priest: "#FFFFFF",
-    druid: "#FF7D0A",
-    paladin: "#F58CBA",
-    shaman: "#0070DE",
-    warlock: "#9482C9",
-    deathknight: "#C41F3B"
-};
 
 function renderDependencyArrows(treeName, classKey, version) {
     const container = document.querySelector(`[data-tree-container="${treeName}"]`);
