@@ -1,4 +1,4 @@
-// script.js
+// talent-calculator.js
 
 import { classColors } from './class-colors.js';
 import { patchOptions } from './patches.js';
@@ -7,7 +7,10 @@ import { glyphs } from './glyphs.js';
 import { cataSpecCards } from './ctc-tree-summary-cards.js';
 import { backgroundImages } from './tree-bg-images.js';
 import { defaultIcons, cataOverrides } from './tree-icons.js';
-import {
+import { getDomElements } from './dom-elements.js';
+import './talent-patch-changes.js';
+
+const {
   headerEl,
   captionEl,
   selectClassHeader,
@@ -40,8 +43,7 @@ import {
   toggleBuildManagerButton,
   buildManagerWrapper,
   buildManagerContent
-} from './dom-elements.js';
-import './talent-patch-changes.js';
+} = getDomElements();
 
 // Event listeners
 // versionSelect.addEventListener("change", handleVersionChange);
