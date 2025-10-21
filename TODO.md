@@ -19,6 +19,7 @@ These should be done first because other features depend on them or they fix cor
 
     - Trees should never overflow their container at smaller screen widths.
     - Some class buttons are not fully visible at smaller screen widths. ✅
+    - Glyph selection list is not fully visible at smaller screen widths.
 
 4. Fix ```renderLevelTimeline``` not appearing when a build is loaded ✅
 
@@ -79,6 +80,11 @@ Nice-to-have, improves personalization but not critical.
 6. Change Font to Better Match Warcraft Theme
 
 7. Add Cataclysm Spec Selection Panel & expansion-specific talent logic ✅
+
+8. Improve ```renderLevelTimeline``` to reflect a more realistic leveling timeline
+
+    - Define lowest level at which a talent can be lowered to
+    - Define lowest level at which a talent from a secondary tree can be lowered to (Cataclysm-specific)
 
 ### 🔹 Tier 4: Content & Informational Features
 
