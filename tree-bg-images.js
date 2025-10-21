@@ -21,7 +21,7 @@ const backgroundImageIds = {
     deathknight: { Blood: 398, Frost: 399, Unholy: 400 }
 };
 
-const backgroundImages = Object.fromEntries(
+export const backgroundImages = Object.fromEntries(
     Object.entries(backgroundImageIds).map(([cls, specs]) => {
         const expansion = cls === "deathknight" ? "wrath" : "classic";
         const specEntries = Object.fromEntries(

@@ -1,7 +1,7 @@
-// tree-icons.js    
+// tree-icons.js
 
 // Default icons (Vanilla/TBC/WotLK)
-const defaultIcons = {
+export const defaultIcons = {
     druid: {
         Balance: { icon: "spell_nature_starfall" },
         "Feral Combat": { icon: "ability_racial_bearform" },
@@ -58,7 +58,7 @@ const defaultIcons = {
 };
 
 // Expansion-specific overrides
-const cataOverrides = {
+export const cataOverrides = {
     hunter: {
         "Beast Mastery": { icon: "ability_hunter_bestialdiscipline" },
         Marksmanship: { icon: "ability_hunter_focusedaim" },

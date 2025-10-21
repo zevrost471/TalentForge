@@ -1,0 +1,21 @@
+{
+  "name": "talentforge",
+  "version": "1.0.0",
+  "description": "TalentForge is a flexible, data-driven talent calculator and builder for Warcraft-style talent systems.",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "split-talents": "node scripts/split-talents.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zevrost471/TalentForge.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zevrost471/TalentForge/issues"
+  },
+  "homepage": "https://github.com/zevrost471/TalentForge#readme"
+}

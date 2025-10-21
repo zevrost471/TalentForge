@@ -1,6 +1,6 @@
 // ctc-tree-summary-cards.js
 
-const cataSpecCards = {
+export const cataSpecCards = {
     cataclysm: {
         deathknight: {
             Blood: {
