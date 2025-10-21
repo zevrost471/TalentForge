@@ -1,5 +1,48 @@
 // script.js
 
+import { classColors } from './class-colors.js';
+import { patchOptions } from './patches.js';
+import { talentsAttributedByVersion } from './base-talents-per-patch.js';
+import { glyphs } from './glyphs.js';
+import { cataSpecCards } from './ctc-tree-summary-cards.js';
+import { backgroundImages } from './tree-bg-images.js';
+import { defaultIcons, cataOverrides } from './tree-icons.js';
+import {
+  headerEl,
+  captionEl,
+  selectClassHeader,
+  expansionSelect,
+  versionSelect,
+  applyVersionBtn,
+  pointsBox,
+  customVersionOptions,
+  customPoints,
+  classButtons,
+  pointsSpentEl,
+  pointsTotalEl,
+  pointsBar,
+  resetTalentsBtn,
+  talentContainer,
+  talentTrees,
+  talentPlaceholder,
+  cataSpecSelectionPanel,
+  timelineWrapper,
+  glyphsWrapper,
+  buildNameInput,
+  saveBuildBtn,
+  importBuildBtn,
+  buildsList,
+  sidebar,
+  toggleSidebarButton,
+  sidebarContent,
+  talentSection,
+  talentWrapper,
+  toggleBuildManagerButton,
+  buildManagerWrapper,
+  buildManagerContent
+} from './dom-elements.js';
+import './talent-patch-changes.js';
+
 // Event listeners
 // versionSelect.addEventListener("change", handleVersionChange);
 customPoints.addEventListener("change", handleCustomPointsChange);
@@ -202,170 +245,17 @@ let currentState = {
     talentOrder: []
 };
 
-// ==============================
-// Talent Definitions by Version
-// ==============================
-
-const talentsAttributedByVersion = {
-    "1.1": cloneDeep(baseTalents.vanilla),
-    "1.2": cloneDeep(baseTalents.vanilla),
-    "1.3": cloneDeep(baseTalents.vanilla),
-    "1.4": cloneDeep(baseTalents.vanilla),
-    "1.5": cloneDeep(baseTalents.vanilla),
-    "1.6": cloneDeep(baseTalents.vanilla),
-    "1.7": cloneDeep(baseTalents.vanilla),
-    "1.8": cloneDeep(baseTalents.vanilla),
-    "1.9": cloneDeep(baseTalents.vanilla),
-    "1.10": cloneDeep(baseTalents.vanilla),
-    "1.11": cloneDeep(baseTalents.vanilla),
-    "1.12": cloneDeep(baseTalents.vanilla),
-    "1.13": cloneDeep(baseTalents.vanilla),
-    "1.16.0t": cloneDeep(baseTalents.vanilla),
-    "1.16.1t": cloneDeep(baseTalents.vanilla),
-    "1.17.2t": cloneDeep(baseTalents.vanilla),
-    "1.0.0e": cloneDeep(baseTalents.tbc),
-    "2.4": cloneDeep(baseTalents.tbc),
-    "3.2.0": cloneDeep(baseTalents.wotlk),
-    "3.3.5": cloneDeep(baseTalents.wotlk),
-    "4.3.5": cloneDeep(baseTalents.cataclysm),
-    "custom1": cloneDeep(baseTalents.custom)
-};
-
 // const talents = talentsAttributedByVersion[currentState.version]?.[currentState.class]?.[treeName] || [];
 
 // Load saved builds from localStorage
 loadBuilds();
-
-function cloneDeep(obj) {
-    return JSON.parse(JSON.stringify(obj));
-}
 
 // Functions
 function getTalents(version, classKey, treeName) {
     return talentsAttributedByVersion[version]?.[classKey]?.[treeName] || [];
 }
 
-function removeTalentsById(versionParam, classKey, treeName, idsToRemove) {
-    const versions = versionParam.includes('.') ? getVersionsUpTo(versionParam) : [versionParam];
-
-    versions.forEach(version => {
-        const tree = talentsAttributedByVersion[version]?.[classKey]?.[treeName];
-        if (!tree) return;
-
-        talentsAttributedByVersion[version][classKey][treeName] = tree.filter(
-            (talent) => !idsToRemove.includes(talent.id)
-        );
-    });
-}
-
-function removeTalentsByIdOld(version, classKey, treeName, idsToRemove) {
-    const tree = talentsAttributedByVersion[version]?.[classKey]?.[treeName];
-    if (!tree) return;
-
-    talentsAttributedByVersion[version][classKey][treeName] = tree.filter(
-        (talent) => !idsToRemove.includes(talent.id)
-    );
-}
-
-function replaceTalent(versionParam, classKey, treeName, id, newTalentData) {
-    const versions = versionParam.includes('.') ? getVersionsUpTo(versionParam) : [versionParam];
-
-    versions.forEach(version => {
-        const tree = talentsAttributedByVersion[version]?.[classKey]?.[treeName];
-        if (!tree) return;
-
-        const index = tree.findIndex((t) => t.id === id);
-        if (index !== -1) {
-            tree[index] = { ...tree[index], ...newTalentData };
-        }
-    });
-}
-
-function replaceTalentOld(version, classKey, treeName, id, newTalentData) {
-    const tree = talentsAttributedByVersion[version]?.[classKey]?.[treeName];
-    if (!tree) return;
-
-    const index = tree.findIndex((t) => t.id === id);
-    if (index !== -1) {
-        tree[index] = { ...tree[index], ...newTalentData };
-    }
-}
-
-function moveTalent(versionParam, classKey, treeName, id, newRow, newCol) {
-    replaceTalent(versionParam, classKey, treeName, id, { row: newRow, col: newCol });
-}
-
-function moveTalentOld(version, classKey, treeName, id, newRow, newCol) {
-    replaceTalentOld(version, classKey, treeName, id, { row: newRow, col: newCol });
-}
-
-function insertTalent(versionParam, classKey, treeName, talentData) {
-    const versions = versionParam.includes('.') ? getVersionsUpTo(versionParam) : [versionParam];
-
-    versions.forEach(version => {
-        const tree = talentsAttributedByVersion[version]?.[classKey]?.[treeName];
-        if (!tree) {
-            console.warn(`Tree not found: ${version} - ${classKey} - ${treeName}`);
-            return;
-        }
-
-        if (tree.some((t) => t.id === talentData.id)) {
-            console.warn(
-                `Talent with id "${talentData.id}" already exists in ${version} - ${classKey} - ${treeName}`
-            );
-        }
-
-        tree.push(talentData);
-    });
-}
-
-function insertTalentOld(version, classKey, treeName, talentData) {
-    const tree = talentsAttributedByVersion[version]?.[classKey]?.[treeName];
-    if (!tree) {
-        console.warn(`Tree not found: ${version} - ${classKey} - ${treeName}`);
-        return;
-    }
-
-    // Optional: warn if you're overwriting an existing talent
-    if (tree.some((t) => t.id === talentData.id)) {
-        console.warn(
-            `Talent with id "${talentData.id}" already exists in ${version} - ${classKey} - ${treeName}`
-        );
-    }
-
-    tree.push(talentData);
-}
-
-function bulkInsertTalents(versionParam, classKey, treeName, talentList) {
-    talentList.forEach(talent =>
-        insertTalent(versionParam, classKey, treeName, talent)
-    );
-}
-
-function bulkInsertTalentsOld(version, classKey, treeName, talentList) {
-    talentList.forEach(talent =>
-        insertTalentOld(version, classKey, treeName, talent)
-    );
-}
-
-function getVersionsUpTo(versionParam) {
-    const targetParts = versionParam.split('.');        // e.g. ["1","10"]
-    const major = targetParts[0];                        // "1"
-    const targetPartsCount = targetParts.length;        // 2 for "1.10"
-    const patchNumber = parseInt(targetParts[targetParts.length - 1], 10); // 10
-
-    return Object.keys(talentsAttributedByVersion).filter(v => {
-        const parts = v.split('.');
-        if (parts.length !== targetPartsCount) return false;     // same number of parts
-        if (parts[0] !== major) return false;                     // same major number
-
-        const lastNum = parseInt(parts[parts.length - 1], 10);
-        if (isNaN(lastNum)) return false;
-
-        return lastNum <= patchNumber;
-    });
-}
-
+/*
 function canLearnTalent(talent, classKey, treeName) {
     const treePoints = getTreePoints(classKey, treeName);
     const requirementsMet = talent.requiresTalents
@@ -374,13 +264,41 @@ function canLearnTalent(talent, classKey, treeName) {
 
     return treePoints >= talent.row * 5 && requirementsMet;
 }
+*/
 
+function canLearnTalent(talent, classKey, treeName) {
+    const currentRank =
+        currentState.talents[classKey]?.[treeName]?.[talent.id] || 0;
+    const totalPointsInTree = getTotalPointsInTree(classKey, treeName);
+
+    // Don't allow learning if already maxed
+    if (currentRank >= talent.ranks) return false;
+
+    // 1. Tier requirement
+    const requiredPoints = talent.row * 5;
+    if (totalPointsInTree < requiredPoints) return false;
+
+    // 2. Specific dependency check
+    if (talent.requiresTalents) {
+        const requiredId = talent.requiresTalents;
+        const requiredTalent = getTalentById(classKey, treeName, requiredId);
+        const requiredPoints = requiredTalent?.ranks || 0;
+        const spent = currentState.talents[classKey]?.[treeName]?.[requiredId] || 0;
+
+        if (spent < requiredPoints) return false;
+    }
+
+    return true;
+}
+
+/*
 function getTreePoints(tree) {
     if (!currentState.class || !currentState.talents[currentState.class])
         return 0;
     const treeTalents = currentState.talents[currentState.class][tree];
     return Object.values(treeTalents).reduce((sum, points) => sum + points, 0);
 }
+*/
 
 function getTreePoints(classKey, treeName) {
     const tree = currentState.talents?.[classKey]?.[treeName] || {};
@@ -1860,31 +1778,6 @@ function getArrowRotation(fromTalent, toTalent) {
 }
 */
 
-function canLearnTalent(talent, classKey, treeName) {
-    const currentRank =
-        currentState.talents[classKey]?.[treeName]?.[talent.id] || 0;
-    const totalPointsInTree = getTotalPointsInTree(classKey, treeName);
-
-    // Don't allow learning if already maxed
-    if (currentRank >= talent.ranks) return false;
-
-    // 1. Tier requirement
-    const requiredPoints = talent.row * 5;
-    if (totalPointsInTree < requiredPoints) return false;
-
-    // 2. Specific dependency check
-    if (talent.requiresTalents) {
-        const requiredId = talent.requiresTalents;
-        const requiredTalent = getTalentById(classKey, treeName, requiredId);
-        const requiredPoints = requiredTalent?.ranks || 0;
-        const spent = currentState.talents[classKey]?.[treeName]?.[requiredId] || 0;
-
-        if (spent < requiredPoints) return false;
-    }
-
-    return true;
-}
-
 function getTotalPointsInTree(classKey, treeName) {
     const treeTalents = currentState.talents[classKey]?.[treeName] || {};
     return Object.values(treeTalents).reduce((sum, val) => sum + val, 0);
@@ -3202,11 +3095,6 @@ function updateURLHash() {
         location.hash = `${version}`;
     }
 }
-
-// ----------------------------
-// HANDLE VERSION / CLASS CHANGE
-// Call updateURLHash whenever version or class changes
-// ----------------------------
 
 // ----------------------------
 // HANDLE TALENT PICK / CHANGE

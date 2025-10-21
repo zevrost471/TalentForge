@@ -1,7 +1,7 @@
 // class-colors.js
 
 // Class-specific colors
-const classColors = {
+export const classColors = {
     warrior: "#C79C6E",
     hunter: "#ABD473",
     mage: "#69CCF0",

@@ -4,7 +4,7 @@
 // Talents (Base)
 // ==============================
 
-const baseTalents = {
+export const baseTalents = {
     vanilla: {
         druid: {
             // druid - vanilla

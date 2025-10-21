@@ -1,6 +1,6 @@
 // patches.js
 
-const patchOptions = {
+export const patchOptions = {
     vanilla: [
         { value: "0.12", label: "Patch 0.12 (pre-Launch)" },
         { value: "1.1", label: "Patch 1.1 (Launch)" },

@@ -1,6 +1,6 @@
 // glyphs.js
 
-const glyphs = {
+export const glyphs = {
     base: {
         deathknight: {
             major: [
@@ -3516,7 +3516,14 @@ const glyphs = {
         },
         hunter: {
             prime: [
-
+                {
+                    name: "Aimed Shot",
+                    icon: "inv_spear_07",
+                    description: [
+                        "When you critically hit with Aimed Shot, you instantly gain 5 Focus."
+                    ],
+                    level: 25
+                }
             ],
             major: [
 
