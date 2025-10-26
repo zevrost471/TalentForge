@@ -29394,6 +29394,21 @@ export const baseTalents = {
                     ]
                 },
                 {
+                    id: "scarlet_fever",
+                    name: "Scarlet Fever",
+                    icon: "ability_rogue_vendetta",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Causes your Blood Plague to afflict enemies with Scarlet Fever, reducing their physical damage dealt by {value}% for 21 sec.",
+                        {
+                            value: [5, 10]
+                        }
+                    ]
+                },
+                {
                     id: "hand_of_doom",
                     name: "Hand of Doom",
                     icon: "ability_deathknight_desolation",
@@ -29464,6 +29479,22 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [5, 10],
                             value3: [1, 2]
+                        }
+                    ]
+                },
+                {
+                    id: "sanguine_fortitude",
+                    name: "Sanguine Fortitude",
+                    icon: "ability_deathknight_sanguinfortitude",
+                    row: 3,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Icebound Fortitude reduces damage taken by an additional {value1}%, and costs {value2} Runic Power to activate.",
+                        {
+                            value1: [15, 30],
+                            value2: ["50% less", "no"]
                         }
                     ]
                 },
@@ -29552,6 +29583,22 @@ export const baseTalents = {
                             value1: [40, 80, 120],
                             value2: [10, 20, 30],
                             value3: [15, 30, 45]
+                        }
+                    ]
+                },
+                {
+                    id: "crimson_scourge",
+                    name: "Crimson Scourge",
+                    icon: "spell_deathknight_bloodboil",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage dealt by your Blood Boil by {value1}%, and when you land a melee attack on a target that is infected with your Blood Plague, there is a {value2}% chance that your next Blood Boil will consume no runes.",
+                        {
+                            value1: [20, 40],
+                            value2: [5, 10]
                         }
                     ]
                 },
@@ -30158,6 +30205,66 @@ export const baseTalents = {
             // druid - cataclysm
             Balance: [
                 {
+                    id: "natures_grace",
+                    name: "Nature's Grace",
+                    icon: "spell_nature_naturesblessing",
+                    row: 0,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "You gain {value}% spell haste after you cast Moonfire, Regrowth, or Insect Swarm, lasting 15 sec. This effect has a 1 minute cooldown. When you gain Lunar or Solar Eclipse, the cooldown of Nature's Grace is instantly reset.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ]
+                },
+                {
+                    id: "starlight_wrath",
+                    name: "Starlight Wrath",
+                    icon: "spell_nature_abolishmagic",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cast time of your Wrath and Starfire spells by {value} sec.",
+                        {
+                            value: [0.15, 0.25, 0.5]
+                        }
+                    ]
+                },
+                {
+                    id: "natures_majesty",
+                    name: "Nature's Majesty",
+                    icon: "inv_staff_01",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance with spells by {value}%.",
+                        {
+                            value: [2, 4]
+                        }
+                    ]
+                },
+                {
+                    id: "genesis",
+                    name: "Genesis",
+                    icon: "spell_arcane_arcane03",
+                    row: 1,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the healing done by your periodic spells and by Swiftmend by {value}%, and increases the duration of your Moonfire and Insect Swarm by {value} sec.",
+                        {
+                            value: [2, 4, 6]
+                        }
+                    ]
+                },
+                {
                     id: "moonglow",
                     name: "Moonglow",
                     icon: "spell_nature_sentinal",
@@ -30166,9 +30273,42 @@ export const baseTalents = {
                     ranks: 3,
                     requiresTalents: null,
                     description: [
-                        "Reduces the mana cost of your damage and healing spells by {value}%",
+                        "Reduces the mana cost of your damage and healing spells by {value}%.",
                         {
                             value: [3, 6, 9]
+                        }
+                    ]
+                },
+                {
+                    id: "balance_of_power",
+                    name: "Balance of Power",
+                    icon: "ability_druid_balanceofpower",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your Nature and Arcane spell damage by {value1}% and increases your spell hit rating by an additional amount equal to {value2}% of any Spirit gained from items or effects.",
+                        {
+                            value1: [1, 2],
+                            value2: [50, 100]
+                        }
+                    ]
+                },
+                {
+                    id: "euphoria",
+                    name: "Euphoria",
+                    icon: "achievement_boss_valithradreamwalker",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "While not in an Eclipse state, you have a {value1}% chance to double the Solar or Lunar energy generated by your Wrath or Starfire when they deal damage.{value2}<br><br>When you reach a Solar or Lunar eclipse, you instantly are restored {value3}% of your total mana.",
+                        {
+                            value1: [12, 24],
+                            value2: ["", " This effect cannot occur when you need less than 65 energy to reach one end of the Eclipse bar."],
+                            value3: [8, 16]
                         }
                     ]
                 },
@@ -30197,6 +30337,53 @@ export const baseTalents = {
                     ]
                 },
                 {
+                    id: "shooting_stars",
+                    name: "Shooting Stars",
+                    icon: "ability_mage_arcanebarrage",
+                    row: 2,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "You have a {value}% chance when you deal damage with your Moonfire or Insect Swarm to instantly reset the cooldown of your Starsurge and reduce its cast time by 100%. Lasts 12 sec.",
+                        {
+                            value: [2, 4]
+                        }
+                    ]
+                },
+                {
+                    id: "owlkin_frenzy",
+                    name: "Owlkin Frenzy",
+                    icon: "ability_druid_owlkinfrenzy",
+                    row: 3,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: "moonkin_form",
+                    description: [
+                        "Attacks done to you while in Moonkin Form have a {value}% chance to cause you to go into a Frenzy, increasing your damage by 10% and causing you to be immune to pushback while casting Balance spells. Lasts 10 sec.",
+                        {
+                            value: [5, 10, 15]
+                        }
+
+                    ]
+                },
+                {
+                    id: "gale_winds",
+                    name: "Gale Winds",
+                    icon: "ability_druid_galewinds",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: "typhoon",
+                    description: [
+                        "Increases damage done by your Hurricane and Typhoon spells by {damage}%, and increases the range of your Cyclone spell by {cyclone} yards.",
+                        {
+                            damage: [15, 30],
+                            cyclone: [2, 4]
+                        }
+                    ]
+                },
+                {
                     id: "solar_beam",
                     name: "Solar Beam",
                     icon: "ability_vehicle_sonicshockwave",
@@ -30206,6 +30393,21 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You summon a beam of solar light over an enemy target's location, interrupting the target and silencing all enemies under the beam while it is active. Solar Beam lasts for 10 sec."
+                    ]
+                },
+                {
+                    id: "dreamstate",
+                    name: "Dreamstate",
+                    icon: "ability_druid_dreamstate",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: "euphoria",
+                    description: [
+                        "When you cast your Innervate on yourself, you regain an additional {value}% of your total mana over its duration.",
+                        {
+                            value: [15, 30]
+                        }
                     ]
                 },
                 {
@@ -30245,6 +30447,38 @@ export const baseTalents = {
                     ]
                 },
                 {
+                    id: "fungal_growth",
+                    name: "Fungal Growth",
+                    icon: "creature_sporemushroom",
+                    row: 5,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: "force_of_nature",
+                    description: [
+                        "When your Treants die or your Wild Mushrooms are triggered, you spawn a Fungal Growth at its wake covering the area within 8 yards, slowing all enemy targets by {value}%. Lasts 20 sec.",
+                        {
+                            value: [25, 50]
+                        }
+                    ]
+                },
+                {
+                    id: "lunar_shower",
+                    name: "Lunar Shower",
+                    icon: "achievement_worldevent_lunar",
+                    row: 5,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: "sunfire",
+                    description: [
+                        "When you cast Moonfire, you gain Lunar Shower. Lunar Shower increases the direct damage done by your Moonfire by {value1}%, and reduces the mana cost by {value2}%. This effect stacks up to 3 times and lasts 3 sec.  While you are under the effect of Lunar Shower, Moonfire generates 8 Solar Energy and Sunfire generates 8 Lunar Energy.",
+                        {
+                            value1: [15, 30, 45],
+                            value2: [10, 20, 30]
+                        }
+
+                    ]
+                },
+                {
                     id: "starfall",
                     name: "Starfall",
                     icon: "ability_druid_starfall",
@@ -30260,6 +30494,141 @@ export const baseTalents = {
             // druid - cataclysm
             "Feral Combat": [
                 {
+                    id: "feral_swiftness",
+                    name: "Feral Swiftness",
+                    icon: "spell_nature_spiritwolf",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your movement speed by {value1}% in Cat Form and increases your chance to dodge while in Cat Form or Bear Form by {value2}%.<br><br>In addition, your Dash and Stampeding Roar have a {value3}% chance to remove all movement impairing effects from affected targets when used.",
+                        {
+                            value1: [15, 30],
+                            value2: [2, 4],
+                            value3: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "furor",
+                    name: "Furor",
+                    icon: "spell_holy_blessingofstamina",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Grants you a {value1}% chance to gain 10 Rage when you shapeshift into Bear Form, allows you to keep up to {value1} of your Energy when you shapeshift into Cat Form, and increases your maximum mana by {value2}%.",
+                        {
+                            value1: [33, 66, 100],
+                            value2: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "predatory_strikes",
+                    name: "Predatory Strikes",
+                    icon: "ability_hunter_pet_cat",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of your Ravage by {value1}% on targets at or above 80% health.<br><br>Your finishing moves have a {value2}% chance per combo point to make your next non-instant Nature spell with a base casting time of less than 10 sec. become an instant cast spell and cost no mana.",
+                        {
+                            value1: [25, 50],
+                            value2: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "infected_wounds",
+                    name: "Infected Wounds",
+                    icon: "ability_druid_infectedwound",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Shred, Maul, Ravage and Mangle attacks cause an Infected Wound in the target. The Infected Wound reduces the movement speed of the target by {movement}% and the attack speed by {attackspeed}%. Lasts 12 sec.",
+                        {
+                            movement: [25, 50],
+                            attackspeed: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "fury_swipes",
+                    name: "Fury Swipes",
+                    icon: "ability_druid_mangle-tga",
+                    row: 1,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "When you autoattack while in Cat Form or Bear Form, you have a {value}% chance to cause a Fury Swipe dealing 310% weapon damage. This effect cannot occur more than once every 3 sec.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "primal_fury",
+                    name: "Primal Fury",
+                    icon: "ability_racial_cannibalize",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives you a {value}% chance to gain an additional 5 Rage anytime you get a critical strike while in Bear Form and your critical strikes from Cat Form abilities that add combo points have a {value}% chance to add an additional combo point.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "feral_aggression",
+                    name: "Feral Aggression",
+                    icon: "ability_druid_demoralizingroar",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage caused by your Ferocious Bite by {value1}% and causes Faerie Fire (Feral) to apply {value2} stacks of the Faerie Fire effect when cast.",
+                        {
+                            value1: [5, 10],
+                            value2: [2, 3]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "king_of_the_jungle",
+                    name: "King of the Jungle",
+                    icon: "ability_druid_kingofthejungle",
+                    row: 2,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "While using your Enrage ability in Bear Form, your damage is increased by {damage}%, and your Tiger's Fury ability also instantly restores {value} Energy.",
+                        {
+                            damage: [5, 10, 15],
+                            value: [20, 40, 60]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "feral_charge",
                     name: "Feral Charge",
                     icon: "ability_hunter_pet_bear",
@@ -30269,7 +30638,43 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Teaches Feral Charge (Bear) and Feral Charge (Cat).<br><br>Feral Charge (Bear) - Causes you to charge an enemy, immobilizing them for 4 sec. 15 second cooldown.<br><br>Feral Charge (Cat) - Causes you to leap behind an enemy, dazing them for 3 sec. 30 second cooldown."
-                    ]
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "stampede",
+                    name: "Stampede",
+                    icon: "spell_druid_feralchargecat",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: "feral_charge",
+                    description: [
+                        "Increases your melee haste by {value1}% after you use Feral Charge (Bear) for 8 sec, and your next Ravage will temporarily not require stealth or have a positioning requirement for 10 sec after you use Feral Charge (Cat), and cost {value2}% less energy.",
+                        {
+                            value1: [15, 30],
+                            value2: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "thick_hide",
+                    name: "Thick Hide",
+                    icon: "inv_misc_pelt_bear_03",
+                    row: 2,
+                    col: 3,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your Armor contribution from cloth and leather items by {value1}%, increases armor while in Bear Form by an additional {value2}%, and reduces the chance you'll be critically hit by melee attacks by {value3}%.",
+                        {
+                            value1: [4, 7, 10],
+                            value2: [26, 52, 78],
+                            value3: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "leader_of_the_pack",
@@ -30281,7 +30686,60 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "While in Cat Form or Bear Form, the Leader of the Pack increases critical strike chance of all party and raid members within 100 yards by 5%.  In addition, your melee critical strikes in Cat Form and Bear Form cause you to heal for 4% of your total health and gain 4% of your maximum mana.  This effect cannot occur more than once every 6 sec."
-                    ]
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "brutal_impact",
+                    name: "Brutal Impact",
+                    icon: "ability_druid_bash",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the stun duration of your Bash and Pounce abilities by {value1} sec, decreases the cooldown of Bash by {value2} sec, decreases the cooldown of Skull Bash by {value3} sec, and causes victims of your Skull Bash ability to have {value2}% increased mana cost for their spells for 10 sec.",
+                        {
+                            value1: [0.5, 1],
+                            value2: [5, 10],
+                            value3: [25, 50]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "nurturing_instinct",
+                    name: "Nurturing Instinct",
+                    icon: "ability_druid_healinginstincts",
+                    row: 3,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your healing spells by up to {value1}% of your Agility, and increases healing done to you by {value2}% while in Cat Form.",
+                        {
+                            value1: [50, 100],
+                            value2: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "primal_madness",
+                    name: "Primal Madness",
+                    icon: "ability_mount_jungletiger",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: "king_of_the_jungle",
+                    description: [
+                        "Tiger's Fury and Berserk also increase your current and maximum Energy by {value1} during their durations, and your Enrage and Berserk abilities instantly generate {value2} Rage.",
+                        {
+                            value1: [10, 20],
+                            value2: [6, 12]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "survival_instincts",
@@ -30293,7 +30751,77 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces all damage taken by 50% for 12 sec.  Only usable while in Bear Form or Cat Form."
-                    ]
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "endless_carnage",
+                    name: "Endless Carnage",
+                    icon: "spell_deathknight_bloodboil",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the duration of your Rake by {value1} sec and your Savage Roar and Pulverize by {value2} sec.",
+                        {
+                            value1: [3, 6],
+                            value2: [4, 8]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "natural_reaction",
+                    name: "Natural Reaction",
+                    icon: "ability_bullrush",
+                    row: 4,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces damage taken while in Bear Form by {value1}%, increases your dodge while in Bear Form by {value2}%, and you generate {value3} Rage every time you dodge while in Bear Form.",
+                        {
+                            value1: [9, 18],
+                            value2: [3, 6],
+                            value3: [1, 3]
+                        }
+                    ],
+                    isActive: false,
+                    requiresBearForm: true
+                },
+                {
+                    id: "blood_in_the_water",
+                    name: "Blood in the Water",
+                    icon: "inv_misc_food_134_meat",
+                    row: 5,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you Ferocious Bite a target at or below 25% health, you have a {value}% chance to instantly refresh the duration of your Rip on the target.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "rend_and_tear",
+                    name: "Rend and Tear",
+                    icon: "ability_druid_primalagression",
+                    row: 5,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases damage done by your Maul and Shred attacks on bleeding targets by {value1}%, and increases the critical strike chance of your Ferocious Bite ability on bleeding targets by {value2}%.",
+                        {
+                            value1: [7, 13, 20],
+                            value2: [8, 17, 25]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pulverize",
@@ -30305,7 +30833,8 @@ export const baseTalents = {
                     requiresTalents: "rend_and_tear",
                     description: [
                         "Deals 60% weapon damage plus additional 471.6 damage for each of your Lacerate applications on the target, and increases your melee critical strike chance by 3% for each Lacerate application consumed for 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "berserk",
@@ -30317,11 +30846,75 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Lacerate periodic damage has a 50% chance to refresh the cooldown of your Mangle (Bear) ability and make it cost no rage.<br><br>In addition, when activated this ability causes your Mangle (Bear) ability to hit up to 3 targets and have no cooldown, and reduces the energy cost of all your Cat Form abilities by 50%.  Lasts 15 sec.  You cannot use Tiger's Fury while Berserk is active."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // druid - cataclysm
             Restoration: [
+                {
+                    id: "blessing_of_the_grove",
+                    name: "Blessing of the Grove",
+                    icon: "spell_shaman_spiritlink",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the healing done by your Rejuvenation by {value1}% and the direct damage of your Moonfire by {value2}%.",
+                        {
+                            value1: [2, 4],
+                            value2: [3, 6]
+                        }
+                    ]
+                },
+                {
+                    id: "natural_shapeshifter",
+                    name: "Natural Shapeshifter",
+                    icon: "spell_nature_wispsplode",
+                    row: 0,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the mana cost of all shapeshifting by {value1}% and increases the duration of Tree of Life Form by {value2} sec.",
+                        {
+                            value1: [10, 20],
+                            value2: [3, 6]
+                        }
+                    ]
+                },
+                {
+                    id: "naturalist",
+                    name: "Naturalist",
+                    icon: "spell_nature_healingtouch",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cast time of your Healing Touch and Nourish spells by {value} sec.",
+                        {
+                            value: [0.25, "0.50"]
+                        }
+                    ]
+                },
+                {
+                    id: "heart_of_the_wild",
+                    name: "Heart of the Wild",
+                    icon: "spell_holy_blessingofagility",
+                    row: 0,
+                    col: 3,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your Intellect by {value1}%. In addition, while in Bear Form your Stamina is increased by {value1}% and while in Cat Form your attack power is increased by {value2}%.",
+                        {
+                            value1: [2, 4, 6],
+                            value2: [3, 7, 10]
+                        }
+                    ]
+                },
                 {
                     id: "perseverance",
                     name: "Perseverance",
@@ -30365,6 +30958,36 @@ export const baseTalents = {
                     ]
                 },
                 {
+                    id: "living_seed",
+                    name: "Living Seed",
+                    icon: "ability_druid_giftoftheearthmother",
+                    row: 2,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "When you critically heal a target with Swiftmend, Regrowth, Nourish or Healing Touch spell you plant a Living Seed on the target for 10% of the amount healed. The Living Seed will bloom when the target is next attacked. Lasts 15 sec.",
+                        {
+                            value: [10, 20, 30]
+                        }
+                    ]
+                },
+                {
+                    id: "revitalize",
+                    name: "Revitalize",
+                    icon: "ability_druid_replenish",
+                    row: 2,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you periodically heal with your Rejuvenation or Lifebloom spells, you have a 20% chance to instantly regenerate {value}% of your total mana. This effect cannot occur more than once every 12 sec.<br><br>In addition, you also grant Replenishment when you cast or refresh Lifebloom.<br><br>Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec.",
+                        {
+                            value: [1, 2]
+                        }
+                    ]
+                },
+                {
                     id: "natures_swiftness",
                     name: "Nature's Swiftness",
                     icon: "spell_nature_ravenform",
@@ -30393,6 +31016,69 @@ export const baseTalents = {
                     ]
                 },
                 {
+                    id: "natures_bounty",
+                    name: "Nature's Bounty",
+                    icon: "spell_nature_resistnature",
+                    row: 3,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical effect chance of your Regrowth spell by {value1}%.<br><br>In addition, when you have Rejuvenation active on three or more targets, the cast time of your Nourish spell is reduced by {value2}%.",
+                        {
+                            value1: [20, 40, 60],
+                            value2: [10, 20, 30]
+                        }
+                    ]
+                },
+                {
+                    id: "empowered_touch",
+                    name: "Empowered Touch",
+                    icon: "ability_druid_empoweredtouch",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the direct healing done by your Healing Touch, Regrowth and Nourish spells by {value1}%, and grants those spells a {value2}% chance to refresh the duration of your Lifebloom on targets.",
+                        {
+                            value1: [5, 10],
+                            value2: [50, 100]
+                        }
+                    ]
+                },
+                {
+                    id: "malfurions_gift",
+                    name: "Malfurion's Gift",
+                    icon: "spell_shaman_giftearthmother",
+                    row: 3,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Whenever you heal with your Lifebloom spell, you have a {value1}% chance to cause Omen of Clarity.<br><br>In addition, the cooldown of your Tranquility is reduced by {value2} minutes.",
+                        {
+                            value1: [2, 4],
+                            value2: [2.5, 5]
+                        }
+                    ]
+                },
+                {
+                    id: "efflorescence",
+                    name: "Efflorescence",
+                    icon: "inv_misc_herb_talandrasrose",
+                    row: 4,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Swiftmend spell causes healing flora to sprout beneath the target, restoring health equal to {value}% of the amount healed by your Swiftmend to the three most injured targets within 8 yards, every 1 sec for 7 sec.",
+                        {
+                            value: [4, 8, 12]
+                        }
+                    ]
+                },
+                {
                     id: "wild_growth",
                     name: "Wild Growth",
                     icon: "ability_druid_flourish",
@@ -30414,6 +31100,36 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Empowers your Remove Corruption spell to also remove a magic effect from a friendly target."
+                    ]
+                },
+                {
+                    id: "natures_ward",
+                    name: "Nature's Ward",
+                    icon: "ability_druid_naturalperfection",
+                    row: 4,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Whenever you take an attack while at or below 50% health, you have a {value}% chance to automatically cast Rejuvenation on yourself with no mana cost.",
+                        {
+                            value: [50, 100]
+                        }
+                    ]
+                },
+                {
+                    id: "gift_of_the_earthmother",
+                    name: "Gift of the Earthmother",
+                    icon: "ability_druid_manatree",
+                    row: 5,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the healing done when your Lifebloom expires by {value}%, and causes your Rejuvenation spell to also instantly heal for {value}% of the total periodic effect.",
+                        {
+                            value: [5, 10, 15]
+                        }
                     ]
                 },
                 {
