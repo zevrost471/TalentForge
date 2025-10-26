@@ -307,7 +307,7 @@ function getTreePoints(classKey, treeName) {
     return Object.values(tree).reduce((sum, val) => sum + val, 0);
 }
 
-function getTalentTooltip(talent, currentRank, classKey, treeName) {
+function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank = true) {
     if (!talent) return "";
 
     const lines = [];
@@ -408,7 +408,7 @@ function getTalentTooltip(talent, currentRank, classKey, treeName) {
             const currentDesc = getFilledDescription(currentRank || 1);
             lines.push(`<div class="text-sm text-yellow-300">${currentDesc}</div>`);
 
-            if (currentRank > 0 && currentRank < talent.ranks) {
+            if (showNextRank && currentRank > 0 && currentRank < talent.ranks) {
                 const nextDesc = getFilledDescription(currentRank + 1);
                 lines.push(`<div class="mt-2 text-sm text-white">Next rank:</div>`);
                 lines.push(`<div class="text-sm text-yellow-300">${nextDesc}</div>`);
@@ -421,7 +421,8 @@ function getTalentTooltip(talent, currentRank, classKey, treeName) {
 
             lines.push(`<div class="text-sm text-yellow-300">${currentDesc}</div>`);
 
-            if (currentRank > 0 && currentRank < talent.ranks) {
+            // Only show next rank if showNextRank === true
+            if (showNextRank && currentRank > 0 && currentRank < talent.ranks) {
                 const nextDesc = talent.description[rankIndex + 1];
                 lines.push(`<div class="mt-2 text-sm text-white">Next rank:</div>`);
                 lines.push(`<div class="text-sm text-yellow-300">${nextDesc}</div>`);
@@ -461,7 +462,9 @@ function getTalentTooltip(talent, currentRank, classKey, treeName) {
     }
 
     // 9. Show rank
-    lines.push(`<div class="mt-2 text-sm text-white">Rank: ${currentRank}/${talent.ranks}</div>`);
+    if (showNextRank) {
+        lines.push(`<div class="mt-2 text-sm text-white">Rank: ${currentRank}/${talent.ranks}</div>`);
+    }
 
     // === WRAP IN STYLED TOOLTIP CONTAINER ===
     return lines.join("\n");
@@ -1384,7 +1387,8 @@ function renderTalentTrees() {
                         talent,
                         points,
                         classKey,
-                        treeName
+                        treeName,
+                        true
                     );
 
                     let borderClass = "";
@@ -1439,7 +1443,7 @@ function renderTalentTrees() {
 
                         <!-- Tooltip -->
                         <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50
-                                    p-2 bg-black border border-gray-600 rounded w-80 text-sm shadow-lg">
+                                    p-2 bg-black border border-gray-600 rounded w-80 text-sm shadow-lg pointer-events-none">
                             ${tooltipText}
                         </div>
                     </div>
@@ -1743,42 +1747,6 @@ function createArrowHead(color, direction) {
 
     return arrowHead;
 }
-
-/*
-function getIconPosition(iconName) {
-    // Simplified icon positions for demo
-    // In a real app, you would need exact coordinates from the sprite sheet
-    const iconIndex = [
-        "spell_nature_abolishmagic",
-        "spell_nature_natureswrath",
-        "spell_nature_thorns",
-        "spell_nature_crystalball",
-        "spell_nature_naturetouchgrow",
-        "spell_nature_purge",
-        "spell_arcane_starfire",
-        "spell_nature_naturesblessing",
-        "spell_nature_sentinal",
-        "spell_nature_moonglow",
-        "spell_nature_forceofnature"
-    ].indexOf(iconName);
-
-    if (iconIndex === -1) return "0 0";
-
-    const x = -(iconIndex % 16) * 44;
-    const y = -Math.floor(iconIndex / 16) * 44;
-    return `${x}px ${y}px`;
-}
-*/
-
-/*
-function getArrowRotation(fromTalent, toTalent) {
-    // Calculate arrow rotation based on talent positions
-    if (fromTalent.row < toTalent.row) return 90; // Down
-    if (fromTalent.row > toTalent.row) return 270; // Up
-    if (fromTalent.col < toTalent.col) return 0; // Right
-    return 180; // Left
-}
-*/
 
 function getTotalPointsInTree(classKey, treeName) {
     const treeTalents = currentState.talents[classKey]?.[treeName] || {};
@@ -2201,13 +2169,12 @@ function renderLevelTimeline(container) {
 
     const toggleBtn = document.createElement("button");
     toggleBtn.className =
-        "text-white p-1 rounded transition-colors";
+        "text-white p-0.5 rounded transition-colors";
     toggleBtn.title = "Hide Talent Order";
     // toggleBtn.title = "Keep this open to include its data in the link URL.";
-    toggleBtn.innerHTML = `<i class="fa fa-angle-down text-lg"></i>`;
+    toggleBtn.innerHTML = `<i class="fa fa-angle-down text-base"></i>`;
 
-    header.appendChild(title);
-    header.appendChild(toggleBtn);
+    header.append(title, toggleBtn);
     orderBox.appendChild(header);
 
     // Container for the timeline entries
@@ -2217,18 +2184,16 @@ function renderLevelTimeline(container) {
 
     // Toggle logic
     toggleBtn.addEventListener("click", () => {
+        // Save scroll position before changing layout
+        const scrollY = window.scrollY;
+        
         const hidden = itemsContainer.classList.toggle("hidden");
+        toggleBtn.innerHTML = `<i class="fa fa-angle-${hidden ? "up" : "down"} text-base"></i>`;
+        toggleBtn.title = hidden ? "Show Talent Order" : "Hide Talent Order";
 
-        if (hidden) {
-            toggleBtn.innerHTML = `<i class="fa fa-angle-up text-lg"></i>`;
-            toggleBtn.title = "Show Talent Order"; // update title when hidden
-        } else {
-            toggleBtn.innerHTML = `<i class="fa fa-angle-down text-lg"></i>`;
-            toggleBtn.title = "Hide Talent Order"; // update title when shown
-        }
+        // Restore scroll position after DOM reflow
+        requestAnimationFrame(() => window.scrollTo(0, scrollY));
     });
-
-    const timeline = [];
 
     // Get current expansion
     const expansion = getExpansionFromPatch(currentState.version);
@@ -2241,54 +2206,130 @@ function renderLevelTimeline(container) {
         69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85
     ];
 
-    // Group sequential levels for the same talent
-    talentOrder.forEach((entry, index) => {
-        // Determine the "display level" according to expansion
-        let displayLevel;
-        if (expansion === "cataclysm") {
-            displayLevel = cataLevels[index] || 85;
-        } else {
-            displayLevel = entry.level;
-        }
+    // Helper: get icon URL
+    const getIconUrl = (talent) =>
+        iconOverrideById[talent.id] ||
+        `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`;
 
-        const last = timeline[timeline.length - 1];
-        if (
-            last &&
-            last.id === entry.id &&
-            last.tree === entry.tree &&
-            last.classKey === entry.classKey &&
-            last.endLevel === displayLevel - 1
-        ) {
-            last.endLevel = displayLevel;
-        } else {
-            timeline.push({
-                ...entry,
-                startLevel: displayLevel,
-                endLevel: displayLevel
+    if (expansion === "cataclysm") {
+        talentOrder.forEach((entry, index) => {
+            const talent = getTalentById(entry.classKey, entry.tree, entry.id);
+            if (!talent) return;
+
+            // --- compute rank at this purchase: count occurrences of the same talent up to this index ---
+            const occurrenceCount = talentOrder
+                .slice(0, index + 1)
+                .filter(e =>
+                    e.id === entry.id &&
+                    e.tree === entry.tree &&
+                    e.classKey === entry.classKey
+                ).length;
+
+            const level = cataLevels[index] || 85;
+            const iconUrl = getIconUrl(talent);
+
+            const tooltipText = getTalentTooltip(
+                talent,
+                occurrenceCount,
+                entry.classKey,
+                entry.tree,
+                false
+            );
+
+            const item = document.createElement("div");
+            item.className =
+                "relative flex items-center text-sm text-white gap-2 bg-gray-900 px-2 py-1 rounded border border-gray-600";
+
+            // Level
+            const levelEl = Object.assign(document.createElement("span"), {
+                className: "text-gray-400",
+                textContent: level
             });
-        }
-    });
 
-    // Render grouped entries
-    timeline.forEach((entry) => {
-        const talent = getTalentById(entry.classKey, entry.tree, entry.id);
-        const iconUrl =
-            iconOverrideById[talent.id] ||
-            `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`;
-        const levelText =
-            entry.startLevel === entry.endLevel
-                ? `${entry.startLevel}`
-                : `${entry.startLevel} - ${entry.endLevel}`;
+            // Container for icon + name (tooltip triggers only here)
+            const hoverContainer = document.createElement("div");
+            hoverContainer.className = "relative group flex items-center gap-1 cursor-pointer";
 
-        const item = document.createElement("div");
-        item.className =
-            "flex items-center text-xs text-white gap-1 bg-gray-900 px-2 py-1 rounded border border-gray-600";
-        item.innerHTML = `
-            <img src="${iconUrl}" alt="${talent.name}" class="w-4 h-4 rounded" />
-            <span>${levelText}</span>
-        `;
-        itemsContainer.appendChild(item);
-    });
+            // Icon
+            const iconEl = Object.assign(document.createElement("img"), {
+                src: iconUrl,
+                alt: talent.name,
+                className: "w-4 h-4 rounded border border-gray-600"
+            });
+
+            // Talent name
+            const nameEl = Object.assign(document.createElement("span"), {
+                className: "text-yellow-400",
+                textContent: talent.name
+            });
+
+            // Tooltip wrapper
+            const tooltipEl = document.createElement("div");
+            tooltipEl.className = `
+                hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50
+                p-2 bg-black border border-gray-600 rounded w-80 text-sm shadow-lg pointer-events-none
+            `;
+            tooltipEl.innerHTML = tooltipText;
+
+            hoverContainer.append(iconEl, nameEl, tooltipEl);
+
+            // Rank
+            const rankEl = Object.assign(document.createElement("span"), {
+                className: "text-gray-400 text-xs ml-1",
+                textContent: `Rank ${occurrenceCount}`
+            });
+
+            item.append(levelEl, hoverContainer, rankEl);
+            itemsContainer.appendChild(item);
+        });
+
+    } else {
+
+        // ---------- Non-Cataclysm: keep previous grouping logic ----------
+        const timeline = [];
+        talentOrder.forEach((entry) => {
+            const displayLevel = entry.level;
+            const last = timeline[timeline.length - 1];
+            if (
+                last &&
+                last.id === entry.id &&
+                last.tree === entry.tree &&
+                last.classKey === entry.classKey &&
+                last.endLevel === displayLevel - 1
+            ) {
+                last.endLevel = displayLevel;
+            } else {
+                timeline.push({ ...entry, startLevel: displayLevel, endLevel: displayLevel });
+            }
+        });
+
+        timeline.forEach((entry) => {
+            const talent = getTalentById(entry.classKey, entry.tree, entry.id);
+            if (!talent) return;
+            const iconUrl = getIconUrl(talent);
+            const levelText =
+                entry.startLevel === entry.endLevel
+                    ? `${entry.startLevel}`
+                    : `${entry.startLevel} - ${entry.endLevel}`;
+
+            const item = document.createElement("div");
+            item.className =
+                "flex items-center text-xs text-white gap-1 bg-gray-900 px-2 py-1 rounded border border-gray-600";
+
+            const iconEl = Object.assign(document.createElement("img"), {
+                src: iconUrl,
+                alt: talent.name,
+                className: "w-4 h-4 rounded"
+            });
+
+            const levelEl = Object.assign(document.createElement("span"), {
+                textContent: `${levelText}`,
+            });
+
+            item.append(iconEl, levelEl);
+            itemsContainer.appendChild(item);
+        });
+    }
 
     container.appendChild(orderBox);
 }
