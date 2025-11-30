@@ -1046,7 +1046,7 @@ function renderSpecSelectionPanel() {
                         <div class="relative group">    
                             <img src="${iconPath}" alt="${p.name}" class="w-5 h-5 rounded border border-gray-600 cursor-pointer">
                             <!-- Tooltip -->
-                            <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                            <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                         p-2 bg-black border border-gray-600 rounded w-80">
                                 ${tooltip}
                             </div>
@@ -1056,7 +1056,7 @@ function renderSpecSelectionPanel() {
                             <strong class="text-sm font-normal cursor-pointer" style="color:#e4cc81;">${p.name}</strong>
                             <!-- <div class="text-sm text-gray-300">${pdesc}</div> -->
                             <!-- Tooltip -->
-                            <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                            <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                         p-2 bg-black border border-gray-600 rounded w-80">
                                 ${iconPath ? `
                                 <img src="${iconPath}" 
@@ -1113,7 +1113,7 @@ function renderSpecSelectionPanel() {
                         <img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg" 
                                 class="w-10 h-10 rounded border border-gray-600 cursor-pointer"/>
                         <!-- Tooltip -->
-                        <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                        <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                     p-2 bg-black border border-gray-600 rounded w-80">
                             ${getCataBaseTalentTooltip(primary, classKey)}
                         </div>
@@ -1123,7 +1123,7 @@ function renderSpecSelectionPanel() {
                     <div class="relative group inline-block">
                         <strong class="text-lg font-normal cursor-pointer" style="color:#e4cc81;">${primary.name || ""}</strong>
                         <!-- Tooltip -->
-                        <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 
+                        <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                     p-2 bg-black border border-gray-600 rounded w-80">
                             ${primary.icon ? `
                             <img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg" 

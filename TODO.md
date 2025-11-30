@@ -102,15 +102,19 @@ Nice-to-have, improves personalization but not critical.
 
     - Should allow filtering by class, tree, or patch version.
 
-3. Tooltip Word Search
+3. Class abilities interface (just like WoWHead)
+
+    - Should only be visible once you choose a class
+
+4. Tooltip Word Search
 
     - Search for keywords across all talents.
 
-4. Leveling Planner
+5. Leveling Planner
 
     - Plan talents per level (depends on timeline display).
 
-5. Add vanilla patch for Season of Discovery and add rune system to it
+6. Add vanilla patch for Season of Discovery and add rune system to it
 
 ### 🔹 Future Considerations
 
