@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentForge</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="images/icons/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/icons/favicon-16.png">
+    <link rel="shortcut icon" href="images/icons/favicon-16.ico">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body class="bg-gray-900 text-gray-100 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header id="main-header" class="text-center mb-8 transition-all duration-500 overflow-hidden">
+            <h1 class="text-4xl font-bold text-yellow-400 mb-2">
+                <a href="index.html" class="hover:text-yellow-300 transition-colors">TalentForge</a>
+            </h1>
+            <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!
+            </p>
+        </header>
+
+        <!-- Top Navigation Bar -->
+        <nav class="w-full bg-gray-800 rounded-lg mb-6 border-gray-700 mb-6">
+            <div class="container mx-auto px-4">
+                <ul id="top-nav" class="flex items-center justify-center gap-8 py-3 text-lg font-medium">
+                    <li>
+                        <a href="overview.html" data-tab="nav-overview"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="talent-calc.html" data-tab="nav-talentcalc"
+                            class="nav-tab text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 transition-colors">
+                            Talent Calculator
+                        </a>
+                    </li>
+                    <li>
+                        <a href="database.html" data-tab="nav-database"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            Database
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Class selection row -->
+        <div id="select-class-container" class="bg-gray-900 rounded-lg p-6 mb-4 text-center overflow-visible">
+            <!-- <h2 id="select-class-header" class="text-xl font-semibold mb-4 text-yellow-400">Select Class</h2>  -->
+            <div id="class-list"
+                class="class-selection p-1 flex flex-nowrap gap-2 justify-start md:justify-center overflow-x-auto overflow-visible scroll-smooth">
+                <button id="deathknight-button"
+                    class="hidden class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="deathknight" title="Death Knight" style="border: 2px solid #C41F3B;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_deathknight.jpg"
+                        alt="Death Knight" class="w-12 h-12 rounded-full">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="druid" title="Druid" style="border: 2px solid #FF7D0A;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_druid.jpg" alt="Druid"
+                        class="w-12 h-12 rounded-full">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="hunter" title="Hunter" style="border: 2px solid #ABD473;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_hunter.jpg" alt="Hunter"
+                        class="w-12 h-12 rounded-full ">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="mage" title="Mage" style="border: 2px solid #69CCF0;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_mage.jpg" alt="Mage"
+                        class="w-12 h-12 rounded-full ">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="paladin" title="Paladin" style="border: 2px solid #F58CBA;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_paladin.jpg" alt="Paladin"
+                        class="w-12 h-12 rounded-full ">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="priest" title="Priest" style="border: 2px solid #FFFFFF;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_priest.jpg" alt="Priest"
+                        class="w-12 h-12 rounded-full ">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="rogue" title="Rogue" style="border: 2px solid #FFF569;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_rogue.jpg" alt="Rogue"
+                        class="w-12 h-12 rounded-full ">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="shaman" title="Shaman" style="border: 2px solid #0070DE;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_shaman.jpg" alt="Shaman"
+                        class="w-12 h-12 rounded-full">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="warlock" title="Warlock" style="border: 2px solid #9482C9;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warlock.jpg" alt="Warlock"
+                        class="w-12 h-12 rounded-full ">
+                </button>
+                <button
+                    class="class-btn bg-black rounded-full p-1 flex flex-col items-center justify-center transition-transform duration-150 ease-in-out hover:scale-110"
+                    data-class="warrior" title="Warrior" style="border: 2px solid #C79C6E;">
+                    <img src="https://wow.zamimg.com/images/wow/icons/large/classicon_warrior.jpg" alt="Warrior"
+                        class="w-12 h-12 rounded-full ">
+                </button>
+            </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row gap-8">
+            <!-- Left sidebar -->
+            <div id="sidebar" class="relative w-full lg:w-1/4 transition-all duration-300">
+                <!-- Sidebar toggle button -->
+                <div class="flex justify-end p-2">
+                    <button id="toggle-sidebar" title="Hide Sidebar"
+                        class="absolute top-2 left-2 bg-gray-700 text-white px-2 py-1 rounded-md hover:bg-gray-600">
+                        ☰
+                    </button>
+                </div>
+
+                <!-- Inner content wrapper -->
+                <div id="sidebar-content" class="mt-10">
+                    <!-- Version selector -->
+                    <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                        <h2 class="text-xl font-semibold mb-4 text-yellow-400">Game Version</h2>
+                        <div class="space-y-3 ">
+                            <!-- Expansion Select -->
+                            <select id="expansion-select"
+                                class="appearance-none w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2">
+                                <option value="" disabled selected>Select client</option>
+                                <option value="vanilla">Vanilla</option>
+                                <option value="tbc">The Burning Crusade</option>
+                                <option value="wotlk">Wrath of the Lich King</option>
+                                <option value="cataclysm">Cataclysm</option>
+                                <option value="turtlewow">Turtle WoW</option>
+                                <option value="epoch">Epoch</option>
+                                <option value="custom">Custom</option>
+                            </select>
+
+                            <!-- Patch Select (populated dynamically) -->
+                            <select id="version-select"
+                                class="appearance-none w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2"
+                                disabled>
+                                <option value="" disabled selected>Select patch</option>
+                            </select>
+                            <button id="apply-version"
+                                class="hidden flex items-center justify-center gap-1 bg-blue-600 border border-blue-800 hover:bg-blue-700 text-white px-2 py-2 rounded-md mt-2 w-32">
+                                Apply
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Points box wrapper -->
+                    <div id="talent-points-box" class="mb-6 hidden">
+                        <!-- Points counter -->
+                        <div class="bg-gray-800 rounded-lg p-4 mb-6">
+                            <h2 class="text-xl font-semibold mb-2 text-yellow-400">Talent Points</h2>
+                            <div class="flex justify-between items-center">
+                                <div class="text-lg">
+                                    <span id="points-spent">0</span> / <span id="points-total">51</span>
+                                </div>
+                                <button id="reset-talents"
+                                    class="bg-red-600 hover:bg-red-700 text-white px-3 py-1 rounded-md text-sm">
+                                    <i class="fas fa-redo mr-1"></i> Reset
+                                </button>
+                            </div>
+                            <div class="w-full bg-gray-700 h-2 mt-2 rounded-full">
+                                <div id="points-bar" class="bg-yellow-500 h-2 rounded-full" style="width: 0%"></div>
+                            </div>
+
+                            <div id="custom-version-options" class="mt-4 hidden">
+                                <label class="block text-sm font-medium mb-1">Custom Talent Points</label>
+                                <input type="number" id="custom-points"
+                                    class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                                    value="51" min="1" max="100">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Build management -->
+                    <div class="bg-gray-800 rounded-lg p-4">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-semibold text-yellow-400">Build Manager</h2>
+                            <button id="toggle-build-manager"
+                                class="text-yellow-400 hover:text-yellow-300 transition-transform duration-300 text-xl mr-2"
+                                title="Collapse Build Manager" aria-expanded="true"
+                                aria-controls="build-manager-wrapper">
+                                <i class="fas fa-chevron-down text-base transition-transform duration-300"></i>
+                            </button>
+                        </div>
+                        <div id="build-manager-wrapper" class="transition-[max-height] duration-300 overflow-hidden"
+                            style="max-height: 1000px;">
+                            <div id="build-manager-content">
+                                <div class="mb-4">
+                                    <input type="text" id="build-name" placeholder="Build name"
+                                        class="w-full bg-gray-700 border border-gray-600 rounded-md px-3 py-2 mb-2 focus:outline-none focus:ring-2 focus:ring-yellow-500">
+                                    <div class="flex gap-2">
+                                        <button id="save-build"
+                                            class="flex-1 bg-green-600 hover:bg-green-700 text-white px-3 py-2 rounded-md">
+                                            <i class="fas fa-save mr-1"></i> Save
+                                        </button>
+                                        <button id="import-build"
+                                            class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-3 py-2 rounded-md">
+                                            <i class="fas fa-file-import mr-1"></i> Import
+                                        </button>
+                                    </div>
+                                </div>
+                                <div id="builds-list" class="space-y-2 max-h-64 overflow-y-auto">
+                                    <!-- Build cards will be added here -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="talent-section" class="w-full lg:w-3/4 duration-300 ease-in-out">
+                <!-- Talent trees -->
+                <div id="talent-wrapper">
+                    <div id="talent-container" class="bg-gray-800 rounded-lg p-4">
+                        <div id="talent-placeholder" class="text-center py-12">
+                            <h2 class="text-2xl text-yellow-400 mb-2">Select a version</h2>
+                            <p class="text-gray-400">Use the dropdown to choose a game version</p>
+                        </div>
+                        <div id="talent-trees"></div>
+                        <div id="cata-spec-selection-panel" class="hidden"></div>
+                    </div>
+                </div>
+
+                <!-- Talent Order Timeline -->
+                <div id="timeline-wrapper" class="w-full flex justify-center mt-4"></div>
+                <div id="glyphs-wrapper" class="glyphs-section w-full justify-center mt-4"></div>
+            </div>
+        </div>
+
+        <!-- Tooltip -->
+        <div id="talent-tooltip"
+            class="hidden fixed z-50 p-2 bg-black border border-gray-600 rounded w-80 text-sm text-white shadow-lg">
+        </div>
+
+    </div>
+
+    <script type="module" src="./main.js"></script>
+    <script type="module" src="./talent-calculator.js"></script>
+
+</body>
+
+</html>
