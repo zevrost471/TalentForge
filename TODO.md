@@ -31,6 +31,16 @@ These should be done first because other features depend on them or they fix cor
 
 6. Fix issue concerning talents not displaying when patch 1.10 is selected ✅
 
+7. Add top navigation bar that includes Overview, Talent Calculator and Database
+
+    - A JS toggle so the active tab updates dynamically
+    - A Database dropdown that appears on hover
+        - Sub-tab "Character" inside "Database" for Classes, Races and Spells
+        - Sub-tab "World" inside "Database" for Factions
+    - A content switching loader so each tab switches the main UI
+    - Integration with existing dynamic container elements
+    - A URL hash (#overview) so tabs persist on page reload
+
 ### 🔹 Tier 2: Medium Priority / Usability Enhancements
 
 These improve the user experience significantly.
