@@ -41,6 +41,8 @@ These should be done first because other features depend on them or they fix cor
     - Integration with existing dynamic container elements
     - A URL hash (#overview) so tabs persist on page reload
 
+8. Finish Cataclysm talent trees & glyphs
+
 ### 🔹 Tier 2: Medium Priority / Usability Enhancements
 
 These improve the user experience significantly.
