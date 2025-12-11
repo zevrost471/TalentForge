@@ -92,7 +92,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Anti-Magic Shell by 2 sec."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43533/glyph-of-anti-magic-shell"
                 },
                 {
                     name: "Blood Strike",
@@ -100,7 +101,8 @@ export const glyphs = {
                     description: [
                         "Your Blood Strike causes an additional 20% damage to snared targets."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43826/glyph-of-blood-strike"
                 },
                 {
                     name: "Bone Shield",
@@ -108,7 +110,8 @@ export const glyphs = {
                     description: [
                         "Adds 1 additional charge to your Bone Shield."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43536/glyph-of-bone-shield"
                 },
                 {
                     name: "Chains of Ice",
@@ -116,7 +119,8 @@ export const glyphs = {
                     description: [
                         "Your Chains of Ice also causes 144 to 156 Frost damage, increased by your attack power."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43537/glyph-of-chains-of-ice"
                 },
                 {
                     name: "Dancing Rune Weapon",
@@ -124,7 +128,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Dancing Rune Weapon by 5 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45799/glyph-of-dancing-rune-weapon"
                 },
                 {
                     name: "Dark Command",
@@ -132,7 +137,8 @@ export const glyphs = {
                     description: [
                         "Increases the chance for your Dark Command ability to work successfully by 8%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43538/glyph-of-dark-command"
                 },
                 {
                     name: "Dark Death",
@@ -140,7 +146,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage or healing done by Death Coil by 15%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45804/glyph-of-dark-death"
                 },
                 {
                     name: "Death and Decay",
@@ -148,7 +155,8 @@ export const glyphs = {
                     description: [
                         "Damage of your Death and Decay spell increased by 20%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43542/glyph-of-death-and-decay"
                 },
                 {
                     name: "Death Grip",
@@ -156,7 +164,8 @@ export const glyphs = {
                     description: [
                         "When you deal a killing blow that grants honor or experience, the cooldown of your Death Grip is refreshed."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43541/glyph-of-death-grip"
                 },
                 {
                     name: "Death Strike",
@@ -164,7 +173,8 @@ export const glyphs = {
                     description: [
                         "Increases your Death Strike's damage by 1% for every 1 runic power you currently have (up to a maximum of 25%). The runic power is not consumed by this effect."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43827/glyph-of-death-strike"
                 },
                 {
                     name: "Disease",
@@ -172,7 +182,8 @@ export const glyphs = {
                     description: [
                         "Your Pestilence ability now refreshes disease durations and secondary effects of diseases on your primary target back to their maximum duration."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45805/glyph-of-disease"
                 },
                 {
                     name: "Frost Strike",
@@ -180,7 +191,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cost of your Frost Strike by 8 Runic Power."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43543/glyph-of-frost-strike"
                 },
                 {
                     name: "Heart Strike",
@@ -188,7 +200,8 @@ export const glyphs = {
                     description: [
                         "Your Heart Strike also reduces the movement speed of your target by 50% for 10 sec."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43534/glyph-of-heart-strike"
                 },
                 {
                     name: "Howling Blast",
@@ -196,7 +209,8 @@ export const glyphs = {
                     description: [
                         "Your Howling Blast ability now infects your targets with Frost Fever."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45806/glyph-of-howling-blast"
                 },
                 {
                     name: "Hungering Cold",
@@ -204,7 +218,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cost of Hungering Cold by 40 runic power."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45800/glyph-of-hungering-cold"
                 },
                 {
                     name: "Icebound Fortitude",
@@ -212,7 +227,8 @@ export const glyphs = {
                     description: [
                         "Your Icebound Fortitude now always grants at least 40% damage reduction, regardless of your defense skill."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43545/glyph-of-icebound-fortitude"
                 },
                 {
                     name: "Icy Touch",
@@ -220,7 +236,8 @@ export const glyphs = {
                     description: [
                         "Your Frost Fever disease deals 20% additional damage."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43546/glyph-of-icy-touch"
                 },
                 {
                     name: "Obliterate",
@@ -228,7 +245,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Obliterate ability by 25%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43547/glyph-of-obliterate"
                 },
                 {
                     name: "Plague Strike",
@@ -236,7 +254,8 @@ export const glyphs = {
                     description: [
                         "Your Plague Strike does 20% additional damage."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43548/glyph-of-plague-strike"
                 },
                 {
                     name: "Rune Strike",
@@ -244,7 +263,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike chance of your Rune Strike by 10%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43550/glyph-of-rune-strike"
                 },
                 {
                     name: "Rune Tap",
@@ -252,7 +272,8 @@ export const glyphs = {
                     description: [
                         "Your Rune Tap now heals you for an additional 1% of your maximum health, and also heals your party for 10% of their maximum health."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43825/glyph-of-rune-tap"
                 },
                 {
                     name: "Scourge Strike",
@@ -260,7 +281,8 @@ export const glyphs = {
                     description: [
                         "Your Scourge Strike increases the duration of your diseases on the target by 3 sec, up to a maximum of 9 additional seconds."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43551/glyph-of-scourge-strike"
                 },
                 {
                     name: "Strangulate",
@@ -268,7 +290,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Strangulate by 20 sec."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43552/glyph-of-strangulate"
                 },
                 {
                     name: "the Ghoul",
@@ -276,7 +299,8 @@ export const glyphs = {
                     description: [
                         "Your Ghoul receives an additional 40% of your Strength and 40% of your Stamina."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43549/glyph-of-the-ghoul"
                 },
                 {
                     name: "Unbreakable Armor",
@@ -284,7 +308,8 @@ export const glyphs = {
                     description: [
                         "Increases the total armor granted by Unbreakable Armor to 30%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43553/glyph-of-unbreakable-armor"
                 },
                 {
                     name: "Unholy Blight",
@@ -292,7 +317,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Unholy Blight by 40%."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45803/glyph-of-unholy-blight"
                 },
                 {
                     name: "Vampiric Blood",
@@ -300,7 +326,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Vampiric Blood by 5 sec."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43554/glyph-of-vampiric-blood"
                 }
             ],
             minor: [
@@ -310,7 +337,8 @@ export const glyphs = {
                     description: [
                         "Your Blood Tap no longer causes damage to you."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43535/glyph-of-blood-tap"
                 },
                 {
                     name: "Corpse Explosion",
@@ -318,7 +346,8 @@ export const glyphs = {
                     description: [
                         "Increases the radius of effect on Corpse Explosion by 5 yards."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43671/glyph-of-corpse-explosion"
                 },
                 {
                     name: "Death's Embrace",
@@ -326,7 +355,8 @@ export const glyphs = {
                     description: [
                         "Your Death Coil refunds 20 runic power when used to heal."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43539/glyph-of-deaths-embrace"
                 },
                 {
                     name: "Horn of Winter",
@@ -334,7 +364,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Horn of Winter ability by 1 min."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43544/glyph-of-horn-of-winter"
                 },
                 {
                     name: "Pestilence",
@@ -342,7 +373,8 @@ export const glyphs = {
                     description: [
                         "Increases the radius of your Pestilence effect by 5 yards."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43672/glyph-of-pestilence"
                 },
                 {
                     name: "Raise Dead",
@@ -350,7 +382,8 @@ export const glyphs = {
                     description: [
                         "Your Raise Dead spell no longer requires a reagent."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43673/glyph-of-raise-dead"
                 }
             ],
         },
@@ -362,7 +395,8 @@ export const glyphs = {
                     description: [
                         "Reduces the chance you'll be critically hit by 25% while Barkskin is active."
                     ],
-                    level: 44
+                    level: 44,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45623/glyph-of-barkskin"
                 },
                 {
                     name: "Berserk",
@@ -370,7 +404,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Berserk by 5 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45601/glyph-of-berserk"
                 },
                 {
                     name: "Claw",
@@ -378,7 +413,8 @@ export const glyphs = {
                     description: [
                         "Reduces the energy cost of your Claw ability by 5."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=48720/glyph-of-claw"
                 },
                 {
                     name: "Entangling Roots",
@@ -386,7 +422,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage your Entangling Roots victims can take before the Entangling Roots automatically breaks by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40924/glyph-of-entangling-roots"
                 },
                 {
                     name: "Focus",
@@ -394,7 +431,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Starfall by 10%, but decreases its radius by 50%."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=44928/glyph-of-focus"
                 },
                 {
                     name: "Frenzied Regeneration",
@@ -402,7 +440,8 @@ export const glyphs = {
                     description: [
                         "While Frenzied Regeneration is active, healing effects on you are 20% more powerful."
                     ],
-                    level: 36
+                    level: 36,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40896/glyph-of-frenzied-regeneration"
                 },
                 {
                     name: "Growling",
@@ -410,7 +449,8 @@ export const glyphs = {
                     description: [
                         "Increases the chance for your Growl ability to work successfully by 8%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40899/glyph-of-growling"
                 },
                 {
                     name: "Healing Touch",
@@ -418,7 +458,8 @@ export const glyphs = {
                     description: [
                         "Decreases the cast time of Healing Touch by 1.5 sec, the mana cost by 25%, and the amount healed by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40914/glyph-of-healing-touch"
                 },
                 {
                     name: "Hurricane",
@@ -426,7 +467,8 @@ export const glyphs = {
                     description: [
                         "Your Hurricane ability now also slows the movement speed of its victims by 20%."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40920/glyph-of-hurricane"
                 },
                 {
                     name: "Innervate",
@@ -434,7 +476,8 @@ export const glyphs = {
                     description: [
                         "Innervate now grants the caster 45% of his base mana pool over 10 sec in addition to the normal effects of Innervate."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40908/glyph-of-innervate"
                 },
                 {
                     name: "Insect Swarm",
@@ -442,7 +485,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Insect Swarm ability by 30%, but it no longer affects your victim's chance to hit."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40919/glyph-of-insect-swarm"
                 },
                 {
                     name: "Lifebloom",
@@ -450,7 +494,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Lifebloom by 1 sec."
                     ],
-                    level: 64
+                    level: 64,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40915/glyph-of-lifebloom"
                 },
                 {
                     name: "Mangle",
@@ -458,7 +503,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Mangle by 10%."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40900/glyph-of-mangle"
                 },
                 {
                     name: "Maul",
@@ -466,7 +512,8 @@ export const glyphs = {
                     description: [
                         "Your Maul ability now hits 1 additional target."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40897/glyph-of-maul"
                 },
                 {
                     name: "Monsoon",
@@ -474,7 +521,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Typhoon spell by 3 sec."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45622/glyph-of-monsoon"
                 },
                 {
                     name: "Moonfire",
@@ -482,7 +530,8 @@ export const glyphs = {
                     description: [
                         "Increases the periodic damage of your Moonfire ability by 75%, but initial damage is decreased by 90%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40923/glyph-of-moonfire"
                 },
                 {
                     name: "Nourish",
@@ -490,7 +539,8 @@ export const glyphs = {
                     description: [
                         "Your Nourish heals an additional 6% for each of your heal over time effects present on the target."
                     ],
-                    level: 80
+                    level: 80,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45603/glyph-of-nourish"
                 },
                 {
                     name: "Omen of Clarity",
@@ -498,7 +548,8 @@ export const glyphs = {
                     description: [
                         "Your Omen of Clarity talent has a 100% chance to be triggered by successfully casting Faerie Fire (Feral). Does not trigger on players or player-controlled pets."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=206580/glyph-of-omen-of-clarity"
                 },
                 {
                     name: "Rake",
@@ -506,7 +557,8 @@ export const glyphs = {
                     description: [
                         "Your Rake ability prevents targets from fleeing."
                     ],
-                    level: 24
+                    level: 24,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40903/glyph-of-rake"
                 },
                 {
                     name: "Rapid Rejuvenation",
@@ -514,7 +566,8 @@ export const glyphs = {
                     description: [
                         "Your haste now reduces the time between the periodic healing ticks of your Rejuvenation spell."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=50125/glyph-of-rapid-rejuvenation"
                 },
                 {
                     name: "Rebirth",
@@ -522,7 +575,8 @@ export const glyphs = {
                     description: [
                         "Players resurrected by Rebirth are returned to life with 100% health."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40909/glyph-of-rebirth"
                 },
                 {
                     name: "Regrowth",
@@ -530,7 +584,8 @@ export const glyphs = {
                     description: [
                         "Increases the healing of your Regrowth spell by 20% if your Regrowth effect is still active on the target."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40912/glyph-of-regrowth"
                 },
                 {
                     name: "Rejuvenation",
@@ -538,7 +593,8 @@ export const glyphs = {
                     description: [
                         "While your Rejuvenation targets are below 50% health, you will heal them for an additional 50% health."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40913/glyph-of-rejuvenation"
                 },
                 {
                     name: "Rip",
@@ -546,7 +602,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Rip ability by 4 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40902/glyph-of-rip"
                 },
                 {
                     name: "Savage Roar",
@@ -554,7 +611,8 @@ export const glyphs = {
                     description: [
                         "Your Savage Roar ability grants an additional 3% bonus damage done."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45604/glyph-of-savage-roar"
                 },
                 {
                     name: "Shred",
@@ -562,7 +620,8 @@ export const glyphs = {
                     description: [
                         "Each time you Shred, the duration of your Rip on the target is extended 2 sec, up to a maximum of 6 sec."
                     ],
-                    level: 22
+                    level: 22,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40901/glyph-of-shred"
                 },
                 {
                     name: "Starfall",
@@ -570,7 +629,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of Starfall by 30 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40921/glyph-of-starfall"
                 },
                 {
                     name: "Starfire",
@@ -578,7 +638,8 @@ export const glyphs = {
                     description: [
                         "Your Starfire ability increases the duration of your Moonfire effect on the target by 3 sec, up to a maximum of 9 additional seconds."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40916/glyph-of-starfire"
                 },
                 {
                     name: "Survival Instincts",
@@ -586,7 +647,8 @@ export const glyphs = {
                     description: [
                         "Your Survival Instincts ability grants an additional 15% of your maximum health."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=46372/glyph-of-survival-instincts"
                 },
                 {
                     name: "Swiftmend",
@@ -594,7 +656,8 @@ export const glyphs = {
                     description: [
                         "Your Swiftmend ability no longer consumes a Rejuvenation or Regrowth effect from the target."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40906/glyph-of-swiftmend"
                 },
                 {
                     name: "Wild Growth",
@@ -602,7 +665,8 @@ export const glyphs = {
                     description: [
                         "Wild Growth can affect 1 additional target."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45602/glyph-of-wild-growth"
                 },
                 {
                     name: "Wrath",
@@ -610,7 +674,8 @@ export const glyphs = {
                     description: [
                         "Reduces the pushback suffered from damaging attacks while casting your Wrath spell by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=40922/glyph-of-wrath"
                 }
             ],
             minor: [
@@ -620,7 +685,8 @@ export const glyphs = {
                     description: [
                         "Increases your swim speed by 50% while in Aquatic Form."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43316/glyph-of-aquatic-form"
                 },
                 {
                     name: "Challenging Roar",
@@ -628,7 +694,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Challenging Roar ability by 30 sec."
                     ],
-                    level: 28
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43334/glyph-of-challenging-roar"
                 },
                 {
                     name: "Dash",
@@ -636,7 +703,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Dash ability by 20%."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43674/glyph-of-dash"
                 },
                 {
                     name: "the Wild",
@@ -644,7 +712,8 @@ export const glyphs = {
                     description: [
                         "Mana cost of your Mark of the Wild and Gift of the Wild spells reduced by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43335/glyph-of-the-wild"
                 },
                 {
                     name: "Thorns",
@@ -652,7 +721,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Thorns ability by 50 min when cast on yourself."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43332/glyph-of-thorns"
                 },
                 {
                     name: "Typhoon",
@@ -660,7 +730,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cost of your Typhoon spell by 8% and increases its radius by 10 yards, but it no longer knocks enemies back."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=44922/glyph-of-typhoon"
                 },
                 {
                     name: "Unburdened Rebirth",
@@ -668,7 +739,8 @@ export const glyphs = {
                     description: [
                         "Your Rebirth spell no longer requires a reagent."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43331/glyph-of-unburdened-rebirth"
                 }
             ],
         },
@@ -680,7 +752,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Aimed Shot ability by 2 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42897/glyph-of-aimed-shot"
                 },
                 {
                     name: "Arcane Shot",
@@ -688,7 +761,8 @@ export const glyphs = {
                     description: [
                         "Your Arcane Shot refunds 20% of its mana cost if the target has one of your Stings active on it."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42898/glyph-of-arcane-shot"
                 },
                 {
                     name: "Aspect of the Viper",
@@ -696,7 +770,8 @@ export const glyphs = {
                     description: [
                         "Increases the amount of mana gained from attacks while Aspect of the Viper is active by 10%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42901/glyph-of-aspect-of-the-viper"
                 },
                 {
                     name: "Bestial Wrath",
@@ -704,7 +779,8 @@ export const glyphs = {
                     description: [
                         "Decreases the cooldown of Bestial Wrath by 20 sec."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42902/glyph-of-bestial-wrath"
                 },
                 {
                     name: "Chimera Shot",
@@ -712,7 +788,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of Chimera Shot by 1 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45625/glyph-of-chimera-shot"
                 },
                 {
                     name: "Deterrence",
@@ -720,7 +797,8 @@ export const glyphs = {
                     description: [
                         "Decreases the cooldown of Deterrence by 10 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42903/glyph-of-deterrence"
                 },
                 {
                     name: "Disengage",
@@ -728,7 +806,8 @@ export const glyphs = {
                     description: [
                         "Decreases the cooldown of Disengage by 5 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42904/glyph-of-disengage"
                 },
                 {
                     name: "Explosive Shot",
@@ -736,7 +815,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike chance of Explosive Shot by 4%."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45731/glyph-of-explosive-shot"
                 },
                 {
                     name: "Explosive Trap",
@@ -744,7 +824,8 @@ export const glyphs = {
                     description: [
                         "The periodic damage from your Explosive Trap can now be critical strikes."
                     ],
-                    level: 34
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45733/glyph-of-explosive-trap"
                 },
                 {
                     name: "Freezing Trap",
@@ -752,7 +833,8 @@ export const glyphs = {
                     description: [
                         "When your Freezing Trap breaks, the victim's movement speed is reduced by 30% for 4 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42905/glyph-of-freezing-trap"
                 },
                 {
                     name: "Frost Trap",
@@ -760,7 +842,8 @@ export const glyphs = {
                     description: [
                         "Increases the radius of the effect from your Frost Trap by 2 yards."
                     ],
-                    level: 28
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42906/glyph-of-frost-trap"
                 },
                 {
                     name: "Hunter's Mark",
@@ -768,7 +851,8 @@ export const glyphs = {
                     description: [
                         "Increases the attack power bonus of your Hunter's Mark by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42907/glyph-of-hunters-mark"
                 },
                 {
                     name: "Immolation Trap",
@@ -776,7 +860,8 @@ export const glyphs = {
                     description: [
                         "Decreases the duration of the effect from your Immolation Trap by 6 sec., but damage while active is increased by 100%."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42908/glyph-of-immolation-trap"
                 },
                 {
                     name: "Kill Shot",
@@ -784,7 +869,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of Kill Shot by 6 sec."
                     ],
-                    level: 71
+                    level: 71,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45732/glyph-of-kill-shot"
                 },
                 {
                     name: "Mending",
@@ -792,7 +878,8 @@ export const glyphs = {
                     description: [
                         "Increases the healing done by your Mend Pet ability by 40%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42900/glyph-of-mending"
                 },
                 {
                     name: "Multi-Shot",
@@ -800,7 +887,8 @@ export const glyphs = {
                     description: [
                         "Decreases the cooldown of Multi-Shot by 1 sec."
                     ],
-                    level: 18
+                    level: 18,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42910/glyph-of-multi-shot"
                 },
                 {
                     name: "Rapid Fire",
@@ -808,7 +896,8 @@ export const glyphs = {
                     description: [
                         "Increases the haste from Rapid Fire by an additional 8%."
                     ],
-                    level: 26
+                    level: 26,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42911/glyph-of-rapid-fire"
                 },
                 {
                     name: "Raptor Strike",
@@ -816,7 +905,8 @@ export const glyphs = {
                     description: [
                         "Reduces damage taken by 20% for 3 sec after using Raptor Strike."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45735/glyph-of-raptor-strike"
                 },
                 {
                     name: "Scatter Shot",
@@ -824,7 +914,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of Scatter Shot by 3 yards."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45734/glyph-of-scatter-shot"
                 },
                 {
                     name: "Serpent Sting",
@@ -832,7 +923,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Serpent Sting by 6 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42912/glyph-of-serpent-sting"
                 },
                 {
                     name: "Snake Trap",
@@ -840,7 +932,8 @@ export const glyphs = {
                     description: [
                         "Snakes from your Snake Trap take 90% reduced damage from area of effect spells."
                     ],
-                    level: 68
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42913/glyph-of-snake-trap"
                 },
                 {
                     name: "Steady Shot",
@@ -848,7 +941,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage dealt by Steady Shot by 10% when your target is afflicted with Serpent Sting."
                     ],
-                    level: 62
+                    level: 62,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42914/glyph-of-steady-shot"
                 },
                 {
                     name: "the Beast",
@@ -856,7 +950,8 @@ export const glyphs = {
                     description: [
                         "Increases the attack power bonus of Aspect of the Beast for you and your pet by an additional 2%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42899/glyph-of-the-beast"
                 },
                 {
                     name: "the Hawk",
@@ -864,7 +959,8 @@ export const glyphs = {
                     description: [
                         "Increases the haste bonus of the Improved Aspect of the Hawk effect by an additional 6%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42909/glyph-of-the-hawk"
                 },
                 {
                     name: "Trueshot Aura",
@@ -872,7 +968,8 @@ export const glyphs = {
                     description: [
                         "While your Trueshot Aura is active, you have 10% increased critical strike chance on your Aimed Shot."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42915/glyph-of-trueshot-aura"
                 },
                 {
                     name: "Volley",
@@ -880,7 +977,8 @@ export const glyphs = {
                     description: [
                         "Decreases the mana cost of Volley by 20%."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42916/glyph-of-volley"
                 },
                 {
                     name: "Wyvern Sting",
@@ -888,7 +986,8 @@ export const glyphs = {
                     description: [
                         "Decreases the cooldown of your Wyvern Sting by 6 sec."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42917/glyph-of-wyvern-sting"
                 }
             ],
             minor: [
@@ -898,7 +997,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Feign Death spell by 5 sec."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43351/glyph-of-feign-death"
                 },
                 {
                     name: "Mend Pet",
@@ -906,7 +1006,8 @@ export const glyphs = {
                     description: [
                         "Your Mend Pet spell increases your pet's happiness slightly."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43350/glyph-of-mend-pet"
                 },
                 {
                     name: "Possessed Strength",
@@ -914,7 +1015,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage your pet inflicts while using Eyes of the Beast by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43354/glyph-of-possessed-strength"
                 },
                 {
                     name: "Revive Pet",
@@ -922,7 +1024,8 @@ export const glyphs = {
                     description: [
                         "Reduces the pushback suffered from damaging attacks while casting Revive Pet by 100%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43338/glyph-of-revive-pet"
                 },
                 {
                     name: "Scare Beast",
@@ -930,7 +1033,8 @@ export const glyphs = {
                     description: [
                         "Reduces the pushback suffered from damaging attacks while casting Scare Beast by 75%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43356/glyph-of-scare-beast"
                 },
                 {
                     name: "the Pack",
@@ -938,7 +1042,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Aspect of the Pack ability by 15 yards."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43355/glyph-of-the-pack"
                 }
             ],
         },
@@ -950,7 +1055,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of Arcane Barrage by 20%."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45738/glyph-of-arcane-barrage"
                 },
                 {
                     name: "Arcane Blast",
@@ -958,7 +1064,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage from your Arcane Blast buff by 3%."
                     ],
-                    level: 64
+                    level: 64,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=44955/glyph-of-arcane-blast"
                 },
                 {
                     name: "Arcane Explosion",
@@ -966,7 +1073,8 @@ export const glyphs = {
                     description: [
                         "Reduces mana cost of Arcane Explosion by 10%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42734/glyph-of-arcane-explosion"
                 },
                 {
                     name: "Arcane Missiles",
@@ -974,7 +1082,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike damage bonus of Arcane Missiles by 25%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42735/glyph-of-arcane-missiles"
                 },
                 {
                     name: "Arcane Power",
@@ -982,7 +1091,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Arcane Power by 3 sec."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42736/glyph-of-arcane-power"
                 },
                 {
                     name: "Blink",
@@ -990,7 +1100,8 @@ export const glyphs = {
                     description: [
                         "Increases the distance you travel with the Blink spell by 5 yards."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42737/glyph-of-blink"
                 },
                 {
                     name: "Deep Freeze",
@@ -998,7 +1109,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of Deep Freeze by 10 yards."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45736/glyph-of-deep-freeze"
                 },
                 {
                     name: "Eternal Water",
@@ -1006,7 +1118,8 @@ export const glyphs = {
                     description: [
                         "Your Summon Water Elemental now lasts indefinitely, but your Water Elemental can no longer cast Freeze."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=50045/glyph-of-eternal-water"
                 },
                 {
                     name: "Evocation",
@@ -1014,7 +1127,8 @@ export const glyphs = {
                     description: [
                         "Your Evocation ability also causes you to regain 60% of your health over its duration."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42738/glyph-of-evocation"
                 },
                 {
                     name: "Fire Blast",
@@ -1022,7 +1136,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike chance of Fire Blast by 50% when the target is stunned or incapacitated."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42740/glyph-of-fire-blast"
                 },
                 {
                     name: "Fireball",
@@ -1030,7 +1145,8 @@ export const glyphs = {
                     description: [
                         "Reduces the casting time of your Fireball spell by 0.15 sec, but removes the damage over time effect."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42739/glyph-of-fireball"
                 },
                 {
                     name: "Frost Nova",
@@ -1038,7 +1154,8 @@ export const glyphs = {
                     description: [
                         "Your Frost Nova targets can take an additional 20% damage before the Frost Nova effect automatically breaks."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42741/glyph-of-frost-nova"
                 },
                 {
                     name: "Frostbolt",
@@ -1046,7 +1163,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage dealt by Frostbolt by 5%, but removes the slowing effect."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42742/glyph-of-frostbolt"
                 },
                 {
                     name: "Frostfire",
@@ -1054,7 +1172,8 @@ export const glyphs = {
                     description: [
                         "Increases the initial damage dealt by Frostfire Bolt by 2% and its critical strike chance by 2%."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=44684/glyph-of-frostfire"
                 },
                 {
                     name: "Ice Armor",
@@ -1062,7 +1181,8 @@ export const glyphs = {
                     description: [
                         "Your Ice Armor and Frost Armor spells grant an additional 50% armor and resistance."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42743/glyph-of-ice-armor"
                 },
                 {
                     name: "Ice Barrier",
@@ -1070,7 +1190,8 @@ export const glyphs = {
                     description: [
                         "Increases the amount of damage absorbed by your Ice Barrier by 30%."
                     ],
-                    level: 46
+                    level: 46,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45740/glyph-of-ice-barrier"
                 },
                 {
                     name: "Ice Block",
@@ -1078,7 +1199,8 @@ export const glyphs = {
                     description: [
                         "Your Frost Nova cooldown is now reset every time you use Ice Block."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42744/glyph-of-ice-block"
                 },
                 {
                     name: "Ice Lance",
@@ -1086,7 +1208,8 @@ export const glyphs = {
                     description: [
                         "Your Ice Lance now causes 4 times damage against frozen targets higher level than you instead of triple damage."
                     ],
-                    level: 66
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42745/glyph-of-ice-lance"
                 },
                 {
                     name: "Icy Veins",
@@ -1094,7 +1217,8 @@ export const glyphs = {
                     description: [
                         "Your Icy Veins ability also removes all movement slowing and cast time slowing effects."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42746/glyph-of-icy-veins"
                 },
                 {
                     name: "Invisibility",
@@ -1102,7 +1226,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of the Invisibility effect by 10 sec."
                     ],
-                    level: 68
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42748/glyph-of-invisibility"
                 },
                 {
                     name: "Living Bomb",
@@ -1110,7 +1235,8 @@ export const glyphs = {
                     description: [
                         "The periodic damage from your Living Bomb can now be critical strikes."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45737/glyph-of-living-bomb"
                 },
                 {
                     name: "Mage Armor",
@@ -1118,7 +1244,8 @@ export const glyphs = {
                     description: [
                         "Your Mage Armor spell grants an additional 20% mana regeneration while casting."
                     ],
-                    level: 34
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42749/glyph-of-mage-armor"
                 },
                 {
                     name: "Mana Gem",
@@ -1126,7 +1253,8 @@ export const glyphs = {
                     description: [
                         "Increases the mana received from using a mana gem by 40%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42750/glyph-of-mana-gem"
                 },
                 {
                     name: "Mirror Image",
@@ -1134,7 +1262,8 @@ export const glyphs = {
                     description: [
                         "Your Mirror Image spell now creates a 4th copy."
                     ],
-                    level: 80
+                    level: 80,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45739/glyph-of-mirror-image"
                 },
                 {
                     name: "Molten Armor",
@@ -1142,7 +1271,8 @@ export const glyphs = {
                     description: [
                         "Your Molten Armor grants an additional 20% of your spirit as critical strike rating."
                     ],
-                    level: 62
+                    level: 62,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42751/glyph-of-molten-armor"
                 },
                 {
                     name: "Polymorph",
@@ -1150,7 +1280,8 @@ export const glyphs = {
                     description: [
                         "Your Polymorph spell also removes all damage over time effects from the target."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42752/glyph-of-polymorph"
                 },
                 {
                     name: "Remove Curse",
@@ -1158,7 +1289,8 @@ export const glyphs = {
                     description: [
                         "Your Remove Curse spell also makes the target immune to all curses for 4 sec."
                     ],
-                    level: 18
+                    level: 18,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42753/glyph-of-remove-curse"
                 },
                 {
                     name: "Scorch",
@@ -1166,7 +1298,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Scorch spell by 20%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42747/glyph-of-scorch"
                 },
                 {
                     name: "Water Elemental",
@@ -1174,7 +1307,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Summon Water Elemental spell by 30 sec."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42754/glyph-of-water-elemental"
                 }
             ],
             minor: [
@@ -1184,7 +1318,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Arcane Intellect and Arcane Brilliance spells by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43339/glyph-of-arcane-intellect"
                 },
                 {
                     name: "Blast Wave",
@@ -1192,7 +1327,8 @@ export const glyphs = {
                     description: [
                         "The mana cost of your Blast Wave spell is reduced by 15%, but it no longer knocks enemies back."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=44920/glyph-of-blast-wave"
                 },
                 {
                     name: "Fire Ward",
@@ -1200,7 +1336,8 @@ export const glyphs = {
                     description: [
                         "You have an additional 5% chance to reflect Fire spells while your Fire Ward is active."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43357/glyph-of-fire-ward"
                 },
                 {
                     name: "Frost Armor",
@@ -1208,7 +1345,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Frost Armor and Ice Armor spells by 30 min."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43359/glyph-of-frost-armor"
                 },
                 {
                     name: "Frost Ward",
@@ -1216,7 +1354,8 @@ export const glyphs = {
                     description: [
                         "You have an additional 5% chance to reflect Frost spells while your Frost Ward is active."
                     ],
-                    level: 22
+                    level: 22,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43360/glyph-of-frost-ward"
                 },
                 {
                     name: "Slow Fall",
@@ -1224,7 +1363,8 @@ export const glyphs = {
                     description: [
                         "Your Slow Fall spell no longer requires a reagent."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43364/glyph-of-slow-fall"
                 },
                 {
                     name: "the Penguin",
@@ -1232,7 +1372,8 @@ export const glyphs = {
                     description: [
                         "Your Polymorph: Sheep spell polymorphs the target into a penguin instead."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43361/glyph-of-the-penguin"
                 }
             ],
         },
@@ -1244,7 +1385,8 @@ export const glyphs = {
                     description: [
                         "Your Avenger's Shield hits 2 fewer targets, but for 100% more damage."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41101/glyph-of-avengers-shield"
                 },
                 {
                     name: "Avenging Wrath",
@@ -1252,7 +1394,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Hammer of Wrath spell by 50% while Avenging Wrath is active."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41107/glyph-of-avenging-wrath"
                 },
                 {
                     name: "Beacon of Light",
@@ -1260,7 +1403,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Beacon of Light by 30 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45741/glyph-of-beacon-of-light"
                 },
                 {
                     name: "Cleansing",
@@ -1268,7 +1412,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Cleanse and Purify spells by 20%."
                     ],
-                    level: 35
+                    level: 35,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41104/glyph-of-cleansing"
                 },
                 {
                     name: "Consecration",
@@ -1276,7 +1421,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration and cooldown of Consecration by 2 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41099/glyph-of-consecration"
                 },
                 {
                     name: "Crusader Strike",
@@ -1284,7 +1430,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Crusader Strike ability by 20%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41098/glyph-of-crusader-strike"
                 },
                 {
                     name: "Divine Plea",
@@ -1292,7 +1439,8 @@ export const glyphs = {
                     description: [
                         "While Divine Plea is active, you take 3% reduced damage from all sources."
                     ],
-                    level: 71
+                    level: 71,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45745/glyph-of-divine-plea"
                 },
                 {
                     name: "Divine Storm",
@@ -1300,7 +1448,8 @@ export const glyphs = {
                     description: [
                         "Your Divine Storm now heals for an additional 15% of the damage it causes."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45743/glyph-of-divine-storm"
                 },
                 {
                     name: "Divinity",
@@ -1308,7 +1457,8 @@ export const glyphs = {
                     description: [
                         "Your Lay on Hands grants twice as much mana as normal and also grants you as much mana as it grants your target."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41108/glyph-of-divinity"
                 },
                 {
                     name: "Exorcism",
@@ -1316,7 +1466,8 @@ export const glyphs = {
                     description: [
                         "Increases damage done by Exorcism by 20%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41103/glyph-of-exorcism"
                 },
                 {
                     name: "Flash of Light",
@@ -1324,7 +1475,8 @@ export const glyphs = {
                     description: [
                         "Your Flash of Light has an additional 5% critical strike chance."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41105/glyph-of-flash-of-light"
                 },
                 {
                     name: "Hammer of Justice",
@@ -1332,7 +1484,8 @@ export const glyphs = {
                     description: [
                         "Increases your Hammer of Justice range by 5 yards."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41095/glyph-of-hammer-of-justice"
                 },
                 {
                     name: "Hammer of the Righteous",
@@ -1340,7 +1493,8 @@ export const glyphs = {
                     description: [
                         "Your Hammer of the Righteous hits 1 additional target."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45742/glyph-of-hammer-of-the-righteous"
                 },
                 {
                     name: "Hammer of Wrath",
@@ -1348,7 +1502,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of Hammer of Wrath by 100%."
                     ],
-                    level: 44
+                    level: 44,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41097/glyph-of-hammer-of-wrath"
                 },
                 {
                     name: "Holy Light",
@@ -1356,7 +1511,8 @@ export const glyphs = {
                     description: [
                         "Your Holy Light grants 10% of its heal amount to up to 5 friendly targets within 8 yards of the initial target."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41106/glyph-of-holy-light"
                 },
                 {
                     name: "Holy Shock",
@@ -1364,7 +1520,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of Holy Shock by 1 sec."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45746/glyph-of-holy-shock"
                 },
                 {
                     name: "Holy Wrath",
@@ -1372,7 +1529,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Holy Wrath spell by 15 sec."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43867/glyph-of-holy-wrath"
                 },
                 {
                     name: "Judgement",
@@ -1380,7 +1538,8 @@ export const glyphs = {
                     description: [
                         "Your Judgements deal 10% more damage."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41092/glyph-of-judgement"
                 },
                 {
                     name: "Reckoning",
@@ -1388,7 +1547,8 @@ export const glyphs = {
                     description: [
                         "Your Hand of Reckoning spell no longer taunts the target and can deal damage to untauntable targets."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=204385/glyph-of-reckoning"
                 },
                 {
                     name: "Righteous Defense",
@@ -1396,7 +1556,8 @@ export const glyphs = {
                     description: [
                         "Increases the chance for your Righteous Defense and Hand of Reckoning abilities to work successfully by 8% on each target."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41100/glyph-of-righteous-defense"
                 },
                 {
                     name: "Salvation",
@@ -1404,7 +1565,8 @@ export const glyphs = {
                     description: [
                         "When you cast Hand of Salvation on yourself, it also reduces damage taken by 20%."
                     ],
-                    level: 26
+                    level: 26,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45747/glyph-of-salvation"
                 },
                 {
                     name: "Seal of Command",
@@ -1412,7 +1574,8 @@ export const glyphs = {
                     description: [
                         "You gain 8% of your base mana each time you use a Judgement with Seal of Command active."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41094/glyph-of-seal-of-command"
                 },
                 {
                     name: "Seal of Light",
@@ -1420,7 +1583,8 @@ export const glyphs = {
                     description: [
                         "While Seal of Light is active, the effect of your healing spells is increased by 5%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41110/glyph-of-seal-of-light"
                 },
                 {
                     name: "Seal of Righteousness",
@@ -1428,7 +1592,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Seal of Righteousness by 10%."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43868/glyph-of-seal-of-righteousness"
                 },
                 {
                     name: "Seal of Vengeance",
@@ -1436,7 +1601,8 @@ export const glyphs = {
                     description: [
                         "Your Seal of Vengeance or Seal of Corruption also grants 10 expertise while active."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43869/glyph-of-seal-of-vengeance"
                 },
                 {
                     name: "Seal of Wisdom",
@@ -1444,7 +1610,8 @@ export const glyphs = {
                     description: [
                         "While Seal of Wisdom is active, the cost of your healing spells is reduced by 5%."
                     ],
-                    level: 38
+                    level: 38,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41109/glyph-of-seal-of-wisdom"
                 },
                 {
                     name: "Shield of Righteousness",
@@ -1452,7 +1619,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of Shield of Righteousness by 80%."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45744/glyph-of-shield-of-righteousness"
                 },
                 {
                     name: "Spiritual Attunement",
@@ -1460,7 +1628,8 @@ export const glyphs = {
                     description: [
                         "Increases the amount of mana gained from your Spiritual Attunement spell by an additional 2%."
                     ],
-                    level: 18
+                    level: 18,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41096/glyph-of-spiritual-attunement"
                 },
                 {
                     name: "Turn Evil",
@@ -1468,7 +1637,8 @@ export const glyphs = {
                     description: [
                         "Reduces the casting time of your Turn Evil spell by 100%, but increases the cooldown by 8 sec."
                     ],
-                    level: 24
+                    level: 24,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41102/glyph-of-turn-evil"
                 }
             ],
             minor: [
@@ -1478,7 +1648,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Blessing of Kings and Greater Blessing of Kings spells by 50%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43365/glyph-of-blessing-of-kings"
                 },
                 {
                     name: "Blessing of Might",
@@ -1486,7 +1657,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Blessing of Might spell by 20 min when cast on yourself."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43340/glyph-of-blessing-of-might"
                 },
                 {
                     name: "Blessing of Wisdom",
@@ -1494,7 +1666,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Blessing of Wisdom spell by 20 min when cast on yourself."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43366/glyph-of-blessing-of-wisdom"
                 },
                 {
                     name: "Lay on Hands",
@@ -1502,7 +1675,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Lay on Hands spell by 5 min."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43367/glyph-of-lay-on-hands"
                 },
                 {
                     name: "Sense Undead",
@@ -1510,7 +1684,8 @@ export const glyphs = {
                     description: [
                         "Damage against Undead increased by 1% while your Sense Undead ability is active."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43368/glyph-of-sense-undead"
                 },
                 {
                     name: "the Wise",
@@ -1518,7 +1693,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Seal of Wisdom spell by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43369/glyph-of-the-wise"
                 }
             ],
         },
@@ -1530,7 +1706,8 @@ export const glyphs = {
                     description: [
                         "Your Circle of Healing spell heals 1 additional target."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42396/glyph-of-circle-of-healing"
                 },
                 {
                     name: "Dispel Magic",
@@ -1538,7 +1715,8 @@ export const glyphs = {
                     description: [
                         "Your Dispel Magic spell also heals your target for 3% of maximum health."
                     ],
-                    level: 18
+                    level: 18,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42397/glyph-of-dispel-magic"
                 },
                 {
                     name: "Dispersion",
@@ -1546,7 +1724,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Dispersion by 45 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45753/glyph-of-dispersion"
                 },
                 {
                     name: "Fade",
@@ -1554,7 +1733,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Fade spell by 9 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42398/glyph-of-fade"
                 },
                 {
                     name: "Fear Ward",
@@ -1562,7 +1742,8 @@ export const glyphs = {
                     description: [
                         "Reduces cooldown and duration of Fear Ward by 60 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42399/glyph-of-fear-ward"
                 },
                 {
                     name: "Flash Heal",
@@ -1570,7 +1751,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Flash Heal by 10%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42400/glyph-of-flash-heal"
                 },
                 {
                     name: "Guardian Spirit",
@@ -1578,7 +1760,8 @@ export const glyphs = {
                     description: [
                         "If your Guardian Spirit lasts its entire duration without being triggered, the cooldown is reset to 1 min."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45755/glyph-of-guardian-spirit"
                 },
                 {
                     name: "Holy Nova",
@@ -1586,7 +1769,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage and healing of your Holy Nova spell by an additional 20%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42401/glyph-of-holy-nova"
                 },
                 {
                     name: "Hymn of Hope",
@@ -1594,7 +1778,8 @@ export const glyphs = {
                     description: [
                         "Your Hymn of Hope lasts an additional 2 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45758/glyph-of-hymn-of-hope"
                 },
                 {
                     name: "Inner Fire",
@@ -1602,7 +1787,8 @@ export const glyphs = {
                     description: [
                         "Increases the armor from your Inner Fire spell by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42402/glyph-of-inner-fire"
                 },
                 {
                     name: "Lightwell",
@@ -1610,7 +1796,8 @@ export const glyphs = {
                     description: [
                         "Increases the amount healed by your Lightwell by 20%"
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42403/glyph-of-lightwell"
                 },
                 {
                     name: "Mass Dispel",
@@ -1618,7 +1805,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of Mass Dispel by 35%."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42404/glyph-of-mass-dispel"
                 },
                 {
                     name: "Mind Control",
@@ -1626,7 +1814,8 @@ export const glyphs = {
                     description: [
                         "Reduces the chance targets will resist or break your Mind Control spell by an additional 17%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42405/glyph-of-mind-control"
                 },
                 {
                     name: "Mind Flay",
@@ -1634,7 +1823,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by your Mind Flay spell by 10% when your target is afflicted with Shadow Word: Pain."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42415/glyph-of-mind-flay"
                 },
                 {
                     name: "Mind Sear",
@@ -1642,7 +1832,8 @@ export const glyphs = {
                     description: [
                         "Increases the radius of effect on Mind Sear by 5 yards."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45757/glyph-of-mind-sear"
                 },
                 {
                     name: "Pain Suppression",
@@ -1650,7 +1841,8 @@ export const glyphs = {
                     description: [
                         "Allows Pain Suppression to be cast while stunned."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45760/glyph-of-pain-suppression"
                 },
                 {
                     name: "Penance",
@@ -1658,7 +1850,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of Penance by 2 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45756/glyph-of-penance"
                 },
                 {
                     name: "Power Word: Shield",
@@ -1666,7 +1859,8 @@ export const glyphs = {
                     description: [
                         "Your Power Word: Shield also heals the target for 20% of the absorption amount."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42408/glyph-of-power-word-shield"
                 },
                 {
                     name: "Prayer of Healing",
@@ -1674,7 +1868,8 @@ export const glyphs = {
                     description: [
                         "Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42409/glyph-of-prayer-of-healing"
                 },
                 {
                     name: "Psychic Scream",
@@ -1682,7 +1877,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Psychic Scream by 2 sec. and increases its cooldown by 8 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42410/glyph-of-psychic-scream"
                 },
                 {
                     name: "Renew",
@@ -1690,7 +1886,8 @@ export const glyphs = {
                     description: [
                         "Reduces the duration of your Renew by 3 sec. but increases the amount healed each tick by 25%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42411/glyph-of-renew"
                 },
                 {
                     name: "Scourge Imprisonment",
@@ -1698,7 +1895,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cast time of your Shackle Undead by 1.0 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42412/glyph-of-scourge-imprisonment"
                 },
                 {
                     name: "Shadow",
@@ -1706,7 +1904,8 @@ export const glyphs = {
                     description: [
                         "While in Shadowform, your non-periodic spell critical strikes increase your spell power by 30% of your Spirit for 10 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42407/glyph-of-shadow"
                 },
                 {
                     name: "Shadow Word: Death",
@@ -1714,7 +1913,8 @@ export const glyphs = {
                     description: [
                         "Targets below 35% health take an additional 10% damage from your Shadow Word: Death spell."
                     ],
-                    level: 62
+                    level: 62,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42414/glyph-of-shadow-word-death"
                 },
                 {
                     name: "Shadow Word: Pain",
@@ -1722,7 +1922,8 @@ export const glyphs = {
                     description: [
                         "The periodic damage ticks of your Shadow Word: Pain spell restore 1% of your base mana."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42406/glyph-of-shadow-word-pain"
                 },
                 {
                     name: "Smite",
@@ -1730,7 +1931,8 @@ export const glyphs = {
                     description: [
                         "Your Smite spell inflicts an additional 20% damage against targets afflicted by Holy Fire."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42416/glyph-of-smite"
                 },
                 {
                     name: "Spirit of Redemption",
@@ -1738,7 +1940,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Spirit of Redemption by 6 sec."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42417/glyph-of-spirit-of-redemption"
                 }
             ],
             minor: [
@@ -1748,7 +1951,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Fade spell by 30%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43342/glyph-of-fading"
                 },
                 {
                     name: "Fortitude",
@@ -1756,7 +1960,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Power Word: Fortitude and Prayer of Fortitude spells by 50%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43371/glyph-of-fortitude"
                 },
                 {
                     name: "Levitate",
@@ -1764,7 +1969,8 @@ export const glyphs = {
                     description: [
                         "Your Levitate spell no longer requires a reagent."
                     ],
-                    level: 34
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43370/glyph-of-levitate"
                 },
                 {
                     name: "Shackle Undead",
@@ -1772,7 +1978,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Shackle Undead spell by 5 yards."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43373/glyph-of-shackle-undead"
                 },
                 {
                     name: "Shadow Protection",
@@ -1780,7 +1987,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Shadow Protection and Prayer of Shadow Protection spells by 10 min."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43372/glyph-of-shadow-protection"
                 },
                 {
                     name: "Shadowfiend",
@@ -1788,7 +1996,8 @@ export const glyphs = {
                     description: [
                         "Receive 5% of your maximum mana if your Shadowfiend dies from damage."
                     ],
-                    level: 66
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43374/glyph-of-shadowfiend"
                 }
             ],
         },
@@ -1800,7 +2009,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Adrenaline Rush by 5 sec."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42954/glyph-of-adrenaline-rush"
                 },
                 {
                     name: "Ambush",
@@ -1808,7 +2018,8 @@ export const glyphs = {
                     description: [
                         "Increases the range on Ambush by 5 yards."
                     ],
-                    level: 18
+                    level: 18,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42955/glyph-of-ambush"
                 },
                 {
                     name: "Backstab",
@@ -1816,7 +2027,8 @@ export const glyphs = {
                     description: [
                         "Your Backstab increases the duration of your Rupture effect on the target by 2 sec, up to a maximum of 6 additional sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42956/glyph-of-backstab"
                 },
                 {
                     name: "Blade Flurry",
@@ -1824,7 +2036,8 @@ export const glyphs = {
                     description: [
                         "Reduces the energy cost of Blade Flurry by 100%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42957/glyph-of-blade-flurry"
                 },
                 {
                     name: "Cloak of Shadows",
@@ -1832,7 +2045,8 @@ export const glyphs = {
                     description: [
                         "While Cloak of Shadows is active, you take 40% less physical damage."
                     ],
-                    level: 66
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45769/glyph-of-cloak-of-shadows"
                 },
                 {
                     name: "Crippling Poison",
@@ -1840,7 +2054,8 @@ export const glyphs = {
                     description: [
                         "Increases the chance to inflict your target with Crippling Poison by an additional 20%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42958/glyph-of-crippling-poison"
                 },
                 {
                     name: "Deadly Throw",
@@ -1848,7 +2063,8 @@ export const glyphs = {
                     description: [
                         "Increases the slowing effect on Deadly Throw by 20%."
                     ],
-                    level: 64
+                    level: 64,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42959/glyph-of-deadly-throw"
                 },
                 {
                     name: "Evasion",
@@ -1856,7 +2072,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Evasion by 5 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42960/glyph-of-evasion"
                 },
                 {
                     name: "Eviscerate",
@@ -1864,7 +2081,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike chance of Eviscerate by 10%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42961/glyph-of-eviscerate"
                 },
                 {
                     name: "Expose Armor",
@@ -1872,7 +2090,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Expose Armor by 12 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42962/glyph-of-expose-armor"
                 },
                 {
                     name: "Fan of Knives",
@@ -1880,7 +2099,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Fan of Knives by 20%."
                     ],
-                    level: 80
+                    level: 80,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45766/glyph-of-fan-of-knives"
                 },
                 {
                     name: "Feint",
@@ -1888,7 +2108,8 @@ export const glyphs = {
                     description: [
                         "Reduces the energy cost of Feint by 20."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42963/glyph-of-feint"
                 },
                 {
                     name: "Garrote",
@@ -1896,7 +2117,8 @@ export const glyphs = {
                     description: [
                         "Reduces the duration of your Garrote ability by 3 sec and increases the total damage it deals by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42964/glyph-of-garrote"
                 },
                 {
                     name: "Ghostly Strike",
@@ -1904,7 +2126,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage dealt by Ghostly Strike by 40% and the duration of its effect by 4 sec, but increases its cooldown by 10 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42965/glyph-of-ghostly-strike"
                 },
                 {
                     name: "Gouge",
@@ -1912,7 +2135,8 @@ export const glyphs = {
                     description: [
                         "Reduces the energy cost of Gouge by 15."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42966/glyph-of-gouge"
                 },
                 {
                     name: "Hemorrhage",
@@ -1920,7 +2144,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage bonus against targets afflicted by Hemorrhage by 40%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42967/glyph-of-hemorrhage"
                 },
                 {
                     name: "Hunger For Blood",
@@ -1928,7 +2153,8 @@ export const glyphs = {
                     description: [
                         "Increases the bonus damage from Hunger For Blood by 3%."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45761/glyph-of-hunger-for-blood"
                 },
                 {
                     name: "Killing Spree",
@@ -1936,7 +2162,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Killing Spree by 45 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45762/glyph-of-killing-spree"
                 },
                 {
                     name: "Mutilate",
@@ -1944,7 +2171,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cost of Mutilate by 5 energy."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45768/glyph-of-mutilate"
                 },
                 {
                     name: "Preparation",
@@ -1952,7 +2180,8 @@ export const glyphs = {
                     description: [
                         "Your Preparation ability also instantly resets the cooldown of Blade Flurry, Dismantle, and Kick."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42968/glyph-of-preparation"
                 },
                 {
                     name: "Rupture",
@@ -1960,7 +2189,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Rupture by 4 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42969/glyph-of-rupture"
                 },
                 {
                     name: "Sap",
@@ -1968,7 +2198,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Sap by 20 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42970/glyph-of-sap"
                 },
                 {
                     name: "Shadow Dance",
@@ -1976,7 +2207,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Shadow Dance by 2 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45764/glyph-of-shadow-dance"
                 },
                 {
                     name: "Sinister Strike",
@@ -1984,7 +2216,8 @@ export const glyphs = {
                     description: [
                         "Your Sinister Strike critical strikes have a 50% chance to add an additional combo point."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42972/glyph-of-sinister-strike"
                 },
                 {
                     name: "Slice and Dice",
@@ -1992,7 +2225,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Slice and Dice by 3 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42973/glyph-of-slice-and-dice"
                 },
                 {
                     name: "Sprint",
@@ -2000,7 +2234,8 @@ export const glyphs = {
                     description: [
                         "Increases the movement speed of your Sprint ability by an additional 30%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42974/glyph-of-sprint"
                 },
                 {
                     name: "Tricks of the Trade",
@@ -2008,7 +2243,8 @@ export const glyphs = {
                     description: [
                         "The bonus damage and threat redirection granted by your Tricks of the Trade ability lasts an additional 4 sec."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45767/glyph-of-tricks-of-the-trade"
                 },
                 {
                     name: "Vigor",
@@ -2016,7 +2252,8 @@ export const glyphs = {
                     description: [
                         "Vigor grants an additional 10 maximum energy."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42971/glyph-of-vigor"
                 }
             ],
             minor: [
@@ -2026,7 +2263,8 @@ export const glyphs = {
                     description: [
                         "Enables you to walk on water while your Sprint ability is active."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43379/glyph-of-blurred-speed"
                 },
                 {
                     name: "Distract",
@@ -2034,7 +2272,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Distract ability by 5 yards."
                     ],
-                    level: 22
+                    level: 22,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43376/glyph-of-distract"
                 },
                 {
                     name: "Pick Lock",
@@ -2042,7 +2281,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cast time of your Pick Lock ability by 100%."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43377/glyph-of-pick-lock"
                 },
                 {
                     name: "Pick Pocket",
@@ -2050,7 +2290,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Pick Pocket ability by 5 yards."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43343/glyph-of-pick-pocket"
                 },
                 {
                     name: "Safe Fall",
@@ -2058,7 +2299,8 @@ export const glyphs = {
                     description: [
                         "Increases the distance your Safe Fall ability allows you to fall without taking damage."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43378/glyph-of-safe-fall"
                 },
                 {
                     name: "Vanish",
@@ -2066,7 +2308,8 @@ export const glyphs = {
                     description: [
                         "Increases your movement speed by 30% while the Vanish effect is active."
                     ],
-                    level: 22
+                    level: 22,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43380/glyph-of-vanish"
                 }
             ],
         },
@@ -2078,7 +2321,8 @@ export const glyphs = {
                     description: [
                         "Your Chain Heal heals 1 additional target."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41517/glyph-of-chain-heal"
                 },
                 {
                     name: "Chain Lightning",
@@ -2086,7 +2330,8 @@ export const glyphs = {
                     description: [
                         "Your Chain Lightning strikes 1 additional target."
                     ],
-                    level: 32
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41518/glyph-of-chain-lightning"
                 },
                 {
                     name: "Earth Shield",
@@ -2094,7 +2339,8 @@ export const glyphs = {
                     description: [
                         "Increases the amount healed by your Earth Shield by 20%."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45775/glyph-of-earth-shield"
                 },
                 {
                     name: "Earthliving Weapon",
@@ -2102,7 +2348,8 @@ export const glyphs = {
                     description: [
                         "Increases the chance for your Earthliving Weapon to trigger by 5%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41527/glyph-of-earthliving-weapon"
                 },
                 {
                     name: "Elemental Mastery",
@@ -2110,7 +2357,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Elemental Mastery ability by 30 sec."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41552/glyph-of-elemental-mastery"
                 },
                 {
                     name: "Feral Spirit",
@@ -2118,7 +2366,8 @@ export const glyphs = {
                     description: [
                         "Your spirit wolves gain an additional 30% of your attack power."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45771/glyph-of-feral-spirit"
                 },
                 {
                     name: "Fire Elemental Totem",
@@ -2126,7 +2375,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Fire Elemental Totem by 5 min."
                     ],
-                    level: 68
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41529/glyph-of-fire-elemental-totem"
                 },
                 {
                     name: "Fire Nova",
@@ -2134,7 +2384,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Fire Nova spell by 3 seconds."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41530/glyph-of-fire-nova"
                 },
                 {
                     name: "Flame Shock",
@@ -2142,7 +2393,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike damage bonus of your Flame Shock damage by 60%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41531/glyph-of-flame-shock"
                 },
                 {
                     name: "Flametongue Weapon",
@@ -2150,7 +2402,8 @@ export const glyphs = {
                     description: [
                         "Increases your spell critical strike chance by 2% on each of your weapons with Flametongue Weapon active."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41532/glyph-of-flametongue-weapon"
                 },
                 {
                     name: "Frost Shock",
@@ -2158,7 +2411,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Frost Shock by 2 sec."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41547/glyph-of-frost-shock"
                 },
                 {
                     name: "Healing Stream Totem",
@@ -2166,7 +2420,8 @@ export const glyphs = {
                     description: [
                         "Your Healing Stream Totem heals for an additional 20%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41533/glyph-of-healing-stream-totem"
                 },
                 {
                     name: "Healing Wave",
@@ -2174,7 +2429,8 @@ export const glyphs = {
                     description: [
                         "Your Healing Wave also heals you for 20% of the healing effect when you heal someone else."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41534/glyph-of-healing-wave"
                 },
                 {
                     name: "Hex",
@@ -2182,7 +2438,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage your Hex target can take before the Hex effect is removed by 20%."
                     ],
-                    level: 80
+                    level: 80,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45777/glyph-of-hex"
                 },
                 {
                     name: "Lava",
@@ -2190,7 +2447,8 @@ export const glyphs = {
                     description: [
                         "Your Lava Burst spell gains an additional 10% of your spellpower."
                     ],
-                    level: 66
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41524/glyph-of-lava"
                 },
                 {
                     name: "Lava Lash",
@@ -2198,7 +2456,8 @@ export const glyphs = {
                     description: [
                         "Damage on your Lava Lash is increased by an additional 10% if your weapon is enchanted with Flametongue."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41540/glyph-of-lava-lash"
                 },
                 {
                     name: "Lesser Healing Wave",
@@ -2206,7 +2465,8 @@ export const glyphs = {
                     description: [
                         "Your Lesser Healing Wave heals for 20% more if the target is also affected by Earth Shield."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41535/glyph-of-lesser-healing-wave"
                 },
                 {
                     name: "Lightning Bolt",
@@ -2214,7 +2474,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage dealt by Lightning Bolt by 4%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41536/glyph-of-lightning-bolt"
                 },
                 {
                     name: "Lightning Shield",
@@ -2222,7 +2483,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage from Lightning Shield by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41537/glyph-of-lightning-shield"
                 },
                 {
                     name: "Mana Tide",
@@ -2230,7 +2492,8 @@ export const glyphs = {
                     description: [
                         "Your Mana Tide Totem grants an additional 1% of each target's maximum mana each time it pulses."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41538/glyph-of-mana-tide-totem"
                 },
                 {
                     name: "Riptide",
@@ -2238,7 +2501,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Riptide by 6 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45772/glyph-of-riptide"
                 },
                 {
                     name: "Shocking",
@@ -2246,7 +2510,8 @@ export const glyphs = {
                     description: [
                         "Reduces your global cooldown when casting your shock spells by 0.5 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41526/glyph-of-shocking"
                 },
                 {
                     name: "Stoneclaw Totem",
@@ -2254,7 +2519,8 @@ export const glyphs = {
                     description: [
                         "Your Stoneclaw Totem also places a damage absorb shield on you, equal to 4 times the strength of the shield it places on your totems."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45778/glyph-of-stoneclaw-totem"
                 },
                 {
                     name: "Stormstrike",
@@ -2262,7 +2528,8 @@ export const glyphs = {
                     description: [
                         "Increases the Nature damage bonus from your Stormstrike ability by an additional 8%."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41539/glyph-of-stormstrike"
                 },
                 {
                     name: "Thunder",
@@ -2270,7 +2537,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Thunderstorm by 10 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45770/glyph-of-thunder"
                 },
                 {
                     name: "Totem of Wrath",
@@ -2278,7 +2546,8 @@ export const glyphs = {
                     description: [
                         "When you cast Totem of Wrath, you gain 30% of the totem's bonus spell power for 5 min."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45776/glyph-of-totem-of-wrath"
                 },
                 {
                     name: "Water Mastery",
@@ -2286,7 +2555,8 @@ export const glyphs = {
                     description: [
                         "Increases the passive mana regeneration of your Water Shield spell by 30%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41541/glyph-of-water-mastery"
                 },
                 {
                     name: "Windfury Weapon",
@@ -2294,7 +2564,8 @@ export const glyphs = {
                     description: [
                         "Increases the chance per swing for Windfury Weapon to trigger by 2%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=41542/glyph-of-windfury-weapon"
                 }
             ],
             minor: [
@@ -2304,7 +2575,8 @@ export const glyphs = {
                     description: [
                         "Cooldown of your Astral Recall spell reduced by 7.5 min."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43381/glyph-of-astral-recall"
                 },
                 {
                     name: "Ghost Wolf",
@@ -2312,7 +2584,8 @@ export const glyphs = {
                     description: [
                         "Your Ghost Wolf form regenerates an additional 1% of your maximum health every 5 sec."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43725/glyph-of-ghost-wolf"
                 },
                 {
                     name: "Renewed Life",
@@ -2320,7 +2593,8 @@ export const glyphs = {
                     description: [
                         "Your Reincarnation spell no longer requires a reagent."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43385/glyph-of-renewed-life"
                 },
                 {
                     name: "Thunderstorm",
@@ -2328,7 +2602,8 @@ export const glyphs = {
                     description: [
                         "Increases the mana you receive from your Thunderstorm spell by 2%, but it no longer knocks enemies back."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=44923/glyph-of-thunderstorm"
                 },
                 {
                     name: "Water Breathing",
@@ -2336,7 +2611,8 @@ export const glyphs = {
                     description: [
                         "Your Water Breathing spell no longer requires a reagent."
                     ],
-                    level: 22
+                    level: 22,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43344/glyph-of-water-breathing"
                 },
                 {
                     name: "Water Shield",
@@ -2344,7 +2620,8 @@ export const glyphs = {
                     description: [
                         "Increases the number of charges on your Water Shield spell by 1."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43386/glyph-of-water-shield"
                 },
                 {
                     name: "Water Walking",
@@ -2352,7 +2629,8 @@ export const glyphs = {
                     description: [
                         "Your Water Walking spell no longer requires a reagent."
                     ],
-                    level: 28
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43388/glyph-of-water-walking"
                 }
             ],
         },
@@ -2364,7 +2642,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Chaos Bolt by 2 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45781/glyph-of-chaos-bolt"
                 },
                 {
                     name: "Conflagrate",
@@ -2372,7 +2651,8 @@ export const glyphs = {
                     description: [
                         "Your Conflagrate spell no longer consumes your Immolate or Shadowflame spell from the target."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42454/glyph-of-conflagrate"
                 },
                 {
                     name: "Corruption",
@@ -2380,7 +2660,8 @@ export const glyphs = {
                     description: [
                         "Your Corruption spell has a 4% chance to cause you to enter a Shadow Trance state after damaging the opponent. The Shadow Trance state reduces the casting time of your next Shadow Bolt spell by 100%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42455/glyph-of-corruption"
                 },
                 {
                     name: "Curse of Agony",
@@ -2388,7 +2669,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Curse of Agony by 4 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42456/glyph-of-curse-of-agony"
                 },
                 {
                     name: "Death Coil",
@@ -2396,7 +2678,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Death Coil by 0.5 sec."
                     ],
-                    level: 42
+                    level: 42,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42457/glyph-of-death-coil"
                 },
                 {
                     name: "Demonic Circle",
@@ -2404,7 +2687,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Demonic Circle by 4 sec."
                     ],
-                    level: 80
+                    level: 80,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45782/glyph-of-demonic-circle"
                 },
                 {
                     name: "Fear",
@@ -2412,7 +2696,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage your Fear target can take before the Fear effect is removed by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42458/glyph-of-fear"
                 },
                 {
                     name: "Felguard",
@@ -2420,7 +2705,8 @@ export const glyphs = {
                     description: [
                         "Increases the Felguard's total attack power by 20%."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42459/glyph-of-felguard"
                 },
                 {
                     name: "Felhunter",
@@ -2428,7 +2714,8 @@ export const glyphs = {
                     description: [
                         "When your Felhunter uses Devour Magic, you will also be healed for that amount."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42460/glyph-of-felhunter"
                 },
                 {
                     name: "Haunt",
@@ -2436,7 +2723,8 @@ export const glyphs = {
                     description: [
                         "The bonus damage granted by your Haunt spell is increased by an additional 3%."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45779/glyph-of-haunt"
                 },
                 {
                     name: "Health Funnel",
@@ -2444,7 +2732,8 @@ export const glyphs = {
                     description: [
                         "Reduces the pushback suffered from damaging attacks while channeling your Health Funnel spell by 100%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42461/glyph-of-health-funnel"
                 },
                 {
                     name: "Healthstone",
@@ -2452,7 +2741,8 @@ export const glyphs = {
                     description: [
                         "You receive 30% more healing from using a healthstone."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42462/glyph-of-healthstone"
                 },
                 {
                     name: "Howl of Terror",
@@ -2460,7 +2750,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on your Howl of Terror spell by 8 sec."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42463/glyph-of-howl-of-terror"
                 },
                 {
                     name: "Immolate",
@@ -2468,7 +2759,8 @@ export const glyphs = {
                     description: [
                         "Increases the periodic damage of your Immolate by 10%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42464/glyph-of-immolate"
                 },
                 {
                     name: "Imp",
@@ -2476,7 +2768,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by your Imp's Firebolt spell by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42465/glyph-of-imp"
                 },
                 {
                     name: "Incinerate",
@@ -2484,7 +2777,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Incinerate by 5%."
                     ],
-                    level: 28
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42453/glyph-of-incinerate"
                 },
                 {
                     name: "Life Tap",
@@ -2492,7 +2786,8 @@ export const glyphs = {
                     description: [
                         "When you use Life Tap or Dark Pact, you gain 20% of your Spirit as spell power for 40 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45785/glyph-of-life-tap"
                 },
                 {
                     name: "Metamorphosis",
@@ -2500,7 +2795,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Metamorphosis by 6 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45780/glyph-of-metamorphosis"
                 },
                 {
                     name: "Quick Decay",
@@ -2508,7 +2804,8 @@ export const glyphs = {
                     description: [
                         "Your haste now reduces the time between periodic damage ticks of your Corruption spell."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=50077/glyph-of-quick-decay"
                 },
                 {
                     name: "Searing Pain",
@@ -2516,7 +2813,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike bonus of your Searing Pain by 20%."
                     ],
-                    level: 18
+                    level: 18,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42466/glyph-of-searing-pain"
                 },
                 {
                     name: "Shadow Bolt",
@@ -2524,7 +2822,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Shadow Bolt by 10%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42467/glyph-of-shadow-bolt"
                 },
                 {
                     name: "Shadowburn",
@@ -2532,7 +2831,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike chance of Shadowburn by 20% when the target is below 35% health."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42468/glyph-of-shadowburn"
                 },
                 {
                     name: "Shadowflame",
@@ -2540,7 +2840,8 @@ export const glyphs = {
                     description: [
                         "Your Shadowflame also applies a 70% movement speed slow on its victims."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45783/glyph-of-shadowflame"
                 },
                 {
                     name: "Siphon Life",
@@ -2548,7 +2849,8 @@ export const glyphs = {
                     description: [
                         "Increases the healing you receive from your Siphon Life talent by 25%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42469/glyph-of-siphon-life"
                 },
                 {
                     name: "Soul Link",
@@ -2556,7 +2858,8 @@ export const glyphs = {
                     description: [
                         "Increases the percentage of damage shared via your Soul Link by an additional 5%."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45789/glyph-of-soul-link"
                 },
                 {
                     name: "Soulstone",
@@ -2564,7 +2867,8 @@ export const glyphs = {
                     description: [
                         "Increases the amount of health you gain from resurrecting via a Soulstone by 300%."
                     ],
-                    level: 18
+                    level: 18,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42470/glyph-of-soulstone"
                 },
                 {
                     name: "Succubus",
@@ -2572,7 +2876,8 @@ export const glyphs = {
                     description: [
                         "Your Succubus's Seduction ability also removes all damage over time effects from the target."
                     ],
-                    level: 26
+                    level: 26,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42471/glyph-of-succubus"
                 },
                 {
                     name: "Unstable Affliction",
@@ -2580,7 +2885,8 @@ export const glyphs = {
                     description: [
                         "Decreases the casting time of your Unstable Affliction by 0.2 sec."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42472/glyph-of-unstable-affliction"
                 },
                 {
                     name: "Voidwalker",
@@ -2588,7 +2894,8 @@ export const glyphs = {
                     description: [
                         "Increases your Voidwalker's total Stamina by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=42473/glyph-of-voidwalker"
                 }
             ],
             minor: [
@@ -2598,7 +2905,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Curse of Exhaustion spell by 5 yards."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43392/glyph-of-curse-of-exhausion"
                 },
                 {
                     name: "Drain Soul",
@@ -2606,7 +2914,8 @@ export const glyphs = {
                     description: [
                         "Your Drain Soul ability occasionally creates an additional soul shard."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43390/glyph-of-drain-soul"
                 },
                 {
                     name: "Kilrogg",
@@ -2614,7 +2923,8 @@ export const glyphs = {
                     description: [
                         "Increases the movement speed of your Eye of Kilrogg by 50% and allows it to fly in areas where flying mounts are enabled."
                     ],
-                    level: 22
+                    level: 22,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43391/glyph-of-kilrogg"
                 },
                 {
                     name: "Souls",
@@ -2622,7 +2932,8 @@ export const glyphs = {
                     description: [
                         "Reduces the mana cost of your Ritual of Souls spell by 70%."
                     ],
-                    level: 68
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43394/glyph-of-souls"
                 },
                 {
                     name: "Enslave Demon",
@@ -2630,7 +2941,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cast time of your Enslave Demon spell by 50%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43393/glyph-of-enslave-demon"
                 },
                 {
                     name: "Unending Breath",
@@ -2638,7 +2950,8 @@ export const glyphs = {
                     description: [
                         "Increases the swim speed of targets affected by your Unending Breath spell by 20%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43389/glyph-of-unending-breath"
                 }
             ],
         },
@@ -2650,7 +2963,8 @@ export const glyphs = {
                     description: [
                         "Your Mocking Blow ability generates 100% additional threat."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43420/glyph-of-barbaric-insults"
                 },
                 {
                     name: "Bladestorm",
@@ -2658,7 +2972,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Bladestorm by 15 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45790/glyph-of-bladestorm"
                 },
                 {
                     name: "Blocking",
@@ -2666,7 +2981,8 @@ export const glyphs = {
                     description: [
                         "Increases your block value by 10% for 10 sec after using your Shield Slam ability."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43425/glyph-of-blocking"
                 },
                 {
                     name: "Bloodthirst",
@@ -2674,7 +2990,8 @@ export const glyphs = {
                     description: [
                         "Increases the healing you receive from your Bloodthirst ability by 100%."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43412/glyph-of-bloodthirst"
                 },
                 {
                     name: "Cleaving",
@@ -2682,7 +2999,8 @@ export const glyphs = {
                     description: [
                         "Increases the number of targets your Cleave hits by 1."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43414/glyph-of-cleaving"
                 },
                 {
                     name: "Devastate",
@@ -2690,7 +3008,8 @@ export const glyphs = {
                     description: [
                         "Your Devastate ability now applies two stacks of Sunder Armor."
                     ],
-                    level: 50
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43415/glyph-of-devastate"
                 },
                 {
                     name: "Enraged Regeneration",
@@ -2698,7 +3017,8 @@ export const glyphs = {
                     description: [
                         "Your Enraged Regeneration ability heals for an additional 10% of your health over its duration."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45794/glyph-of-enraged-regeneration"
                 },
                 {
                     name: "Execution",
@@ -2706,7 +3026,8 @@ export const glyphs = {
                     description: [
                         "Your Execute ability deals damage as if you had 10 additional rage."
                     ],
-                    level: 24
+                    level: 24,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43416/glyph-of-execution"
                 },
                 {
                     name: "Hamstring",
@@ -2714,7 +3035,8 @@ export const glyphs = {
                     description: [
                         "Gives your Hamstring ability a 10% chance to immobilize the target for 5 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43417/glyph-of-hamstring"
                 },
                 {
                     name: "Heroic Strike",
@@ -2722,7 +3044,8 @@ export const glyphs = {
                     description: [
                         "You gain 10 rage when you critically strike with your Heroic Strike ability."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43418/glyph-of-heroic-strike"
                 },
                 {
                     name: "Intervene",
@@ -2730,7 +3053,8 @@ export const glyphs = {
                     description: [
                         "Increases the number attacks you intercept for your Intervene target by 1."
                     ],
-                    level: 70
+                    level: 70,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43419/glyph-of-intervene"
                 },
                 {
                     name: "Last Stand",
@@ -2738,7 +3062,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Last Stand ability by 1 min."
                     ],
-                    level: 20
+                    level: 20,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43426/glyph-of-last-stand"
                 },
                 {
                     name: "Mortal Strike",
@@ -2746,7 +3071,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Mortal Strike ability by 10%."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43421/glyph-of-mortal-strike"
                 },
                 {
                     name: "Overpower",
@@ -2754,7 +3080,8 @@ export const glyphs = {
                     description: [
                         "Adds a 100% chance to enable your Overpower when your attacks are parried."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43422/glyph-of-overpower"
                 },
                 {
                     name: "Rapid Charge",
@@ -2762,7 +3089,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Charge ability by 7%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43413/glyph-of-rapid-charge"
                 },
                 {
                     name: "Rending",
@@ -2770,7 +3098,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Rend ability by 6 sec."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43423/glyph-of-rending"
                 },
                 {
                     name: "Resonating Power",
@@ -2778,7 +3107,8 @@ export const glyphs = {
                     description: [
                         "Reduces the rage cost of your Thunder Clap ability by 5."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43430/glyph-of-resonating-power"
                 },
                 {
                     name: "Revenge",
@@ -2786,7 +3116,8 @@ export const glyphs = {
                     description: [
                         "After using Revenge, your next Heroic Strike costs no rage."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43424/glyph-of-revenge"
                 },
                 {
                     name: "Shield Wall",
@@ -2794,7 +3125,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Shield Wall by 2 min, but Shield Wall now only reduces damage taken by 40%."
                     ],
-                    level: 28
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45797/glyph-of-shield-wall"
                 },
                 {
                     name: "Shockwave",
@@ -2802,7 +3134,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Shockwave by 3 sec."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45792/glyph-of-shockwave"
                 },
                 {
                     name: "Spell Reflection",
@@ -2810,7 +3143,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown on Spell Reflection by 1 sec."
                     ],
-                    level: 64
+                    level: 64,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45795/glyph-of-spell-reflection"
                 },
                 {
                     name: "Sunder Armor",
@@ -2818,7 +3152,8 @@ export const glyphs = {
                     description: [
                         "Your Sunder Armor ability affects a second nearby target."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43427/glyph-of-sunder-armor"
                 },
                 {
                     name: "Sweeping Strikes",
@@ -2826,7 +3161,8 @@ export const glyphs = {
                     description: [
                         "Reduces the rage cost of your Sweeping Strikes ability by 100%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43428/glyph-of-sweeping-strikes"
                 },
                 {
                     name: "Taunt",
@@ -2834,7 +3170,8 @@ export const glyphs = {
                     description: [
                         "Increases the chance for your Taunt ability to succeed by 8%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43429/glyph-of-taunt"
                 },
                 {
                     name: "Victory Rush",
@@ -2842,7 +3179,8 @@ export const glyphs = {
                     description: [
                         "Your Victory Rush ability has a 30% increased critical strike chance."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43431/glyph-of-victory-rush"
                 },
                 {
                     name: "Vigilance",
@@ -2850,7 +3188,8 @@ export const glyphs = {
                     description: [
                         "Your Vigilance ability transfers an additional 5% of your target's threat to you."
                     ],
-                    level: 40
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=45793/glyph-of-vigilance"
                 },
                 {
                     name: "Whirlwind",
@@ -2858,7 +3197,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Whirlwind by 2 sec."
                     ],
-                    level: 36
+                    level: 36,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43432/glyph-of-whirlwind"
                 }
             ],
             minor: [
@@ -2868,7 +3208,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Battle Shout ability by 2 min."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43395/glyph-of-battle"
                 },
                 {
                     name: "Bloodrage",
@@ -2876,7 +3217,8 @@ export const glyphs = {
                     description: [
                         "Reduces the health cost of your Bloodrage ability by 100%."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43396/glyph-of-bloodrage"
                 },
                 {
                     name: "Charge",
@@ -2884,7 +3226,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Charge ability by 5 yards."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43397/glyph-of-charge"
                 },
                 {
                     name: "Command",
@@ -2892,7 +3235,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Commanding Shout ability by 2 min."
                     ],
-                    level: 68
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=49084/glyph-of-command"
                 },
                 {
                     name: "Enduring Victory",
@@ -2900,7 +3244,8 @@ export const glyphs = {
                     description: [
                         "Increases the window of opportunity in which you can use Victory Rush by 5 sec."
                     ],
-                    level: 62
+                    level: 62,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43400/glyph-of-enduring-victory"
                 },
                 {
                     name: "Mocking Blow",
@@ -2908,7 +3253,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Mocking Blow ability by 25%."
                     ],
-                    level: 16
+                    level: 16,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43398/glyph-of-mocking-blow"
                 },
                 {
                     name: "Shattering Throw",
@@ -2916,7 +3262,8 @@ export const glyphs = {
                     description: [
                         "Your Shattering Throw is now instant and can be used in any stance, but it no longer removes invulnerabilities and cannot be used on players or player-controlled targets."
                     ],
-                    level: 75
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=206953/glyph-of-shattering-throw"
                 },
                 {
                     name: "Thunder Clap",
@@ -2924,7 +3271,8 @@ export const glyphs = {
                     description: [
                         "Increases the radius of your Thunder Clap ability by 2 yards."
                     ],
-                    level: 15
+                    level: 15,
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43399/glyph-of-thunder-clap"
                 }
             ],
         }
@@ -2938,7 +3286,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Death and Decay spell by 50%."
                     ],
-                    level: 60
+                    level: 60,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43542/glyph-of-death-and-decay"
                 },
                 {
                     name: "Death Coil",
@@ -2946,7 +3295,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage or healing done by Death Coil by 15%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45804/glyph-of-death-coil"
                 },
                 {
                     name: "Death Strike",
@@ -2954,7 +3304,8 @@ export const glyphs = {
                     description: [
                         "Increases your Death Strike's damage by 2% for every 5 Runic Power you currently have (up to a maximum of 40%). The Runic Power is not consumed by this effect."
                     ],
-                    level: 56
+                    level: 56,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43827/glyph-of-death-strike"
                 },
                 {
                     name: "Frost Strike",
@@ -2962,7 +3313,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cost of your Frost Strike by 8 Runic Power."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43543/glyph-of-frost-strike"
                 },
                 {
                     name: "Heart Strike",
@@ -2970,7 +3322,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Heart Strike ability by 30%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43534/glyph-of-heart-strike"
                 },
                 {
                     name: "Howling Blast",
@@ -2978,7 +3331,8 @@ export const glyphs = {
                     description: [
                         "Your Howling Blast ability now infects your targets with Frost Fever."
                     ],
-                    level: 69
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45806/glyph-of-howling-blast"
                 },
                 {
                     name: "Icy Touch",
@@ -2986,7 +3340,8 @@ export const glyphs = {
                     description: [
                         "Your Frost Fever disease deals 20% additional damage."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43546/glyph-of-icy-touch"
                 },
                 {
                     name: "Obliterate",
@@ -2994,7 +3349,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Obliterate ability by 20%."
                     ],
-                    level: 61
+                    level: 61,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43547/glyph-of-obliterate"
                 },
                 {
                     name: "Raise Dead",
@@ -3002,7 +3358,8 @@ export const glyphs = {
                     description: [
                         "Your Ghoul receives an additional 40% of your Strength and 40% of your Stamina."
                     ],
-                    level: 56
+                    level: 56,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43549/glyph-of-raise-dead"
                 },
                 {
                     name: "Rune Strike",
@@ -3010,7 +3367,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike chance of your Rune Strike by 10%."
                     ],
-                    level: 67
+                    level: 67,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43550/glyph-of-rune-strike"
                 },
                 {
                     name: "Scourge Strike",
@@ -3018,7 +3376,8 @@ export const glyphs = {
                     description: [
                         "Increases the Shadow damage portion of your Scourge Strike by 30%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43551/glyph-of-scourge-strike"
                 }
             ],
             major: [
@@ -3028,7 +3387,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Anti-Magic Shell by 2 sec."
                     ],
-                    level: 68
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43533/glyph-of-anti-magic-shell"
                 },
                 {
                     name: "Blood Boil",
@@ -3036,7 +3396,8 @@ export const glyphs = {
                     description: [
                         "Increases the radius of your Blood Boil ability by 50%."
                     ],
-                    level: 58
+                    level: 58,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43826/glyph-of-blood-boil"
                 },
                 {
                     name: "Bone Shield",
@@ -3044,7 +3405,8 @@ export const glyphs = {
                     description: [
                         "Increases your movement speed by 15% while Bone Shield is active. This does not stack with other movement-speed increasing effects."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43536/glyph-of-bone-shield"
                 },
                 {
                     name: "Chains of Ice",
@@ -3052,7 +3414,8 @@ export const glyphs = {
                     description: [
                         "Your Chains of Ice also causes 144 to 156 Frost damage, with additional damage depending on your attack power."
                     ],
-                    level: 58
+                    level: 58,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43537/glyph-of-chains-of-ice"
                 },
                 {
                     name: "Dancing Rune Weapon",
@@ -3060,7 +3423,8 @@ export const glyphs = {
                     description: [
                         "Increases your threat generation by 50% while your Dancing Rune Weapon is active."
                     ],
-                    level: 69
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45799/glyph-of-dancing-rune-weapon"
                 },
                 {
                     name: "Dark Succor",
@@ -3068,7 +3432,8 @@ export const glyphs = {
                     description: [
                         "Your next Death Strike performed while in Frost or Unholy Presence, within 15 sec after killing an enemy that yields experience or honor, will restore at least 20% of your maximum health."
                     ],
-                    level: 56
+                    level: 56,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=68793/glyph-of-dark-succor"
                 },
                 {
                     name: "Death Grip",
@@ -3076,7 +3441,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Death Grip ability by 5 yards."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43541/glyph-of-death-grip"
                 },
                 {
                     name: "Hungering Cold",
@@ -3084,7 +3450,8 @@ export const glyphs = {
                     description: [
                         "Your Hungering Cold ability no longer costs runic power."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45800/glyph-of-hungering-cold"
                 },
                 {
                     name: "Pestilence",
@@ -3092,7 +3459,8 @@ export const glyphs = {
                     description: [
                         "Increases the radius of your Pestilence effect by 5 yards."
                     ],
-                    level: 56
+                    level: 56,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43548/glyph-of-pestilence"
                 },
                 {
                     name: "Pillar of Frost",
@@ -3100,7 +3468,8 @@ export const glyphs = {
                     description: [
                         "Empowers your Pillar of Frost, making you immune to all effects that cause loss of control of your character, but also freezing you in place while the ability is active."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43553/glyph-of-pillar-of-frost"
                 },
                 {
                     name: "Rune Tap",
@@ -3108,7 +3477,8 @@ export const glyphs = {
                     description: [
                         "Your Rune Tap also heals your party for 5% of their maximum health."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43825/glyph-of-rune-tap"
                 },
                 {
                     name: "Strangulate",
@@ -3116,7 +3486,8 @@ export const glyphs = {
                     description: [
                         "Increases the Silence duration of your Strangulate ability by 2 sec when used on a target who is casting a spell."
                     ],
-                    level: 59
+                    level: 59,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43552/glyph-of-strangulate"
                 },
                 {
                     name: "Vampiric Blood",
@@ -3124,7 +3495,8 @@ export const glyphs = {
                     description: [
                         "Increases the bonus healing received while your Vampiric Blood is active by an additional 15%, but your Vampiric Blood no longer grants you health."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43554/glyph-of-vampiric-blood"
                 }
             ],
             minor: [
@@ -3134,7 +3506,8 @@ export const glyphs = {
                     description: [
                         "Your Blood Tap no longer causes damage to you."
                     ],
-                    level: 64
+                    level: 64,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43535/glyph-of-blood-tap"
                 },
                 {
                     name: "Death Gate",
@@ -3142,7 +3515,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cast time of your Death Gate spell by 60%."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43673/glyph-of-death-gate"
                 },
                 {
                     name: "Death's Embrace",
@@ -3150,7 +3524,8 @@ export const glyphs = {
                     description: [
                         "Your Death Coil refunds 20 Runic Power when used to heal an allied minion."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43539/glyph-of-deaths-embrace"
                 },
                 {
                     name: "Horn of Winter",
@@ -3158,7 +3533,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Horn of Winter ability by 1 min."
                     ],
-                    level: 65
+                    level: 65,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43544/glyph-of-horn-of-winter"
                 },
                 {
                     name: "Path of Frost",
@@ -3166,7 +3542,8 @@ export const glyphs = {
                     description: [
                         "Your Path of Frost ability allows you to fall from a greater distance without suffering damage."
                     ],
-                    level: 61
+                    level: 61,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43671/glyph-of-path-of-frost"
                 },
                 {
                     name: "Resilient Grip",
@@ -3174,7 +3551,8 @@ export const glyphs = {
                     description: [
                         "When your Death Grip ability fails because its target is immune, its cooldown is reset."
                     ],
-                    level: 55
+                    level: 55,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43672/glyph-of-resilient-grip"
                 }
             ],
         },
@@ -3186,7 +3564,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of Berserk by 10 sec."
                     ],
-                    level: 69
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45601/glyph-of-berserk"
                 },
                 {
                     name: "Bloodletting",
@@ -3194,7 +3573,8 @@ export const glyphs = {
                     description: [
                         "Each time you Shred or Mangle in Cat Form, the duration of your Rip on the target is extended by 2 sec, up to a maximum of 6 sec."
                     ],
-                    level: 54
+                    level: 54,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40901/glyph-of-bloodletting"
                 },
                 {
                     name: "Insect Swarm",
@@ -3202,7 +3582,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage of your Insect Swarm ability by 30%."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40919/glyph-of-insect-swarm"
                 },
                 {
                     name: "Lacerate",
@@ -3210,7 +3591,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical strike chance of your Lacerate ability by 5%."
                     ],
-                    level: 66
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=67484/glyph-of-lacerate"
                 },
                 {
                     name: "Lifebloom",
@@ -3218,7 +3600,8 @@ export const glyphs = {
                     description: [
                         "Increases the critical effect chance of your Lifebloom by 10%."
                     ],
-                    level: 64
+                    level: 64,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40915/glyph-of-lifebloom"
                 },
                 {
                     name: "Mangle",
@@ -3226,7 +3609,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Mangle by 10%."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40900/glyph-of-mangle"
                 },
                 {
                     name: "Moonfire",
@@ -3234,7 +3618,8 @@ export const glyphs = {
                     description: [
                         "Increases the periodic damage of your Moonfire ability by 20%."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40923/glyph-of-moonfire"
                 },
                 {
                     name: "Regrowth",
@@ -3242,7 +3627,8 @@ export const glyphs = {
                     description: [
                         "Your Regrowth heal-over-time will automatically refresh its duration on targets at or below 50% health."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40912/glyph-of-regrowth"
                 },
                 {
                     name: "Rejuvenation",
@@ -3250,7 +3636,8 @@ export const glyphs = {
                     description: [
                         "Increases the healing done by your Rejuvenation by 10%."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40913/glyph-of-rejuvenation"
                 },
                 {
                     name: "Rip",
@@ -3258,7 +3645,8 @@ export const glyphs = {
                     description: [
                         "Increases the periodic damage of your Rip by 15%."
                     ],
-                    level: 54
+                    level: 54,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40902/glyph-of-rip"
                 },
                 {
                     name: "Savage Roar",
@@ -3266,7 +3654,8 @@ export const glyphs = {
                     description: [
                         "Your Savage Roar ability grants an additional 5% bonus damage done."
                     ],
-                    level: 76
+                    level: 76,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45604/glyph-of-savage-roar"
                 },
                 {
                     name: "Starfire",
@@ -3274,7 +3663,8 @@ export const glyphs = {
                     description: [
                         "Your Starfire ability increases the duration of your Moonfire effect on the target by 3 sec, up to a maximum of 9 additional seconds. Only functions on the target with your most recently applied Moonfire."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40916/glyph-of-starfire"
                 },
                 {
                     name: "Starsurge",
@@ -3282,7 +3672,8 @@ export const glyphs = {
                     description: [
                         "When your Starsurge deals damage, the cooldown remaining on your Starfall is reduced by 5 sec."
                     ],
-                    level: 69
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45603/glyph-of-starsurge"
                 },
                 {
                     name: "Swiftmend",
@@ -3290,7 +3681,8 @@ export const glyphs = {
                     description: [
                         "Your Swiftmend ability no longer consumes a Rejuvenation or Regrowth effect from the target."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40906/glyph-of-swiftmend"
                 },
                 {
                     name: "Tiger's Fury",
@@ -3298,7 +3690,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Tiger's Fury ability by 3 sec."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=67487/glyph-of-tigers-fury"
                 },
                 {
                     name: "Wrath",
@@ -3306,7 +3699,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by your Wrath by 10%."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40922/glyph-of-wrath"
                 }
             ],
             major: [
@@ -3316,7 +3710,8 @@ export const glyphs = {
                     description: [
                         "Reduces the chance you'll be critically hit by 25% while Barkskin is active."
                     ],
-                    level: 58
+                    level: 58,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45623/glyph-of-barkskin"
                 },
                 {
                     name: "Entangling Roots",
@@ -3324,7 +3719,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cast time of your Entangling Roots by 0.2 sec."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40924/glyph-of-entangling-roots"
                 },
                 {
                     name: "Faerie Fire",
@@ -3332,7 +3728,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Faerie Fire and Feral Faerie Fire abilities by 10 yds."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=67485/glyph-of-faerie-fire"
                 },
                 {
                     name: "Feral Charge",
@@ -3340,7 +3737,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Feral Charge (Cat) ability by 2 sec and the cooldown of your Feral Charge (Bear) ability by 1 sec."
                     ],
-                    level: 29
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=67486/glyph-of-feral-charge"
                 },
                 {
                     name: "Ferocious Bite",
@@ -3348,7 +3746,8 @@ export const glyphs = {
                     description: [
                         "Your Ferocious Bite ability heals you for 1% of your maximum health for each 10 energy used."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=48720/glyph-of-ferocious-bite"
                 },
                 {
                     name: "Focus",
@@ -3356,7 +3755,8 @@ export const glyphs = {
                     description: [
                         "Increases the damage done by Starfall by 10%, but decreases its radius by 50%."
                     ],
-                    level: 69
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=44928/glyph-of-focus"
                 },
                 {
                     name: "Frenzied Regeneration",
@@ -3364,7 +3764,8 @@ export const glyphs = {
                     description: [
                         "While Frenzied Regeneration is active, healing effects on you are 30% more powerful but causes your Frenzied Regeneration to no longer convert rage into health."
                     ],
-                    level: 52
+                    level: 52,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40896/glyph-of-frenzied-regeneration"
                 },
                 {
                     name: "Healing Touch",
@@ -3372,7 +3773,8 @@ export const glyphs = {
                     description: [
                         "When you cast Healing Touch, the cooldown on your Nature's Swiftness is reduced by 10 sec."
                     ],
-                    level: 78
+                    level: 78,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40914/glyph-of-healing-touch"
                 },
                 {
                     name: "Hurricane",
@@ -3380,7 +3782,8 @@ export const glyphs = {
                     description: [
                         "Your Hurricane ability now also slows the movement speed of its victims by 50%."
                     ],
-                    level: 44
+                    level: 44,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40920/glyph-of-hurricane"
                 },
                 {
                     name: "Innervate",
@@ -3388,7 +3791,8 @@ export const glyphs = {
                     description: [
                         "When Innervate is cast on a friendly target other than the caster, the caster will gain 10% of maximum mana over 10 sec."
                     ],
-                    level: 28
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40908/glyph-of-innervate"
                 },
                 {
                     name: "Maul",
@@ -3396,7 +3800,8 @@ export const glyphs = {
                     description: [
                         "Your Maul ability now hits 1 additional target for 50% damage."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40897/glyph-of-maul"
                 },
                 {
                     name: "Monsoon",
@@ -3404,7 +3809,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Typhoon spell by 3 sec."
                     ],
-                    level: 29
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45622/glyph-of-monsoon"
                 },
                 {
                     name: "Pounce",
@@ -3412,7 +3818,8 @@ export const glyphs = {
                     description: [
                         "Increases the range of your Pounce by 3 yards."
                     ],
-                    level: 32
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40903/glyph-of-pounce"
                 },
                 {
                     name: "Rebirth",
@@ -3420,7 +3827,8 @@ export const glyphs = {
                     description: [
                         "Players resurrected by Rebirth are returned to life with 100% health."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40909/glyph-of-rebirth"
                 },
                 {
                     name: "Solar Beam",
@@ -3428,7 +3836,8 @@ export const glyphs = {
                     description: [
                         "Increases the duration of your Solar Beam silence effect by 5 sec."
                     ],
-                    level: 39
+                    level: 39,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40899/glyph-of-solar-beam"
                 },
                 {
                     name: "Starfall",
@@ -3436,7 +3845,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of Starfall by 30 sec."
                     ],
-                    level: 69
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=40921/glyph-of-starfall"
                 },
                 {
                     name: "Thorns",
@@ -3444,7 +3854,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Thorns spell by 20 sec."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43332/glyph-of-thorns"
                 },
                 {
                     name: "Wild Growth",
@@ -3452,7 +3863,8 @@ export const glyphs = {
                     description: [
                         "Wild Growth can affect 1 additional target, but its cooldown is increased by 2 sec."
                     ],
-                    level: 49
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45602/glyph-of-wild-growth"
                 }
             ],
             minor: [
@@ -3462,7 +3874,8 @@ export const glyphs = {
                     description: [
                         "Increases your swim speed by 50% while in Aquatic Form."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43316/glyph-of-aquatic-form"
                 },
                 {
                     name: "Challenging Roar",
@@ -3470,7 +3883,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Challenging Roar ability by 30 sec."
                     ],
-                    level: 28
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43334/glyph-of-challenging-roar"
                 },
                 {
                     name: "Dash",
@@ -3478,7 +3892,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cooldown of your Dash ability by 20%."
                     ],
-                    level: 26
+                    level: 26,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43674/glyph-of-dash"
                 },
                 {
                     name: "Mark of the Wild",
@@ -3486,7 +3901,8 @@ export const glyphs = {
                     description: [
                         "Mana cost of your Mark of the Wild reduced by 50%."
                     ],
-                    level: 30
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43335/glyph-of-mark-of-the-wild"
                 },
                 {
                     name: "the Treant",
@@ -3494,7 +3910,8 @@ export const glyphs = {
                     description: [
                         "Your Tree of Life Form now resembles a Treant."
                     ],
-                    level: 69
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=68039/glyph-of-the-treant"
                 },
                 {
                     name: "Typhoon",
@@ -3502,7 +3919,8 @@ export const glyphs = {
                     description: [
                         "Reduces the cost of your Typhoon spell by 8% and increases its radius by 10 yards, but it no longer knocks enemies back."
                     ],
-                    level: 29
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=44922/glyph-of-typhoon"
                 },
                 {
                     name: "Unburdened Rebirth",
@@ -3510,7 +3928,8 @@ export const glyphs = {
                     description: [
                         "Your Rebirth spell no longer requires a reagent."
                     ],
-                    level: 25
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43331/glyph-of-unburdened-rebirth"
                 }
             ],
         },
@@ -3522,14 +3941,283 @@ export const glyphs = {
                     description: [
                         "When you critically hit with Aimed Shot, you instantly gain 5 Focus."
                     ],
-                    level: 25
-                }
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42897/glyph-of-aimed-shot"
+                },
+                {
+                    name: "Arcane Shot",
+                    icon: "ability_impalingbolt",
+                    description: [
+                        "Your Arcane Shot deals 12% more damage."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42898/glyph-of-arcane-shot"
+                },
+                {
+                    name: "Chimera Shot",
+                    icon: "ability_hunter_chimerashot2",
+                    description: [
+                        "Reduces the cooldown of Chimera Shot by 1 sec."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45625/glyph-of-chimera-shot"
+                },
+                {
+                    name: "the Dazzled Prey",
+                    icon: "ability_rogue_cheatdeath",
+                    description: [
+                        "Your Steady Shot and Cobra Shot abilities generate an additional 2 Focus on targets afflicted by a daze effect."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42909/glyph-of-the-dazzled-prey"
+                },
+                {
+                    name: "Explosive Shot",
+                    icon: "ability_hunter_explosiveshot",
+                    description: [
+                        "Increases the critical strike chance of Explosive Shot by 6%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45731/glyph-of-explosive-shot"
+                },
+                {
+                    name: "Kill Command",
+                    icon: "ability_hunter_killcommand",
+                    description: [
+                        "Reduces the Focus cost of your Kill Command by 3."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42915/glyph-of-kill-command"
+                },
+                {
+                    name: "Kill Shot",
+                    icon: "ability_hunter_assassinate2",
+                    description: [
+                        "If the damage from your Kill Shot fails to kill a target at or below 20% health, your Kill Shot's cooldown is instantly reset. This effect has a 6 sec cooldown."
+                    ],
+                    level: 35,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45732/glyph-of-kill-shot"
+                },
+                {
+                    name: "Rapid Fire",
+                    icon: "ability_hunter_runningshot",
+                    description: [
+                        "Increases the haste from Rapid Fire by an additional 10%."
+                    ],
+                    level: 54,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42911/glyph-of-rapid-fire"
+                },
+                {
+                    name: "Serpent Sting",
+                    icon: "ability_hunter_quickshot",
+                    description: [
+                        "Increases the periodic critical strike chance of your Serpent Sting by 6%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42912/glyph-of-serpent-sting"
+                },
+                {
+                    name: "Steady Shot",
+                    icon: "ability_hunter_steadyshot",
+                    description: [
+                        "Increases the damage dealt by Steady Shot by 10%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42914/glyph-of-steady-shot"
+                },
             ],
             major: [
-
+                {
+                    name: "Bestial Wrath",
+                    icon: "ability_druid_ferociousbite",
+                    description: [
+                        "Decreases the cooldown of Bestial Wrath by 20 sec."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42902/glyph-of-bestial-wrath"
+                },
+                {
+                    name: "Concussive Shot",
+                    icon: "spell_frost_stun",
+                    description: [
+                        "Your Concussive Shot also limits the maximum run speed of your target."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42901/glyph-of-concussive-shot"
+                },
+                {
+                    name: "Deterrence",
+                    icon: "ability_whirlwind",
+                    description: [
+                        "Decreases the cooldown of Deterrence by 10 sec."
+                    ],
+                    level: 78,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42903/glyph-of-deterrence"
+                },
+                {
+                    name: "Disengage",
+                    icon: "ability_rogue_feint",
+                    description: [
+                        "Decreases the cooldown of Disengage by 5 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42904/glyph-of-disengage"
+                },
+                {
+                    name: "Freezing Trap",
+                    icon: "spell_frost_chainsofice",
+                    description: [
+                        "When your Freezing Trap breaks, the victim's movement speed is reduced by 70% for 4 sec."
+                    ],
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42905/glyph-of-freezing-trap"
+                },
+                {
+                    name: "Ice Trap",
+                    icon: "spell_frost_frostnova",
+                    description: [
+                        "Increases the radius of the effect from your Ice Trap by 2 yards."
+                    ],
+                    level: 46,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42906/glyph-of-ice-trap"
+                },
+                {
+                    name: "Immolation Trap",
+                    icon: "spell_fire_flameshock",
+                    description: [
+                        "Decreases the duration of the effect from your Immolation Trap by 6 sec, but damage while active is increased by 100%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42908/glyph-of-immolation-trap"
+                },
+                {
+                    name: "Master's Call",
+                    icon: "ability_hunter_masterscall",
+                    description: [
+                        "Increases the duration of your Master's Call by 4 sec."
+                    ],
+                    level: 74,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45733/glyph-of-masters-call"
+                },
+                {
+                    name: "Mending",
+                    icon: "ability_hunter_mendpet",
+                    description: [
+                        "Increases the total amount of healing done by your Mend Pet ability by 60%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42900/glyph-of-mending"
+                },
+                {
+                    name: "Misdirection",
+                    icon: "ability_hunter_misdirection",
+                    description: [
+                        "When you use Misdirection on your pet, the cooldown on your Misdirection is reset."
+                    ],
+                    level: 76,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42907/glyph-of-misdirection"
+                },
+                {
+                    name: "Raptor Strike",
+                    icon: "ability_meleedamage",
+                    description: [
+                        "Reduces damage taken by 20% for 5 sec after using Raptor Strike."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45735/glyph-of-raptor-strike"
+                },
+                {
+                    name: "Scatter Shot",
+                    icon: "ability_golemstormbolt",
+                    description: [
+                        "Increases the range of Scatter Shot by 3 yards."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45734/glyph-of-scatter-shot"
+                },
+                {
+                    name: "Silencing Shot",
+                    icon: "ability_theblackarrow",
+                    description: [
+                        "When you successfully silence an enemy's spell cast with Silencing Shot, you instantly gain 10 Focus."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42910/glyph-of-silencing-shot"
+                },
+                {
+                    name: "Snake Trap",
+                    icon: "ability_hunter_snaketrap",
+                    description: [
+                        "Snakes from your Snake Trap take 90% reduced damage from area of effect spells."
+                    ],
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42913/glyph-of-snake-trap"
+                },
+                {
+                    name: "Trap Launcher",
+                    icon: "ability_hunter_traplauncher",
+                    description: [
+                        "Reduces the Focus cost of Trap Launcher by 10."
+                    ],
+                    level: 48,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42899/glyph-of-trap-launcher"
+                },
+                {
+                    name: "Wyvern Sting",
+                    icon: "inv_spear_02",
+                    description: [
+                        "Decreases the cooldown of your Wyvern Sting by 6 sec."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42917/glyph-of-wyvern-sting"
+                },
             ],
             minor: [
-
+                {
+                    name: "Aspect of the Pack",
+                    icon: "ability_mount_whitetiger",
+                    description: [
+                        "Increases the range of your Aspect of the Pack ability by 15 yards."
+                    ],
+                    level: 56,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43355/glyph-of-aspect-of-the-pack"
+                },
+                {
+                    name: "Scare Beast",
+                    icon: "ability_druid_cower",
+                    description: [
+                        "Reduces the pushback suffered from damaging attacks while casting Scare Beast by 75%."
+                    ],
+                    level: 36,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43356/glyph-of-scare-beast"
+                },
+                {
+                    name: "Feign Death",
+                    icon: "ability_rogue_feigndeath",
+                    description: [
+                        "Reduces the cooldown of your Feign Death spell by 5 sec."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43351/glyph-of-feign-death"
+                },
+                {
+                    name: "Lesser Proportion",
+                    icon: "ability_hunter_bestialdiscipline",
+                    description: [
+                        "Slightly reduces the size of your pet."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43350/glyph-of-lesser-proportion"
+                },
+                {
+                    name: "Revive Pet",
+                    icon: "ability_hunter_beastsoothe",
+                    description: [
+                        "Reduces the pushback suffered from damaging attacks while casting Revive Pet by 100%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43338/glyph-of-revive-pet"
+                },
             ],
         },
         mage: {
@@ -3611,3 +4299,23 @@ export const glyphs = {
         }
     }
 };
+
+function extractGlyphId(url) {
+    const match = url.match(/item=(\d+)/);
+    return match ? parseInt(match[1], 10) : null;
+}
+
+export const glyphIndex = {};
+
+Object.values(glyphs).forEach(expac => {
+    Object.values(expac).forEach(classGlyphs => {
+        ["major", "minor", "prime"].forEach(type => {
+            if (!classGlyphs[type]) return;
+
+            classGlyphs[type].forEach(g => {
+                g.id = extractGlyphId(g.linkToWoWHead);
+                glyphIndex[g.id] = g;
+            });
+        });
+    });
+});
