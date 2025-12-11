@@ -3,7 +3,7 @@
 import { classColors } from '../class-colors.js';
 import { patchOptions } from '../db/patches.js';
 import { talentsAttributedByVersion } from '../base-talents-per-patch.js';
-import { glyphs } from '../db/glyphs.js';
+import { glyphs, glyphIndex } from '../db/glyphs.js';
 import { cataSpecCards } from '../ctc-tree-summary-cards.js';
 import { backgroundImages } from './tree-bg-images.js';
 import { defaultIcons, cataOverrides } from '../tree-icons.js';
@@ -245,7 +245,8 @@ let currentState = {
     pointsTotal: 51,
     talents: {},
     builds: [],
-    talentOrder: []
+    talentOrder: [],
+    glyphs: {}
 };
 
 // const talents = talentsAttributedByVersion[currentState.version]?.[currentState.class]?.[treeName] || [];
@@ -780,6 +781,7 @@ function handleVersionChange(loadingBuild = false) {
     currentState.pointsSpent = 0;
     currentState.talents = {};
     currentState.talentOrder = [];
+    currentState.glyphs = {};
 
     updatePointsDisplay();
 
@@ -898,6 +900,7 @@ function handleClassSelect(e) {
     currentState.class = newClassKey;
     currentState.pointsSpent = 0;
     currentState.talentOrder = [];
+    currentState.glyphs = {};
 
     const trees = talentTreeData[currentState.version].classes[newClassKey].trees;
 
@@ -1829,7 +1832,8 @@ function saveBuild() {
         class: currentState.class,
         talents: JSON.parse(JSON.stringify(currentState.talents)),
         pointsSpent: currentState.pointsSpent,
-        talentOrder: JSON.parse(JSON.stringify(currentState.talentOrder))
+        talentOrder: JSON.parse(JSON.stringify(currentState.talentOrder)),
+        glyphs: JSON.parse(JSON.stringify(currentState.glyphs))
     };
 
     // Check if build with this name already exists
@@ -1878,6 +1882,8 @@ function importBuild() {
             currentState.class = classKey;
             currentState.talents = JSON.parse(JSON.stringify(buildData.talents));
             currentState.pointsTotal = buildData.pointsTotal || 51;
+
+            currentState.glyphs = JSON.parse(JSON.stringify(buildData.glyphs || {}));
 
             // Update class button styles
             classButtons.forEach((btn) => {
@@ -2415,10 +2421,10 @@ function recalculateTalentOrder() {
 }
 
 function initCurrentGlyphs() {
-    currentState.glyphs = {};
+    // currentState.glyphs = {};
 
     const currentExpansion = getCurrentExpansion(); // "wotlk" or "cataclysm"
-    const classKey = currentState.class;
+    // const classKey = currentState.class;
     const types = [];
 
     if (currentExpansion === "cataclysm") {
@@ -2749,6 +2755,8 @@ function selectGlyph(glyphType, slotIndex, glyphData) {
 
     slot.appendChild(img);
     slot.appendChild(name);
+
+    updateURLHash();
 }
 
 function removeGlyph(glyphType, slotIndex) {
@@ -2773,6 +2781,8 @@ function removeGlyph(glyphType, slotIndex) {
 
     slot.appendChild(placeholderImg);
     slot.appendChild(placeholderText);
+
+    updateURLHash();
 }
 
 function capitalize(str) {
@@ -2826,6 +2836,9 @@ function loadBuild(index) {
         ? JSON.parse(JSON.stringify(build.talentOrder))
         : [];
 
+    currentState.glyphs = build.glyphs
+        ? JSON.parse(JSON.stringify(build.glyphs))
+        : {};
 
     // Ensure talentOrder keeps original level progression
     if (currentState.talentOrder.length > 0) {
@@ -2889,12 +2902,24 @@ function loadBuild(index) {
     updatePointsDisplay();
     renderTalentTrees();
     renderGlyphsContainer();
+    loadSavedGlyphs();
     updateURLHash();
 
     // Set build name in input field
     buildNameInput.value = build.name;
 
     alert(`✅ Loaded build: ${build.name}`);
+}
+
+function loadSavedGlyphs() {
+    const glyphs = currentState.glyphs || {};
+    for (const typeKey in glyphs) {
+        glyphs[typeKey].forEach((glyphData, index) => {
+            if (glyphData) {
+                selectGlyph(typeKey, index, glyphData);
+            }
+        });
+    }
 }
 
 function exportBuild(index) {
@@ -2935,7 +2960,7 @@ function showMessage(message, isError = false) {
 }
 
 function generateBuildStringFromBuild(build) {
-    const { version, class: classKey, talents } = build;
+    const { version, class: classKey, talents, glyphs } = build;
     const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
 
     // Get actual talent definitions (with row/col info)
@@ -2964,7 +2989,17 @@ function generateBuildStringFromBuild(build) {
         return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
     });
 
-    return treeStrings.join("-");
+    const talentString = treeStrings.join("-");
+
+    // === Glyph String ===
+    const expansion = getExpansionFromPatch(version);
+    let glyphString = "";
+
+    if (expansion === "wotlk" || expansion === "cataclysm") {
+        glyphString = generateGlyphString(glyphs);
+    }
+
+    return `${talentString}/${glyphString}`;
 }
 
 function decompressBuild(str) {
@@ -2996,7 +3031,8 @@ function decompressBuild(str) {
         version,
         class: classKey,
         pointsTotal, // You can infer from version if needed
-        talents
+        talents,
+        glyphs
     };
 }
 
@@ -3032,8 +3068,9 @@ function clearError() {
 function generateBuildString() {
     if (!currentState.version || !currentState.class) return "";
 
-    const version = currentState.version;
     const classKey = currentState.class;
+    const version = currentState.version;
+    const expansion = getCurrentExpansion();
     const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
 
     // Get actual talent definitions (with row/col info)
@@ -3062,7 +3099,49 @@ function generateBuildString() {
         return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
     });
 
-    return treeStrings.join("-");
+    const talentString = treeStrings.join("-");
+
+    // === Generate glyph string only for WotLK and Cataclysm ===
+    let glyphString = "";
+
+    if (expansion === "wotlk" || expansion === "cataclysm") {
+        glyphString = generateGlyphString(currentState.glyphs);
+    }
+
+    // === Build final formatted string ===
+    return `${talentString}/${glyphString}`;
+}
+
+function generateGlyphString(glyphs) {
+    const expansion = getCurrentExpansion();
+    let types = [];
+
+    if (expansion === "cataclysm") {
+        types = ["prime", "major", "minor"];
+    } else if (expansion === "wotlk") {
+        types = ["major", "minor"];
+    } else {
+        return "";
+    }
+
+    // let hasAnyGlyph = false;
+
+    const segments = types.map(type => {
+        const arr = glyphs[type] || [];
+
+        // Always 3 slots
+        const ids = [
+            arr[0] ? arr[0].id.toString() : "",
+            arr[1] ? arr[1].id.toString() : "",
+            arr[2] ? arr[2].id.toString() : "",
+        ];
+        // if (ids.length > 0) hasAnyGlyph = true;
+
+        return ids.join("-"); // join with "-" between slots
+    });
+    // if (!hasAnyGlyph) return "";
+
+    return segments.join(":");
 }
 
 // ----------------------------
