@@ -3109,7 +3109,7 @@ function generateBuildString() {
     }
 
     // === Build final formatted string ===
-    return `${talentString}/${glyphString}`;
+    return `${talentString}${glyphString}`;
 }
 
 function generateGlyphString(glyphs) {
@@ -3141,7 +3141,9 @@ function generateGlyphString(glyphs) {
     });
     // if (!hasAnyGlyph) return "";
 
-    return segments.join(":");
+    const glyphString = segments.join(":");
+
+    return `/${glyphString}`;
 }
 
 // ----------------------------
