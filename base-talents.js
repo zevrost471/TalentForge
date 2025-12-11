@@ -31728,7 +31728,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pathing",
@@ -31743,7 +31744,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_serpent_sting",
@@ -31759,7 +31761,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "survival_tactics",
@@ -31774,7 +31777,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "trap_mastery",
@@ -31790,7 +31794,8 @@ export const baseTalents = {
                             value: [10, 20, 30],
                             snakes: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "entrapment",
@@ -31805,7 +31810,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "point_of_no_escape",
@@ -31820,7 +31826,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "thrill_of_the_hunt",
@@ -31835,7 +31842,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "counterattack",
@@ -31847,7 +31855,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A strike that becomes active after parrying an opponent's attack.  This attack deals (Attack power * 0.2 + 321) damage and immobilizes the target for 5 sec.  Counterattack cannot be blocked, dodged, or parried."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "lock_and_load",
@@ -31862,7 +31871,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "resourcefulness",
@@ -31877,7 +31887,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mirrored_blades",
@@ -31892,7 +31903,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tnt",
@@ -31907,7 +31919,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toxicology",
@@ -31922,7 +31935,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "wyvern_sting",
@@ -31934,7 +31948,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A stinging shot that puts the target to sleep for 30 sec.  Any damage will cancel the effect.  When the target wakes up, the Sting causes 2738 Nature damage over 6 sec.  Only one Sting per Hunter can be active on the target at a time."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "noxious_stings",
@@ -31950,7 +31965,8 @@ export const baseTalents = {
                             damage: [5, 10],
                             duration: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hunting_party",
@@ -31962,7 +31978,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases your total Agility by an additional 2%, and increases the ranged and melee attack speed of all party and raid members by 10%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sniper_training",
@@ -31978,7 +31995,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "serpent_spread",
@@ -31993,7 +32011,8 @@ export const baseTalents = {
                         {
                             value: [6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "black_arrow",
@@ -32005,13 +32024,143 @@ export const baseTalents = {
                     requiresTalents: "wyvern_sting",
                     description: [
                         "Fires a Black Arrow at the target, dealing 2852 Shadow damage over 20 sec. Black Arrow shares a cooldown with other Fire Trap spells."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
         mage: {
             // mage - cataclysm
             Arcane: [
+                {
+                    id: "arcane_concentration",
+                    name: "Arcane Concentration",
+                    icon: "spell_shadow_manaburn",
+                    row: 0,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Gives you a {value}% chance of entering a Clearcasting state after any damage spell hits a target.  The Clearcasting state reduces the mana cost of your next damage spell by 100%.",
+                        {
+                            value: [3, 6, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_counterspell",
+                    name: "Improved Counterspell",
+                    icon: "spell_frost_iceshock",
+                    row: 0,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Counterspell also silences the target for {value} sec.",
+                        {
+                            value: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "netherwind_presence",
+                    name: "Netherwind Presence",
+                    icon: "ability_mage_netherwindpresence",
+                    row: 0,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your spell haste by {value}%.",
+                        {
+                            value: [1, 2, 3]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "torment_the_weak",
+                    name: "Torment the Weak",
+                    icon: "spell_arcane_focusedpower",
+                    row: 1,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Arcane damage spells deal {value}% more damage to snared or slowed targets.",
+                        {
+                            value: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "invocation",
+                    name: "Invocation",
+                    icon: "spell_arcane_invocation",
+                    row: 1,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "You gain a {value}% damage bonus for 8 sec after successfully interrupting a spell.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_arcane_missiles",
+                    name: "Improved Arcane Missiles",
+                    icon: "spell_nature_starfall",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the number of missiles fired by your Arcane Missiles spell by {value}.",
+                        {
+                            value: [1, 2]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_blink",
+                    name: "Improved Blink",
+                    icon: "spell_arcane_blink",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your speed by {value}% for 3 sec after casting the Blink spell.",
+                        {
+                            value: [35, 70]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "arcane_flows",
+                    name: "Arcane Flows",
+                    icon: "ability_mage_potentspirit",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: "presence_of_mind",
+                    description: [
+                        "Reduces the cooldown of your Presence of Mind, Arcane Power and Invisibility spells by {value1}% and the cooldown of your Evocation spell by {value2} min.",
+                        {
+                            value1: [12, 25],
+                            value2: [1, 2]
+                        }
+                    ],
+                    isActive: false
+                },
                 {
                     id: "presence_of_mind",
                     name: "Presence of Mind",
@@ -32022,7 +32171,57 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell."
-                    ]
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "missile_barrage",
+                    name: "Missile Barrage",
+                    icon: "ability_mage_missilebarrage",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: "improved_arcane_missiles",
+                    description: [
+                        "Your Arcane Missiles spell will fire its missiles every {value} sec.",
+                        {
+                            value: [0.6, 0.5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "prismatic_cloak",
+                    name: "Prismatic Cloak",
+                    icon: "spell_arcane_prismaticcloak",
+                    row: 2,
+                    col: 3,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces all damage taken by {value1}% and reduces the fade time of your Invisibility spell by {value2} sec.",
+                        {
+                            value1: [2, 4, 6],
+                            value2: [1, 2, 3]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_polymorph",
+                    name: "Improved Polymorph",
+                    icon: "spell_nature_polymorph",
+                    row: 3,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When a target you've polymorphed is damaged, that target is stunned for {value} sec.  This effect cannot occur more often than once every 10 sec.",
+                        {
+                            value: [1.5, 3]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_tactics",
@@ -32034,7 +32233,58 @@ export const baseTalents = {
                     requiresTalents: "presence_of_mind",
                     description: [
                         "Increases the damage of all party and raid members within 100 yards by 3%."
-                    ]
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "incanters_absorption",
+                    name: "Incanter's Absorption",
+                    icon: "ability_mage_incantersabsorbtion",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When your Mana Shield or Mage Ward absorbs damage your spell damage is increased by {value}% of the amount absorbed for 10 sec.  In addition, when your Mana Shield is destroyed, all enemies within 6 yards are knocked back 12 yards.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_arcane_explosion",
+                    name: "Improved Arcane Explosion",
+                    icon: "spell_nature_wispsplode",
+                    row: 3,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the global cooldown of your Arcane Explosion spell by {value1} sec, reduces the threat generated by {value2}%, and reduces the mana cost by {value3}%.",
+                        {
+                            value1: [0.3, 0.5],
+                            value2: [40, 80],
+                            value3: [25, 50]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "arcane_potency",
+                    name: "Arcane Potency",
+                    icon: "spell_arcane_arcanepotency",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of your next two damaging spells by {value}% after gaining Clearcasting or Presence of Mind.",
+                        {
+                            value: [7, 15]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "slow",
@@ -32046,7 +32296,24 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces target's movement speed by 60%, increases the time between ranged attacks by 60% and increases casting time by 30%.  Lasts 15 sec.  Slow can only affect one target at a time."
-                    ]
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "nether_vortex",
+                    name: "Nether Vortex",
+                    icon: "spell_arcane_blast",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your Arcane Blast spell a {value}% chance to apply the Slow spell to any target it damages if no target is currently affected by Slow.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focus_magic",
@@ -32058,7 +32325,24 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases the target's chance to critically hit with spells by 3% for 30 min.  When the target critically hits your chance to critically hit with spells is increased by 3% for 10 sec.  Cannot be cast on self.  Limit 1 target."
-                    ]
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "improved_mana_gem",
+                    name: "Improved Mana Gem",
+                    icon: "inv_misc_gem_emerald_01",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Mana gained from your Mana Gem also increases your spell power by {value}% of your maximum mana for 15 sec.",
+                        {
+                            value: [1, 2]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_power",
@@ -32070,7 +32354,8 @@ export const baseTalents = {
                     requiresTalents: "slow",
                     description: [
                         "When activated, you deal 20% more spell damage and damaging spells cost 10% more mana to cast.  This effect lasts 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // mage - cataclysm
@@ -32085,7 +32370,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A wave of flame radiates outward from the target location, damaging all enemies caught within the blast for 928 Fire damage and are slowed by 70% for 3 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "hot_streak",
@@ -32097,7 +32383,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your spells no longer trigger Arcane Missiles.  Instead, your critical strikes with Fireball, Frostfire Bolt, Scorch, Pyroblast, or Fire Blast have a chance to cause your next Pyroblast spell cast within 15 sec to be instant cast and cost no mana."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "molten_shields",
@@ -32109,7 +32396,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces the global cooldown of your Mage Ward spell by 1 sec and your Blazing Speed also removes any movement slowing effects when triggered and is also triggered any time Mage Ward dissipates from absorbing damage."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "combustion",
@@ -32121,7 +32409,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Combines your damaging periodic Fire effects on an enemy target but does not consume them, instantly dealing 23 Fire damage and creating a new periodic effect that lasts 10 sec and deals damage per time equal to the sum of the combined effects."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "firestarter",
@@ -32133,7 +32422,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Allows you to cast the Scorch spell while moving."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dragons_breath",
@@ -32145,7 +32435,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Targets in a cone in front of the caster take 1292 Fire damage and are disoriented for 5 sec.  Any direct damaging attack will revive targets."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "living_bomb",
@@ -32157,7 +32448,8 @@ export const baseTalents = {
                     requiresTalents: "dragons_breath",
                     description: [
                         "The target becomes a Living Bomb, taking 839 Fire damage over 12 sec.  After 12 sec, the target explodes dealing 420 Fire damage to up to 3 enemies within 10 yards.  Limit 3 targets."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // mage - cataclysm
@@ -32172,7 +32464,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Hastens your spellcasting, increasing spell casting speed by 20% and reduces the pushback suffered from damaging attacks while casting by 100%.  Lasts 20 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "cold_snap",
@@ -32184,7 +32477,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this spell finishes the cooldown on all Frost spells you recently cast."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "ice_barrier",
@@ -32196,7 +32490,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly shields you, absorbing ((8089 + Spell power * 0.87)) damage.  Lasts 1 min.  While the shield holds, spellcasting will not be delayed by damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "deep_freeze",
@@ -32208,7 +32503,8 @@ export const baseTalents = {
                     requiresTalents: "ice_barrier",
                     description: [
                         "Stuns the target for 5 sec.  Only usable on Frozen targets.  Deals 1037 to 1299 damage to targets that are permanently immune to stuns."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
