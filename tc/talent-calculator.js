@@ -656,6 +656,7 @@ function getRequirementText(talent) {
         if (talent.requiresCatForm) druidForms.push("Cat Form");
         if (talent.requiresBearForm) druidForms.push("Bear Form");
         if (talent.requiresDireBearForm) druidForms.push("Dire Bear Form");
+        if (talent.requiresMoonkinForm) druidForms.push("Moonkin Form");
         if (druidForms.length > 0) requirements.push(`Requires ${druidForms.join(", ")}`);
     }
 
@@ -680,6 +681,11 @@ function getRequirementText(talent) {
         }
     }
 
+    // Priest shadowform
+    if (currentState.class === 'priest') {
+        if (talent.requiresShadowform) requirements.push("Requires Shadowform");
+    }
+
     // Rogue stealth
     if (currentState.class === 'rogue') {
         if (talent.requiresStealth) requirements.push("Requires Stealth");
@@ -698,7 +704,7 @@ function getRequirementText(talent) {
         if (talent.requiresEarthTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Earth Totem");
     }
 
-    return requirements.join(", ");
+    return requirements.join("<br>");
 }
 
 let previousExpansion = null;
