@@ -2434,7 +2434,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spiritual_focus",
@@ -11685,7 +11686,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "martyrdom",
@@ -17022,7 +17024,8 @@ export const baseTalents = {
                             kill: [10, 20],
                             incombat: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "subversion",
@@ -17038,7 +17041,8 @@ export const baseTalents = {
                             value1: [3, 6, 9],
                             value2: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blade_barrier",
@@ -17053,7 +17057,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bladed_armor",
@@ -17068,7 +17073,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "scent_of_blood",
@@ -17083,7 +17089,8 @@ export const baseTalents = {
                         {
                             value: ["melee hit", "2 melee hits", "3 melee hits"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "two_handed_weapon_specialization",
@@ -17098,7 +17105,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rune_tap",
@@ -17110,7 +17118,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Converts 1 Blood Rune into 10% of your maximum health."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "dark_conviction",
@@ -17125,7 +17134,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "death_rune_mastery",
@@ -17140,7 +17150,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_rune_tap",
@@ -17156,7 +17167,8 @@ export const baseTalents = {
                             value1: [33, 66, 100],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spell_deflection",
@@ -17171,7 +17183,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vendetta",
@@ -17186,7 +17199,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bloody_strikes",
@@ -17203,7 +17217,8 @@ export const baseTalents = {
                             value2: [15, 30, 45],
                             value3: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "veteran_of_the_third_war",
@@ -17219,7 +17234,8 @@ export const baseTalents = {
                             value1: [2, 4, 6],
                             value2: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mark_of_blood",
@@ -17231,7 +17247,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Place a Mark of Blood on an enemy.  Whenever the marked enemy deals damage to a target, that target is healed for 4% of its maximum health.  Lasts for 20 sec or up to 20 hits."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "bloody_vengeance",
@@ -17246,7 +17263,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "abominations_might",
@@ -17262,7 +17280,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bloodworms",
@@ -17277,7 +17296,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unholy_frenzy",
@@ -17289,7 +17309,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Induces a friendly unit into a killing frenzy for 30 sec.  The target is Enraged, which increases their physical damage by 20%, but causes them to lose health equal to 1% of their maximum health every second."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_blood_presence",
@@ -17305,7 +17326,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_death_strike",
@@ -17322,7 +17344,8 @@ export const baseTalents = {
                             value2: [3, 6],
                             value3: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sudden_doom",
@@ -17337,7 +17360,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vampiric_blood",
@@ -17349,7 +17373,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Temporarily grants the Death Knight 15% of maximum health and increases the amount of health generated through spells and effects by 35% for 10 sec.  After the effect expires, the health is lost."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "will_of_the_necropolis",
@@ -17364,7 +17389,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "heart_strike",
@@ -17376,7 +17402,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly strike the target and his nearest ally, causing 50% weapon damage plus 125 on the primary target, and 25% weapon damage plus 63 on the secondary target.  Each target takes 10% additional damage for each of your diseases active on that target."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "might_of_mograine",
@@ -17391,7 +17418,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blood_gorged",
@@ -17406,7 +17434,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dancing_rune_weapon",
@@ -17418,7 +17447,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons a second rune weapon that fights on its own for 12 sec, doing the same attacks as the Death Knight but for 50% reduced damage and healing."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // deathknight - wotlk
@@ -17437,7 +17467,8 @@ export const baseTalents = {
                             damage: [5, 10, 15],
                             speed: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "runic_power_mastery",
@@ -17452,7 +17483,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toughness",
@@ -17468,7 +17500,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "icy_reach",
@@ -17483,7 +17516,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "black_ice",
@@ -17498,7 +17532,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "nerves_of_cold_steel",
@@ -17514,7 +17549,9 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requires1HWeapon: true
                 },
                 {
                     id: "icy_talons",
@@ -17529,7 +17566,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lichborne",
@@ -17541,7 +17579,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Draw upon unholy energy to become undead for 10 sec.  While undead, you are immune to Charm, Fear and Sleep effects."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "annihilation",
@@ -17557,7 +17596,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "killing_machine",
@@ -17572,7 +17612,8 @@ export const baseTalents = {
                         {
                             value: ["", "  Effect occurs more often than Killing Machine (Rank 1).", "  Effect occurs more often than Killing Machine (Rank 2).", "  Effect occurs more often than Killing Machine (Rank 3).", "  Effect occurs more often than Killing Machine (Rank 4)."]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chill_of_the_grave",
@@ -17587,7 +17628,8 @@ export const baseTalents = {
                         {
                             value: [2.5, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "endless_winter",
@@ -17603,7 +17645,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: ["the cost of your Mind Freeze is reduced to 10 runic power", "your Mind Freeze no longer costs runic power"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frigid_dreadplate",
@@ -17618,7 +17661,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "glacier_rot",
@@ -17633,7 +17677,8 @@ export const baseTalents = {
                         {
                             value: [7, 13, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deathchill",
@@ -17645,7 +17690,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, makes your next Icy Touch, Howling Blast, Frost Strike or Obliterate a critical hit if used within 30 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_icy_talons",
@@ -17657,7 +17703,8 @@ export const baseTalents = {
                     requiresTalents: "icy_talons",
                     description: [
                         "Increases the melee haste of all party and raid members within 100 yds by 20% and your haste by an additional 5%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "merciless_combat",
@@ -17672,7 +17719,8 @@ export const baseTalents = {
                         {
                             value: [6, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rime",
@@ -17687,7 +17735,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chilblains",
@@ -17702,7 +17751,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hungering_cold",
@@ -17714,7 +17764,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Purges the earth around the Death Knight of all heat.  Enemies within 10 yards are trapped in ice, preventing them from performing any action for 10 sec and infecting them with Frost Fever.  Enemies are considered Frozen, but any damage other than diseases will break the ice."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_frost_presence",
@@ -17730,7 +17781,8 @@ export const baseTalents = {
                             value1: [4, 8],
                             value2: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "threat_of_thassarian",
@@ -17745,7 +17797,9 @@ export const baseTalents = {
                         {
                             value: [30, 60, 100]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requires1HWeapon: true
                 },
                 {
                     id: "blood_of_the_north",
@@ -17761,7 +17815,8 @@ export const baseTalents = {
                             value1: [3, 6, 10],
                             value2: [30, 60, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unbreakable_armor",
@@ -17773,7 +17828,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reinforces your armor with a thick coat of ice, increasing your armor by 25% and increasing your Strength by 20% for 20 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "acclimation",
@@ -17788,7 +17844,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frost_strike",
@@ -17800,7 +17857,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly strike the enemy, causing 55% weapon damage plus 48 as Frost damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "guile_of_gorefiend",
@@ -17816,7 +17874,8 @@ export const baseTalents = {
                             value1: [15, 30, 45],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tundra_stalker",
@@ -17832,7 +17891,8 @@ export const baseTalents = {
                             value1: [3, 6, 9, 12, 15],
                             value2: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "howling_blast",
@@ -17844,7 +17904,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Blast the target with a frigid wind dealing 198 to 214 Frost damage to all enemies within 10 yards."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // deathknight - wotlk
@@ -17863,7 +17924,8 @@ export const baseTalents = {
                             chance: [3, 6],
                             bonus: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "virulence",
@@ -17879,7 +17941,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "anticipation",
@@ -17894,7 +17957,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "epidemic",
@@ -17909,7 +17973,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "morbidity",
@@ -17924,7 +17989,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unholy_command",
@@ -17939,7 +18005,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ravenous_dead",
@@ -17955,7 +18022,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "outbreak",
@@ -17971,7 +18039,8 @@ export const baseTalents = {
                             value1: [10, 20, 30],
                             value2: [7, 13, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "necrosis",
@@ -17986,7 +18055,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "corpse_explosion",
@@ -17998,7 +18068,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Cause a corpse or your ghoul to explode for 166 Shadow damage to all enemies within 10 yards.  Will use a nearby corpse if the target is not a corpse.  Does not affect mechanical or elemental corpses."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "on_a_pale_horse",
@@ -18013,7 +18084,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blood_caked_blade",
@@ -18028,7 +18100,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "night_of_the_dead",
@@ -18044,7 +18117,8 @@ export const baseTalents = {
                             value1: [45, 90],
                             value2: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unholy_blight",
@@ -18056,7 +18130,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Causes the victims of your Death Coil to be surrounded by a vile swarm of unholy insects, taking 10% of the damage done by the Death Coil over 10 sec, and preventing any diseases on the victim from being dispelled."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "impurity",
@@ -18071,7 +18146,8 @@ export const baseTalents = {
                         {
                             value: ["The attack power bonus of your spells is increased by 4%.", "The attack power bonus of your spells is increased by 8%.", "The attack power bonus of your spells is increased by 12%.", "The attack power bonus of your spells is increased by 16%.", "Your spells receive an additional 20% benefit from your attack power."]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dirge",
@@ -18086,7 +18162,8 @@ export const baseTalents = {
                         {
                             value: [2.5, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "desecration",
@@ -18101,7 +18178,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "magic_suppression",
@@ -18117,7 +18195,8 @@ export const baseTalents = {
                             value1: [2, 4, 6],
                             value2: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "reaping",
@@ -18132,7 +18211,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_of_ghouls",
@@ -18144,7 +18224,8 @@ export const baseTalents = {
                     requiresTalents: "night_of_the_dead",
                     description: [
                         "Reduces the cooldown on Raise Dead by 60 sec, and the Ghoul summoned by your Raise Dead spell is considered a pet under your control.  Unlike normal Death Knight Ghouls, your pet does not have a limited duration."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "desolation",
@@ -18159,7 +18240,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "anti_magic_zone",
@@ -18171,7 +18253,8 @@ export const baseTalents = {
                     requiresTalents: "magic_suppression",
                     description: [
                         "Places a large, stationary Anti-Magic Zone that reduces spell damage done to party or raid members inside it by 75%.  The Anti-Magic Zone lasts for 10 sec or until it absorbs (10000 + 2 * Attack power) spell damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_unholy_presence",
@@ -18187,7 +18270,8 @@ export const baseTalents = {
                             value1: [8, 15],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ghoul_frenzy",
@@ -18199,7 +18283,8 @@ export const baseTalents = {
                     requiresTalents: "master_of_ghouls",
                     description: [
                         "Grants your pet 25% haste for 30 sec and  heals it for 60% of its health over the duration."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "crypt_fever",
@@ -18214,7 +18299,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bone_shield",
@@ -18226,7 +18312,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "The Death Knight is surrounded by 3 whirling bones.  While at least 1 bone remains, he takes 20% less damage from all sources and deals 2% more damage with all attacks, spells and abilities.  Each damaging attack that lands consumes 1 bone.  Lasts 5 min."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "wandering_plague",
@@ -18241,7 +18328,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ebon_plaguebringer",
@@ -18257,7 +18345,8 @@ export const baseTalents = {
                             value1: [4, 9, 13],
                             value2: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "scourge_strike",
@@ -18269,7 +18358,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "An unholy strike that deals 70% of weapon damage as Physical damage plus 238.  In addition, for each of your diseases on your target, you deal an additional 12% of the Physical damage done as Shadow damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "rage_of_rivendare",
@@ -18285,7 +18375,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "summon_gargoyle",
@@ -18297,7 +18388,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A Gargoyle flies into the area and bombards the target with Nature damage modified by the Death Knight's attack power.  Persists for 30 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -18317,7 +18409,8 @@ export const baseTalents = {
                         {
                             value: [0.1, 0.2, 0.3, 0.4, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "genesis",
@@ -18332,7 +18425,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "moonglow",
@@ -18347,7 +18441,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_majesty",
@@ -18362,7 +18457,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_moonfire",
@@ -18377,7 +18473,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "brambles",
@@ -18393,7 +18490,8 @@ export const baseTalents = {
                             value1: [25, 50, 75],
                             value2: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_grace",
@@ -18408,7 +18506,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_splendor",
@@ -18420,7 +18519,8 @@ export const baseTalents = {
                     requiresTalents: "natures_majesty",
                     description: [
                         "Increases the duration of your Moonfire and Rejuvenation spells by 3 sec, your Regrowth spell by 6 sec, and your Insect Swarm and Lifebloom spells by 2 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_reach",
@@ -18435,7 +18535,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vengeance",
@@ -18450,7 +18551,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "celestial_focus",
@@ -18466,7 +18568,8 @@ export const baseTalents = {
                             value1: [23, 46, 70],
                             value2: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lunar_guidance",
@@ -18481,7 +18584,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "insect_swarm",
@@ -18493,7 +18597,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "The enemy target is swarmed by insects, decreasing their chance to hit by 3% and causing 144 Nature damage over 12 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_insect_swarm",
@@ -18508,7 +18613,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dreamstate",
@@ -18523,7 +18629,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "moonfury",
@@ -18538,7 +18645,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "balance_of_power",
@@ -18554,7 +18662,8 @@ export const baseTalents = {
                             hit: [2, 4],
                             damage: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "moonkin_form",
@@ -18566,7 +18675,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Shapeshift into Moonkin Form.  While in this form the armor contribution from items is increased by 370%, damage taken while stunned is reduced by 15%, and all party and raid members within 100 yards have their spell critical chance increased by 5%.  Single target spell critical strikes in this form instantly regenerate 2% of your total mana.  The Moonkin can not cast healing or resurrection spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_moonkin_form",
@@ -18582,7 +18692,9 @@ export const baseTalents = {
                             haste: [1, 2, 3],
                             spirit: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresMoonkinForm: true
                 },
                 {
                     id: "improved_faerie_fire",
@@ -18597,7 +18709,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "owlkin_frenzy",
@@ -18612,8 +18725,9 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-
-                    ]
+                    ],
+                    isActive: false,
+                    requiresMoonkinForm: true
                 },
                 {
                     id: "wrath_of_cenarius",
@@ -18629,7 +18743,8 @@ export const baseTalents = {
                             starfire: [4, 8, 12, 16, 20],
                             wrath: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "eclipse",
@@ -18645,7 +18760,8 @@ export const baseTalents = {
                             wrath: [33, 66, 100],
                             starfire: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "typhoon",
@@ -18657,7 +18773,8 @@ export const baseTalents = {
                     requiresTalents: "moonkin_form",
                     description: [
                         "You summon a violent Typhoon that does 400 Nature damage when in contact with hostile targets, knocking them back and dazing them for 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "force_of_nature",
@@ -18669,7 +18786,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons 3 treants to attack enemy targets for 30 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "gale_winds",
@@ -18685,7 +18803,8 @@ export const baseTalents = {
                             damage: [15, 30],
                             cyclone: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "earth_and_moon",
@@ -18701,7 +18820,8 @@ export const baseTalents = {
                             dmgtaken: [4, 9, 13],
                             spelldmg: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "starfall",
@@ -18713,7 +18833,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You summon a flurry of stars from the sky on all targets within 30 yards of the caster, each dealing 145 to 167 Arcane damage. Also causes 26 Arcane damage to all other enemies within 5 yards of the enemy target. Maximum 20 stars. Lasts 10 sec.  Shapeshifting into an animal form or mounting cancels the effect. Any effect which causes you to lose control of your character will suppress the starfall effect."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // druid - wotlk
@@ -18731,7 +18852,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "feral_aggression",
@@ -18747,7 +18869,8 @@ export const baseTalents = {
                             reduction: [8, 16, 24, 32, 40],
                             damage: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "feral_instinct",
@@ -18762,7 +18885,11 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresCatForm: true,
+                    requiresBearForm: true,
+                    requiresDireBearForm: true
                 },
                 {
                     id: "savage_fury",
@@ -18777,7 +18904,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "thick_hide",
@@ -18792,7 +18920,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "feral_swiftness",
@@ -18808,7 +18937,9 @@ export const baseTalents = {
                             speed: [15, 30],
                             dodge: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresCatForm: true
                 },
                 {
                     id: "survival_instincts",
@@ -18820,7 +18951,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this ability temporarily grants you 30% of your maximum health for 20 sec while in Bear Form, Cat Form, or Dire Bear Form.  After the effect expires, the health is lost."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sharpened_claws",
@@ -18835,7 +18967,11 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresCatForm: true,
+                    requiresBearForm: true,
+                    requiresDireBearForm: true
                 },
                 {
                     id: "shredding_attacks",
@@ -18851,7 +18987,8 @@ export const baseTalents = {
                             shred: [9, 18],
                             lacerate: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "predatory_strikes",
@@ -18868,7 +19005,8 @@ export const baseTalents = {
                             weapon: [7, 14, 20],
                             instant: [7, 13, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "primal_fury",
@@ -18883,7 +19021,11 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresCatForm: true,
+                    requiresBearForm: true,
+                    requiresDireBearForm: true
                 },
                 {
                     id: "primal_precision",
@@ -18899,7 +19041,8 @@ export const baseTalents = {
                             expertise: [5, 10],
                             refund: [40, 80]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "brutal_impact",
@@ -18915,7 +19058,8 @@ export const baseTalents = {
                             stun: [0.5, 1],
                             cooldown: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "feral_charge",
@@ -18927,7 +19071,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Teaches Feral Charge (Bear) and Feral Charge (Cat).<br><br>Feral Charge (Bear) - Causes you to charge an enemy, immobilizing and interrupting any spell being cast for 4 sec. This ability can be used in Bear Form and Dire Bear Form. 15 second cooldown.<br><br>Feral Charge (Cat) - Causes you to leap behind an enemy, dazing them for 3 sec. 30 second cooldown."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "nurturing_instinct",
@@ -18943,7 +19088,8 @@ export const baseTalents = {
                             agi: [35, 70],
                             cat: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natural_reaction",
@@ -18959,7 +19105,10 @@ export const baseTalents = {
                             dodge: [2, 4, 6],
                             rage: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresBearForm: true,
+                    requiresDireBearForm: true
                 },
                 {
                     id: "heart_of_the_wild",
@@ -18975,7 +19124,8 @@ export const baseTalents = {
                             intellect: [4, 8, 12, 16, 20],
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "survival_of_the_fittest",
@@ -18991,7 +19141,8 @@ export const baseTalents = {
                             attributes: [2, 4, 6],
                             armor: [11, 22, 33]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "leader_of_the_pack",
@@ -19003,7 +19154,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "While in Cat, Bear or Dire Bear Form, the Leader of the Pack increases ranged and melee critical chance of all party and raid members within 100 yards by 5%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_leader_of_the_pack",
@@ -19019,7 +19171,8 @@ export const baseTalents = {
                             heal: [2, 4],
                             mana: [4, 8]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "primal_tenacity",
@@ -19034,7 +19187,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "protector_of_the_pack",
@@ -19050,7 +19204,10 @@ export const baseTalents = {
                             ap: [2, 4, 6],
                             damage: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresBearForm: true,
+                    requiresDireBearForm: true
                 },
                 {
                     id: "predatory_instincts",
@@ -19066,7 +19223,9 @@ export const baseTalents = {
                             damage: [3, 7, 10],
                             avoidance: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresCatForm: true
                 },
                 {
                     id: "infected_wounds",
@@ -19082,7 +19241,8 @@ export const baseTalents = {
                             movement: [16, 34, 50],
                             attackspeed: [6, 14, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "king_of_the_jungle",
@@ -19098,7 +19258,8 @@ export const baseTalents = {
                             damage: [5, 10, 15],
                             value: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mangle",
@@ -19110,7 +19271,8 @@ export const baseTalents = {
                     requiresTalents: "leader_of_the_pack",
                     description: [
                         "Mangle the target, inflicting damage and causing the target to take additional damage from bleed effects for 1 min. This ability can be used in Cat Form or Dire Bear Form."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_mangle",
@@ -19126,7 +19288,8 @@ export const baseTalents = {
                             bear: [0.5, 1, 1.5],
                             cat: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rend_and_tear",
@@ -19142,7 +19305,8 @@ export const baseTalents = {
                             damage: [4, 8, 12, 16, 20],
                             crit: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "primal_gore",
@@ -19154,7 +19318,8 @@ export const baseTalents = {
                     requiresTalents: "rend_and_tear",
                     description: [
                         "Grants the periodic damage from your Lacerate and Rip abilities the ability to critically hit."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "berserk",
@@ -19166,7 +19331,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this ability causes your Mangle (Bear) ability to hit up to 3 targets and have no cooldown, and reduces the energy cost of all your Cat Form abilities by 50%.  Lasts 15 sec.  You cannot use Tiger's Fury while Berserk is active.<br><br>Clears the effect of Fear and makes you immune to Fear for the duration."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // druid - wotlk
@@ -19185,7 +19351,8 @@ export const baseTalents = {
                             value1: [20, 40],
                             value2: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_focus",
@@ -19200,7 +19367,8 @@ export const baseTalents = {
                         {
                             value: [23, 46, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "furor",
@@ -19216,7 +19384,8 @@ export const baseTalents = {
                             value1: [20, 40, 60, 80, 100],
                             value2: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "naturalist",
@@ -19232,7 +19401,8 @@ export const baseTalents = {
                             value1: [0.1, 0.2, 0.3, 0.4, 0.5],
                             value2: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "subtlety",
@@ -19247,7 +19417,8 @@ export const baseTalents = {
                         {
                             threat: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natural_shapeshifter",
@@ -19262,7 +19433,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "intensity",
@@ -19278,7 +19450,8 @@ export const baseTalents = {
                             value1: [17, 33, 50],
                             value2: [4, 7, 10],
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "omen_of_clarity",
@@ -19290,7 +19463,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Each of the Druid's damage spells, healing spells, and auto attacks has a chance of causing the caster to enter a Clearcasting state.  The Clearcasting state reduces the Mana, Rage or Energy cost of your next damage, healing spell or offensive ability by 100%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_shapeshifter",
@@ -19305,7 +19479,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tranquil_spirit",
@@ -19320,7 +19495,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_rejuvenation",
@@ -19335,7 +19511,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_swiftness",
@@ -19347,7 +19524,8 @@ export const baseTalents = {
                     requiresTalents: "intensity",
                     description: [
                         "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "gift_of_nature",
@@ -19362,7 +19540,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_tranquility",
@@ -19378,7 +19557,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_touch",
@@ -19394,7 +19574,8 @@ export const baseTalents = {
                             value1: [20, 40],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_bounty",
@@ -19409,7 +19590,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "living_spirit",
@@ -19424,7 +19606,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "swiftmend",
@@ -19436,7 +19619,8 @@ export const baseTalents = {
                     requiresTalents: "gift_of_nature",
                     description: [
                         "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "natural_perfection",
@@ -19452,7 +19636,8 @@ export const baseTalents = {
                             crit: [1, 2, 3],
                             damage: [2, 3, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_rejuvenation",
@@ -19467,7 +19652,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "living_seed",
@@ -19482,7 +19668,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "revitalize",
@@ -19497,7 +19684,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tree_of_life",
@@ -19509,7 +19697,15 @@ export const baseTalents = {
                     requiresTalents: "empowered_rejuvenation",
                     description: [
                         "Shapeshift into the Tree of Life.  While in this form you increase healing received by 25% of your total Spirit for all party members within 45 yards, your movement speed is reduced by 20%, and you can only cast Swiftmend, Innervate, Nature's Swiftness, Rebirth, Barkskin, poison removing and healing over time spells, but the mana cost of these spells is reduced by 20%.  The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: null,
+                    spentResource: 13,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "improved_tree_of_life",
@@ -19525,7 +19721,8 @@ export const baseTalents = {
                             armor: [67, 133, 200],
                             healingsp: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_barkskin",
@@ -19542,7 +19739,8 @@ export const baseTalents = {
                             value2: [5, 10],
                             value3: [35, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "gift_of_the_earthmother",
@@ -19557,7 +19755,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "wild_growth",
@@ -19569,7 +19768,8 @@ export const baseTalents = {
                     requiresTalents: "tree_of_life",
                     description: [
                         "Heals up to 5 friendly party or raid members within 15 yards of the target for 686 over 7 sec. The amount healed is applied quickly at first, and slows down as the Wild Growth reaches its full duration."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -19589,7 +19789,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "endurance_training",
@@ -19605,7 +19806,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focused_fire",
@@ -19621,7 +19823,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_aspect_of_the_monkey",
@@ -19636,7 +19839,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "thick_hide",
@@ -19652,7 +19856,8 @@ export const baseTalents = {
                             value1: [7, 14, 20],
                             value2: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_revive_pet",
@@ -19669,7 +19874,8 @@ export const baseTalents = {
                             value2: [20, 40],
                             value3: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pathfinding",
@@ -19685,7 +19891,8 @@ export const baseTalents = {
                             value1: [4, 8],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "aspect_mastery",
@@ -19697,7 +19904,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Aspect of the Viper - Reduces the damage penalty by 10%.<br><br>Aspect of the Monkey - Reduces the damage done to you while active by 5%.<br><br>Aspect of the Hawk - Increases the attack power bonus by 30%.<br><br>Aspect of the Dragonhawk - Combines the bonuses from Aspect of the Monkey and Hawk."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unleashed_fury",
@@ -19712,7 +19920,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_mend_pet",
@@ -19728,7 +19937,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ferocity",
@@ -19743,7 +19953,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spirit_bond",
@@ -19759,7 +19970,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [5, 10]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "intimidation",
@@ -19771,7 +19983,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Command your pet to intimidate the target on the next successful melee attack, causing a high amount of threat and stunning the target for 3 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "bestial_discipline",
@@ -19786,7 +19999,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "animal_handler",
@@ -19802,7 +20016,8 @@ export const baseTalents = {
                             attackpower: [5, 10],
                             duration: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frenzy",
@@ -19817,7 +20032,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ferocious_inspiration",
@@ -19832,7 +20048,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bestial_wrath",
@@ -19844,7 +20061,15 @@ export const baseTalents = {
                     requiresTalents: "intimidation",
                     description: [
                         "Send your pet into a rage causing 50% additional damage for 10 sec.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 120,
+                    spentResource: 10,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 100,
+                    requiresWeapon: 0
                 },
                 {
                     id: "catlike_reflexes",
@@ -19861,7 +20086,8 @@ export const baseTalents = {
                             petdodge: [3, 6, 9],
                             cooldown: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "invigoration",
@@ -19876,7 +20102,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "serpents_swiftness",
@@ -19891,7 +20118,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "longevity",
@@ -19906,7 +20134,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "the_beast_within",
@@ -19918,7 +20147,8 @@ export const baseTalents = {
                     requiresTalents: "bestial_wrath",
                     description: [
                         "Go into a rage, increasing your damage by 30%.  Your pet also goes into a rage, causing 50% additional damage for 18 sec.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cobra_strikes",
@@ -19933,7 +20163,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "kindred_spirits",
@@ -19949,7 +20180,8 @@ export const baseTalents = {
                             petdamage: [4, 8, 12, 16, 20],
                             petspeed: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "beast_mastery",
@@ -19961,7 +20193,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You master the art of Beast training, teaching you the ability to tame Exotic pets and increasing your total amount of Pet Skill Points by 4."
-                    ]
+                    ],
+                    isActive: false
                 }
             ],
             // hunter - wotlk
@@ -19979,7 +20212,8 @@ export const baseTalents = {
                         {
                             value: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focused_aim",
@@ -19995,7 +20229,8 @@ export const baseTalents = {
                             value1: [23, 46, 70],
                             value2: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lethal_shots",
@@ -20010,7 +20245,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "careful_aim",
@@ -20025,7 +20261,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_hunters_mark",
@@ -20041,7 +20278,8 @@ export const baseTalents = {
                             attackpower: [10, 20, 30],
                             cost: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mortal_shots",
@@ -20056,7 +20294,8 @@ export const baseTalents = {
                         {
                             value: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "go_for_the_throat",
@@ -20071,7 +20310,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_arcane_shot",
@@ -20086,7 +20326,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "aimed_shot",
@@ -20098,7 +20339,8 @@ export const baseTalents = {
                     requiresTalents: "mortal_shots",
                     description: [
                         "An aimed shot that increases ranged damage by 870 and reduces healing done to that target by 50%. Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "rapid_killing",
@@ -20114,7 +20356,8 @@ export const baseTalents = {
                             cooldown: [1, 2],
                             damage: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_stings",
@@ -20129,7 +20372,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "efficiency",
@@ -20144,7 +20388,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "concussive_barrage",
@@ -20159,7 +20404,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "readiness",
@@ -20171,7 +20417,13 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this ability immediately finishes the cooldown on your other Hunter abilities except Bestial Wrath."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
+                    spentResource: null,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "barrage",
@@ -20186,7 +20438,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "combat_experience",
@@ -20201,7 +20454,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ranged_weapon_specialization",
@@ -20216,7 +20470,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "piercing_shots",
@@ -20231,7 +20486,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "trueshot_aura",
@@ -20243,7 +20499,8 @@ export const baseTalents = {
                     requiresTalents: "readiness",
                     description: [
                         "Increases the attack power of party and raid members within 100 yards by 10%. Lasts until cancelled."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_barrage",
@@ -20259,7 +20516,8 @@ export const baseTalents = {
                             crit: [4, 8, 12],
                             pushback: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_marksman",
@@ -20275,7 +20533,8 @@ export const baseTalents = {
                             crit: [1, 2, 3, 4, 5],
                             cost: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rapid_recuperation",
@@ -20291,7 +20550,8 @@ export const baseTalents = {
                             rapidfire: [2, 4],
                             rapidkilling: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "wild_quiver",
@@ -20306,7 +20566,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "silencing_shot",
@@ -20318,7 +20579,15 @@ export const baseTalents = {
                     requiresTalents: "master_marksman",
                     description: [
                         "A shot that deals 50% weapon damage and Silences the target for 3 sec. Non-player victim spellcasting is also interruped for 3 sec."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 20,
+                    spentResource: 6,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 35,
+                    requiresWeapon: 2
                 },
                 {
                     id: "improved_steady_shot",
@@ -20333,7 +20602,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "marked_for_death",
@@ -20349,7 +20619,8 @@ export const baseTalents = {
                             damage: [1, 2, 3, 4, 5],
                             crit: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chimera_shot",
@@ -20361,7 +20632,15 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You deal 125% weapon damage, refreshing the current Sting on your target and triggering an effect:<br><br>Serpent Sting - Instantly deals 40% of the damage done by your Serpent Sting.<br><br>Viper Sting - Instantly restores mana to you equal to 60% of the total amount drained by your Viper Sting.<br><br>Scorpid Sting - Attempts to Disarm the target for 10 sec. This effect cannot occur more than once per 1 minute."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 10,
+                    spentResource: 12,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 35,
+                    requiresWeapon: 2
                 }
             ],
             // hunter - wotlk
@@ -20379,7 +20658,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hawk_eye",
@@ -20394,7 +20674,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "savage_strikes",
@@ -20409,7 +20690,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "surefooted",
@@ -20424,7 +20706,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "entrapment",
@@ -20439,7 +20722,8 @@ export const baseTalents = {
                         {
                             value: [2, 3, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "trap_mastery",
@@ -20455,7 +20739,8 @@ export const baseTalents = {
                             value: [10, 20, 30],
                             snakes: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "survival_instincts",
@@ -20470,7 +20755,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "survivalist",
@@ -20485,7 +20771,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "scatter_shot",
@@ -20497,7 +20784,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A short-range shot that deals 50% weapon damage and disorients the target for 4 sec. Any damage caused will remove the effect. Turns off your attack when used."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "deflection",
@@ -20513,7 +20801,8 @@ export const baseTalents = {
                             parry: [1, 2, 3],
                             disarm: [16, 25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "survival_tactics",
@@ -20528,7 +20817,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tnt",
@@ -20543,7 +20833,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lock_and_load",
@@ -20559,7 +20850,8 @@ export const baseTalents = {
                             trap: [33, 66, 100],
                             dot: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hunter_vs_wild",
@@ -20574,7 +20866,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "killer_instinct",
@@ -20589,7 +20882,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "counterattack",
@@ -20601,7 +20895,15 @@ export const baseTalents = {
                     requiresTalents: "deflection",
                     description: [
                         "A strike that becomes active after parrying an opponent's attack.  This attack deals 40 damage and immobilizes the target for 5 sec.  Counterattack cannot be blocked, dodged, or parried."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 5,
+                    spentResource: 3,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 0,
+                    requiresWeapon: 0
                 },
                 {
                     id: "lightning_reflexes",
@@ -20616,7 +20918,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "resourcefulness",
@@ -20632,7 +20935,8 @@ export const baseTalents = {
                             cost: [20, 40, 60],
                             cooldown: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "expose_weakness",
@@ -20647,7 +20951,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "wyvern_sting",
@@ -20659,7 +20964,15 @@ export const baseTalents = {
                     requiresTalents: "killer_instinct",
                     description: [
                         "A stinging shot that puts the target to sleep for 30 sec.  Any damage will cancel the effect.  When the target wakes up, the Sting causes 300 Nature damage over 6 sec.  Only one Sting per Hunter can be active on the target at a time."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 60,
+                    spentResource: 8,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 35,
+                    requiresWeapon: 2
                 },
                 {
                     id: "thrill_of_the_hunt",
@@ -20674,7 +20987,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_tactician",
@@ -20689,7 +21003,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "noxious_stings",
@@ -20705,7 +21020,8 @@ export const baseTalents = {
                             duration: [16, 25, 50],
                             damage: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "point_of_no_escape",
@@ -20720,7 +21036,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "black_arrow",
@@ -20732,7 +21049,15 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Fires a Black Arrow at the target, increasing all damage done by you to the target by 6% and dealing (Ranged attack power * 0.1 + 448 * 5) Shadow damage over 15 sec. Black Arrow shares a cooldown with Trap spells."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 30,
+                    spentResource: 6,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 35,
+                    requiresWeapon: 2
                 },
                 {
                     id: "sniper_training",
@@ -20748,7 +21073,8 @@ export const baseTalents = {
                             chance: [5, 10, 15],
                             damage: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hunting_party",
@@ -20764,7 +21090,8 @@ export const baseTalents = {
                             agility: [1, 2, 3],
                             chance: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "explosive_shot",
@@ -20776,7 +21103,8 @@ export const baseTalents = {
                     requiresTalents: "black_arrow",
                     description: [
                         "You fire an explosive charge into the enemy target, dealing (Ranged attack power * 0.14 + 144)-(Ranged attack power * 0.14 + 172) Fire damage. The charge will blast the target every second for an additional 2 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -20797,7 +21125,8 @@ export const baseTalents = {
                             resistance: [5, 10],
                             threat: [20, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_focus",
@@ -20812,7 +21141,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_stability",
@@ -20827,7 +21157,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_fortitude",
@@ -20842,7 +21173,8 @@ export const baseTalents = {
                         {
                             value: [50, 100, 150]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "magic_absorption",
@@ -20858,7 +21190,8 @@ export const baseTalents = {
                             resistance: [2, 4, 6, 8, 10],
                             mana: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_concentration",
@@ -20873,7 +21206,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "magic_attunement",
@@ -20889,7 +21223,8 @@ export const baseTalents = {
                             range: [3, 6],
                             effect: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spell_impact",
@@ -20904,7 +21239,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "student_of_the_mind",
@@ -20919,7 +21255,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focus_magic",
@@ -20931,7 +21268,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases the target's chance to critically hit with spells by 3%.  When the target critically hits the caster's chance to critically hit with spells is increased by 3% for 10 sec.  Cannot be cast on self."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "arcane_shielding",
@@ -20947,7 +21285,8 @@ export const baseTalents = {
                             mana: [17, 33],
                             resistance: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_counterspell",
@@ -20962,7 +21301,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_meditation",
@@ -20977,7 +21317,8 @@ export const baseTalents = {
                         {
                             value: [17, 33, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "torment_the_weak",
@@ -20992,7 +21333,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_blink",
@@ -21008,7 +21350,8 @@ export const baseTalents = {
                             cost: [25, 50],
                             hit: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "presence_of_mind",
@@ -21020,7 +21363,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, your next Mage spell with a casting time less than 10 sec becomes an instant cast spell."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "arcane_mind",
@@ -21035,7 +21379,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "prismatic_cloak",
@@ -21051,7 +21396,8 @@ export const baseTalents = {
                             damagetaken: [2, 4, 6],
                             fade: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_instability",
@@ -21066,7 +21412,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_potency",
@@ -21081,7 +21428,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_empowerment",
@@ -21097,7 +21445,8 @@ export const baseTalents = {
                             spelldamage: [15, 30, 45],
                             mana: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_power",
@@ -21109,7 +21458,8 @@ export const baseTalents = {
                     requiresTalents: "arcane_instability",
                     description: [
                         "When activated, your spells deal 30% more damage while costing 30% more mana to cast.  This effect lasts 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "incanters_absorption",
@@ -21124,7 +21474,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_flows",
@@ -21140,7 +21491,8 @@ export const baseTalents = {
                             others: [15, 30],
                             evocation: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mind_mastery",
@@ -21155,7 +21507,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "slow",
@@ -21167,7 +21520,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces target's movement speed by 60%, increases the time between ranged attacks by 60% and increases casting time by 30%.  Lasts 15 sec.  Slow can only affect one target at a time."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "missile_barrage",
@@ -21183,7 +21537,8 @@ export const baseTalents = {
                             arcaneblast: [8, 16, 24, 32, 40],
                             others: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "netherwind_presence",
@@ -21198,7 +21553,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spell_power",
@@ -21213,7 +21569,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arcane_barrage",
@@ -21225,7 +21582,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Launches several missiles at the enemy target, causing 401 to 485 Arcane damage."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // mage - wotlk
@@ -21243,7 +21601,8 @@ export const baseTalents = {
                         {
                             value: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "incineration",
@@ -21258,7 +21617,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_fireball",
@@ -21273,7 +21633,8 @@ export const baseTalents = {
                         {
                             value: [0.1, 0.2, 0.3, 0.4, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ignite",
@@ -21288,7 +21649,8 @@ export const baseTalents = {
                         {
                             value: [8, 16, 24, 32, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "burning_determination",
@@ -21303,7 +21665,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "world_in_flames",
@@ -21318,7 +21681,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "flame_throwing",
@@ -21333,7 +21697,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "impact",
@@ -21348,7 +21713,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pyroblast",
@@ -21360,7 +21726,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Hurls an immense fiery boulder that causes 148 to 195 Fire damage and an additional 56 Fire damage over 12 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "burning_soul",
@@ -21376,7 +21743,8 @@ export const baseTalents = {
                             pushback: [35, 70],
                             threat: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_scorch",
@@ -21392,7 +21760,8 @@ export const baseTalents = {
                             crit: [1, 2, 3],
                             chance: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "molten_shields",
@@ -21408,7 +21777,8 @@ export const baseTalents = {
                             reflect: [15, 30],
                             affect: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_of_elements",
@@ -21423,7 +21793,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "playing_with_fire",
@@ -21438,7 +21809,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "critical_mass",
@@ -21453,7 +21825,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blast_wave",
@@ -21465,7 +21838,8 @@ export const baseTalents = {
                     requiresTalents: "pyroblast",
                     description: [
                         "A wave of flame radiates outward from the caster, damaging all enemies caught within the blast for 160 to 192 Fire damage, knocking them back and dazing them for 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "blazing_speed",
@@ -21480,7 +21854,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fire_power",
@@ -21495,7 +21870,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pyromaniac",
@@ -21511,7 +21887,8 @@ export const baseTalents = {
                             crit: [1, 2, 3],
                             regen: [17, 33, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "combustion",
@@ -21523,7 +21900,8 @@ export const baseTalents = {
                     requiresTalents: "critical_mass",
                     description: [
                         "When activated, this spell increases your critical strike damage bonus with Fire damage spells by 50%, and causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%.  This effect lasts until you have caused 3 non-periodic critical strikes with Fire spells."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "molten_fury",
@@ -21538,7 +21916,8 @@ export const baseTalents = {
                         {
                             value: [6, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fiery_payback",
@@ -21556,7 +21935,8 @@ export const baseTalents = {
                             cd: [2.5, 5],
                             disarm: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_fire",
@@ -21572,7 +21952,8 @@ export const baseTalents = {
                             damage: [5, 10, 15],
                             chance: [33, 67, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "firestarter",
@@ -21587,7 +21968,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dragons_breath",
@@ -21599,7 +21981,8 @@ export const baseTalents = {
                     requiresTalents: "combustion",
                     description: [
                         "Targets in a cone in front of the caster take 382 to 442 Fire damage and are Disoriented and Snared for 5 sec.  Any direct damaging attack will revive targets.  Turns off your attack when used."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "hot_streak",
@@ -21614,7 +21997,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "burnout",
@@ -21630,7 +22014,8 @@ export const baseTalents = {
                             bonus: [10, 20, 30, 40, 50],
                             cost: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "living_bomb",
@@ -21642,7 +22027,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "The target becomes a Living Bomb, taking 612 Fire damage over 12 sec.  After 12 sec or when the spell is dispelled, the target explodes dealing 306 Fire damage to all enemies within 10 yards."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // mage - wotlk
@@ -21660,7 +22046,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_frostbolt",
@@ -21675,7 +22062,8 @@ export const baseTalents = {
                         {
                             value: [0.1, 0.2, 0.3, 0.4, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ice_floes",
@@ -21690,7 +22078,8 @@ export const baseTalents = {
                         {
                             value: [7, 14, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ice_shards",
@@ -21705,7 +22094,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frost_warding",
@@ -21721,7 +22111,8 @@ export const baseTalents = {
                             armor: [25, 50],
                             ward: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "precision_frost",
@@ -21736,7 +22127,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "permafrost",
@@ -21753,7 +22145,8 @@ export const baseTalents = {
                             speed: [4, 7, 10],
                             healing: [7, 13, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "piercing_ice",
@@ -21768,7 +22161,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "icy_veins",
@@ -21780,7 +22174,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Hastens your spellcasting, increasing spell casting speed by 20% and reduces the pushback suffered from damaging attacks while casting by 100%.  Lasts 20 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_blizzard",
@@ -21795,7 +22190,8 @@ export const baseTalents = {
                         {
                             value: [25, 40, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "arctic_reach",
@@ -21810,7 +22206,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frost_channeling",
@@ -21825,7 +22222,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shatter",
@@ -21840,7 +22238,8 @@ export const baseTalents = {
                         {
                             value: [17, 34, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cold_snap",
@@ -21852,7 +22251,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this spell finishes the cooldown on all Frost spells you recently cast."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_cone_of_cold",
@@ -21867,7 +22267,8 @@ export const baseTalents = {
                         {
                             value: [15, 25, 35]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frozen_core",
@@ -21882,7 +22283,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cold_as_ice",
@@ -21897,7 +22299,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "winters_chill",
@@ -21913,7 +22316,8 @@ export const baseTalents = {
                             crit: [1, 2, 3],
                             effect: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shattered_barrier",
@@ -21928,7 +22332,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ice_barrier",
@@ -21940,7 +22345,8 @@ export const baseTalents = {
                     requiresTalents: "cold_snap",
                     description: [
                         "Instantly shields you, absorbing 455 damage.  Lasts 1 min.  While the shield holds, spellcasting will not be delayed by damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "arctic_winds",
@@ -21955,7 +22361,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_frostbolt",
@@ -21971,7 +22378,8 @@ export const baseTalents = {
                             bonus: [5, 10],
                             cast: [0.1, 0.2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fingers_of_frost",
@@ -21986,7 +22394,8 @@ export const baseTalents = {
                         {
                             value: [7, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "brain_freeze",
@@ -22001,7 +22410,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "summon_water_elemental",
@@ -22013,7 +22423,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summon a Water Elemental to fight for the caster for 45 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "enduring_winter",
@@ -22029,7 +22440,8 @@ export const baseTalents = {
                             duration: [5, 10, 15],
                             regen: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chilled_to_the_bone",
@@ -22045,7 +22457,8 @@ export const baseTalents = {
                             damage: [1, 2, 3, 4, 5],
                             chilled: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deep_freeze",
@@ -22057,7 +22470,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Stuns the target for 5 sec.  Only usable on Frozen targets.  Deals 1469 to 1741 damage to targets permanently immune to stuns."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -22077,7 +22491,8 @@ export const baseTalents = {
                         {
                             value: [14, 28, 42, 56, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "seals_of_the_pure",
@@ -22092,7 +22507,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "healing_light",
@@ -22107,7 +22523,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_intellect",
@@ -22122,7 +22539,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unyielding_faith",
@@ -22137,7 +22555,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "aura_mastery",
@@ -22148,8 +22567,9 @@ export const baseTalents = {
                     ranks: 1,
                     requiresTalents: null,
                     description: [
-                        "Increases the radius of your Auras to 40 yards."
-                    ]
+                        "Causes your Concentration Aura to make all affected targets immune to Silence and Interrupt effects and improve the effect of all other auras by 100%.  Lasts 6 sec."
+                    ],
+                    isActive: true
                 },
                 {
                     id: "illumination",
@@ -22164,7 +22584,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_lay_on_hands",
@@ -22180,7 +22601,8 @@ export const baseTalents = {
                             dmg: [10, 20],
                             cd: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_concentration_aura",
@@ -22196,7 +22618,8 @@ export const baseTalents = {
                             effect: [5, 10, 15],
                             duration: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_blessing_of_wisdom",
@@ -22211,7 +22634,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blessed_hands",
@@ -22228,7 +22652,8 @@ export const baseTalents = {
                             salvation: [50, 100],
                             sacrifice: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pure_of_heart",
@@ -22243,7 +22668,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_favor",
@@ -22255,7 +22681,8 @@ export const baseTalents = {
                     requiresTalents: "illumination",
                     description: [
                         "When activated, gives your next Flash of Light, Holy Light, or Holy Shock spell a 100% critical effect chance."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sanctified_light",
@@ -22270,7 +22697,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "purifying_power",
@@ -22286,7 +22714,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [17, 33]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_power",
@@ -22301,7 +22730,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lights_grace",
@@ -22316,7 +22746,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_shock",
@@ -22328,7 +22759,8 @@ export const baseTalents = {
                     requiresTalents: "divine_favor",
                     description: [
                         "Blasts the target with Holy energy, causing 314 to 340 Holy damage to an enemy, or 481 to 519 healing to an ally."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "blessed_life",
@@ -22343,7 +22775,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sacred_cleansing",
@@ -22358,7 +22791,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_guidance",
@@ -22373,7 +22807,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_illumination",
@@ -22385,7 +22820,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces the mana cost of all spells by 50% for 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "judgements_of_the_pure",
@@ -22401,7 +22837,8 @@ export const baseTalents = {
                             damage: [5, 10, 15, 20, 25],
                             haste: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "infusion_of_light",
@@ -22418,7 +22855,8 @@ export const baseTalents = {
                             crit: [10, 20],
                             heal: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "enlightened_judgements",
@@ -22434,7 +22872,8 @@ export const baseTalents = {
                             range: [15, 30],
                             hit: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "beacon_of_light",
@@ -22446,7 +22885,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "The target becomes a Beacon of Light to all members of your party or raid within a 60 yard radius.  Any heals you cast on party or raid members will also heal the Beacon for 100% of the amount healed.  Only one target can be the Beacon of Light at a time. Lasts 1 min."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // paladin - wotlk
@@ -22464,7 +22904,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_strength",
@@ -22479,7 +22920,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "stoicism",
@@ -22494,7 +22936,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "guardians_favor",
@@ -22510,7 +22953,8 @@ export const baseTalents = {
                             value1: ["60 sec", "2 min"],
                             value2: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "anticipation",
@@ -22525,7 +22969,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_sacrifice",
@@ -22537,7 +22982,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "30% of all damage taken by party members within 30 yards is redirected to the Paladin (up to a maximum of 40% of the Paladin's health times the number of party members).  Damage which reduces the Paladin below 20% health will break the effect.  Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_righteous_fury",
@@ -22552,7 +22998,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toughness",
@@ -22568,7 +23015,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_guardian",
@@ -22584,7 +23032,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_hammer_of_justice",
@@ -22599,7 +23048,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_devotion_aura",
@@ -22615,7 +23065,8 @@ export const baseTalents = {
                             value1: [17, 34, 50],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blessing_of_sanctuary",
@@ -22627,7 +23078,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Places a Blessing on the friendly target, reducing damage taken from all sources by 3% for 10 min and increasing strength and stamina by 10%.  In addition, when the target blocks, parries, or dodges a melee attack the target will gain 2% of maximum displayed mana.  Players may only have one Blessing on them per Paladin at any one time."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "reckoning",
@@ -22642,7 +23094,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sacred_duty",
@@ -22658,7 +23111,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "one_handed_weapon_specialization",
@@ -22673,7 +23127,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spiritual_attunement",
@@ -22688,7 +23143,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_shield",
@@ -22700,7 +23156,8 @@ export const baseTalents = {
                     requiresTalents: "blessing_of_sanctuary",
                     description: [
                         "Increases chance to block by 30% for 10 sec and deals 79 Holy damage for each attack blocked while active.  Each block expends a charge.  8 charges."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "ardent_defender",
@@ -22716,7 +23173,8 @@ export const baseTalents = {
                             value1: [7, 13, 20],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "redoubt",
@@ -22731,7 +23189,8 @@ export const baseTalents = {
                         {
                             block: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "combat_expertise",
@@ -22746,7 +23205,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "touched_by_light",
@@ -22762,7 +23222,8 @@ export const baseTalents = {
                             value1: [20, 40, 60],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "avengers_shield",
@@ -22774,7 +23235,8 @@ export const baseTalents = {
                     requiresTalents: "holy_shield",
                     description: [
                         "Hurls a holy shield at the enemy, dealing (440 + 0.07 * Spell power + 0.07 * Attack power) to (536 + 0.07 * Spell power + 0.07 * Attack power) Holy damage, Dazing them and then jumping to additional nearby enemies.  Affects 3 total targets.  Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "guarded_by_the_light",
@@ -22790,7 +23252,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shield_of_the_templar",
@@ -22806,7 +23269,8 @@ export const baseTalents = {
                             damage: [1, 2, 3],
                             chance: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "judgements_of_the_just",
@@ -22823,7 +23287,8 @@ export const baseTalents = {
                             value2: [0.5, 1],
                             value3: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hammer_of_the_righteous",
@@ -22835,7 +23300,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Hammer the current target and up to 2 additional nearby targets, causing 4 times your main hand damage per second as Holy damage."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // paladin - wotlk
@@ -22853,7 +23319,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "benediction",
@@ -22868,7 +23335,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_judgements",
@@ -22883,7 +23351,8 @@ export const baseTalents = {
                         {
                             value: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "heart_of_the_crusader",
@@ -22898,7 +23367,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_blessing_of_might",
@@ -22913,7 +23383,8 @@ export const baseTalents = {
                         {
                             value: [12, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vindication",
@@ -22928,7 +23399,8 @@ export const baseTalents = {
                         {
                             value: [287, 574]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "conviction",
@@ -22943,7 +23415,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "seal_of_command",
@@ -22955,7 +23428,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "All melee attacks deal (0.36 * Mainhand weapon min damage) to (0.36 * Mainhand weapon max damage) additional Holy damage.  When used with attacks or abilities that strike a single target, this additional Holy damage will strike up to 2 additional targets.  Lasts 30 min.<br><br>Unleashing this Seal's energy will judge an enemy, instantly causing (0.19 * Mainhand weapon min damage + 0.08 * Attack power + 0.13 * Spell power) to (0.19 * Mainhand weapon max damage + 0.08 * Attack power + 0.13 * Spell power) Holy damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "pursuit_of_justice",
@@ -22971,7 +23445,8 @@ export const baseTalents = {
                             value1: [25, 50],
                             value2: [8, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "eye_for_an_eye",
@@ -22986,7 +23461,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sanctity_of_battle",
@@ -23002,7 +23478,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "crusade",
@@ -23017,7 +23494,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "two_handed_weapon_specialization",
@@ -23032,7 +23510,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sanctified_retribution",
@@ -23044,7 +23523,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases the damage caused by Retribution Aura by 50% and all damage caused by friendly targets affected by any of your Auras is increased by 3%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vengeance",
@@ -23059,7 +23539,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_purpose",
@@ -23075,7 +23556,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "the_art_of_war",
@@ -23091,7 +23573,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: ["the cast time of your next Flash of Light or Exorcism is reduced by 0.75 sec", "your next Flash of Light  or Exorcism spell becomes instant cast"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "repentance",
@@ -23103,7 +23586,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Puts the enemy target in a state of meditation, incapacitating them for up to 1 min, and removing the effect of Righteous Vengeance.  Any damage caused will awaken the target.  Usable against Demons, Dragonkin, Giants, Humanoids and Undead."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "judgements_of_the_wise",
@@ -23118,7 +23602,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fanaticism",
@@ -23134,7 +23619,8 @@ export const baseTalents = {
                             value1: [6, 12, 18],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sanctified_wrath",
@@ -23150,7 +23636,8 @@ export const baseTalents = {
                             value1: [25, 50],
                             value2: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "swift_retribution",
@@ -23165,7 +23652,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "crusader_strike",
@@ -23177,7 +23665,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "An instant strike that causes 75% weapon damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sheath_of_light",
@@ -23193,7 +23682,8 @@ export const baseTalents = {
                             value1: [10, 20, 30],
                             value2: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "righteous_vengeance",
@@ -23208,7 +23698,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_storm",
@@ -23220,7 +23711,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "An instant weapon attack that causes 110% of weapon damage to up to 4 enemies within 8 yards.  The Divine Storm heals up to 3 party or raid members totaling 25% of the damage caused."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -23240,7 +23732,8 @@ export const baseTalents = {
                         {
                             value: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "twin_disciplines",
@@ -23255,7 +23748,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "silent_resolve",
@@ -23271,7 +23765,8 @@ export const baseTalents = {
                             value1: [7, 14, 20],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_inner_fire",
@@ -23287,7 +23782,8 @@ export const baseTalents = {
                             value1: [15, 30, 45],
                             value2: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_power_word_fortitude",
@@ -23303,7 +23799,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "martyrdom",
@@ -23319,7 +23816,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "meditation",
@@ -23334,7 +23832,8 @@ export const baseTalents = {
                         {
                             value: [17, 33, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "inner_focus",
@@ -23346,7 +23845,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, reduces the mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is capable of a critical effect."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_power_word_shield",
@@ -23361,7 +23861,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "absolution",
@@ -23376,7 +23877,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mental_agility",
@@ -23391,7 +23893,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_mana_burn",
@@ -23406,7 +23909,8 @@ export const baseTalents = {
                         {
                             value: [0.5, 1]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "reflective_shield",
@@ -23421,7 +23925,8 @@ export const baseTalents = {
                         {
                             value: [22, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mental_strength",
@@ -23436,7 +23941,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "soul_warding",
@@ -23448,7 +23954,8 @@ export const baseTalents = {
                     requiresTalents: "improved_power_word_shield",
                     description: [
                         "Reduces the cooldown of your Power Word: Shield ability by 4 sec, and reduces the mana cost of your Power Word: Shield by 15%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focused_power",
@@ -23464,7 +23971,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [0.5, 1]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "enlightenment",
@@ -23479,7 +23987,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focused_will",
@@ -23496,7 +24005,8 @@ export const baseTalents = {
                             value2: [2, 3, 4],
                             value3: [3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "power_infusion",
@@ -23508,7 +24018,8 @@ export const baseTalents = {
                     requiresTalents: "mental_strength",
                     description: [
                         "Infuses the target with power, increasing spell casting speed by 20% and reducing the mana cost of all spells by 20%.  Lasts 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_flash_heal",
@@ -23524,7 +24035,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "renewed_hope",
@@ -23540,7 +24052,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rapture",
@@ -23556,7 +24069,8 @@ export const baseTalents = {
                             mana: [1.5, 2, 2.5],
                             resource: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "aspiration",
@@ -23571,7 +24085,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_aegis",
@@ -23586,7 +24101,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pain_suppression",
@@ -23598,7 +24114,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly reduces a friendly target's threat by 5%, reduces all damage taken by 40% and increases resistance to Dispel mechanics by 65% for 8 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "grace",
@@ -23613,7 +24130,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "borrowed_time",
@@ -23629,7 +24147,8 @@ export const baseTalents = {
                             haste: [5, 10, 15, 20, 25],
                             absorbed: [8, 16, 24, 32, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "penance",
@@ -23641,7 +24160,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Launches a volley of holy light at the target, causing 240 Holy damage to an enemy, or 670 to 756 healing to an ally instantly and every 1 sec for 2 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // priest - wotlk
@@ -23659,7 +24179,8 @@ export const baseTalents = {
                         {
                             value: [35, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_renew",
@@ -23674,7 +24195,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_specialization",
@@ -23689,7 +24211,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spell_warding",
@@ -23704,7 +24227,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_fury",
@@ -23719,7 +24243,8 @@ export const baseTalents = {
                         {
                             value: [0.1, 0.2, 0.3, 0.4, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "desperate_prayer",
@@ -23731,7 +24256,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly heals the caster for 263 to 325."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "blessed_recovery",
@@ -23746,7 +24272,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "inspiration",
@@ -23761,7 +24288,8 @@ export const baseTalents = {
                         {
                             value: [3, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_reach",
@@ -23776,7 +24304,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_healing",
@@ -23791,7 +24320,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "searing_light",
@@ -23806,7 +24336,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "healing_prayers",
@@ -23821,7 +24352,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spirit_of_redemption",
@@ -23833,7 +24365,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases total Spirit by 5% and upon death, the priest becomes the Spirit of Redemption for 15 sec.  The Spirit of Redemption cannot move, attack, be attacked or targeted by any spells or effects.  While in this form the priest can cast any healing spell free of cost.  When the effect ends, the priest dies."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spiritual_guidance",
@@ -23848,7 +24381,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "surge_of_light",
@@ -23863,7 +24397,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spiritual_healing",
@@ -23878,7 +24413,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_concentration",
@@ -23893,7 +24429,8 @@ export const baseTalents = {
                         {
                             value: [16, 32, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lightwell",
@@ -23905,7 +24442,8 @@ export const baseTalents = {
                     requiresTalents: "spirit_of_redemption",
                     description: [
                         "Creates a Holy Lightwell.  Friendly players can click the Lightwell to restore 1 health over 6 sec.  Attacks done to you equal to 30% of your total health will cancel the effect. Lightwell lasts for 3 min or 10 charges."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "blessed_resilience",
@@ -23921,7 +24459,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "body_and_soul",
@@ -23937,7 +24476,8 @@ export const baseTalents = {
                             value1: [30, 60],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_healing",
@@ -23953,7 +24493,8 @@ export const baseTalents = {
                             value1: [8, 16, 24, 32, 40],
                             value2: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "serendipity",
@@ -23968,7 +24509,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_renew",
@@ -23983,7 +24525,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "circle_of_healing",
@@ -23995,7 +24538,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Heals up to 5 friendly party or raid members within 15 yards of the target for 347 to 383."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "test_of_faith",
@@ -24010,7 +24554,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_providence",
@@ -24026,7 +24571,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "guardian_spirit",
@@ -24038,7 +24584,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Calls upon a guardian spirit to watch over the friendly target. The spirit increases the healing received by the target by 40%, and also prevents the target from dying by sacrificing itself.  This sacrifice terminates the effect but heals the target of 50% of their maximum health. Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // priest - wotlk
@@ -24056,7 +24603,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_spirit_tap",
@@ -24072,7 +24620,8 @@ export const baseTalents = {
                             spirit: [5, 10],
                             rate: [17, 33]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "darkness",
@@ -24087,7 +24636,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_affinity",
@@ -24103,7 +24653,8 @@ export const baseTalents = {
                             value1: [8, 16, 25],
                             value2: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_shadow_word_pain",
@@ -24118,7 +24669,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_focus",
@@ -24134,7 +24686,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_psychic_scream",
@@ -24149,7 +24702,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_mind_blast",
@@ -24165,7 +24719,8 @@ export const baseTalents = {
                             value1: [0.5, 1, 1.5, 2, 2.5],
                             value2: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mind_flay",
@@ -24177,7 +24732,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Assault the target's mind with Shadow energy, causing 45 Shadow damage over 3 sec and slowing their movement speed by 50%."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "veiled_shadows",
@@ -24193,7 +24749,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: ["1 minute", "2 minutes"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_reach",
@@ -24208,7 +24765,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_weaving",
@@ -24223,7 +24781,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "silence",
@@ -24235,7 +24794,8 @@ export const baseTalents = {
                     requiresTalents: "improved_psychic_scream",
                     description: [
                         "Silences the target, preventing them from casting spells for 5 sec.  Non-player victim spellcasting is also interrupted for 3 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "vampiric_embrace",
@@ -24247,7 +24807,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Fills you with the embrace of Shadow energy, causing you to be healed for 15% and other party members to be healed for 3% of any single-target Shadow spell damage you deal for 30 min."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_vampiric_embrace",
@@ -24262,7 +24823,8 @@ export const baseTalents = {
                         {
                             value: [33, 67]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focused_mind",
@@ -24277,7 +24839,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mind_melt",
@@ -24293,7 +24856,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_devouring_plague",
@@ -24309,7 +24873,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadowform",
@@ -24321,7 +24886,8 @@ export const baseTalents = {
                     requiresTalents: "vampiric_embrace",
                     description: [
                         "Assume a Shadowform, increasing your Shadow damage by 15%, reducing all damage done to you by 15% and threat generated by 30%.  However, you may not cast Holy spells while in this form except Cure Disease and Abolish Disease.  Grants the periodic damage from your Shadow Word: Pain, Devouring Plague, and Vampiric Touch spells the ability to critically hit for 100% increased damage and grants Devouring Plague and Vampiric Touch the ability to benefit from haste."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "shadow_power",
@@ -24336,7 +24902,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_shadowform",
@@ -24352,7 +24919,9 @@ export const baseTalents = {
                             fade: [50, 100],
                             pushback: [35, 70]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresShadowform: true
                 },
                 {
                     id: "misery",
@@ -24368,7 +24937,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "psychic_horror",
@@ -24380,7 +24950,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You terrify the target, causing them to tremble in horror for 3 sec and drop their main hand and ranged weapons for 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "vampiric_touch",
@@ -24392,7 +24963,8 @@ export const baseTalents = {
                     requiresTalents: "shadowform",
                     description: [
                         "Causes 450 Shadow damage over 15 sec to your target and causes up to 10 party or raid members to gain 1% of their maximum mana per 5 sec when you deal damage from Mind Blast. In addition, if the Vampiric Touch is dispelled it will cause 720 damage to the afflicted target."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "pain_and_suffering",
@@ -24408,7 +24980,8 @@ export const baseTalents = {
                             refresh: [33, 66, 100],
                             damage: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "twisted_faith",
@@ -24424,7 +24997,8 @@ export const baseTalents = {
                             spellpower: [4, 8, 12, 16, 20],
                             damage: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dispersion",
@@ -24436,7 +25010,8 @@ export const baseTalents = {
                     requiresTalents: "vampiric_touch",
                     description: [
                         "You disperse into pure Shadow energy, reducing all damage taken by 90%.  You are unable to attack or cast spells, but you regenerate 6% mana every 1 sec for 6 sec. Dispersion can be cast while stunned, feared or silenced and clears all snare and movement impairing effects when cast, and makes you immune to them while dispersed."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -24456,7 +25031,8 @@ export const baseTalents = {
                         {
                             value: [7, 14, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "remorseless_attacks",
@@ -24471,7 +25047,8 @@ export const baseTalents = {
                         {
                             value: [20, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "malice",
@@ -24486,7 +25063,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ruthlessness",
@@ -24501,7 +25079,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blood_spatter",
@@ -24516,7 +25095,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "puncturing_wounds",
@@ -24532,7 +25112,8 @@ export const baseTalents = {
                             backstab: [10, 20, 30],
                             mutilate: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vigor",
@@ -24544,7 +25125,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases your maximum Energy by 10."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_expose_armor",
@@ -24559,7 +25141,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lethality",
@@ -24574,7 +25157,8 @@ export const baseTalents = {
                         {
                             value: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vile_poisons",
@@ -24590,7 +25174,8 @@ export const baseTalents = {
                             value1: [7, 14, 20],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_poisons",
@@ -24606,7 +25191,8 @@ export const baseTalents = {
                             value1: [4, 8, 12, 16, 20],
                             value2: [10, 20, 30, 40, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fleet_footed",
@@ -24622,7 +25208,8 @@ export const baseTalents = {
                             duration: [15, 30],
                             speed: [8, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cold_blood",
@@ -24634,7 +25221,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, increases the critical strike chance of your next offensive ability by 100%."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_kidney_shot",
@@ -24649,7 +25237,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "quick_recovery",
@@ -24665,7 +25254,8 @@ export const baseTalents = {
                             healing: [10, 20],
                             cost: [40, 80]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "seal_fate",
@@ -24680,7 +25270,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "murder",
@@ -24695,7 +25286,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deadly_brew",
@@ -24710,7 +25302,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "overkill",
@@ -24722,7 +25315,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "While stealthed, and for 20 seconds after breaking stealth, you regenerate 30% additional energy."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deadened_nerves",
@@ -24737,7 +25331,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focused_attacks",
@@ -24752,7 +25347,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "find_weakness",
@@ -24767,7 +25363,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_poisoner",
@@ -24784,7 +25381,8 @@ export const baseTalents = {
                             duration: [17, 34, 50],
                             envenom: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mutilate",
@@ -24796,7 +25394,8 @@ export const baseTalents = {
                     requiresTalents: "overkill",
                     description: [
                         "Instantly attacks with both weapons for 100% weapon damage plus an additional 44 with each weapon.  Damage is increased by 20% against Poisoned targets.  Awards 2 combo points."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "turn_the_tables",
@@ -24811,7 +25410,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cut_to_the_chase",
@@ -24826,7 +25426,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hunger_for_blood",
@@ -24838,7 +25439,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Enrages you, increasing all damage caused by 5%.  Requires a bleed effect to be active on the target.  Lasts 1 min."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // rogue - wotlk
@@ -24856,7 +25458,8 @@ export const baseTalents = {
                         {
                             value: [0.5, 1, 1.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_sinister_strike",
@@ -24871,7 +25474,8 @@ export const baseTalents = {
                         {
                             value: [3, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dual_wield_specialization",
@@ -24886,7 +25490,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30, 40, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_slice_and_dice",
@@ -24901,7 +25506,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deflection",
@@ -24916,7 +25522,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "precision",
@@ -24931,7 +25538,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "endurance",
@@ -24947,7 +25555,8 @@ export const baseTalents = {
                             cooldown: [30, 60],
                             stamina: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "riposte",
@@ -24959,7 +25568,8 @@ export const baseTalents = {
                     requiresTalents: "deflection",
                     description: [
                         "A strike that becomes active after parrying an opponent's attack.  This attack deals 150% weapon damage and slows their melee attack speed by 20% for 30 sec.  Awards 1 combo point."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "close_quarters_combat",
@@ -24974,7 +25584,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_kick",
@@ -24989,7 +25600,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_sprint",
@@ -25004,7 +25616,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lightning_reflexes",
@@ -25020,7 +25633,8 @@ export const baseTalents = {
                             dodge: [2, 4, 6],
                             haste: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "aggression",
@@ -25035,7 +25649,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mace_specialization",
@@ -25050,7 +25665,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blade_flurry",
@@ -25062,7 +25678,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases your attack speed by 20%.  In addition, attacks strike an additional nearby opponent.  Lasts 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "hack_and_slash",
@@ -25077,7 +25694,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "weapon_expertise",
@@ -25092,7 +25710,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blade_twisting",
@@ -25108,7 +25727,8 @@ export const baseTalents = {
                             damage: [5, 10],
                             daze: [4, 8]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vitality",
@@ -25123,7 +25743,8 @@ export const baseTalents = {
                         {
                             value: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "adrenaline_rush",
@@ -25135,7 +25756,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases your Energy regeneration rate by 100% for 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "nerves_of_steel",
@@ -25150,7 +25772,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "throwing_specialization",
@@ -25166,7 +25789,8 @@ export const baseTalents = {
                             range: [2, 4],
                             interrupt: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "combat_potency",
@@ -25181,7 +25805,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unfair_advantage",
@@ -25196,7 +25821,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "surprise_attacks",
@@ -25208,7 +25834,8 @@ export const baseTalents = {
                     requiresTalents: "adrenaline_rush",
                     description: [
                         "Your finishing moves can no longer be dodged, and the damage dealt by your Sinister Strike, Backstab, Shiv, Hemorrhage and Gouge abilities is increased by 10%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "savage_combat",
@@ -25223,7 +25850,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "prey_on_the_weak",
@@ -25238,7 +25866,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "killing_spree",
@@ -25250,7 +25879,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Step through the shadows from enemy to enemy within 10 yards, attacking an enemy every .5 secs with both weapons until 5 assaults are made, and increasing all damage done by 20% for the duration.  Can hit the same target multiple times.  Cannot hit invisible or stealthed targets."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // rogue - wotlk
@@ -25268,7 +25898,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_of_deception",
@@ -25283,7 +25914,8 @@ export const baseTalents = {
                         {
                             value: ["", "  More effective than Master of Deception (Rank 1).", "  More effective than Master of Deception (Rank 2)."]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "opportunity",
@@ -25298,7 +25930,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sleight_of_hand",
@@ -25314,7 +25947,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dirty_tricks",
@@ -25330,7 +25964,8 @@ export const baseTalents = {
                             value1: [2, 5],
                             value2: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "camouflage",
@@ -25346,7 +25981,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elusiveness",
@@ -25362,7 +25998,8 @@ export const baseTalents = {
                             value1: [30, 60],
                             value2: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ghostly_strike",
@@ -25374,7 +26011,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A strike that deals 125% weapon damage (180% if a dagger is equipped) and increases your chance to dodge by 15% for 7 sec.  Awards 1 combo point."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "serrated_blades",
@@ -25390,7 +26028,8 @@ export const baseTalents = {
                             armor: [3, 6, 9],
                             rupture: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "setup",
@@ -25405,7 +26044,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "initiative",
@@ -25420,7 +26060,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_ambush",
@@ -25435,7 +26076,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "heightened_senses",
@@ -25451,7 +26093,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: ["", "  More effective than Heightened Senses (Rank 1)."]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "preparation",
@@ -25463,7 +26106,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this ability immediately finishes the cooldown on your Evasion, Sprint, Vanish, Cold Blood and Shadowstep abilities."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "dirty_deeds",
@@ -25478,7 +26122,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hemorrhage",
@@ -25490,7 +26135,8 @@ export const baseTalents = {
                     requiresTalents: "serrated_blades",
                     description: [
                         "An instant strike that deals 110% weapon damage (160% if a dagger is equipped) and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 13.  Lasts 10 charges or 15 sec.  Awards 1 combo point."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "master_of_subtlety",
@@ -25505,7 +26151,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deadliness",
@@ -25520,7 +26167,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "enveloping_shadows",
@@ -25535,7 +26183,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "premeditation",
@@ -25547,7 +26196,8 @@ export const baseTalents = {
                     requiresTalents: "preparation",
                     description: [
                         "When used, adds 2 combo points to your target.  You must add to or use those combo points within 20 sec or the combo points are lost."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "cheat_death",
@@ -25562,7 +26212,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sinister_calling",
@@ -25578,7 +26229,8 @@ export const baseTalents = {
                             agility: [3, 6, 9, 12, 15],
                             damage: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "waylay",
@@ -25593,7 +26245,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "honor_among_thieves",
@@ -25608,7 +26261,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadowstep",
@@ -25620,7 +26274,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Attempts to step through the shadows and reappear behind your enemy and increases movement speed by 70% for 3 sec.  The damage of your next ability is increased by 20% and the threat caused is reduced by 50%.  Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "filthy_tricks",
@@ -25636,7 +26291,8 @@ export const baseTalents = {
                             other: [5, 10],
                             preparation: [1.5, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "slaughter_from_the_shadows",
@@ -25652,7 +26308,8 @@ export const baseTalents = {
                             cost: [4, 8, 12, 16, 20],
                             other: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_dance",
@@ -25664,7 +26321,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Enter the Shadow Dance for 6 sec, allowing the use of Sap, Garrote, Ambush, Cheap Shot, Premeditation, Pickpocket and Disarm Trap regardless of being stealthed."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -25684,7 +26342,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "concussion",
@@ -25699,7 +26358,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "call_of_flame",
@@ -25715,7 +26375,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_warding",
@@ -25730,7 +26391,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_devastation",
@@ -25745,7 +26407,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "reverberation",
@@ -25760,7 +26423,8 @@ export const baseTalents = {
                         {
                             value: [0.2, 0.4, 0.6, 0.8, 1]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_focus",
@@ -25772,7 +26436,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "After landing a non-periodic critical strike with a Fire, Frost, or Nature damage spell, you enter a Clearcasting state.  The Clearcasting state reduces the mana cost of your next 2 damage or healing spells by 40%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_fury",
@@ -25787,7 +26452,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_fire_nova",
@@ -25803,7 +26469,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "eye_of_the_storm",
@@ -25818,7 +26485,8 @@ export const baseTalents = {
                         {
                             value: [23, 46, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_reach",
@@ -25835,7 +26503,8 @@ export const baseTalents = {
                             value2: [10, 20],
                             value3: [7, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "call_of_thunder",
@@ -25847,7 +26516,8 @@ export const baseTalents = {
                     requiresTalents: "elemental_focus",
                     description: [
                         "Increases the critical strike chance of your Lightning Bolt, Chain Lightning and Thunderstorm spells by an additional 5%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unrelenting_storm",
@@ -25862,7 +26532,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_precision",
@@ -25878,7 +26549,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lightning_mastery",
@@ -25893,7 +26565,8 @@ export const baseTalents = {
                         {
                             value: [0.1, 0.2, 0.3, 0.4, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_mastery",
@@ -25905,7 +26578,8 @@ export const baseTalents = {
                     requiresTalents: "call_of_thunder",
                     description: [
                         "When activated, your next Lightning Bolt, Chain Lightning or Lava Burst spell becomes an instant cast spell. In addition, you gain 15% spell haste for 15 sec. Elemental Mastery shares a cooldown with Nature's Swiftness."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "storm_earth_and_fire",
@@ -25922,7 +26596,8 @@ export const baseTalents = {
                             value2: [33, 66, 100],
                             value3: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "booming_echoes",
@@ -25938,7 +26613,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_oath",
@@ -25954,7 +26630,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [3, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lightning_overload",
@@ -25969,7 +26646,8 @@ export const baseTalents = {
                         {
                             value: [11, 22, 33]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "astral_shift",
@@ -25984,7 +26662,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "totem_of_wrath",
@@ -25996,7 +26675,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons a Totem of Wrath with 5 health at the feet of the caster.  The totem increases spell power by 100 for all party and raid members, and increases the critical strike chance of all attacks by 3% against all enemies within 40 yards.  Lasts 5 min."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "lava_flows",
@@ -26012,7 +26692,8 @@ export const baseTalents = {
                             value1: [6, 12, 24],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shamanism",
@@ -26028,7 +26709,8 @@ export const baseTalents = {
                             lightning: [4, 8, 12, 16, 20],
                             burst: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "thunderstorm",
@@ -26040,7 +26722,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You call down a bolt of lightning, energizing you and damaging nearby enemies within 10 yards. Restores 8% mana to you and deals 566 to 644 Nature damage to all nearby enemies, knocking them back 20 yards. This spell is usable while stunned."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // shaman - wotlk
@@ -26058,7 +26741,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "earths_grasp",
@@ -26075,7 +26759,8 @@ export const baseTalents = {
                             radius: [10, 20],
                             cooldown: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ancestral_knowledge",
@@ -26090,7 +26775,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "guardian_totems",
@@ -26106,7 +26792,8 @@ export const baseTalents = {
                             damage: [10, 20],
                             cooldown: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "thundering_strikes",
@@ -26121,7 +26808,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_ghost_wolf",
@@ -26136,7 +26824,8 @@ export const baseTalents = {
                         {
                             value: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_shields",
@@ -26151,7 +26840,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_weapons",
@@ -26167,7 +26857,8 @@ export const baseTalents = {
                             windfury: [13, 27, 40],
                             flameearth: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shamanistic_focus",
@@ -26179,7 +26870,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces the mana cost of your Shock spells by 45%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "anticipation",
@@ -26195,7 +26887,8 @@ export const baseTalents = {
                             dodge: [1, 2, 3],
                             disarm: [16, 25, 50],
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "flurry",
@@ -26210,7 +26903,8 @@ export const baseTalents = {
                         {
                             value: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toughness",
@@ -26226,7 +26920,8 @@ export const baseTalents = {
                             stamina: [2, 4, 6, 8, 10],
                             slow: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_windfury_totem",
@@ -26241,7 +26936,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spirit_weapons",
@@ -26253,7 +26949,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Gives a chance to parry enemy melee attacks and reduces the threat generated by 30%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mental_dexterity",
@@ -26268,7 +26965,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unleashed_rage",
@@ -26284,7 +26982,8 @@ export const baseTalents = {
                             expertise: [3, 6, 9],
                             attackpower: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "weapon_mastery",
@@ -26299,7 +26998,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frozen_power",
@@ -26315,7 +27015,8 @@ export const baseTalents = {
                             damage: [5, 10],
                             root: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dual_wield_specialization",
@@ -26330,7 +27031,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dual_wield",
@@ -26342,7 +27044,8 @@ export const baseTalents = {
                     requiresTalents: "spirit_weapons",
                     description: [
                         "Allows one-hand and off-hand weapons to be equipped in the off-hand."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "stormstrike",
@@ -26354,7 +27057,15 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly attack with both weapons.  In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%.  Lasts 12 sec."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 8,
+                    spentResource: 8,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 0,
+                    requiresWeapon: 1
                 },
                 {
                     id: "static_shock",
@@ -26369,7 +27080,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lava_lash",
@@ -26381,7 +27093,15 @@ export const baseTalents = {
                     requiresTalents: "dual_wield",
                     description: [
                         "You charge your off-hand weapon with lava, instantly dealing 100% off-hand Weapon damage. Damage is increased by 25% if your off-hand weapon is enchanted with Flametongue."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 6,
+                    spentResource: 4,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 0,
+                    requiresWeapon: 1
                 },
                 {
                     id: "improved_stormstrike",
@@ -26396,7 +27116,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mental_quickness",
@@ -26412,7 +27133,8 @@ export const baseTalents = {
                             cost: [2, 4, 6],
                             attackpower: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shamanistic_rage",
@@ -26424,7 +27146,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces all damage taken by 30% and gives your successful melee attacks a chance to regenerate mana equal to 15% of your attack power. This spell is usable while stunned.  Lasts 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "earthen_power",
@@ -26440,7 +27163,8 @@ export const baseTalents = {
                             earthbind: [50, 100],
                             earthshock: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "maelstrom_weapon",
@@ -26455,7 +27179,8 @@ export const baseTalents = {
                         {
                             value: ["to", "(higher than rank 1) to", "(higher than rank 2) to", "(higher than rank 3) to", "(higher than rank 4) to"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "feral_spirit",
@@ -26467,7 +27192,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons two Spirit Wolves under the command of the Shaman, lasting 45 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // shaman - wotlk
@@ -26485,7 +27211,8 @@ export const baseTalents = {
                         {
                             value: [0.1, 0.2, 0.3, 0.4, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "totemic_focus",
@@ -26500,7 +27227,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_reincarnation",
@@ -26516,7 +27244,8 @@ export const baseTalents = {
                             value1: [7, 15],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "healing_grace",
@@ -26532,7 +27261,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tidal_focus",
@@ -26547,7 +27277,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_water_shield",
@@ -26564,7 +27295,8 @@ export const baseTalents = {
                             value2: [20, 40, 60],
                             value3: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "healing_focus",
@@ -26579,7 +27311,8 @@ export const baseTalents = {
                         {
                             value: [23, 46, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tidal_force",
@@ -26591,7 +27324,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases the critical effect chance of your Healing Wave, Lesser Healing Wave and Chain Heal by 60%. Each critical heal reduces the chance by 20%. Lasts 20 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "ancestral_healing",
@@ -26606,7 +27340,8 @@ export const baseTalents = {
                         {
                             value: [3, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "restorative_totems",
@@ -26622,7 +27357,8 @@ export const baseTalents = {
                             value1: [7, 12, 20],
                             value2: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tidal_mastery",
@@ -26637,7 +27373,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "healing_way",
@@ -26652,7 +27389,8 @@ export const baseTalents = {
                         {
                             value: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_swiftness",
@@ -26664,7 +27402,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell. Nature's Swiftness shares a cooldown with Elemental Mastery."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "focused_mind",
@@ -26679,7 +27418,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "purification",
@@ -26694,7 +27434,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_guardian",
@@ -26709,7 +27450,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mana_tide_totem",
@@ -26721,7 +27463,8 @@ export const baseTalents = {
                     requiresTalents: "restorative_totems",
                     description: [
                         "Summons a Mana Tide Totem with 10% of the caster's health at the feet of the caster for 12 sec that restores 6% of total mana every 3 seconds to group members within 30 yards."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "cleanse_spirit",
@@ -26733,7 +27476,8 @@ export const baseTalents = {
                     requiresTalents: "purification",
                     description: [
                         "Cleanse the spirit of a friendly target, removing 1 poison effect, 1 disease effect, and 1 curse effect."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "blessing_of_the_eternals",
@@ -26749,7 +27493,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [40, 80]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_chain_heal",
@@ -26764,7 +27509,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_blessing",
@@ -26779,7 +27525,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ancestral_awakening",
@@ -26794,7 +27541,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "earth_shield",
@@ -26806,7 +27554,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Protects the target with an earthen shield, reducing casting or channeling time lost when damaged by 30%  and causing attacks to heal the shielded target for 150.  This effect can only occur once every few seconds.  6 charges.  Lasts 10 min.  Earth Shield can only be placed on one target at a time and only one Elemental Shield can be active on a target at a time."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_earth_shield",
@@ -26822,7 +27571,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tidal_waves",
@@ -26839,7 +27589,8 @@ export const baseTalents = {
                             value2: [4, 8, 12, 16, 20],
                             value3: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "riptide",
@@ -26851,7 +27602,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Heals a friendly target for 639 to 691 and another 665 over 15 sec.  Your next Chain Heal cast on that primary target within 15 sec will consume the healing over time effect and increase the amount of the Chain Heal by 25%."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -26871,7 +27623,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "suppression",
@@ -26887,7 +27640,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_corruption",
@@ -26903,7 +27657,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_curse_of_weakness",
@@ -26918,7 +27673,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_drain_soul",
@@ -26934,7 +27690,8 @@ export const baseTalents = {
                             value1: [7, 15],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_life_tap",
@@ -26949,7 +27706,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "soul_siphon",
@@ -26965,7 +27723,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [9, 18]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_fear",
@@ -26980,7 +27739,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fel_concentration",
@@ -26995,7 +27755,8 @@ export const baseTalents = {
                         {
                             value: [23, 46, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "amplify_curse",
@@ -27007,7 +27768,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces the global cooldown of your Curses by 0.5 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "grim_reach",
@@ -27022,7 +27784,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "nightfall",
@@ -27037,7 +27800,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_corruption",
@@ -27052,7 +27816,8 @@ export const baseTalents = {
                         {
                             value: [12, 24, 36]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_embrace",
@@ -27068,7 +27833,8 @@ export const baseTalents = {
                             value1: [1, 2, 3, 4, 5],
                             value2: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "siphon_life",
@@ -27080,7 +27846,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When you deal damage with your Corruption spell, you are instantly healed for 40% of the damage done. In addition, the damage done by your Corruption, Seed of Corruption and Unstable Affliction damage over time effects is increased by 5%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "curse_of_exhaustion",
@@ -27092,7 +27859,8 @@ export const baseTalents = {
                     requiresTalents: "amplify_curse",
                     description: [
                         "Reduces the target's movement speed by 30% for 12 sec.  Only one Curse per Warlock can be active on any one target."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_felhunter",
@@ -27109,7 +27877,8 @@ export const baseTalents = {
                             value2: [2, 4],
                             value3: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_mastery",
@@ -27124,7 +27893,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "eradication",
@@ -27139,7 +27909,8 @@ export const baseTalents = {
                         {
                             value: [6, 12, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "contagion",
@@ -27155,7 +27926,8 @@ export const baseTalents = {
                             value1: [1, 2, 3, 4, 5],
                             value2: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dark_pact",
@@ -27167,7 +27939,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Drains 305 of your summoned demon's Mana, returning 100% to you."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_howl_of_terror",
@@ -27182,7 +27955,8 @@ export const baseTalents = {
                         {
                             value: [0.8, 1.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "malediction",
@@ -27198,7 +27972,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deaths_embrace",
@@ -27214,7 +27989,8 @@ export const baseTalents = {
                             value1: [10, 20, 30],
                             value2: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unstable_affliction",
@@ -27226,7 +28002,8 @@ export const baseTalents = {
                     requiresTalents: "contagion",
                     description: [
                         "Shadow energy slowly destroys the target, causing 550 damage over 15 sec.  In addition, if the Unstable Affliction is dispelled it will cause 990 damage to the dispeller and silence them for 5 sec. Only one Unstable Affliction or Immolate per Warlock can be active on any one target."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "pandemic",
@@ -27238,7 +28015,8 @@ export const baseTalents = {
                     requiresTalents: "unstable_affliction",
                     description: [
                         "Grants the periodic damage from your Corruption and Unstable Affliction spells the ability to critically hit for 100% increased damage, and increases the critical strike damage bonus of your Haunt spell by 100%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "everlasting_affliction",
@@ -27254,7 +28032,8 @@ export const baseTalents = {
                             value1: [1, 2, 3, 4, 5],
                             value2: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "haunt",
@@ -27266,7 +28045,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You send a ghostly soul into the target, dealing 405 to 473 Shadow damage and increasing all damage done by your Shadow damage-over-time effects on the target by 20% for 12 sec. When the Haunt spell ends or is dispelled, the soul returns to you, healing you for 100% of the damage it did to the target."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // warlock - wotlk
@@ -27284,7 +28064,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_imp",
@@ -27299,7 +28080,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_embrace",
@@ -27314,7 +28096,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fel_synergy",
@@ -27329,7 +28112,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_health_funnel",
@@ -27345,7 +28129,8 @@ export const baseTalents = {
                             effectiveness: [10, 20],
                             damage: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_brutality",
@@ -27361,7 +28146,8 @@ export const baseTalents = {
                             effectiveness: [10, 20, 30],
                             apbonus: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fel_vitality",
@@ -27377,7 +28163,8 @@ export const baseTalents = {
                             stat: [5, 10, 15],
                             hpmana: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_succubus",
@@ -27393,7 +28180,8 @@ export const baseTalents = {
                             casttime: [22, 44, 66],
                             duration: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "soul_link",
@@ -27405,7 +28193,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When active, 20% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Felhunter, Felguard, or enslaved demon instead.  That damage cannot be prevented. Lasts as long as the demon is active and controlled."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "fel_domination",
@@ -27417,7 +28206,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your next Imp, Voidwalker, Succubus, Felhunter or Felguard Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "demonic_aegis",
@@ -27432,7 +28222,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unholy_power",
@@ -27447,7 +28238,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_summoner",
@@ -27463,7 +28255,8 @@ export const baseTalents = {
                             casttime: [2, 4],
                             cost: [20, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mana_feed",
@@ -27475,7 +28268,8 @@ export const baseTalents = {
                     requiresTalents: "unholy_power",
                     description: [
                         "When you gain mana from Drain Mana or Life Tap spells, your summoned demon gains 100% of the mana you gain."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_conjuror",
@@ -27490,7 +28284,8 @@ export const baseTalents = {
                         {
                             value: [150, 300]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_demonologist",
@@ -27506,7 +28301,8 @@ export const baseTalents = {
                             impfelguardsucc: [1, 2, 3, 4, 5],
                             voidfelhunter: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "molten_core",
@@ -27525,7 +28321,8 @@ export const baseTalents = {
                             inccasttime: [10, 20, 30],
                             sfcrit: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_resilience",
@@ -27541,7 +28338,8 @@ export const baseTalents = {
                             crit: [1, 2, 3],
                             damage: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_empowerment",
@@ -27553,7 +28351,8 @@ export const baseTalents = {
                     requiresTalents: "master_demonologist",
                     description: [
                         "Grants the Warlock's summoned demon Empowerment.<br><br>Imp - Increases the Imp's spell critical strike chance by 20% for 30 sec.<br><br>Voidwalker - Increases the Voidwalker's health by 20%, and its threat generated from spells and attacks by 20% for 20 sec.<br><br>Succubus - Instantly vanishes, causing the demon to go into an improved Invisibility state. The vanish effect removes all stuns, snares and movement impairing effects from the demon.<br><br>Felhunter - Dispels all magical effects from the Felhunter.<br><br>Felguard - Increases the Felguard's attack speed by 20% and breaks all stun, snare and movement impairing effects and makes your Felguard immune to them for 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "demonic_knowledge",
@@ -27568,7 +28367,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_tactics",
@@ -27583,7 +28383,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "decimation",
@@ -27598,7 +28399,8 @@ export const baseTalents = {
                         {
                             value: [20, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_demonic_tactics",
@@ -27613,7 +28415,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "summon_felguard",
@@ -27625,7 +28428,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons a Felguard under the command of the Warlock."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "nemesis",
@@ -27640,7 +28444,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_pact",
@@ -27655,7 +28460,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "metamorphosis",
@@ -27667,7 +28473,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You transform into a Demon for 30 sec.  This form increases your armor by 600%, damage by 20%, reduces the chance you'll be critically hit by melee attacks by 6% and reduces the duration of stun and snare effects by 50%.  You gain some unique demon abilities in addition to your normal abilities. 3 minute cooldown."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // warlock - wotlk
@@ -27686,7 +28493,8 @@ export const baseTalents = {
                             damage: [2, 4, 6, 8, 10],
                             chance: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bane",
@@ -27702,7 +28510,8 @@ export const baseTalents = {
                             value1: [0.1, 0.2, 0.3, 0.4, 0.5],
                             value2: [0.4, 0.8, 1.2, 1.6, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "aftermath",
@@ -27718,7 +28527,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "molten_skin",
@@ -27733,7 +28543,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cataclysm",
@@ -27748,7 +28559,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_power",
@@ -27764,7 +28576,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [0.25, 0.50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadowburn",
@@ -27776,7 +28589,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly blasts the target for 91 to 104 Shadow damage.  If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains a Soul Shard."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "ruin",
@@ -27791,7 +28605,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "intensity",
@@ -27806,7 +28621,8 @@ export const baseTalents = {
                         {
                             value: [35, 70]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "destructive_reach",
@@ -27821,7 +28637,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_searing_pain",
@@ -27836,7 +28653,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "backlash",
@@ -27852,7 +28670,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_immolate",
@@ -27867,7 +28686,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "devastation",
@@ -27879,7 +28699,8 @@ export const baseTalents = {
                     requiresTalents: "ruin",
                     description: [
                         "Increases the critical strike chance of your Destruction spells by 5%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "nether_protection",
@@ -27894,7 +28715,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "emberstorm",
@@ -27910,7 +28732,8 @@ export const baseTalents = {
                             value1: [3, 6, 9, 12, 15],
                             value2: [0.05, 0.10, 0.15, 0.20, 0.25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "conflagrate",
@@ -27922,7 +28745,8 @@ export const baseTalents = {
                     requiresTalents: "improved_immolate",
                     description: [
                         "Consumes an Immolate or Shadowflame effect on the enemy target to instantly deal damage equal to 60% of your Immolate or Shadowflame, and causes an additional 40% damage over 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "soul_leech",
@@ -27937,7 +28761,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pyroclasm",
@@ -27952,7 +28777,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_and_flame",
@@ -27967,7 +28793,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12, 16, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_soul_leech",
@@ -27983,7 +28810,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "backdraft",
@@ -27998,7 +28826,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadowfury",
@@ -28010,7 +28839,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Shadowfury is unleashed, causing 357 to 422 Shadow damage and stunning all enemies within 8 yds for 3 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "empowered_imp",
@@ -28026,7 +28856,8 @@ export const baseTalents = {
                             value1: [10, 20, 30],
                             value2: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fire_and_brimstone",
@@ -28042,7 +28873,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chaos_bolt",
@@ -28054,7 +28886,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Sends a bolt of chaotic fire at the enemy, dealing 864 to 1089 Fire damage. Chaos Bolt cannot be resisted, and pierces through all absorption effects."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -28074,7 +28907,8 @@ export const baseTalents = {
                         {
                             value: ["1 rage point", "2 rage points", "3 rage points"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deflection",
@@ -28089,7 +28923,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_rend",
@@ -28104,7 +28939,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_charge",
@@ -28119,7 +28955,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "iron_will",
@@ -28134,7 +28971,8 @@ export const baseTalents = {
                         {
                             value: [7, 14, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tactical_mastery",
@@ -28150,7 +28988,9 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: ["", " (More effective than Rank 1)", " (More effective than Rank 2)"]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresStance: 2 // defensive
                 },
                 {
                     id: "improved_overpower",
@@ -28165,7 +29005,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "anger_management",
@@ -28177,7 +29018,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Generates 1 rage per 3 seconds."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "impale",
@@ -28192,7 +29034,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deep_wounds",
@@ -28207,7 +29050,9 @@ export const baseTalents = {
                         {
                             value: [16, 32, 48]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresWeapon: 1 // melee
                 },
                 {
                     id: "two_handed_weapon_specialization",
@@ -28222,7 +29067,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "taste_for_blood",
@@ -28237,7 +29083,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "poleaxe_specialization",
@@ -28252,7 +29099,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sweeping_strikes",
@@ -28264,7 +29112,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your next 5 melee attacks strike an additional nearby opponent."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "mace_specialization",
@@ -28279,7 +29128,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9, 12, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sword_specialization",
@@ -28294,7 +29144,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "weapon_mastery",
@@ -28310,7 +29161,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_hamstring",
@@ -28325,7 +29177,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "trauma",
@@ -28340,7 +29193,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "second_wind",
@@ -28356,7 +29210,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mortal_strike",
@@ -28368,7 +29223,8 @@ export const baseTalents = {
                     requiresTalents: "sweeping_strikes",
                     description: [
                         "A vicious strike that deals weapon damage plus 85 and wounds the target, reducing the effectiveness of any healing by 50% for 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "strength_of_arms",
@@ -28383,7 +29239,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_slam",
@@ -28398,7 +29255,8 @@ export const baseTalents = {
                         {
                             value: [0.5, 1]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "juggernaut",
@@ -28410,7 +29268,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Charge ability is now usable while in combat, but the cooldown on Charge is increased by 5 sec. Following a Charge, your next Slam or Mortal Strike has an additional 25% chance to critically hit if used within 10 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_mortal_strike",
@@ -28426,7 +29285,8 @@ export const baseTalents = {
                             damage: [3, 6, 10],
                             cooldown: [0.3, 0.7, 1]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unrelenting_assault",
@@ -28443,7 +29303,8 @@ export const baseTalents = {
                             value2: [10, 20],
                             value3: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sudden_death",
@@ -28459,7 +29320,8 @@ export const baseTalents = {
                             value1: [3, 6, 9],
                             value2: [3, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "endless_rage",
@@ -28471,7 +29333,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You generate 25% more rage from damage dealt."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blood_frenzy",
@@ -28487,7 +29350,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "wrecking_crew",
@@ -28502,7 +29366,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bladestorm",
@@ -28514,7 +29379,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly Whirlwind up to 4 nearby targets and for the next 6 sec you will perform a whirlwind attack every 1 sec.  While under the effects of Bladestorm, you can move but cannot perform any other abilities but you do not feel pity or remorse or fear and you cannot be stopped unless killed."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // warrior - wotlk
@@ -28532,7 +29398,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "booming_voice",
@@ -28547,7 +29414,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cruelty",
@@ -28562,7 +29430,9 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresWeapon: 1
                 },
                 {
                     id: "improved_demoralizing_shout",
@@ -28577,7 +29447,8 @@ export const baseTalents = {
                         {
                             value: [8, 16, 24, 32, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unbridled_wrath",
@@ -28592,7 +29463,9 @@ export const baseTalents = {
                         {
                             value: ["", "  Effect occurs more often than Unbridled Wrath (Rank 1).", "  Effect occurs more often than Unbridled Wrath (Rank 2).", "  Effect occurs more often than Unbridled Wrath (Rank 3).", "  Effect occurs more often than Unbridled Wrath (Rank 4)."]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresWeapon: 1
                 },
                 {
                     id: "improved_cleave",
@@ -28607,7 +29480,8 @@ export const baseTalents = {
                         {
                             value: [40, 80, 120]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "piercing_howl",
@@ -28619,7 +29493,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Causes all enemies within 10 yards to be Dazed, reducing movement speed by 50% for 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "blood_craze",
@@ -28634,7 +29509,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "commanding_presence",
@@ -28649,7 +29525,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dual_wield_specialization",
@@ -28664,7 +29541,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_execute",
@@ -28679,7 +29557,8 @@ export const baseTalents = {
                         {
                             value: [2, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "enrage",
@@ -28694,7 +29573,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "precision",
@@ -28709,7 +29589,9 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresWeapon: 1
                 },
                 {
                     id: "death_wish",
@@ -28721,7 +29603,14 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated you become enraged, increasing your physical damage by 20% but increasing all damage taken by 5%.  Lasts 30 sec."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
+                    spentResource: 10,
+                    resourceType: 2,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "improved_intercept",
@@ -28736,7 +29625,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_berserker_rage",
@@ -28751,7 +29641,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "flurry",
@@ -28766,7 +29657,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15, 20, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "intensify_rage",
@@ -28781,7 +29673,8 @@ export const baseTalents = {
                         {
                             value: [11, 22, 33]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bloodthirst",
@@ -28793,7 +29686,8 @@ export const baseTalents = {
                     requiresTalents: "death_wish",
                     description: [
                         "Instantly attack the target causing (Attack power * 50 / 100) damage.  In addition, the next 3 successful melee attacks will restore 1% of max health.  This effect lasts 8 sec.  Damage is based on your attack power."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_whirlwind",
@@ -28808,7 +29702,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "furious_attacks",
@@ -28823,7 +29718,8 @@ export const baseTalents = {
                         {
                             value: ["", "  This occurs more often than Furious Attacks (Rank 1)."]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_berserker_stance",
@@ -28839,7 +29735,9 @@ export const baseTalents = {
                             value1: [4, 8, 12, 16, 20],
                             value2: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresStance: 3
                 },
                 {
                     id: "heroic_fury",
@@ -28851,7 +29749,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Removes any Immobilization effects and refreshes the cooldown of your Intercept ability."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "rampage",
@@ -28863,7 +29762,8 @@ export const baseTalents = {
                     requiresTalents: "bloodthirst",
                     description: [
                         "Increases ranged and melee critical hit chance of all party and raid members within 100 yds by 5%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bloodsurge",
@@ -28878,7 +29778,8 @@ export const baseTalents = {
                         {
                             value: [7, 13, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unending_fury",
@@ -28893,7 +29794,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "titans_grip",
@@ -28905,7 +29807,10 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Allows you to equip two-handed axes, maces and swords in one hand.  While you have a two-handed weapon equipped in one hand, your physical damage done is reduced by 10%."
-                    ]
+                    ],
+                    isActive: false,
+                    requiresMainHand: true,
+                    requiresOffHand: true
                 }
             ],
             // warrior - wotlk
@@ -28923,7 +29828,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shield_specialization",
@@ -28939,7 +29845,8 @@ export const baseTalents = {
                             block: [1, 2, 3, 4, 5],
                             rage: [20, 40, 60, 80, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_thunder_clap",
@@ -28956,7 +29863,8 @@ export const baseTalents = {
                             damage: [10, 20, 30],
                             slow: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "incite",
@@ -28971,7 +29879,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "anticipation",
@@ -28986,7 +29895,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "last_stand",
@@ -28998,7 +29908,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this ability temporarily grants you 30% of your maximum health for 20 sec.  After the effect expires, the health is lost."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_revenge",
@@ -29014,7 +29925,8 @@ export const baseTalents = {
                             value1: [30, 60],
                             value2: [" for 50% damage", ""]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shield_mastery",
@@ -29030,7 +29942,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toughness",
@@ -29046,7 +29959,8 @@ export const baseTalents = {
                             value1: [2, 4, 6, 8, 10],
                             value2: [6, 12, 18, 24, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_spell_reflection",
@@ -29061,7 +29975,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_disarm",
@@ -29077,7 +29992,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "puncture",
@@ -29092,7 +30008,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_disciplines",
@@ -29107,7 +30024,8 @@ export const baseTalents = {
                         {
                             value: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "concussion_blow",
@@ -29119,7 +30037,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Stuns the opponent for 5 sec and deals (38 / 100 * Attack power) damage (based on attack power)."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "gag_order",
@@ -29135,7 +30054,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "one_handed_weapon_specialization",
@@ -29150,7 +30070,9 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6, 8, 10]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requires1HWeapon: true
                 },
                 {
                     id: "improved_defensive_stance",
@@ -29167,7 +30089,9 @@ export const baseTalents = {
                             value2: [50, 100],
                             value3: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresStance: 2
                 },
                 {
                     id: "vigilance",
@@ -29179,7 +30103,8 @@ export const baseTalents = {
                     requiresTalents: "concussion_blow",
                     description: [
                         "Focus your protective gaze on a group or raid target, reducing their damage taken by 3% and transfers 10% of the threat they cause to you.  In addition, each time they are hit by an attack your Taunt cooldown is refreshed.  Lasts 30 min.  This effect can only be on one target at a time."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "focused_rage",
@@ -29194,7 +30119,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vitality",
@@ -29210,7 +30136,8 @@ export const baseTalents = {
                             value1: [2, 4, 6],
                             value2: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "safeguard",
@@ -29225,7 +30152,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "warbringer",
@@ -29237,7 +30165,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Charge, Intercept and Intervene abilities are now usable while in combat and in any stance.  In addition, your Intervene ability will remove all movement impairing effects."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "devastate",
@@ -29249,7 +30178,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Sunder the target's armor causing the Sunder Armor effect.  In addition, causes 120% of weapon damage plus 58 for each application of Sunder Armor on the target.  The Sunder Armor effect can stack up to 5 times."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "critical_block",
@@ -29265,7 +30195,8 @@ export const baseTalents = {
                             value1: [20, 40, 60],
                             value2: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sword_and_board",
@@ -29281,7 +30212,8 @@ export const baseTalents = {
                             crit: [5, 10, 15],
                             other: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "damage_shield",
@@ -29296,7 +30228,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shockwave",
@@ -29308,7 +30241,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Sends a wave of force in front of the warrior, causing (75 / 100 * Attack power) damage (based on attack power) and stunning all enemy targets within 10 yards in a frontal cone for 4 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         }
@@ -29331,7 +30265,8 @@ export const baseTalents = {
                             kill: [10, 20],
                             incombat: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blade_barrier",
@@ -29346,7 +30281,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bladed_armor",
@@ -29361,7 +30297,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_blood_tap",
@@ -29376,7 +30313,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "scent_of_blood",
@@ -29391,7 +30329,8 @@ export const baseTalents = {
                         {
                             value: ["melee hit", "2 melee hits", "3 melee hits"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "scarlet_fever",
@@ -29406,7 +30345,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hand_of_doom",
@@ -29421,7 +30361,8 @@ export const baseTalents = {
                         {
                             value: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blood_caked_blade",
@@ -29436,7 +30377,9 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresWeapon: 1
                 },
                 {
                     id: "bone_shield",
@@ -29448,7 +30391,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Surrounds you with a barrier of whirling bones.  The shield begins with 6 charges, and each damaging attack consumes a charge.  While at least 1 charge remains, you take 20% less damage from all sources and deal 2% more damage with all attacks, spells and abilities.  Lasts 5 min."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "toughness",
@@ -29463,7 +30407,8 @@ export const baseTalents = {
                         {
                             value: [3, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "abominations_might",
@@ -29480,7 +30425,8 @@ export const baseTalents = {
                             value2: [5, 10],
                             value3: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sanguine_fortitude",
@@ -29496,7 +30442,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: ["50% less", "no"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blood_parasite",
@@ -29511,7 +30458,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_blood_presence",
@@ -29528,7 +30476,8 @@ export const baseTalents = {
                             value2: [3, 6],
                             value3: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 }, 
                 {
                     id: "will_of_the_necropolis",
@@ -29543,7 +30492,8 @@ export const baseTalents = {
                         {
                             value: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rune_tap",
@@ -29555,7 +30505,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Converts 1 Blood Rune into 10% of your maximum health."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "vampiric_blood",
@@ -29567,7 +30518,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Temporarily grants the Death Knight 15% of maximum health and increases the amount of health received from healing spells and effects by 25% for 10 sec.  After the effect expires, the health is lost."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_death_strike",
@@ -29584,7 +30536,8 @@ export const baseTalents = {
                             value2: [10, 20, 30],
                             value3: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "crimson_scourge",
@@ -29600,7 +30553,8 @@ export const baseTalents = {
                             value1: [20, 40],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dancing_rune_weapon",
@@ -29612,7 +30566,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons a second rune weapon that fights on its own for 12 sec, mirroring the Death Knight's attacks. The rune weapon also assists in defense of its master, granting an additional 20% parry chance while active."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // deathknight - cataclysm
@@ -29630,7 +30585,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "icy_reach",
@@ -29645,7 +30601,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "nerves_of_cold_steel",
@@ -29661,7 +30618,9 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requires1HWeapon: true
                 },
                 {
                     id: "annihilation",
@@ -29676,7 +30635,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lichborne",
@@ -29688,7 +30648,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Draw upon unholy energy to become undead for 10 sec.  While undead, you are immune to Charm, Fear and Sleep effects."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "on_a_pale_horse",
@@ -29704,7 +30665,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "endless_winter",
@@ -29719,7 +30681,8 @@ export const baseTalents = {
                         {
                             value: ["The cost of your Mind Freeze is reduced to 10", "Your Mind Freeze no longer costs"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "merciless_combat",
@@ -29734,7 +30697,8 @@ export const baseTalents = {
                         {
                             value: [6, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chill_of_the_grave",
@@ -29749,7 +30713,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "killing_machine",
@@ -29764,7 +30729,8 @@ export const baseTalents = {
                         {
                             value: ["", "  Effect occurs more often than Killing Machine (Rank 1).", "  Effect occurs more often than Killing Machine (Rank 2).", "  Effect occurs more often than Killing Machine (Rank 3).", "  Effect occurs more often than Killing Machine (Rank 4)."]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rime",
@@ -29779,7 +30745,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pillar_of_frost",
@@ -29791,7 +30758,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Calls upon the power of Frost to increase the Death Knight's Strength by 20%.  Icy crystals hang heavy upon the Death Knight's body, providing immunity against external movement such as knockbacks.  Lasts 20 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_icy_talons",
@@ -29803,7 +30771,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases the melee and ranged attack speed of all party and raid members within 100 yards by 10%, and your own attack speed by an additional 5%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "brittle_bones",
@@ -29818,7 +30787,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chilblains",
@@ -29834,7 +30804,8 @@ export const baseTalents = {
                             value1: [25, 50],
                             value2: ["1.50", "3"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hungering_cold",
@@ -29846,7 +30817,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Purges the earth around the Death Knight of all heat.  Enemies within 10 yards are afflicted with Frost Fever and trapped in ice, preventing them from performing any action for 10 sec.  Enemies are considered Frozen, but any damage other than diseases will break the ice."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_frost_presence",
@@ -29862,7 +30834,8 @@ export const baseTalents = {
                             value1: [2, 5],
                             value2: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "threat_of_thassarian",
@@ -29877,7 +30850,8 @@ export const baseTalents = {
                         {
                             value: [30, 60, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "might_of_the_frozen_wastes",
@@ -29893,7 +30867,8 @@ export const baseTalents = {
                             value1: [3, 7, 10],
                             value2: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "howling_blast",
@@ -29905,7 +30880,8 @@ export const baseTalents = {
                     requiresTalents: "hungering_cold",
                     description: [
                         "Blast the target with a frigid wind, dealing [((197 + 197) / 2) + (Attack power * 0.44)] Frost damage to that foe, and [(0.5 * (((197 + 197) / 2) + (Attack power * 0.44)))] Frost damage to all other enemies within 10 yards."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // deathknight - cataclysm
@@ -29924,7 +30900,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "virulence",
@@ -29939,7 +30916,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "epidemic",
@@ -29954,7 +30932,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "desecration",
@@ -29969,7 +30948,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "resilient_infection",
@@ -29984,7 +30964,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "morbidity",
@@ -30000,7 +30981,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "runic_corruption",
@@ -30016,7 +30998,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unholy_frenzy",
@@ -30028,7 +31011,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Induces a friendly party or raid member into a killing frenzy for 30 sec.  The target is Enraged, increasing their melee and ranged haste by 20%, but causes them to lose health equal to 2% of their maximum health every 3 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "contagion",
@@ -30043,7 +31027,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadow_infusion",
@@ -30058,7 +31043,8 @@ export const baseTalents = {
                         {
                             value: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deaths_advance",
@@ -30073,7 +31059,8 @@ export const baseTalents = {
                         {
                             value: [60, 75]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "magic_suppression",
@@ -30088,7 +31075,8 @@ export const baseTalents = {
                         {
                             value: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rage_of_rivendare",
@@ -30103,7 +31091,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "unholy_blight",
@@ -30115,7 +31104,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Causes the victims of your Death Coil to be surrounded by a vile swarm of unholy insects, taking 10% of the damage done by the Death Coil over 10 sec, and preventing any diseases on the victim from being dispelled."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "anti_magic_zone",
@@ -30127,7 +31117,8 @@ export const baseTalents = {
                     requiresTalents: "magic_suppression",
                     description: [
                         "Places a large, stationary Anti-Magic Zone that reduces spell damage done to party or raid members inside it by 75%.  The Anti-Magic Zone lasts for 10 sec or until it absorbs (10000 + 2 * Attack power) spell damage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_unholy_presence",
@@ -30143,7 +31134,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [8, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dark_transformation",
@@ -30155,7 +31147,8 @@ export const baseTalents = {
                     requiresTalents: "shadow_infusion",
                     description: [
                         "Consume 5 charges of Shadow Infusion on your Ghoul to transform it into a powerful undead monstrosity for 30 sec.  The Ghoul's abilities are empowered and take on new functions while the transformation is active."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "ebon_plaguebringer",
@@ -30170,7 +31163,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sudden_doom",
@@ -30185,7 +31179,8 @@ export const baseTalents = {
                         {
                             value: ["to", "(higher than rank 1) to", "(higher than rank 2) to"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "summon_gargoyle",
@@ -30197,7 +31192,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A Gargoyle flies into the area and bombards the target with Nature damage modified by the Death Knight's attack power.  Persists for 30 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -30217,7 +31213,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "starlight_wrath",
@@ -30232,7 +31229,8 @@ export const baseTalents = {
                         {
                             value: [0.15, 0.25, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_majesty",
@@ -30247,7 +31245,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "genesis",
@@ -30262,7 +31261,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "moonglow",
@@ -30277,7 +31277,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "balance_of_power",
@@ -30293,7 +31294,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "euphoria",
@@ -30310,7 +31312,8 @@ export const baseTalents = {
                             value2: ["", " This effect cannot occur when you need less than 65 energy to reach one end of the Eclipse bar."],
                             value3: [8, 16]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "moonkin_form",
@@ -30322,7 +31325,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Shapeshift into Moonkin Form, increasing Arcane and Nature spell damage by 10%, reducing all damage taken by 15%, and increases spell haste of all party and raid members by 5%. The Moonkin can not cast healing or resurrection spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of movement impairing effects."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "typhoon",
@@ -30334,7 +31338,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You summon a violent Typhoon that does 400 Nature damage to targets in front of the caster within 30 yards, knocking them back and dazing them for 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "shooting_stars",
@@ -30349,7 +31354,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "owlkin_frenzy",
@@ -30364,8 +31370,9 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-
-                    ]
+                    ],
+                    isActive: false,
+                    requiresMoonkinForm: true
                 },
                 {
                     id: "gale_winds",
@@ -30381,7 +31388,8 @@ export const baseTalents = {
                             damage: [15, 30],
                             cyclone: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "solar_beam",
@@ -30393,7 +31401,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You summon a beam of solar light over an enemy target's location, interrupting the target and silencing all enemies under the beam while it is active. Solar Beam lasts for 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "dreamstate",
@@ -30408,7 +31417,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "force_of_nature",
@@ -30420,7 +31430,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons 3 treants to attack enemy targets for 30 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sunfire",
@@ -30432,7 +31443,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "While in Solar Eclipse, your Moonfire spell will morph into Sunfire."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "earth_and_moon",
@@ -30444,7 +31456,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Wrath, Starfire and Wild Mushroom: Detonate spells apply the Earth and Moon effect, which increases spell damage taken by 8% for 15 sec.  Also increases your spell damage by 2%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fungal_growth",
@@ -30459,7 +31472,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "lunar_shower",
@@ -30475,8 +31489,8 @@ export const baseTalents = {
                             value1: [15, 30, 45],
                             value2: [10, 20, 30]
                         }
-
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "starfall",
@@ -30488,7 +31502,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You summon a flurry of stars from the sky on all targets within 40 yards of the caster that you're in combat with, each dealing 399 Arcane damage. Maximum 20 stars. Lasts 10 sec.<br><br>Shapeshifting into an animal form or mounting cancels the effect. Any effect which causes you to lose control of your character will suppress the starfall effect."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // druid - cataclysm
@@ -30866,7 +31881,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natural_shapeshifter",
@@ -30882,7 +31898,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "naturalist",
@@ -30897,7 +31914,8 @@ export const baseTalents = {
                         {
                             value: [0.25, "0.50"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "heart_of_the_wild",
@@ -30913,7 +31931,8 @@ export const baseTalents = {
                             value1: [2, 4, 6],
                             value2: [3, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "perseverance",
@@ -30928,7 +31947,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_shapeshifter",
@@ -30940,7 +31960,8 @@ export const baseTalents = {
                     requiresTalents: "natural_shapeshifter",
                     description: [
                         "Grants an effect which lasts while the Druid is within the respective shapeshift form.<br><br>Bear Form - Increases physical damage by 4%.<br><br>Cat Form - Increases critical strike chance by 4%.<br><br>Moonkin Form - Increases spell damage by 4%.<br><br>Tree of Life/Caster Form - Increases healing by 4%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_rejuvenation",
@@ -30955,7 +31976,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "living_seed",
@@ -30970,7 +31992,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "revitalize",
@@ -30985,7 +32008,8 @@ export const baseTalents = {
                         {
                             value: [1, 2]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_swiftness",
@@ -30997,7 +32021,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell.  If that spell is a healing spell, the amount healed will be increased by 50%."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "fury_of_stormrage",
@@ -31013,7 +32038,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [6, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_bounty",
@@ -31029,7 +32055,8 @@ export const baseTalents = {
                             value1: [20, 40, 60],
                             value2: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "empowered_touch",
@@ -31045,7 +32072,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "malfurions_gift",
@@ -31061,7 +32089,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [2.5, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "efflorescence",
@@ -31076,7 +32105,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "wild_growth",
@@ -31088,7 +32118,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Heals up to 5 friendly party or raid members within 30 yards of the target for 2977 over 7 sec.  Prioritizes healing most injured party members.  The amount healed is applied quickly at first, and slows down as the Wild Growth reaches its full duration."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "natures_cure",
@@ -31100,7 +32131,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Empowers your Remove Corruption spell to also remove a magic effect from a friendly target."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_ward",
@@ -31115,7 +32147,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "gift_of_the_earthmother",
@@ -31130,7 +32163,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "swift_rejuvenation",
@@ -31142,7 +32176,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces the global cooldown of your Rejuvenation by 0.5 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tree_of_life",
@@ -31154,7 +32189,15 @@ export const baseTalents = {
                     requiresTalents: "wild_growth",
                     description: [
                         "Shapeshift into the tree of life, increasing healing done by 15% and increasing your armor by 15%. Also protects the caster from Polymorph effects. In addition, some of your spells are temporarily enhanced while shapeshifted. Lasts 25 sec.<br><br>Enhanced spells: Lifebloom, Wild Growth, Regrowth, Entangling Roots, Wrath"
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
+                    spentResource: 6,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: null,
+                    requiresWeapon: 0
                 }
             ]
         },
@@ -31174,7 +32217,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "one_with_nature",
@@ -31190,7 +32234,8 @@ export const baseTalents = {
                             value1: [10, 20, 30],
                             value2: [1, 2, 3]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bestial_discipline",
@@ -31205,7 +32250,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pathfinding",
@@ -31221,7 +32267,8 @@ export const baseTalents = {
                             value1: [4, 8],
                             value2: [5, 10]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spirit_bond",
@@ -31237,7 +32284,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [5, 10]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frenzy",
@@ -31252,7 +32300,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_mend_pet",
@@ -31267,7 +32316,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cobra_strikes",
@@ -31282,7 +32332,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fervor",
@@ -31294,7 +32345,14 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly restores 50 Focus to you and your pet."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 120,
+                    spentResource: null,
+                    resourceType: 5,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "focus_fire",
@@ -31306,7 +32364,14 @@ export const baseTalents = {
                     requiresTalents: "frenzy",
                     description: [
                         "Consumes your pet's Frenzy Effect stack, restoring 4 Focus to your pet and increasing your ranged haste by 3% for each Frenzy Effect stack consumed. Lasts for 20 sec."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 15,
+                    spentResource: null,
+                    resourceType: 5,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "longevity",
@@ -31321,7 +32386,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "killing_streak",
@@ -31337,7 +32403,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [5, 10]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "crouching_tiger_hidden_chimera",
@@ -31353,7 +32420,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [4, 8]
                         },
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bestial_wrath",
@@ -31365,7 +32433,14 @@ export const baseTalents = {
                     requiresTalents: "fervor",
                     description: [
                         "Send your pet into a rage causing 20% additional damage for 10 sec.  The beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 120,
+                    spentResource: null,
+                    resourceType: 5,
+                    range: 100,
+                    requiresWeapon: 0
                 },
                 {
                     id: "ferocious_inspiration",
@@ -31377,7 +32452,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "All party and raid members have all damage increased by 3% within 100 yards of your pet."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "kindred_spirits",
@@ -31392,7 +32468,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "the_beast_within",
@@ -31404,7 +32481,8 @@ export const baseTalents = {
                     requiresTalents: "bestial_wrath",
                     description: [
                         "While your pet is under the effects of Bestial Wrath, you also go into a rage causing 10% additional damage and reducing the focus cost of all shots and abilities by 50% for 10 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "invigoration",
@@ -31419,7 +32497,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "beast_mastery",
@@ -31431,7 +32510,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You master the art of Beast training, teaching you the ability to tame Exotic pets and increasing your total amount of Pet Skill Points by 4."
-                    ]
+                    ],
+                    isActive: false
                 }
             ],
             // hunter - cataclysm
@@ -31449,7 +32529,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "efficiency",
@@ -31465,7 +32546,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rapid_killing",
@@ -31480,7 +32562,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sic_em",
@@ -31495,7 +32578,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_steady_shot",
@@ -31510,7 +32594,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "careful_aim",
@@ -31525,7 +32610,8 @@ export const baseTalents = {
                         {
                             value: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "silencing_shot",
@@ -31537,7 +32623,14 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "A shot that silences the target and interrupts spellcasting for 3 sec."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 20,
+                    spentResource: null,
+                    resourceType: 5,
+                    range: 35,
+                    requiresWeapon: 2
                 },
                 {
                     id: "concussive_barrage",
@@ -31552,7 +32645,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "piercing_shots",
@@ -31567,7 +32661,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bombardment",
@@ -31582,7 +32677,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "trueshot_aura",
@@ -31594,7 +32690,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases melee attack power by 20% and ranged attack power by 10% of party and raid members within 100 yards."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "termination",
@@ -31609,7 +32706,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "resistance_is_futile",
@@ -31624,7 +32722,8 @@ export const baseTalents = {
                         {
                             value: [4, 8]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rapid_recuperation",
@@ -31640,7 +32739,8 @@ export const baseTalents = {
                             value1: [6, 12],
                             value2: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_marksman",
@@ -31655,7 +32755,8 @@ export const baseTalents = {
                         {
                             value: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "readiness",
@@ -31667,7 +32768,13 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, this ability immediately finishes the cooldown on all Hunter abilities."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
+                    spentResource: null,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "posthaste",
@@ -31683,7 +32790,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "marked_for_death",
@@ -31698,7 +32806,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "chimera_shot",
@@ -31710,7 +32819,14 @@ export const baseTalents = {
                     requiresTalents: "master_marksman",
                     description: [
                         "An instant shot that causes ranged weapon Nature damage plus (Ranged attack power * 0.732 + 0), refreshing the duration of your Serpent Sting and healing you for 5% of your total health."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 10,
+                    spentResource: 50,
+                    resourceType: 5,
+                    range: 40,
+                    requiresWeapon: 2
                 }
             ],
             // hunter - cataclysm
@@ -31856,7 +32972,13 @@ export const baseTalents = {
                     description: [
                         "A strike that becomes active after parrying an opponent's attack.  This attack deals (Attack power * 0.2 + 321) damage and immobilizes the target for 5 sec.  Counterattack cannot be blocked, dodged, or parried."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 5,
+                    spentResource: null,
+                    resourceType: 5,
+                    range: 0,
+                    requiresWeapon: 0
                 },
                 {
                     id: "lock_and_load",
@@ -31949,7 +33071,13 @@ export const baseTalents = {
                     description: [
                         "A stinging shot that puts the target to sleep for 30 sec.  Any damage will cancel the effect.  When the target wakes up, the Sting causes 2738 Nature damage over 6 sec.  Only one Sting per Hunter can be active on the target at a time."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 60,
+                    spentResource: 10,
+                    resourceType: 5,
+                    range: 35,
+                    requiresWeapon: 2
                 },
                 {
                     id: "noxious_stings",
@@ -32025,7 +33153,13 @@ export const baseTalents = {
                     description: [
                         "Fires a Black Arrow at the target, dealing 2852 Shadow damage over 20 sec. Black Arrow shares a cooldown with other Fire Trap spells."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 30,
+                    spentResource: 35,
+                    resourceType: 5,
+                    range: 40,
+                    requiresWeapon: 2
                 }
             ]
         },
@@ -32524,7 +33658,8 @@ export const baseTalents = {
                         {
                             value: [6, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "clarity_of_purpose",
@@ -32539,7 +33674,8 @@ export const baseTalents = {
                         {
                             value: [0.15, 0.3, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blazing_light",
@@ -32554,7 +33690,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_favor",
@@ -32566,7 +33703,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases your spell casting haste by 20% and spell critical chance by 20% for 20 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "beacon_of_light",
@@ -32578,7 +33716,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "The target becomes a Beacon of Light to all targets within a 60 yard radius.  Your Word of Glory, Holy Shock, Flash of Light, Divine Light and Light of Dawn will also heal the Beacon for 50% of the amount healed.  Holy Light will heal for 100% of the amount.  Only one target can be the Beacon of Light at a time. Lasts 5 min."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sacred_cleansing",
@@ -32590,7 +33729,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Cleanse spell now also dispels 1 Magic effect."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "aura_mastery",
@@ -32602,7 +33742,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Causes your Concentration Aura to make all affected targets immune to Silence and Interrupt effects and improve the effect of Devotion Aura, Resistance Aura, and Retribution Aura by 100%.  Lasts 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "light_of_dawn",
@@ -32614,7 +33755,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Consumes all Holy Power to send a wave of healing energy before you, healing up to 4 of the most injured targets in your party or raid within a 30 yard frontal cone for 640 per charge of Holy Power."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // paladin - cataclysm
@@ -32632,7 +33774,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "seals_of_the_pure",
@@ -32647,7 +33790,8 @@ export const baseTalents = {
                         {
                             value: [6, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "eternal_glory",
@@ -32662,7 +33806,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "judgements_of_the_just",
@@ -32678,7 +33823,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [0.5, 1]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toughness",
@@ -32693,7 +33839,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_hammer_of_justice",
@@ -32708,7 +33855,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hallowed_ground",
@@ -32724,7 +33872,8 @@ export const baseTalents = {
                             value1: [20, 40],
                             value2: [40, 80]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sanctuary",
@@ -32741,7 +33890,8 @@ export const baseTalents = {
                             value2: [3, 7, 10],
                             value3: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hammer_of_the_righteous",
@@ -32753,7 +33903,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Hammer the current target for 30% weapon damage, causing a wave of light that hits all targets within 8 yards for 729 Holy damage. Grants a charge of Holy Power."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "wrath_of_the_lightbringer",
@@ -32769,7 +33920,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "reckoning",
@@ -32784,7 +33936,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shield_of_the_righteous",
@@ -32796,7 +33949,8 @@ export const baseTalents = {
                     requiresTalents: "sanctuary",
                     description: [
                         "Slam the target with your shield, causing Holy damage.  Consumes all charges of Holy Power to determine damage dealt:<br><br>1 Holy Power: 609 damage<br>2 Holy Power: 1827 damage<br>3 Holy Power: 3654 damage"
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "grand_crusader",
@@ -32811,7 +33965,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vindication",
@@ -32823,7 +33978,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Crusader Strike and Hammer of the Righteous reduce physical damage done by their primary targets by 10% for 30 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "holy_shield",
@@ -32835,7 +33991,8 @@ export const baseTalents = {
                     requiresTalents: "shield_of_the_righteous",
                     description: [
                         "Increases the amount your shield blocks by an additional 20% for 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "guarded_by_the_light",
@@ -32851,7 +34008,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: ["", "  In addition, any overhealing will create a protective shield equal to the amount of overhealing that lasts for 6 sec."]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_guardian",
@@ -32863,7 +34021,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "All party or raid members within 30 yards, excluding the Paladin, take 20% reduced damage for 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sacred_duty",
@@ -32878,7 +34037,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shield_of_the_templar",
@@ -32895,7 +34055,8 @@ export const baseTalents = {
                             value2: [40, 80, 120],
                             value3: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ardent_defender",
@@ -32907,7 +34068,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduce damage taken by 20% for 10 sec. While Ardent Defender is active, the next attack that would otherwise kill you will instead cause you to be healed for 15% of your maximum health."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // paladin - cataclysm
@@ -32922,7 +34084,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your auras increase your party and raid's damage dealt by 3%, and your own damage is increased by an additional 2% at all times.  In addition, your Judgement causes Replenishment.<br><br>Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "divine_storm",
@@ -32934,7 +34097,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "An instant attack that causes 100% weapon damage to all enemies within 8 yards.  The Divine Storm heals up to 3 party or raid members totaling 25% of the damage caused, and will grant a charge of Holy Power if it hits 4 or more targets."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sacred_shield",
@@ -32946,7 +34110,9 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When reduced below 30% health, you gain the Sacred Shield effect. The Sacred Shield absorbs [(1) + (Attack power * 2.8)] damage and increases healing received by 20%.  Lasts 15 sec.  This effect cannot occur more than once every 60 sec."
-                    ]
+                    ],
+                    isActive: false,
+                    cooldown: 30
                 },
                 {
                     id: "sanctity_of_battle",
@@ -32958,7 +34124,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Haste effects lower the cooldown of your Crusader Strike and Divine Storm abilities."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "seals_of_command",
@@ -32970,7 +34137,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Seal of Righteousness, Seal of Truth, and Seal of Justice now also deal 7% weapon damage when triggered. In addition, your Seal of Righteousness now hits all enemy targets within melee range."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "repentance",
@@ -32982,7 +34150,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Puts the enemy target in a state of meditation, incapacitating them for up to 1 min.  Any damage from sources other than Censure will awaken the target.  Usable against Demons, Dragonkin, Giants, Humanoids and Undead."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "zealotry",
@@ -32994,7 +34163,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Crusader Strike generates 3 charges of Holy Power per strike for the next 20 sec.  Requires 3 Holy Power to use, but does not consume Holy Power."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -33011,7 +34181,8 @@ export const baseTalents = {
                     requiresTalents: "divine_aegis",
                     description: [
                         "Summons a holy barrier on the target location that reduces all damage done to friendly targets by 25%. While within the barrier, spellcasting will not be interrupted by damage. The barrier lasts for 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // priest - cataclysm
@@ -33026,7 +34197,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Calls upon a guardian spirit to watch over the friendly target. The spirit increases the healing received by the target by 60%, and also prevents the target from dying by sacrificing itself.  This sacrifice terminates the effect but heals the target of 50% of their maximum health. Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // priest - cataclysm
@@ -33044,7 +34216,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_shadow_word_pain",
@@ -33059,7 +34232,8 @@ export const baseTalents = {
                         {
                             value: [3, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "veiled_shadows",
@@ -33075,7 +34249,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_psychic_scream",
@@ -33090,7 +34265,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_mind_blast",
@@ -33106,7 +34282,8 @@ export const baseTalents = {
                             value1: [0.5, 1, 1.5],
                             value2: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_devouring_plague",
@@ -33121,7 +34298,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "twisted_faith",
@@ -33137,7 +34315,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadowform",
@@ -33149,7 +34328,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Assume a Shadowform, increasing your Shadow damage by 15%, reducing all damage done to you by 15%, and increasing all party and raid members spell haste by 5%. However, you may not cast Holy spells while in this form."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "silence",
@@ -33161,7 +34341,8 @@ export const baseTalents = {
                     requiresTalents: "improved_psychic_scream",
                     description: [
                         "Silences the target, preventing them from casting spells for 5 sec.  Non-player victim spellcasting is also interrupted for 3 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "vampiric_embrace",
@@ -33173,7 +34354,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Fills you with the embrace of Shadow energy, causing you to be healed for 6% and other party members to be healed for 3% of any single-target Shadow spell damage you deal."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "masochism",
@@ -33188,7 +34370,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mind_melt",
@@ -33204,7 +34387,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pain_and_suffering",
@@ -33220,7 +34404,8 @@ export const baseTalents = {
                             value1: [30, 60],
                             value2: [20, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vampiric_touch",
@@ -33232,7 +34417,8 @@ export const baseTalents = {
                     requiresTalents: "vampiric_embrace",
                     description: [
                         "Causes 450 Shadow damage over 15 sec, and when you deal damage with Mind Blast to an affected target you cause up to 10 party or raid members to gain 1% of their maximum mana per 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "psychic_horror",
@@ -33244,7 +34430,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You terrify the target, causing them to tremble in horror for 3 sec and drop their main hand and ranged weapons for 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "sin_and_punishment",
@@ -33260,7 +34447,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shadowy_apparition",
@@ -33276,7 +34464,8 @@ export const baseTalents = {
                             value1: [4, 8, 12],
                             value2: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "dispersion",
@@ -33288,7 +34477,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You disperse into pure Shadow energy, reducing all damage taken by 90%.  You are unable to attack or cast spells, but you regenerate 6% mana every 1 sec for 6 sec.<br><br>Dispersion can be cast while stunned, feared or silenced. Clears all snare and movement impairing effects when cast, and makes you immune to them while dispersed."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -33305,7 +34495,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Marks an enemy for death, increasing all damage you deal to the target by 20% and granting you unerring vision of your target, regardless of concealments such as stealth and invisibility.  Lasts 30 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // rogue - cataclysm
@@ -33320,7 +34511,8 @@ export const baseTalents = {
                     requiresTalents: "adrenaline_rush",
                     description: [
                         "Step through the shadows from enemy to enemy within 10 yards, attacking an enemy every 0.5 sec with both weapons until 5 assaults are made, and increasing all damage done by 20% for the duration.  Can hit the same target multiple times.  Cannot hit invisible or stealthed targets."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // rogue - cataclysm
@@ -33335,7 +34527,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Enter the Shadow Dance for 6 sec, allowing the use of Sap, Garrote, Ambush, Cheap Shot, Premeditation, Pick Pocket and Disarm Trap regardless of being stealthed."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -33355,7 +34548,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "convection",
@@ -33370,7 +34564,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "concussion",
@@ -33385,7 +34580,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "call_of_flame",
@@ -33401,7 +34597,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_warding",
@@ -33416,7 +34613,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "reverberation",
@@ -33432,7 +34630,8 @@ export const baseTalents = {
                             value1: [0.5, 1],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_precision",
@@ -33448,7 +34647,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "rolling_thunder",
@@ -33463,7 +34663,8 @@ export const baseTalents = {
                         {
                             value: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_focus",
@@ -33475,7 +34676,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "After landing a non-periodic critical strike with a Fire, Frost, or Nature damage spell, you enter a Clearcasting state.  The Clearcasting state reduces the mana cost of your next 2 damage or healing spells by 40%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_oath",
@@ -33491,7 +34693,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [3, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fulmination",
@@ -33503,7 +34706,8 @@ export const baseTalents = {
                     requiresTalents: "rolling_thunder",
                     description: [
                         "When you have more than 3 Lightning Shield charges active, your Earth Shock spell will consume any surplus charges, instantly dealing their total damage to the enemy target."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_mastery",
@@ -33515,7 +34719,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, your next Lightning Bolt, Chain Lightning or Lava Burst spell becomes an instant cast spell. In addition, your Fire, Frost, and Nature damage is increased by 15% and you gain 20% spell haste for 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "earths_grasp",
@@ -33530,7 +34735,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "totemic_wrath",
@@ -33542,7 +34748,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Causes your Fire totems to increase the spell power of party and raid members within 100 yards by 10%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "feedback",
@@ -33557,7 +34764,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "earthquake",
@@ -33569,7 +34777,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You cause the earth at the target location to tremble and break, dealing (325 + Spell power * 0.11) Physical damage every 1 sec to enemies in an 8 yard radius, with a 10% chance of knocking down affected targets. Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // shaman - cataclysm
@@ -33588,7 +34797,8 @@ export const baseTalents = {
                             value1: [20, 40],
                             value2: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "focused_strikes",
@@ -33603,7 +34813,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_shields",
@@ -33618,7 +34829,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "elemental_devastation",
@@ -33633,7 +34845,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 9]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "flurry",
@@ -33648,7 +34861,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ancestral_swiftness",
@@ -33664,7 +34878,8 @@ export const baseTalents = {
                             value1: [1, 2],
                             value2: [7, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "totemic_reach",
@@ -33679,7 +34894,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toughness",
@@ -33695,7 +34911,8 @@ export const baseTalents = {
                             stamina: [3, 7, 10],
                             slow: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "stormstrike",
@@ -33707,7 +34924,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly strike an enemy with both weapons, dealing 225% weapon damage and granting you an additional 25% chance to critically strike that enemy with your Lightning Bolt, Chain Lightning, Lightning Shield, and Earth Shock spells for 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "static_shock",
@@ -33722,7 +34940,8 @@ export const baseTalents = {
                         {
                             value: [15, 30, 45]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "frozen_power",
@@ -33738,7 +34957,8 @@ export const baseTalents = {
                             damage: [5, 10],
                             root: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "seasoned_winds",
@@ -33753,7 +34973,8 @@ export const baseTalents = {
                         {
                             value: [97, 195]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "searing_flames",
@@ -33768,7 +34989,8 @@ export const baseTalents = {
                         {
                             value: [33, 67, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "earthen_power",
@@ -33783,7 +35005,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shamanistic_rage",
@@ -33795,7 +35018,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces all damage taken by 30% and causes your skills, totems, and offensive spells to consume no mana for 15 sec.  This spell is usable while stunned."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "unleashed_rage",
@@ -33812,7 +35036,8 @@ export const baseTalents = {
                             meleeap: [10, 20],
                             rangedap: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "maelstrom_weapon",
@@ -33827,7 +35052,8 @@ export const baseTalents = {
                         {
                             value: ["to", "(higher than rank 1) to", "(higher than rank 2) to"]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_lava_lash",
@@ -33842,7 +35068,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "feral_spirit",
@@ -33854,7 +35081,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons two Spirit Wolves under the command of the Shaman, lasting 30 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // shaman - cataclysm
@@ -33872,7 +35100,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tidal_focus",
@@ -33887,7 +35116,8 @@ export const baseTalents = {
                         {
                             value: [2, 4, 6]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "spark_of_life",
@@ -33903,7 +35133,8 @@ export const baseTalents = {
                             value1: [2, 4, 6],
                             value2: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "totemic_focus",
@@ -33919,7 +35150,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [20, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_guardian",
@@ -33934,7 +35166,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ancestral_healing",
@@ -33949,7 +35182,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "natures_swiftness",
@@ -33961,7 +35195,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "natures_blessing",
@@ -33976,7 +35211,8 @@ export const baseTalents = {
                         {
                             value: [6, 12, 18]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "soothing_rains",
@@ -33992,7 +35228,8 @@ export const baseTalents = {
                             value1: [25, 50],
                             value2: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_cleanse_spirit",
@@ -34004,7 +35241,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Empowers your Cleanse Spirit spell to also remove a magic effect from a friendly target."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cleansing_waters",
@@ -34020,7 +35258,9 @@ export const baseTalents = {
                             value1: [20, 40],
                             value2: [1402, 2803]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    range: 100
                 },
                 {
                     id: "ancestral_awakening",
@@ -34035,7 +35275,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mana_tide_totem",
@@ -34047,7 +35288,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons a Mana Tide Totem with 10% of the caster's health at the feet of the caster for 12 sec.  Party and raid members within 40 yards of the totem gain 200% of the caster's Spirit (excluding short-duration Spirit bonuses)."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "spirit_link_totem",
@@ -34059,7 +35301,9 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons a Spirit Link Totem with 5 health at the feet of the caster. The totem reduces damage taken by all party and raid members within 10 yards by 10%. Every 1 sec, the health of all affected players is redistributed, such that each player ends up with the same percentage of their maximum health. Lasts 6 sec."
-                    ]
+                    ],
+                    isActive: true,
+                    requiresAirTotem: true
                 },
                 {
                     id: "tidal_waves",
@@ -34074,7 +35318,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "riptide",
@@ -34086,7 +35331,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Heals a friendly target for 2364 and another 665 over 15 sec.  Your next Chain Heal cast on that primary target within 15 sec will consume the healing over time effect and increase the amount of the Chain Heal by 25%."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -34106,7 +35352,8 @@ export const baseTalents = {
                         {
                             value: [4, 8]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_life_tap",
@@ -34121,7 +35368,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_corruption",
@@ -34136,7 +35384,8 @@ export const baseTalents = {
                         {
                             value: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "jinx",
@@ -34152,7 +35401,8 @@ export const baseTalents = {
                             value1: [20, 40],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "soul_siphon",
@@ -34168,7 +35418,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [9, 18]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "siphon_life",
@@ -34183,7 +35434,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "curse_of_exhaustion",
@@ -34195,7 +35447,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Reduces the target's movement speed by 30% for 30 sec.  Only one Curse per Warlock can be active on any one target."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_fear",
@@ -34210,7 +35463,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "eradication",
@@ -34225,7 +35479,8 @@ export const baseTalents = {
                         {
                             value: [6, 12, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_howl_of_terror",
@@ -34240,7 +35495,8 @@ export const baseTalents = {
                         {
                             value: [0.8, 1.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "soul_swap",
@@ -34252,7 +35508,8 @@ export const baseTalents = {
                     requiresTalents: "soul_siphon",
                     description: [
                         "You instantly deal 167 damage, and remove your Shadow damage-over-time effects from the target.<br><br>For 20 sec afterwards, the next target you cast Soul Swap: Exhale on will be afflicted by the Shadow damage-over-time effects and suffer 167 damage.<br><br>You cannot Soul Swap to the same target."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "shadow_embrace",
@@ -34267,7 +35524,8 @@ export const baseTalents = {
                         {
                             value: [3, 4, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deaths_embrace",
@@ -34283,7 +35541,8 @@ export const baseTalents = {
                             value1: [1, 2, 3],
                             value2: [4, 8, 12]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "nightfall",
@@ -34298,7 +35557,8 @@ export const baseTalents = {
                         {
                             value: [2, 4]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "soulburn_seed_of_corruption",
@@ -34310,7 +35570,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Grants the Soulburn empowerment to your Seed of Corruption spell.<br><br>Your Seed of Corruption detonation effect will afflict Corruption on all enemy targets. The Soul Shard will be refunded if the detonation is successful."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "everlasting_affliction",
@@ -34326,7 +35587,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "pandemic",
@@ -34342,7 +35604,8 @@ export const baseTalents = {
                             value1: [".25", ".5"],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "haunt",
@@ -34354,7 +35617,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You send a ghostly soul into the target, dealing [((Spell power * 0.5577) * 1.25) + 992] Shadow damage and increasing all damage done by your Shadow damage-over-time effects on the target by 20% for 12 sec. When the Haunt spell ends or is dispelled, the soul returns to you, healing you for 100% of the damage it did to the target."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // warlock - cataclysm
@@ -34372,7 +35636,8 @@ export const baseTalents = {
                         {
                             value: [4, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "fel_synergy",
@@ -34387,7 +35652,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "mana_feed",
@@ -34403,7 +35669,8 @@ export const baseTalents = {
                             value1: [2, 4],
                             value2: [30, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_aegis",
@@ -34419,7 +35686,8 @@ export const baseTalents = {
                             value1: [5, 10],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "master_summoner",
@@ -34435,7 +35703,8 @@ export const baseTalents = {
                             casttime: [0.5, 1],
                             cost: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "impending_doom",
@@ -34451,7 +35720,8 @@ export const baseTalents = {
                             value1: [10, 20, 30],
                             value2: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_empowerment",
@@ -34463,7 +35733,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Grants the Warlock's summoned demon Empowerment.<br><br>Imp - Instantly heals the Imp for 30% of its total health.<br><br>Voidwalker - Increases the Voidwalker's health by 20%, and its threat generated from spells and attacks by 20% for 20 sec.<br><br>Succubus - Instantly vanishes, causing the Succubus to go into an improved Invisibility state. The vanish effect removes all stuns, snares and movement impairing effects from the Succubus.<br><br>Felhunter - Dispels all magical effects from the Felhunter.<br><br>Felguard - Instantly removes all stun, snare, fear, banish, or horror and movement impairing effects from your Felguard and makes your Felguard immune to them for 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "improved_health_funnel",
@@ -34479,7 +35750,8 @@ export const baseTalents = {
                             effectiveness: [10, 20],
                             damage: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "molten_core",
@@ -34496,7 +35768,8 @@ export const baseTalents = {
                             value2: [6, 12, 18],
                             value3: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hand_of_guldan",
@@ -34508,7 +35781,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Summons a falling meteor down upon the enemy target, dealing 1533 Shadowflame damage and erupts an aura of magic within 4 yards, causing all targets within it to have a 10% increased  chance to be critically hit by the abilities of any Warlock demon pets. The aura lasts for 15 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "aura_of_foreboding",
@@ -34523,7 +35797,8 @@ export const baseTalents = {
                         {
                             value: [2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "ancient_grimoire",
@@ -34538,7 +35813,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "inferno",
@@ -34550,7 +35826,8 @@ export const baseTalents = {
                     requiresTalents: "hand_of_guldan",
                     description: [
                         "Enables you to channel Hellfire while moving, and increases the duration of your Immolate by 6 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "decimation",
@@ -34565,7 +35842,8 @@ export const baseTalents = {
                         {
                             value: [20, 40]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cremation",
@@ -34581,7 +35859,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "demonic_pact",
@@ -34593,7 +35872,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Increases your spell damage by 2%, and your summoned demon grants the Demonic Pact effect to all nearby friendly party and raid members.<br><br>The Demonic Pact effect increases spell power by 10%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "metamorphosis",
@@ -34605,7 +35885,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You transform into a Demon for 30 sec.  This form increases your armor contribution from items by 600%, damage by 20%, reduces the chance you'll be critically hit by melee attacks by 6% and reduces the duration of stun and snare effects by 50%.  You gain some unique demon abilities in addition to your normal abilities."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // warlock - cataclysm
@@ -34620,7 +35901,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Instantly blasts the target for 1 Shadowflame damage.  If the target dies within 5 sec of Shadowburn, and yields experience or honor, the caster gains 3 Soul Shards. Only usable on enemies that have less than 20% health."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "shadowfury",
@@ -34632,7 +35914,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Shadowfury is unleashed, causing 754 Shadow damage and stunning all enemies within 8 yds for 3 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "chaos_bolt",
@@ -34644,7 +35927,8 @@ export const baseTalents = {
                     requiresTalents: "fire_and_brimstone",
                     description: [
                         "Sends a bolt of chaotic fire at the enemy, dealing 1489 Fire damage. Chaos Bolt cannot be resisted, and pierces through all absorption effects."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         },
@@ -34665,7 +35949,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "tactical_mastery",
@@ -34680,7 +35965,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "second_wind",
@@ -34696,7 +35982,8 @@ export const baseTalents = {
                             value1: [10, 20],
                             value2: [2, 5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deep_wounds",
@@ -34711,7 +35998,9 @@ export const baseTalents = {
                         {
                             value: [16, 32, 48]
                         }
-                    ]
+                    ],
+                    isActive: false,
+                    requiresWeapon: 1
                 },
                 {
                     id: "taste_for_blood",
@@ -34727,7 +36016,8 @@ export const baseTalents = {
                             value1: [20, 40, 60],
                             value2: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sweeping_strikes",
@@ -34739,7 +36029,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your melee attacks strike an additional nearby opponent.  Lasts 10 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "impale",
@@ -34754,7 +36045,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_hamstring",
@@ -34770,7 +36062,8 @@ export const baseTalents = {
                             value1: [60, 30],
                             value2: [0.25, 0.5]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_slam",
@@ -34786,7 +36079,8 @@ export const baseTalents = {
                             value1: [0.5, 1],
                             value2: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deadly_calm",
@@ -34798,7 +36092,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "For the next 10 sec, none of your abilities cost rage, but you continue to generate rage. Cannot be used during Inner Rage."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "juggernaut",
@@ -34810,7 +36105,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Charge ability is now usable while in combat and in all stances, and the cooldown of your Charge is reduced by 2 sec.  Following a Charge, your next Slam or Mortal Strike has an additional 25% chance to critically hit if used within 10 sec.  However, Charge and Intercept now share a cooldown."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sudden_death",
@@ -34826,7 +36122,8 @@ export const baseTalents = {
                             value1: [3, 6],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "wrecking_crew",
@@ -34842,7 +36139,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "throwdown",
@@ -34854,7 +36152,8 @@ export const baseTalents = {
                     requiresTalents: "juggernaut",
                     description: [
                         "Knocks the target to the ground and stuns it for 5 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "bladestorm",
@@ -34866,7 +36165,8 @@ export const baseTalents = {
                     requiresTalents: "juggernaut",
                     description: [
                         "You become a whirling storm of destructive force, instantly striking all nearby targets for 150% weapon damage and continuing to perform a whirlwind attack every 1 sec for 6 sec.  While under the effects of Bladestorm, you do not feel pity or remorse or fear and you cannot be stopped unless killed or disarmed, but you cannot perform any other abilities."
-                    ]
+                    ],
+                    isActive: true
                 }
             ],
             // warrior - cataclysm
@@ -34884,7 +36184,8 @@ export const baseTalents = {
                         {
                             value: [1, 2, 3]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "battle_trance",
@@ -34899,7 +36200,8 @@ export const baseTalents = {
                         {
                             value: [5, 10, 15]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cruelty",
@@ -34914,7 +36216,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "booming_voice",
@@ -34930,7 +36233,8 @@ export const baseTalents = {
                             value1: [15, 30],
                             value2: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "piercing_howl",
@@ -34942,7 +36246,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Causes all enemies within 10 yards to be Dazed, reducing movement speed by 50% for 6 sec."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "flurry",
@@ -34957,7 +36262,8 @@ export const baseTalents = {
                         {
                             value: [8, 16, 25]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "death_wish",
@@ -34969,7 +36275,14 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When activated you become Enraged, increasing your physical damage by 20% but increasing all damage taken by 20%.  Lasts 30 sec."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
+                    spentResource: 10,
+                    resourceType: 2,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "enrage",
@@ -34985,7 +36298,8 @@ export const baseTalents = {
                             value1: [3, 6, 9],
                             value2: [3, 7, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "raging_blow",
@@ -34997,7 +36311,15 @@ export const baseTalents = {
                     requiresTalents: "death_wish",
                     description: [
                         "A mighty blow that deals 100% weapon damage from both melee weapons.  Can only be used while Enraged."
-                    ]
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 6,
+                    spentResource: 20,
+                    resourceType: 2,
+                    range: 0,
+                    requiresWeapon: 1,
+                    requiresStance: 3
                 },
                 {
                     id: "rampage",
@@ -35009,7 +36331,8 @@ export const baseTalents = {
                     requiresTalents: "raging_blow",
                     description: [
                         "Increases the critical strike chance of all party and raid members within 100 yds by 5%.  In addition, improves your critical strike chance by an additional 2%."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "heroic_fury",
@@ -35021,7 +36344,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Removes any Immobilization effects and refreshes the cooldown of your Intercept ability."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "furious_attacks",
@@ -35033,7 +36357,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your autoattacks have a chance to reduce all healing done to the target by 25% for 10 sec."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "intensify_rage",
@@ -35048,7 +36373,8 @@ export const baseTalents = {
                         {
                             value: [10, 20]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "bloodsurge",
@@ -35063,7 +36389,8 @@ export const baseTalents = {
                         {
                             value: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "titans_grip",
@@ -35075,7 +36402,10 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Allows you to equip two-handed axes, maces and swords in one hand."
-                    ]
+                    ],
+                    isActive: false,
+                    requiresMainHand: true,
+                    requiresOffHand: true
                 },
                 {
                     id: "single_minded_fury",
@@ -35087,7 +36417,11 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "When you dual-wield one-handed weapons, you deal 20% additional damage and Slam hits with both weapons."
-                    ]
+                    ],
+                    isActive: false,
+                    requiresMainHand: true,
+                    requiresOffHand: true,
+                    requiresOneHand: true
                 }
             ],
             // warrior - cataclysm
@@ -35106,7 +36440,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [33, 66, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "toughness",
@@ -35121,7 +36456,8 @@ export const baseTalents = {
                         {
                             value: [3, 6, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "blood_and_thunder",
@@ -35136,7 +36472,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shield_specialization",
@@ -35152,7 +36489,8 @@ export const baseTalents = {
                             value1: [5, 10, 15],
                             value2: [20, 40, 60]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "hold_the_line",
@@ -35167,7 +36505,8 @@ export const baseTalents = {
                         {
                             value: [5, 10]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "gag_order",
@@ -35183,7 +36522,8 @@ export const baseTalents = {
                             value1: [50, 100],
                             value2: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "last_stand",
@@ -35195,7 +36535,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Temporarily grants you 30% of your maximum health for 20 sec.  After the effect expires, the health is lost."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "concussion_blow",
@@ -35207,7 +36548,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Stuns the opponent for 5 sec and deals (75 / 100 * Attack power) damage (based on attack power)."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "warbringer",
@@ -35219,7 +36561,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Charge, Intercept and Intervene abilities are now usable while in combat and in any stance.  In addition, your Intervene ability will remove all movement impairing effects."
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "improved_revenge",
@@ -35235,7 +36578,8 @@ export const baseTalents = {
                             value1: [30, 60],
                             value2: [" for 50% damage", ""]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "devastate",
@@ -35247,7 +36591,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Sunder the target's armor causing the Sunder Armor effect.  In addition, causes 150% of weapon damage plus 19 for each application of Sunder Armor on the target.  The Sunder Armor effect can stack up to 3 times."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "impending_victory",
@@ -35262,7 +36607,8 @@ export const baseTalents = {
                         {
                             value: [25, 50]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "vigilance",
@@ -35274,7 +36620,8 @@ export const baseTalents = {
                     requiresTalents: "concussion_blow",
                     description: [
                         "Focus your protective gaze on a party or raid member. Each time they are hit by an attack, your Taunt cooldown is refreshed and you gain Vengeance as if 20% of the damage was done to you.  Lasts 30 min.  This effect can only be on one target at a time."
-                    ]
+                    ],
+                    isActive: true
                 },
                 {
                     id: "heavy_repercussions",
@@ -35289,7 +36636,8 @@ export const baseTalents = {
                         {
                             value: [50, 100]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "safeguard",
@@ -35304,7 +36652,8 @@ export const baseTalents = {
                         {
                             value: [15, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "sword_and_board",
@@ -35320,7 +36669,8 @@ export const baseTalents = {
                             crit: [5, 10, 15],
                             other: [10, 20, 30]
                         }
-                    ]
+                    ],
+                    isActive: false
                 },
                 {
                     id: "shockwave",
@@ -35332,7 +36682,8 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Sends a wave of force in front of you, causing (75 / 100 * Attack power) damage (based on attack power) and stunning all enemy targets within 10 yards in a frontal cone for 4 sec."
-                    ]
+                    ],
+                    isActive: true
                 }
             ]
         }
