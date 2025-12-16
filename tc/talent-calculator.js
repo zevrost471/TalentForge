@@ -2,13 +2,13 @@
 
 import { classColors } from '../class-colors.js';
 import { patchOptions } from '../db/patches.js';
-import { talentsAttributedByVersion } from '../base-talents-per-patch.js';
+import { talentsAttributedByVersion } from './base-talents-per-patch.js';
 import { glyphs, glyphIndex } from '../db/glyphs.js';
-import { cataSpecCards } from '../ctc-tree-summary-cards.js';
+import { cataSpecCards } from './ctc-tree-summary-cards.js';
 import { backgroundImages } from './tree-bg-images.js';
-import { defaultIcons, cataOverrides } from '../tree-icons.js';
+import { defaultIcons, cataOverrides } from './tree-icons.js';
 import { getDomElements } from './dom-elements.js';
-import '../talent-patch-changes.js';
+import './talent-patch-changes.js';
 import { baselineClassAbilities } from '../db/baseline-class-abilities.js';
 
 const {
