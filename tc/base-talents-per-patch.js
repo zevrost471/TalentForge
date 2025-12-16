@@ -1,6 +1,6 @@
 // base-talents-per-patch.js
 
-import { baseTalents } from './base-talents.js';
+import { baseTalents } from '../db/base-talents.js';
 
 const versionGroups = {
     vanilla: [
