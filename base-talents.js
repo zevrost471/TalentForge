@@ -33495,6 +33495,136 @@ export const baseTalents = {
             // mage - cataclysm
             Fire: [
                 {
+                    id: "master_of_elements",
+                    name: "Master of Elements",
+                    icon: "spell_fire_masterofelements",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your spell criticals will refund {value}% of their base mana cost.",
+                        {
+                            value: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "burning_soul",
+                    name: "Burning Soul",
+                    icon: "spell_burningsoul",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the casting time lost from taking damaging attacks by {value}%.",
+                        {
+                            value: [23, 46, 70]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_fire_blast",
+                    name: "Improved Fire Blast",
+                    icon: "spell_fire_fireball",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of your Fire Blast spell by {value1}% and increases its range by {value2} yards.",
+                        {
+                            value1: [4, 8],
+                            value2: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "ignite",
+                    name: "Ignite",
+                    icon: "spell_fire_incinerate",
+                    row: 1,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your critical strikes from non-periodic Fire damage spells cause the target to burn for an additional {value}% of your spell's damage over 4 sec.",
+                        {
+                            value: [13, 26, 40]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "fire_power",
+                    name: "Fire Power",
+                    icon: "spell_fire_immolation",
+                    row: 1,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage of your Fire spells by {value1}% and gives your Flame Orb a {value2}% chance to explode for 1236 damage at the end of its duration.",
+                        {
+                            value1: [1, 2, 3],
+                            value2: [33, 66, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "blazing_speed",
+                    name: "Blazing Speed",
+                    icon: "spell_fire_burningspeed",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives you a {value}% chance when hit by a melee or ranged attack to increase your movement speed by 50% and dispel all effects that prevent movement.  This effect lasts 8 sec.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "impact",
+                    name: "Impact",
+                    icon: "spell_fire_meteorstorm",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your damaging spells a {value}% chance to reset the cooldown on Fire Blast and to cause the next Fire Blast you cast to stun the target for 2 sec and spread any Fire damage over time effects to nearby enemy targets within 12 yards.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "cauterize",
+                    name: "Cauterize",
+                    icon: "spell_fire_rune",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "You have a {value}% chance that an attack which would otherwise kill you will instead bring you to 40% of your maximum health.  However, you will burn for 12% of your maximum health every 1.5 sec for the next 6 sec.  This effect cannot occur more than once per minute.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "blast_wave",
                     name: "Blast Wave",
                     icon: "spell_holy_excorcism_02",
@@ -33517,6 +33647,22 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your spells no longer trigger Arcane Missiles.  Instead, your critical strikes with Fireball, Frostfire Bolt, Scorch, Pyroblast, or Fire Blast have a chance to cause your next Pyroblast spell cast within 15 sec to be instant cast and cost no mana."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_scorch",
+                    name: "Improved Scorch",
+                    icon: "spell_fire_soulburn",
+                    row: 2,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the mana cost of your Scorch spell by {value}%.",
+                        {
+                            value: [50, 100]
+                        }
                     ],
                     isActive: false
                 },
@@ -33547,6 +33693,22 @@ export const baseTalents = {
                     isActive: true
                 },
                 {
+                    id: "improved_hot_streak",
+                    name: "Improved Hot Streak",
+                    icon: "ability_mage_hotstreak",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: "hot_streak",
+                    description: [
+                        "Any time you score 2 non-periodic critical strikes in a row with your Fireball, Frostfire Bolt, Scorch, Pyroblast, or Fire Blast spells, you have a {value}% chance to trigger your Hot Streak effect.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "firestarter",
                     name: "Firestarter",
                     icon: "ability_mage_firestarter",
@@ -33556,6 +33718,22 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Allows you to cast the Scorch spell while moving."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_flamestrike",
+                    name: "Improved Flamestrike",
+                    icon: "spell_fire_selfdestruct",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the casting time of your Flamestrike spell by {value}% and gives you a {value}% chance that your Blast Wave spell will also automatically Flamestrike the same location if two or more targets are affected by the Blast Wave.",
+                        {
+                            value: [50, 100]
+                        }
                     ],
                     isActive: false
                 },
@@ -33571,6 +33749,55 @@ export const baseTalents = {
                         "Targets in a cone in front of the caster take 1292 Fire damage and are disoriented for 5 sec.  Any direct damaging attack will revive targets."
                     ],
                     isActive: true
+                },
+                {
+                    id: "molten_fury",
+                    name: "Molten Fury",
+                    icon: "spell_fire_moltenblood",
+                    row: 4,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases damage of all spells against targets with less than 35% health by {value}%.",
+                        {
+                            value: [4, 8, 12]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "pyromaniac",
+                    name: "Pyromaniac",
+                    icon: "spell_fire_burnout",
+                    row: 5,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases spell haste by {value}% if 3 or more targets are taking Fire damage over time from your spells.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "critical_mass",
+                    name: "Critical Mass",
+                    icon: "spell_nature_wispheal",
+                    row: 5,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Living Bomb and Flame Orb spells deal {value1}% more damage, and your Pyroblast and Scorch spells have a {value2}% chance to cause your target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5% and lasts 30 sec.",
+                        {
+                            value1: [5, 10, 15],
+                            value2: [33, 66, 100]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "living_bomb",
@@ -33589,6 +33816,137 @@ export const baseTalents = {
             // mage - cataclysm
             Frost: [
                 {
+                    id: "early_frost",
+                    name: "Early Frost",
+                    icon: "spell_frost_chillingbolt",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cast time of your Frostbolt spell by {value} secs.  This effect becomes inactive for 15 sec after use.",
+                        {
+                            value: [0.3, 0.6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "piercing_ice",
+                    name: "Piercing Ice",
+                    icon: "spell_frost_frostbolt",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of your spells by {value}%.",
+                        {
+                            value: [1, 2, 3]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "shatter",
+                    name: "Shatter",
+                    icon: "spell_frost_frostshock",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Multiplies the critical strike chance of all your spells against frozen targets by {value1}, and increases the damage done by Frostbolt against frozen targets by {value2}%.",
+                        {
+                            value1: [2, 3],
+                            value2: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "ice_floes",
+                    name: "Ice Floes",
+                    icon: "spell_frost_icefloes",
+                    row: 1,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of your Frost Nova, Cone of Cold, Ice Block, Cold Snap, Ice Barrier, and Icy Veins spells by {value}%.",
+                        {
+                            value: [7, 14, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_cone_of_cold",
+                    name: "Improved Cone of Cold",
+                    icon: "spell_frost_glacier",
+                    row: 1,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Cone of Cold also freezes targets for {value} sec.",
+                        {
+                            value: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "piercing_chill",
+                    name: "Piercing Chill",
+                    icon: "spell_frost_piercing-chill",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Frostbolt criticals apply the chill effect to {value} additional nearby targets.",
+                        {
+                            value: [1, 2]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "permafrost",
+                    name: "Permafrost",
+                    icon: "spell_frost_wisp",
+                    row: 1,
+                    col: 3,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Chill effects reduce the target's speed by an additional {value1}%, and the target's healing received.  In addition, whenever you deal spell damage, your Water Elemental is healed for {value2}% of the amount dealt.",
+                        {
+                            value1: [4, 7, 10],
+                            value2: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "ice_shards",
+                    name: "Ice Shards",
+                    icon: "spell_frost_ice-shards",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Adds a chill effect to your Blizzard spell.  This effect lowers the target's movement speed by {value1}%.  Lasts 2 sec.  In addition, increases the range of your Ice Lance spell by {value2} yards.",
+                        {
+                            value1: [25, 40],
+                            value2: [2, 5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "icy_veins",
                     name: "Icy Veins",
                     icon: "spell_frost_coldhearted",
@@ -33600,6 +33958,55 @@ export const baseTalents = {
                         "Hastens your spellcasting, increasing spell casting speed by 20% and reduces the pushback suffered from damaging attacks while casting by 100%.  Lasts 20 sec."
                     ],
                     isActive: true
+                },
+                {
+                    id: "fingers_of_frost",
+                    name: "Fingers of Frost",
+                    icon: "ability_mage_wintersgrasp",
+                    row: 2,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your offensive Chill effects a {value}% chance to grant you the Fingers of Frost effect, which causes your next Ice Lance or Deep Freeze spell to act as if your target were frozen and increases Ice Lance damage by 25%.  Fingers of Frost can accumulate up to 2 charges and lasts 15 sec.",
+                        {
+                            value: [7, 14, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_freeze",
+                    name: "Improved Freeze",
+                    icon: "spell_frost_summonwaterelemental",
+                    row: 2,
+                    col: 3,
+                    ranks: 3,
+                    requiresTalents: "fingers_of_frost",
+                    description: [
+                        "Gives your Water Elemental's Freeze spell a {value}% chance to grant 2 charges of Fingers of Frost when it strikes enemy targets.",
+                        {
+                            value: [33, 66, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "enduring_winter",
+                    name: "Enduring Winter",
+                    icon: "spell_frost_arcticwinds",
+                    row: 3,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the mana cost of all spells by {value1}%.  In addition, your Frostbolt spell has a {value2}% chance to grant up to 10 party or raid members mana regeneration equal to 1% of their maximum mana over 10 sec.",
+                        {
+                            value1: [3, 6, 10],
+                            value2: [33, 66, 100]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "cold_snap",
@@ -33615,6 +34022,38 @@ export const baseTalents = {
                     isActive: true
                 },
                 {
+                    id: "brain_freeze",
+                    name: "Brain Freeze",
+                    icon: "ability_mage_brainfreeze",
+                    row: 3,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your spells no longer trigger Arcane Missiles.  Instead, your Frost damage spells with chilling effects have a {value}% chance to cause your next Fireball or Frostfire Bolt spell to be instant cast and cost no mana.  When Frostfire Bolt is instant, it can benefit from Fingers of Frost.  Brain Freeze cannot be triggered by Frostfire Bolt.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "shattered_barrier",
+                    name: "Shattered Barrier",
+                    icon: "ability_mage_coldasice",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: "ice_barrier",
+                    description: [
+                        "Gives your Ice Barrier spell a 100% chance to freeze all enemies within 10 yds for {value} sec when it is destroyed.",
+                        {
+                            value: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "ice_barrier",
                     name: "Ice Barrier",
                     icon: "spell_ice_lament",
@@ -33626,6 +34065,39 @@ export const baseTalents = {
                         "Instantly shields you, absorbing ((8089 + Spell power * 0.87)) damage.  Lasts 1 min.  While the shield holds, spellcasting will not be delayed by damage."
                     ],
                     isActive: true
+                },
+                {
+                    id: "reactive_barrier",
+                    name: "Reactive Barrier",
+                    icon: "spell_frost_manarecharge",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: "ice_barrier",
+                    description: [
+                        "Gives the caster a {value}% chance for the Ice Barrier spell to automatically cast with no mana cost upon taking damage that lowers the caster's life below 50%.  This effect obeys Ice Barrier's cooldown, and will trigger the cooldown when activated.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "frostfire_orb",
+                    name: "Frostfire Orb",
+                    icon: "spell_firefrost-orb",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "{value1}  In addition, reduces the speed of targets slowed by your Frostfire Bolt's chill effect by an additional {value2}%.",
+                        {
+                            value1: ["Converts your Flame Orb into a Frostfire Orb, causing your Frostfire Orb to benefit from your Frost Specialization.", "Your Frostfire Orb gains a chill effect, slowing targets damaged by the Frostfire Orb by 40% for 2 sec."],
+                            value2: [10, 20]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "deep_freeze",
