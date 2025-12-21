@@ -36607,6 +36607,22 @@ export const baseTalents = {
             // warrior - cataclysm
             Arms: [
                 {
+                    id: "war_academy",
+                    name: "War Academy",
+                    icon: "ability_warrior_unrelentingassault",
+                    row: 0,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage of Mortal Strike, Raging Blow, Devastate, Victory Rush and Slam by {value}%.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "field_dressing",
                     name: "Field Dressing",
                     icon: "inv_misc_bandage_05",
@@ -36619,6 +36635,23 @@ export const baseTalents = {
                         {
                             value1: [3, 6],
                             value2: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "blitz",
+                    name: "Blitz",
+                    icon: "warrior_talent_icon_blitz",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Charge generates {value1} additional Rage and stuns {value2}.",
+                        {
+                            value1: [5, 10],
+                            value2: ["an additional nearby target", "2 additional nearby targets"]
                         }
                     ],
                     isActive: false
@@ -36672,6 +36705,22 @@ export const baseTalents = {
                     ],
                     isActive: false,
                     requiresWeapon: 1
+                },
+                {
+                    id: "drums_of_war",
+                    name: "Drums of War",
+                    icon: "achievement_bg_winwsg_3-0",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the Rage cost of your Pummel, Demoralizing Shout, Intimidating Shout and Challenging Shout by {value}%.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "taste_for_blood",
@@ -36765,6 +36814,40 @@ export const baseTalents = {
                         "For the next 10 sec, none of your abilities cost rage, but you continue to generate rage. Cannot be used during Inner Rage."
                     ],
                     isActive: true
+                },
+                {
+                    id: "blood_frenzy",
+                    name: "Blood Frenzy",
+                    icon: "ability_warrior_bloodfrenzy",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your bleed effects cause targets to take an extra {value1}% physical damage. Applying a bleed effect increases bleed damage taken by the target by {value2}% for 1 min. In addition, your autoattacks have a {value3}% chance to generate 20 additional Rage.",
+                        {
+                            value1: [2, 4],
+                            value2: [15, 30],
+                            value3: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "lambs_to_the_slaughter",
+                    name: "Lambs to the Slaughter",
+                    icon: "warrior_talent_icon_lambstotheslaughter",
+                    row: 4,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Mortal Strike causes the Slaughter effect, which refreshes the duration of Rend on the target and increases the damage of your Execute, Overpower, Slam and Mortal Strike by 10%.  Lasts 15 sec.  {value}",
+                        {
+                            value: ["", "Stacks up to 2 times.", "Stacks up to 3 times."]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "juggernaut",
@@ -36891,6 +36974,22 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "executioner",
+                    name: "Executioner",
+                    icon: "inv_sword_48",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Execute hits have a {value}% chance to improve your melee attack speed by 5% for 9 sec.  This effect stacks up to 5 times.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "booming_voice",
                     name: "Booming Voice",
                     icon: "spell_nature_purge",
@@ -36903,6 +37002,22 @@ export const baseTalents = {
                         {
                             value1: [15, 30],
                             value2: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "rude_interruption",
+                    name: "Rude Interruption",
+                    icon: "ability_warrior_commandingshout",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Successfully interrupting a spell with Pummel increases your damage by 5% for {value} sec.",
+                        {
+                            value: [15, 30]
                         }
                     ],
                     isActive: false
@@ -36973,6 +37088,22 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "die_by_the_sword",
+                    name: "Die by the Sword",
+                    icon: "inv_sword_86",
+                    row: 3,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your parry chance by 100% for {value} sec whenever you are brought to 20% health or less.  This effect cannot occur more often than once every 2 min.",
+                        {
+                            value: [4, 8]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "raging_blow",
                     name: "Raging Blow",
                     icon: "ability_hunter_swiftstrike",
@@ -37032,6 +37163,22 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "meat_cleaver",
+                    name: "Meat Cleaver",
+                    icon: "warrior_talent_icon_mastercleaver",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Dealing damage with Cleave or Whirlwind increases the damage of Cleave and Whirlwind by {value}% for 10 sec.  This effect stacks up to 3 times.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "intensify_rage",
                     name: "Intensify Rage",
                     icon: "warrior_talent_icon_furyintheblood",
@@ -37059,6 +37206,23 @@ export const baseTalents = {
                         "Your Bloodthirst hits have a {value}% chance of making your next Slam instant, free, and deal 20% more damage for 10 sec.",
                         {
                             value: [10, 20, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "skirmisher",
+                    name: "Skirmisher",
+                    icon: "warrior_talent_icon_skirmisher",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of your Intercept by {value1} sec and your Heroic Leap by {value2} sec.",
+                        {
+                            value1: [5, 10],
+                            value2: [10, 20]
                         }
                     ],
                     isActive: false
@@ -37164,6 +37328,24 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "shield_mastery",
+                    name: "Shield Mastery",
+                    icon: "ability_warrior_shieldguard",
+                    row: 1,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of your Shield Block by {value1} sec, your Shield Wall by {value2} sec and causes your Shield Block to also reduce magic damage taken by {value3}% for 6 sec.",
+                        {
+                            value1: [10, 20, 30],
+                            value2: [60, 120, 180],
+                            value3: [7, 14, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "hold_the_line",
                     name: "Hold the Line",
                     icon: "achievement_bg_defendxtowers_av",
@@ -37223,6 +37405,25 @@ export const baseTalents = {
                     isActive: true
                 },
                 {
+                    id: "bastion_of_defense",
+                    name: "Bastion of Defense",
+                    icon: "ability_defend",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the chance you'll be critically hit by melee attacks by {value1}% while in Defensive Stance. In addition, when you block, dodge or parry an attack you have a {value2}% chance to become Enraged, increasing physical damage done by {value3}% for 12 sec.",
+                        {
+                            value1: [3, 6],
+                            value2: [10, 20],
+                            value3: [5, 10]
+                        }
+                    ],
+                    isActive: false,
+                    requiresStance: 2
+                },
+                {
                     id: "warbringer",
                     name: "Warbringer",
                     icon: "ability_warrior_warbringer",
@@ -37277,6 +37478,23 @@ export const baseTalents = {
                         "Using Devastate on a target with 20% or less health has a {value}% chance to allow the use of Victory Rush but that Victory Rush only heals for 5% of your health.",
                         {
                             value: [25, 50]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "thunderstruck",
+                    name: "Thunderstruck",
+                    icon: "warrior_talent_icon_thunderstruck",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Improves the damage of your Rend, Cleave and Thunder Clap by {value1}%.  In addition, your Thunder Clap improves the damage of your next Shockwave by {value2}%.  Stacks up to 3 times.",
+                        {
+                            value1: [3, 6],
+                            value2: [5, 10]
                         }
                     ],
                     isActive: false
