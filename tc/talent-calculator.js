@@ -1,6 +1,6 @@
 // talent-calculator.js
 
-import { classColors } from '../class-colors.js';
+import { classColors } from './class-colors.js';
 import { patchOptions } from '../db/patches.js';
 import { talentsAttributedByVersion } from './base-talents-per-patch.js';
 import { glyphs, glyphIndex } from '../db/glyphs.js';
