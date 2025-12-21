@@ -34134,6 +34134,39 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "protector_of_the_innocent",
+                    name: "Protector of the Innocent",
+                    icon: "ability_paladin_protectoroftheinnocent",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Casting a targeted heal on any target, except yourself, also heals you for {value}.",
+                        {
+                            value: [934, 1868, 2802]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "judgements_of_the_pure",
+                    name: "Judgements of the Pure",
+                    icon: "ability_paladin_judgementofthepure",
+                    row: 0,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Judgement increases your casting and melee haste by {value1}% for 1 min and your mana regeneration from Spirit while in combat by {value2}%.",
+                        {
+                            value1: [3, 6, 9],
+                            value2: [10, 20, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "clarity_of_purpose",
                     name: "Clarity of Purpose",
                     icon: "spell_paladin_clarityofpurpose",
@@ -34145,6 +34178,22 @@ export const baseTalents = {
                         "Reduces the casting time of your Holy Light, Divine Light and Holy Radiance by {value} sec.",
                         {
                             value: [0.15, 0.3, 0.5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "last_word",
+                    name: "Last Word",
+                    icon: "spell_holy_holyguidance",
+                    row: 1,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your Word of Glory a {value}% increased critical chance when used on targets with 35% or less health.",
+                        {
+                            value: [30, 60]
                         }
                     ],
                     isActive: false
@@ -34166,6 +34215,23 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "denounce",
+                    name: "Denounce",
+                    icon: "spell_holy_excorcism_02",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the mana cost of Exorcism by {value1}%. In addition, you have a {value2}% chance to cause the Denounce effect on the targets of your Exorcism. The Denounce effect prevents targets from causing critical effects for the next 6 sec.",
+                        {
+                            value1: [38, 75],
+                            value2: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "divine_favor",
                     name: "Divine Favor",
                     icon: "spell_holy_divineillumination",
@@ -34177,6 +34243,57 @@ export const baseTalents = {
                         "Increases your spell casting haste by 20% and spell critical chance by 20% for 20 sec."
                     ],
                     isActive: true
+                },
+                {
+                    id: "infusion_of_light",
+                    name: "Infusion of Light",
+                    icon: "ability_paladin_infusionoflight",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical effect chance of your Holy Shock by {value1}%.  In addition, your Holy Shock critical effects reduce the cast time of your next Flash of Light, Holy Light, Divine Light or Holy Radiance by {value2} sec.",
+                        {
+                            value1: [5, 10],
+                            value2: [0.75, "1.50"]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "daybreak",
+                    name: "Daybreak",
+                    icon: "inv_qirajidol_sun",
+                    row: 2,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Flash of Light, Holy Light and Divine Light have a {value}% chance to make your next Holy Shock not trigger a cooldown if used within 12 sec.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "enlightened_judgements",
+                    name: "Enlightened Judgements",
+                    icon: "ability_paladin_enlightenedjudgements",
+                    row: 3,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Grants hit rating equal to {value1}% of any Spirit gained from items or effects, and increases the range of your Judgement by {value2} yards.  In addition, your Judgement instantly heals you for {value3}.",
+                        {
+                            value1: [50, 100],
+                            value2: [5, 10],
+                            value3: [1334, 2668]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "beacon_of_light",
@@ -34192,6 +34309,23 @@ export const baseTalents = {
                     isActive: true
                 },
                 {
+                    id: "speed_of_light",
+                    name: "Speed of Light",
+                    icon: "paladin_icon_speedoflight",
+                    row: 3,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: "infusion_of_light",
+                    description: [
+                        "Grants {value1}% spell haste.  In addition, casting Divine Protection increases your movement speed by {value2}% for 4 sec.",
+                        {
+                            value1: [1, 2, 3],
+                            value2: [20, 40, 60]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "sacred_cleansing",
                     name: "Sacred Cleansing",
                     icon: "ability_paladin_sacredcleansing",
@@ -34201,6 +34335,22 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your Cleanse spell now also dispels 1 Magic effect."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "conviction",
+                    name: "Conviction",
+                    icon: "ability_paladin_conviction",
+                    row: 4,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Gives you a {value}% bonus to damage and healing for 15 sec after causing a critical effect from a weapon swing, non-periodic spell, or ability. This effect stacks up to 3 times.",
+                        {
+                            value: [1, 2, 3]
+                        }
                     ],
                     isActive: false
                 },
@@ -34216,6 +34366,55 @@ export const baseTalents = {
                         "Causes your Concentration Aura to make all affected targets immune to Silence and Interrupt effects and improve the effect of Devotion Aura, Resistance Aura, and Retribution Aura by 100%.  Lasts 6 sec."
                     ],
                     isActive: true
+                },
+                {
+                    id: "paragon_of_virtue",
+                    name: "Paragon of Virtue",
+                    icon: "spell_holy_avenginewrath",
+                    row: 4,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of Divine Protection by {value1} sec, Hand of Sacrifice by {value1} sec and Avenging Wrath by {value2} sec.",
+                        {
+                            value1: [15, 30],
+                            value2: [30, 60]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "tower_of_radiance",
+                    name: "Tower of Radiance",
+                    icon: "achievement_bg_winsoa",
+                    row: 5,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: "beacon_of_light",
+                    description: [
+                        "Healing the target of your Beacon of Light with Flash of Light or Divine Light has a {value}% chance to generate a charge of Holy Power.  In addition, casting Holy Radiance will always generate one charge of Holy Power.",
+                        {
+                            value: [33, 66, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "blessed_life",
+                    name: "Blessed Life",
+                    icon: "spell_holy_blessedlife",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "You have a {value}% chance to gain a charge of Holy Power whenever you take direct damage.  This effect cannot occur more than once every 8 seconds.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "light_of_dawn",
