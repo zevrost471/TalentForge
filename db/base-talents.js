@@ -35058,6 +35058,270 @@ export const baseTalents = {
             // priest - cataclysm
             Discipline: [
                 {
+                    id: "improved_power_word_shield",
+                    name: "Improved Power Word: Shield",
+                    icon: "spell_holy_powerwordshield",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage absorbed by your Power Word: Shield by {value}%.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "twin_disciplines",
+                    name: "Twin Disciplines",
+                    icon: "spell_holy_sealofvengeance",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your Shadow and Holy spell damage and healing by {value}%.",
+                        {
+                            value: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "mental_agility",
+                    name: "Mental Agility",
+                    icon: "ability_hibernation",
+                    row: 0,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the mana cost of your instant cast spells by {value}%.",
+                        {
+                            value: [4, 7, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "inner_sanctum",
+                    name: "Inner Sanctum",
+                    icon: "spell_holy_innerfire",
+                    row: 1,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Inner Fire also reduces all spell damage taken by {value}% while it is active, and the movement speed bonus of your Inner Will is increased by {value}%.",
+                        {
+                            value: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "soul_warding",
+                    name: "Soul Warding",
+                    icon: "ability_priest_soulwarding",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of your Power Word: Shield ability by {value} sec.",
+                        {
+                            value: [1, 2]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "renewed_hope",
+                    name: "Renewed Hope",
+                    icon: "spell_holy_holyprotection",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical effect chance of your Flash Heal, Greater Heal, Heal and Penance (Heal) spells by {value}% on targets afflicted by the Weakened Soul effect, or blessed with your Grace effect.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "power_infusion",
+                    name: "Power Infusion",
+                    icon: "spell_holy_powerinfusion",
+                    row: 2,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Infuses the target with power, increasing spell casting speed by 20% and reducing the mana cost of all spells by 20%.  Lasts 15 sec."
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "inner_focus",
+                    name: "Inner Focus",
+                    icon: "spell_frost_windwalkon",
+                    row: 2,
+                    col: 3,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the mana cost of your next Flash Heal, Binding Heal, Greater Heal or Prayer of Healing by 100% and increases its critical effect chance by 25%."
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "rapture",
+                    name: "Rapture",
+                    icon: "spell_holy_rapture",
+                    row: 3,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "When your Power Word: Shield is completely absorbed or dispelled you are instantly energized with {value}% of your total mana. This effect can only occur once every 12 sec.",
+                        {
+                            value: [2, 5, 7]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "borrowed_time",
+                    name: "Borrowed Time",
+                    icon: "spell_holy_borrowedtime",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Grants {value}% spell haste for your next spell after casting Power Word: Shield. Lasts for 6 sec.",
+                        {
+                            value: [7, 14]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "reflective_shield",
+                    name: "Reflective Shield",
+                    icon: "ability_priest_reflectiveshield",
+                    row: 3,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Causes {value}% of the damage you absorb with Power Word: Shield to reflect back at the attacker.  This damage causes no threat.",
+                        {
+                            value: [22, 45]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "strength_of_soul",
+                    name: "Strength of Soul",
+                    icon: "spell_holy_ashestoashes",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: "renewed_hope",
+                    description: [
+                        "When you heal a target with your Heal, Greater Heal or Flash Heal spell, the duration of the Weakened Soul debuff on the target is reduced by {value1} sec.<br><br>In addition, when you cast Inner Focus you become immune to Silence, Interrupt and Dispel effects for {value2} sec.",
+                        {
+                            value1: [2, 4],
+                            value2: [3, 5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "divine_aegis",
+                    name: "Divine Aegis",
+                    icon: "spell_holy_devineaegis",
+                    row: 4,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Critical heals and all heals from Prayer of Healing create a protective shield on the target, absorbing {value}% of the amount healed. Lasts 15 sec.",
+                        {
+                            value: [10, 20, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "pain_supression",
+                    name: "Pain Suppression",
+                    icon: "spell_holy_painsupression",
+                    row: 4,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Instantly reduces a friendly target's threat by 5%, and reduces all damage they take by 40% for 8 sec."
+                    ],
+                    isActive: true
+                },
+                {
+                    id: "train_of_thought",
+                    name: "Train of Thought",
+                    icon: "ability_mage_studentofthemind",
+                    row: 4,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "You have a {value}% chance when you heal with Greater Heal to reduce the cooldown of your Inner Focus by 5 sec.<br><br>You have a {value}% chance when you Smite to reduce the cooldown of your Penance by 0.5 sec.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "focused_will",
+                    name: "Focused Will",
+                    icon: "ability_priest_focusedwill",
+                    row: 5,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Whenever you are victim of any damage greater than 10% of your total health or critically hit by any non-periodic attack, you gain Focused Will reducing all damage taken by {value}% lasting for 8 sec. Stacks up to 2 times.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "grace",
+                    name: "Grace",
+                    icon: "spell_holy_hopeandgrace",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Flash Heal, Greater Heal, Heal and Penance spells bless the target with Grace, increasing all healing received from the Priest by {value}%. This effect will stack up to 3 times. Effect lasts 15 sec.",
+                        {
+                            value: [4, 8]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "power_word_barrier",
                     name: "Power Word: Barrier",
                     icon: "spell_holy_powerwordbarrier",
@@ -35073,6 +35337,300 @@ export const baseTalents = {
             ],
             // priest - cataclysm
             Holy: [
+                {
+                    id: "improved_renew",
+                    name: "Improved Renew",
+                    icon: "spell_holy_renew",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the amount healed by your Renew spell by {value}%.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "empowered_healing",
+                    name: "Empowered Healing",
+                    icon: "spell_holy_greaterheal",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the healing done by your Flash Heal, Heal, Binding Heal and Greater Heal by {value}%.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "divine_fury",
+                    name: "Divine Fury",
+                    icon: "spell_holy_sealofwrath",
+                    row: 0,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the casting time of your Smite, Holy Fire, Heal and Greater Heal spells by {value} sec.",
+                        {
+                            value: [0.15, 0.35, 0.5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "desperate_prayer",
+                    name: "Desperate Prayer",
+                    icon: "spell_holy_restoration",
+                    row: 1,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Instantly heals the caster for 30% of their total health."
+                    ],
+                    isActive: true,
+                    isInstant: true,
+                    castTime: null,
+                    cooldown: 120
+                },
+                {
+                    id: "surge_of_light",
+                    name: "Surge of Light",
+                    icon: "spell_holy_surgeoflight",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "You have a {value}% chance when you Smite, Heal, Flash Heal, Binding Heal or Greater Heal to cause your next Flash Heal to be instant cast and cost no mana.",
+                        {
+                            value: [3, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "inspiration",
+                    name: "Inspiration",
+                    icon: "spell_holy_layonhands",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces your target's physical damage taken by {value}% for 15 sec after getting a critical effect from your Flash Heal, Heal, Greater Heal, Binding Heal, Penance, Prayer of Mending, Prayer of Healing, or Circle of Healing spell.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "divine_touch",
+                    name: "Divine Touch",
+                    icon: "ability_paladin_infusionoflight",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: "improved_renew",
+                    description: [
+                        "Your Renew will instantly heal the target for {value}% of the total periodic effect.",
+                        {
+                            value: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "holy_concentration",
+                    name: "Holy Concentration",
+                    icon: "spell_holy_fanaticism",
+                    row: 2,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the amount of mana regeneration from Spirit while in combat by an additional {value}%.",
+                        {
+                            value: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "lightwell",
+                    name: "Lightwell",
+                    icon: "spell_holy_summonlightwell",
+                    row: 2,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Creates a Holy Lightwell.  Friendly players can click the Lightwell to restore [((2878 + (Spell power * .308)) * 3) * (1.15 * (((1))))] health over 6 sec.  Attacks done to you equal to 30% of your total health will cancel the effect. Lightwell lasts for 3 min or 10 charges."
+                    ],
+                    isActive: true,
+                    isInstant: false,
+                    castTime: 0.5,
+                    cooldown: 180,
+                    spentResource: 30,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 40
+                },
+                {
+                    id: "tome_of_light",
+                    name: "Tome of Light",
+                    icon: "inv_misc_book_07",
+                    row: 2,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of your Holy Word spells by {value}%.",
+                        {
+                            value: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "rapid_renewal",
+                    name: "Rapid Renewal",
+                    icon: "ability_paladin_blessedmending",
+                    row: 3,
+                    col: 0,
+                    ranks: 1,
+                    requiresTalents: "divine_touch",
+                    description: [
+                        "Reduces the global cooldown of your Renew by 0.5 sec."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "spirit_of_redemption",
+                    name: "Spirit of Redemption",
+                    icon: "inv_enchant_essenceeternallarge",
+                    row: 3,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Upon death, the priest becomes the Spirit of Redemption for 15 sec.  The Spirit of Redemption cannot move, attack, be attacked or targeted by any spells or effects.  While in this form the priest can cast any healing spell free of cost.  When the effect ends, the priest dies."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "serendipity",
+                    name: "Serendipity",
+                    icon: "spell_holy_serendipity",
+                    row: 3,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you heal with Binding Heal or Flash Heal, the cast time of your next Greater Heal or Prayer of Healing spell is reduced by {value1}% and mana cost reduced by {value2}%. Stacks up to 2 times. Lasts 20 sec.",
+                        {
+                            value1: [10, 20],
+                            value2: [5, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "body_and_soul",
+                    name: "Body and Soul",
+                    icon: "spell_holy_symbolofhope",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you cast Power Word: Shield or Leap of Faith, you increase the target's movement speed by {value1}% for 4 sec, and you have a {value2}% chance when you cast Cure Disease on yourself to also cleanse 1 poison effect in addition to diseases.",
+                        {
+                            value1: [30, 60],
+                            value2: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "blessed_resilience",
+                    name: "Blessed Resilience",
+                    icon: "spell_holy_blessedresillience",
+                    row: 4,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Whenever you are victim of an attack equal to damage greater than 10% of your total health or critically hit by any non-periodic attack, you gain Blessed Resilience increasing all healing received by {value}% lasting for 10 sec.",
+                        {
+                            value: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "test_of_faith",
+                    name: "Test of Faith",
+                    icon: "spell_holy_testoffaith",
+                    row: 5,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases healing by {value}% on friendly targets at or below 50% health.",
+                        {
+                            value: [4, 8, 12]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "heavenly_voice",
+                    name: "Heavenly Voice",
+                    icon: "ability_priest_heavanlyvoice",
+                    row: 5,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: "chakra",
+                    description: [
+                        "Increases the healing done by your Divine Hymn spell by {value1}%, and reduces the cooldown by {value2} minutes.",
+                        {
+                            value1: [50, 100],
+                            value2: [2.5, 5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "circle_of_healing",
+                    name: "Circle of Healing",
+                    icon: "spell_holy_circleofrenewal",
+                    row: 5,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Heals up to 5 friendly party or raid members within 30 yards of the target for 2430.  Prioritizes healing the most injured party members."
+                    ],
+                    isActive: true,
+                    isInstant: true,
+                    castTime: null,
+                    cooldown: 10,
+                    spentResource: 21,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 40
+
+                },
                 {
                     id: "guardian_spirit",
                     name: "Guardian Spirit",
@@ -35218,6 +35776,39 @@ export const baseTalents = {
                     isActive: true
                 },
                 {
+                    id: "phantasm",
+                    name: "Phantasm",
+                    icon: "spell_shadow_twistedfaith",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Fade ability now has a {value}% chance to remove all movement impairing effects.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "harnessed_shadows",
+                    name: "Harnessed Shadows",
+                    icon: "inv_misc_orb_04",
+                    row: 2,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the chance for you to gain a Shadow Orb when dealing damage with your Mind Flay and Shadow Word: Pain by {value1}%, and you have a {value2}% chance to gain a Shadow Orb when critically hit by any attack.",
+                        {
+                            value1: [4, 8],
+                            value2: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "silence",
                     name: "Silence",
                     icon: "ability_priest_silence",
@@ -35305,6 +35896,22 @@ export const baseTalents = {
                         "Causes 450 Shadow damage over 15 sec, and when you deal damage with Mind Blast to an affected target you cause up to 10 party or raid members to gain 1% of their maximum mana per 10 sec."
                     ],
                     isActive: true
+                },
+                {
+                    id: "paralysis",
+                    name: "Paralysis",
+                    icon: "ability_rogue_masterofsubtlety",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you critically hit with your Mind Blast, you cause the target to be unable to move for {value} sec.",
+                        {
+                            value: [2, 4]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "psychic_horror",
