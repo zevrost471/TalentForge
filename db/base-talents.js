@@ -34746,6 +34746,105 @@ export const baseTalents = {
             // paladin - cataclysm
             Retribution: [
                 {
+                    id: "eye_for_an_eye",
+                    name: "Eye for an Eye",
+                    icon: "spell_holy_eyeforaneye",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "All magic attacks against you have a {value}% chance to cause 30% of the damage taken back to the attacker as well.",
+                        {
+                            value: [20, 40]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "crusade",
+                    name: "Crusade",
+                    icon: "spell_holy_crusade",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage of your Crusader Strike, Hammer of the Righteous, and Templar's Verdict by {value1}%, and the damage and healing of your Holy Shock by {value1}%.  In addition, for 15 sec after you kill an enemy that yields experience or honor, your next Holy Light heals for an additional {value2}%.",
+                        {
+                            value1: [10, 20, 30],
+                            value2: [100, 200, 300]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_judgement",
+                    name: "Improved Judgement",
+                    icon: "ability_paladin_judgementblue",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the range of your Judgement by {value} yards.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "guardians_favor",
+                    name: "Guardian's Favor",
+                    icon: "spell_holy_sealofprotection",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of your Hand of Protection by {value1} and increases the duration of your Hand of Freedom by {value2} sec.",
+                        {
+                            value1: ["60 sec", "2 min"],
+                            value2: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "rule_of_law",
+                    name: "Rule of Law",
+                    icon: "inv_relics_libramofhope",
+                    row: 1,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical effect chance of your Crusader Strike, Hammer of the Righteous and Word of Glory by {value}%.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "pursuit_of_justice",
+                    name: "Pursuit of Justice",
+                    icon: "spell_holy_persuitofjustice",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "You have a {value1}% chance to gain a charge of Holy Power when struck by a Stun, Fear or Immobilize effect.  In addition, increases your movement and mounted movement speed by {value2}%.  This effect does not stack with other movement speed increasing effects.",
+                        {
+                            value1: [50, 100],
+                            value2: [8, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "communion",
                     name: "Communion",
                     icon: "ability_paladin_judgementofthewise",
@@ -34755,6 +34854,38 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "Your auras increase your party and raid's damage dealt by 3%, and your own damage is increased by an additional 2% at all times.  In addition, your Judgement causes Replenishment.<br><br>Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "the_art_of_war",
+                    name: "The Art of War",
+                    icon: "ability_paladin_artofwar",
+                    row: 2,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your autoattacks have a {value}% chance to make your next Exorcism instant, free and cause 100% additional damage.",
+                        {
+                            value: [7, 14, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "long_arm_of_the_law",
+                    name: "Long Arm of the Law",
+                    icon: "ability_paladin_judgementred",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: "improved_judgement",
+                    description: [
+                        "Your Judgement has a {value}% chance to increase your movement speed by 45% for 4 sec when used on targets at or further than 15 yards from you.",
+                        {
+                            value: [50, 100]
+                        }
                     ],
                     isActive: false
                 },
@@ -34812,6 +34943,41 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "sanctified_wrath",
+                    name: "Sanctified Wrath",
+                    icon: "ability_paladin_sanctifiedwrath",
+                    row: 3,
+                    col: 3,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of Hammer of Wrath by {value1}%, reduces the cooldown of Avenging Wrath by {value2} secs and allows the use of Hammer of Wrath at all times during Avenging Wrath.",
+                        {
+                            value1: [2, 4, 6],
+                            value2: [20, 40, 60]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "selfless_healer",
+                    name: "Selfless Healer",
+                    icon: "spell_holy_rune",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of Word of Glory by {value1} sec. In addition, when you heal others with your Word of Glory, it increases the effectiveness of the heal by {value2}% and increases your damage done by {value3}% per charge of Holy Power for 10 sec.",
+                        {
+                            value1: [5, 10],
+                            value2: [25, 50],
+                            value3: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "repentance",
                     name: "Repentance",
                     icon: "spell_holy_prayerofhealing",
@@ -34823,6 +34989,55 @@ export const baseTalents = {
                         "Puts the enemy target in a state of meditation, incapacitating them for up to 1 min.  Any damage from sources other than Censure will awaken the target.  Usable against Demons, Dragonkin, Giants, Humanoids and Undead."
                     ],
                     isActive: true
+                },
+                {
+                    id: "divine_purpose",
+                    name: "Divine Purpose",
+                    icon: "spell_holy_divinepurpose",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "The following attacks have a {value}% chance to cause your next Holy Power ability to consume no Holy Power and to cast as if 3 Holy Power were consumed:<br><br>- Judgement<br>- Exorcism<br>- Templar's Verdict<br>- Divine Storm<br>- Inquisition<br>- Holy Wrath<br>- Hammer of Wrath",
+                        {
+                            value: [7, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "inquiry_of_faith",
+                    name: "Inquiry of Faith",
+                    icon: "ability_paladin_righteousvengeance",
+                    row: 5,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the periodic damage done by your Seal of Truth by {value1}%, and the duration of your Inquisition by {value2}%.",
+                        {
+                            value1: [10, 20, 30],
+                            value2: [66, 133, 200]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "acts_of_sacrifice",
+                    name: "Acts of Sacrifice",
+                    icon: "ability_paladin_blessedhands",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown by {value}% and mana cost by {value}% of your Hand of Freedom, Hand of Salvation and Hand of Sacrifice.  In addition, your Cleanse will remove one movement impairing effect if cast on yourself.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "zealotry",
