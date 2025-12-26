@@ -353,13 +353,13 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
 
         // 4. Cast type & cooldown
         let castText = "";
-        if (!talent.castTime) {
-            // No cast time = Instant
+        if (talent.isInstant || !talent.castTime) {
+            // Instant cast
             castText = "Instant cast";
         } else if (talent.isChanneled) {
             // Has cast time + flagged channeled
             castText = `Channeled (${talent.castTime} sec cast)`;
-        } else {
+        } else if (talent.castTime) {
             // Has cast time but not channeled
             castText = `${talent.castTime} sec cast`;
         }
@@ -519,13 +519,13 @@ function getCataBaseTalentTooltip(talent, classKey) {
 
         // 4. Cast type & cooldown
         let castText = "";
-        if (!talent.castTime) {
-            // No cast time = Instant
+        if (talent.isInstant || !talent.castTime) {
+            // Instant cast
             castText = "Instant cast";
         } else if (talent.isChanneled) {
             // Has cast time + flagged channeled
             castText = `Channeled (${talent.castTime} sec cast)`;
-        } else {
+        } else if (talent.castTime) {
             // Has cast time but not channeled
             castText = `${talent.castTime} sec cast`;
         }
