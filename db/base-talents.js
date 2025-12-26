@@ -35979,6 +35979,293 @@ export const baseTalents = {
             // rogue - cataclysm
             Assassination: [
                 {
+                    id: "deadly_momentum",
+                    name: "Deadly Momentum",
+                    icon: "ability_rogue_deadlymomentum",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "After killing an opponent that yields experience or honor, {value} to their original duration.",
+                        {
+                            value: [
+                                "you have a 50% chance to increase the critical strike chance of your next ability within 15 sec by 40%, and to refresh your Slice and Dice and Recuperate abilities", 
+                                "the critical strike chance of your next ability within 15 sec is increased by 40% and your Slice and Dice and Recuperate abilities are refreshed"
+                            ]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "coup_de_grace",
+                    name: "Coup de Grace",
+                    icon: "ability_rogue_eviscerate",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage done by your Eviscerate and Envenom abilities by {value}%.",
+                        {
+                            value: [7, 14, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "lethality",
+                    name: "Lethality",
+                    icon: "ability_criticalstrike",
+                    row: 0,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike damage bonus of your Sinister Strike, Backstab, Mutilate and Hemorrhage abilities by {value}%.",
+                        {
+                            value: [10, 20, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "ruthlessness",
+                    name: "Ruthlessness",
+                    icon: "ability_druid_disembowel",
+                    row: 1,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your melee finishing moves a {value}% chance to add a combo point to your target.",
+                        {
+                            value: [20, 40, 60]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "quickening",
+                    name: "Quickening",
+                    icon: "ability_rogue_quickrecovery",
+                    row: 1,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "All healing effects on you are increased by {value1}% and your movement speed is increased by {value2}%.  This does not stack with most other movement speed increasing effects.",
+                        {
+                            value1: [10, 20],
+                            value2: [8, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "puncturing_wounds",
+                    name: "Puncturing Wounds",
+                    icon: "ability_backstab",
+                    row: 1,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of your Backstab ability by {value1}%, and the critical strike chance of your Mutilate ability by {value2}%.",
+                        {
+                            value1: [10, 20, 30],
+                            value2: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "blackjack",
+                    name: "Blackjack",
+                    icon: "ability_rogue_blackjack",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Even after your Sap wears off, its effects linger on enemies, reducing their damage done by {value}% for 8 sec.",
+                        {
+                            value: [35, 70]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "deadly_brew",
+                    name: "Deadly Brew",
+                    icon: "ability_rogue_deadlybrew",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you apply Instant, Wound, or Mind-Numbing Poison to a target, you have a {value}% chance to apply Crippling Poison.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "cold_blood",
+                    name: "Cold Blood",
+                    icon: "spell_ice_lament",
+                    row: 2,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "When activated, generates 25 Energy and increases the critical strike chance of your next non-periodic offensive ability by 100%."
+                    ],
+                    isActive: true,
+                    isInstant: true,
+                    cooldown: 120
+                },
+                {
+                    id: "vile_poisons",
+                    name: "Vile Poisons",
+                    icon: "ability_rogue_feigndeath",
+                    row: 2,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage dealt by your poisons by {value1}% and gives you {value2}% of the normal chance of applying poisons from your equipped melee weapons when you use the Fan of Knives ability.",
+                        {
+                            value1: [12, 24, 36],
+                            value2: [33, 67, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "deadened_nerves",
+                    name: "Deadened Nerves",
+                    icon: "ability_rogue_deadenednerves",
+                    row: 3,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces all damage taken by {value}%.",
+                        {
+                            value: [3, 7, 10]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "seal_fate",
+                    name: "Seal Fate",
+                    icon: "ability_rogue_stayofexecution",
+                    row: 3,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: "cold_blood",
+                    description: [
+                        "Your critical strikes from abilities that add combo points have a {value}% chance to add an additional combo point.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "murderous_intent",
+                    name: "Murderous Intent",
+                    icon: "spell_shadow_deathscream",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you Backstab an enemy that is below 35% health, you instantly recover {value} Energy.",
+                        {
+                            value: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "overkill",
+                    name: "Overkill",
+                    icon: "ability_hunter_rapidkilling",
+                    row: 4,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "While stealthed, and for 20 seconds after breaking stealth, you regenerate 30% additional energy."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "master_poisoner",
+                    name: "Master Poisoner",
+                    icon: "ability_creature_poison_06",
+                    row: 4,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: "vile_poisons",
+                    description: [
+                        "Increases the spell damage taken by any target you have poisoned by 8%, causes your Envenom ability to no longer consume Deadly Poison, and reduces the duration of all Poison effects applied to you by 50%.",
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_expose_armor",
+                    name: "Improved Expose Armor",
+                    icon: "ability_warrior_riposte",
+                    row: 4,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives a {value}% chance to refund all combo points used when performing your Expose Armor ability.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "cut_to_the_chase",
+                    name: "Cut to the Chase",
+                    icon: "ability_rogue_cuttothechase",
+                    row: 5,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Eviscerate and Envenom abilities have a {value}% chance to refresh your Slice and Dice duration to its 5 combo point maximum.",
+                        {
+                            value: [33, 67, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "venomous_wounds",
+                    name: "Venomous Wounds",
+                    icon: "ability_rogue_venomouswounds",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Each time your Rupture or Garrote deals damage to an enemy that you have poisoned, you have a {value}% chance to deal 675 additional Nature damage and to regain 10 Energy.  If an enemy dies while afflicted by your Rupture, you regain energy proportional to the remaining Rupture duration.",
+                        {
+                            value: [30, 60]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "vendetta",
                     name: "Vendetta",
                     icon: "ability_rogue_deadliness",
@@ -35995,6 +36282,305 @@ export const baseTalents = {
             // rogue - cataclysm
             Combat: [
                 {
+                    id: "improved_recuperate",
+                    name: "Improved Recuperate",
+                    icon: "ability_rogue_improvedrecuperate",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Causes your Recuperate ability to restore an additional {value1}% of your maximum health and reduces all damage taken by {value2}% while your Recuperate ability is active.",
+                        {
+                            value1: [0.5, 1],
+                            value2: [3, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_sinister_strike",
+                    name: "Improved Sinister Strike",
+                    icon: "spell_shadow_ritualofsacrifice",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage dealt by your Sinister Strike ability by {value1}% and reduces its Energy cost by {value2}.",
+                        {
+                            value1: [10, 20, 30],
+                            value2: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "precision",
+                    name: "Precision",
+                    icon: "ability_marksmanship",
+                    row: 0,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your chance to hit with weapon and poison attacks by {value}%.",
+                        {
+                            value: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_slice_and_dice",
+                    name: "Improved Slice and Dice",
+                    icon: "ability_rogue_slicedice",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the duration of your Slice and Dice ability by {value}%.",
+                        {
+                            value: [25, 50]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_sprint",
+                    name: "Improved Sprint",
+                    icon: "ability_rogue_sprint",
+                    row: 1,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives a {value}% chance to remove all movement-impairing effects when you activate your Sprint ability.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "aggression",
+                    name: "Aggression",
+                    icon: "ability_racial_avatar",
+                    row: 1,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by {value}%.",
+                        {
+                            value: [7, 14, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_kick",
+                    name: "Improved Kick",
+                    icon: "ability_kick",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Causes your Kick ability to silence the target for {value} sec.",
+                        {
+                            value: [1.5, 3]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "lightning_reflexes",
+                    name: "Lightning Reflexes",
+                    icon: "spell_nature_invisibilty",
+                    row: 2,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your chance to dodge enemy attacks by {value1}% and your attack speed by {value2}%.",
+                        {
+                            value1: [3, 6, 9],
+                            value2: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "revealing_strike",
+                    name: "Revealing Strike",
+                    icon: "inv_sword_97",
+                    row: 2,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "An instant strike that causes 125% of your normal weapon damage and increases the effectiveness of your next offensive finishing move on that target by 35% for 15 sec.  Awards 1 combo point."
+                    ],
+                    isActive: true,
+                    isInstant: true,
+                    castTime: null,
+                    cooldown: null,
+                    spentResource: 40,
+                    resourceType: 3,
+                    range: 0,
+                    requiresWeapon: 1
+                },
+                {
+                    id: "reinforced_leather",
+                    name: "Reinforced Leather",
+                    icon: "ability_rogue_reinforcedleather",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your armor contribution from cloth and leather items by {value}%.",
+                        {
+                            value: [25, 50]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_gouge",
+                    name: "Improved Gouge",
+                    icon: "ability_gouge",
+                    row: 2,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the effect duration of your Gouge ability by {value1} sec and reduces its Energy cost by {value2}.",
+                        {
+                            value1: [1, 2],
+                            value2: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "combat_potency",
+                    name: "Combat Potency",
+                    icon: "inv_weapon_shortblade_38",
+                    row: 3,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your successful off-hand melee attacks and Main Gauche attacks a 20% chance to generate {value} Energy.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "blade_twisting",
+                    name: "Blade Twisting",
+                    icon: "ability_rogue_bladetwisting",
+                    row: 3,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your damaging melee attacks a {value1}% chance to daze the target, reducing movement speed by 70% for {value2} sec.",
+                        {
+                            value1: [20, 40],
+                            value2: [4, 8]
+                        }
+                    ],
+                    isActive: false,
+                    requiresWeapon: 1
+                },
+                {
+                    id: "throwing_specialization",
+                    name: "Throwing Specialization",
+                    icon: "ability_rogue_throwingspecialization",
+                    row: 4,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the range of Throw and Deadly Throw by {value1} yards and gives your Deadly Throw a {value2}% chance to interrupt the target for 3 sec.",
+                        {
+                            value1: [5, 10],
+                            value2: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "adrenaline_rush",
+                    name: "Adrenaline Rush",
+                    icon: "spell_shadow_shadowworddominate",
+                    row: 4,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your Energy regeneration rate by 100% and your melee attack speed by 20% for 15 sec."
+                    ],
+                    isActive: true,
+                    isInstant: true,
+                    cooldown: 180
+                },
+                {
+                    id: "savage_combat",
+                    name: "Savage Combat",
+                    icon: "ability_creature_disease_03",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your total attack power by {value1}% and all physical damage caused to enemies you have poisoned is increased by {value2}%.",
+                        {
+                            value1: [3, 6],
+                            value2: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "bandits_guile",
+                    name: "Bandit's Guile",
+                    icon: "ability_rogue_preyontheweak",
+                    row: 5,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your Sinister Strike and Revealing Strike abilities have a {value}% chance to grant you an evolving insight into an opponent's defenses, increasing damage to that target by up to 30%.  Opponents can adapt over time, negating this benefit, and Striking a different opponent will begin the cycle anew.",
+                        {
+                            value: [33, 67, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "restless_blades",
+                    name: "Restless Blades",
+                    icon: "ability_rogue_restlessblades",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your damaging finishing moves reduce the cooldown of your Adrenaline Rush, Killing Spree, Redirect, and Sprint abilities by {value} sec per combo point.",
+                        {
+                            value: [1, 2]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "killing_spree",
                     name: "Killing Spree",
                     icon: "ability_rogue_murderspree",
@@ -36010,6 +36596,309 @@ export const baseTalents = {
             ],
             // rogue - cataclysm
             Subtlety: [
+                {
+                    id: "nightstalker",
+                    name: "Nightstalker",
+                    icon: "ability_stealth",
+                    row: 0,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your speed while stealthed by {value1}% and reduces the cooldown of your Stealth ability by {value2} sec.",
+                        {
+                            value1: [5, 10],
+                            value2: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_ambush",
+                    name: "Improved Ambush",
+                    icon: "ability_rogue_ambush",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of your Ambush ability by {value1}% and its damage by {value2}%.",
+                        {
+                            value1: [20, 40, 60],
+                            value2: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "relentless_strikes",
+                    name: "Relentless Strikes",
+                    icon: "ability_warrior_decisivestrike",
+                    row: 0,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Your finishing moves have a {value}% chance per combo point to restore 25 Energy.",
+                        {
+                            value: [7, 14, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "elusiveness",
+                    name: "Elusiveness",
+                    icon: "spell_magic_lesserinvisibilty",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cooldown of your Vanish and Blind abilities by {value1} sec, and your Cloak of Shadows and Combat Readiness abilities by {value2} sec.",
+                        {
+                            value1: [30, 60],
+                            value2: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "waylay",
+                    name: "Waylay",
+                    icon: "ability_rogue_waylay",
+                    row: 1,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: "improved_ambush",
+                    description: [
+                        "Your Ambush and Backstab hits have a {value}% chance to unbalance a target, increasing the time between their melee and ranged attacks by 20%, and reducing movement speed by 50% for 8 sec.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "opportunity",
+                    name: "Opportunity",
+                    icon: "ability_rogue_bloodsplatter",
+                    row: 1,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage dealt with your Backstab, Mutilate, Garrote and Ambush abilities by {value}%.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "initiative",
+                    name: "Initiative",
+                    icon: "spell_shadow_fumble",
+                    row: 1,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives you a {value}% chance to add an additional combo point to your target when using your Ambush, Garrote, or Cheap Shot ability.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "energetic_recovery",
+                    name: "Energetic Recovery",
+                    icon: "ability_rogue_sturdyrecuperate",
+                    row: 2,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Empowers your Recuperate ability, causing its periodic effect to also restore {value} Energy.",
+                        {
+                            value: [4, 8, 12]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "find_weakness",
+                    name: "Find Weakness",
+                    icon: "ability_rogue_findweakness",
+                    row: 2,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Ambush, Garrote, and Cheap Shot abilities reveal a flaw in your target's defenses, causing all your attacks to bypass {value}% of that enemy's armor for 10 sec.",
+                        {
+                            value: [35, 70]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "hemorrhage",
+                    name: "Hemorrhage",
+                    icon: "spell_shadow_lifedrain",
+                    row: 2,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "An instant strike that deals 110% weapon damage (160% if a dagger is equipped) and causes the target to hemorrhage, increasing any Physical damage dealt to the target by up to 13.  Lasts 10 charges or 15 sec.  Awards 1 combo point."
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: null,
+                    spentResource: 35,
+                    resourceType: 3,
+                    range: 0,
+                    requiresWeapon: 1
+                },
+                {
+                    id: "honor_among_thieves",
+                    name: "Honor Among Thieves",
+                    icon: "ability_rogue_honoramongstthieves",
+                    row: 3,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of all party and raid members by 5%. When any player in your party or raid critically hits with a spell or ability, you have a {value1}% chance to gain a combo point on your current target.  This effect cannot occur more than once every {value2} seconds.",
+                        {
+                            value1: [33, 66, 100],
+                            value2: [4, 3, 2]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "premeditation",
+                    name: "Premeditation",
+                    icon: "spell_shadow_possession",
+                    row: 3,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "When used, adds 2 combo points to your target.  You must add to or use those combo points within 20 sec or the combo points are lost."
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 20,
+                    spentResource: null,
+                    range: 30,
+                    requiresWeapon: 0,
+                    requiresStealth: true
+                },
+                {
+                    id: "enveloping_shadows",
+                    name: "Enveloping Shadows",
+                    icon: "ability_rogue_envelopingshadows",
+                    row: 3,
+                    col: 3,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the damage taken by area of effect attacks by {value1}% and increases the duration of your Feint ability by {value2} sec.",
+                        {
+                            value1: [10, 20, 30],
+                            value2: [1, 2, 3]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "cheat_death",
+                    name: "Cheat Death",
+                    icon: "ability_rogue_cheatdeath",
+                    row: 4,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "You have a {value}% chance that an attack which would otherwise kill you will instead reduce you to 10% of your maximum health. In addition, all damage taken will be reduced by 80% for 3 sec.  This effect cannot occur more than once per 90 seconds.",
+                        {
+                            value: [33, 66, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "preparation",
+                    name: "Preparation",
+                    icon: "ability_rogue_preparation",
+                    row: 4,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "When activated, this ability immediately finishes the cooldown on your Sprint, Vanish, and Shadowstep abilities."
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 300,
+                    spentResource: null,
+                    range: null,
+                    requiresWeapon: 0
+                },
+                {
+                    id: "sanguinary_vein",
+                    name: "Sanguinary Vein",
+                    icon: "ability_rogue_sanguinaryvein",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: "hemorrhage",
+                    description: [
+                        "Increases your damage dealt to targets with a Bleed effect on them by {value1}% and gives your Bleed effects a {value2}% chance to not break your Gouge.",
+                        {
+                            value1: [8, 16],
+                            value2: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "slaughter_from_the_shadows",
+                    name: "Slaughter from the Shadows",
+                    icon: "ability_rogue_slaughterfromtheshadows",
+                    row: 5,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the Energy cost of your Backstab and Ambush abilities by {value1}, and the Energy cost of your Hemorrhage and Fan of Knives abilities by {value2}.",
+                        {
+                            value1: [7, 14, 20],
+                            value2: [2, 4, 6]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "serrated_blades",
+                    name: "Serrated Blades",
+                    icon: "inv_sword_17",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Eviscerate has a {value}% chance per combo point to refresh your Rupture on the target to its original duration.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
                 {
                     id: "shadow_dance",
                     name: "Shadow Dance",
@@ -36173,6 +37062,23 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "elemental_reach",
+                    name: "Elemental Reach",
+                    icon: "spell_nature_stormreach",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by {value1} yards, and increases the range of your Shock spells and Searing Totem by {value2} yards.",
+                        {
+                            value1: [5, 10],
+                            value2: [7, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "elemental_oath",
                     name: "Elemental Oath",
                     icon: "spell_shaman_elementaloath",
@@ -36185,6 +37091,24 @@ export const baseTalents = {
                         {
                             value1: [5, 10],
                             value2: [3, 5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "lava_flows",
+                    name: "Lava Flows",
+                    icon: "spell_shaman_lavaflow",
+                    row: 3,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike damage bonus of your Lava Burst spell by an additional {value1}% and the periodic damage of your Flame Shock by {value2}%.  In addition, when your Flame Shock is dispelled you gain {value3}% spell haste for 6 sec.",
+                        {
+                            value1: [8, 16, 24],
+                            value2: [20, 40, 60],
+                            value3: [30, 60, 90]
                         }
                     ],
                     isActive: false
@@ -36256,6 +37180,22 @@ export const baseTalents = {
                         "Your Lightning Bolt and Chain Lightning spells reduce the remaining cooldown on your Elemental Mastery talent by {value} sec.",
                         {
                             value: [1, 2, 3]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "lava_surge",
+                    name: "Lava Surge",
+                    icon: "spell_shaman_lavasurge",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Gives your Flame Shock periodic damage ticks a {value}% chance to reset the cooldown of your Lava Burst spell.",
+                        {
+                            value: [10, 20]
                         }
                     ],
                     isActive: false
@@ -36630,6 +37570,24 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "resurgence",
+                    name: "Resurgence",
+                    icon: "ability_shaman_watershield",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "While Water Shield is active, you recover mana when your direct healing spells have a critical effect.  You regain {value1} mana from a Healing Wave or Greater Healing Wave critical, {value2} mana from a Healing Surge, Riptide, or Unleash Life critical, and {value3} mana from a Chain Heal critical.",
+                        {
+                            value1: [1146.5, 2293],
+                            value2: [687.9, 1375.8],
+                            value3: [381.785, 763.569]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "totemic_focus",
                     name: "Totemic Focus",
                     icon: "spell_nature_moonglow",
@@ -36642,6 +37600,23 @@ export const baseTalents = {
                         {
                             value1: [15, 30],
                             value2: [20, 40]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "focused_insight",
+                    name: "Focused Insight",
+                    icon: "spell_shaman_measuredinsight",
+                    row: 1,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "After casting any Shock spell, your next heal's mana cost is reduced by {value1}% of the cost of the Shock spell, and its healing effectiveness is increased by {value2}%.",
+                        {
+                            value1: [25, 50, 75],
+                            value2: [10, 20, 30]
                         }
                     ],
                     isActive: false
@@ -36785,6 +37760,22 @@ export const baseTalents = {
                     isActive: true
                 },
                 {
+                    id: "telluric_currents",
+                    name: "Telluric Currents",
+                    icon: "spell_lightning_lightningbolt01",
+                    row: 4,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your attunement to natural energies causes your Lightning Bolt spell to restore mana equal to {value}% of damage dealt.",
+                        {
+                            value: [20, 40]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "spirit_link_totem",
                     name: "Spirit Link Totem",
                     icon: "spell_shaman_spiritlink",
@@ -36810,6 +37801,22 @@ export const baseTalents = {
                         "When you cast Chain Heal or Riptide, you gain the Tidal Waves effect, which reduces the cast time of your Healing Wave and Greater Healing Wave spells by {value}% and increases the critical effect chance of your Healing Surge spell by {value}%. 2 charges.",
                         {
                             value: [10, 20, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "blessing_of_the_eternals",
+                    name: "Blessing of the Eternals",
+                    icon: "spell_shaman_blessingofeternals",
+                    row: 5,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Grants an additional {value}% chance to trigger your Earthliving heal over time effect when you heal an ally who is below 35% of total health.",
+                        {
+                            value: [40, 80]
                         }
                     ],
                     isActive: false
