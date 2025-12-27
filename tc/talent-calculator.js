@@ -408,12 +408,12 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
             };
 
             const currentDesc = getFilledDescription(currentRank || 1);
-            lines.push(`<div class="text-sm text-yellow-300">${currentDesc}</div>`);
+            lines.push(formatTalentTooltipDescription(currentDesc));
 
             if (showNextRank && currentRank > 0 && currentRank < talent.ranks) {
                 const nextDesc = getFilledDescription(currentRank + 1);
                 lines.push(`<div class="mt-2 text-sm text-white">Next rank:</div>`);
-                lines.push(`<div class="text-sm text-yellow-300">${nextDesc}</div>`);
+                lines.push(formatTalentTooltipDescription(nextDesc));
             }
         }
         // Case B: Full per-rank string array (new)
@@ -421,23 +421,23 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
             const rankIndex = Math.max(0, Math.min((currentRank || 1) - 1, talent.description.length - 1));
             const currentDesc = talent.description[rankIndex];
 
-            lines.push(`<div class="text-sm text-yellow-300">${currentDesc}</div>`);
+            lines.push(formatTalentTooltipDescription(currentDesc));
 
             // Only show next rank if showNextRank === true
             if (showNextRank && currentRank > 0 && currentRank < talent.ranks) {
                 const nextDesc = talent.description[rankIndex + 1];
                 lines.push(`<div class="mt-2 text-sm text-white">Next rank:</div>`);
-                lines.push(`<div class="text-sm text-yellow-300">${nextDesc}</div>`);
+                lines.push(formatTalentTooltipDescription(nextDesc));
             }
         }
         // Case C: Fallback for unexpected formats
         else {
-            lines.push(`<div class="text-sm text-yellow-300">${talent.description.join("<br>")}</div>`);
+            lines.push(formatTalentTooltipDescription(talent.description.join("<br>")));
         }
     }
     // Case D: Simple string
     else if (typeof talent.description === "string") {
-        lines.push(`<div class="text-sm text-yellow-300">${talent.description}</div>`);
+        lines.push(formatTalentTooltipDescription(talent.description));
     }
 
     // 8. Lock requirements
@@ -470,6 +470,53 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
 
     // === WRAP IN STYLED TOOLTIP CONTAINER ===
     return lines.join("\n");
+}
+
+function parseTooltipLines(html) {
+    // normalize all <br> variants to single \n
+    return html.replace(/<br\s*\/?>/gi, '\n')
+               .split('\n')
+               .map(l => l.trim());
+}
+
+function isSubheaderLine(line) {
+    // Subheaders never end with punctuation
+    if (/[.!?:]$/.test(line)) return false;
+
+    // Subheaders never start with "-"
+    if (line.startsWith('-')) return false;
+
+    // Subheaders never start with a digit
+    if (/^\d/.test(line)) return false;
+
+    // Must contain letters
+    if (!/[a-zA-Z]/.test(line)) return false;
+
+    // Avoid very long paragraphs
+    if (line.length > 55) return false;
+
+    return true;
+}
+
+function formatTalentTooltipDescription(html) {
+    const lines = parseTooltipLines(html);
+    const out = [];
+
+    for (const line of lines) {
+        if (!line) {
+            // single paragraph break
+            out.push('<br>'); 
+            continue;
+        }
+
+        if (isSubheaderLine(line)) {
+            out.push(`<div class="text-sm text-white">${line}</div>`);
+        } else {
+            out.push(`<div class="text-sm text-yellow-300">${line}</div>`);
+        }
+    }
+
+    return out.join("\n");
 }
 
 function getCataBaseTalentTooltip(talent, classKey) {
