@@ -480,6 +480,13 @@ function parseTooltipLines(html) {
 }
 
 function isSubheaderLine(line) {
+    const currentExpansion = getCurrentExpansion();
+
+    if (currentExpansion !== "cataclysm") {
+        // Only Cataclysm has subheaders
+        return false;
+    }
+
     // Subheaders never end with punctuation
     if (/[.!?:]$/.test(line)) return false;
 

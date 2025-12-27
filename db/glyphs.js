@@ -4024,7 +4024,7 @@ export const glyphs = {
                     ],
                     level: 25,
                     linkToWoWHead: "https://www.wowhead.com/cata/item=42914/glyph-of-steady-shot"
-                },
+                }
             ],
             major: [
                 {
@@ -4170,7 +4170,7 @@ export const glyphs = {
                     ],
                     level: 49,
                     linkToWoWHead: "https://www.wowhead.com/cata/item=42917/glyph-of-wyvern-sting"
-                },
+                }
             ],
             minor: [
                 {
@@ -4217,29 +4217,644 @@ export const glyphs = {
                     ],
                     level: 25,
                     linkToWoWHead: "https://www.wowhead.com/cata/item=43338/glyph-of-revive-pet"
-                },
+                }
             ],
         },
         mage: {
             prime: [
-
+                {
+                    name: "Arcane Barrage",
+                    icon: "ability_mage_arcanebarrage",
+                    description: [
+                        "Increases the damage of your Arcane Barrage spell by 4%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45738/glyph-of-arcane-barrage"
+                },
+                {
+                    name: "Arcane Blast",
+                    icon: "spell_arcane_blast",
+                    description: [
+                        "Increases the damage from your Arcane Blast buff by 3%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=44955/glyph-of-arcane-blast"
+                },
+                {
+                    name: "Arcane Missiles",
+                    icon: "spell_nature_starfall",
+                    description: [
+                        "Increases the critical strike chance of your Arcane Missiles spell by 5%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42735/glyph-of-arcane-missiles"
+                },
+                {
+                    name: "Cone of Cold",
+                    icon: "spell_frost_glacier",
+                    description: [
+                        "Increases the damage of your Cone of Cold spell by 25%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42753/glyph-of-cone-of-cold"
+                },
+                {
+                    name: "Deep Freeze",
+                    icon: "ability_mage_deepfreeze",
+                    description: [
+                        "Your Deep Freeze deals 20% additional damage."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45736/glyph-of-deep-freeze"
+                },
+                {
+                    name: "Fireball",
+                    icon: "spell_fire_flamebolt",
+                    description: [
+                        "Increases the critical strike chance of your Fireball spell by 5%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42739/glyph-of-fireball"
+                },
+                {
+                    name: "Frostbolt",
+                    icon: "spell_frost_frostbolt02",
+                    description: [
+                        "Increases the critical strike chance of your Frostbolt spell by 5%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42742/glyph-of-frostbolt"
+                },
+                {
+                    name: "Frostfire",
+                    icon: "ability_mage_frostfirebolt",
+                    description: [
+                        "Increases the damage done by your Frostfire Bolt by 15% and your Frostfire Bolt now deals 3% additional damage over 12 sec, stacking up to 3 times, but no longer reduces the victim's movement speed."
+                    ],
+                    level: 56,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=44684/glyph-of-frostfire"
+                },
+                {
+                    name: "Ice Lance",
+                    icon: "spell_frost_frostblast",
+                    description: [
+                        "Increases the damage of your Ice Lance spell by 5%."
+                    ],
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42745/glyph-of-ice-lance"
+                },
+                {
+                    name: "Living Bomb",
+                    icon: "ability_mage_livingbomb",
+                    description: [
+                        "Increases the damage of your Living Bomb spell by 3%."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=63539/glyph-of-living-bomb"
+                },
+                {
+                    name: "Mage Armor",
+                    icon: "spell_magearmor",
+                    description: [
+                        "Your Mage Armor regenerates 20% more mana."
+                    ],
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42749/glyph-of-mage-armor"
+                },
+                {
+                    name: "Molten Armor",
+                    icon: "ability_mage_moltenarmor",
+                    description: [
+                        "Your Molten Armor grants an additional 2% spell critical strike chance."
+                    ],
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42751/glyph-of-molten-armor"
+                },
+                {
+                    name: "Pyroblast",
+                    icon: "spell_fire_fireball02",
+                    description: [
+                        "Increases the critical strike chance of your Pyroblast spell by 5%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42743/glyph-of-pyroblast"
+                }
             ],
             major: [
-
+                {
+                    name: "Arcane Power",
+                    icon: "spell_nature_lightning",
+                    description: [
+                        "While Arcane Power is active the global cooldown of your Blink, Mana Shield, and Mirror Image is reduced to zero."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42736/glyph-of-arcane-power"
+                },
+                {
+                    name: "Blast Wave",
+                    icon: "spell_holy_excorcism_02",
+                    description: [
+                        "Increases the duration of Blast Wave's slowing effect by 1 sec."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=44920/glyph-of-blast-wave"
+                },
+                {
+                    name: "Blink",
+                    icon: "spell_arcane_blink",
+                    description: [
+                        "Increases the distance you travel with the Blink spell by 5 yards."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42737/glyph-of-blink"
+                },
+                {
+                    name: "Dragon's Breath",
+                    icon: "inv_misc_head_dragon_01",
+                    description: [
+                        "Reduces the cooldown of your Dragon's Breath by 3 sec."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42754/glyph-of-dragons-breath"
+                },
+                {
+                    name: "Evocation",
+                    icon: "spell_nature_purge",
+                    description: [
+                        "Your Evocation ability also causes you to regain 40% of your health over its duration."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42738/glyph-of-evocation"
+                },
+                {
+                    name: "Frost Armor",
+                    icon: "spell_frost_frostarmor02",
+                    description: [
+                        "Your Frost Armor also causes you to regenerate 2% of your maximum mana every 5 sec."
+                    ],
+                    level: 54,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=69773/glyph-of-frost-armor"
+                },
+                {
+                    name: "Frost Nova",
+                    icon: "spell_frost_frostnova",
+                    description: [
+                        "Your Frost Nova targets can take an additional 20% damage before the Frost Nova effect automatically breaks."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42741/glyph-of-frost-nova"
+                },
+                {
+                    name: "Ice Barrier",
+                    icon: "spell_ice_lament",
+                    description: [
+                        "Increases the amount of damage absorbed by your Ice Barrier by 30%."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45740/glyph-of-ice-barrier"
+                },
+                {
+                    name: "Ice Block",
+                    icon: "spell_frost_frost",
+                    description: [
+                        "Your Frost Nova cooldown is now reset every time you use Ice Block."
+                    ],
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42744/glyph-of-ice-block"
+                },
+                {
+                    name: "Icy Veins",
+                    icon: "spell_frost_coldhearted",
+                    description: [
+                        "Your Icy Veins ability also removes all movement slowing and cast time slowing effects."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42746/glyph-of-icy-veins"
+                },
+                {
+                    name: "Invisibility",
+                    icon: "ability_mage_invisibility",
+                    description: [
+                        "Increases your movement speed while Invisible by 40%."
+                    ],
+                    level: 78,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42748/glyph-of-invisibility"
+                },
+                {
+                    name: "Mana Shield",
+                    icon: "spell_shadow_detectlesserinvisibility",
+                    description: [
+                        "Reduces the cooldown of your Mana Shield by 2 sec."
+                    ],
+                    level: 46,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=50045/glyph-of-mana-shield"
+                },
+                {
+                    name: "Polymorph",
+                    icon: "spell_nature_polymorph",
+                    description: [
+                        "Your Polymorph spell also removes all damage over time effects from the target."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42752/glyph-of-polymorph"
+                },
+                {
+                    name: "Slow",
+                    icon: "spell_nature_slow",
+                    description: [
+                        "Increases the range of your Slow spell by 5 yards."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45737/glyph-of-slow"
+                }
             ],
             minor: [
-
+                {
+                    name: "Arcane Brilliance",
+                    icon: "spell_holy_magicalsentry",
+                    description: [
+                        "Reduces the mana cost of your Arcane Brilliance spell by 50%."
+                    ],
+                    level: 58,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43339/glyph-of-arcane-brilliance"
+                },
+                {
+                    name: "Armors",
+                    icon: "spell_frost_chillingarmor",
+                    description: [
+                        "Increases the duration of your Armor spells by 30 min."
+                    ],
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=63416/glyph-of-armors"
+                },
+                {
+                    name: "Conjuring",
+                    icon: "ability_mage_conjurefoodrank9",
+                    description: [
+                        "Reduces the mana cost of your Conjuring spells by 50%."
+                    ],
+                    level: 38,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43359/glyph-of-conjuring"
+                },
+                {
+                    name: "Mirror Image",
+                    icon: "spell_magic_lesserinvisibilty",
+                    description: [
+                        "Your Mirror Images cast Arcane Blast or Fireball instead of Frostbolt depending on your primary talent tree."
+                    ],
+                    level: 50,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45739/glyph-of-mirror-image"
+                },
+                {
+                    name: "Slow Fall",
+                    icon: "spell_magic_featherfall",
+                    description: [
+                        "Your Slow Fall spell no longer requires a reagent."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43364/glyph-of-slow-fall"
+                },
+                {
+                    name: "the Monkey",
+                    icon: "ability_hunter_aspectofthemonkey",
+                    description: [
+                        "Your Polymorph: Sheep spell polymorphs the target into a monkey instead."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43360/glyph-of-the-monkey"
+                },
+                {
+                    name: "the Penguin",
+                    icon: "inv_misc_penguinpet",
+                    description: [
+                        "Your Polymorph: Sheep spell polymorphs the target into a penguin instead."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43361/glyph-of-the-penguin"
+                }
             ],
         },
         paladin: {
             prime: [
-
+                {
+                    name: "Crusader Strike",
+                    icon: "spell_holy_crusaderstrike",
+                    description: [
+                        "Increases the critical strike chance of Crusader Strike by 5%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41098/glyph-of-crusader-strike"
+                },
+                {
+                    name: "Divine Favor",
+                    icon: "spell_holy_divineillumination",
+                    description: [
+                        "Increases the duration of Divine Favor by 10 sec."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41106/glyph-of-divine-favor"
+                },
+                {
+                    name: "Exorcism",
+                    icon: "spell_holy_excorcism_02",
+                    description: [
+                        "Your Exorcism causes an additional 20% of its damage over 6 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41103/glyph-of-exorcism"
+                },
+                {
+                    name: "Hammer of the Righteous",
+                    icon: "ability_paladin_hammeroftherighteous",
+                    description: [
+                        "Increases the damage of both the physical and Holy components of Hammer of the Righteous by 10%."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45742/glyph-of-hammer-of-the-righteous"
+                },
+                {
+                    name: "Holy Shock",
+                    icon: "spell_holy_searinglight",
+                    description: [
+                        "Increases the critical effect chance of Holy Shock by 5%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45746/glyph-of-holy-shock"
+                },
+                {
+                    name: "Judgement",
+                    icon: "spell_holy_righteousfury",
+                    description: [
+                        "Your Judgement deals 10% more damage."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41092/glyph-of-judgement"
+                },
+                {
+                    name: "Seal of Insight",
+                    icon: "spell_holy_healingaura",
+                    description: [
+                        "While Seal of Insight is active, the effect of your healing spells is increased by 5%."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41110/glyph-of-seal-of-insight"
+                },
+                {
+                    name: "Seal of Truth",
+                    icon: "spell_holy_sealofvengeance",
+                    description: [
+                        "Your Seal of Truth and Seal of Righteousness also grant 10 expertise while active."
+                    ],
+                    level: 44,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43869/glyph-of-seal-of-truth"
+                },
+                {
+                    name: "Shield of the Righteous",
+                    icon: "ability_paladin_shieldofvengeance",
+                    description: [
+                        "Increases the damage of Shield of the Righteous by 10%."
+                    ],
+                    level: 39,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45744/glyph-of-shield-of-the-righteous"
+                },
+                {
+                    name: "Templar's Verdict",
+                    icon: "spell_paladin_templarsverdict",
+                    description: [
+                        "Increases the damage of Templar's Verdict by 15%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45743/glyph-of-templars-verdict"
+                },
+                {
+                    name: "Word of Glory",
+                    icon: "inv_helmet_96",
+                    description: [
+                        "Increases the healing done by Word of Glory by 10%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41105/glyph-of-word-of-glory"
+                }
             ],
             major: [
-
+                {
+                    name: "Beacon of Light",
+                    icon: "ability_paladin_beaconoflight",
+                    description: [
+                        "Your Beacon of Light costs no mana."
+                    ],
+                    level: 39,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45741/glyph-of-beacon-of-light"
+                },
+                {
+                    name: "Cleansing",
+                    icon: "spell_holy_purify",
+                    description: [
+                        "Reduces the mana cost of your Cleanse by 20%."
+                    ],
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41104/glyph-of-cleansing"
+                },
+                {
+                    name: "Consecration",
+                    icon: "spell_holy_innerfire",
+                    description: [
+                        "Increases the duration and cooldown of Consecration by 20%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41099/glyph-of-consecration"
+                },
+                {
+                    name: "Dazing Shield",
+                    icon: "spell_holy_avengersshield",
+                    description: [
+                        "Your Avenger's Shield now also dazes targets."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43868/glyph-of-dazing-shield"
+                },
+                {
+                    name: "Divine Plea",
+                    icon: "spell_holy_aspiration",
+                    description: [
+                        "Your Divine Plea provides an additional 6% of your total mana."
+                    ],
+                    level: 44,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45745/glyph-of-divine-plea"
+                },
+                {
+                    name: "Divine Protection",
+                    icon: "spell_holy_divineprotection",
+                    description: [
+                        "Removes the physical damage reduction of your Divine Protection, but increases the magical damage reduction by 20%."
+                    ],
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41096/glyph-of-divine-protection"
+                },
+                {
+                    name: "Divinity",
+                    icon: "spell_holy_layonhands",
+                    description: [
+                        "When you use Lay on Hands, you also gain 10% of your maximum mana."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41108/glyph-of-divinity"
+                },
+                {
+                    name: "Focused Shield",
+                    icon: "spell_holy_avengersshield",
+                    description: [
+                        "Your Avenger's Shield hits 2 fewer targets, but for 30% more damage."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41101/glyph-of-focused-shield"
+                },
+                {
+                    name: "Hammer of Justice",
+                    icon: "spell_holy_sealofmight",
+                    description: [
+                        "Increases your Hammer of Justice range by 5 yards."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41095/glyph-of-hammer-of-justice"
+                },
+                {
+                    name: "Hammer of Wrath",
+                    icon: "inv_hammer_04",
+                    description: [
+                        "Reduces the mana cost of Hammer of Wrath by 100%."
+                    ],
+                    level: 46,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41097/glyph-of-hammer-of-wrath"
+                },
+                {
+                    name: "Holy Wrath",
+                    icon: "spell_holy_purifyingpower",
+                    description: [
+                        "Your Holy Wrath now also stuns Elementals and Dragonkin."
+                    ],
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43867/glyph-of-holy-wrath"
+                },
+                {
+                    name: "Lay on Hands",
+                    icon: "spell_holy_layonhands",
+                    description: [
+                        "Reduces the cooldown of your Lay on Hands spell by 3 min."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43367/glyph-of-lay-on-hands"
+                },
+                {
+                    name: "Light of Dawn",
+                    icon: "spell_paladin_lightofdawn",
+                    description: [
+                        "Light of Dawn affects 2 fewer targets, but heals each target for 25% more."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41109/glyph-of-light-of-dawn"
+                },
+                {
+                    name: "Rebuke",
+                    icon: "spell_holy_rebuke",
+                    description: [
+                        "Reduces the mana cost of Rebuke by 100%."
+                    ],
+                    level: 54,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41094/glyph-of-rebuke"
+                },
+                {
+                    name: "Salvation",
+                    icon: "spell_holy_sealofsalvation",
+                    description: [
+                        "Hand of Salvation no longer permanently reduces threat over time but instead reduces all threat as long as Hand of Salvation lasts."
+                    ],
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45747/glyph-of-salvation"
+                },
+                {
+                    name: "the Ascetic Crusader",
+                    icon: "spell_holy_crusaderstrike",
+                    description: [
+                        "Reduces the mana cost of your Crusader Strike by 30%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41107/glyph-of-the-ascetic-crusader"
+                },
+                {
+                    name: "the Long Word",
+                    icon: "inv_helmet_96",
+                    description: [
+                        "Your Word of Glory heals for 50% less up front, but provides an additional 50% healing over 6 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=66918/glyph-of-the-long-word"
+                },
+                {
+                    name: "Turn Evil",
+                    icon: "spell_holy_turnundead",
+                    description: [
+                        "Reduces the casting time of your Turn Evil spell by 100%, but increases the cooldown by 8 sec."
+                    ],
+                    level: 78,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41102/glyph-of-turn-evil"
+                }
             ],
             minor: [
-
+                {
+                    name: "Blessing of Kings",
+                    icon: "spell_magic_magearmor",
+                    description: [
+                        "Reduces the mana cost of Blessing of Kings by 50%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43365/glyph-of-blessing-of-kings"
+                },
+                {
+                    name: "Blessing of Might",
+                    icon: "spell_holy_greaterblessingofkings",
+                    description: [
+                        "Reduces the mana cost of Blessing of Might by 50%."
+                    ],
+                    level: 56,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43340/glyph-of-blessing-of-might"
+                },
+                {
+                    name: "Insight",
+                    icon: "spell_holy_healingaura",
+                    description: [
+                        "Reduces the mana cost of Seal of Insight by 50%."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43366/glyph-of-insight"
+                },
+                {
+                    name: "Justice",
+                    icon: "spell_holy_sealofwrath",
+                    description: [
+                        "Reduces the mana cost of Seal of Justice by 50%."
+                    ],
+                    level: 64,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43369/glyph-of-justice"
+                },
+                {
+                    name: "Righteousness",
+                    icon: "spell_holy_righteousnessaura",
+                    description: [
+                        "Reduces the mana cost of Seal of Righteousness by 50%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=41100/glyph-of-righteousness"
+                },
+                {
+                    name: "Truth",
+                    icon: "spell_holy_sealofvengeance",
+                    description: [
+                        "Reduces the mana cost of Seal of Truth by 50%."
+                    ],
+                    level: 44,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43368/glyph-of-truth"
+                }
             ],
         },
         priest: {
