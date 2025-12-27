@@ -35106,6 +35106,38 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "evangelism",
+                    name: "Evangelism",
+                    icon: "spell_holy_divineillumination",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you cast Smite, Holy Fire or Mind Flay you gain Evangelism. Stacks up to 5 times. Lasts for 20 sec.<br><br>Evangelism (Smite, Holy Fire)<br>Increases the damage done by your Smite, Holy Fire, and Penance spells by {value1}% and reduces the mana cost of those spells by {value2}%.<br><br>Dark Evangelism (Mind Flay)<br>Increases the damage done by your Periodic Shadow spells by {value3}%.", 
+                        {
+                            value1: [2, 4], 
+                            value2: [3, 6], 
+                            value3: [1, 2] 
+                        }
+                    ],
+                    isActive: false,
+                },
+                {
+                    id: "archangel",
+                    name: "Archangel",
+                    icon: "ability_priest_archangel",
+                    row: 1,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: "evangelism",
+                    description: [
+                        "Consumes your Evangelism effects, causing an effect depending on what type of Evangelism effect is consumed:<br><br>Archangel (Evangelism)<br>Instantly restores 1% of your total mana and increases your healing done by 3% for each stack. Lasts for 18 sec. 30 sec cooldown.<br><br>Dark Archangel (Dark Evangelism)<br>Instantly restores 5% of your total mana and increases the damage done by your Mind Flay, Mind Spike, Mind Blast and Shadow Word: Death by 4% for each stack. Lasts for 18 sec. 90 sec cooldown.", 
+                    ],
+                    isActive: true,
+                    castTime: null
+                },
+                {
                     id: "inner_sanctum",
                     name: "Inner Sanctum",
                     icon: "spell_holy_innerfire",
@@ -35165,6 +35197,22 @@ export const baseTalents = {
                         "Infuses the target with power, increasing spell casting speed by 20% and reducing the mana cost of all spells by 20%.  Lasts 15 sec."
                     ],
                     isActive: true
+                },
+                {
+                    id: "atonement",
+                    name: "Atonement",
+                    icon: "ability_priest_atonement",
+                    row: 2,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "When you deal damage with Smite or Holy Fire, you instantly heal a nearby low health friendly target within 15 yards from the enemy target equal to {value}% of the damage dealt.<br><br>If the Priest is healed through Atonement, the effect is reduced in half.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
                 },
                 {
                     id: "inner_focus",
@@ -35558,6 +35606,34 @@ export const baseTalents = {
                             value1: [30, 60],
                             value2: [50, 100]
                         }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "chakra",
+                    name: "Chakra",
+                    icon: "spell_priest_chakra",
+                    row: 4,
+                    col: 1,
+                    ranks: 1,
+                    requiresTalents: "holy_concentration",
+                    description: [
+                        "When activated, your next Heal, Flash Heal, Greater Heal, Binding Heal, Prayer of Healing, Prayer of Mending, Mind Spike or Smite will put you into a Chakra state.<br><br>Serenity (Heal, Flash Heal, Greater Heal, Binding Heal)<br>Increases the critical effect chance of your direct healing spells by 10%, and causes your direct heals to refresh the duration of your Renew on the target.<br><br>Sanctuary (Prayer of Healing, Prayer of Mending)<br>Increases the healing done by your area of effect spells and Renew by 15% and reduces the cooldown of your Circle of Healing by 2 sec.<br><br>Chastise (Smite, Mind Spike)<br>Increases your total damage done by Shadow and Holy spells by 15%."
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 30
+                },
+                {
+                    id: "revelations",
+                    name: "Revelations",
+                    icon: "ability_priest_bindingprayers",
+                    row: 4,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: "chakra",
+                    description: [
+                        "While within Chakra: Serenity or Chakra: Sanctuary, your Holy Word: Chastise ability will transform into a different ability depending on which state you are in.<br><br>Holy Word: Serenity<br>Instantly heals the target for 5650, and increases the critical effect chance of your healing spells on the target by 25% for 6 sec. 15 sec cooldown.<br><br>Holy Word: Sanctuary<br>Blesses the ground with Divine light, healing all within it for 327 every 2 sec for 18 sec. Only one Sanctuary can be active at any one time. 40 sec cooldown."
                     ],
                     isActive: false
                 },
@@ -38140,6 +38216,23 @@ export const baseTalents = {
                     isActive: false
                 },
                 {
+                    id: "dark_arts",
+                    name: "Dark Arts",
+                    icon: "ability_warlock_darkarts",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cast time of your Imp's Firebolt spell by {value1} sec, increases the damage done by your Felguard's Legion Strike by {value2}%, and increases the damage done by your Felhunter's Shadow Bite by {value2}%.",
+                        {
+                            value1: ["0.25", "0.50", "0.75"],
+                            value2: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "fel_synergy",
                     name: "Fel Synergy",
                     icon: "spell_shadow_felmending",
@@ -38149,6 +38242,22 @@ export const baseTalents = {
                     requiresTalents: null,
                     description: [
                         "You have a {value}% chance to heal your pet for 15% of the amount of spell damage done by you.",
+                        {
+                            value: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "demonic_rebirth",
+                    name: "Demonic Rebirth",
+                    icon: "spell_shadow_demonictactics",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "If your summoned demon dies, you gain the Demonic Rebirth effect reducing the cast time of your next summon demon spell by {value}%. Lasts for 10 sec. This effect has a 2 min cooldown.",
                         {
                             value: [50, 100]
                         }
@@ -38392,6 +38501,137 @@ export const baseTalents = {
             // warlock - cataclysm
             Destruction: [
                 {
+                    id: "bane",
+                    name: "Bane",
+                    icon: "spell_shadow_deathpact",
+                    row: 0,
+                    col: 0,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the casting time of your Shadow Bolt, Chaos Bolt and Immolate spells by {value} sec.",
+                        {
+                            value: [0.1, 0.3, 0.5]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "shadow_and_flame",
+                    name: "Shadow and Flame",
+                    icon: "spell_shadow_shadowandflame",
+                    row: 0,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage done by your Shadow Bolt and Incinerate spells by {value1}%, and your Shadow Bolt and Incinerate have a {value2}% chance to cause the Shadow and Flame effect to the target.<br><br>The Shadow and Flame effect causes the target to be vulnerable to spell damage, increasing spell critical strike chance against that target by 5% for 30 sec.",
+                        {
+                            value1: [4, 8, 12],
+                            value2: [33, 66, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_immolate",
+                    name: "Improved Immolate",
+                    icon: "spell_fire_immolation",
+                    row: 0,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage done by your Immolate spell by {value}%.",
+                        {
+                            value: [10, 20]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "aftermath",
+                    name: "Aftermath",
+                    icon: "spell_fire_fire",
+                    row: 1,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Rain of Fire has a {value1}% chance to Stun targets for 2 sec., and your Conflagrate has a {value2}% chance to daze the target for 5 sec.",
+                        {
+                            value1: [6, 12],
+                            value2: [50, 100]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "emberstorm",
+                    name: "Emberstorm",
+                    icon: "spell_fire_selfdestruct",
+                    row: 1,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Reduces the cast time of your Soul Fire by {value1} sec and your Incinerate by {value2} sec.",
+                        {
+                            value1: [0.5, 1],
+                            value2: [0.13, 0.25]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_searing_pain",
+                    name: "Improved Searing Pain",
+                    icon: "spell_fire_soulburn",
+                    row: 1,
+                    col: 2,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the critical strike chance of your Searing Pain spell by {value}% on targets at or below 25% health.",
+                        {
+                            value: [20, 40]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "improved_soul_fire",
+                    name: "Improved Soul Fire",
+                    icon: "spell_fire_fireball02",
+                    row: 2,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Increases your Fire and Shadow damage done by {value}% for 20 sec after you deal damage with Soul Fire.",
+                        {
+                            value: [4, 8]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "backdraft",
+                    name: "Backdraft",
+                    icon: "ability_warlock_backdraft",
+                    row: 2,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "When you cast Conflagrate, the cast time of your next three Shadow Bolt, Incinerate and Chaos Bolt spells is reduced by {value}%. Lasts 15 sec.",
+                        {
+                            value: [10, 20, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "shadowburn",
                     name: "Shadowburn",
                     icon: "spell_shadow_scourgebuild",
@@ -38405,6 +38645,84 @@ export const baseTalents = {
                     isActive: true
                 },
                 {
+                    id: "burning_embers",
+                    name: "Burning Embers",
+                    icon: "ability_warlock_burningembers",
+                    row: 3,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Soul Fire and your Imp's Firebolt cause a Burning Ember damage-over-time effect on the target equal to {value1}% of the damage done lasting 7 sec.<br><br>The Burning Ember effect deals up to [(Spell power * {value2} + 0) / 7] fire damage every 1 sec for 7 sec.",
+                        {
+                            value1: [25, 50],
+                            value2: [0.7, 1.4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "soul_leech",
+                    name: "Soul Leech",
+                    icon: "spell_shadow_soulleech_3",
+                    row: 3,
+                    col: 1,
+                    ranks: 2,
+                    requiresTalents: null,
+                    description: [
+                        "Your Shadowburn, Soul Fire and Chaos Bolt instantly restore {value}% of your total health and mana when they deal damage and also grant Replenishment.<br><br>Replenishment - Grants up to 10 party or raid members mana regeneration equal to 1% of their maximum mana per 10 sec. Lasts for 15 sec.",
+                        {
+                            value: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "backlash",
+                    name: "Backlash",
+                    icon: "spell_fire_playingwithfire",
+                    row: 3,
+                    col: 2,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Gives you a {value}% chance when hit by a physical attack to reduce the cast time of your next Shadow Bolt or Incinerate spell by 100%.  This effect lasts 8 sec and will not occur more than once every 8 seconds.",
+                        {
+                            value: [8, 16, 25]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "nether_ward",
+                    name: "Nether Ward",
+                    icon: "spell_fire_felfireward",
+                    row: 3,
+                    col: 3,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Transforms your Shadow Ward into Nether Ward. You must be within Demon Armor or Fel Armor in order for the transformation effect to occur.<br><br>Nether Ward<br>Absorbs [3551 + (Spell power * 0.807)] spell damage.  Lasts 30 sec. 30 sec cooldown."
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "fire_and_brimstone",
+                    name: "Fire and Brimstone",
+                    icon: "ability_warlock_fireandbrimstone",
+                    row: 4,
+                    col: 1,
+                    ranks: 3,
+                    requiresTalents: null,
+                    description: [
+                        "Increases the damage done by your Incinerate and Chaos Bolt spells to targets afflicted by your Immolate by {value}%, and the critical strike chance of your Conflagrate spell is increased by {value}%.",
+                        {
+                            value: [5, 10, 15]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
                     id: "shadowfury",
                     name: "Shadowfury",
                     icon: "spell_shadow_shadowfury",
@@ -38416,6 +38734,53 @@ export const baseTalents = {
                         "Shadowfury is unleashed, causing 754 Shadow damage and stunning all enemies within 8 yds for 3 sec."
                     ],
                     isActive: true
+                },
+                {
+                    id: "nether_protection",
+                    name: "Nether Protection",
+                    icon: "spell_shadow_netherprotection",
+                    row: 4,
+                    col: 3,
+                    ranks: 2,
+                    requiresTalents: "nether_ward",
+                    description: [
+                        "When you absorb damage through Shadow Ward, Nether Ward or other effects, you gain Nether Protection, reducing all damage by that spell school by {value}% for 12 sec.",
+                        {
+                            value: [15, 30]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "empowered_imp",
+                    name: "Empowered Imp",
+                    icon: "ability_warlock_empoweredimp",
+                    row: 5,
+                    col: 0,
+                    ranks: 2,
+                    requiresTalents: "burning_embers",
+                    description: [
+                        "Your Imp's Firebolt has a {value}% chance to cause your next Soul Fire spell to be instant cast within 8 sec.",
+                        {
+                            value: [2, 4]
+                        }
+                    ],
+                    isActive: false
+                },
+                {
+                    id: "bane_of_havoc",
+                    name: "Bane of Havoc",
+                    icon: "ability_warlock_baneofhavoc",
+                    row: 5,
+                    col: 2,
+                    ranks: 1,
+                    requiresTalents: null,
+                    description: [
+                        "Banes the target for 5 min, causing 15% of all damage done by the Warlock to other targets to also be dealt to the baned target.<br><br>Only one target can have Bane of Havoc at a time, and only one Bane per Warlock can be active on any one target."
+                    ],
+                    isActive: true,
+                    castTime: null,
+                    range: 40
                 },
                 {
                     id: "chaos_bolt",
