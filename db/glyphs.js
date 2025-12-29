@@ -4859,24 +4859,648 @@ export const glyphs = {
         },
         priest: {
             prime: [
-
+                {
+                    name: "Dispersion",
+                    icon: "spell_shadow_dispersion",
+                    description: [
+                        "Reduces the cooldown on Dispersion by 45 sec."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45753/glyph-of-dispersion"
+                },
+                {
+                    name: "Flash Heal",
+                    icon: "spell_holy_flashheal",
+                    description: [
+                        "Increases the critical effect chance of your Flash Heal on targets at or below 25% health by 10%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42400/glyph-of-flash-heal"
+                },
+                {
+                    name: "Guardian Spirit",
+                    icon: "spell_holy_guardianspirit",
+                    description: [
+                        "Reduces the cooldown of your Guardian Spirit by 30 sec."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45755/glyph-of-guardian-spirit"
+                },
+                {
+                    name: "Lightwell",
+                    icon: "spell_holy_summonlightwell",
+                    description: [
+                        "Increases the total amount of charges of your Lightwell by 5."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42403/glyph-of-lightwell"
+                },
+                {
+                    name: "Mind Flay",
+                    icon: "spell_shadow_siphonmana",
+                    description: [
+                        "Increases the damage done by your Mind Flay spell by 10%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42415/glyph-of-mind-flay"
+                },
+                {
+                    name: "Penance",
+                    icon: "spell_holy_penance",
+                    description: [
+                        "Reduces the cooldown of Penance by 2 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45756/glyph-of-penance"
+                },
+                {
+                    name: "Power Word: Barrier",
+                    icon: "spell_holy_powerwordbarrier",
+                    description: [
+                        "Increases the healing received while under Power Word: Barrier by 10%."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42407/glyph-of-power-word-barrier"
+                },
+                {
+                    name: "Power Word: Shield",
+                    icon: "spell_holy_powerwordshield",
+                    description: [
+                        "Your Power Word: Shield also heals the target for 20% of the absorption amount."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42408/glyph-of-power-word-shield"
+                },
+                {
+                    name: "Prayer of Healing",
+                    icon: "spell_holy_prayerofhealing02",
+                    description: [
+                        "Your Prayer of Healing spell also heals an additional 20% of its initial heal over 6 sec."
+                    ],
+                    level: 44,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42409/glyph-of-prayer-of-healing"
+                },
+                {
+                    name: "Renew",
+                    icon: "spell_holy_renew",
+                    description: [
+                        "Increases the amount healed by your Renew by an additional 10%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42411/glyph-of-renew"
+                },
+                {
+                    name: "Shadow Word: Death",
+                    icon: "spell_shadow_demonicfortitude",
+                    description: [
+                        "If your Shadow Word: Death fails to kill the target at or below 25% health, your Shadow Word: Death's cooldown is instantly reset. This effect cannot occur more often than once every 6 sec."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42414/glyph-of-shadow-word-death"
+                },
+                {
+                    name: "Shadow Word: Pain",
+                    icon: "spell_shadow_shadowwordpain",
+                    description: [
+                        "Increases the periodic damage of your Shadow Word: Pain by 10%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42406/glyph-of-shadow-word-pain"
+                }
             ],
             major: [
-
+                {
+                    name: "Circle of Healing",
+                    icon: "spell_holy_circleofrenewal",
+                    description: [
+                        "Your Circle of Healing spell heals 1 additional target, but its mana cost is increased by 20%."
+                    ],
+                    level: 59,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42396/glyph-of-circle-of-healing"
+                },
+                {
+                    name: "Desperation",
+                    icon: "spell_holy_painsupression",
+                    description: [
+                        "Allows Pain Suppression and Guardian Spirit to be cast while stunned."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45760/glyph-of-desperation"
+                },
+                {
+                    name: "Dispel Magic",
+                    icon: "spell_holy_dispelmagic",
+                    description: [
+                        "Your Dispel Magic spell also heals your target for 3% of maximum health when you successfully dispel a magical effect."
+                    ],
+                    level: 26,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42397/glyph-of-dispel-magic"
+                },
+                {
+                    name: "Divine Accuracy",
+                    icon: "spell_holy_holyprotection",
+                    description: [
+                        "Increases your chance to hit with your Smite and Holy Fire spells by 18%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45758/glyph-of-divine-accuracy"
+                },
+                {
+                    name: "Fade",
+                    icon: "spell_magic_lesserinvisibilty",
+                    description: [
+                        "Reduces the cooldown of your Fade spell by 9 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42398/glyph-of-fade"
+                },
+                {
+                    name: "Fear Ward",
+                    icon: "spell_holy_excorcism",
+                    description: [
+                        "Reduces the cooldown and duration of Fear Ward by 60 sec."
+                    ],
+                    level: 54,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42399/glyph-of-fear-ward"
+                },
+                {
+                    name: "Holy Nova",
+                    icon: "spell_holy_holynova",
+                    description: [
+                        "Reduces the global cooldown of your Holy Nova by .5 sec."
+                    ],
+                    level: 62,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42401/glyph-of-holy-nova"
+                },
+                {
+                    name: "Inner Fire",
+                    icon: "spell_holy_innerfire",
+                    description: [
+                        "Increases the armor gained from your Inner Fire spell by 50%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42402/glyph-of-inner-fire"
+                },
+                {
+                    name: "Mass Dispel",
+                    icon: "spell_arcane_massdispel",
+                    description: [
+                        "Reduces the cast time of Mass Dispel by 1 sec."
+                    ],
+                    level: 72,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42404/glyph-of-mass-dispel"
+                },
+                {
+                    name: "Prayer of Mending",
+                    icon: "spell_holy_prayerofmendingtga",
+                    description: [
+                        "The first charge of your Prayer of Mending heals for an additional 100%."
+                    ],
+                    level: 68,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42417/glyph-of-prayer-of-mending"
+                },
+                {
+                    name: "Psychic Horror",
+                    icon: "spell_shadow_psychichorrors",
+                    description: [
+                        "Reduces the cooldown of your Psychic Horror by 30 sec."
+                    ],
+                    level: 59,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42405/glyph-of-psychic-horror"
+                },
+                {
+                    name: "Psychic Scream",
+                    icon: "spell_shadow_psychicscream",
+                    description: [
+                        "Targets of your Psychic Scream spell now tremble in place instead of fleeing in fear, but the cooldown of Psychic Scream is increased by 3 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42410/glyph-of-psychic-scream"
+                },
+                {
+                    name: "Scourge Imprisonment",
+                    icon: "spell_holy_crusade",
+                    description: [
+                        "Reduces the cast time of your Shackle Undead by 1.0 sec."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42412/glyph-of-scourge-imprisonment"
+                },
+                {
+                    name: "Smite",
+                    icon: "spell_holy_holysmite",
+                    description: [
+                        "Your Smite spell inflicts an additional 20% damage against targets afflicted by Holy Fire."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42416/glyph-of-smite"
+                },
+                {
+                    name: "Spirit Tap",
+                    icon: "spell_shadow_requiem",
+                    description: [
+                        "When you kill a target with your Shadow Word: Death that yields experience or honor, you receive 12% of your total mana over 12 sec."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45757/glyph-of-spirit-tap"
+                }
             ],
             minor: [
-
+                {
+                    name: "Fading",
+                    icon: "spell_magic_lesserinvisibilty",
+                    description: [
+                        "Reduces the mana cost of your Fade spell by 30%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43342/glyph-of-fading"
+                },
+                {
+                    name: "Fortitude",
+                    icon: "spell_holy_wordfortitude",
+                    description: [
+                        "Reduces the mana cost of your Power Word: Fortitude spell by 50%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43371/glyph-of-fortitude"
+                },
+                {
+                    name: "Levitate",
+                    icon: "spell_holy_layonhands",
+                    description: [
+                        "Your Levitate spell no longer requires a reagent."
+                    ],
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43370/glyph-of-levitate"
+                },
+                {
+                    name: "Shackle Undead",
+                    icon: "spell_nature_slow",
+                    description: [
+                        "Increases the range of your Shackle Undead spell by 5 yards."
+                    ],
+                    level: 32,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43373/glyph-of-shackle-undead"
+                },
+                {
+                    name: "Shadow",
+                    icon: "spell_shadow_shadowform",
+                    description: [
+                        "Alters the appearance of your Shadowform."
+                    ],
+                    level: 30,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=77101/glyph-of-shadow"
+                },
+                {
+                    name: "Shadow Protection",
+                    icon: "spell_holy_prayerofshadowprotection",
+                    description: [
+                        "Increases the duration of your Shadow Protection spell by 10 min."
+                    ],
+                    level: 52,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43372/glyph-of-shadow-protection"
+                },
+                {
+                    name: "Shadowfiend",
+                    icon: "spell_shadow_shadowfiend",
+                    description: [
+                        "Receive 5% of your maximum mana if your Shadowfiend dies from damage."
+                    ],
+                    level: 66,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43374/glyph-of-shadowfiend"
+                }
             ],
         },
         rogue: {
             prime: [
-
+                {
+                    name: "Adrenaline Rush",
+                    icon: "spell_shadow_shadowworddominate",
+                    description: [
+                        "Increases the duration of Adrenaline Rush by 5 sec."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42954/glyph-of-adrenaline-rush"
+                },
+                {
+                    name: "Backstab",
+                    icon: "ability_backstab",
+                    description: [
+                        "Your Backstab critical strikes grant you 5 Energy."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42956/glyph-of-backstab"
+                },
+                {
+                    name: "Eviscerate",
+                    icon: "ability_rogue_eviscerate",
+                    description: [
+                        "Increases the critical strike chance of Eviscerate by 10%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42961/glyph-of-eviscerate"
+                },
+                {
+                    name: "Hemorrhage",
+                    icon: "spell_shadow_lifedrain",
+                    description: [
+                        "Your Hemorrhage ability also causes the target to bleed, dealing 40% of the direct strike's damage over 24 sec."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42967/glyph-of-hemorrhage"
+                },
+                {
+                    name: "Killing Spree",
+                    icon: "ability_rogue_murderspree",
+                    description: [
+                        "Increases the bonus to your damage while Killing Spree is active by an additional 10%."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45762/glyph-of-killing-spree"
+                },
+                {
+                    name: "Mutilate",
+                    icon: "ability_rogue_shadowstrikes",
+                    description: [
+                        "Reduces the cost of Mutilate by 5 Energy."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45768/glyph-of-mutilate"
+                },
+                {
+                    name: "Revealing Strike",
+                    icon: "inv_sword_97",
+                    description: [
+                        "Increases Revealing Strike's bonus effectiveness to your finishing moves by an additional 10%."
+                    ],
+                    level: 29,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42965/glyph-of-revealing-strike"
+                },
+                {
+                    name: "Rupture",
+                    icon: "ability_rogue_rupture",
+                    description: [
+                        "Increases the duration of Rupture by 4 sec."
+                    ],
+                    level: 46,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42969/glyph-of-rupture"
+                },
+                {
+                    name: "Shadow Dance",
+                    icon: "ability_rogue_shadowdance",
+                    description: [
+                        "Increases the duration of Shadow Dance by 2 sec."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45764/glyph-of-shadow-dance"
+                },
+                {
+                    name: "Sinister Strike",
+                    icon: "spell_shadow_ritualofsacrifice",
+                    description: [
+                        "Your Sinister Strikes have a 20% chance to add an additional combo point."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42972/glyph-of-sinister-strike"
+                },
+                {
+                    name: "Slice and Dice",
+                    icon: "ability_rogue_slicedice",
+                    description: [
+                        "Increases the duration of Slice and Dice by 6 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42973/glyph-of-slice-and-dice"
+                },
+                {
+                    name: "Vendetta",
+                    icon: "ability_rogue_deadliness",
+                    description: [
+                        "Increases the duration of your Vendetta ability by 20%."
+                    ],
+                    level: 69,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45761/glyph-of-vendetta"
+                }
             ],
             major: [
-
+                {
+                    name: "Ambush",
+                    icon: "ability_rogue_ambush",
+                    description: [
+                        "Increases the range on Ambush by 5 yards."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42955/glyph-of-ambush"
+                },
+                {
+                    name: "Blade Flurry",
+                    icon: "ability_warrior_punishingblow",
+                    description: [
+                        "Reduces the penalty to Energy generation while Blade Flurry is active by 50%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42957/glyph-of-blade-flurry"
+                },
+                {
+                    name: "Blind",
+                    icon: "spell_shadow_mindsteal",
+                    description: [
+                        "Your Blind ability also removes all damage over time effects from the target."
+                    ],
+                    level: 34,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=64493/glyph-of-blind"
+                },
+                {
+                    name: "Cloak of Shadows",
+                    icon: "spell_shadow_nethercloak",
+                    description: [
+                        "While Cloak of Shadows is active, you take 40% less physical damage."
+                    ],
+                    level: 58,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45769/glyph-of-cloak-of-shadows"
+                },
+                {
+                    name: "Crippling Poison",
+                    icon: "ability_poisonsting",
+                    description: [
+                        "Increases the chance to inflict your target with Crippling Poison by an additional 20%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42958/glyph-of-crippling-poison"
+                },
+                {
+                    name: "Deadly Throw",
+                    icon: "inv_throwingknife_06",   
+                    description: [
+                        "Increases the slowing effect on Deadly Throw by 20%."
+                    ],
+                    level: 62,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42959/glyph-of-deadly-throw"
+                },
+                {
+                    name: "Evasion",
+                    icon: "spell_shadow_shadowward",
+                    description: [
+                        "Increases the duration of Evasion by 5 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42960/glyph-of-evasion"
+                },
+                {
+                    name: "Expose Armor",
+                    icon: "ability_warrior_riposte",
+                    description: [
+                        "Increases the duration of Expose Armor by 12 sec."
+                    ],
+                    level: 36,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42962/glyph-of-expose-armor"
+                },
+                {
+                    name: "Fan of Knives",
+                    icon: "ability_rogue_fanofknives",
+                    description: [
+                        "Increases the radius of your Fan of Knives ability by 50%."
+                    ],
+                    level: 80,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45766/glyph-of-fan-of-knives"
+                },
+                {
+                    name: "Feint",
+                    icon: "ability_rogue_feint",
+                    description: [
+                        "Reduces the Energy cost of Feint by 20."
+                    ],
+                    level: 42,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42963/glyph-of-feint"
+                },
+                {
+                    name: "Garrote",
+                    icon: "ability_rogue_garrote",
+                    description: [
+                        "Increases the duration of your Garrote ability's silence effect by 1.5 sec."
+                    ],
+                    level: 40,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42964/glyph-of-garrote"
+                },
+                {
+                    name: "Gouge",
+                    icon: "ability_gouge",
+                    description: [
+                        "Your Gouge ability no longer requires that the target be facing you."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42966/glyph-of-gouge"
+                },
+                {
+                    name: "Kick",
+                    icon: "ability_kick",
+                    description: [
+                        "Increases the cooldown of your Kick ability by 4 sec, but this cooldown is reduced by 6 sec when your Kick successfully interrupts a spell."
+                    ],
+                    level: 65,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42971/glyph-of-kick"
+                },
+                {
+                    name: "Preparation",
+                    icon: "ability_rogue_preparation",
+                    description: [
+                        "Your Preparation ability also instantly resets the cooldown of Kick, Dismantle, and Smoke Bomb."
+                    ],
+                    level: 49,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42968/glyph-of-preparation"
+                },
+                {
+                    name: "Sap",
+                    icon: "ability_sap",
+                    description: [
+                        "Increases the duration of Sap against non-player targets by 80 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42970/glyph-of-sap"
+                },
+                {
+                    name: "Sprint",
+                    icon: "ability_rogue_sprint",
+                    description: [
+                        "Increases the movement speed of your Sprint ability by an additional 30%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=42974/glyph-of-sprint"
+                },
+                {
+                    name: "Tricks of the Trade",
+                    icon: "ability_rogue_tricksofthetrade",
+                    description: [
+                        "Removes the Energy cost of your Tricks of the Trade ability but reduces the recipient's damage bonus by 5%."
+                    ],
+                    level: 75,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=45767/glyph-of-tricks-of-the-trade"
+                },
+                {
+                    name: "Vanish",
+                    icon: "ability_vanish",
+                    description: [
+                        "Increases the duration of your Vanish effect by 2 sec."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=63420/glyph-of-vanish"
+                }
             ],
             minor: [
-
+                {
+                    name: "Blurred Speed",
+                    icon: "ability_rogue_sprint",
+                    description: [
+                        "Enables you to walk on water while your Sprint ability is active."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43379/glyph-of-blurred-speed"
+                },
+                {
+                    name: "Distract",
+                    icon: "ability_rogue_distract",
+                    description: [
+                        "Increases the range of your Distract ability by 5 yards."
+                    ],
+                    level: 28,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43376/glyph-of-distract"
+                },
+                {
+                    name: "Pick Lock",
+                    icon: "spell_nature_moonkey",
+                    description: [
+                        "Reduces the cast time of your Pick Lock ability by 100%."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43377/glyph-of-pick-lock"
+                },
+                {
+                    name: "Pick Pocket",
+                    icon: "inv_misc_bag_11",
+                    description: [
+                        "Increases the range of your Pick Pocket ability by 5 yards."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43343/glyph-of-pick-pocket"
+                },
+                {
+                    name: "Poisons",
+                    icon: "trade_brewpoison",
+                    description: [
+                        "You apply poisons to your weapons 50% faster."
+                    ],
+                    level: 25,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43380/glyph-of-poisons"
+                },
+                {
+                    name: "Safe Fall",
+                    icon: "inv_feather_01",
+                    description: [
+                        "Increases the distance your Safe Fall ability allows you to fall without taking damage."
+                    ],
+                    level: 48,
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43378/glyph-of-safe-fall"
+                }
             ],
         },
         shaman: {
