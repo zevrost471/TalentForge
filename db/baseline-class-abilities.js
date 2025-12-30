@@ -30,7 +30,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 55,
                     trainingCost: 1900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=770/faerie-fire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=770/faerie-fire",
                 },
                 {
                     id: "faerie_fire_2",
@@ -43,7 +43,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 75,
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=778/faerie-fire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=778/faerie-fire",
                 },
                 {
                     id: "faerie_fire_3",
@@ -56,7 +56,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 95,
                     trainingCost: 16000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9749/faerie-fire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9749/faerie-fire",
                 },
                 {
                     id: "faerie_fire_4",
@@ -69,7 +69,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 115,
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9907/faerie-fire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9907/faerie-fire",
                 },
                 {
                     id: "teleport_moonglade",
@@ -83,7 +83,7 @@ export const baselineClassAbilities = {
                     castTime: 10,
                     spentResource: 120,
                     duration: null,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=18960/teleport-moonglade",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=18960/teleport-moonglade",
                 },
                 {
                     id: "barkskin",
@@ -103,7 +103,7 @@ export const baselineClassAbilities = {
                     spentResource: 15,
                     duration: 15,
                     trainingCost: 18000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22812/barkskin",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22812/barkskin",
                 },
                 {
                     id: "moonfire_1",
@@ -134,7 +134,7 @@ export const baselineClassAbilities = {
                     spentResource: 25,
                     duration: 9,
                     trainingCost: 100,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8921/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8921/moonfire",
                 },
                 {
                     id: "moonfire_2",
@@ -165,7 +165,7 @@ export const baselineClassAbilities = {
                     spentResource: 50,
                     duration: 12,
                     trainingCost: 300,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8924/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8924/moonfire",
                 },
                 {
                     id: "moonfire_3",
@@ -196,7 +196,7 @@ export const baselineClassAbilities = {
                     spentResource: 75,
                     duration: 12,
                     trainingCost: 1800,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8925/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8925/moonfire",
                 },
                 {
                     id: "moonfire_4",
@@ -227,7 +227,7 @@ export const baselineClassAbilities = {
                     spentResource: 105,
                     duration: 12,
                     trainingCost: 3000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8926/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8926/moonfire",
                 },
                 {
                     id: "moonfire_5",
@@ -258,7 +258,7 @@ export const baselineClassAbilities = {
                     spentResource: 150,
                     duration: 12,
                     trainingCost: 5000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8927/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8927/moonfire",
                 },
                 {
                     id: "moonfire_6",
@@ -289,7 +289,7 @@ export const baselineClassAbilities = {
                     spentResource: 190,
                     duration: 12,
                     trainingCost: 10000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8928/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8928/moonfire",
                 },
                 {
                     id: "moonfire_7",
@@ -320,7 +320,7 @@ export const baselineClassAbilities = {
                     spentResource: 235,
                     duration: 12,
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8929/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8929/moonfire",
                 },
                 {
                     id: "moonfire_8",
@@ -351,7 +351,7 @@ export const baselineClassAbilities = {
                     spentResource: 280,
                     duration: 12,
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9833/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9833/moonfire",
                 },
                 {
                     id: "moonfire_9",
@@ -382,7 +382,7 @@ export const baselineClassAbilities = {
                     spentResource: 325,
                     duration: 12,
                     trainingCost: 26000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9834/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9834/moonfire",
                 },
                 {
                     id: "moonfire_10",
@@ -413,7 +413,7 @@ export const baselineClassAbilities = {
                     spentResource: 375,
                     duration: 12,
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9835/moonfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9835/moonfire",
                 },
                 {
                     id: "wrath_1",
@@ -440,7 +440,7 @@ export const baselineClassAbilities = {
                     },
                     castTime: 1.5,
                     spentResource: 20,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5176/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5176/wrath",
                 },
                 {
                     id: "wrath_2",
@@ -468,7 +468,7 @@ export const baselineClassAbilities = {
                     castTime: 1.7,
                     spentResource: 35,
                     trainingCost: 100,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5177/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5177/wrath",
                 },
                 {
                     id: "wrath_3",
@@ -496,7 +496,7 @@ export const baselineClassAbilities = {
                     castTime: 2,
                     spentResource: 55,
                     trainingCost: 900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5178/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5178/wrath",
                 },
                 {
                     id: "wrath_4",
@@ -524,7 +524,7 @@ export const baselineClassAbilities = {
                     castTime: 2,
                     spentResource: 70,
                     trainingCost: 3000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5179/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5179/wrath",
                 },
                 {
                     id: "wrath_5",
@@ -552,7 +552,7 @@ export const baselineClassAbilities = {
                     castTime: 2,
                     spentResource: 100,
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5180/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5180/wrath",
                 },
                 {
                     id: "wrath_6",
@@ -580,7 +580,7 @@ export const baselineClassAbilities = {
                     castTime: 2,
                     spentResource: 125,
                     trainingCost: 12000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6780/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6780/wrath",
                 },
                 {
                     id: "wrath_7",
@@ -608,7 +608,7 @@ export const baselineClassAbilities = {
                     castTime: 2,
                     spentResource: 155,
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8905/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8905/wrath",
                 },
                 {
                     id: "wrath_8",
@@ -636,7 +636,7 @@ export const baselineClassAbilities = {
                     castTime: 2,
                     spentResource: 180,
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9912/wrath",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9912/wrath",
                 },
                 {
                     id: "thorns_1",
@@ -652,7 +652,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 35,
                     trainingCost: 100,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=467/thorns",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=467/thorns",
                 },
                 {
                     id: "thorns_2",
@@ -668,7 +668,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 60,
                     trainingCost: 900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=782/thorns",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=782/thorns",
                 },
                 {
                     id: "thorns_3",
@@ -684,7 +684,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 105,
                     trainingCost: 4000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1075/thorns",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1075/thorns",
                 },
                 {
                     id: "thorns_4",
@@ -700,7 +700,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 170,
                     trainingCost: 10000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8914/thorns",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8914/thorns",
                 },
                 {
                     id: "thorns_5",
@@ -716,7 +716,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 240,
                     trainingCost: 18000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9756/thorns",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9756/thorns",
                 },
                 {
                     id: "thorns_6",
@@ -732,7 +732,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 320,
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9910/thorns",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9910/thorns",
                 },
                 {
                     id: "entangling_roots_1",
@@ -749,7 +749,7 @@ export const baselineClassAbilities = {
                     spentResource: 50,
                     duration: 12,
                     trainingCost: 200,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=339/entangling-roots",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=339/entangling-roots",
                 },
                 {
                     id: "entangling_roots_2",
@@ -766,7 +766,7 @@ export const baselineClassAbilities = {
                     spentResource: 65,
                     duration: 15,
                     trainingCost: 1900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1062/entangling-roots",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1062/entangling-roots",
                 },
                 {
                     id: "entangling_roots_3",
@@ -783,7 +783,7 @@ export const baselineClassAbilities = {
                     spentResource: 80,
                     duration: 18,
                     trainingCost: 5000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5195/entangling-roots",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5195/entangling-roots",
                 },
                 {
                     id: "entangling_roots_4",
@@ -800,7 +800,7 @@ export const baselineClassAbilities = {
                     spentResource: 95,
                     duration: 21,
                     trainingCost: 12000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5196/entangling-roots",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5196/entangling-roots",
                 },
                 {
                     id: "entangling_roots_5",
@@ -817,7 +817,7 @@ export const baselineClassAbilities = {
                     spentResource: 110,
                     duration: 24,
                     trainingCost: 22000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9852/entangling-roots",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9852/entangling-roots",
                 },
                 {
                     id: "entangling_roots_6",
@@ -834,7 +834,7 @@ export const baselineClassAbilities = {
                     spentResource: 125,
                     duration: 27,
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9853/entangling-roots",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9853/entangling-roots",
                 },
                 {
                     id: "starfire_1",
@@ -861,7 +861,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 95,
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=2912/starfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2912/starfire",
                 },
                 {
                     id: "starfire_2",
@@ -888,7 +888,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 135,
                     trainingCost: 4500,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8949/starfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8949/starfire",
                 },
                 {
                     id: "starfire_3",
@@ -915,7 +915,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 180,
                     trainingCost: 10000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8950/starfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8950/starfire",
                 },
                 {
                     id: "starfire_4",
@@ -942,7 +942,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 230,
                     trainingCost: 16000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8951/starfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8951/starfire",
                 },
                 {
                     id: "starfire_5",
@@ -969,7 +969,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 275,
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9875/starfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9875/starfire",
                 },
                 {
                     id: "starfire_6",
@@ -996,7 +996,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 315,
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9876/starfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9876/starfire",
                 },
                 {
                     id: "starfire_7",
@@ -1009,7 +1009,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 340,
                     taughtBy: "Book of Starfire VII",
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=25298/starfire",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=25298/starfire",
                 },
                 {
                     id: "hurricane_1",
@@ -1034,7 +1034,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 880,
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=16914/hurricane",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=16914/hurricane",
                 },
                 {
                     id: "hurricane_2",
@@ -1059,7 +1059,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 1180,
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=17401/hurricane",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=17401/hurricane",
                 },
                 {
                     id: "hurricane_3",
@@ -1076,7 +1076,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 1495,
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=17402/hurricane",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=17402/hurricane",
                 },
                 {
                     id: "hibernate_1",
@@ -1093,7 +1093,7 @@ export const baselineClassAbilities = {
                     spentResource: 90,
                     duration: 20,
                     trainingCost: 1900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=2637/hibernate",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2637/hibernate",
                 },
                 {
                     id: "hibernate_2",
@@ -1110,7 +1110,7 @@ export const baselineClassAbilities = {
                     spentResource: 120,
                     duration: 30,
                     trainingCost: 12000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=18657/hibernate",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=18657/hibernate",
                 },
                 {
                     id: "hibernate_3",
@@ -1127,7 +1127,7 @@ export const baselineClassAbilities = {
                     spentResource: 150,
                     duration: 40,
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=18658/hibernate",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=18658/hibernate",
                 },
                 {
                     id: "soothe_animal_1",
@@ -1143,7 +1143,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 50,
                     trainingCost: 3000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=2908/soothe-animal",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2908/soothe-animal",
                 },
                 {
                     id: "soothe_animal_2",
@@ -1159,7 +1159,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 75,
                     trainingCost: 12000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8955/soothe-animal",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8955/soothe-animal",
                 },
                 {
                     id: "soothe_animal_3",
@@ -1175,7 +1175,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 100,
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9901/soothe-animal",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9901/soothe-animal",
                 },
             ],
             // druid - vanilla
@@ -1195,7 +1195,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 55,
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=768/cat-form",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=768/cat-form",
                 },
                 {
                     id: "aquatic_form",
@@ -1211,7 +1211,7 @@ export const baselineClassAbilities = {
                         "Immune to Polymorph effects.  Increases swim speed by 50% and allows underwater breathing.",
                     ],
                     spentResource: 20,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1066/aquatic-form",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1066/aquatic-form",
                 },
                 {
                     id: "travel_form",
@@ -1228,7 +1228,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 20,
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=783/travel-form",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=783/travel-form",
                 },
                 {
                     id: "bear_form",
@@ -1256,7 +1256,7 @@ export const baselineClassAbilities = {
                         },
                     },
                     spentResource: 55,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5487/bear-form",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5487/bear-form",
                 },
                 {
                     id: "dire_bear_form",
@@ -1285,7 +1285,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 55,
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9634/dire-bear-form",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9634/dire-bear-form",
                 },
                 {
                     id: "feline_grace",
@@ -1297,7 +1297,7 @@ export const baselineClassAbilities = {
                         "Reduces damage from falling.",
                     ],
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=20719/feline-grace",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20719/feline-grace",
                 },
                 {
                     id: "ferocious_bite_1",
@@ -1314,7 +1314,7 @@ export const baselineClassAbilities = {
                         "  5 points: 194-210 damage<br><br>",
                     ],
                     trainingCost: 8000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22568/ferocious-bite",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22568/ferocious-bite",
                 },
                 {
                     id: "ferocious_bite_2",
@@ -1331,7 +1331,7 @@ export const baselineClassAbilities = {
                         "  5 points: 315-339 damage<br><br>",
                     ],
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22827/ferocious-bite",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22827/ferocious-bite",
                 },
                 {
                     id: "ferocious_bite_3",
@@ -1348,7 +1348,7 @@ export const baselineClassAbilities = {
                         "  5 points: 490-530 damage<br><br>",
                     ],
                     trainingCost: 22000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22828/ferocious-bite",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22828/ferocious-bite",
                 },
                 {
                     id: "ferocious_bite_4",
@@ -1365,7 +1365,7 @@ export const baselineClassAbilities = {
                         "  5 points: 685-735 damage<br><br>",
                     ],
                     trainingCost: 30000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22829/ferocious-bite",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22829/ferocious-bite",
                 },
                 {
                     id: "ferocious_bite_5",
@@ -1382,7 +1382,7 @@ export const baselineClassAbilities = {
                         "  5 points: 787-847 damage<br><br>",
                     ],
                     taughtBy: "Book of Ferocious Bite V",
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=31018/ferocious-bite",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=31018/ferocious-bite",
                 },
                 {
                     id: "dash_1",
@@ -1397,7 +1397,7 @@ export const baselineClassAbilities = {
                         "Increases movement speed by 50%.",
                     ],
                     trainingCost: 4500,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1850/dash",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1850/dash",
                 },
                 {
                     id: "dash_2",
@@ -1412,7 +1412,7 @@ export const baselineClassAbilities = {
                         "Increases movement speed by 60%.",
                     ],
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9821/dash",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9821/dash",
                 },
                 {
                     id: "rake_1",
@@ -1427,7 +1427,7 @@ export const baselineClassAbilities = {
                         "Bleeding for 13 damage every 3 seconds.",
                     ],
                     trainingCost: 4000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1822/rake",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1822/rake",
                 },
                 {
                     id: "rake_2",
@@ -1442,7 +1442,7 @@ export const baselineClassAbilities = {
                         "Bleeding for 19 damage every 3 seconds.",
                     ],
                     trainingCost: 10000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1823/rake",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1823/rake",
                 },
                 {
                     id: "rake_3",
@@ -1457,7 +1457,7 @@ export const baselineClassAbilities = {
                         "Bleeding for 25 damage every 3 seconds.",
                     ],
                     trainingCost: 18000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1824/rake",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1824/rake",
                 },
                 {
                     id: "rake_4",
@@ -1472,7 +1472,7 @@ export const baselineClassAbilities = {
                         "Bleeding for 32 damage every 3 seconds.",
                     ],
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9904/rake",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9904/rake",
                 },
                 {
                     id: "maul_1",
@@ -1483,7 +1483,7 @@ export const baselineClassAbilities = {
                     description: [
                         "Increases the druid's next attack by 18 damage.",
                     ],
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6807/maul",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6807/maul",
                 },
                 {
                     id: "maul_2",
@@ -1495,7 +1495,7 @@ export const baselineClassAbilities = {
                         "Increases the druid's next attack by 27 damage.",
                     ],
                     trainingCost: 1900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6808/maul",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6808/maul",
                 },
                 {
                     id: "maul_3",
@@ -1507,7 +1507,7 @@ export const baselineClassAbilities = {
                         "Increases the druid's next attack by 37 damage.",
                     ],
                     trainingCost: 4500,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6809/maul",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6809/maul",
                 },
                 {
                     id: "maul_4",
@@ -1519,7 +1519,7 @@ export const baselineClassAbilities = {
                         "Increases the druid's next attack by 49 damage.",
                     ],
                     trainingCost: 10000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8972/maul",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8972/maul",
                 },
                 {
                     id: "maul_5",
@@ -1531,7 +1531,7 @@ export const baselineClassAbilities = {
                         "Increases the druid's next attack by 71 damage.",
                     ],
                     trainingCost: 16000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9745/maul",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9745/maul",
                 },
                 {
                     id: "maul_6",
@@ -1543,7 +1543,7 @@ export const baselineClassAbilities = {
                         "Increases the druid's next attack by 101 damage.",
                     ],
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9880/maul",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9880/maul",
                 },
                 {
                     id: "maul_7",
@@ -1555,7 +1555,7 @@ export const baselineClassAbilities = {
                         "Increases the druid's next attack by 128 damage.",
                     ],
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9881/maul",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9881/maul",
                 },
                 {
                     id: "swipe_1",
@@ -1567,7 +1567,7 @@ export const baselineClassAbilities = {
                         "Swipe 3 nearby enemies, inflicting 18 damage.",
                     ],
                     trainingCost: 1800,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=779/swipe",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=779/swipe",
                 },
                 {
                     id: "swipe_2",
@@ -1579,7 +1579,7 @@ export const baselineClassAbilities = {
                         "Swipe 3 nearby enemies, inflicting 25 damage.",
                     ],
                     trainingCost: 4000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=780/swipe",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=780/swipe",
                 },
                 {
                     id: "swipe_3",
@@ -1591,7 +1591,7 @@ export const baselineClassAbilities = {
                         "Swipe 3 nearby enemies, inflicting 36 damage.",
                     ],
                     trainingCost: 10000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=769/swipe",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=769/swipe",
                 },
                 {
                     id: "swipe_4",
@@ -1603,7 +1603,7 @@ export const baselineClassAbilities = {
                         "Swipe 3 nearby enemies, inflicting 60 damage.",
                     ],
                     trainingCost: 18000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9754/swipe",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9754/swipe",
                 },
                 {
                     id: "swipe_5",
@@ -1615,7 +1615,7 @@ export const baselineClassAbilities = {
                         "Swipe 3 nearby enemies, inflicting 83 damage.",
                     ],
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9908/swipe",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9908/swipe",
                 },
                 {
                     id: "shred_1",
@@ -1627,7 +1627,7 @@ export const baselineClassAbilities = {
                         "Shred the target, causing 225% damage plus 54 to the target.  Must be behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 3000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5221/shred",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5221/shred",
                 },
                 {
                     id: "shred_2",
@@ -1639,7 +1639,7 @@ export const baselineClassAbilities = {
                         "Shred the target, causing 225% damage plus 72 to the target.  Must be behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6800/shred",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6800/shred",
                 },
                 {
                     id: "shred_3",
@@ -1651,7 +1651,7 @@ export const baselineClassAbilities = {
                         "Shred the target, causing 225% damage plus 99 to the target.  Must be behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 12000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8992/shred",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8992/shred",
                 },
                 {
                     id: "shred_4",
@@ -1663,7 +1663,7 @@ export const baselineClassAbilities = {
                         "Shred the target, causing 225% damage plus 144 to the target.  Must be behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9829/shred",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9829/shred",
                 },
                 {
                     id: "shred_5",
@@ -1675,7 +1675,7 @@ export const baselineClassAbilities = {
                         "Shred the target, causing 225% damage plus 180 to the target.  Must be behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9830/shred",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9830/shred",
                 },
                 {
                     id: "demoralizing_roar_1",
@@ -1698,7 +1698,7 @@ export const baselineClassAbilities = {
                         }
                     },
                     trainingCost: 300,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=99/demoralizing-roar",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=99/demoralizing-roar",
                 },
                 {
                     id: "demoralizing_roar_2",
@@ -1721,7 +1721,7 @@ export const baselineClassAbilities = {
                         }
                     },
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1735/demoralizing-roar",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1735/demoralizing-roar",
                 },
                 {
                     id: "demoralizing_roar_3",
@@ -1744,7 +1744,7 @@ export const baselineClassAbilities = {
                         }
                     },
                     trainingCost: 8000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9490/demoralizing-roar",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9490/demoralizing-roar",
                 },
                 {
                     id: "demoralizing_roar_4",
@@ -1767,7 +1767,7 @@ export const baselineClassAbilities = {
                         }
                     },
                     trainingCost: 16000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9747/demoralizing-roar",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9747/demoralizing-roar",
                 },
                 {
                     id: "demoralizing_roar_5",
@@ -1790,7 +1790,7 @@ export const baselineClassAbilities = {
                         }
                     },
                     trainingCost: 26000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9898/demoralizing-roar",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9898/demoralizing-roar",
                 },
                 {
                     id: "rip_1",
@@ -1810,7 +1810,7 @@ export const baselineClassAbilities = {
                         "Bleed damage every 2 seconds.",
                     ],
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1079/rip",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1079/rip",
                 },
                 {
                     id: "rip_2",
@@ -1830,7 +1830,7 @@ export const baselineClassAbilities = {
                         "Bleed damage every 2 seconds.",
                     ],
                     trainingCost: 5000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9492/rip",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9492/rip",
                 },
                 {
                     id: "rip_3",
@@ -1850,7 +1850,7 @@ export const baselineClassAbilities = {
                         "Bleed damage every 2 seconds.",
                     ],
                     trainingCost: 11000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9493/rip",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9493/rip",
                 },
                 {
                     id: "rip_4",
@@ -1870,7 +1870,7 @@ export const baselineClassAbilities = {
                         "Bleed damage every 2 seconds.",
                     ],
                     trainingCost: 18000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9752/rip",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9752/rip",
                 },
                 {
                     id: "rip_5",
@@ -1890,7 +1890,7 @@ export const baselineClassAbilities = {
                         "Bleed damage every 2 seconds.",
                     ],
                     trainingCost: 26000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9894/rip",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9894/rip",
                 },
                 {
                     id: "rip_6",
@@ -1910,7 +1910,7 @@ export const baselineClassAbilities = {
                         "Bleed damage every 2 seconds.",
                     ],
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9896/rip",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9896/rip",
                 },
                 {
                     id: "claw_1",
@@ -1922,7 +1922,7 @@ export const baselineClassAbilities = {
                         "Claw the enemy, causing 27 additional damage.  Awards 1 combo point.",
                     ],
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1082/claw",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1082/claw",
                 },
                 {
                     id: "claw_2",
@@ -1934,7 +1934,7 @@ export const baselineClassAbilities = {
                         "Claw the enemy, causing 39 additional damage.  Awards 1 combo point.",
                     ],
                     trainingCost: 5000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=3029/claw",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3029/claw",
                 },
                 {
                     id: "claw_3",
@@ -1946,7 +1946,7 @@ export const baselineClassAbilities = {
                         "Claw the enemy, causing 57 additional damage.  Awards 1 combo point.",
                     ],
                     trainingCost: 12000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5201/claw",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5201/claw",
                 },
                 {
                     id: "claw_4",
@@ -1958,7 +1958,7 @@ export const baselineClassAbilities = {
                         "Claw the enemy, causing 88 additional damage.  Awards 1 combo point.",
                     ],
                     trainingCost: 22000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9849/claw",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9849/claw",
                 },
                 {
                     id: "claw_5",
@@ -1970,7 +1970,7 @@ export const baselineClassAbilities = {
                         "Claw the enemy, causing 115 additional damage.  Awards 1 combo point.",
                     ],
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9850/claw",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9850/claw",
                 },
                 {
                     id: "challenging_roar",
@@ -1985,7 +1985,7 @@ export const baselineClassAbilities = {
                         "Taunted.",
                     ],
                     trainingCost: 5000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5209/challenging-roar",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5209/challenging-roar",
                 },
                 {
                     id: "ravage_1",
@@ -1997,7 +1997,7 @@ export const baselineClassAbilities = {
                         "Ravage the target, causing 350% damage plus 147 to the target.  Must be prowling and behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 8000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6785/ravage",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6785/ravage",
                 },
                 {
                     id: "ravage_2",
@@ -2009,7 +2009,7 @@ export const baselineClassAbilities = {
                         "Ravage the target, causing 350% damage plus 217 to the target.  Must be prowling and behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 16000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6787/ravage",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6787/ravage",
                 },
                 {
                     id: "ravage_3",
@@ -2021,7 +2021,7 @@ export const baselineClassAbilities = {
                         "Ravage the target, causing 350% damage plus 273 to the target.  Must be prowling and behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9866/ravage",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9866/ravage",
                 },
                 {
                     id: "ravage_4",
@@ -2033,7 +2033,7 @@ export const baselineClassAbilities = {
                         "Ravage the target, causing 350% damage plus 343 to the target.  Must be prowling and behind the target.  Awards 1 combo point.",
                     ],
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9867/ravage",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9867/ravage",
                 },
                 {
                     id: "tigers_fury_1",
@@ -2048,7 +2048,7 @@ export const baselineClassAbilities = {
                         "Increases damage done by 10.",
                     ],
                     trainingCost: 4000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5217/tigers-fury",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5217/tigers-fury",
                 },
                 {
                     id: "tigers_fury_2",
@@ -2063,7 +2063,7 @@ export const baselineClassAbilities = {
                         "Increases damage done by 20.",
                     ],
                     trainingCost: 11000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6793/tigers-fury",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6793/tigers-fury",
                 },
                 {
                     id: "tigers_fury_3",
@@ -2078,7 +2078,7 @@ export const baselineClassAbilities = {
                         "Increases damage done by 30.",
                     ],
                     trainingCost: 22000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9845/tigers-fury",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9845/tigers-fury",
                 },
                 {
                     id: "tigers_fury_4",
@@ -2093,7 +2093,7 @@ export const baselineClassAbilities = {
                         "Increases damage done by 40.",
                     ],
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9846/tigers-fury",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9846/tigers-fury",
                 },
                 {
                     id: "frenzied_regeneration_1",
@@ -2108,7 +2108,7 @@ export const baselineClassAbilities = {
                         "Converting rage into health.",
                     ],
                     trainingCost: 11000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22842/frenzied-regeneration",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22842/frenzied-regeneration",
                 },
                 {
                     id: "frenzied_regeneration_2",
@@ -2123,7 +2123,7 @@ export const baselineClassAbilities = {
                         "Converting rage into health.",
                     ],
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22895/frenzied-regeneration",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22895/frenzied-regeneration",
                 },
                 {
                     id: "frenzied_regeneration_3",
@@ -2138,7 +2138,7 @@ export const baselineClassAbilities = {
                         "Converting rage into health.",
                     ],
                     trainingCost: 30000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=22896/frenzied-regeneration",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=22896/frenzied-regeneration",
                 },
                 {
                     id: "cower_1",
@@ -2150,7 +2150,7 @@ export const baselineClassAbilities = {
                         "Cower, causing no damage but lowering your threat a small amount, making the enemy less likely to attack you.",
                     ],
                     trainingCost: 5000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8998/cower",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8998/cower",
                 },
                 {
                     id: "cower_2",
@@ -2162,7 +2162,7 @@ export const baselineClassAbilities = {
                         "Cower, causing no damage but lowering your threat a medium amount, making the enemy less likely to attack you.",
                     ],
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9000/cower",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9000/cower",
                 },
                 {
                     id: "cower_3",
@@ -2174,7 +2174,7 @@ export const baselineClassAbilities = {
                         "Cower, causing no damage but lowering your threat a large amount, making the enemy less likely to attack you.",
                     ],
                     trainingCost: 26000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9892/cower",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9892/cower",
                 },
                 {
                     id: "prowl_1",
@@ -2189,7 +2189,7 @@ export const baselineClassAbilities = {
                         "Stealthed.  Movement speed slowed by 40%.",
                     ],
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5215/prowl",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5215/prowl",
                 },
                 {
                     id: "prowl_2",
@@ -2204,7 +2204,7 @@ export const baselineClassAbilities = {
                         "Stealthed.  Movement speed slowed by 35%.",
                     ],
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6783/prowl",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6783/prowl",
                 },
                 {
                     id: "prowl_3",
@@ -2219,7 +2219,7 @@ export const baselineClassAbilities = {
                         "Stealthed.  Movement speed slowed by 30%.",
                     ],
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9913/prowl",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9913/prowl",
                 },
                 {
                     id: "pounce_1",
@@ -2234,7 +2234,7 @@ export const baselineClassAbilities = {
                         "Stunned.",
                     ],
                     trainingCost: 11000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9005/pounce",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9005/pounce",
                 },
                 {
                     id: "pounce_2",
@@ -2249,7 +2249,7 @@ export const baselineClassAbilities = {
                         "Stunned.",
                     ],
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9823/pounce",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9823/pounce",
                 },
                 {
                     id: "pounce_3",
@@ -2264,7 +2264,7 @@ export const baselineClassAbilities = {
                         "Stunned.",
                     ],
                     trainingCost: 30000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9827/pounce",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9827/pounce",
                 },
                 {
                     id: "bash_1",
@@ -2279,7 +2279,7 @@ export const baselineClassAbilities = {
                         "Stunned.",
                     ],
                     trainingCost: 900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5211/bash",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5211/bash",
                 },
                 {
                     id: "bash_2",
@@ -2294,7 +2294,7 @@ export const baselineClassAbilities = {
                         "Stunned.",
                     ],
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6798/bash",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6798/bash",
                 },
                 {
                     id: "bash_3",
@@ -2309,7 +2309,7 @@ export const baselineClassAbilities = {
                         "Stunned.",
                     ],
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8983/bash",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8983/bash",
                 },
                 {
                     id: "growl",
@@ -2323,7 +2323,7 @@ export const baselineClassAbilities = {
                     debuffText: [
                         "Taunted.",
                     ],
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6795/growl",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6795/growl",
                 },
                 {
                     id: "enrage",
@@ -2338,7 +2338,7 @@ export const baselineClassAbilities = {
                         "Gain 2 rage per second. Base armor reduced.",
                     ],
                     trainingCost: 800,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5229/enrage",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5229/enrage",
                 },
                 {
                     id: "track_humanoids",
@@ -2353,7 +2353,7 @@ export const baselineClassAbilities = {
                         "Tracking humanoids.",
                     ],
                     trainingCost: 8000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5225/track-humanoids",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5225/track-humanoids",
                 },
             ],
             // druid - vanilla
@@ -2372,7 +2372,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 20,
                     trainingCost: 10,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1126/mark-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1126/mark-of-the-wild",
                 },
                 {
                     id: "mark_of_the_wild_2",
@@ -2388,7 +2388,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 50,
                     trainingCost: 300,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5232/mark-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5232/mark-of-the-wild",
                 },
                 {
                     id: "mark_of_the_wild_3",
@@ -2404,7 +2404,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 100,
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6756/mark-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6756/mark-of-the-wild",
                 },
                 {
                     id: "mark_of_the_wild_4",
@@ -2420,7 +2420,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 160,
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5234/mark-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5234/mark-of-the-wild",
                 },
                 {
                     id: "mark_of_the_wild_5",
@@ -2436,7 +2436,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 240,
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8907/mark-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8907/mark-of-the-wild",
                 },
                 {
                     id: "mark_of_the_wild_6",
@@ -2452,7 +2452,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 340,
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9884/mark-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9884/mark-of-the-wild",
                 },
                 {
                     id: "mark_of_the_wild_7",
@@ -2468,7 +2468,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 445,
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9885/mark-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9885/mark-of-the-wild",
                 },
                 {
                     id: "gift_of_the_wild_1",
@@ -2485,7 +2485,7 @@ export const baselineClassAbilities = {
                     spentResource: 900,
                     reagent: "Wild Berries",
                     taughtBy: "Book: Gift of the Wild",
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=21849/gift-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=21849/gift-of-the-wild",
                 },
                 {
                     id: "gift_of_the_wild_2",
@@ -2502,7 +2502,7 @@ export const baselineClassAbilities = {
                     spentResource: 1200,
                     reagent: "Wild Thornroot",
                     taughtBy: "Book: Gift of the Wild II",
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=21850/gift-of-the-wild",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=21850/gift-of-the-wild",
                 },
                 {
                     id: "innervate",
@@ -2520,7 +2520,7 @@ export const baselineClassAbilities = {
                     spentResource: 5,
                     duration: 20,
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=29166/innervate",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=29166/innervate",
                 },
                 {
                     id: "remove_curse",
@@ -2535,7 +2535,7 @@ export const baselineClassAbilities = {
                     spentResource: 10,
                     duration: null,
                     trainingCost: 4000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=2782/remove-curse",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2782/remove-curse",
                 },
                 {
                     id: "cure_poison",
@@ -2549,7 +2549,7 @@ export const baselineClassAbilities = {
                     castTime: null,
                     spentResource: 16,
                     duration: null,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8946/cure-poison",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8946/cure-poison",
                 },
                 {
                     id: "abolish_poison",
@@ -2564,7 +2564,7 @@ export const baselineClassAbilities = {
                     spentResource: 16,
                     duration: 8,
                     trainingCost: 4500,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=2893/abolish-poison",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2893/abolish-poison",
                 },
                 {
                     id: "healing_touch_1",
@@ -2587,7 +2587,7 @@ export const baselineClassAbilities = {
                     },
                     castTime: 1.5,
                     spentResource: 25,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5185/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5185/healing-touch",
                 },
                 {
                     id: "healing_touch_2",
@@ -2615,7 +2615,7 @@ export const baselineClassAbilities = {
                     castTime: 2,
                     spentResource: 55,
                     trainingCost: 200,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5186/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5186/healing-touch",
                 },
                 {
                     id: "healing_touch_3",
@@ -2643,7 +2643,7 @@ export const baselineClassAbilities = {
                     castTime: 2.5,
                     spentResource: 110,
                     trainingCost: 900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5187/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5187/healing-touch",
                 },
                 {
                     id: "healing_touch_4",
@@ -2671,7 +2671,7 @@ export const baselineClassAbilities = {
                     castTime: 3,
                     spentResource: 185,
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5188/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5188/healing-touch",
                 },
                 {
                     id: "healing_touch_5",
@@ -2699,7 +2699,7 @@ export const baselineClassAbilities = {
                     castTime: 3.5,
                     spentResource: 270,
                     trainingCost: 4500,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=5189/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5189/healing-touch",
                 },
                 {
                     id: "healing_touch_6",
@@ -2727,7 +2727,7 @@ export const baselineClassAbilities = {
                     castTime: 3.5,
                     spentResource: 335,
                     trainingCost: 8000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=6778/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6778/healing-touch",
                 },
                 {
                     id: "healing_touch_7",
@@ -2755,7 +2755,7 @@ export const baselineClassAbilities = {
                     castTime: 3.5,
                     spentResource: 405,
                     trainingCost: 12000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8903/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8903/healing-touch",
                 },
                 {
                     id: "healing_touch_8",
@@ -2783,7 +2783,7 @@ export const baselineClassAbilities = {
                     castTime: 3.5,
                     spentResource: 495,
                     trainingCost: 18000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9758/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9758/healing-touch",
                 },
                 {
                     id: "healing_touch_9",
@@ -2811,7 +2811,7 @@ export const baselineClassAbilities = {
                     castTime: 3.5,
                     spentResource: 600,
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9888/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9888/healing-touch",
                 },
                 {
                     id: "healing_touch_10",
@@ -2839,7 +2839,7 @@ export const baselineClassAbilities = {
                     castTime: 3.5,
                     spentResource: 720,
                     trainingCost: 30000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9889/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9889/healing-touch",
                 },
                 {
                     id: "healing_touch_11",
@@ -2853,7 +2853,7 @@ export const baselineClassAbilities = {
                     castTime: 3.5,
                     spentResource: 800,
                     taughtBy: "Book of Healing Touch XI",
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=25297/healing-touch",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=25297/healing-touch",
                 },
                 {
                     id: "rejuvenation_1",
@@ -2869,7 +2869,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 25,
                     trainingCost: 100,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=774/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=774/rejuvenation",
                 },
                 {
                     id: "rejuvenation_2",
@@ -2885,7 +2885,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 40,
                     trainingCost: 300,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1058/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1058/rejuvenation",
                 },
                 {
                     id: "rejuvenation_3",
@@ -2901,7 +2901,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 75,
                     trainingCost: 1800,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=1430/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1430/rejuvenation",
                 },
                 {
                     id: "rejuvenation_4",
@@ -2917,7 +2917,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 105,
                     trainingCost: 3000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=2090/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2090/rejuvenation",
                 },
                 {
                     id: "rejuvenation_5",
@@ -2933,7 +2933,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 135,
                     trainingCost: 5000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=2091/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2091/rejuvenation",
                 },
                 {
                     id: "rejuvenation_6",
@@ -2949,7 +2949,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 160,
                     trainingCost: 10000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=3627/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3627/rejuvenation",
                 },
                 {
                     id: "rejuvenation_7",
@@ -2965,7 +2965,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 195,
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8910/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8910/rejuvenation",
                 },
                 {
                     id: "rejuvenation_8",
@@ -2981,7 +2981,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 235,
                     trainingCost: 20000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9839/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9839/rejuvenation",
                 },
                 {
                     id: "rejuvenation_9",
@@ -2997,7 +2997,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 280,
                     trainingCost: 26000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9840/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9840/rejuvenation",
                 },
                 {
                     id: "rejuvenation_10",
@@ -3013,7 +3013,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 335,
                     trainingCost: 32000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9841/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9841/rejuvenation",
                 },
                 {
                     id: "rejuvenation_11",
@@ -3029,7 +3029,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 360,
                     taughtBy: "Book of Rejuvenation XI",
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=25299/rejuvenation",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=25299/rejuvenation",
                 },
                 {
                     id: "regrowth_1",
@@ -3059,7 +3059,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 120,
                     trainingCost: 800,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8936/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8936/regrowth",
                 },
                 {
                     id: "regrowth_2",
@@ -3089,7 +3089,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 205,
                     trainingCost: 1900,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8938/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8938/regrowth",
                 },
                 {
                     id: "regrowth_3",
@@ -3119,7 +3119,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 280,
                     trainingCost: 4000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8939/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8939/regrowth",
                 },
                 {
                     id: "regrowth_4",
@@ -3149,7 +3149,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 350,
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8940/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8940/regrowth",
                 },
                 {
                     id: "regrowth_5",
@@ -3179,7 +3179,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 420,
                     trainingCost: 11000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8941/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8941/regrowth",
                 },
                 {
                     id: "regrowth_6",
@@ -3209,7 +3209,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 510,
                     trainingCost: 16000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9750/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9750/regrowth",
                 },
                 {
                     id: "regrowth_7",
@@ -3239,7 +3239,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 615,
                     trainingCost: 22000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9856/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9856/regrowth",
                 },
                 {
                     id: "regrowth_8",
@@ -3269,7 +3269,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 740,
                     trainingCost: 28000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9857/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9857/regrowth",
                 },
                 {
                     id: "regrowth_9",
@@ -3285,7 +3285,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 880,
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9858/regrowth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9858/regrowth",
                 },
                 {
                     id: "rebirth_1",
@@ -3298,7 +3298,7 @@ export const baselineClassAbilities = {
                     ],
                     reagent: "Maple Seed",
                     trainingCost: 2000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=20484/rebirth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20484/rebirth",
                 },
                 {
                     id: "rebirth_2",
@@ -3311,7 +3311,7 @@ export const baselineClassAbilities = {
                     ],
                     reagent: "Stranglethorn Seed",
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=20739/rebirth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20739/rebirth",
                 },
                 {
                     id: "rebirth_3",
@@ -3324,7 +3324,7 @@ export const baselineClassAbilities = {
                     ],
                     reagent: "Ashwood Seed",
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=20742/rebirth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20742/rebirth",
                 },
                 {
                     id: "rebirth_4",
@@ -3337,7 +3337,7 @@ export const baselineClassAbilities = {
                     ],
                     reagent: "Hornbeam Seed",
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=20747/rebirth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20747/rebirth",
                 },
                 {
                     id: "rebirth_5",
@@ -3350,7 +3350,7 @@ export const baselineClassAbilities = {
                     ],
                     reagent: "Ironwood Seed",
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=20748/rebirth",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20748/rebirth",
                 },
                 {
                     id: "tranquility_1",
@@ -3374,7 +3374,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 375,
                     trainingCost: 6000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=740/tranquility",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=740/tranquility",
                 },
                 {
                     id: "tranquility_2",
@@ -3398,7 +3398,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 505,
                     trainingCost: 14000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=8918/tranquility",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8918/tranquility",
                 },
                 {
                     id: "tranquility_3",
@@ -3422,7 +3422,7 @@ export const baselineClassAbilities = {
                     },
                     spentResource: 695,
                     trainingCost: 23000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9862/tranquility",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9862/tranquility",
                 },
                 {
                     id: "tranquility_4",
@@ -3438,7 +3438,7 @@ export const baselineClassAbilities = {
                     ],
                     spentResource: 925,
                     trainingCost: 34000,
-                    linktoWoWHead: "https://www.wowhead.com/classic/spell=9863/tranquility",
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=9863/tranquility",
                 },
             ],
             // druid - vanilla

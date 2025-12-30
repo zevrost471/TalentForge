@@ -1,6 +1,6 @@
 // patches.js
 
-export const patchOptions = {
+export const patchOptions = Object.freeze({
     vanilla: [
         { value: "0.12", label: "Patch 0.12 (pre-Launch)" },
         { value: "1.1", label: "Patch 1.1 (Launch)" },
@@ -59,4 +59,4 @@ export const patchOptions = {
         { value: "custom1", label: "Custom 1" },
         // { value: "custom2", label: "Custom 2" }
     ]
-};
+});

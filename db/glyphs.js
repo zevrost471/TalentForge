@@ -1,6 +1,6 @@
 // glyphs.js
 
-export const glyphs = {
+export const glyphs = Object.freeze({
     base: {
         deathknight: {
             major: [
@@ -6455,7 +6455,7 @@ export const glyphs = {
             ],
         }
     }
-};
+});
 
 function extractGlyphId(url) {
     const match = url.match(/item=(\d+)/);

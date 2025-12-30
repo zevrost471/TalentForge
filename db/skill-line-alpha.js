@@ -1,3 +1,6 @@
+// skill-line-alpha.js
+
+/*
 const rows = document.querySelectorAll("tr");
 const jsArray = [];
 
@@ -14,6 +17,7 @@ rows.forEach((r, i) => {
   }
 });
 console.log("skill list: ", jsArray);
+*/
 
 export const skillLineAlpha = Object.freeze([
   {
