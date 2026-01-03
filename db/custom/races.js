@@ -73,11 +73,11 @@ export const raceBaseData = Object.freeze({
     genderVariants: [
       {
         gender: "male",
-        icon: "images/icons/races/achievement_character_highelf_male_3" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/achievement_character_highelf_male_3" ?? FALLBACK_ICON,
       },
       {
         gender: "female",
-        icon: "images/icons/races/achievement_character_highelf_female_3" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/achievement_character_highelf_female_3" ?? FALLBACK_ICON,
       },
     ],
   },
@@ -219,11 +219,11 @@ export const raceBaseData = Object.freeze({
     genderVariants: [
       {
         gender: "male",
-        icon: "images/icons/races/character_goblin_male_2" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/character_goblin_male_2" ?? FALLBACK_ICON,
       },
       {
         gender: "female",
-        icon: "images/icons/races/character_goblin_female_2" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/character_goblin_female_2" ?? FALLBACK_ICON,
       },
     ],
   },
