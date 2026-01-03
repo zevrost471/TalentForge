@@ -41,7 +41,11 @@ These should be done first because other features depend on them or they fix cor
     - Integration with existing dynamic container elements
     - A URL hash (#overview) so tabs persist on page reload
 
-8. Finish Cataclysm talent trees & glyphs
+8. Finish Cataclysm talent trees & glyphs ✅
+
+9. Fix main panel not displaying when loading a build where glyphs are selected and talents are not selected (Cataclysm-only)
+
+10. Fix glyph not displaying when it is selected before choosing spec (Cataclysm-only)
 
 ### 🔹 Tier 2: Medium Priority / Usability Enhancements
 
