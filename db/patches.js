@@ -15,7 +15,9 @@ export const patchOptions = Object.freeze({
         { value: "1.10", label: "Patch 1.10 (Storms of Azeroth)" },
         { value: "1.11", label: "Patch 1.11 (Shadow of the Necropolis)" },
         { value: "1.12", label: "Patch 1.12 (Drums of War)" },
-        { value: "1.13", label: "Patch 1.13 (Classic Era)" }
+        { value: "1.13", label: "Patch 1.13 (Classic Era)" },
+        { value: "1.14", label: "Patch 1.14 (Season of Mastery)" },
+        { value: "1.15", label: "Patch 1.15 (Season of Discovery)" }
     ],
     tbc: [
         // { value: "2.1", label: "Patch 2.1" },

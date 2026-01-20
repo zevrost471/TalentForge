@@ -1151,10 +1151,10 @@ export const runes = Object.freeze({
           "Gives your Chill effects a 15% chance to grant you the Fingers of Frost effect, which treats your next 2 spells cast as if the target were Frozen.  Lasts 15 sec.",
           null,
           null,
-          "You deal 10% more damage while you have more than 70% mana. While below 30% mana 10% of your mana regeneration continues while casting.",
+          "Gives your Chill effects a 25% chance to grant you the Fingers of Frost effect, which treats your next 2 spells cast as if the target were Frozen. Lasts 15 sec.",
         ],
         linkToWoWHead:
-          "https://www.wowhead.com/classic/spell=415729/enlightenment",
+          "https://www.wowhead.com/classic/spell=401741/fingers-of-frost",
       },
       {
         name: "Balefire Bolt",
@@ -2015,4 +2015,53 @@ export const runes = Object.freeze({
       },
     ],
   },
+});
+
+function extractRuneId(url) {
+    const match = url.match(/spell=(\d+)/);
+    return match ? parseInt(match[1], 10) : null;
+}
+
+export const runeIndex = {};
+
+/*
+// Loop through all classes
+Object.values(runes.base).forEach(classRunes => {
+    if (!classRunes) return; // Some classes may be null
+
+    classRunes.forEach(rune => {
+        // Choose current phase index (0-based)
+        // You can pick max index if you want all phases
+        rune.icon.forEach((icon, phaseIndex) => {
+            const link = rune.linkToWoWHead;
+            if (!link) return;
+
+            // Generate an ID for this rune
+            const id = extractRuneId(link);
+            if (!id) return;
+
+            // Attach ID to rune
+            if (!rune.id) rune.id = id;
+
+            // Store in index
+            runeIndex[id] = {
+                ...rune,
+                phaseIndex
+            };
+        });
+    });
+});
+*/
+
+// Build index once
+Object.values(runes.base).forEach(classRunes => {
+    if (!classRunes) return;
+
+    classRunes.forEach(rune => {
+        const id = extractRuneId(rune.linkToWoWHead);
+        if (!id) return;
+
+        rune.id = id;          // attach once
+        runeIndex[id] = rune;  // canonical source
+    });
 });

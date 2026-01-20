@@ -22,6 +22,7 @@ export function getDomElements() {
         cataSpecSelectionPanel: document.getElementById("cata-spec-selection-panel"),
         timelineWrapper: document.getElementById("timeline-wrapper"),
         glyphsWrapper: document.getElementById("glyphs-wrapper"),
+        runesWrapper: document.getElementById("runes-wrapper"),
         buildNameInput: document.getElementById("build-name"),
         saveBuildBtn: document.getElementById("save-build"),
         importBuildBtn: document.getElementById("import-build"),
