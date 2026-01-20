@@ -856,6 +856,10 @@ function handleVersionChange(loadingBuild = false) {
     currentState.runes = {};
     currentState.phase = 1;
 
+    if (currentState.version === "1.15") {
+        currentState.pointsTotal = getSoDMaxPoints(currentState.phase);
+    }
+
     updatePointsDisplay();
 
     if (currentExpansion === "cataclysm") {
@@ -993,16 +997,16 @@ function handleClassSelect(e) {
         glyphsWrapper.style.display = "none";
     }
 
+    /*
     // Update active class button
     classButtons.forEach((btn) => {
         const isSelected = btn.dataset.class === newClassKey;
-        /*
         btn.classList.toggle("bg-yellow-600", isSelected);
         btn.classList.toggle("text-white", isSelected);
         btn.classList.toggle("bg-gray-700", !isSelected);
         btn.classList.toggle("hover:bg-gray-600", !isSelected);
-        */
     });
+    */
 
     updatePointsDisplay();
 
@@ -1337,6 +1341,7 @@ function renderTalentTrees() {
             { label: "Phase 4", value: 4 }
         ];
 
+        /*
         phaseSelectorHTML = `
             <div class="flex items-center gap-1">
                 <span class="text-gray-400 font-semibold">Phase:</span>
@@ -1352,11 +1357,29 @@ function renderTalentTrees() {
                 </select>
             </div>
         `;
+        */
+
+        phaseSelectorHTML = `
+            <div class="flex items-center gap-1">
+                <select
+                    id="phaseSelect"
+                    class="appearance-none bg-gray-700 text-white text-sm border border-gray-600 rounded-md px-2 py-1"
+                >
+                    ${phases.map(p => `
+                        <option value="${p.value}" ${currentState.phase === p.value ? "selected" : ""}>
+                            ${p.label}
+                        </option>
+                    `).join("")}
+                </select>
+            </div>
+        `;
     }
 
+    /*
     if (currentState.version === "1.15") { 
         currentState.pointsTotal = getSoDMaxPoints(currentState.phase);
     }
+    */
 
     // Calculate points left
     const pointsLeft = currentState.pointsTotal - totalPoints;
@@ -1409,24 +1432,26 @@ function renderTalentTrees() {
 
         if (phaseSelect) {
             phaseSelect.addEventListener("change", (e) => {
-                currentState.phase = Number(e.target.value);
+                const newPhase = Number(e.target.value);
+                const oldPhase = currentState.phase;
 
-                // Reset URL hash when changing version
-                if (location.hash) location.hash = "";
+                if (newPhase < oldPhase) {
+                    // Reset URL hash when changing phase downwards
+                    if (location.hash) location.hash = "";
 
-                // Reset state
-                currentState.pointsSpent = 0;
-                currentState.talents = {};
-                currentState.talentOrder = [];
-                currentState.glyphs = {};
-                currentState.runes = {};
+                    // Reset state
+                    currentState.pointsSpent = 0;
+                    currentState.talents = {};
+                    currentState.talentOrder = [];
+                    currentState.runes = {};
+                }
+
+                currentState.phase = newPhase;
+                currentState.pointsTotal = getSoDMaxPoints(newPhase);
 
                 updatePointsDisplay();
                 renderTalentTrees();
-                renderRunesContainer();
                 updateURLHash();
-
-                currentState.pointsTotal = getSoDMaxPoints(currentState.phase);
 
                 const totalPoints = Object.values(currentState.talents[currentState.class])
                     .flatMap(tree => Object.values(tree))
@@ -1436,7 +1461,7 @@ function renderTalentTrees() {
 
                 document.getElementById("pointsLeftValue").textContent = pointsLeft;
 
-                showMessage(`Phase set to ${currentState.phase}`);
+                // showMessage(`Phase set to ${currentState.phase}`);
 
                 // Re-render anything phase-dependent later (runes, availability, etc.)
                 // renderTalentTrees();
@@ -3549,6 +3574,10 @@ function loadBuild(index) {
 
     // Assign levels to talentOrder
     // recalculateTalentOrder();
+
+    if (currentState.version === "1.15") {
+        currentState.pointsTotal = getSoDMaxPoints(currentState.phase);
+    }
 
     updatePointsDisplay();
     renderTalentTrees();
