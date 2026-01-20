@@ -380,7 +380,7 @@ border-bottom-right-radius: 4px;
 .glyph-slot {
     display: flex;
     flex: 1;
-    max-width: 500px;
+    max-width: 550px;
     width: 100%;
     height: 72px;
     border: 1px solid #374151;
