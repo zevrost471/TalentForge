@@ -1433,9 +1433,10 @@ function renderTalentTrees() {
         if (phaseSelect) {
             phaseSelect.addEventListener("change", (e) => {
                 const newPhase = Number(e.target.value);
-                const oldPhase = currentState.phase;
+                // const oldPhase = currentState.phase;
 
-                if (newPhase < oldPhase) {
+                if (getTotalPointsSpent() > getSoDMaxPoints(newPhase)) {
+                /*if (newPhase < oldPhase) {*/
                     // Reset URL hash when changing phase downwards
                     if (location.hash) location.hash = "";
 
@@ -1443,29 +1444,27 @@ function renderTalentTrees() {
                     currentState.pointsSpent = 0;
                     currentState.talents = {};
                     currentState.talentOrder = [];
-                    currentState.runes = {};
                 }
-
+                
+                currentState.runes = {};
                 currentState.phase = newPhase;
                 currentState.pointsTotal = getSoDMaxPoints(newPhase);
 
                 updatePointsDisplay();
                 renderTalentTrees();
+                renderRunesContainer();
                 updateURLHash();
 
-                const totalPoints = Object.values(currentState.talents[currentState.class])
-                    .flatMap(tree => Object.values(tree))
-                    .reduce((a, b) => a + b, 0);
+                // showMessage(`total points: ${pointsSpent}`);
+                // const pointsLeft = currentState.pointsTotal - getTotalPointsSpent();
 
-                const pointsLeft = currentState.pointsTotal - totalPoints;
-
-                document.getElementById("pointsLeftValue").textContent = pointsLeft;
+                document.getElementById("pointsLeftValue").textContent = 
+                    currentState.pointsTotal - getTotalPointsSpent();
 
                 // showMessage(`Phase set to ${currentState.phase}`);
 
                 // Re-render anything phase-dependent later (runes, availability, etc.)
                 // renderTalentTrees();
-                renderRunesContainer();
             });
         }
     }
@@ -1740,6 +1739,12 @@ function getSoDMaxPoints(phase) {
         4: 51  // phase 4 max points (vanilla cap)
     };
     return SOD_PHASE_MAX_POINTS[phase] || 51;
+}
+
+function getTotalPointsSpent() {
+    return Object.values(currentState.talents[currentState.class] || {})
+        .flatMap(tree => Object.values(tree))
+        .reduce((a, b) => a + b, 0);
 }
 
 function resetTree(treeName) {
