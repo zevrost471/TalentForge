@@ -1263,8 +1263,6 @@ const iconOverrideById = {};
     iconOverrideById[id] = sharedIcon;
 });
 
-// actual base64 string
-
 // const talents = getTalents(currentState.version, currentState.class, treeName);
 
 function renderTalentTrees() {
@@ -1375,12 +1373,6 @@ function renderTalentTrees() {
         `;
     }
 
-    /*
-    if (currentState.version === "1.15") { 
-        currentState.pointsTotal = getSoDMaxPoints(currentState.phase);
-    }
-    */
-
     // Calculate points left
     const pointsLeft = currentState.pointsTotal - totalPoints;
 
@@ -1428,45 +1420,7 @@ function renderTalentTrees() {
     talentTrees.innerHTML = headerHTML;
 
     if (currentState.version === "1.15") {
-        const phaseSelect = document.getElementById("phaseSelect");
-
-        if (phaseSelect) {
-            phaseSelect.addEventListener("change", (e) => {
-                const newPhase = Number(e.target.value);
-                // const oldPhase = currentState.phase;
-
-                if (getTotalPointsSpent() > getSoDMaxPoints(newPhase)) {
-                /*if (newPhase < oldPhase) {*/
-                    // Reset URL hash when changing phase downwards
-                    if (location.hash) location.hash = "";
-
-                    // Reset state
-                    currentState.pointsSpent = 0;
-                    currentState.talents = {};
-                    currentState.talentOrder = [];
-                }
-                
-                currentState.runes = {};
-                currentState.phase = newPhase;
-                currentState.pointsTotal = getSoDMaxPoints(newPhase);
-
-                updatePointsDisplay();
-                renderTalentTrees();
-                renderRunesContainer();
-                updateURLHash();
-
-                // showMessage(`total points: ${pointsSpent}`);
-                // const pointsLeft = currentState.pointsTotal - getTotalPointsSpent();
-
-                document.getElementById("pointsLeftValue").textContent = 
-                    currentState.pointsTotal - getTotalPointsSpent();
-
-                // showMessage(`Phase set to ${currentState.phase}`);
-
-                // Re-render anything phase-dependent later (runes, availability, etc.)
-                // renderTalentTrees();
-            });
-        }
+        initPhaseSelect();
     }
 
     const container = document.createElement("div");
@@ -1728,7 +1682,51 @@ function renderTalentTrees() {
         resizeActive = false;
     }, 150);
     });
+}
 
+function initPhaseSelect() {
+    if (currentState.version !== "1.15") return;
+
+    const phaseSelect = document.getElementById("phaseSelect");
+    if (!phaseSelect || phaseSelect.dataset.bound) return;
+
+    phaseSelect.dataset.bound = "true";
+
+    phaseSelect.addEventListener("change", (e) => {
+        const newPhase = Number(e.target.value);
+        // const oldPhase = currentState.phase;
+
+        if (getTotalPointsSpent() > getSoDMaxPoints(newPhase)) {
+        /*if (newPhase < oldPhase) {*/
+            // Reset URL hash when changing phase downwards
+            if (location.hash) location.hash = "";
+
+            // Reset state
+            currentState.pointsSpent = 0;
+            currentState.talents = {};
+            currentState.talentOrder = [];
+        }
+
+        currentState.runes = {};
+        currentState.phase = newPhase;
+        currentState.pointsTotal = getSoDMaxPoints(newPhase);
+
+        updatePointsDisplay();
+        renderTalentTrees();
+        renderRunesContainer();
+        updateURLHash();
+
+        // showMessage(`total points: ${pointsSpent}`);
+        // const pointsLeft = currentState.pointsTotal - getTotalPointsSpent();
+
+        document.getElementById("pointsLeftValue").textContent =
+            currentState.pointsTotal - getTotalPointsSpent();
+
+        // showMessage(`Phase set to ${currentState.phase}`);
+
+        // Re-render anything phase-dependent later (runes, availability, etc.)
+        // renderTalentTrees();
+    });
 }
 
 function getSoDMaxPoints(phase) {
@@ -1783,6 +1781,7 @@ function resetTree(treeName) {
     updateURLHash();
 }
 
+/*
 function getClassIndex(classKey) {
     const classOrder = [
         "druid",
@@ -1798,6 +1797,7 @@ function getClassIndex(classKey) {
     ];
     return classOrder.indexOf(classKey) + 1;
 }
+*/
 
 function getTreeIcon(classKey, tree, version) {
 
