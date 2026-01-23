@@ -3414,10 +3414,12 @@ replaceTalentOld(
   "improved_eyes_of_the_beast",
   {
     description: [
-      "Increases the duration of Eyes of the Beast by {value1} seconds. While channeling this ability your tamed pet deals {value2}% additional damage and increases its focus generation by {value2}%.",
+      "Increases the duration of Eyes of the Beast by {value1} seconds. While channeling this ability your tamed pet deals {value2}% additional damage and increases its focus generation by {value3}%.",
       {
         value1: [30, 60],
-        value2: [15, 30],
+        // value2: [15, 30],
+        value2: [5, 10],
+        value3: [10, 20],
       },
     ],
   }
@@ -3799,7 +3801,7 @@ bulkInsertTalentsOld("1.16.1t", "shaman", "Enhancement", [
     ranks: 1,
     requiresTalents: "improved_lightning_shield",
     description: [
-      "Allows your Lightning Shield to be cast on allies and reduces its mana cost by 20%.",
+      "Allows your Lightning Shield to be cast on allies and reduces its mana cost by 20%. Only usable on one ally at a time.",
     ],
   },
   {
@@ -3842,6 +3844,8 @@ bulkInsertTalentsOld("1.16.1t", "shaman", "Enhancement", [
     ranks: 1,
     requiresTalents: "elemental_weapons",
     description: [
+      // "Increases melee, ranged, and spell casting speed by 10% for a party member within 30 yards. Lasts 20 sec.",
+      // "Increases melee, ranged, and spell casting speed by 15% for a party member within 30 yards. Lasts 20 sec.",
       "Increases melee, ranged, and spell casting speed by 15% for a party member within 30 yards. Lasts 15 sec.",
     ],
   },
