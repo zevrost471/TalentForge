@@ -1,0 +1,52 @@
+1.16.1
+
+hunter
+removed abilities:
+
+new abilities:
+- trueshot
+- aspect of the wolf
+
+changed abilities:
+
+removed talents: 
+- improved aspect of the hawk #
+- monster slaying #
+- humanoid slaying #
+
+new talents:
+- improved predator aspects #
+- improved slaying #
+- superior strikes #
+
+changed talents: 
+- improved eyes of the beast #
+
+shaman
+removed abilities:
+
+new abilities:
+- feral spirit (orc)
+- spirit link (tauren)
+- hex (troll)
+- calm elements
+- water shield
+- earth shield
+- totemic recall
+
+changed abilities:
+
+removed talents:
+- two-handed weapons (now baseline)
+- parry (now baseline)
+- toughness
+- anticipation
+
+new talents: 
+- thunderhead
+- bloodlust
+- spirit armor
+- ancestral guidance
+
+changed talents: 
+- stormstrike (moved)
