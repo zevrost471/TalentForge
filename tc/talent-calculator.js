@@ -1525,9 +1525,7 @@ function renderTalentTrees() {
                     let borderClass = "";
                     let rankTextColor = "";
 
-                    const totalPointsSpent = Object.values(currentState.talents[classKey])
-                        .flatMap(tree => Object.values(tree))
-                        .reduce((sum, val) => sum + val, 0);
+                    const totalPointsSpent = getTotalPointsSpent();
 
                     const maxPointsReached = totalPointsSpent >= currentState.pointsTotal;
 
