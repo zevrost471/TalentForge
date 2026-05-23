@@ -886,26 +886,18 @@ function handleVersionChange(loadingBuild = false) {
     updateURLHash();
 }
 
+// better: build a lookup map once at startup
+const patchToExpansion = {};
+for (const [expansion, patches] of Object.entries(patchOptions)) {
+    patches.forEach(p => { patchToExpansion[p.value] = expansion; });
+}
+
 function getExpansionFromPatch(patch) {
-    for (const [expansion, patches] of Object.entries(patchOptions)) {
-        if (patches.some(p => p.value === patch)) {
-            return expansion;
-        }
-    }
-    return "custom";
+    return patchToExpansion[patch] ?? null;
 }
 
 function getCurrentExpansion() {
-    const version = currentState.version;
-    if (!version) return null;
-
-    for (const [expansion, patches] of Object.entries(patchOptions)) {
-        if (patches.some(patch => patch.value === version)) {
-            return expansion;
-        }
-    }
-
-    return null; // or "custom" if you prefer a default value
+    return patchToExpansion[currentState.version] ?? null;
 }
 
 function updatePlaceholder() {
@@ -3957,8 +3949,10 @@ function updateURLHash() {
 // HANDLE TALENT PICK / CHANGE
 // Call updateURLHash whenever a talent is picked
 // ----------------------------
+/*
 function handleTalentChange() {
     updatePointsDisplay();
     renderTalentTrees();
     updateURLHash();
 }
+*/
