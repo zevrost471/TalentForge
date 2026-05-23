@@ -824,12 +824,7 @@ function handleVersionChange(loadingBuild = false) {
     else currentExpansion = "custom";
     */
 
-    for (const [expansion, patches] of Object.entries(patchOptions)) {
-        if (patches.some(patch => patch.value === version)) {
-            currentExpansion = expansion;
-            break;
-        }
-    }
+    currentExpansion = patchToExpansion[version] ?? "";
 
     if (currentExpansion === "wotlk" || currentExpansion === "cataclysm") {
         document.getElementById("deathknight-button").classList.remove("hidden");
@@ -1867,7 +1862,6 @@ function renderDependencyArrows(treeName, classKey, version) {
             const isUnlocked = (currentState.talents[classKey]?.[treeName]?.[requiredId] || 0) >= (requiredTalent.ranks || 1);
             horizontal.classList.add("arrow", direction === "down-right" ? "arrow-right" : "arrow-left", isUnlocked ? "unlocked" : "locked");
             vertical.classList.add("arrow", "arrow-down", isUnlocked ? "unlocked" : "locked");
-
 
             const horizontalWidth = Math.abs(toCenter.x - fromCenter.x);
             const verticalHeight = Math.abs(toCenter.y - fromCenter.y);
