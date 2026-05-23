@@ -148,6 +148,22 @@ window.addEventListener('DOMContentLoaded', function () {
     if (location.hash) location.hash = '';
 });
 
+// resize and reposition arrows on window resize
+let resizeScheduled = null;
+window.addEventListener("resize", () => {
+    if (resizeScheduled) return; // already have a frame queued, skip
+    resizeScheduled = true;
+
+    requestAnimationFrame(() => {
+        resizeScheduled = false;
+        const v = currentState.version, c = currentState.class;
+        if (!v || !c) return;
+        talentTreeData[v]?.classes[c]?.trees.forEach(tree => {
+            renderDependencyArrows(tree, c, v);
+        });
+    });
+});
+
 // Disable all class buttons on initial load
 classButtons.forEach((btn) => {
     btn.disabled = true;
@@ -212,8 +228,8 @@ const sharedVersions = [
 const talentTreeData = {};
 
 sharedVersions.forEach((version) => {
-    // Clone the baseTreeData
-    talentTreeData[version] = JSON.parse(JSON.stringify(baseTreeData));
+    // Clone baseTreeData
+    talentTreeData[version] = structuredClone(baseTreeData);
 
     // Assign expansion-specific maxPoints
     if (version.startsWith("4.")) {
@@ -1647,31 +1663,6 @@ function renderTalentTrees() {
             renderDependencyArrows(treeName, currentState.class, currentState.version);
         });
     });
-
-    // === Auto-redraw arrows when the window resizes ===
-    let resizeActive = false;
-
-    window.addEventListener("resize", () => {
-    if (!resizeActive) {
-        resizeActive = true;
-
-        // Continuously re-render until resizing stops
-        const loop = () => {
-        trees.forEach(treeName => {
-            renderDependencyArrows(treeName, currentState.class, currentState.version);
-        });
-
-        if (resizeActive) requestAnimationFrame(loop);
-        };
-        requestAnimationFrame(loop);
-    }
-
-    // Stop after user finishes resizing
-    clearTimeout(window._resizeStopTimeout);
-    window._resizeStopTimeout = setTimeout(() => {
-        resizeActive = false;
-    }, 150);
-    });
 }
 
 function initPhaseSelect() {
@@ -2018,11 +2009,11 @@ function saveBuild() {
         version: currentState.version,
         class: currentState.class,
         phase: currentState.phase,
-        talents: JSON.parse(JSON.stringify(currentState.talents)),
+        talents: structuredClone(currentState.talents),
         pointsSpent: currentState.pointsSpent,
-        talentOrder: JSON.parse(JSON.stringify(currentState.talentOrder)),
-        glyphs: JSON.parse(JSON.stringify(currentState.glyphs)),
-        runes: JSON.parse(JSON.stringify(currentState.runes))
+        talentOrder: structuredClone(currentState.talentOrder),
+        glyphs: structuredClone(currentState.glyphs),
+        runes: structuredClone(currentState.runes)
     };
 
     // Check if build with this name already exists
@@ -2069,12 +2060,11 @@ function importBuild() {
 
             // Set class and talent data
             currentState.class = classKey;
-            currentState.talents = JSON.parse(JSON.stringify(buildData.talents));
+            currentState.talents = structuredClone(buildData.talents);
             currentState.pointsTotal = buildData.pointsTotal || 51;
 
-            currentState.glyphs = JSON.parse(JSON.stringify(buildData.glyphs || {}));
-            currentState.runes = JSON.parse(JSON.stringify(buildData.runes || {}));
-
+            currentState.glyphs = structuredClone(buildData.glyphs || {});
+            currentState.runes = structuredClone(buildData.runes || {});
             // Update class button styles
             classButtons.forEach((btn) => {
                 const btnClass = btn.dataset.class;
@@ -3491,7 +3481,7 @@ function loadBuild(index) {
     currentState.version = build.version;
     currentState.class = classKey;
     currentState.phase = build.phase || 1; // default to 1 if missing
-    currentState.talents = JSON.parse(JSON.stringify(build.talents));
+    currentState.talents = structuredClone(build.talents);
 
     // Use the maxPoints for the current version
     const versionData = talentTreeData[currentState.version];
@@ -3500,15 +3490,15 @@ function loadBuild(index) {
 
     // restore talentOrder directly instead of rebuilding
     currentState.talentOrder = build.talentOrder
-        ? JSON.parse(JSON.stringify(build.talentOrder))
+        ? structuredClone(build.talentOrder)
         : [];
 
     currentState.glyphs = build.glyphs
-        ? JSON.parse(JSON.stringify(build.glyphs))
+        ? structuredClone(build.glyphs)
         : {};
 
     currentState.runes = build.runes
-        ? JSON.parse(JSON.stringify(build.runes))
+        ? structuredClone(build.runes)
         : {};
 
     // Ensure talentOrder keeps original level progression
