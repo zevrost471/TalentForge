@@ -2056,6 +2056,15 @@ function saveBuild() {
     buildNameInput.value = "";
 }
 
+function findGlyphByIdForBuild(id, expansion, classKey, type) {
+    const candidates = [
+        ...(glyphs.base?.[classKey]?.[type] || []),
+        ...(glyphs[expansion]?.[classKey]?.[type] || [])
+    ];
+
+    return candidates.find(g => Number(g.id) === Number(id)) || null;
+}
+
 function parseBuildFromHash(hash) {
     // Format: version/class/talentString[/glyphString][/runeString]
     // e.g. 4.3.5/hunter/2332232010320112121-2302-3/42902-45733-42900:43355-43338-43356
@@ -2133,7 +2142,7 @@ function parseBuildFromHash(hash) {
             const ids = segment.split("-").map(s => parseInt(s, 10));
             glyphs[type] = ids.map(id => {
                 if (!id || isNaN(id)) return null;
-                return glyphIndex[id] || null;
+                return findGlyphByIdForBuild(id, expansion, classKey, type);
             });
         });
     }
@@ -2258,6 +2267,10 @@ function importBuild() {
         }
 
         updateURLHash();
+
+        // Clear build name after import
+        buildNameInput.value = "";
+
         alert(`✅ Successfully imported build.`);
 
     } catch (e) {
@@ -2762,6 +2775,7 @@ function recalculateTalentOrder() {
     });
 }
 
+/*
 function rebuildTalentOrderFromTalents(classKey, version) {
     const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
     const expansion = getExpansionFromPatch(version);
@@ -2814,6 +2828,7 @@ function rebuildTalentOrderFromTalents(classKey, version) {
 
     return newOrder;
 }
+*/
 
 function initCurrentGlyphs() {
     // currentState.glyphs = {};
