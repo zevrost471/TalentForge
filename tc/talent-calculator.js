@@ -143,9 +143,53 @@ toggleBuildManagerButton.addEventListener("click", () => {
     }
 });
 
-// Reset URL hash on page load
 window.addEventListener('DOMContentLoaded', function () {
-    if (location.hash) location.hash = '';
+    if (location.hash) {
+        const hash = location.hash.slice(1); // remove the '#'
+        const parts = hash.split('/');
+
+        if (parts.length >= 2) {
+            const version = parts[0];
+            const classKey = parts[1];
+
+            // Find which expansion this version belongs to
+            const targetExpansion = getExpansionFromPatch(version);
+
+            if (targetExpansion && expansionSelect) {
+                expansionSelect.value = targetExpansion;
+                expansionSelect.dispatchEvent(new Event("change"));
+
+                versionSelect.value = version;
+                handleVersionChange(true);
+
+                currentState.version = version;
+                currentState.class = classKey;
+
+                if (parts.length >= 3) {
+                    importBuildString(hash);
+                }
+            }
+        } else {
+            // No valid hash, just clear it
+            location.hash = '';
+        }
+    }
+});
+
+// resize and reposition arrows on window resize
+let resizeScheduled = null;
+window.addEventListener("resize", () => {
+    if (resizeScheduled) return; // already have a frame queued, skip
+    resizeScheduled = true;
+
+    requestAnimationFrame(() => {
+        resizeScheduled = false;
+        const v = currentState.version, c = currentState.class;
+        if (!v || !c) return;
+        talentTreeData[v]?.classes[c]?.trees.forEach(tree => {
+            renderDependencyArrows(tree, c, v);
+        });
+    });
 });
 
 // Disable all class buttons on initial load
@@ -212,8 +256,8 @@ const sharedVersions = [
 const talentTreeData = {};
 
 sharedVersions.forEach((version) => {
-    // Clone the baseTreeData
-    talentTreeData[version] = JSON.parse(JSON.stringify(baseTreeData));
+    // Clone baseTreeData
+    talentTreeData[version] = structuredClone(baseTreeData);
 
     // Assign expansion-specific maxPoints
     if (version.startsWith("4.")) {
@@ -808,12 +852,7 @@ function handleVersionChange(loadingBuild = false) {
     else currentExpansion = "custom";
     */
 
-    for (const [expansion, patches] of Object.entries(patchOptions)) {
-        if (patches.some(patch => patch.value === version)) {
-            currentExpansion = expansion;
-            break;
-        }
-    }
+    currentExpansion = patchToExpansion[version] ?? "";
 
     if (currentExpansion === "wotlk" || currentExpansion === "cataclysm") {
         document.getElementById("deathknight-button").classList.remove("hidden");
@@ -886,26 +925,18 @@ function handleVersionChange(loadingBuild = false) {
     updateURLHash();
 }
 
+// better: build a lookup map once at startup
+const patchToExpansion = {};
+for (const [expansion, patches] of Object.entries(patchOptions)) {
+    patches.forEach(p => { patchToExpansion[p.value] = expansion; });
+}
+
 function getExpansionFromPatch(patch) {
-    for (const [expansion, patches] of Object.entries(patchOptions)) {
-        if (patches.some(p => p.value === patch)) {
-            return expansion;
-        }
-    }
-    return "custom";
+    return patchToExpansion[patch] ?? null;
 }
 
 function getCurrentExpansion() {
-    const version = currentState.version;
-    if (!version) return null;
-
-    for (const [expansion, patches] of Object.entries(patchOptions)) {
-        if (patches.some(patch => patch.value === version)) {
-            return expansion;
-        }
-    }
-
-    return null; // or "custom" if you prefer a default value
+    return patchToExpansion[currentState.version] ?? null;
 }
 
 function updatePlaceholder() {
@@ -1533,9 +1564,7 @@ function renderTalentTrees() {
                     let borderClass = "";
                     let rankTextColor = "";
 
-                    const totalPointsSpent = Object.values(currentState.talents[classKey])
-                        .flatMap(tree => Object.values(tree))
-                        .reduce((sum, val) => sum + val, 0);
+                    const totalPointsSpent = getTotalPointsSpent();
 
                     const maxPointsReached = totalPointsSpent >= currentState.pointsTotal;
 
@@ -1656,31 +1685,6 @@ function renderTalentTrees() {
         trees.forEach(treeName => {
             renderDependencyArrows(treeName, currentState.class, currentState.version);
         });
-    });
-
-    // === Auto-redraw arrows when the window resizes ===
-    let resizeActive = false;
-
-    window.addEventListener("resize", () => {
-    if (!resizeActive) {
-        resizeActive = true;
-
-        // Continuously re-render until resizing stops
-        const loop = () => {
-        trees.forEach(treeName => {
-            renderDependencyArrows(treeName, currentState.class, currentState.version);
-        });
-
-        if (resizeActive) requestAnimationFrame(loop);
-        };
-        requestAnimationFrame(loop);
-    }
-
-    // Stop after user finishes resizing
-    clearTimeout(window._resizeStopTimeout);
-    window._resizeStopTimeout = setTimeout(() => {
-        resizeActive = false;
-    }, 150);
     });
 }
 
@@ -1887,7 +1891,6 @@ function renderDependencyArrows(treeName, classKey, version) {
             horizontal.classList.add("arrow", direction === "down-right" ? "arrow-right" : "arrow-left", isUnlocked ? "unlocked" : "locked");
             vertical.classList.add("arrow", "arrow-down", isUnlocked ? "unlocked" : "locked");
 
-
             const horizontalWidth = Math.abs(toCenter.x - fromCenter.x);
             const verticalHeight = Math.abs(toCenter.y - fromCenter.y);
 
@@ -2028,11 +2031,11 @@ function saveBuild() {
         version: currentState.version,
         class: currentState.class,
         phase: currentState.phase,
-        talents: JSON.parse(JSON.stringify(currentState.talents)),
+        talents: structuredClone(currentState.talents),
         pointsSpent: currentState.pointsSpent,
-        talentOrder: JSON.parse(JSON.stringify(currentState.talentOrder)),
-        glyphs: JSON.parse(JSON.stringify(currentState.glyphs)),
-        runes: JSON.parse(JSON.stringify(currentState.runes))
+        talentOrder: structuredClone(currentState.talentOrder),
+        glyphs: structuredClone(currentState.glyphs),
+        runes: structuredClone(currentState.runes)
     };
 
     // Check if build with this name already exists
@@ -2053,71 +2056,223 @@ function saveBuild() {
     buildNameInput.value = "";
 }
 
+function findGlyphByIdForBuild(id, expansion, classKey, type) {
+    const candidates = [
+        ...(glyphs.base?.[classKey]?.[type] || []),
+        ...(glyphs[expansion]?.[classKey]?.[type] || [])
+    ];
+
+    return candidates.find(g => Number(g.id) === Number(id)) || null;
+}
+
+function parseBuildFromHash(hash) {
+    // Format: version/class/talentString[/glyphString][/runeString]
+    // e.g. 4.3.5/hunter/2332232010320112121-2302-3/42902-45733-42900:43355-43338-43356
+    const parts = hash.split("/");
+
+    if (parts.length < 3) {
+        throw new Error("Invalid build string format.");
+    }
+
+    const version = parts[0];
+    const classKey = parts[1];
+    
+    // For SoD, format is: version/class/pN/talentString/runeString
+    // For others:          version/class/talentString[/glyphString]
+    let phase = 1; // default phase for SoD if not specified
+    let treesPart;
+    let glyphOrRunePart;
+
+    if (version === "1.15") {
+        // parts[2] should be "p1", "p2", etc.
+        if (parts[2] && parts[2].startsWith("p")) {
+            phase = parseInt(parts[2].slice(1), 10) || 1;
+            treesPart = parts[3] || "";
+            glyphOrRunePart = parts[4] || "";
+        } else {
+            // Old URL without phase segment — fall back gracefully
+            treesPart = parts[2] || "";
+            glyphOrRunePart = parts[3] || "";
+        }
+    } else {
+        treesPart = parts[2] || "";
+        glyphOrRunePart = parts[3] || "";
+    }
+
+    const classData = talentTreeData[version]?.classes[classKey];
+    if (!classData) {
+        throw new Error(`Invalid version or class: ${version}/${classKey}`);
+    }
+
+    const trees = classData.trees;
+    const treeStrings = treesPart.split("-");
+    const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
+    const talents = { [classKey]: {} };
+
+    trees.forEach((treeName, i) => {
+        const str = treeStrings[i] || "";
+        talents[classKey][treeName] = {};
+
+        const treeTalents = [...(classTalents[treeName] || [])].sort((a, b) => {
+            if (a.row !== b.row) return a.row - b.row;
+            return a.col - b.col;
+        });
+
+        [...str].forEach((char, j) => {
+            const val = parseInt(char, 10);
+            if (!isNaN(val) && val > 0 && treeTalents[j]) {
+                talents[classKey][treeName][treeTalents[j].id] = val;
+            }
+        });
+    });
+
+    // Parse glyphs (wotlk/cataclysm)
+    const glyphs = {};
+    const expansion = getExpansionFromPatch(version);
+
+    if (glyphOrRunePart && (expansion === "wotlk" || expansion === "cataclysm")) {
+        const glyphSegments = glyphOrRunePart.split(":");
+
+        let types = [];
+        if (expansion === "cataclysm") types = ["prime", "major", "minor"];
+        else if (expansion === "wotlk") types = ["major", "minor"];
+
+        types.forEach((type, i) => {
+            const segment = glyphSegments[i] || "";
+            const ids = segment.split("-").map(s => parseInt(s, 10));
+            glyphs[type] = ids.map(id => {
+                if (!id || isNaN(id)) return null;
+                return findGlyphByIdForBuild(id, expansion, classKey, type);
+            });
+        });
+    }
+
+    // Parse runes if present (for SoD, in parts[4])
+    const runes = {};
+    if (version === "1.15" && glyphOrRunePart) {
+        const slotOrder = SOD_PHASE_SLOTS[phase] || [];
+        const ids = glyphOrRunePart.split("-");
+        slotOrder.forEach((slot, i) => {
+            const id = parseInt(ids[i], 10);
+            runes[slot] = (!id || isNaN(id)) ? null : { id };
+        });
+    }
+
+    return {
+        name: "Imported Build",
+        version,
+        class: classKey,
+        phase,
+        talents,
+        glyphs,
+        runes,
+        talentOrder: []
+    };
+}
+
 function importBuild() {
-    const importData = prompt("Paste your build data here:");
+    const importData = prompt("Paste your build URL or build data here:");
     if (!importData) return;
 
     try {
-        const raw = JSON.parse(importData);
-        const buildData = {
-            ...decompressBuild(raw.compressed),
-            name: raw.name || "Imported Build"
-        };
+        let buildData;
 
-        // Validate
-        if (!buildData.version || !buildData.class || !buildData.talents) {
-            throw new Error("Invalid build data");
+        // Check if it's a URL or hash string
+        if (importData.includes("#")) {
+            // Extract everything after the #
+            const hash = importData.split("#")[1];
+            buildData = parseBuildFromHash(hash);
+        } else if (importData.startsWith("{")) {
+            // It's a JSON object (full saved build)
+            buildData = JSON.parse(importData);
+        } else {
+            // Assume it's just the raw hash string
+            buildData = parseBuildFromHash(importData);
         }
 
-        // Set version and trigger logic
+        if (!buildData.version || !buildData.class) {
+            throw new Error("Invalid build data: missing version or class.");
+        }
+
+        const targetExpansion = getExpansionFromPatch(buildData.version);
+        if (!targetExpansion) {
+            throw new Error(`Unknown version: ${buildData.version}`);
+        }
+
+        if (expansionSelect.value !== targetExpansion) {
+            expansionSelect.value = targetExpansion;
+            expansionSelect.dispatchEvent(new Event("change"));
+        }
+
         versionSelect.value = buildData.version;
         handleVersionChange(true);
 
-        // Delay to ensure talentTreeData is updated before rendering
-        setTimeout(() => {
-            const classKey = buildData.class;
+        const classKey = buildData.class;
+        currentState.version = buildData.version;
+        currentState.class = classKey;
+        currentState.phase = buildData.phase || 1;
+        currentState.talents = structuredClone(buildData.talents);
+        currentState.glyphs = structuredClone(buildData.glyphs || {});
+        currentState.runes = structuredClone(buildData.runes || {});
+        currentState.talentOrder = structuredClone(buildData.talentOrder || []);
 
-            // Set class and talent data
-            currentState.class = classKey;
-            currentState.talents = JSON.parse(JSON.stringify(buildData.talents));
-            currentState.pointsTotal = buildData.pointsTotal || 51;
+        const versionData = talentTreeData[currentState.version];
+        currentState.pointsTotal = versionData ? versionData.maxPoints : 51;
 
-            currentState.glyphs = JSON.parse(JSON.stringify(buildData.glyphs || {}));
-            currentState.runes = JSON.parse(JSON.stringify(buildData.runes || {}));
+        if (currentState.version === "1.15") {
+            currentState.pointsTotal = getSoDMaxPoints(currentState.phase);
+        }
 
-            // Update class button styles
-            classButtons.forEach((btn) => {
-                const btnClass = btn.dataset.class;
-                if (!btnClass) return;
+        // Recalculate points spent
+        const trees = talentTreeData[currentState.version]?.classes?.[classKey]?.trees || [];
+        currentState.pointsSpent = trees.reduce((total, tree) => {
+            const treeTalents = currentState.talents[classKey]?.[tree] || {};
+            return total + Object.values(treeTalents).reduce((sum, p) => sum + p, 0);
+        }, 0);
 
-                const isSelected = btnClass === classKey;
-                btn.classList.toggle("bg-yellow-600", isSelected);
-                btn.classList.toggle("text-white", isSelected);
-                btn.classList.toggle("bg-gray-700", !isSelected);
-                btn.classList.toggle("hover:bg-gray-600", !isSelected);
-            });
+        if (currentState.talentOrder.length > 0) {
+            const hasLevels = currentState.talentOrder.some(e => e.level !== undefined);
+            if (!hasLevels) recalculateTalentOrder();
+        }
 
-            // Recalculate total points spent
-            currentState.pointsSpent = 0;
-            const trees =
-                talentTreeData[currentState.version]?.classes?.[classKey]?.trees || [];
+        // Rebuild talentOrder if the imported build doesn't have one
+        /*
+        if (!currentState.talentOrder || currentState.talentOrder.length === 0) {
+            currentState.talentOrder = rebuildTalentOrderFromTalents(classKey, currentState.version);
+        }
+        */
 
-            trees.forEach((tree) => {
-                const treeTalents = currentState.talents[classKey][tree];
-                if (treeTalents) {
-                    currentState.pointsSpent += Object.values(treeTalents).reduce(
-                        (sum, p) => sum + p,
-                        0
-                    );
-                }
-            });
+        // Auto-select Cataclysm spec
+        const expansion = getExpansionFromPatch(buildData.version);
+        if (expansion === "cataclysm") {
+            const dominantTree = trees.reduce((best, tree) => {
+                const pts = Object.values(currentState.talents[classKey]?.[tree] || {})
+                    .reduce((s, v) => s + v, 0);
+                return pts > (best.pts || 0) ? { tree, pts } : best;
+            }, {}).tree;
+            if (dominantTree) chosenSpec = dominantTree;
+        }
 
-            updatePointsDisplay();
-            renderTalentTrees();
+        updatePointsDisplay();
+        renderTalentTrees();
+
+        if (expansion === "wotlk" || expansion === "cataclysm") {
             renderGlyphsContainer();
+            loadSavedGlyphs();
+        }
 
-            alert(`✅ Successfully imported build: ${buildData.name}`);
-        }, 20); // Slight delay to wait for version setup
+        if (buildData.version === "1.15") {
+            renderRunesContainer();
+            loadSavedRunes();
+        }
+
+        updateURLHash();
+
+        // Clear build name after import
+        buildNameInput.value = "";
+
+        alert(`✅ Successfully imported build.`);
+
     } catch (e) {
         alert("❌ Error importing build: " + e.message);
         console.error(e);
@@ -2619,6 +2774,61 @@ function recalculateTalentOrder() {
         entry.level = 10 + index;
     });
 }
+
+/*
+function rebuildTalentOrderFromTalents(classKey, version) {
+    const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
+    const expansion = getExpansionFromPatch(version);
+    const newOrder = [];
+
+    // Collect all spent talent entries across all trees
+    // Each rank spent = one entry in talentOrder
+    trees.forEach(treeName => {
+        const treeTalents = talentsAttributedByVersion[version]?.[classKey]?.[treeName] || [];
+        const invested = currentState.talents[classKey]?.[treeName] || {};
+
+        treeTalents.forEach(talent => {
+            const points = invested[talent.id] || 0;
+            for (let i = 0; i < points; i++) {
+                newOrder.push({
+                    id: talent.id,
+                    tree: treeName,
+                    classKey,
+                    icon: talent.icon,
+                    level: 0 // placeholder, recalculated below
+                });
+            }
+        });
+    });
+
+    // Sort by row so the order is at least logical
+    // (we can't know the exact order they were picked, but row order is a good approximation)
+    newOrder.sort((a, b) => {
+        const talentA = getTalentById(a.classKey, a.tree, a.id);
+        const talentB = getTalentById(b.classKey, b.tree, b.id);
+        return (talentA?.row ?? 0) - (talentB?.row ?? 0);
+    });
+
+    // Assign levels based on expansion
+    if (expansion === "cataclysm") {
+        const cataLevels = [
+            10, 11, 13, 15, 17, 19, 21, 23, 25, 27,
+            29, 31, 33, 35, 37, 39, 41, 43, 45, 47,
+            49, 51, 53, 55, 57, 59, 61, 63, 65, 67,
+            69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85
+        ];
+        newOrder.forEach((entry, index) => {
+            entry.level = cataLevels[index] || 85;
+        });
+    } else {
+        newOrder.forEach((entry, index) => {
+            entry.level = 10 + index;
+        });
+    }
+
+    return newOrder;
+}
+*/
 
 function initCurrentGlyphs() {
     // currentState.glyphs = {};
@@ -3501,7 +3711,7 @@ function loadBuild(index) {
     currentState.version = build.version;
     currentState.class = classKey;
     currentState.phase = build.phase || 1; // default to 1 if missing
-    currentState.talents = JSON.parse(JSON.stringify(build.talents));
+    currentState.talents = structuredClone(build.talents);
 
     // Use the maxPoints for the current version
     const versionData = talentTreeData[currentState.version];
@@ -3510,15 +3720,15 @@ function loadBuild(index) {
 
     // restore talentOrder directly instead of rebuilding
     currentState.talentOrder = build.talentOrder
-        ? JSON.parse(JSON.stringify(build.talentOrder))
+        ? structuredClone(build.talentOrder)
         : [];
 
     currentState.glyphs = build.glyphs
-        ? JSON.parse(JSON.stringify(build.glyphs))
+        ? structuredClone(build.glyphs)
         : {};
 
     currentState.runes = build.runes
-        ? JSON.parse(JSON.stringify(build.runes))
+        ? structuredClone(build.runes)
         : {};
 
     // Ensure talentOrder keeps original level progression
@@ -3698,12 +3908,15 @@ function generateBuildStringFromBuild(build) {
 
     let glyphString = "";
     if (expansion === "wotlk" || expansion === "cataclysm") {
-        glyphString = generateGlyphString(glyphs);
+        glyphString = generateGlyphString(glyphs, expansion);
     }
 
+    // Use build's own phase, not currentState.phase
     let runeString = "";
     if (version === "1.15") {
-        runeString = generateRuneString(runes);
+        const phase = build.phase || 1;
+        runeString = generateRuneString(runes, phase);
+        return `p${phase}/${talentString}${runeString}`;
     }
 
     return `${talentString}${glyphString}${runeString}`;
@@ -3812,21 +4025,25 @@ function generateBuildString() {
     // === Generate glyph string only for WotLK and Cataclysm ===
     let glyphString = "";
     if (expansion === "wotlk" || expansion === "cataclysm") {
-        glyphString = generateGlyphString(currentState.glyphs);
+        glyphString = generateGlyphString(currentState.glyphs, expansion);
     }
 
     // Rune string for 1.15
     let runeString = "";
     if (version === "1.15") {
-        runeString = generateRuneString(currentState.runes);
+        runeString = generateRuneString(currentState.runes, currentState.phase);
+    }
+
+    // Build the full string with phase segment for SoD
+    if (version === "1.15") {
+        return `p${currentState.phase}/${talentString}${runeString}`;
     }
 
     // === Build final formatted string ===
     return `${talentString}${glyphString}${runeString}`;
 }
 
-function generateGlyphString(glyphs) {
-    const expansion = getCurrentExpansion();
+function generateGlyphString(glyphs, expansion) {
     let types = [];
 
     if (expansion === "cataclysm") {
@@ -3859,10 +4076,9 @@ function generateGlyphString(glyphs) {
     return `/${glyphString}`;
 }
 
-function generateRuneString(runes) {
-    if (!runes || !currentState.phase) return "";
+function generateRuneString(runes, phase) {
+    if (!runes || !phase) return "";
 
-    const phase = currentState.phase;
     const slotOrder = SOD_PHASE_SLOTS[phase] || [];
 
     // Collect IDs in slot order
@@ -3957,8 +4173,10 @@ function updateURLHash() {
 // HANDLE TALENT PICK / CHANGE
 // Call updateURLHash whenever a talent is picked
 // ----------------------------
+/*
 function handleTalentChange() {
     updatePointsDisplay();
     renderTalentTrees();
     updateURLHash();
 }
+*/

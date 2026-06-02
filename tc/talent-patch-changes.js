@@ -2450,7 +2450,7 @@ bulkInsertTalents("1.10", "shaman", "Elemental", [
     ranks: 2,
     requiresTalents: null,
     description: [
-      "Reduces the delay before your Fire Nova Totem activates by {value}",
+      "Reduces the delay before your Fire Nova Totem activates by {value}.",
       {
         value: ["1 second", "2 seconds"],
       },
