@@ -26,6 +26,7 @@ These should be done first because other features depend on them or they fix cor
     - Trees should never overflow their container at smaller screen widths.
     - Some class buttons are not fully visible at smaller screen widths. ✅
     - Glyph selection list is not fully visible at smaller screen widths.
+    - Rune slots don't adjust their width properly when i hide sidebar. ✅
 
 4. Fix ```renderLevelTimeline``` not appearing when a build is loaded ✅
 
