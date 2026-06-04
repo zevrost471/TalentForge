@@ -11,10 +11,14 @@
     <link rel="icon" type="image/png" sizes="32x32" href="./assets/icons/favicon-32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./assets/icons/favicon-16.png">
     <link rel="shortcut icon" href="./assets/icons/favicon-16.ico">
+    <script>
+        document.documentElement.dataset.theme =
+            localStorage.getItem("talentforgeTheme") || "original";
+    </script>
     <link rel="stylesheet" href="./styles.css">
 </head>
 
-<body class="bg-gray-900 text-gray-100 min-h-screen">
+<body class="tf-page min-h-screen">
     <div class="container mx-auto px-4 py-8">
         <header id="main-header" class="text-center mb-8 transition-all duration-500 overflow-hidden">
             <h1 class="text-4xl font-bold text-yellow-400 mb-2">
@@ -25,7 +29,7 @@
         </header>
 
         <!-- Top Navigation Bar -->
-        <nav class="w-full bg-gray-800 rounded-lg mb-6 border-gray-700 mb-6">
+        <nav class="tf-panel-flat w-full rounded-lg mb-6">
             <div class="container mx-auto px-4">
                 <ul id="top-nav" class="flex items-center justify-center gap-8 py-3 text-lg font-medium">
                     <li>
@@ -44,6 +48,12 @@
                         <a href="./db/" data-tab="nav-database"
                             class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
                             Database
+                        </a>
+                    </li>
+                    <li>
+                        <a href="./settings/" data-tab="nav-settings"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            Settings
                         </a>
                     </li>
                 </ul>

@@ -1113,7 +1113,7 @@ function renderSpecSelectionPanel() {
     const classColor = classColors[classKey] || "#FFF";
 
     const headerHTML = `
-        <div class="w-full py-4 px-6 rounded-md bg-gray-800 text-gray-100 shadow flex flex-col md:flex-row justify-between items-center gap-4 border border-gray-700">
+        <div class="tf-panel w-full py-4 px-6 rounded-md shadow flex flex-col md:flex-row justify-between items-center gap-4">
             <div class="flex items-center gap-3">
                 <img src="${classIconUrl}" alt="${classData.name}" class="w-8 h-8 rounded border border-gray-500" />
                 <span class="text-lg font-semibold">
@@ -1201,8 +1201,8 @@ function renderSpecSelectionPanel() {
         // === Spec card ===
         const specEl = document.createElement("div");
         specEl.className = `
-            bg-gray-900 p-4 rounded-lg w-[340px] h-[550px]
-            shadow-lg border border-gray-700 relative flex flex-col
+            tf-bg p-4 rounded-lg w-[340px] h-[550px]
+            shadow-lg border tf-border relative flex flex-col
         `.trim();
 
         specEl.innerHTML = `
@@ -1413,7 +1413,7 @@ function renderTalentTrees() {
 
     // Build info box
     const headerHTML = `
-                <div class="w-full py-4 px-6 rounded-md bg-gray-800 text-gray-100 shadow flex flex-col md:flex-row justify-between items-center gap-4 border border-gray-700">
+                <div class="tf-panel w-full py-4 px-6 rounded-md shadow flex flex-col md:flex-row justify-between items-center gap-4">
                     <div class="flex items-center gap-3">
                         <img src="${classIconUrl}" alt="${classData.name
         }" class="w-8 h-8 rounded border border-gray-500" />
@@ -1479,7 +1479,7 @@ function renderTalentTrees() {
 
         const treeEl = document.createElement("div");
         treeEl.className =
-            "bg-gray-900 h-full p-4 pt-4 pb-1 rounded-lg w-full sm:w-[300px] md:w-[340px] shadow-lg border border-gray-700 flex flex-col items-center";
+            "tf-bg h-full p-4 pt-4 pb-1 rounded-lg w-full sm:w-[300px] md:w-[340px] shadow-lg border tf-border flex flex-col items-center";
         treeEl.setAttribute("data-tree-container", treeName);
 
         // === CHANGE: Lock / gray out non-chosen trees in Cataclysm ===
@@ -1506,11 +1506,11 @@ function renderTalentTrees() {
         const pointsInTree = treePoints[trees.indexOf(treeName)];
 
         const resetTextColor = pointsInTree === 0 ? "text-gray-400" : "text-white";
-        const resetBorderColor = "border-2 border-gray-700";
+        const resetBorderColor = "border-2 tf-border";
 
         // Add icon + tree name inside each tree box
         treeEl.innerHTML = `
-        <div class="flex items-center justify-between mb-3 px-2 py-1 rounded bg-gray-800 border border-gray-700 w-full">
+        <div class="tf-panel w-full flex items-center justify-between mb-3 px-2 py-1 rounded">
                 <div class="flex items-center gap-2">
                     <img src="https://wow.zamimg.com/images/wow/icons/large/${getTreeIcon(
             classKey,
@@ -1633,7 +1633,7 @@ function renderTalentTrees() {
         // Create the reset button
         const resetBtn = document.createElement("button");
         resetBtn.className = `
-        reset-tree-btn mt-2 w-[310px] bg-gray-900 hover:bg-gray-600 
+        reset-tree-btn mt-2 w-[310px] tf-button-reset 
         ${resetTextColor} ${resetBorderColor}
         text-sm px-3 py-1 rounded flex items-center justify-center gap-2
     `.trim();
@@ -2453,7 +2453,7 @@ function renderBuildsList() {
     currentState.builds.forEach((build, index) => {
         const buildCard = document.createElement("div");
         buildCard.className =
-            "build-card bg-gray-700 rounded-md p-3 cursor-pointer hover:bg-gray-600";
+            "build-card tf-control-flat rounded-md p-3 cursor-pointer";
         buildCard.innerHTML = `
                             <div class="flex justify-between items-center">
                                 <div>
@@ -2518,7 +2518,7 @@ function renderLevelTimeline(container) {
 
     const orderBox = document.createElement("div");
     orderBox.className =
-        "w-full p-3 rounded-lg bg-gray-800 shadow-lg";
+        "tf-panel-flat w-full p-3 rounded-lg shadow-lg";
     // "w-full mt-6 p-3 rounded bg-gray-800 border border-gray-700 shadow-lg";
 
     // Add header
@@ -2600,7 +2600,7 @@ function renderLevelTimeline(container) {
 
             const item = document.createElement("div");
             item.className =
-                "relative flex items-center text-sm text-white gap-2 bg-gray-900 px-2 py-1 rounded border border-gray-600";
+                "relative flex items-center text-sm text-white gap-2 tf-talent-order px-2 py-1 rounded";
 
             // Level
             const levelEl = Object.assign(document.createElement("span"), {
@@ -2676,7 +2676,7 @@ function renderLevelTimeline(container) {
 
             const item = document.createElement("div");
             item.className =
-                "flex items-center text-xs text-white gap-1 bg-gray-900 px-2 py-1 rounded border border-gray-600";
+                "flex items-center text-xs text-white gap-1 tf-talent-order px-2 py-1 rounded";
 
             const iconEl = Object.assign(document.createElement("img"), {
                 src: iconUrl,

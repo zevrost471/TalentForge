@@ -1,5 +1,9 @@
 // main.js
 
+import { initThemeSelector } from './theme.js';
+
+window.addEventListener("DOMContentLoaded", initThemeSelector);
+
 document.addEventListener("DOMContentLoaded", () => {
     const tabs = document.querySelectorAll(".nav-tab");
 

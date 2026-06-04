@@ -3,21 +3,19 @@
 
 These should be done first because other features depend on them or they fix core issues.
 
-1. Export/Share Links (Compress Build Data into URL)
+1. Export/Share Links (Compress Build Data into URL) ✅
 
     - Core to sharing builds.
 
     - Dependency: Required before Import Links (Task 2).
 
-    - Add glyphs/rune slots to build data in build export feature
+    - Add glyphs/rune slots to build data in build export feature ✅
 
-    - Fix bug where if I click on Export Build on a build from a version with more glyph/rune slots only the slots that are available in the current version will be exported and consequently displayed. also if the exported build is from 1.15 (SoD) the phase is always set to 1 instead of the phase that the build is in ✅
+    - fix bug where if i click on Export Build on a build from a version with more glyph/rune slots only the slots that are available in the current version will be exported and consequently displayed. also if the exported build is from 1.15 (SoD) the phase is always set to 1 instead of the phase that the build is in ✅
 
-    - imported builds do not display level timeline
+    - fix: importing builds with runes/glyphs still show glyphs/runes from the previous build ✅
 
-    - importing builds with runes/glyphs still show glyphs/runes from the previous build 
-
-2. Import Links (Parse Shared Build URL)
+2. Import Links (Parse Shared Build URL) ✅
 
     - Depends on Task 1.
 
@@ -26,6 +24,7 @@ These should be done first because other features depend on them or they fix cor
     - Trees should never overflow their container at smaller screen widths.
     - Some class buttons are not fully visible at smaller screen widths. ✅
     - Glyph selection list is not fully visible at smaller screen widths.
+    - Rune slots don't adjust their width properly when i hide sidebar. ✅
 
 4. Fix ```renderLevelTimeline``` not appearing when a build is loaded ✅
 

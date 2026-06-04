@@ -20,6 +20,256 @@
     --fa6-font-sharp-duotone-thin: normal 100 1em/1 "Font Awesome 6 Sharp Duotone";
 }
 
+:root,
+[data-theme="original"] {
+    --tf-bg: #111827;
+    --tf-bg-soft: #1f2937;
+    --tf-bg-panel: #1f2937;
+    --tf-bg-panel-dark: #111827;
+    --tf-bg-control: #374151;
+    --tf-bg-control-hover: #4b5563;
+
+    --tf-border: #374151;
+    --tf-border-soft: #4b5563;
+
+    --tf-text: #f3f4f6;
+    --tf-text-muted: #9ca3af;
+    --tf-text-soft: #d1d5db;
+
+    --tf-accent: #facc15;
+    --tf-accent-hover: #fde047;
+    --tf-accent-text: #111827;
+
+    --tf-danger: #dc2626;
+    --tf-danger-hover: #b91c1c;
+    --tf-success: #16a34a;
+    --tf-success-hover: #15803d;
+    --tf-info: #2563eb;
+    --tf-info-hover: #1d4ed8;
+
+    --tf-tooltip-bg: #000;
+    --tf-tooltip-border: #4b5563;
+
+    --tf-arrow-locked: #5e5d5e;
+    --tf-arrow-unlocked: #cead05;
+}
+
+[data-theme="horde"] {
+    --tf-bg: #120606;
+    --tf-bg-soft: #1f0a0a;
+    --tf-bg-panel: #2a0d0d;
+    --tf-bg-panel-dark: #160707;
+    --tf-bg-control: #3a1515;
+    --tf-bg-control-hover: #552020;
+
+    --tf-border: #6b1d1d;
+    --tf-border-soft: #8b2f2f;
+
+    --tf-text: #f3e6d0;
+    --tf-text-muted: #b8947a;
+    --tf-text-soft: #d8c0a0;
+
+    --tf-accent: #facc15;
+    --tf-accent-hover: #fde047;
+    --tf-accent-text: #111827;
+}
+
+[data-theme="alliance"] {
+    --tf-bg: #07101f;
+    --tf-bg-soft: #0d1b33;
+    --tf-bg-panel: #10294a;
+    --tf-bg-panel-dark: #071426;
+    --tf-bg-control: #18395f;
+    --tf-bg-control-hover: #24517f;
+
+    --tf-border: #315d94;
+    --tf-border-soft: #4977b4;
+
+    --tf-text: #edf4ff;
+    --tf-text-muted: #a9bdd8;
+    --tf-text-soft: #c8d8ef;
+
+    --tf-accent: #facc15;
+    --tf-accent-hover: #fde047;
+    --tf-accent-text: #111827;
+}
+
+[data-theme="night"] {
+    --tf-bg: #050816;
+    --tf-bg-soft: #0f172a;
+    --tf-bg-panel: #111827;
+    --tf-bg-panel-dark: #020617;
+    --tf-bg-control: #1e293b;
+    --tf-bg-control-hover: #334155;
+
+    --tf-border: #334155;
+    --tf-border-soft: #475569;
+
+    --tf-text: #e5e7eb;
+    --tf-text-muted: #94a3b8;
+    --tf-text-soft: #cbd5e1;
+
+    --tf-accent: #facc15;
+    --tf-accent-hover: #fde047;
+    --tf-accent-text: #111827;
+}
+
+[data-theme="day"] {
+    --tf-bg: #d8c79f;
+    --tf-bg-soft: #eadbb7;
+    --tf-bg-panel: #f3e4bd;
+    --tf-bg-panel-dark: #d6bd86;
+    --tf-bg-control: #fff3cc;
+    --tf-bg-control-hover: #f8e5ae;
+
+    --tf-border: #8a6f35;
+    --tf-border-soft: #a88b4c;
+
+    --tf-text: #24180d;
+    --tf-text-muted: #6b5632;
+    --tf-text-soft: #3f2f19;
+
+    --tf-accent: #facc15;
+    --tf-accent-hover: #fde047;
+    --tf-accent-text: #111827;
+
+    --tf-tooltip-bg: #1a1208;
+}
+
+body.tf-page {
+    background: var(--tf-bg);
+    color: var(--tf-text);
+}
+
+.tf-bg {
+    background: var(--tf-bg);
+}
+
+.tf-border {
+    border-color: var(--tf-border);
+}
+
+.tf-border-soft {
+    border-color: var(--tf-border-soft);
+}
+
+.tf-panel {
+    background: var(--tf-bg-panel);
+    color: var(--tf-text);
+    border: 1px solid var(--tf-border);
+}
+
+.tf-panel-flat {
+    background: var(--tf-bg-panel);
+    color: var(--tf-text);
+}
+
+.tf-panel-dark {
+    background: var(--tf-bg-panel-dark);
+    color: var(--tf-text);
+    border: 1px solid var(--tf-border);
+}
+
+.tf-title,
+.tf-accent {
+    color: var(--tf-accent);
+}
+
+.tf-muted {
+    color: var(--tf-text-muted);
+}
+
+.tf-soft {
+    color: var(--tf-text-soft);
+}
+
+.tf-control {
+    background: var(--tf-bg-control);
+    color: var(--tf-text);
+    border: 1px solid var(--tf-border-soft);
+}
+
+.tf-control-flat {
+    background: var(--tf-bg-control);
+    color: var(--tf-text);
+}
+
+.tf-control-flat:hover {
+    background: var(--tf-bg-control-hover);
+}
+
+.tf-talent-points-bar {
+    background: var(--tf-bg-control);
+}
+
+.tf-button-primary {
+    background: var(--tf-accent);
+    color: var(--tf-accent-text);
+    border: 1px solid var(--tf-border);
+}
+
+.tf-button-primary:hover {
+    background: var(--tf-accent-hover);
+}
+
+.tf-danger-text {
+    color: var(--tf-danger);
+}
+
+.tf-button-danger {
+    background: var(--tf-danger);
+    color: white;
+}
+
+.tf-button-danger:hover {
+    background: var(--tf-danger-hover);
+}
+
+.tf-button-info {
+    background: var(--tf-info);
+    color: white;
+}
+
+.tf-button-info:hover {
+    background: var(--tf-info-hover);
+}
+
+.tf-button-success {
+    background: var(--tf-success);
+    color: white;
+}
+
+.tf-button-success:hover {
+    background: var(--tf-success-hover);
+}
+
+.tf-button-reset {
+    background: var(--tf-bg);
+}
+
+.tf-button-reset:hover {
+    background: var(--tf-bg-control-hover);
+}
+
+.tf-rank-available {
+    color: var(--tf-success);
+}
+
+.tf-rank-maxed {
+    color: var(--tf-accent);
+}
+
+.tf-talent-order {
+    background: var(--tf-bg);
+    border: 1px solid var(--tf-border-soft);
+}
+
+.tf-tooltip {
+    background: var(--tf-tooltip-bg);
+    border: 1px solid var(--tf-tooltip-border);
+    color: var(--tf-text);
+}
+
 /*
 body {
     font-family: "Font Awesome 6 Free", "Font Awesome 6 Pro", "Font Awesome 6 Duotone", "Font Awesome 6 Brands", "Font Awesome 6 Sharp", "Font Awesome 6 Sharp Duotone", serif;
@@ -81,23 +331,23 @@ body {
 
 .talent-icon:hover {
     /* transform: scale(1.1); */
-    box-shadow: 0 0 10px gold;
+    box-shadow: 0 0 10px var(--tf-accent);
     z-index: 2;
 }
 
 .talent-icon:focus {
-    outline: 2px solid gold;
+    outline: 2px solid var(--tf-accent);
     outline-offset: 2px;
 }
 
 .talent-icon.active {
-    border-color: gold;
-    box-shadow: 0 0 10px gold;
+    border-color: var(--tf-accent);
+    box-shadow: 0 0 10px var(--tf-accent);
 }
 
 .talent-icon.maxed {
-    border-color: #00ff00;
-    box-shadow: 0 0 10px #00ff00;
+    border-color: var(--tf-success);
+    box-shadow: 0 0 10px var(--tf-success);
 }
 
 .talent-icon.disabled {
@@ -139,42 +389,42 @@ body {
 .arrow-down.locked {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/down.png"); */
     width: 8px;
-    background-color: #5e5d5e;
+    background-color: var(--tf-arrow-locked);
     box-shadow: none;
 }
 
 .arrow-down.unlocked {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/down2.png"); */
     width: 8px;
-    background-color: #cead05;
+    background-color: var(--tf-arrow-unlocked);
     box-shadow: none;
 }
 
 .arrow-left.locked {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/left.png"); */
     height: 8px;
-    background-color: #5e5d5e;
+    background-color: var(--tf-arrow-locked);
     box-shadow: none;
 }
 
 .arrow-left.unlocked {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/left2.png"); */
     height: 8px;
-    background-color: #cead05;
+    background-color: var(--tf-arrow-unlocked);
     box-shadow: none;
 }
 
 .arrow-right.locked {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/right.png"); */
     height: 8px;
-    background-color: #5e5d5e;
+    background-color: var(--tf-arrow-locked);
     box-shadow: none;
 }
 
 .arrow-right.unlocked {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/right2.png"); */
     height: 8px;
-    background-color: #cead05;
+    background-color: var(--tf-arrow-unlocked);
     box-shadow: none;
 }
 
@@ -182,7 +432,7 @@ body {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/leftdown.png"); */
     width: 8px;
     height: 8px;
-    background-color: #5e5d5e;
+    background-color: var(--tf-arrow-locked);
     box-shadow: none;
 }
 
@@ -190,7 +440,7 @@ body {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/leftdown2.png"); */
     width: 8px;
     height: 8px;
-    background-color: #cead05;
+    background-color: var(--tf-arrow-unlocked);
     box-shadow: none;
 }
 
@@ -198,7 +448,7 @@ body {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/rightdown.png"); */
     width: 8px;
     height: 8px;
-    background-color: #5e5d5e;
+    background-color: var(--tf-arrow-locked);
     box-shadow: none;
 }
 
@@ -206,7 +456,7 @@ body {
     /* background-image: url("https://wow.zamimg.com/images/TalentCalc/arrows/rightdown2.png"); */
     width: 8px;
     height: 8px;
-    background-color: #cead05;
+    background-color: var(--tf-arrow-unlocked);
     box-shadow: none;
 }
 
@@ -353,7 +603,8 @@ border-bottom-right-radius: 4px;
     gap: 1rem;
     margin-top: 1.5rem;
     padding: 1rem;
-    background: #1f2937;
+    background: var(--tf-bg-panel);
+    color: var(--tf-text);
     /* border: 1px solid #374151; */
     border-radius: 0.5rem;
     width: 100%;
@@ -383,8 +634,8 @@ border-bottom-right-radius: 4px;
     max-width: 550px;
     width: 100%;
     height: 72px;
-    border: 1px solid #374151;
-    background: #374151;
+    border: 1px solid var(--tf-border);
+    background: var(--tf-bg-control);
     border-radius: 4px;
     display: flex;
     flex-direction: row;
@@ -396,8 +647,12 @@ border-bottom-right-radius: 4px;
     padding: 4px 8px;
 }
 
+#runes-wrapper .glyph-slot {
+    max-width: none;
+}
+
 .glyph-slot:hover {
-    background: #4b5563;
+    background: var(--tf-bg-control-hover);
     /* hover:bg-gray-600 */
 }
 
