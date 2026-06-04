@@ -21,7 +21,7 @@
 <body class="tf-page min-h-screen">
     <div class="container mx-auto px-4 py-8">
         <header id="main-header" class="text-center mb-8 transition-all duration-500 overflow-hidden">
-            <h1 class="text-4xl font-bold text-yellow-400 mb-2">
+            <h1 class="text-4xl font-bold tf-title mb-2">
                 <a href="../" class="hover:text-yellow-300 transition-colors">TalentForge</a>
             </h1>
             <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!
@@ -34,7 +34,7 @@
                 <ul id="top-nav" class="flex items-center justify-center gap-8 py-3 text-lg font-medium">
                     <li>
                         <a href="../overview/" data-tab="nav-overview"
-                            class="nav-tab text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 transition-colors">
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
                             Overview
                         </a>
                     </li>
@@ -52,7 +52,7 @@
                     </li>
                     <li>
                         <a href="../settings/" data-tab="nav-settings"
-                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            class="nav-tab text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 transition-colors">
                             Settings
                         </a>
                     </li>
@@ -60,8 +60,31 @@
             </div>
         </nav>
 
+        <section class="tf-panel-flat rounded-lg p-6">
+
+            <h2 class="text-2xl font-semibold tf-title mb-6">
+                Settings
+            </h2>
+
+            <div class="mb-6">
+                <label class="block mb-2 tf-soft">
+                    Theme
+                </label>
+
+                <select id="theme-select"
+                        class="appearance-none tf-control w-full rounded-md px-3 py-2">
+                    <option value="original">Original</option>
+                    <option value="night">Night</option>
+                    <!-- <option value="day">Day</option>  -->
+                    <option value="horde">Horde</option>
+                    <option value="alliance">Alliance</option>
+                </select>
+            </div>
+
+        </section>
+
     <script type="module" src="../main.js"></script>
-    <script type="module" src="../overview/overview.js"></script>
+    <script type="module" src="../settings/settings.js"></script>
 
 </body>
 
