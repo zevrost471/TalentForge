@@ -9,7 +9,9 @@ import {
   insertTalentOld,
   bulkInsertTalents,
   bulkInsertTalentsOld,
+  replaceTalentTreeOld,
 } from './talent-utils.js';
+// import { foreverTalentTrees } from './forever-talent-trees.js';
 
 /**
  * talent-patch-changes.js
@@ -4674,4 +4676,105 @@ talentsAttributedByVersion["2.4"].druid.Balance.push({
     ranks: 1,
     requiresTalents: "moonkin_form"
 });
+*/
+
+removeTalentsByIdOld("1.60.1", "druid", "Restoration", [
+  "improved_mark_of_the_wild",
+  "improved_enrage",
+  "insect_swarm"
+]);
+
+moveTalentOld("1.60.1", "druid", "Restoration", "natures_focus", 0, 1);
+moveTalentOld("1.60.1", "druid", "Restoration", "subtlety", 1, 1);
+moveTalentOld("1.60.1", "druid", "Restoration", "gift_of_nature", 2, 2);
+replaceTalentOld("1.60.1", "druid", "Restoration", "gift_of_nature", {
+  requiresTalents: null,
+});
+moveTalentOld("1.60.1", "druid", "Restoration", "improved_rejuvenation", 3, 2);
+
+replaceTalentOld("1.60.1", "druid", "Restoration", "swiftmend", {
+  row: 3,
+  col: 3,
+  requiresTalents: null,
+});
+
+replaceTalentOld("1.60.1", "druid", "Restoration", "improved_healing_touch", {
+  name: "Naturalist",
+  description: [
+    "Reduces the cast time of your Healing Touch spell by {value1} sec and increases all damage you deal by {value2}%.",
+    {
+      value1: [0.1, 0.2, 0.3, 0.4, 0.5],
+      value2: [1, 2, 3, 4, 5],
+    },
+  ],
+});
+
+replaceTalentOld("1.60.1", "druid", "Restoration", "improved_regrowth", {
+    requiresTalents: "improved_rejuvenation",
+});
+
+bulkInsertTalentsOld("1.60.1", "druid", "Restoration", [
+  {
+    id: "natural_shapeshifter",
+    name: "Natural Shapeshifter",
+    icon: "spell_nature_wispsplode",
+    row: 1,
+    col: 2,
+    ranks: 3,
+    requiresTalents: null,
+    description: [
+      "Reduces the mana cost of all shapeshifting by {value}%.",
+      {
+        value: [10, 20, 30],
+      },
+    ],
+  },
+  {
+    id: "gift_of_the_earthmother",
+    name: "Gift of the Earthmother",
+    icon: "spell_nature_spiritarmor",
+    row: 2,
+    col: 3,
+    ranks: 1,
+    requiresTalents: null,
+    description: [
+      "Reduces the global cooldown by 0.5 seconds on your Rejuvenation, Swiftmend, and Wild Growth spells.",
+    ],
+  },
+  {
+    id: "living_spirit",
+    name: "Living Spirit",
+    icon: "spell_nature_giftofthewaterspirit",
+    row: 4,
+    col: 1,
+    ranks: 3,
+    requiresTalents: null,
+    description: [
+      "Increases your total Spirit by {value}%.",
+      {
+        value: [5, 10, 15],
+      },
+    ],
+  },
+  {
+    id: "wild_growth",
+    name: "Wild Growth",
+    icon: "ability_druid_flourish",
+    row: 6,
+    col: 1,
+    ranks: 1,
+    requiresTalents: "living_spirit",
+    description: [
+      "Heals the target and their party for (23.1% of Spell Power) over 7 sec. Party members must be within 43.5 yards of target. The amount healed is applied quickly at first, and slows down as Wild Growth reaches its full duration.",
+    ],
+  },
+]);
+
+/*
+for (const [classKey, trees] of Object.entries(foreverTalentTrees)) {
+  for (const [treeName, talentSpecs] of Object.entries(trees)) {
+    if (classKey === "druid" && treeName === "Restoration") continue;
+    replaceTalentTreeOld("1.60.1", classKey, treeName, talentSpecs);
+  }
+}
 */

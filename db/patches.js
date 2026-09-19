@@ -40,6 +40,10 @@ export const patchOptions = Object.freeze({
         { value: "4.3.5", label: "Patch 4.3.5 (Cataclysm Classic)" }
         // ...
     ],
+    forever: [
+        { value: "1.60.1", label: "Patch 1.60.1 (Beta Build)" },
+        // { value: "1.60.2", label: "Patch 1.16.2: ?" }
+    ],
     turtlewow: [
         { value: "1.16.0t", label: "Patch 1.16.0: Mysteries of Azeroth" },
         { value: "1.16.1t", label: "Patch 1.16.1: Hateforge Quarry" },
