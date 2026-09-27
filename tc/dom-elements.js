@@ -35,5 +35,9 @@ export function getDomElements() {
         toggleBuildManagerButton: document.getElementById("toggle-build-manager"),
         buildManagerWrapper: document.getElementById("build-manager-wrapper"),
         buildManagerContent: document.getElementById("build-manager-content"),
+        talentSearchBox: document.getElementById("talent-search-box"),
+        talentSearchInput: document.getElementById("talent-search-input"),
+        talentSearchClear: document.getElementById("talent-search-clear"),
+        talentSearchCount: document.getElementById("talent-search-count"),
   };
 }
