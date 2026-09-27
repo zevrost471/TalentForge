@@ -11,7 +11,7 @@ import {
   bulkInsertTalentsOld,
   replaceTalentTreeOld,
 } from './talent-utils.js';
-// import { foreverTalentTrees } from './forever-talent-trees.js';
+// import { foreverTalents } from './db/forever-talents.js';
 
 /**
  * talent-patch-changes.js
@@ -4678,6 +4678,7 @@ talentsAttributedByVersion["2.4"].druid.Balance.push({
 });
 */
 
+/*
 removeTalentsByIdOld("1.60.1", "druid", "Restoration", [
   "improved_mark_of_the_wild",
   "improved_enrage",
@@ -4769,12 +4770,195 @@ bulkInsertTalentsOld("1.60.1", "druid", "Restoration", [
     ],
   },
 ]);
+*/
 
 /*
-for (const [classKey, trees] of Object.entries(foreverTalentTrees)) {
+for (const [classKey, trees] of Object.entries(foreverTalents)) {
   for (const [treeName, talentSpecs] of Object.entries(trees)) {
     if (classKey === "druid" && treeName === "Restoration") continue;
     replaceTalentTreeOld("1.60.1", classKey, treeName, talentSpecs);
   }
 }
 */
+
+// Overpower proc chance increased to 4/8/12/16/20% (was 2/4/6/8/10%). Now specifies main-hand attacks.
+replaceTalentOld("1.60.1.70009", "warrior", "Arms", "bloodthrill", {
+  description: [
+    "Your Main Hand melee attacks against enemies afflicted by your Rend have a {value}% chance to allow the use of your Overpower ability on the target. Lasts 6 sec.",
+    {
+      value: [4, 8, 12, 16, 20],
+    },
+  ],
+});
+
+// Now reduces Slam's cooldown by 1.5/3 seconds. Clarified that Slam does not delay melee swings.
+replaceTalentOld("1.60.1.70009", "warrior", "Arms", "improved_slam", {
+  description: [
+    "Reduces the global cooldown and cast time of your Slam ability by {value1} sec. In addition, Slam no longer interrupts or delays your melee swing and Slam's cooldown is reduced by {value2} sec.",
+    {
+      value1: [0.25, 0.50],
+      value2: [1.5, 3.0],
+    },
+  ],
+});
+
+// Improved Holy Strike Removed.
+removeTalentsByIdOld("1.60.1.70009", "paladin", "Holy", [
+  "improved_holy_strike",
+]);
+
+// Now also increases Holy Strike's critical strike chance by 3/6/9/12/15%.
+replaceTalentOld("1.60.1.70009", "paladin", "Holy", "holy_power", {
+  description: [
+    "Increases the critical strike chance of your Holy Shock and Holy Strike spells by {value1}%, and all other spells by {value2}%.",
+    {
+      value1: [3, 6, 9, 12, 15],
+      value2: [1, 2, 3, 4, 5],
+    },
+  ],
+});
+
+// Tooltip reworded.
+replaceTalentOld("1.60.1.70009", "paladin", "Holy", "lights_vigil", {
+  description: [
+    "Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost, or allied targets to heal their party for 326 to 344. The Paladin may only have one Light's Vigil active per party.",
+  ],
+});
+
+// Holy Strike damage bonus increased to 20% (was 10%).
+replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "sacred_arbiter", {
+  description: [
+    "Increases the damage of your Holy Strike ability by 20% and causes it to refresh all Judgement effects on the target.",
+  ],
+});
+
+// Crusade Removed.
+removeTalentsByIdOld("1.60.1.70009", "paladin", "Retribution", [
+  "crusade",
+]);
+
+// Damage bonus reduced to 2/4/6% (was 3/6/9%).
+replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "two_handed_weapon_specialization", {
+  description: [
+    "Increases the damage you deal with two-handed melee weapons by {value}%.",
+    {
+      value: [2, 4, 6],
+    },
+  ],
+});
+
+// Maximum stacks reduced to 3 (was 5). Tooltip now excludes periodic critical strikes.
+replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "vengeance", {
+  description: [
+    "Increases your Physical and Holy damage dealt by 1% for 30 sec after landing a non-periodic critical strike. Stacks up to 3 times.",
+    {
+      value: [1, 2, 3],
+    },
+  ],
+});
+
+// Now reduces the Mana cost of Seals by 20%.
+replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "twist_of_light", {
+  description: [
+    "Reduces the Mana cost of your Seal spells by 20%, and when you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo of that Seal. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
+  ],
+});
+
+// Now grants 30% movement speed for 3 seconds.
+replaceTalentOld("1.60.1.70009", "hunter", "Survival", "strider_kick", {
+  description: [
+    "A powerful kick that deals 100% melee weapon damage and increases movement speed by 30% for 3 sec.",
+  ],
+});
+
+// Fixed a tooltip typo.
+replaceTalentOld("1.60.1.70009", "priest", "Shadow", "devouring_contagion", {
+  description: [
+    "Reduces the mana cost of your Devouring Plague by {value1}%.\n\nTargets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within {value2} yards for the remaining duration.",
+    {
+      value1: [25, 50],
+      value2: [5, 10],
+    },
+  ],
+});
+
+// Elemental Fury moved to row 6 and now requires Call of Thunder.
+replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "elemental_fury", {
+  row: 5,
+  requiresTalents: "call_of_thunder",
+});
+
+// Call of Thunder now requires all three ranks of Elemental Alacrity.
+replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "call_of_thunder", {
+  requiresTalents: "elemental_alacrity",
+});
+
+// Elemental Alacrity moved to row 3 and no longer requires Call of Thunder.
+replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "elemental_alacrity", {
+  row: 2,
+  requiresTalents: null,
+});
+
+// Damage increased to 150-192.
+replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "lava_burst", {
+  description: [
+    "You hurl molten lava at the target, dealing 150 to 192 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
+  ],
+});
+
+// Tooltip no longer mentions increased spell casting speed.
+replaceTalentOld("1.60.1.70009", "shaman", "Enhancement", "rage_of_the_farseer", {
+  description: [
+    "Increases your melee attack speed by 30% for 25 sec.",
+  ],
+});
+
+// Bonus Fire Blast critical strike chance now lasts 30 seconds.
+replaceTalentOld("1.60.1.70009", "mage", "Fire", "wake_of_fire", {
+  description: [
+    "Reduces the cooldown of your Fire Blast spell by {value1} sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within 30 sec by {value2}%.",
+    {
+      value1: [1, 2],
+      value2: [25, 50],
+    },
+  ],
+});
+
+// Hot Streak duration increased to 20 seconds.
+replaceTalentOld("1.60.1.70009", "mage", "Fire", "hot_streak", {
+  description: [
+    "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 20 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
+  ],
+});
+
+// Update Ferocity to use Primal Bite's new name.
+replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "ferocity", {
+  description: [
+    "Reduces the cost of your Maul, Primal Bite, Swipe, Claw, and Rake abilities by {value} Rage or Energy.",
+    {
+      value: [1, 2, 3, 4, 5],
+    },
+  ],
+});
+
+// Mangle renamed to Primal Bite.
+replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "mangle", {
+  name: "Primal Bite",
+  icon: "ability_racial_cannibalize",
+  description: [
+    "Bite the target for 100% normal damage plus 26.",
+  ],
+});
+
+// Primal Fury renamed to Blood Frenzy.
+replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "primal_fury", {
+  name: "Blood Frenzy",
+  icon: "ability_ghoulfrenzy",
+});
+
+// Update Berserk to use Primal Bite's new name.
+replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "berserk", {
+  description: [
+    "Causes your Primal Bite ability to strike up to 3 targets, removes its cooldown, and increases the critical strike chance of your Combo Point-generating abilities by 100%. Clears and grants immunity to Fear effects for the duration. Lasts 15 sec.",
+  ],
+});

@@ -251,7 +251,8 @@ const sharedVersions = [
     "1.16.0t",
     "1.16.1t",
     "1.17.2t",
-    "1.60.1"
+    "1.60.1.69876",
+    "1.60.1.70009"
 ];
 
 const talentTreeData = {};

@@ -41,7 +41,8 @@ export const patchOptions = Object.freeze({
         // ...
     ],
     forever: [
-        { value: "1.60.1", label: "Patch 1.60.1 (Beta Build)" },
+        { value: "1.60.1.69876", label: "Beta 1.60.1.69876" },
+        { value: "1.60.1.70009", label: "Beta 1.60.1.70009" },
         // { value: "1.60.2", label: "Patch 1.16.2: ?" }
     ],
     turtlewow: [
