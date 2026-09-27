@@ -45,7 +45,11 @@ const {
   talentWrapper,
   toggleBuildManagerButton,
   buildManagerWrapper,
-  buildManagerContent
+  buildManagerContent,
+  talentSearchBox,
+  talentSearchInput,
+  talentSearchClear,
+  talentSearchCount
 } = getDomElements();
 
 // Event listeners
@@ -140,6 +144,33 @@ toggleBuildManagerButton.addEventListener("click", () => {
         toggleBuildManagerButton.setAttribute("aria-expanded", "true");
         icon.style.transform = "rotate(0deg)"; // point down
         toggleBuildManagerButton.title = "Collapse Build Manager";
+    }
+});
+
+// Talent search event listeners
+let searchDebounceTimer = null;
+talentSearchInput?.addEventListener("input", () => {
+    clearTimeout(searchDebounceTimer);
+    searchDebounceTimer = setTimeout(() => {
+        const query = talentSearchInput.value;
+        const count = applyTalentSearch(query);
+        talentSearchClear?.classList.toggle("hidden", !query.trim());
+        if (talentSearchCount) {
+            if (query.trim()) {
+                talentSearchCount.textContent = `${count} talent${count !== 1 ? "s" : ""} found`;
+                talentSearchCount.classList.remove("hidden");
+            } else {
+                talentSearchCount.classList.add("hidden");
+            }
+        }
+    }, 150);
+});
+
+talentSearchClear?.addEventListener("click", () => {
+    if (talentSearchInput) {
+        talentSearchInput.value = "";
+        talentSearchInput.dispatchEvent(new Event("input"));
+        talentSearchInput.focus();
     }
 });
 
@@ -1307,6 +1338,7 @@ function renderTalentTrees() {
     // Ensure both version and class are selected
     if (!version || !classKey) {
         updatePlaceholder();
+        talentSearchBox?.classList.add("hidden");
         return;
     }
     updatePlaceholder();
@@ -1682,12 +1714,21 @@ function renderTalentTrees() {
     */
 
     // Ensure the layout is painted before rendering arrows
-
     requestAnimationFrame(() => {
         trees.forEach(treeName => {
             renderDependencyArrows(treeName, currentState.class, currentState.version);
         });
+        // Re-apply active search after re-render
+        if (talentSearchInput?.value.trim()) {
+            const count = applyTalentSearch(talentSearchInput.value);
+            if (talentSearchCount) {
+                talentSearchCount.textContent = `${count} talent${count !== 1 ? "s" : ""} found`;
+            }
+        }
     });
+
+    // Show search box once trees are rendered
+    talentSearchBox?.classList.remove("hidden");
 }
 
 function initPhaseSelect() {
@@ -1962,6 +2003,81 @@ function getTotalPointsInTree(classKey, treeName) {
 function getTalentById(classKey, treeName, id) {
     const talents = getTalents(currentState.version, classKey, treeName);
     return talents.find((t) => t.id === id);
+}
+
+function getSearchableText(talent, classKey, treeName) {
+    const parts = [talent.name];
+
+    if (typeof talent.description === "string") {
+        parts.push(talent.description);
+    } else if (Array.isArray(talent.description)) {
+        if (
+            talent.description.length === 2 &&
+            typeof talent.description[0] === "string" &&
+            typeof talent.description[1] === "object" &&
+            !Array.isArray(talent.description[1])
+        ) {
+            const [template, values] = talent.description;
+            const resolved = template.replace(/\{(\w+)\}/g, (_, key) => {
+                const val = values?.[key];
+                if (Array.isArray(val)) return String(val[0]);
+                if (typeof val === "object" && val !== null && val.base !== undefined) return String(val.base);
+                return val != null ? String(val) : "";
+            });
+            parts.push(resolved);
+        } else {
+            talent.description.forEach(d => {
+                if (typeof d === "string") parts.push(d);
+            });
+        }
+    }
+
+    if (talent.requiresTalents) {
+        const req = getTalentById(classKey, treeName, talent.requiresTalents);
+        if (req) parts.push(req.name);
+    }
+
+    const reqText = getRequirementText(talent);
+    if (reqText) parts.push(reqText);
+
+    return parts.join(" ").toLowerCase();
+}
+
+function applyTalentSearch(query) {
+    const trimmed = query.trim().toLowerCase();
+    const allIcons = document.querySelectorAll(".talent-icon[data-id]");
+
+    if (!trimmed) {
+        allIcons.forEach(icon => icon.classList.remove("talent-search-highlight", "talent-search-dim"));
+        return 0;
+    }
+
+    const classKey = currentState.class;
+    const version = currentState.version;
+    let matchCount = 0;
+
+    allIcons.forEach(icon => {
+        const treeName = icon.dataset.tree;
+        const talentId = icon.dataset.id;
+        if (!treeName || !talentId || !classKey || !version) return;
+
+        const talents = getTalents(version, classKey, treeName);
+        const talent = talents.find(t => t.id === talentId);
+        if (!talent) return;
+
+        const matches = getSearchableText(talent, classKey, treeName).includes(trimmed);
+
+        if (matches) {
+            icon.classList.add("talent-search-highlight");
+            icon.classList.remove("talent-search-dim");
+            matchCount++;
+        } else {
+            icon.classList.remove("talent-search-highlight");
+            icon.classList.add("talent-search-dim");
+        }
+    });
+
+    return matchCount;
 }
 
 function updatePointsDisplay() {
