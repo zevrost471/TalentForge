@@ -327,6 +327,18 @@ body {
     border-radius: 6px;
     cursor: pointer;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
+    /* Prevent browser callout/magnifier on long press (iOS image save menu etc.) */
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.talent-icon img {
+    -webkit-touch-callout: none;
+    user-select: none;
+    -webkit-user-select: none;
+    pointer-events: none;
+    -webkit-user-drag: none;
 }
 
 .talent-icon:hover {
@@ -373,6 +385,13 @@ body {
 /* Tooltips are JS-controlled via setupTooltips() — disable the CSS-hover trigger on all devices */
 .group:hover .group-hover\:block {
     display: none !important;
+}
+
+/* On touch/coarse-pointer devices, never show inline floating tooltips regardless of state */
+@media (pointer: coarse) {
+    .group-hover\:block {
+        display: none !important;
+    }
 }
 
 /* Mobile bottom talent panel */
