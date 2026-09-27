@@ -49,7 +49,14 @@ const {
   talentSearchBox,
   talentSearchInput,
   talentSearchClear,
-  talentSearchCount
+  talentSearchCount,
+  mobileTalentPanel,
+  mtpIcon,
+  mtpName,
+  mtpTooltip,
+  mtpSlider,
+  mtpRankLabel,
+  mtpClose
 } = getDomElements();
 
 // Event listeners
@@ -174,45 +181,40 @@ talentSearchClear?.addEventListener("click", () => {
     }
 });
 
-// Mobile touch tooltip: tap to show, tap elsewhere (or same talent) to dismiss.
-// Runs only when the device is touch-only (hover: none media matches).
-(function setupTouchTooltips() {
-    if (window.matchMedia('(hover: hover)').matches) return; // skip on true-pointer devices
-
+// Tooltip controller — desktop only (pointerover/pointerout, mouse/pen).
+// Mobile touch is handled by the mobile panel system (setupMobilePanel).
+// CSS group-hover is disabled unconditionally in styles.css.
+(function setupTooltips() {
     let openTooltip = null;
 
-    function closeOpenTooltip() {
-        if (openTooltip) {
-            openTooltip.style.display = '';
-            openTooltip = null;
-        }
+    function getTooltip(group) {
+        return group ? group.querySelector('.group-hover\\:block') : null;
     }
 
-    document.addEventListener('touchstart', (e) => {
-        // If the DOM was re-rendered, our reference is stale — reset it
-        if (openTooltip && !document.contains(openTooltip)) {
-            openTooltip = null;
-        }
+    function showTooltip(tooltip) {
+        if (!tooltip) return;
+        if (openTooltip && openTooltip !== tooltip) openTooltip.style.removeProperty('display');
+        tooltip.style.setProperty('display', 'block', 'important');
+        openTooltip = tooltip;
+    }
 
+    function hideTooltip() {
+        if (!openTooltip) return;
+        if (document.contains(openTooltip)) openTooltip.style.removeProperty('display');
+        openTooltip = null;
+    }
+
+    document.addEventListener('pointerover', (e) => {
+        if (e.pointerType === 'touch') return;
         const group = e.target.closest('.group[data-id]');
-        if (group) {
-            const tooltip = group.querySelector('.group-hover\\:block');
-            if (!tooltip) return;
+        if (group && !group.contains(e.relatedTarget)) showTooltip(getTooltip(group));
+    });
 
-            if (tooltip === openTooltip) {
-                // Second tap on the same talent: close
-                closeOpenTooltip();
-            } else {
-                // Tap on a different talent: close old, open new
-                closeOpenTooltip();
-                tooltip.style.display = 'block';
-                openTooltip = tooltip;
-            }
-        } else {
-            // Tapped outside any talent group: dismiss
-            closeOpenTooltip();
-        }
-    }, { passive: true });
+    document.addEventListener('pointerout', (e) => {
+        if (e.pointerType === 'touch') return;
+        const group = e.target.closest('.group[data-id]');
+        if (group && !group.contains(e.relatedTarget)) hideTooltip();
+    });
 })();
 
 window.addEventListener('DOMContentLoaded', function () {
@@ -888,6 +890,7 @@ function getRequirementText(talent) {
 let previousExpansion = null;
 
 function handleVersionChange(loadingBuild = false) {
+    closeMobilePanel();
     const version = versionSelect.value;
 
     if (!version) {
@@ -1068,6 +1071,7 @@ function handleCustomPointsChange() {
 let chosenSpec = null;
 
 function handleClassSelect(e) {
+    closeMobilePanel();
     const newClassKey = e.currentTarget.dataset.class;
 
     if (newClassKey) {
@@ -1770,6 +1774,11 @@ function renderTalentTrees() {
 
     // Show search box once trees are rendered
     talentSearchBox?.classList.remove("hidden");
+
+    // Keep the mobile panel in sync after any re-render
+    if (mobilePanelTalent) {
+        updateMobilePanel(mobilePanelTalent.classKey, mobilePanelTalent.treeName, mobilePanelTalent.talentId);
+    }
 }
 
 function initPhaseSelect() {
@@ -2121,6 +2130,218 @@ function applyTalentSearch(query) {
     return matchCount;
 }
 
+// ─── Mobile panel state ───────────────────────────────────────────────────────
+
+let mobilePanelTalent = null;   // { classKey, treeName, talentId }
+let mobileLongPressFired = false;
+let mobileLongPressTimer = null;
+let mobileBlockNextClick = false;
+
+// Returns true if one rank of the talent can safely be removed.
+// Mirrors the validation logic in handleTalentRightClick.
+function canRemoveTalentRank(classKey, treeName, talentId) {
+    const currentPoints = currentState.talents[classKey]?.[treeName]?.[talentId] || 0;
+    if (currentPoints <= 0) return false;
+
+    const allTalents = getTalents(currentState.version, classKey, treeName);
+    const simulated = {};
+    for (const t of allTalents) {
+        simulated[t.id] = currentState.talents[classKey]?.[treeName]?.[t.id] || 0;
+    }
+    simulated[talentId] = currentPoints - 1;
+
+    const tierCounts = Array(12).fill(0);
+    for (const t of allTalents) {
+        if (simulated[t.id] > 0) tierCounts[t.row] += simulated[t.id];
+    }
+    const tierSums = tierCounts.map((_, i) => tierCounts.slice(0, i).reduce((s, v) => s + v, 0));
+
+    for (const t of allTalents) {
+        if (simulated[t.id] > 0 && tierSums[t.row] < t.row * 5) return false;
+    }
+    if (allTalents.some(t => t.requiresTalents === talentId && simulated[t.id] > 0)) return false;
+
+    return true;
+}
+
+// Sets a talent to targetRank, adding or removing ranks one step at a time
+// while respecting all validation rules. Stops at the closest valid rank.
+function setTalentRankMobile(classKey, treeName, talentId, targetRank) {
+    const talents = getTalents(currentState.version, classKey, treeName);
+    const talent = talents.find(t => t.id === talentId);
+    if (!talent) return;
+
+    if (!currentState.talents[classKey]) currentState.talents[classKey] = {};
+    if (!currentState.talents[classKey][treeName]) currentState.talents[classKey][treeName] = {};
+
+    const currentRank = currentState.talents[classKey][treeName][talentId] || 0;
+    let changed = false;
+
+    if (targetRank > currentRank) {
+        for (let r = currentRank; r < targetRank; r++) {
+            if (currentState.pointsSpent >= currentState.pointsTotal) break;
+            if (!canLearnTalent(talent, classKey, treeName)) break;
+            currentState.talents[classKey][treeName][talentId] = r + 1;
+            currentState.pointsSpent++;
+            currentState.talentOrder.push({
+                id: talent.id, tree: treeName, classKey,
+                icon: talent.icon, level: getNextTalentLevel()
+            });
+            changed = true;
+        }
+    } else if (targetRank < currentRank) {
+        for (let r = currentRank; r > targetRank; r--) {
+            if (!canRemoveTalentRank(classKey, treeName, talentId)) break;
+            const newRank = r - 1;
+            if (newRank === 0) {
+                delete currentState.talents[classKey][treeName][talentId];
+            } else {
+                currentState.talents[classKey][treeName][talentId] = newRank;
+            }
+            currentState.pointsSpent = Math.max(0, currentState.pointsSpent - 1);
+            for (let i = currentState.talentOrder.length - 1; i >= 0; i--) {
+                const entry = currentState.talentOrder[i];
+                if (entry.id === talentId && entry.tree === treeName && entry.classKey === classKey) {
+                    currentState.talentOrder.splice(i, 1);
+                    break;
+                }
+            }
+            changed = true;
+        }
+    }
+
+    if (changed) {
+        recalculateTalentOrder();
+        updatePointsDisplay();
+        renderTalentTrees();
+        updateURLHash();
+    }
+    // Sync slider to actually-achieved rank (may differ from targetRank if blocked)
+    if (mobilePanelTalent) updateMobilePanel(classKey, treeName, talentId);
+}
+
+function openMobilePanel(classKey, treeName, talentId) {
+    const talents = getTalents(currentState.version, classKey, treeName);
+    const talent = talents.find(t => t.id === talentId);
+    if (!talent) return;
+
+    mobilePanelTalent = { classKey, treeName, talentId };
+
+    const iconUrl = iconOverrideById?.[talentId] ||
+        `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`;
+    mtpIcon.src = iconUrl;
+    mtpIcon.alt = talent.name;
+    mtpName.textContent = talent.name;
+
+    const currentRank = currentState.talents[classKey]?.[treeName]?.[talentId] || 0;
+    mtpTooltip.innerHTML = getTalentTooltip(talent, currentRank, classKey, treeName, true);
+
+    mtpSlider.min = 0;
+    mtpSlider.max = talent.ranks;
+    mtpSlider.value = currentRank;
+    mtpRankLabel.textContent = `${currentRank} / ${talent.ranks}`;
+
+    mobileTalentPanel.classList.remove('hidden');
+}
+
+function updateMobilePanel(classKey, treeName, talentId) {
+    if (!mobilePanelTalent) return;
+    const talents = getTalents(currentState.version, classKey, treeName);
+    const talent = talents.find(t => t.id === talentId);
+    if (!talent) return;
+
+    const currentRank = currentState.talents[classKey]?.[treeName]?.[talentId] || 0;
+    mtpSlider.max = talent.ranks;
+    mtpSlider.value = currentRank;
+    mtpRankLabel.textContent = `${currentRank} / ${talent.ranks}`;
+    mtpTooltip.innerHTML = getTalentTooltip(talent, currentRank, classKey, treeName, true);
+}
+
+function closeMobilePanel() {
+    mobilePanelTalent = null;
+    mobileTalentPanel.classList.add('hidden');
+}
+
+// ─── Mobile touch event listeners ────────────────────────────────────────────
+
+document.addEventListener('touchstart', (e) => {
+    const group = e.target.closest('.group[data-id]');
+    if (group) {
+        const treeName = group.dataset.tree;
+        const talentId = group.dataset.id;
+        const classKey = currentState.class;
+        if (!classKey || !treeName || !talentId) return;
+
+        mobileLongPressTimer = setTimeout(() => {
+            mobileLongPressFired = true;
+            mobileBlockNextClick = true;
+            const talents = getTalents(currentState.version, classKey, treeName);
+            const talent = talents.find(t => t.id === talentId);
+            if (!talent) return;
+            const currentRank = currentState.talents[classKey]?.[treeName]?.[talentId] || 0;
+            const isMaxed = currentRank >= talent.ranks;
+            setTalentRankMobile(classKey, treeName, talentId, isMaxed ? 0 : talent.ranks);
+            openMobilePanel(classKey, treeName, talentId);
+        }, 400);
+    } else {
+        // Tapped outside any talent — close panel
+        clearTimeout(mobileLongPressTimer);
+        closeMobilePanel();
+    }
+}, { passive: true });
+
+document.addEventListener('touchmove', () => {
+    clearTimeout(mobileLongPressTimer);
+}, { passive: true });
+
+document.addEventListener('touchend', (e) => {
+    clearTimeout(mobileLongPressTimer);
+
+    if (mobileLongPressFired) {
+        mobileLongPressFired = false;
+        return;
+    }
+
+    const group = e.target.closest('.group[data-id]');
+    if (!group) return;
+
+    const treeName = group.dataset.tree;
+    const talentId = group.dataset.id;
+    const classKey = currentState.class;
+    if (!classKey || !treeName || !talentId) return;
+
+    const isAlreadyOpen = mobilePanelTalent &&
+        mobilePanelTalent.classKey === classKey &&
+        mobilePanelTalent.treeName === treeName &&
+        mobilePanelTalent.talentId === talentId;
+
+    if (isAlreadyOpen) {
+        // Second tap — let the click through to add a rank (mobileBlockNextClick stays false)
+    } else {
+        // First tap — open panel, block the click
+        mobileBlockNextClick = true;
+        openMobilePanel(classKey, treeName, talentId);
+    }
+}, { passive: true });
+
+// Slider: update label in real-time while dragging, apply rank on release
+mtpSlider.addEventListener('input', () => {
+    if (!mobilePanelTalent) return;
+    const talents = getTalents(currentState.version, mobilePanelTalent.classKey, mobilePanelTalent.treeName);
+    const talent = talents.find(t => t.id === mobilePanelTalent.talentId);
+    if (talent) mtpRankLabel.textContent = `${mtpSlider.value} / ${talent.ranks}`;
+});
+
+mtpSlider.addEventListener('change', () => {
+    if (!mobilePanelTalent) return;
+    const { classKey, treeName, talentId } = mobilePanelTalent;
+    setTalentRankMobile(classKey, treeName, talentId, parseInt(mtpSlider.value, 10));
+});
+
+mtpClose.addEventListener('click', closeMobilePanel);
+
+// ─── End mobile panel ─────────────────────────────────────────────────────────
+
 function updatePointsDisplay() {
     pointsSpentEl.textContent = currentState.pointsSpent;
     pointsTotalEl.textContent = currentState.pointsTotal;
@@ -2451,6 +2672,8 @@ function saveBuildsToStorage() {
 }
 
 function handleTalentClick(e) {
+    if (mobileBlockNextClick) { mobileBlockNextClick = false; return; }
+
     const icon = e.currentTarget;
     const tree = icon.dataset.tree;
     const id = icon.dataset.id;
