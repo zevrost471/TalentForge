@@ -370,6 +370,14 @@ body {
     transition: opacity 0.15s ease, filter 0.15s ease;
 }
 
+/* On touch-only devices the browser's sticky :hover state makes tooltips stick.
+   Disable the CSS-hover mechanism here; JS handles show/hide instead. */
+@media (hover: none) {
+    .group:hover .group-hover\:block {
+        display: none !important;
+    }
+}
+
 .talent-points {
     position: absolute;
     bottom: -5px;
