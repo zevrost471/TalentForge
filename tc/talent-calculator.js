@@ -2340,6 +2340,16 @@ mtpSlider.addEventListener('change', () => {
     setTalentRankMobile(classKey, treeName, talentId, parseInt(mtpSlider.value, 10));
 });
 
+// Suppress Android long-press context menu on talent icons
+document.addEventListener('contextmenu', (e) => {
+    if (e.target.closest('.group[data-id]')) e.preventDefault();
+});
+
+// Prevent dragging talent images on all browsers/devices
+document.addEventListener('dragstart', (e) => {
+    if (e.target.closest('.talent-icon')) e.preventDefault();
+});
+
 // ─── End mobile panel ─────────────────────────────────────────────────────────
 
 function updatePointsDisplay() {
