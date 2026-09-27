@@ -55,8 +55,7 @@ const {
   mtpName,
   mtpTooltip,
   mtpSlider,
-  mtpRankLabel,
-  mtpClose
+  mtpRankLabel
 } = getDomElements();
 
 // Event listeners
@@ -2283,8 +2282,11 @@ document.addEventListener('touchstart', (e) => {
             setTalentRankMobile(classKey, treeName, talentId, isMaxed ? 0 : talent.ranks);
             openMobilePanel(classKey, treeName, talentId);
         }, 400);
+    } else if (mobileTalentPanel && mobileTalentPanel.contains(e.target)) {
+        // Touch inside the panel (slider, scroll, etc.) — keep it open
+        clearTimeout(mobileLongPressTimer);
     } else {
-        // Tapped outside any talent — close panel
+        // Tapped outside any talent and outside the panel — close
         clearTimeout(mobileLongPressTimer);
         closeMobilePanel();
     }
@@ -2337,8 +2339,6 @@ mtpSlider.addEventListener('change', () => {
     const { classKey, treeName, talentId } = mobilePanelTalent;
     setTalentRankMobile(classKey, treeName, talentId, parseInt(mtpSlider.value, 10));
 });
-
-mtpClose.addEventListener('click', closeMobilePanel);
 
 // ─── End mobile panel ─────────────────────────────────────────────────────────
 
