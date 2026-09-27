@@ -105,6 +105,41 @@ export function bulkInsertTalentsOld(version, classKey, treeName, talentList) {
     );
 }
 
+export function replaceTalentTreeOld(version, classKey, treeName, talentSpecs) {
+    const tree = talentsAttributedByVersion[version]?.[classKey]?.[treeName];
+    if (!tree) return;
+
+    const existingByName = new Map(tree.map(talent => [talent.name.toLowerCase(), talent]));
+    const existingByPosition = new Map(tree.map(talent => [`${talent.row}:${talent.col}`, talent]));
+
+    const replacedTree = talentSpecs.map(
+        ([id, name, icon, row, col, ranks, requiresTalents]) => ({
+            ...(existingByName.get(name.toLowerCase()) || existingByPosition.get(`${row}:${col}`) || {}),
+            id: existingByName.get(name.toLowerCase())?.id || id,
+            name,
+            icon,
+            row,
+            col,
+            ranks,
+            requiresTalents: requiresTalents || null,
+            description: existingByName.get(name.toLowerCase())?.description
+                || existingByPosition.get(`${row}:${col}`)?.description
+                || [name],
+        })
+    );
+
+    for (const talent of replacedTree) {
+        if (!talent.requiresTalents) continue;
+        const requiredTalent = replacedTree.find(candidate =>
+            candidate.id === talent.requiresTalents
+            || candidate.name.toLowerCase().replace(/[^a-z0-9]+/g, '_') === talent.requiresTalents
+        );
+        talent.requiresTalents = requiredTalent?.id || null;
+    }
+
+    talentsAttributedByVersion[version][classKey][treeName] = replacedTree;
+}
+
 function getVersionsUpTo(versionParam) {
     const targetParts = versionParam.split('.');        // e.g. ["1","10"]
     const major = targetParts[0];                        // "1"

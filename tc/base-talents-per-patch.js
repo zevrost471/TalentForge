@@ -1,6 +1,7 @@
 // base-talents-per-patch.js
 
 import { baseTalents } from '../db/base-talents.js';
+import { foreverTalents } from "../db/forever-talents.js";
 
 const versionGroups = {
     vanilla: [
@@ -12,7 +13,17 @@ const versionGroups = {
     tbc: ["1.0.0e", "2.4"],
     wotlk: ["3.2.0", "3.3.5"],
     cataclysm: ["4.3.5"],
+    forever: ["1.60.1.69876", "1.60.1.70009"],
     custom: ["custom1"]
+};
+
+const talentSources = {
+    vanilla: baseTalents.vanilla,
+    forever: foreverTalents,
+    tbc: baseTalents.tbc,
+    wotlk: baseTalents.wotlk,
+    cataclysm: baseTalents.cataclysm,
+    custom: baseTalents.custom
 };
 
 /*
@@ -38,7 +49,8 @@ export const talentsAttributedByVersion = {
     "3.2.0": cloneDeep(baseTalents.wotlk),
     "3.3.5": cloneDeep(baseTalents.wotlk),
     "4.3.5": cloneDeep(baseTalents.cataclysm),
-    "custom1": cloneDeep(baseTalents.custom)
+    "custom1": cloneDeep(baseTalents.custom),
+    "1.60.1": cloneDeep(baseTalents.vanilla)
 };
 */
 
@@ -49,7 +61,7 @@ function cloneDeep(obj) {
 export const talentsAttributedByVersion = Object.entries(versionGroups).reduce(
     (acc, [expansion, versions]) => {
         for (const version of versions) {
-            acc[version] = cloneDeep(baseTalents[expansion]);
+            acc[version] = cloneDeep(talentSources[expansion]);
         }
         return acc;
     },
