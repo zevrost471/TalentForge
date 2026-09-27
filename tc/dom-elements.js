@@ -39,5 +39,12 @@ export function getDomElements() {
         talentSearchInput: document.getElementById("talent-search-input"),
         talentSearchClear: document.getElementById("talent-search-clear"),
         talentSearchCount: document.getElementById("talent-search-count"),
+        mobileTalentPanel: document.getElementById("mobile-talent-panel"),
+        mtpIcon: document.getElementById("mtp-icon"),
+        mtpName: document.getElementById("mtp-name"),
+        mtpTooltip: document.getElementById("mtp-tooltip"),
+        mtpSlider: document.getElementById("mtp-slider"),
+        mtpRankLabel: document.getElementById("mtp-rank-label"),
+        mtpClose: document.getElementById("mtp-close"),
   };
 }

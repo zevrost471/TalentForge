@@ -370,12 +370,46 @@ body {
     transition: opacity 0.15s ease, filter 0.15s ease;
 }
 
-/* On touch-only devices the browser's sticky :hover state makes tooltips stick.
-   Disable the CSS-hover mechanism here; JS handles show/hide instead. */
-@media (hover: none) {
-    .group:hover .group-hover\:block {
-        display: none !important;
-    }
+/* Tooltips are JS-controlled via setupTooltips() — disable the CSS-hover trigger on all devices */
+.group:hover .group-hover\:block {
+    display: none !important;
+}
+
+/* Mobile bottom talent panel */
+#mobile-talent-panel {
+    background-color: var(--tf-bg-panel-dark);
+    border-top-color: var(--tf-border);
+}
+
+.mtp-slider-input {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: var(--tf-bg-control);
+    border-radius: 3px;
+    outline: none;
+    cursor: pointer;
+}
+
+.mtp-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--tf-accent);
+    cursor: pointer;
+    border: 2px solid var(--tf-accent-text);
+    box-shadow: 0 0 4px rgba(0,0,0,0.5);
+}
+
+.mtp-slider-input::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: var(--tf-accent);
+    cursor: pointer;
+    border: 2px solid var(--tf-accent-text);
 }
 
 .talent-points {
