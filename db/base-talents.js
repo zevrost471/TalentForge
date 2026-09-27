@@ -18598,7 +18598,14 @@ export const baseTalents = {
                     description: [
                         "The enemy target is swarmed by insects, decreasing their chance to hit by 3% and causing 144 Nature damage over 12 sec."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: null,
+                    spentResource: 8,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 30,
+                    requiresWeapon: 0
                 },
                 {
                     id: "improved_insect_swarm",
@@ -18676,7 +18683,14 @@ export const baseTalents = {
                     description: [
                         "Shapeshift into Moonkin Form.  While in this form the armor contribution from items is increased by 370%, damage taken while stunned is reduced by 15%, and all party and raid members within 100 yards have their spell critical chance increased by 5%.  Single target spell critical strikes in this form instantly regenerate 2% of your total mana.  The Moonkin can not cast healing or resurrection spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: null,
+                    spentResource: 13,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "improved_moonkin_form",
@@ -18774,7 +18788,14 @@ export const baseTalents = {
                     description: [
                         "You summon a violent Typhoon that does 400 Nature damage when in contact with hostile targets, knocking them back and dazing them for 6 sec."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 20,
+                    spentResource: 25,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 30,
+                    requiresWeapon: 0
                 },
                 {
                     id: "force_of_nature",
@@ -18787,7 +18808,14 @@ export const baseTalents = {
                     description: [
                         "Summons 3 treants to attack enemy targets for 30 sec."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
+                    spentResource: 12,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 30,
+                    requiresWeapon: 0
                 },
                 {
                     id: "gale_winds",
@@ -18834,7 +18862,14 @@ export const baseTalents = {
                     description: [
                         "You summon a flurry of stars from the sky on all targets within 30 yards of the caster, each dealing 145 to 167 Arcane damage. Also causes 26 Arcane damage to all other enemies within 5 yards of the enemy target. Maximum 20 stars. Lasts 10 sec.  Shapeshifting into an animal form or mounting cancels the effect. Any effect which causes you to lose control of your character will suppress the starfall effect."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 90,
+                    spentResource: 35,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: null,
+                    requiresWeapon: 0
                 }
             ],
             // druid - wotlk
@@ -18952,7 +18987,9 @@ export const baseTalents = {
                     description: [
                         "When activated, this ability temporarily grants you 30% of your maximum health for 20 sec while in Bear Form, Cat Form, or Dire Bear Form.  After the effect expires, the health is lost."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
                 },
                 {
                     id: "sharpened_claws",
@@ -19332,7 +19369,9 @@ export const baseTalents = {
                     description: [
                         "When activated, this ability causes your Mangle (Bear) ability to hit up to 3 targets and have no cooldown, and reduces the energy cost of all your Cat Form abilities by 50%.  Lasts 15 sec.  You cannot use Tiger's Fury while Berserk is active.<br><br>Clears the effect of Fear and makes you immune to Fear for the duration."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
                 }
             ],
             // druid - wotlk
@@ -19525,7 +19564,9 @@ export const baseTalents = {
                     description: [
                         "When activated, your next Nature spell with a base casting time less than 10 sec. becomes an instant cast spell."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
                 },
                 {
                     id: "gift_of_nature",
@@ -19620,7 +19661,14 @@ export const baseTalents = {
                     description: [
                         "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 15,
+                    spentResource: 16,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 40,
+                    requiresWeapon: 0
                 },
                 {
                     id: "natural_perfection",
@@ -19698,14 +19746,7 @@ export const baseTalents = {
                     description: [
                         "Shapeshift into the Tree of Life.  While in this form you increase healing received by 25% of your total Spirit for all party members within 45 yards, your movement speed is reduced by 20%, and you can only cast Swiftmend, Innervate, Nature's Swiftness, Rebirth, Barkskin, poison removing and healing over time spells, but the mana cost of these spells is reduced by 20%.  The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
                     ],
-                    isActive: true,
-                    castTime: null,
-                    cooldown: null,
-                    spentResource: 13,
-                    absoluteSpent: false,
-                    resourceType: 1,
-                    range: null,
-                    requiresWeapon: 0
+                    isActive: true
                 },
                 {
                     id: "improved_tree_of_life",
@@ -19769,7 +19810,14 @@ export const baseTalents = {
                     description: [
                         "Heals up to 5 friendly party or raid members within 15 yards of the target for 686 over 7 sec. The amount healed is applied quickly at first, and slows down as the Wild Growth reaches its full duration."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 6,
+                    spentResource: 23,
+                    absoluteSpent: false,
+                    resourceType: 1,
+                    range: 40,
+                    requiresWeapon: 0
                 }
             ]
         },
