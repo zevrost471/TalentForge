@@ -174,6 +174,47 @@ talentSearchClear?.addEventListener("click", () => {
     }
 });
 
+// Mobile touch tooltip: tap to show, tap elsewhere (or same talent) to dismiss.
+// Runs only when the device is touch-only (hover: none media matches).
+(function setupTouchTooltips() {
+    if (window.matchMedia('(hover: hover)').matches) return; // skip on true-pointer devices
+
+    let openTooltip = null;
+
+    function closeOpenTooltip() {
+        if (openTooltip) {
+            openTooltip.style.display = '';
+            openTooltip = null;
+        }
+    }
+
+    document.addEventListener('touchstart', (e) => {
+        // If the DOM was re-rendered, our reference is stale — reset it
+        if (openTooltip && !document.contains(openTooltip)) {
+            openTooltip = null;
+        }
+
+        const group = e.target.closest('.group[data-id]');
+        if (group) {
+            const tooltip = group.querySelector('.group-hover\\:block');
+            if (!tooltip) return;
+
+            if (tooltip === openTooltip) {
+                // Second tap on the same talent: close
+                closeOpenTooltip();
+            } else {
+                // Tap on a different talent: close old, open new
+                closeOpenTooltip();
+                tooltip.style.display = 'block';
+                openTooltip = tooltip;
+            }
+        } else {
+            // Tapped outside any talent group: dismiss
+            closeOpenTooltip();
+        }
+    }, { passive: true });
+})();
+
 window.addEventListener('DOMContentLoaded', function () {
     if (location.hash) {
         const hash = location.hash.slice(1); // remove the '#'
