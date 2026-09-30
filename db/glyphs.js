@@ -2906,7 +2906,7 @@ export const glyphs = Object.freeze({
                         "Increases the range of your Curse of Exhaustion spell by 5 yards."
                     ],
                     level: 70,
-                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43392/glyph-of-curse-of-exhausion"
+                    linkToWoWHead: "https://www.wowhead.com/wotlk/item=43392/glyph-of-curse-of-exhaustion"
                 },
                 {
                     name: "Drain Soul",
@@ -5709,7 +5709,7 @@ export const glyphs = Object.freeze({
                     name: "Healing Stream Totem",
                     icon: "inv_spear_04",
                     description: [
-                        "Your Healing Stream Totem also increases the Fire, Frost, and Nature resistance of party and raid members within 30 yards by [(85 <= 70 ? 85 : (85 <= 80 ? 85 + (85 - 70) * 5 : 85 + (85 - 70) * 5 + (85 - 80) * 7))]."
+                        "Your Healing Stream Totem also increases the Fire, Frost, and Nature resistance of party and raid members within 30 yards by 195."
                     ],
                     level: 25,
                     linkToWoWHead: "https://www.wowhead.com/cata/item=41533/glyph-of-healing-stream-totem"
@@ -6127,7 +6127,7 @@ export const glyphs = Object.freeze({
                         "Reduces the cast time of your Enslave Demon spell by 50%."
                     ],
                     level: 30,
-                    linkToWoWHead: "https://www.wowhead.com/cata/item=43393/glyph-of-subjugate-demon"
+                    linkToWoWHead: "https://www.wowhead.com/cata/item=43393/glyph-of-enslave-demon"
                 },
                 {
                     name: "Unending Breath",
@@ -6464,14 +6464,14 @@ function extractGlyphId(url) {
 
 export const glyphIndex = {};
 
-Object.values(glyphs).forEach(expac => {
+Object.entries(glyphs).forEach(([expansionKey, expac]) => {
     Object.values(expac).forEach(classGlyphs => {
         ["major", "minor", "prime"].forEach(type => {
             if (!classGlyphs[type]) return;
 
             classGlyphs[type].forEach(g => {
                 g.id = extractGlyphId(g.linkToWoWHead);
-                glyphIndex[g.id] = g;
+                glyphIndex[`${expansionKey}_${g.id}`] = g;
             });
         });
     });
