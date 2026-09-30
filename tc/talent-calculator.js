@@ -1239,23 +1239,22 @@ function renderSpecSelectionPanel() {
                     <li class="flex items-center gap-2 mb-2">
                         <!-- Icon with tooltip -->
                         ${iconPath ? `
-                        <div class="relative group">    
+                        <div class="relative" data-has-tooltip>
                             <img src="${iconPath}" alt="${p.name}" class="w-5 h-5 rounded border border-gray-600 cursor-pointer">
                             <!-- Tooltip -->
-                            <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
+                            <div data-tooltip class="hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                         p-2 bg-black border border-gray-600 rounded w-80">
                                 ${tooltip}
                             </div>
                         </div>` : ""}
                         <!-- Name with tooltip -->
-                        <div class="relative group inline-block">
+                        <div class="relative inline-block" data-has-tooltip>
                             <strong class="text-sm font-normal cursor-pointer" style="color:#e4cc81;">${p.name}</strong>
-                            <!-- <div class="text-sm text-gray-300">${pdesc}</div> -->
                             <!-- Tooltip -->
-                            <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
+                            <div data-tooltip class="hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                         p-2 bg-black border border-gray-600 rounded w-80">
                                 ${iconPath ? `
-                                <img src="${iconPath}" 
+                                <img src="${iconPath}"
                                         class="w-10 h-10 rounded border border-gray-600 absolute -top-0 -left-11 z-50 pointer-events-none">
                                 ` : ""}
                                 <div>
@@ -1305,24 +1304,24 @@ function renderSpecSelectionPanel() {
                 <div class="mt-0 mb-0 flex items-center gap-3">
                     <!-- Icon with tooltip -->
                     ${primary.icon ? `
-                    <div class="relative group">
-                        <img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg" 
+                    <div class="relative" data-has-tooltip>
+                        <img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg"
                                 class="w-10 h-10 rounded border border-gray-600 cursor-pointer"/>
                         <!-- Tooltip -->
-                        <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
+                        <div data-tooltip class="hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                     p-2 bg-black border border-gray-600 rounded w-80">
                             ${getCataBaseTalentTooltip(primary, classKey)}
                         </div>
                     </div>` : ""}
 
                     <!-- Name with tooltip -->
-                    <div class="relative group inline-block">
+                    <div class="relative inline-block" data-has-tooltip>
                         <strong class="text-lg font-normal cursor-pointer" style="color:#e4cc81;">${primary.name || ""}</strong>
                         <!-- Tooltip -->
-                        <div class="hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
+                        <div data-tooltip class="hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 pointer-events-none
                                     p-2 bg-black border border-gray-600 rounded w-80">
                             ${primary.icon ? `
-                            <img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg" 
+                            <img src="https://wow.zamimg.com/images/wow/icons/large/${primary.icon}.jpg"
                                     class="w-10 h-10 rounded border border-gray-600 absolute -top-0 -left-11 z-50 pointer-events-none">
                             ` : ""}
                             <div>
@@ -1345,6 +1344,14 @@ function renderSpecSelectionPanel() {
                 </p>
             </div>
         `;
+
+        // === Wire tooltip hover events (JS-based, avoids Tailwind CDN timing issues) ===
+        specEl.querySelectorAll("[data-has-tooltip]").forEach(triggerEl => {
+            const tooltipDiv = triggerEl.querySelector("[data-tooltip]");
+            if (!tooltipDiv) return;
+            triggerEl.addEventListener("mouseenter", () => tooltipDiv.classList.remove("hidden"));
+            triggerEl.addEventListener("mouseleave", () => tooltipDiv.classList.add("hidden"));
+        });
 
         // === Attach click handlers for both select button & icon ===
         specEl.querySelectorAll("[data-spec]").forEach(el => {
@@ -3145,7 +3152,7 @@ function renderLevelTimeline(container) {
 
             // Container for icon + name (tooltip triggers only here)
             const hoverContainer = document.createElement("div");
-            hoverContainer.className = "relative group flex items-center gap-1 cursor-pointer";
+            hoverContainer.className = "relative flex items-center gap-1 cursor-pointer";
 
             // Icon
             const iconEl = Object.assign(document.createElement("img"), {
@@ -3160,15 +3167,16 @@ function renderLevelTimeline(container) {
                 textContent: talent.name
             });
 
-            // Tooltip wrapper
+            // Tooltip wrapper — JS hover events are used instead of group-hover:block
+            // because dynamically-set className with leading whitespace is not reliably
+            // picked up by Tailwind CDN's MutationObserver scanner.
             const tooltipEl = document.createElement("div");
-            tooltipEl.className = `
-                hidden group-hover:block absolute right-0 top-0 translate-x-full -translate-y-full z-50
-                p-2 bg-black border border-gray-600 rounded w-80 text-sm shadow-lg pointer-events-none
-            `;
+            tooltipEl.className = "hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 p-2 bg-black border border-gray-600 rounded w-80 text-sm shadow-lg pointer-events-none";
             tooltipEl.innerHTML = tooltipText;
 
             hoverContainer.append(iconEl, nameEl, tooltipEl);
+            hoverContainer.addEventListener("mouseenter", () => tooltipEl.classList.remove("hidden"));
+            hoverContainer.addEventListener("mouseleave", () => tooltipEl.classList.add("hidden"));
 
             // Rank
             const rankEl = Object.assign(document.createElement("span"), {
