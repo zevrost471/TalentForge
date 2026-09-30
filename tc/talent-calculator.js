@@ -3,7 +3,7 @@
 import { classColors } from './class-colors.js';
 import { patchOptions } from '../db/patches.js';
 import { talentsAttributedByVersion } from './base-talents-per-patch.js';
-import { glyphs, glyphIndex } from '../db/glyphs.js';
+import { glyphs } from '../db/glyphs.js';
 import { runes, runeIndex } from '../db/sod-runes.js';
 import { cataSpecCards } from './ctc-tree-summary-cards.js';
 import { backgroundImages } from './tree-bg-images.js';
@@ -1353,7 +1353,6 @@ function renderSpecSelectionPanel() {
                 cataSpecSelectionPanel.classList.add("hidden");
                 talentTrees.classList.remove("hidden");
                 renderTalentTrees();
-                renderGlyphsContainer();
             });
         });
 
@@ -1491,7 +1490,7 @@ function renderTalentTrees() {
 
     // Build info box
     const headerHTML = `
-                <div class="tf-panel w-full py-4 px-6 rounded-md shadow flex flex-col md:flex-row justify-between items-center gap-4">
+                <div id="talent-trees-header" class="tf-panel w-full py-4 px-6 rounded-md shadow flex flex-col md:flex-row justify-between items-center gap-4">
                     <div class="flex items-center gap-3">
                         <img src="${classIconUrl}" alt="${classData.name
         }" class="w-8 h-8 rounded border border-gray-500" />
@@ -1501,7 +1500,7 @@ function renderTalentTrees() {
                         ${treePoints
             .map(
                 (points, index) => `
-                            <span class="${points === 0 ? "text-gray-400" : "text-white"
+                            <span data-tree-points="${trees[index]}" class="${points === 0 ? "text-gray-400" : "text-white"
                     }">${points}</span>
                             ${index < treePoints.length - 1
                         ? '<span class="text-gray-500"> / </span>'
@@ -1516,7 +1515,7 @@ function renderTalentTrees() {
                         ${phaseSelectorHTML}
                         <div>
                             <span class="text-gray-400 font-semibold">Required level:</span>
-                            <span class="font-semibold">${requiredLevel}</span>
+                            <span id="required-level-value" class="font-semibold">${requiredLevel}</span>
                         </div>
                         <div>
                             <span class="text-gray-400 font-semibold">Points left:</span>
@@ -1588,7 +1587,7 @@ function renderTalentTrees() {
 
         // Add icon + tree name inside each tree box
         treeEl.innerHTML = `
-        <div class="tf-panel w-full flex items-center justify-between mb-3 px-2 py-1 rounded">
+        <div data-tree-header="${treeName}" class="tf-panel w-full flex items-center justify-between mb-3 px-2 py-1 rounded">
                 <div class="flex items-center gap-2">
                     <img src="https://wow.zamimg.com/images/wow/icons/large/${getTreeIcon(
             classKey,
@@ -1596,10 +1595,10 @@ function renderTalentTrees() {
             version
         )}.jpg"
                         alt="${treeName}" class="w-6 h-6" />
-                    <span class="${pointsInTree === 0 ? "text-gray-400" : "text-white"
+                    <span data-tree-name class="${pointsInTree === 0 ? "text-gray-400" : "text-white"
             } font-medium text-base">${treeName}</span>
                 </div>
-                <div class="text-base font-semibold ${pointsInTree === 0 ? "text-gray-400" : "text-white"
+                <div data-tree-points-counter class="text-base font-semibold ${pointsInTree === 0 ? "text-gray-400" : "text-white"
             }">
                     <span>${pointsInTree}</span>
                     <span> / </span>
@@ -1664,11 +1663,9 @@ function renderTalentTrees() {
 
                     const showRank = points > 0 || !maxPointsReached;
 
-                    const rankHTML = showRank
-                        ? `<div class="absolute bottom-0 right-0 bg-black/70 ${rankTextColor} text-[10px] px-1 rounded border border-black leading-none">
-                        ${points}/${talent.ranks}
-                        </div>`
-                        : "";
+                    const rankHTML = `<div data-rank class="absolute bottom-0 right-0 bg-black/70 ${rankTextColor} text-[10px] px-1 rounded border border-black leading-none${showRank ? '' : ' hidden'}">
+                        ${showRank ? `${points}/${talent.ranks}` : ''}
+                        </div>`;
 
                     cell.innerHTML = `
                     <div 
@@ -1777,6 +1774,149 @@ function renderTalentTrees() {
     // Keep the mobile panel in sync after any re-render
     if (mobilePanelTalent) {
         updateMobilePanel(mobilePanelTalent.classKey, mobilePanelTalent.treeName, mobilePanelTalent.talentId);
+    }
+}
+
+function updateTalentTreesInPlace(classKey) {
+    const totalPointsSpent = getTotalPointsSpent();
+    const maxPointsReached = totalPointsSpent >= currentState.pointsTotal;
+
+    document.querySelectorAll('.talent-icon').forEach(iconEl => {
+        const treeName = iconEl.dataset.tree;
+        const talentId = iconEl.dataset.id;
+        const talent = getTalentById(classKey, treeName, talentId);
+        if (!talent) return;
+
+        const points = currentState.talents[classKey]?.[treeName]?.[talentId] || 0;
+        const isMaxed = points >= talent.ranks;
+        const unlocked = canLearnTalent(talent, classKey, treeName);
+        const reachedMax = unlocked && maxPointsReached && points === 0;
+
+        let borderClasses, rankTextColor;
+        if (reachedMax || (!unlocked && !isMaxed)) {
+            borderClasses = ['border-gray-600', 'grayscale-[100%]', 'brightness-[100%]'];
+            rankTextColor = 'text-gray-400';
+        } else if (!isMaxed) {
+            borderClasses = ['border-green-500', 'cursor-pointer'];
+            rankTextColor = 'text-green-400';
+        } else {
+            borderClasses = ['border-yellow-500', 'cursor-pointer'];
+            rankTextColor = 'text-yellow-300';
+        }
+
+        iconEl.classList.remove(
+            'border-gray-600', 'grayscale-[100%]', 'brightness-[100%]',
+            'border-green-500', 'border-yellow-500', 'cursor-pointer'
+        );
+        iconEl.classList.add(...borderClasses);
+
+        const showRank = points > 0 || !maxPointsReached;
+        const rankDiv = iconEl.querySelector('[data-rank]');
+        if (rankDiv) {
+            rankDiv.classList.toggle('hidden', !showRank);
+            if (showRank) {
+                rankDiv.classList.remove('text-gray-400', 'text-green-400', 'text-yellow-300');
+                rankDiv.classList.add(rankTextColor);
+                rankDiv.textContent = `${points}/${talent.ranks}`;
+            }
+        }
+
+        const tooltipDiv = iconEl.nextElementSibling;
+        if (tooltipDiv) {
+            tooltipDiv.innerHTML = getTalentTooltip(talent, points, classKey, treeName, true);
+        }
+    });
+
+    const version = currentState.version;
+    const treeNames = Object.keys(currentState.talents[classKey] || {});
+    for (const treeName of treeNames) {
+        const container = document.querySelector(`[data-tree-container="${treeName}"]`);
+        if (!container) continue;
+        const talents = getTalents(version, classKey, treeName);
+        if (!talents) continue;
+        for (const talent of talents) {
+            if (!talent.requiresTalents) continue;
+            const requiredId = talent.requiresTalents;
+            const requiredTalent = getTalentById(classKey, treeName, requiredId);
+            if (!requiredTalent) continue;
+            const sourceRank = currentState.talents[classKey]?.[treeName]?.[requiredId] || 0;
+            const isUnlocked = sourceRank >= (requiredTalent.ranks || 1);
+            container.querySelectorAll(`[data-for="${talent.id}"]`).forEach(arrowEl => {
+                arrowEl.classList.toggle('unlocked', isUnlocked);
+                arrowEl.classList.toggle('locked', !isUnlocked);
+            });
+        }
+    }
+
+    if (mobilePanelTalent) {
+        updateMobilePanel(mobilePanelTalent.classKey, mobilePanelTalent.treeName, mobilePanelTalent.talentId);
+    }
+
+    // Update header stats (class/spec headers, reset buttons, timeline)
+    const classData = talentTreeData[version].classes[classKey];
+    const trees = classData.trees;
+    const treePoints = trees.map(t => {
+        const pts = currentState.talents[classKey]?.[t] || {};
+        return Object.values(pts).reduce((sum, val) => sum + val, 0);
+    });
+    const totalPoints = treePoints.reduce((a, b) => a + b, 0);
+    const pointsLeft = currentState.pointsTotal - totalPoints;
+
+    let requiredLevel;
+    if (version.startsWith("4.")) {
+        const levelMap = [10, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85];
+        requiredLevel = totalPoints === 0 ? "-" : levelMap[Math.min(totalPoints - 1, levelMap.length - 1)];
+    } else {
+        requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
+    }
+
+    const pointsLeftEl = document.getElementById("pointsLeftValue");
+    if (pointsLeftEl) pointsLeftEl.textContent = pointsLeft;
+    const requiredLevelEl = document.getElementById("required-level-value");
+    if (requiredLevelEl) requiredLevelEl.textContent = requiredLevel;
+
+    trees.forEach((treeName, index) => {
+        const pts = treePoints[index];
+
+        const treePointsSpan = document.querySelector(`[data-tree-points="${treeName}"]`);
+        if (treePointsSpan) {
+            treePointsSpan.textContent = pts;
+            treePointsSpan.className = pts === 0 ? "text-gray-400" : "text-white";
+        }
+
+        const headerPanel = document.querySelector(`[data-tree-header="${treeName}"]`);
+        if (headerPanel) {
+            const nameSpan = headerPanel.querySelector("[data-tree-name]");
+            if (nameSpan) {
+                nameSpan.className = `${pts === 0 ? "text-gray-400" : "text-white"} font-medium text-base`;
+            }
+            const counterDiv = headerPanel.querySelector("[data-tree-points-counter]");
+            if (counterDiv) {
+                counterDiv.className = `text-base font-semibold ${pts === 0 ? "text-gray-400" : "text-white"}`;
+                const firstSpan = counterDiv.querySelector("span:first-child");
+                if (firstSpan) firstSpan.textContent = pts;
+            }
+        }
+
+        const resetBtn = document.querySelector(`.reset-tree-btn[data-tree="${treeName}"]`);
+        if (resetBtn) {
+            resetBtn.classList.toggle("text-gray-400", pts === 0);
+            resetBtn.classList.toggle("text-white", pts !== 0);
+        }
+
+        // Cataclysm: update lock state on non-chosen trees
+        const treeContainer = document.querySelector(`[data-tree-container="${treeName}"]`);
+        if (treeContainer && version.startsWith("4.") && chosenSpec && treeName !== chosenSpec) {
+            const pointsInChosen = treePoints[trees.indexOf(chosenSpec)];
+            const shouldLock = pointsInChosen < 31 || requiredLevel < 69;
+            treeContainer.classList.toggle("opacity-40", shouldLock);
+            treeContainer.classList.toggle("pointer-events-none", shouldLock);
+        }
+    });
+
+    if (timelineWrapper) {
+        timelineWrapper.innerHTML = "";
+        renderLevelTimeline(timelineWrapper);
     }
 }
 
@@ -1953,6 +2093,7 @@ function renderDependencyArrows(treeName, classKey, version) {
 
         const arrow = document.createElement("div");
         arrow.classList.add("arrow", `arrow-${direction}`);
+        arrow.setAttribute("data-for", talent.id);
 
         const isUnlocked = (currentState.talents[classKey]?.[treeName]?.[requiredId] || 0) >= (requiredTalent.ranks || 1);
         arrow.classList.add(isUnlocked ? "unlocked" : "locked");
@@ -1981,7 +2122,9 @@ function renderDependencyArrows(treeName, classKey, version) {
             const vertical = document.createElement("div");
             const isUnlocked = (currentState.talents[classKey]?.[treeName]?.[requiredId] || 0) >= (requiredTalent.ranks || 1);
             horizontal.classList.add("arrow", direction === "down-right" ? "arrow-right" : "arrow-left", isUnlocked ? "unlocked" : "locked");
+            horizontal.setAttribute("data-for", talent.id);
             vertical.classList.add("arrow", "arrow-down", isUnlocked ? "unlocked" : "locked");
+            vertical.setAttribute("data-for", talent.id);
 
             const horizontalWidth = Math.abs(toCenter.x - fromCenter.x);
             const verticalHeight = Math.abs(toCenter.y - fromCenter.y);
@@ -2212,7 +2355,7 @@ function setTalentRankMobile(classKey, treeName, talentId, targetRank) {
     if (changed) {
         recalculateTalentOrder();
         updatePointsDisplay();
-        renderTalentTrees();
+        updateTalentTreesInPlace(classKey);
         updateURLHash();
     }
     // Sync slider to actually-achieved rank (may differ from targetRank if blocked)
@@ -2723,7 +2866,7 @@ function handleTalentClick(e) {
     updatePointsDisplay();
 
     // Re-render
-    renderTalentTrees();
+    updateTalentTreesInPlace(classKey);
 
     // Update URL
     updateURLHash();
@@ -2827,7 +2970,7 @@ function handleTalentRightClick(e) {
     updatePointsDisplay();
 
     // Re-render
-    renderTalentTrees();
+    updateTalentTreesInPlace(classKey);
 
     // Update URL
     updateURLHash();
