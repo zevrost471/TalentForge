@@ -3393,6 +3393,35 @@ function initCurrentGlyphs() {
     });
 }
 
+function getGlyphTooltip(glyph, typeKey, classKey) {
+    const lines = [];
+
+    const fullName = glyph.name.startsWith("Glyph of") ? glyph.name : `Glyph of ${glyph.name}`;
+    lines.push(`<div class="text-[15px] text-white">${fullName}</div>`);
+
+    const typeLabel = typeKey.charAt(0).toUpperCase() + typeKey.slice(1) + " Glyph";
+    lines.push(`<div class="text-sm text-gray-400">${typeLabel}</div>`);
+
+    const classDisplayName =
+        talentTreeData[currentState.version]?.classes?.[classKey]?.name ||
+        (classKey.charAt(0).toUpperCase() + classKey.slice(1));
+    lines.push(`<div class="text-sm text-white">Requires ${classDisplayName}</div>`);
+
+    const level = glyph.level ?? glyph.requiresLevel;
+    if (level) {
+        lines.push(`<div class="text-sm text-white">Requires Level ${level}</div>`);
+    }
+
+    const desc = glyph.description;
+    if (Array.isArray(desc) && desc.length > 0) {
+        lines.push(`<div class="mt-1 text-sm text-yellow-300">${desc.join(" ")}</div>`);
+    } else if (typeof desc === "string" && desc) {
+        lines.push(`<div class="mt-1 text-sm text-yellow-300">${desc}</div>`);
+    }
+
+    return lines.join("\n");
+}
+
 function renderGlyphsContainer() {
 
     const currentExpansion = getCurrentExpansion();
@@ -3436,6 +3465,7 @@ function renderGlyphsContainer() {
             slot.classList.add("glyph-slot");
             slot.dataset.type = type.toLowerCase().replace(" glyphs", "");
             slot.dataset.index = i;
+            slot.style.position = "relative"; // needed for absolute tooltip positioning
 
             // Placeholder content
             const placeholderImg = document.createElement("img");
@@ -3452,6 +3482,16 @@ function renderGlyphsContainer() {
             // Event to open glyph selection
             slot.addEventListener("click", () => {
                 openGlyphSelection(type, playerClass, i);
+            });
+
+            // Tooltip hover — listeners wired once here; selectGlyph injects [data-glyph-tooltip]
+            slot.addEventListener("mouseenter", () => {
+                const tooltip = slot.querySelector("[data-glyph-tooltip]");
+                if (tooltip) tooltip.classList.remove("hidden");
+            });
+            slot.addEventListener("mouseleave", () => {
+                const tooltip = slot.querySelector("[data-glyph-tooltip]");
+                if (tooltip) tooltip.classList.add("hidden");
             });
 
             slots.appendChild(slot);
@@ -3706,8 +3746,14 @@ function selectGlyph(glyphType, slotIndex, glyphData) {
     name.classList.add("glyph-slot-name");
     name.textContent = `Glyph of ${glyphData.name}`;
 
+    const tooltipDiv = document.createElement("div");
+    tooltipDiv.setAttribute("data-glyph-tooltip", "");
+    tooltipDiv.className = "hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 p-2 bg-black border border-gray-600 rounded w-72 text-sm shadow-lg pointer-events-none";
+    tooltipDiv.innerHTML = getGlyphTooltip(glyphData, typeKey, currentState.class);
+
     slot.appendChild(img);
     slot.appendChild(name);
+    slot.appendChild(tooltipDiv);
 
     updateURLHash();
 }
