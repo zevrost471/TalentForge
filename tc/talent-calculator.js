@@ -46,10 +46,6 @@ const {
   toggleBuildManagerButton,
   buildManagerWrapper,
   buildManagerContent,
-  talentSearchBox,
-  talentSearchInput,
-  talentSearchClear,
-  talentSearchCount,
   mobileTalentPanel,
   mtpIcon,
   mtpName,
@@ -153,32 +149,7 @@ toggleBuildManagerButton.addEventListener("click", () => {
     }
 });
 
-// Talent search event listeners
-let searchDebounceTimer = null;
-talentSearchInput?.addEventListener("input", () => {
-    clearTimeout(searchDebounceTimer);
-    searchDebounceTimer = setTimeout(() => {
-        const query = talentSearchInput.value;
-        const count = applyTalentSearch(query);
-        talentSearchClear?.classList.toggle("hidden", !query.trim());
-        if (talentSearchCount) {
-            if (query.trim()) {
-                talentSearchCount.textContent = `${count} talent${count !== 1 ? "s" : ""} found`;
-                talentSearchCount.classList.remove("hidden");
-            } else {
-                talentSearchCount.classList.add("hidden");
-            }
-        }
-    }, 150);
-});
-
-talentSearchClear?.addEventListener("click", () => {
-    if (talentSearchInput) {
-        talentSearchInput.value = "";
-        talentSearchInput.dispatchEvent(new Event("input"));
-        talentSearchInput.focus();
-    }
-});
+let currentSearchQuery = "";
 
 // Tooltip controller — desktop only (pointerover/pointerout, mouse/pen).
 // Mobile touch is handled by the mobile panel system (setupMobilePanel).
@@ -367,6 +338,7 @@ let currentState = {
     phase: 1, // default for 1.15
     pointsSpent: 0,
     pointsTotal: 51,
+    plannedLevel: null,
     talents: {},
     builds: [],
     talentOrder: [],
@@ -970,6 +942,8 @@ function handleVersionChange(loadingBuild = false) {
     currentState.glyphs = {};
     currentState.runes = {};
     currentState.phase = 1;
+    currentState.plannedLevel = null;
+    currentSearchQuery = "";
 
     if (currentState.version === "1.15") {
         currentState.pointsTotal = getSoDMaxPoints(currentState.phase);
@@ -1388,7 +1362,6 @@ function renderTalentTrees() {
     // Ensure both version and class are selected
     if (!version || !classKey) {
         updatePlaceholder();
-        talentSearchBox?.classList.add("hidden");
         return;
     }
     updatePlaceholder();
@@ -1418,31 +1391,7 @@ function renderTalentTrees() {
     const totalPoints = treePoints.reduce((a, b) => a + b, 0);
 
     // Calculate required level
-    // const requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
-
-    let requiredLevel;
-    if (version.startsWith("4.")) {
-        // Mapping: number of points spent -> minimum level
-        const pointsToLevelMap = [
-            10, // 1st point
-            11, // 2nd
-            13, // 3rd
-            15, // 4th
-            17, // 5th
-            19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85 // remaining points
-        ];
-
-        if (totalPoints === 0) {
-            requiredLevel = "-";
-        } else {
-            // Cap totalPoints to avoid going out of bounds
-            const index = Math.min(totalPoints - 1, pointsToLevelMap.length - 1);
-            requiredLevel = pointsToLevelMap[index];
-        }
-    } else {
-        // Old logic for other expansions
-        requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
-    }
+    const requiredLevel = computeRequiredLevel(totalPoints, version);
 
     let phaseSelectorHTML = "";
 
@@ -1491,6 +1440,14 @@ function renderTalentTrees() {
     // Calculate points left
     const pointsLeft = currentState.pointsTotal - totalPoints;
 
+    // Resolve planned level (default to version max when not set or over-cap)
+    const maxLevel = getMaxLevelForVersion(version, currentState.phase);
+    if (!currentState.plannedLevel || currentState.plannedLevel > maxLevel) {
+        currentState.plannedLevel = maxLevel;
+    }
+    const plannedLevel = currentState.plannedLevel;
+    const minLevel = totalPoints > 0 ? computeRequiredLevel(totalPoints, version) : 10;
+
     // Class icon URL
     const classIconUrl = `https://wow.zamimg.com/images/wow/icons/large/classicon_${classKey}.jpg`;
     const classColor = classColors[classKey] || "#FFF";
@@ -1519,6 +1476,19 @@ function renderTalentTrees() {
                         </span>
                     </div>
                     <div class="flex gap-4 text-sm items-center">
+                        <div class="flex items-center gap-1">
+                            <button id="planned-level-minus" ${plannedLevel <= minLevel ? "disabled" : ""} class="bg-gray-700 hover:enabled:bg-gray-600 disabled:opacity-40 text-white text-sm font-bold w-6 h-[26px] rounded border border-gray-600 flex items-center justify-center">−</button>
+                            <div class="relative">
+                                <input id="planned-level-input" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off"
+                                    value="${plannedLevel}"
+                                    class="bg-gray-600 text-white text-sm font-bold border border-gray-500 rounded px-1 h-[26px] w-10 text-center" />
+                                <div id="planned-level-tooltip"
+                                    class="hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 p-2 bg-black border border-gray-600 rounded w-64 text-sm text-white shadow-lg pointer-events-none">
+                                    The level this build is planned for. It sets how many talent points there are to spend.
+                                </div>
+                            </div>
+                            <button id="planned-level-plus" ${plannedLevel >= maxLevel ? "disabled" : ""} class="bg-gray-700 hover:enabled:bg-gray-600 disabled:opacity-40 text-white text-sm font-bold w-6 h-[26px] rounded border border-gray-600 flex items-center justify-center">+</button>
+                        </div>
                         ${phaseSelectorHTML}
                         <div>
                             <span class="text-gray-400 font-semibold">Required level:</span>
@@ -1530,16 +1500,30 @@ function renderTalentTrees() {
                         </div>
                     </div>
                 </div>
+                <div class="flex justify-end mt-3">
+                    <div class="w-80">
+                        <div class="relative">
+                            <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
+                            <input id="talent-search-input" type="text" autocomplete="off"
+                                placeholder="Search talents..."
+                                class="tf-control w-full rounded-md pl-8 pr-8 py-1 text-sm focus:outline-none focus:ring-2 focus:ring-yellow-500" />
+                            <button id="talent-search-clear" class="absolute right-2 top-1/2 -translate-y-1/2 text-gray-400 hover:text-white hidden">
+                                <i class="fas fa-times text-sm"></i>
+                            </button>
+                        </div>
+                    <div id="talent-search-count" class="text-xs text-gray-400 mt-1 hidden"></div>
+                </div>
     `;
 
     talentTrees.innerHTML = headerHTML;
 
+    initPlannedLevelWidget();
     if (currentState.version === "1.15") {
         initPhaseSelect();
     }
 
     const container = document.createElement("div");
-    container.className = "flex flex-wrap md:flex-row md:items-start gap-6 justify-center mt-4";
+    container.className = "flex flex-wrap md:flex-row md:items-start gap-3 justify-center mt-4";
 
     trees.forEach((treeName) => {
         const talents = getTalents(version, classKey, treeName);
@@ -1566,16 +1550,14 @@ function renderTalentTrees() {
             "tf-bg h-full p-4 pt-4 pb-1 rounded-lg w-full sm:w-[300px] md:w-[340px] shadow-lg border tf-border flex flex-col items-center";
         treeEl.setAttribute("data-tree-container", treeName);
 
-        // === CHANGE: Lock / gray out non-chosen trees in Cataclysm ===
         let isLocked = false;
         if (version.startsWith("4.") && chosenSpec && treeName !== chosenSpec) {
-            const pointsInChosen = treePoints[trees.indexOf(chosenSpec)]; // points spent in chosen tree
+            const pointsInChosen = treePoints[trees.indexOf(chosenSpec)];
             if (pointsInChosen < 31 || requiredLevel < 69) {
                 isLocked = true;
-                treeEl.classList.add("opacity-40", "pointer-events-none"); // gray out + block clicks
+                treeEl.dataset.treeLocked = "true";
             }
         }
-        // === END CHANGE ===
 
         // Add background image
         const bgImage = backgroundImages?.[classKey]?.[treeName];
@@ -1654,10 +1636,7 @@ function renderTalentTrees() {
 
                     const reachedMax = unlocked && maxPointsReached && points === 0;
 
-                    if (reachedMax) {
-                        borderClass = "border-gray-600 grayscale-[100%] brightness-[100%]";
-                        rankTextColor = "text-gray-400";
-                    } else if ((!unlocked && !isMaxed)) {
+                    if (reachedMax || (!unlocked && !isMaxed) || (isLocked && !isMaxed)) {
                         borderClass = "border-gray-600 grayscale-[100%] brightness-[100%]";
                         rankTextColor = "text-gray-400";
                     } else if (!isMaxed) {
@@ -1668,7 +1647,7 @@ function renderTalentTrees() {
                         rankTextColor = "text-yellow-300";
                     }
 
-                    const showRank = points > 0 || !maxPointsReached;
+                    const showRank = points > 0 || (!maxPointsReached && !isLocked);
 
                     const rankHTML = `<div data-rank class="absolute bottom-0 right-0 bg-black/70 ${rankTextColor} text-[10px] px-1 rounded border border-black leading-none${showRank ? '' : ' hidden'}">
                         ${showRank ? `${points}/${talent.ranks}` : ''}
@@ -1732,8 +1711,7 @@ function renderTalentTrees() {
     });
 
     talentTrees.appendChild(container);
-
-    // === NEW: render timeline outside talent-wrapper ===
+    initSearchWidget();
     // Get the top-level timeline wrapper
     if (timelineWrapper) {
         timelineWrapper.innerHTML = ""; // clear any previous timeline
@@ -1766,17 +1744,8 @@ function renderTalentTrees() {
         trees.forEach(treeName => {
             renderDependencyArrows(treeName, currentState.class, currentState.version);
         });
-        // Re-apply active search after re-render
-        if (talentSearchInput?.value.trim()) {
-            const count = applyTalentSearch(talentSearchInput.value);
-            if (talentSearchCount) {
-                talentSearchCount.textContent = `${count} talent${count !== 1 ? "s" : ""} found`;
-            }
-        }
+        if (currentSearchQuery) applyTalentSearch(currentSearchQuery);
     });
-
-    // Show search box once trees are rendered
-    talentSearchBox?.classList.remove("hidden");
 
     // Keep the mobile panel in sync after any re-render
     if (mobilePanelTalent) {
@@ -1785,8 +1754,27 @@ function renderTalentTrees() {
 }
 
 function updateTalentTreesInPlace(classKey) {
+    const version = currentState.version;
     const totalPointsSpent = getTotalPointsSpent();
     const maxPointsReached = totalPointsSpent >= currentState.pointsTotal;
+
+    // Pre-compute Cata locked trees so per-talent visual uses fresh lock state
+    const lockedTreeSet = new Set();
+    if (version?.startsWith("4.") && chosenSpec) {
+        const catClassData = talentTreeData[version]?.classes[classKey];
+        if (catClassData) {
+            const catTrees = catClassData.trees;
+            const catTreePoints = catTrees.map(t =>
+                Object.values(currentState.talents[classKey]?.[t] || {}).reduce((s, v) => s + v, 0)
+            );
+            const catTotal = catTreePoints.reduce((a, b) => a + b, 0);
+            const catRequiredLevel = computeRequiredLevel(catTotal, version);
+            const catPointsInChosen = catTreePoints[catTrees.indexOf(chosenSpec)] || 0;
+            if (catPointsInChosen < 31 || catRequiredLevel < 69) {
+                catTrees.forEach(t => { if (t !== chosenSpec) lockedTreeSet.add(t); });
+            }
+        }
+    }
 
     document.querySelectorAll('.talent-icon').forEach(iconEl => {
         const treeName = iconEl.dataset.tree;
@@ -1799,8 +1787,10 @@ function updateTalentTreesInPlace(classKey) {
         const unlocked = canLearnTalent(talent, classKey, treeName);
         const reachedMax = unlocked && maxPointsReached && points === 0;
 
+        const isTreeLocked = lockedTreeSet.has(treeName);
+
         let borderClasses, rankTextColor;
-        if (reachedMax || (!unlocked && !isMaxed)) {
+        if (reachedMax || (!unlocked && !isMaxed) || (isTreeLocked && !isMaxed)) {
             borderClasses = ['border-gray-600', 'grayscale-[100%]', 'brightness-[100%]'];
             rankTextColor = 'text-gray-400';
         } else if (!isMaxed) {
@@ -1817,7 +1807,7 @@ function updateTalentTreesInPlace(classKey) {
         );
         iconEl.classList.add(...borderClasses);
 
-        const showRank = points > 0 || !maxPointsReached;
+        const showRank = points > 0 || (!maxPointsReached && !isTreeLocked);
         const rankDiv = iconEl.querySelector('[data-rank]');
         if (rankDiv) {
             rankDiv.classList.toggle('hidden', !showRank);
@@ -1834,7 +1824,6 @@ function updateTalentTreesInPlace(classKey) {
         }
     });
 
-    const version = currentState.version;
     const treeNames = Object.keys(currentState.talents[classKey] || {});
     for (const treeName of treeNames) {
         const container = document.querySelector(`[data-tree-container="${treeName}"]`);
@@ -1869,18 +1858,18 @@ function updateTalentTreesInPlace(classKey) {
     const totalPoints = treePoints.reduce((a, b) => a + b, 0);
     const pointsLeft = currentState.pointsTotal - totalPoints;
 
-    let requiredLevel;
-    if (version.startsWith("4.")) {
-        const levelMap = [10, 11, 13, 15, 17, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 41, 43, 45, 47, 49, 51, 53, 55, 57, 59, 61, 63, 65, 67, 69, 71, 73, 75, 77, 79, 81, 82, 83, 84, 85];
-        requiredLevel = totalPoints === 0 ? "-" : levelMap[Math.min(totalPoints - 1, levelMap.length - 1)];
-    } else {
-        requiredLevel = totalPoints === 0 ? "-" : 9 + totalPoints;
-    }
+    let requiredLevel = computeRequiredLevel(totalPoints, version);
 
     const pointsLeftEl = document.getElementById("pointsLeftValue");
     if (pointsLeftEl) pointsLeftEl.textContent = pointsLeft;
     const requiredLevelEl = document.getElementById("required-level-value");
     if (requiredLevelEl) requiredLevelEl.textContent = requiredLevel;
+
+    const minusBtn = document.getElementById("planned-level-minus");
+    if (minusBtn) {
+        const minLevel = totalPoints > 0 ? computeRequiredLevel(totalPoints, version) : 10;
+        minusBtn.disabled = (currentState.plannedLevel ?? 0) <= minLevel;
+    }
 
     trees.forEach((treeName, index) => {
         const pts = treePoints[index];
@@ -1911,13 +1900,13 @@ function updateTalentTreesInPlace(classKey) {
             resetBtn.classList.toggle("text-white", pts !== 0);
         }
 
-        // Cataclysm: update lock state on non-chosen trees
+        // Cataclysm: sync data-tree-locked attribute; individual talent icons handle the visual
         const treeContainer = document.querySelector(`[data-tree-container="${treeName}"]`);
         if (treeContainer && version.startsWith("4.") && chosenSpec && treeName !== chosenSpec) {
             const pointsInChosen = treePoints[trees.indexOf(chosenSpec)];
             const shouldLock = pointsInChosen < 31 || requiredLevel < 69;
-            treeContainer.classList.toggle("opacity-40", shouldLock);
-            treeContainer.classList.toggle("pointer-events-none", shouldLock);
+            treeContainer.dataset.treeLocked = shouldLock ? "true" : "";
+            treeContainer.classList.remove("opacity-40", "pointer-events-none");
         }
     });
 
@@ -1939,7 +1928,10 @@ function initPhaseSelect() {
         const newPhase = Number(e.target.value);
         // const oldPhase = currentState.phase;
 
-        if (getTotalPointsSpent() > getSoDMaxPoints(newPhase)) {
+        const newPhaseMaxLevel = getMaxLevelForVersion("1.15", newPhase);
+        const newPointsTotal = levelToPoints(newPhaseMaxLevel, "1.15");
+
+        if (getTotalPointsSpent() > newPointsTotal) {
         /*if (newPhase < oldPhase) {*/
             // Reset URL hash when changing phase downwards
             if (location.hash) location.hash = "";
@@ -1952,7 +1944,8 @@ function initPhaseSelect() {
 
         currentState.runes = {};
         currentState.phase = newPhase;
-        currentState.pointsTotal = getSoDMaxPoints(newPhase);
+        currentState.plannedLevel = newPhaseMaxLevel;
+        currentState.pointsTotal = newPointsTotal;
 
         updatePointsDisplay();
         renderTalentTrees();
@@ -1980,6 +1973,132 @@ function getSoDMaxPoints(phase) {
         4: 51  // phase 4 max points (vanilla cap)
     };
     return SOD_PHASE_MAX_POINTS[phase] || 51;
+}
+
+function computeRequiredLevel(totalPoints, version) {
+    if (version.startsWith("4.")) {
+        const map = [10,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,82,83,84,85];
+        if (totalPoints === 0) return "-";
+        return map[Math.min(totalPoints - 1, map.length - 1)];
+    }
+    return totalPoints === 0 ? "-" : 9 + totalPoints;
+}
+
+function levelToPoints(level, version) {
+    if (version.startsWith("4.")) {
+        const map = [10,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,82,83,84,85];
+        let pts = 0;
+        for (let i = 0; i < map.length; i++) {
+            if (map[i] <= level) pts = i + 1; else break;
+        }
+        return pts;
+    }
+    return Math.max(0, level - 9);
+}
+
+function getMaxLevelForVersion(version, phase) {
+    if (version === "1.15") return { 1: 25, 2: 40, 3: 50, 4: 60 }[phase] ?? 60;
+    const maxPoints = talentTreeData[version]?.maxPoints;
+    return maxPoints ? computeRequiredLevel(maxPoints, version) : 60;
+}
+
+function applyPlannedLevel(level) {
+    const version = currentState.version;
+    if (!version) return;
+    const maxLevel = getMaxLevelForVersion(version, currentState.phase);
+    const totalSpent = getTotalPointsSpent();
+    const minLevel = totalSpent > 0 ? computeRequiredLevel(totalSpent, version) : 10;
+    level = Math.max(minLevel, Math.min(maxLevel, Math.round(level)));
+    const newPointsTotal = levelToPoints(level, version);
+
+    currentState.pointsTotal = newPointsTotal;
+    currentState.plannedLevel = level;
+    updatePointsDisplay();
+    updateURLHash();
+
+    // Refresh talent cells, header stats, and minus button via existing in-place logic
+    if (currentState.class) updateTalentTreesInPlace(currentState.class);
+
+    // Widget-specific updates not covered by updateTalentTreesInPlace
+    const inputEl = document.getElementById("planned-level-input");
+    const plusBtn = document.getElementById("planned-level-plus");
+    if (inputEl) inputEl.value = level;
+    if (plusBtn) plusBtn.disabled = level >= maxLevel;
+    document.querySelectorAll("[data-tree-points-counter] span:last-child").forEach(span => {
+        span.textContent = newPointsTotal;
+    });
+}
+
+function initSearchWidget() {
+    const inputEl = document.getElementById("talent-search-input");
+    if (!inputEl || inputEl.dataset.bound) return;
+    inputEl.dataset.bound = "true";
+
+    const clearBtn = document.getElementById("talent-search-clear");
+    const countEl = document.getElementById("talent-search-count");
+
+    if (currentSearchQuery) {
+        inputEl.value = currentSearchQuery;
+        clearBtn?.classList.remove("hidden");
+        const count = applyTalentSearch(currentSearchQuery);
+        if (countEl) {
+            countEl.textContent = `${count} talent${count !== 1 ? "s" : ""} found`;
+            countEl.classList.remove("hidden");
+        }
+    }
+
+    let debounceTimer = null;
+    inputEl.addEventListener("input", () => {
+        clearTimeout(debounceTimer);
+        debounceTimer = setTimeout(() => {
+            const query = inputEl.value;
+            currentSearchQuery = query;
+            const count = applyTalentSearch(query);
+            clearBtn?.classList.toggle("hidden", !query.trim());
+            if (countEl) {
+                if (query.trim()) {
+                    countEl.textContent = `${count} talent${count !== 1 ? "s" : ""} found`;
+                    countEl.classList.remove("hidden");
+                } else {
+                    countEl.classList.add("hidden");
+                }
+            }
+        }, 150);
+    });
+
+    clearBtn?.addEventListener("click", () => {
+        inputEl.value = "";
+        currentSearchQuery = "";
+        inputEl.dispatchEvent(new Event("input"));
+        inputEl.focus();
+    });
+}
+
+function initPlannedLevelWidget() {
+    const inputEl = document.getElementById("planned-level-input");
+    if (!inputEl || inputEl.dataset.bound) return;
+    inputEl.dataset.bound = "true";
+
+    const tooltipEl = document.getElementById("planned-level-tooltip");
+    if (tooltipEl) {
+        inputEl.addEventListener("mouseenter", () => tooltipEl.classList.remove("hidden"));
+        inputEl.addEventListener("mouseleave", () => tooltipEl.classList.add("hidden"));
+    }
+
+    document.getElementById("planned-level-minus")?.addEventListener("click", () =>
+        applyPlannedLevel(parseInt(inputEl.value) - 1));
+    document.getElementById("planned-level-plus")?.addEventListener("click", () =>
+        applyPlannedLevel(parseInt(inputEl.value) + 1));
+
+    inputEl.addEventListener("change", () => {
+        const v = parseInt(inputEl.value);
+        if (!isNaN(v)) applyPlannedLevel(v);
+    });
+    inputEl.addEventListener("blur", () => {
+        const v = parseInt(inputEl.value);
+        if (isNaN(v)) inputEl.value = currentState.plannedLevel;
+        else applyPlannedLevel(v);
+    });
 }
 
 function getTotalPointsSpent() {
@@ -2849,6 +2968,12 @@ function handleTalentClick(e) {
     // Can we learn it?
     if (!canLearnTalent(talent, classKey, tree)) return;
 
+    // Block clicks on Cata locked off-spec trees
+    if (version?.startsWith("4.") && chosenSpec && tree !== chosenSpec) {
+        const treeContainer = document.querySelector(`[data-tree-container="${tree}"]`);
+        if (treeContainer?.dataset.treeLocked === "true") return;
+    }
+
     // Already maxed out globally?
     if (currentState.pointsSpent >= currentState.pointsTotal) return;
 
@@ -3393,6 +3518,23 @@ function initCurrentGlyphs() {
     });
 }
 
+function positionGlyphTooltip(tooltip, cursorX, cursorY) {
+    const offset = 14;
+    const margin = 8;
+    const preferredWidth = 288;
+
+    const left = cursorX + offset;
+    const maxWidth = Math.max(120, Math.min(preferredWidth, window.innerWidth - left - margin));
+    tooltip.style.left = left + "px";
+    tooltip.style.maxWidth = maxWidth + "px";
+
+    const tooltipHeight = tooltip.offsetHeight || 120;
+    const top = (cursorY + offset + tooltipHeight <= window.innerHeight - margin)
+        ? cursorY + offset
+        : Math.max(margin, cursorY - offset - tooltipHeight);
+    tooltip.style.top = top + "px";
+}
+
 function getGlyphTooltip(glyph, typeKey, classKey) {
     const lines = [];
 
@@ -3485,9 +3627,17 @@ function renderGlyphsContainer() {
             });
 
             // Tooltip hover — listeners wired once here; selectGlyph injects [data-glyph-tooltip]
-            slot.addEventListener("mouseenter", () => {
+            slot.addEventListener("mouseenter", (e) => {
                 const tooltip = slot.querySelector("[data-glyph-tooltip]");
-                if (tooltip) tooltip.classList.remove("hidden");
+                if (!tooltip) return;
+                tooltip.classList.remove("hidden");
+                positionGlyphTooltip(tooltip, e.clientX, e.clientY);
+            });
+            slot.addEventListener("mousemove", (e) => {
+                const tooltip = slot.querySelector("[data-glyph-tooltip]");
+                if (tooltip && !tooltip.classList.contains("hidden")) {
+                    positionGlyphTooltip(tooltip, e.clientX, e.clientY);
+                }
             });
             slot.addEventListener("mouseleave", () => {
                 const tooltip = slot.querySelector("[data-glyph-tooltip]");
@@ -3748,7 +3898,7 @@ function selectGlyph(glyphType, slotIndex, glyphData) {
 
     const tooltipDiv = document.createElement("div");
     tooltipDiv.setAttribute("data-glyph-tooltip", "");
-    tooltipDiv.className = "hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 p-2 bg-black border border-gray-600 rounded w-72 text-sm shadow-lg pointer-events-none";
+    tooltipDiv.className = "hidden fixed z-50 p-2 bg-black border border-gray-600 rounded text-sm shadow-lg pointer-events-none";
     tooltipDiv.innerHTML = getGlyphTooltip(glyphData, typeKey, currentState.class);
 
     slot.appendChild(img);
