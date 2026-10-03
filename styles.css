@@ -382,6 +382,11 @@ body {
     transition: opacity 0.15s ease, filter 0.15s ease;
 }
 
+.arrow.talent-search-dim {
+    opacity: 0.08 !important;
+    transition: opacity 0.15s ease;
+}
+
 /* Tooltips are JS-controlled via setupTooltips() — disable the CSS-hover trigger on all devices */
 .group:hover .group-hover\:block {
     display: none !important;

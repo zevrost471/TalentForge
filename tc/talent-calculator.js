@@ -2367,6 +2367,7 @@ function applyTalentSearch(query) {
 
     if (!trimmed) {
         allIcons.forEach(icon => icon.classList.remove("talent-search-highlight", "talent-search-dim"));
+        document.querySelectorAll(".arrow").forEach(arrow => arrow.classList.remove("talent-search-dim"));
         return 0;
     }
 
@@ -2394,6 +2395,8 @@ function applyTalentSearch(query) {
             icon.classList.add("talent-search-dim");
         }
     });
+
+    document.querySelectorAll(".arrow").forEach(arrow => arrow.classList.add("talent-search-dim"));
 
     return matchCount;
 }
