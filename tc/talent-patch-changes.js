@@ -1,12 +1,16 @@
 import {
   removeTalentsById,
   removeTalentsByIdOld,
+  removeTalentsByIdFrom,
   replaceTalent,
   replaceTalentOld,
+  replaceTalentFrom,
   moveTalent,
   moveTalentOld,
+  moveTalentFrom,
   insertTalent,
   insertTalentOld,
+  insertTalentFrom,
   bulkInsertTalents,
   bulkInsertTalentsOld,
   replaceTalentTreeOld,
@@ -4782,7 +4786,7 @@ for (const [classKey, trees] of Object.entries(foreverTalents)) {
 */
 
 // Overpower proc chance increased to 4/8/12/16/20% (was 2/4/6/8/10%). Now specifies main-hand attacks.
-replaceTalentOld("1.60.1.70009", "warrior", "Arms", "bloodthrill", {
+replaceTalentFrom("1.60.1.70009", "warrior", "Arms", "bloodthrill", {
   description: [
     "Your Main Hand melee attacks against enemies afflicted by your Rend have a {value}% chance to allow the use of your Overpower ability on the target. Lasts 6 sec.",
     {
@@ -4792,7 +4796,7 @@ replaceTalentOld("1.60.1.70009", "warrior", "Arms", "bloodthrill", {
 });
 
 // Now reduces Slam's cooldown by 1.5/3 seconds. Clarified that Slam does not delay melee swings.
-replaceTalentOld("1.60.1.70009", "warrior", "Arms", "improved_slam", {
+replaceTalentFrom("1.60.1.70009", "warrior", "Arms", "improved_slam", {
   description: [
     "Reduces the global cooldown and cast time of your Slam ability by {value1} sec. In addition, Slam no longer interrupts or delays your melee swing and Slam's cooldown is reduced by {value2} sec.",
     {
@@ -4803,12 +4807,12 @@ replaceTalentOld("1.60.1.70009", "warrior", "Arms", "improved_slam", {
 });
 
 // Improved Holy Strike Removed.
-removeTalentsByIdOld("1.60.1.70009", "paladin", "Holy", [
+removeTalentsByIdFrom("1.60.1.70009", "paladin", "Holy", [
   "improved_holy_strike",
 ]);
 
 // Now also increases Holy Strike's critical strike chance by 3/6/9/12/15%.
-replaceTalentOld("1.60.1.70009", "paladin", "Holy", "holy_power", {
+replaceTalentFrom("1.60.1.70009", "paladin", "Holy", "holy_power", {
   description: [
     "Increases the critical strike chance of your Holy Shock and Holy Strike spells by {value1}%, and all other spells by {value2}%.",
     {
@@ -4819,26 +4823,26 @@ replaceTalentOld("1.60.1.70009", "paladin", "Holy", "holy_power", {
 });
 
 // Tooltip reworded.
-replaceTalentOld("1.60.1.70009", "paladin", "Holy", "lights_vigil", {
+replaceTalentFrom("1.60.1.70009", "paladin", "Holy", "lights_vigil", {
   description: [
     "Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost, or allied targets to heal their party for 326 to 344. The Paladin may only have one Light's Vigil active per party.",
   ],
 });
 
 // Holy Strike damage bonus increased to 20% (was 10%).
-replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "sacred_arbiter", {
+replaceTalentFrom("1.60.1.70009", "paladin", "Retribution", "sacred_arbiter", {
   description: [
     "Increases the damage of your Holy Strike ability by 20% and causes it to refresh all Judgement effects on the target.",
   ],
 });
 
 // Crusade Removed.
-removeTalentsByIdOld("1.60.1.70009", "paladin", "Retribution", [
+removeTalentsByIdFrom("1.60.1.70009", "paladin", "Retribution", [
   "crusade",
 ]);
 
 // Damage bonus reduced to 2/4/6% (was 3/6/9%).
-replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "two_handed_weapon_specialization", {
+replaceTalentFrom("1.60.1.70009", "paladin", "Retribution", "two_handed_weapon_specialization", {
   description: [
     "Increases the damage you deal with two-handed melee weapons by {value}%.",
     {
@@ -4848,7 +4852,7 @@ replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "two_handed_weapon_sp
 });
 
 // Maximum stacks reduced to 3 (was 5). Tooltip now excludes periodic critical strikes.
-replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "vengeance", {
+replaceTalentFrom("1.60.1.70009", "paladin", "Retribution", "vengeance", {
   description: [
     "Increases your Physical and Holy damage dealt by 1% for 30 sec after landing a non-periodic critical strike. Stacks up to 3 times.",
     {
@@ -4858,21 +4862,21 @@ replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "vengeance", {
 });
 
 // Now reduces the Mana cost of Seals by 20%.
-replaceTalentOld("1.60.1.70009", "paladin", "Retribution", "twist_of_light", {
+replaceTalentFrom("1.60.1.70009", "paladin", "Retribution", "twist_of_light", {
   description: [
     "Reduces the Mana cost of your Seal spells by 20%, and when you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, gain an Echo of that Seal. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
   ],
 });
 
 // Now grants 30% movement speed for 3 seconds.
-replaceTalentOld("1.60.1.70009", "hunter", "Survival", "strider_kick", {
+replaceTalentFrom("1.60.1.70009", "hunter", "Survival", "strider_kick", {
   description: [
     "A powerful kick that deals 100% melee weapon damage and increases movement speed by 30% for 3 sec.",
   ],
 });
 
 // Fixed a tooltip typo.
-replaceTalentOld("1.60.1.70009", "priest", "Shadow", "devouring_contagion", {
+replaceTalentFrom("1.60.1.70009", "priest", "Shadow", "devouring_contagion", {
   description: [
     "Reduces the mana cost of your Devouring Plague by {value1}%.\n\nTargets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within {value2} yards for the remaining duration.",
     {
@@ -4883,38 +4887,38 @@ replaceTalentOld("1.60.1.70009", "priest", "Shadow", "devouring_contagion", {
 });
 
 // Elemental Fury moved to row 6 and now requires Call of Thunder.
-replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "elemental_fury", {
+replaceTalentFrom("1.60.1.70009", "shaman", "Elemental", "elemental_fury", {
   row: 5,
   requiresTalents: "call_of_thunder",
 });
 
 // Call of Thunder now requires all three ranks of Elemental Alacrity.
-replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "call_of_thunder", {
+replaceTalentFrom("1.60.1.70009", "shaman", "Elemental", "call_of_thunder", {
   requiresTalents: "elemental_alacrity",
 });
 
 // Elemental Alacrity moved to row 3 and no longer requires Call of Thunder.
-replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "elemental_alacrity", {
+replaceTalentFrom("1.60.1.70009", "shaman", "Elemental", "elemental_alacrity", {
   row: 2,
   requiresTalents: null,
 });
 
 // Damage increased to 150-192.
-replaceTalentOld("1.60.1.70009", "shaman", "Elemental", "lava_burst", {
+replaceTalentFrom("1.60.1.70009", "shaman", "Elemental", "lava_burst", {
   description: [
     "You hurl molten lava at the target, dealing 150 to 192 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
   ],
 });
 
 // Tooltip no longer mentions increased spell casting speed.
-replaceTalentOld("1.60.1.70009", "shaman", "Enhancement", "rage_of_the_farseer", {
+replaceTalentFrom("1.60.1.70009", "shaman", "Enhancement", "rage_of_the_farseer", {
   description: [
     "Increases your melee attack speed by 30% for 25 sec.",
   ],
 });
 
 // Bonus Fire Blast critical strike chance now lasts 30 seconds.
-replaceTalentOld("1.60.1.70009", "mage", "Fire", "wake_of_fire", {
+replaceTalentFrom("1.60.1.70009", "mage", "Fire", "wake_of_fire", {
   description: [
     "Reduces the cooldown of your Fire Blast spell by {value1} sec. Killing a non-trivial target increases the critical strike chance of your next Fire Blast cast within 30 sec by {value2}%.",
     {
@@ -4925,14 +4929,14 @@ replaceTalentOld("1.60.1.70009", "mage", "Fire", "wake_of_fire", {
 });
 
 // Hot Streak duration increased to 20 seconds.
-replaceTalentOld("1.60.1.70009", "mage", "Fire", "hot_streak", {
+replaceTalentFrom("1.60.1.70009", "mage", "Fire", "hot_streak", {
   description: [
     "Your non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch grant Hot Streak for 20 sec. Hot Streak reduces the cast time of Pyroblast by 25%, stacking up to 3 times.",
   ],
 });
 
 // Update Ferocity to use Primal Bite's new name.
-replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "ferocity", {
+replaceTalentFrom("1.60.1.70009", "druid", "Feral Combat", "ferocity", {
   description: [
     "Reduces the cost of your Maul, Primal Bite, Swipe, Claw, and Rake abilities by {value} Rage or Energy.",
     {
@@ -4942,7 +4946,7 @@ replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "ferocity", {
 });
 
 // Mangle renamed to Primal Bite.
-replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "mangle", {
+replaceTalentFrom("1.60.1.70009", "druid", "Feral Combat", "mangle", {
   name: "Primal Bite",
   icon: "ability_racial_cannibalize",
   description: [
@@ -4951,14 +4955,493 @@ replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "mangle", {
 });
 
 // Primal Fury renamed to Blood Frenzy.
-replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "primal_fury", {
+replaceTalentFrom("1.60.1.70009", "druid", "Feral Combat", "primal_fury", {
   name: "Blood Frenzy",
   icon: "ability_ghoulfrenzy",
 });
 
 // Update Berserk to use Primal Bite's new name.
-replaceTalentOld("1.60.1.70009", "druid", "Feral Combat", "berserk", {
+replaceTalentFrom("1.60.1.70009", "druid", "Feral Combat", "berserk", {
   description: [
     "Causes your Primal Bite ability to strike up to 3 targets, removes its cooldown, and increases the critical strike chance of your Combo Point-generating abilities by 100%. Clears and grants immunity to Fear effects for the duration. Lasts 15 sec.",
+  ],
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Patch 1.60.1.70170 (October 1, 2026)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// === WARRIOR ===
+
+// Arms: Now requires Battle Stance and a melee weapon. Dismount effect no longer listed.
+replaceTalentFrom("1.60.1.70170", "warrior", "Arms", "spearing_strike", {
+  description: [
+    "A brutal attack that deals 40% weapon damage, plus an additional 80% weapon damage against Giants, Dragonkin, and mounted targets.",
+  ],
+  requiresWeapon: 1,
+  requiresStance: 1,
+});
+
+// Arms: Cooldown reduction for Slam is now 3 sec at both ranks, up from 1.5/3 sec.
+replaceTalentFrom("1.60.1.70170", "warrior", "Arms", "improved_slam", {
+  description: [
+    "Reduces the global cooldown and cast time of your Slam ability by {value} sec. In addition, Slam no longer interrupts or delays your melee swing and Slam's cooldown is reduced by 3 sec.",
+    {
+      value: [0.25, 0.50],
+    },
+  ],
+});
+
+// Fury: Iron Will relocated to Protection tree.
+removeTalentsByIdFrom("1.60.1.70170", "warrior", "Fury", ["iron_will"]);
+insertTalentFrom("1.60.1.70170", "warrior", "Protection", {
+  id: "iron_will",
+  name: "Iron Will",
+  icon: "spell_magic_magearmor",
+  row: 0,
+  col: 2,
+  ranks: 5,
+  requiresTalents: null,
+  description: [
+    "Reduces the duration of Stun and Fear effects inflicted on you by {value}%.",
+    {
+      value: [3, 6, 9, 12, 15],
+    },
+  ],
+  isActive: false,
+});
+
+// Fury: Lingering Rage replaces Iron Will at (row 1, col 1).
+insertTalentFrom("1.60.1.70170", "warrior", "Fury", {
+  id: "lingering_rage",
+  name: "Lingering Rage",
+  icon: "ability_warrior_secondwind",
+  row: 1,
+  col: 1,
+  ranks: 5,
+  requiresTalents: null,
+  description: [
+    "Delays the start of your Rage decay by {value} sec after leaving combat.",
+    {
+      value: [2, 4, 6, 8, 10],
+    },
+  ],
+  isActive: false,
+});
+
+// Fury: Unbridled Wrath tooltip removes the two-handed weapon bonus.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "unbridled_wrath", {
+  description: [
+    "Gives you a {value}% chance to generate 1 additional Rage when you deal melee damage with a weapon.",
+    {
+      value: [12, 24, 36, 48, 60],
+    },
+  ],
+});
+
+// Fury: Improved Cleave removed.
+removeTalentsByIdFrom("1.60.1.70170", "warrior", "Fury", ["improved_cleave"]);
+
+// Fury: Piercing Howl now specifies 10-yard radius.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "piercing_howl", {
+  description: [
+    "Causes all enemies within 10 yds to be Dazed, reducing movement speed by 50% for 6 sec.",
+  ],
+});
+
+// Fury: Blood Craze Bloodthirst trigger removed.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "blood_craze", {
+  description: [
+    "Regenerates {value}% of your total Health over 6 sec after being the victim of a critical strike or suffering more than 20% of your maximum Health from a single attack.",
+    {
+      value: [1, 2, 3],
+    },
+  ],
+});
+
+// Fury: Off-hand Rage generation reduced from 20/40/60/80/100% to 10/20/30/40/50%. Hit bonus removed.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "dual_wield_specialization", {
+  description: [
+    "Increases the damage done by your off-hand weapon by {value1}% and the Rage generated by your off-hand attacks by {value2}%.",
+    {
+      value1: [5, 10, 15, 20, 25],
+      value2: [10, 20, 30, 40, 50],
+    },
+  ],
+});
+
+// Fury: Raging Blows — Cleave/Whirlwind cost reduced by 3; off-hand Whirlwind strike removed.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "raging_blows", {
+  description: [
+    "Reduces the Rage cost of your Cleave and Whirlwind abilities by 3.",
+  ],
+});
+
+// Fury: Precision removed.
+removeTalentsByIdFrom("1.60.1.70170", "warrior", "Fury", ["precision"]);
+
+// Fury: Gore Drinker — new talent at (row 5, col 2). Requires Enrage.
+insertTalentFrom("1.60.1.70170", "warrior", "Fury", {
+  id: "gore_drinker",
+  name: "Gore Drinker",
+  icon: "racial_troll_berserk",
+  row: 5,
+  col: 2,
+  ranks: 2,
+  requiresTalents: "enrage",
+  description: [
+    "Your Enrage, Berserker Rage, Bloodrage, Death Wish, and Bloodthirst abilities cause your next 3 melee attacks to restore {value}% of your maximum Health.",
+    {
+      value: [0.5, 1.0],
+    },
+  ],
+  isActive: false,
+});
+
+// Fury: Boundless Rage replaced by Furious Precision at (row 2, col 0). Icon updated.
+removeTalentsByIdFrom("1.60.1.70170", "warrior", "Fury", ["boundless_rage"]);
+insertTalentFrom("1.60.1.70170", "warrior", "Fury", {
+  id: "furious_precision",
+  name: "Furious Precision",
+  icon: "ability_warrior_incite",
+  row: 2,
+  col: 0,
+  ranks: 3,
+  requiresTalents: null,
+  description: [
+    "Increases your chance to hit with off-hand attacks by {value}%.",
+    {
+      value: [4, 7, 10],
+    },
+  ],
+  isActive: false,
+});
+
+// Fury: Booming Voice now affects all Shouts and reduces their Rage cost by 5/10/15/20/25%.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "booming_voice", {
+  description: [
+    "Increases the area of effect of your Shouts by {value1}% and reduces their Rage cost by {value2}%.",
+    {
+      value1: [10, 20, 30, 40, 50],
+      value2: [5, 10, 15, 20, 25],
+    },
+  ],
+});
+
+// Fury: Improved Berserker Rage moved from row 5 to row 4.
+moveTalentFrom("1.60.1.70170", "warrior", "Fury", "improved_berserker_rage", 4, 0);
+
+// Fury: Flurry moved from col 2 to col 1; now requires Death Wish instead of Enrage.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "flurry", {
+  col: 1,
+  requiresTalents: "death_wish",
+});
+
+// Fury: Bloodthirst — AP scaling increased to 45%; Death Wish prerequisite removed.
+replaceTalentFrom("1.60.1.70170", "warrior", "Fury", "bloodthirst", {
+  requiresTalents: null,
+  description: [
+    "Instantly attack the target causing damage equal to 45% of your Attack Power plus 30 and increasing your movement speed by 10% for 10 sec.",
+  ],
+});
+
+// Protection tree restructure: Improved Bloodrage moves to row 0.
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "improved_bloodrage", 0, 0);
+
+// Protection: Anticipation moves to row 1, col 0 (where Improved Bloodrage was).
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "anticipation", 1, 0);
+
+// Protection: Toughness removed.
+removeTalentsByIdFrom("1.60.1.70170", "warrior", "Protection", ["toughness"]);
+
+// Protection: Last Stand no longer requires Improved Bloodrage.
+replaceTalentFrom("1.60.1.70170", "warrior", "Protection", "last_stand", {
+  requiresTalents: null,
+});
+
+// Protection: Improved Revenge moves to row 1.
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "improved_revenge", 1, 2);
+
+// Protection: Improved Disarm moves to row 2, col 2.
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "improved_disarm", 2, 2);
+
+// Protection: Vanguard moves to col 1.
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "vanguard", 3, 1);
+
+// Protection: Improved Shield Bash moves to row 3.
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "improved_shield_bash", 3, 2);
+
+// Protection: Focused Rage moves to row 4.
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "focused_rage", 4, 2);
+
+// Protection: Bastion moves to row 5, col 2.
+moveTalentFrom("1.60.1.70170", "warrior", "Protection", "bastion", 5, 2);
+
+// === PALADIN ===
+
+// Holy: Voice of Truth duration now inline ("for 6 sec" instead of "Lasts 6 sec.").
+replaceTalentFrom("1.60.1.70170", "paladin", "Holy", "voice_of_truth", {
+  description: [
+    "Grants you immunity to Silence and Interrupt effects for 6 sec.",
+  ],
+});
+
+// Holy: Light's Vigil reordered (enemy clause first), "friendly" → "allied", simplified per-party limit.
+replaceTalentFrom("1.60.1.70170", "paladin", "Holy", "lights_vigil", {
+  description: [
+    "Applies Light's Vigil to the target for 30 sec. Your next Holy Shock cast on them triggers no cooldown and causes enemy targets to suffer 175 to 189 Holy damage and refund 75% of Light's Vigil's Mana cost, or allied targets to heal their party for 326 to 344. You may only have one Light's Vigil active per party.",
+  ],
+});
+
+// Protection: Redoubt block-chance reduced from 6/12/18/24/30% to 4/8/12/16/20%.
+replaceTalentFrom("1.60.1.70170", "paladin", "Protection", "redoubt", {
+  description: [
+    "Damaging melee attacks against you have a 10% chance to increase your chance to block by {value}%.  Lasts 10 sec or 5 blocks.",
+    {
+      value: [4, 8, 12, 16, 20],
+    },
+  ],
+});
+
+// Protection: Holy Shield block-chance increased from 20% to 30%.
+replaceTalentFrom("1.60.1.70170", "paladin", "Protection", "holy_shield", {
+  description: [
+    "Increases chance to block by 30% for 10 sec, and deals 110 Holy damage for each attack blocked while active.  Damage caused by Holy Shield causes 20% additional threat. Each block expends a charge. 4 charges.",
+  ],
+});
+
+// Protection: Iron Creed tooltip corrected (added "by" before threat value).
+replaceTalentFrom("1.60.1.70170", "paladin", "Protection", "iron_creed", {
+  description: [
+    "Increases the threat generated by your Holy Strike ability by {value1}%. While Righteous Fury is active, Holy Strike also reduces your damage taken by {value2}% for 6 sec.",
+    {
+      value1: [5, 10, 15, 20, 25],
+      value2: [2, 4, 6, 8, 10],
+    },
+  ],
+});
+
+// Retribution: Champion of the Light Intellect scaling reduced to 20/40/60% (from 33/66/100%); healing bonus removed.
+replaceTalentFrom("1.60.1.70170", "paladin", "Retribution", "champion_of_the_light", {
+  description: [
+    "Increases your spell damage and healing by up to {value}% of your Intellect.",
+    {
+      value: [20, 40, 60],
+    },
+  ],
+});
+
+// Retribution: Twist of Light now explicitly states 20% Mana cost reduction for Seal spells.
+replaceTalentFrom("1.60.1.70170", "paladin", "Retribution", "twist_of_light", {
+  description: [
+    "Reduces the Mana cost of your Seal spells by 20%, and when you replace your Seal of Command, Seal of Righteousness, Seal of Fury, or Seal of Justice with a different Seal, you gain an Echo of that Seal. Your next melee attack applies the replaced Seal's effects, consuming the Echo.",
+  ],
+});
+
+// === HUNTER ===
+
+// Marksmanship: Sniper Shot maximum range increased from 35 to 45 yards; description updated.
+replaceTalentFrom("1.60.1.70170", "hunter", "Marksmanship", "sniper_shot", {
+  maxRange: 45,
+  description: [
+    "A long-range shot that deals ranged damage plus 160 and increases the range of your next 3 Shots by 10 yards for 10 sec.",
+  ],
+});
+
+// Marksmanship: Improved Stings icon updated; grammar corrected ("Increased" → "Increases").
+replaceTalentFrom("1.60.1.70170", "hunter", "Marksmanship", "improved_stings", {
+  icon: "ability_hunter_quickshot",
+  description: [
+    "Increases the damage of your Serpent Sting ability by {value1}%, reduces the cooldown of your Viper Sting ability by {value2} sec, and increases the duration of your Scorpid Sting ability by {value3} sec.",
+    {
+      value1: [6, 13, 20],
+      value2: [2, 4, 6],
+      value3: [15, 30, 45],
+    },
+  ],
+});
+
+// Survival: Deflection parry bonus reduced from 2/4/6/8/10% to 1/2/3/4/5%.
+replaceTalentFrom("1.60.1.70170", "hunter", "Survival", "deflection", {
+  description: [
+    "Increases your Parry chance by {value}%.",
+    {
+      value: [1, 2, 3, 4, 5],
+    },
+  ],
+});
+
+// Survival: Predator's Edge icon updated; "offhand" → "off-hand" in description.
+replaceTalentFrom("1.60.1.70170", "hunter", "Survival", "predators_edge", {
+  icon: "ability_dualwield",
+  description: [
+    "Increases your melee critical strike damage by {value1}% and your off-hand weapon damage by {value2}%.",
+    {
+      value1: [6, 12, 18, 24, 30],
+      value2: [10, 20, 30, 40, 50],
+    },
+  ],
+});
+
+// Survival: Lacerating Strikes bleed clause reordered (duration moved to end).
+replaceTalentFrom("1.60.1.70170", "hunter", "Survival", "lacerating_strikes", {
+  description: [
+    "Your Mongoose Bite also causes the target to Bleed for damage equal to 40% of the damage done by Mongoose Bite over 21 sec.",
+  ],
+});
+
+// Marksmanship: Trueshot Aura 30-minute duration removed; "yards" abbreviated to "yds".
+replaceTalentFrom("1.60.1.70170", "hunter", "Marksmanship", "trueshot_aura", {
+  description: [
+    "Increases the Ranged Attack Power of party members within 45 yds by 30.",
+  ],
+});
+
+// === ROGUE ===
+
+// Assassination: Venom combo point duration formatting updated.
+replaceTalentFrom("1.60.1.70170", "rogue", "Assassination", "venom", {
+  description: [
+    "Finishing move that increases the damage of your Poisons by 30% and your chance to apply Poisons by 10%.  Lasts longer per combo point:\n1 point  : 9 sec\n2 points: 12 sec\n3 points: 15 sec\n4 points: 18 sec\n5 points: 21 sec",
+  ],
+});
+
+// Subtlety: Setup now specifies dodging the target's attacks or fully resisting the target's spells.
+replaceTalentFrom("1.60.1.70170", "rogue", "Subtlety", "setup", {
+  description: [
+    "Gives you a {value}% chance to add a Combo Point to your target after dodging one of their attacks or fully resisting one of their spells.",
+    {
+      value: [33, 67, 100],
+    },
+  ],
+});
+
+// === PRIEST ===
+
+// Discipline: Inner Focus critical-effect bonus now applies only to non-periodic spells.
+replaceTalentFrom("1.60.1.70170", "priest", "Discipline", "inner_focus", {
+  description: [
+    "When activated, reduces the Mana cost of your next spell by 100% and increases its critical effect chance by 25% if it is a non-periodic spell and capable of a critical effect.",
+  ],
+});
+
+// Shadow: Spirit Tap now lists trigger chance when a target with Vampiric Embrace dies.
+replaceTalentFrom("1.60.1.70170", "priest", "Shadow", "spirit_tap", {
+  description: [
+    "Gives you a {value}% chance to increase your Spirit by 100% for 15 sec after killing a non-trivial target or when an enemy afflicted by your Vampiric Embrace dies. For the duration, 50% of your Mana regeneration will continue while casting.",
+    {
+      value: [20, 40, 60, 80, 100],
+    },
+  ],
+});
+
+// Shadow: The Spirit Tap interaction is now described on Spirit Tap instead of Vampiric Embrace.
+replaceTalentFrom("1.60.1.70170", "priest", "Shadow", "vampiric_embrace", {
+  description: [
+    "Afflicts your target with Shadow energy that causes all party members to be healed for 20% of any Shadow spell damage you deal for 30 sec.",
+  ],
+});
+
+// Shadow: Devouring Contagion range formatting updated; "it" typo removed, "yards" → "yds".
+replaceTalentFrom("1.60.1.70170", "priest", "Shadow", "devouring_contagion", {
+  description: [
+    "Reduces the mana cost of your Devouring Plague by {value1}%.\n\nTargets that die while Devouring Plague is active spreads it, jumping to a nearby enemy within {value2} yds for the remaining duration.",
+    {
+      value1: [25, 50],
+      value2: [5, 10],
+    },
+  ],
+});
+
+// === MAGE ===
+
+// Fire: Hot Streak renamed to Heating Up; icon updated.
+replaceTalentFrom("1.60.1.70170", "mage", "Fire", "hot_streak", {
+  name: "Heating Up",
+  icon: "spell_fire_firebolt",
+  description: [
+    "Non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch reduce the cast time of your next Pyroblast cast within 20 sec by 25%, stacking up to 3 times.",
+  ],
+});
+
+// Fire: Combustion now ends after 3 non-periodic Fire critical strikes (down from 4).
+replaceTalentFrom("1.60.1.70170", "mage", "Fire", "combustion", {
+  description: [
+    "When activated, this spell causes each of your Fire damage spell hits to increase your critical strike chance with Fire damage spells by 10%.  This effect lasts until you have caused 3 non-periodic critical strikes with Fire spells.",
+  ],
+});
+
+// === WARLOCK ===
+
+// Affliction: Soul Harvesting renamed to Soul Harvest; now specifies non-trivial target with Drain Soul.
+replaceTalentFrom("1.60.1.70170", "warlock", "Affliction", "soul_harvesting", {
+  name: "Soul Harvest",
+  description: [
+    "Killing a non-trivial target afflicted by your Drain Soul increases your Mana regeneration by {value}% for 10 sec and allows {value}% of normal Mana regeneration to continue while casting.",
+    {
+      value: [50, 100],
+    },
+  ],
+});
+
+// === DRUID ===
+
+// Feral Combat: Shredding Attacks moved from row 3 to row 2 (0-indexed).
+moveTalentFrom("1.60.1.70170", "druid", "Feral Combat", "shredding_attacks", 2, 0);
+
+// Feral Combat: Predatory Instincts moved from col 0 to col 3.
+moveTalentFrom("1.60.1.70170", "druid", "Feral Combat", "predatory_instincts", 4, 3);
+
+// Feral Combat: Primal Bite now explicitly states high threat generation.
+replaceTalentFrom("1.60.1.70170", "druid", "Feral Combat", "mangle", {
+  description: [
+    "Bite the target, dealing 100% normal damage plus 26 and generating a high amount of threat.",
+  ],
+});
+
+// Feral Combat: King of the Jungle replaced by Shifting Power at (row 3, col 0). Icon: spell_druid_displacement.
+removeTalentsByIdFrom("1.60.1.70170", "druid", "Feral Combat", ["king_of_the_jungle"]);
+insertTalentFrom("1.60.1.70170", "druid", "Feral Combat", {
+  id: "shifting_power",
+  name: "Shifting Power",
+  icon: "spell_druid_displacement",
+  row: 3,
+  col: 0,
+  ranks: 1,
+  requiresTalents: "shredding_attacks",
+  description: [
+    "Converts 55% of your base Mana into 40 Energy. Shifting Power's cost is reduced by effects that reduce the cost of shapeshifting.",
+  ],
+  isActive: true,
+  castTime: null,
+  cooldown: 16,
+  spentResource: 55,
+  absoluteSpent: false,
+  range: null,
+  requiresCatForm: true,
+});
+
+// Feral Combat: Improved Shifting Power — new talent at (row 4, col 0). Icon: ability_hunter_aspectmastery.
+insertTalentFrom("1.60.1.70170", "druid", "Feral Combat", {
+  id: "improved_shifting_power",
+  name: "Improved Shifting Power",
+  icon: "ability_hunter_aspectmastery",
+  row: 4,
+  col: 0,
+  ranks: 2,
+  requiresTalents: "shifting_power",
+  description: [
+    "Reduces the cooldown of your Shifting Power ability by {value} sec.",
+    {
+      value: [4, 8],
+    },
+  ],
+  isActive: false,
+});
+
+// Balance: Moonkin Form first paragraph rewritten; Polymorph protection now explicit.
+replaceTalentFrom("1.60.1.70170", "druid", "Balance", "moonkin_form", {
+  description: [
+    "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by 100%, Armor contribution from items by 360%, and all party members within 45 yards have their critical strike chance increased by 3%, exclusive with Leader of the Pack. Also protects the caster from Polymorph effects and prevents the use of healing spells.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
   ],
 });

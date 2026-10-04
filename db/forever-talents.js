@@ -5326,7 +5326,7 @@ export const foreverTalents = {
         ],
         isActive: true,
         castTime: null,
-        cooldown: 10,
+        cooldown: 60,
         spentResource: 40,
         absoluteSpent: true,
         resourceType: 1,
@@ -7923,7 +7923,15 @@ export const foreverTalents = {
         description: [
           "Tears the target apart from within, dealing 36 Shadow damage every 1 sec and increasing the damage they take from your other Shadow damage over time effects by 10%. Lasts 6 sec."
         ],
-        isActive: true
+        isActive: true,
+        castTime: 6,
+        isChanneled: true,
+        cooldown: null,
+        spentResource: 200,
+        absoluteSpent: true,
+        resourceType: 1,
+        range: 30,
+        requiresWeapon: 0
       }
     ],
     Demonology: [
@@ -8674,7 +8682,14 @@ export const foreverTalents = {
         description: [
           "Deals 100 to 114 Fire damage to your target and an additional 25% damage if the target is afflicted by Immolate."
         ],
-        isActive: true
+        isActive: true,
+        castTime: 2.5,
+        cooldown: null,
+        spentResource: 205,
+        absoluteSpent: true,
+        resourceType: 1,
+        range: 30,
+        requiresWeapon: 0
       }
     ]
   },
@@ -8846,7 +8861,14 @@ export const foreverTalents = {
         description: [
           "A brutal attack that deals 40% weapon damage. Deals an additional 80% weapon damage against Giants, Dragonkin, and mounted targets. Mounted targets are dismounted."
         ],
-        isActive: true
+        isActive: true,
+        castTime: null,
+        cooldown: 20,
+        spentResource: 15,
+        resourceType: 2,
+        range: 0,
+        requiresWeapon: 0,
+        requiresStance: null,
       },
       {
         id: "two_handed_weapon_specialization",
