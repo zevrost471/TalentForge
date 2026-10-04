@@ -157,3 +157,43 @@ function getVersionsUpTo(versionParam) {
         return lastNum <= patchNumber;
     });
 }
+
+function getVersionsFrom(versionParam) {
+    const targetParts = versionParam.split('.');
+    const major = targetParts[0];
+    const targetPartsCount = targetParts.length;
+    const patchNumber = parseInt(targetParts[targetParts.length - 1], 10);
+
+    return Object.keys(talentsAttributedByVersion).filter(v => {
+        const parts = v.split('.');
+        if (parts.length !== targetPartsCount) return false;
+        if (parts[0] !== major) return false;
+
+        const lastNum = parseInt(parts[parts.length - 1], 10);
+        if (isNaN(lastNum)) return false;
+
+        return lastNum >= patchNumber;
+    });
+}
+
+export function removeTalentsByIdFrom(versionParam, classKey, treeName, idsToRemove) {
+    getVersionsFrom(versionParam).forEach(version =>
+        removeTalentsByIdOld(version, classKey, treeName, idsToRemove)
+    );
+}
+
+export function replaceTalentFrom(versionParam, classKey, treeName, id, newTalentData) {
+    getVersionsFrom(versionParam).forEach(version =>
+        replaceTalentOld(version, classKey, treeName, id, newTalentData)
+    );
+}
+
+export function moveTalentFrom(versionParam, classKey, treeName, id, newRow, newCol) {
+    replaceTalentFrom(versionParam, classKey, treeName, id, { row: newRow, col: newCol });
+}
+
+export function insertTalentFrom(versionParam, classKey, treeName, talentData) {
+    getVersionsFrom(versionParam).forEach(version =>
+        insertTalentOld(version, classKey, treeName, talentData)
+    );
+}
