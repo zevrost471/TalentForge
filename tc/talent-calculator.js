@@ -2862,6 +2862,16 @@ function importBuild() {
             throw new Error(`Unknown version: ${buildData.version}`);
         }
 
+        const classKey = buildData.class;
+        const importTrees = talentTreeData[buildData.version]?.classes[classKey]?.trees || [];
+        const importPointsSpent = importTrees.reduce((total, tree) => {
+            return total + Object.values(buildData.talents[classKey]?.[tree] || {}).reduce((s, v) => s + v, 0);
+        }, 0);
+        if (importPointsSpent === 0) {
+            showError("Invalid build string: no talents selected.");
+            return;
+        }
+
         if (expansionSelect.value !== targetExpansion) {
             expansionSelect.value = targetExpansion;
             expansionSelect.dispatchEvent(new Event("change"));
@@ -2870,7 +2880,6 @@ function importBuild() {
         versionSelect.value = buildData.version;
         handleVersionChange(true);
 
-        const classKey = buildData.class;
         currentState.version = buildData.version;
         currentState.class = classKey;
         currentState.phase = buildData.phase || 1;
@@ -4764,6 +4773,7 @@ function generateBuildString() {
     });
 
     const talentString = treeStrings.join("-");
+    const hasAnyTalents = treeStrings.some(s => s.length > 0);
 
     // === Generate glyph string only for WotLK and Cataclysm ===
     let glyphString = "";
@@ -4779,10 +4789,12 @@ function generateBuildString() {
 
     // Build the full string with phase segment for SoD
     if (version === "1.15") {
+        if (!hasAnyTalents && !runeString) return "";
         return `p${currentState.phase}/${talentString}${runeString}`;
     }
 
     // === Build final formatted string ===
+    if (!hasAnyTalents && !glyphString) return "";
     return `${talentString}${glyphString}${runeString}`;
 }
 
