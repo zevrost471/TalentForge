@@ -51,6 +51,12 @@
                         </a>
                     </li>
                     <li>
+                        <a href="../peoples/" data-tab="nav-peoples"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            The Peoples of Azeroth
+                        </a>
+                    </li>
+                    <li>
                         <a href="../settings/" data-tab="nav-settings"
                             class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
                             Settings
@@ -141,9 +147,20 @@
 
                 <!-- Inner content wrapper -->
                 <div id="sidebar-content" class="mt-10">
+                    <!-- Pinned Versions — hidden until at least one pin exists -->
+                    <div id="pinned-versions-panel" class="tf-panel-flat rounded-lg p-4 mb-6 hidden">
+                        <h2 class="text-xl font-semibold mb-3 text-yellow-400">Pinned</h2>
+                        <div id="pinned-versions-list" class="space-y-1"></div>
+                    </div>
+
                     <!-- Version selector -->
                     <div class="tf-panel-flat rounded-lg p-4 mb-6">
-                        <h2 class="text-xl font-semibold mb-4 text-yellow-400">Game Version</h2>
+                        <div class="flex items-center justify-between mb-4">
+                            <h2 class="text-xl font-semibold text-yellow-400">Game Version</h2>
+                            <button id="pin-version-btn" class="hidden text-gray-400 hover:text-yellow-400 transition-colors" title="Pin this version">
+                                <i class="fa-solid fa-thumbtack"></i>
+                            </button>
+                        </div>
                         <div class="space-y-3 ">
                             <!-- Expansion Select -->
                             <select id="expansion-select"
@@ -155,7 +172,7 @@
                                 <option value="cataclysm">Cataclysm</option>
                                 <option value="forever">Forever</option>
                                 <option value="turtlewow">Turtle WoW</option>
-                                <option value="epoch">Epoch</option>
+                                <option value="epoch">Project Epoch</option>
                                 <option value="custom">Custom</option>
                             </select>
 

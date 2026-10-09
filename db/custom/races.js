@@ -1,9 +1,9 @@
 // races.js
 
-import { classes } from "../classes.js";
+import { classes, customClasses } from "../classes.js";
 import { newFactions } from "./factions.js";
 
-// const ARTIFICER = classes.ARTIFICER;
+// const ARTISAN = classes.ARTISAN;
 const DEATHKNIGHT = classes.DEATHKNIGHT;
 const DRUID = classes.DRUID;
 const HUNTER = classes.HUNTER;
@@ -14,6 +14,9 @@ const ROGUE = classes.ROGUE;
 const SHAMAN = classes.SHAMAN;
 const WARLOCK = classes.WARLOCK;
 const WARRIOR = classes.WARRIOR;
+const MARKSMAN = customClasses.MARKSMAN;
+const TINKER = customClasses.TINKER;
+const WITCH_DOCTOR = customClasses.WITCH_DOCTOR;
 
 const ALLIANCE = newFactions.ALLIANCE;
 const HORDE = newFactions.HORDE;
@@ -73,11 +76,11 @@ export const raceBaseData = Object.freeze({
     genderVariants: [
       {
         gender: "male",
-        icon: "assets/icons/races/achievement_character_highelf_male_3" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/achievement_character_highelf_male_3",
       },
       {
         gender: "female",
-        icon: "assets/icons/races/achievement_character_highelf_female_3" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/achievement_character_highelf_female_3",
       },
     ],
   },
@@ -153,11 +156,11 @@ export const raceBaseData = Object.freeze({
     genderVariants: [
       {
         gender: "male",
-        icon: "achievement_boss_valanar",
+        icon: "assets/icons/races/achievement_character_dark_ranger_male_2",
       },
       {
         gender: "female",
-        icon: "achievement_boss_lanathel",
+        icon: "assets/icons/races/achievement_character_dark_ranger_female_2",
       },
     ],
   },
@@ -175,18 +178,34 @@ export const raceBaseData = Object.freeze({
       },
     ],
   },
+  night_elf_illidari: {
+    id: "night_elf_illidari",
+    name: "Night Elf",
+    genderVariants: [
+      {
+        gender: "male",
+        icon: "assets/icons/races/character_night_elf_male",
+      },
+      {
+        gender: "female",
+        icon: "achievement_character_nightelf_female",
+      },
+    ],
+  },
   furbolg: {
     id: "furbolg",
     name: "Furbolg",
     genderVariants: [
       {
         gender: "male",
-        icon: "https://static.wikia.nocookie.net/wowpedia/images/4/41/IconSmall_Furbolg.gif/revision/latest/scale-to-width-down/16?cb=20211118211011" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/character_furbolg_1",
       },
+      /*
       {
         gender: "female",
-        icon: "https://static.wikia.nocookie.net/wowpedia/images/4/41/IconSmall_Furbolg.gif/revision/latest/scale-to-width-down/16?cb=20211118211011" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/character_furbolg_1",
       },
+      */
     ],
   },
   blood_elf: {
@@ -219,11 +238,25 @@ export const raceBaseData = Object.freeze({
     genderVariants: [
       {
         gender: "male",
-        icon: "assets/icons/races/character_goblin_male_2" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/character_goblin_male_2",
       },
       {
         gender: "female",
-        icon: "assets/icons/races/character_goblin_female_2" ?? FALLBACK_ICON,
+        icon: "assets/icons/races/character_goblin_female_2",
+      },
+    ],
+  },
+  naga: {
+    id: "naga",
+    name: "Naga",
+    genderVariants: [
+      {
+        gender: "male",
+        icon: "assets/icons/races/naga_myrmidon_royal_guard_wc3",
+      },
+      {
+        gender: "female",
+        icon: "assets/icons/races/sea_witch_wc3",
       },
     ],
   },
@@ -232,6 +265,7 @@ export const raceBaseData = Object.freeze({
 const HUMAN = raceBaseData.human.id;
 const DWARF = raceBaseData.dwarf.id;
 const NIGHTELF = raceBaseData.night_elf.id;
+const NIGHTELF_ILLIDARI = raceBaseData.night_elf_illidari.id;
 const GNOME = raceBaseData.gnome.id;
 const ORC = raceBaseData.orc.id;
 const TAUREN = raceBaseData.tauren.id;
@@ -244,6 +278,7 @@ const FURBOLG = raceBaseData.furbolg.id;
 const BLOODELF = raceBaseData.blood_elf.id;
 const DRAENEI = raceBaseData.draenei.id;
 const GOBLIN = raceBaseData.goblin.id;
+const NAGA = raceBaseData.naga.id;
 
 export const classicPlayableRaces = Object.freeze([
   HUMAN, DWARF, NIGHTELF, GNOME, ORC, TAUREN, TROLL, UNDEAD,
@@ -264,24 +299,24 @@ export const classicRacesByFaction = Object.freeze({
 
 export const customRacesByFaction = Object.freeze({
   [ALLIANCE]: {
-    base: [HUMAN, DWARF, GNOME],
-    allied: [HIGHELF],
+    base: [HUMAN, DWARF, GNOME, HIGHELF],
+    allied: [],
   },
   [HORDE]: {
-    base: [ORC, TAUREN, TROLL],
-    allied: [OGRE],
+    base: [ORC, TAUREN, TROLL, OGRE],
+    allied: [],
   },
   [FORSAKEN]: {
-    base: [UNDEAD],
-    allied: [DARKFALLEN],
+    base: [UNDEAD, DARKFALLEN],
+    allied: [],
   },
   [NIGHT_ELVES]: {
-    base: [NIGHTELF],
-    allied: [FURBOLG],
+    base: [NIGHTELF, FURBOLG],
+    allied: [],
   },
   [ILLIDARI]: {
-    base: [NIGHTELF, BLOODELF],
-    allied: [DRAENEI],
+    base: [NIGHTELF_ILLIDARI, BLOODELF, NAGA, DRAENEI],
+    allied: [],
   },
   [NEUTRAL]: {
     base: [GOBLIN],
@@ -291,49 +326,7 @@ export const customRacesByFaction = Object.freeze({
 
 export const customClassesByRace = Object.freeze({
   human: {
-    availableAtStart: [MAGE, ROGUE, WARLOCK, WARRIOR],
-    availableThroughUnlock: [HUNTER, DEATHKNIGHT],
-    genderVariants: {
-      male: {
-        additionalAvailableAtStart: [PRIEST, PALADIN],
-        additionalAvailableThroughUnlock: [],
-      },
-      female: {
-        additionalAvailableAtStart: [],
-        additionalAvailableThroughUnlock: [PRIEST],
-      },
-    },
-  },
-  dwarf: {
-    availableAtStart: [HUNTER, ROGUE, WARRIOR, /*ARTIFICER*/],
-    availableThroughUnlock: [MAGE],
-    genderVariants: {
-      male: {
-        additionalAvailableAtStart: [],
-        additionalAvailableThroughUnlock: [PRIEST],
-      },
-      female: {
-        additionalAvailableAtStart: [],
-        additionalAvailableThroughUnlock: [],
-      },
-    },
-  },
-  gnome: {
-    availableAtStart: [MAGE, ROGUE, WARLOCK, /*ARTIFICER*/],
-    availableThroughUnlock: [WARRIOR],
-    genderVariants: {
-      male: {
-        additionalAvailableAtStart: [],
-        additionalAvailableThroughUnlock: [],
-      },
-      female: {
-        additionalAvailableAtStart: [],
-        additionalAvailableThroughUnlock: [],
-      },
-    },
-  },
-  high_elf: {
-    availableAtStart: [HUNTER, MAGE, PRIEST, ROGUE, WARRIOR],
+    availableAtStart: [MAGE, ROGUE, WARRIOR, MARKSMAN, PRIEST, PALADIN],
     availableThroughUnlock: [WARLOCK],
     genderVariants: {
       male: {
@@ -346,27 +339,69 @@ export const customClassesByRace = Object.freeze({
       },
     },
   },
-  orc: {
-    availableAtStart: [HUNTER, WARRIOR, WARLOCK],
+  dwarf: {
+    availableAtStart: [HUNTER, ROGUE, WARRIOR, MARKSMAN, /*PRIEST,*/ /*ARTISAN*/],
+    availableThroughUnlock: [MAGE], // runebinder from alpha. priest could be considered as earth-speaker
+    genderVariants: {
+      male: {
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
+      },
+      female: {
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
+      },
+    },
+  },
+  gnome: {
+    availableAtStart: [MAGE, ROGUE, WARLOCK, WARRIOR, TINKER/*, ARTISAN*/],
     availableThroughUnlock: [],
     genderVariants: {
       male: {
-        additionalAvailableAtStart: [SHAMAN],
-        additionalAvailableThroughUnlock: [ROGUE],
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
       },
       female: {
-        additionalAvailableAtStart: [ROGUE],
-        additionalAvailableThroughUnlock: [SHAMAN],
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
+      },
+    },
+  },
+  high_elf: {
+    availableAtStart: [HUNTER, MAGE, PRIEST, ROGUE, WARRIOR, MARKSMAN],
+    availableThroughUnlock: [/*WARLOCK,*/ PALADIN],
+    genderVariants: {
+      male: {
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
+      },
+      female: {
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
+      },
+    },
+  },
+  orc: {
+    availableAtStart: [HUNTER, WARRIOR, WARLOCK, SHAMAN, ROGUE],
+    availableThroughUnlock: [],
+    genderVariants: {
+      male: {
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
+      },
+      female: {
+        additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
       },
     },
   },
   tauren: {
-    availableAtStart: [HUNTER, WARRIOR],
+    availableAtStart: [HUNTER, WARRIOR, PRIEST],
     availableThroughUnlock: [SHAMAN],
     genderVariants: {
       male: {
         additionalAvailableAtStart: [],
-        additionalAvailableThroughUnlock: [PRIEST],
+        additionalAvailableThroughUnlock: [],
       },
       female: {
         additionalAvailableAtStart: [],
@@ -375,8 +410,8 @@ export const customClassesByRace = Object.freeze({
     },
   },
   troll: {
-    availableAtStart: [HUNTER, PRIEST, WARRIOR],
-    availableThroughUnlock: [ROGUE, WARLOCK],
+    availableAtStart: [HUNTER, PRIEST, WARRIOR, ROGUE, WITCH_DOCTOR],
+    availableThroughUnlock: [WARLOCK],
     genderVariants: {
       male: {
         additionalAvailableAtStart: [],
@@ -389,8 +424,8 @@ export const customClassesByRace = Object.freeze({
     },
   },
   ogre: {
-    availableAtStart: [MAGE, WARLOCK, WARRIOR],
-    availableThroughUnlock: [SHAMAN],
+    availableAtStart: [MAGE, HUNTER, WARLOCK, WARRIOR, SHAMAN, WITCH_DOCTOR],
+    availableThroughUnlock: [],
     /*
     genderVariants: {
       male: {
@@ -401,8 +436,8 @@ export const customClassesByRace = Object.freeze({
     */
   },
   undead: {
-    availableAtStart: [MAGE, PRIEST, ROGUE, WARLOCK, WARRIOR],
-    availableThroughUnlock: [HUNTER],
+    availableAtStart: [MAGE, PRIEST, ROGUE, WARLOCK, WARRIOR, MARKSMAN],
+    availableThroughUnlock: [DEATHKNIGHT],
     genderVariants: {
       male: {
         additionalAvailableAtStart: [],
@@ -415,8 +450,8 @@ export const customClassesByRace = Object.freeze({
     },
   },
   darkfallen: {
-    availableAtStart: [MAGE, HUNTER, ROGUE, WARLOCK, WARRIOR],
-    availableThroughUnlock: [PRIEST],
+    availableAtStart: [MARKSMAN, ROGUE],
+    availableThroughUnlock: [PRIEST, WARLOCK, WARRIOR],
     genderVariants: {
       male: {
         additionalAvailableAtStart: [],
@@ -429,7 +464,7 @@ export const customClassesByRace = Object.freeze({
     },
   },
   night_elf: {
-    availableAtStart: [WARRIOR],
+    availableAtStart: [WARRIOR, HUNTER],
     availableThroughUnlock: [],
     genderVariants: {
       male: {
@@ -437,7 +472,7 @@ export const customClassesByRace = Object.freeze({
         additionalAvailableThroughUnlock: [],
       },
       female: {
-        additionalAvailableAtStart: [HUNTER, ROGUE],
+        additionalAvailableAtStart: [MARKSMAN, ROGUE, PRIEST],
         additionalAvailableThroughUnlock: [],
       },
     },
@@ -457,23 +492,23 @@ export const customClassesByRace = Object.freeze({
     },
   },
   night_elf_illidari: {
-    availableAtStart: [ROGUE, WARRIOR],
+    availableAtStart: [HUNTER, MAGE, ROGUE, WARLOCK, WARRIOR],
     availableThroughUnlock: [],
     genderVariants: {
       male: {
-        additionalAvailableAtStart: [MAGE, WARLOCK],
+        additionalAvailableAtStart: [],
         additionalAvailableThroughUnlock: [],
       },
       female: {
-        additionalAvailableAtStart: [HUNTER],
+        additionalAvailableAtStart: [],
         additionalAvailableThroughUnlock: [],
       },
     },
   },
   blood_elf: {
-    availableAtStart: [HUNTER, MAGE, PRIEST, ROGUE, WARLOCK, WARRIOR],
+    availableAtStart: [HUNTER, MAGE, PRIEST, ROGUE, WARLOCK, WARRIOR, MARKSMAN],
     availableThroughUnlock: [
-      /*ARTIFICER*/
+      /*ARTISAN*/
     ],
     genderVariants: {
       male: {
@@ -482,6 +517,20 @@ export const customClassesByRace = Object.freeze({
       },
       female: {
         additionalAvailableAtStart: [],
+        additionalAvailableThroughUnlock: [],
+      },
+    },
+  },
+  naga: {
+    availableAtStart: [],
+    availableThroughUnlock: [],
+    genderVariants: {
+      male: {
+        additionalAvailableAtStart: [WARRIOR],
+        additionalAvailableThroughUnlock: [],
+      },
+      female: {
+        additionalAvailableAtStart: [PRIEST, MAGE, MARKSMAN],
         additionalAvailableThroughUnlock: [],
       },
     },
@@ -499,7 +548,7 @@ export const customClassesByRace = Object.freeze({
     */
   },
   goblin: {
-    availableAtStart: [ROGUE, HUNTER, WARRIOR, /*ARTIFICER*/],
+    availableAtStart: [ROGUE, MARKSMAN, WARRIOR, TINKER/*, ARTISAN*/],
     availableThroughUnlock: [WARLOCK],
     genderVariants: {
       male: {
@@ -522,25 +571,19 @@ const nightElfIllidari = races.ILLIDARI.BASE.NIGHTELF;
 */
 
 export function getAllRaces() {
-  return Object.values(raceBaseData)
-    .flatMap((group) => Object.values(group))
-    .flat();
+  return Object.values(raceBaseData);
 }
 
 export function getRaceById(id) {
-  return getAllRaces().find((race) => race.id === id);
+  return raceBaseData[id] || null;
 }
 
 export function getRacesByFaction(faction) {
-  return getAllRaces().filter((race) => race.faction === faction);
+  const factionRaces = customRacesByFaction[faction];
+  if (!factionRaces) return [];
+  const allIds = [...(factionRaces.base || []), ...(factionRaces.allied || [])];
+  return allIds.map(id => raceBaseData[id]).filter(Boolean);
 }
-
-const bloodElf = getRaceById("BLOODELF");
-// → { id: "BLOODELF", name: "Blood Elf", faction: "Illidan's Forces", isAllied: false }
-const maleVariant = bloodElf.genderVariants.some((v) => v.gender === "male"); // true
-
-const hordeRaces = getRacesByFaction("Horde");
-// → returns all Orc, Tauren, Troll, and Ogre entries
 
 
 
@@ -586,7 +629,7 @@ export const racesByFaction = Object.freeze({
             additionalAvailableThroughUnlock: [],
           },
         ],
-        availableAtStart: [HUNTER, ROGUE, WARRIOR], //ARTIFICER
+        availableAtStart: [HUNTER, ROGUE, WARRIOR], //ARTISAN
         availableThroughUnlock: [MAGE],
       },
       {
@@ -606,7 +649,7 @@ export const racesByFaction = Object.freeze({
             additionalAvailableThroughUnlock: [],
           },
         ],
-        availableAtStart: [MAGE, ROGUE, WARLOCK],  //ARTIFICER
+        availableAtStart: [MAGE, ROGUE, WARLOCK],  //ARTISAN
         availableThroughUnlock: [WARRIOR],
       },
     ],
@@ -856,7 +899,7 @@ export const racesByFaction = Object.freeze({
           },
         ],
         availableAtStart: [HUNTER, MAGE, PRIEST, ROGUE, WARLOCK, WARRIOR],
-        availableThroughUnlock: [],  //ARTIFICER
+        availableThroughUnlock: [],  //ARTISAN
       },
     ],
     ALLIED: [
@@ -899,7 +942,7 @@ export const racesByFaction = Object.freeze({
             additionalAvailableThroughUnlock: [],
           },
         ],
-        availableAtStart: [ROGUE, HUNTER, WARRIOR],  //ARTIFICER
+        availableAtStart: [ROGUE, HUNTER, WARRIOR],  //ARTISAN
         availableThroughUnlock: [WARLOCK],
       },
     ],

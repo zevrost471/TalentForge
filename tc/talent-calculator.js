@@ -54,6 +54,19 @@ const {
   mtpRankLabel
 } = getDomElements();
 
+const PINNED_VERSIONS_KEY = "talentforgePinnedVersions";
+const MAX_PINS = 6;
+const EXPANSION_LABELS = {
+    vanilla: "Vanilla",
+    tbc: "The Burning Crusade",
+    wotlk: "Wrath of the Lich King",
+    cataclysm: "Cataclysm",
+    forever: "Forever",
+    turtlewow: "Turtle WoW",
+    epoch: "Project Epoch",
+    custom: "Custom",
+};
+
 // Event listeners
 // versionSelect.addEventListener("change", handleVersionChange);
 customPoints.addEventListener("change", handleCustomPointsChange);
@@ -61,6 +74,7 @@ classButtons.forEach((btn) => btn.addEventListener("click", handleClassSelect));
 resetTalentsBtn.addEventListener("click", resetTalents);
 saveBuildBtn.addEventListener("click", saveBuild);
 importBuildBtn.addEventListener("click", importBuild);
+document.getElementById("pin-version-btn")?.addEventListener("click", togglePin);
 
 let selectedExpansion = null;
 let selectedPatch = null;
@@ -211,6 +225,22 @@ window.addEventListener('DOMContentLoaded', function () {
 
                 if (parts.length >= 3) {
                     importBuildString(hash);
+                } else {
+                    // Class set but no build string — render the class view
+                    const expansion = getExpansionFromPatch(version);
+                    if (expansion === "cataclysm") {
+                        updatePlaceholder();
+                        renderSpecSelectionPanel();
+                        renderGlyphsContainer();
+                    } else {
+                        renderTalentTrees();
+                        if (version === "1.15") {
+                            renderRunesContainer();
+                        } else if (expansion === "wotlk") {
+                            renderGlyphsContainer();
+                        }
+                    }
+                    updateURLHash();
                 }
             }
         } else {
@@ -351,6 +381,7 @@ let currentState = {
 
 // Load saved builds from localStorage
 loadBuilds();
+renderPinnedVersions();
 
 // Functions
 function getTalents(version, classKey, treeName) {
@@ -974,6 +1005,7 @@ function handleVersionChange(loadingBuild = false) {
     }
 
     updateURLHash();
+    updatePinButton();
 }
 
 // better: build a lookup map once at startup
@@ -2862,6 +2894,16 @@ function importBuild() {
             throw new Error(`Unknown version: ${buildData.version}`);
         }
 
+        const classKey = buildData.class;
+        const importTrees = talentTreeData[buildData.version]?.classes[classKey]?.trees || [];
+        const importPointsSpent = importTrees.reduce((total, tree) => {
+            return total + Object.values(buildData.talents[classKey]?.[tree] || {}).reduce((s, v) => s + v, 0);
+        }, 0);
+        if (importPointsSpent === 0) {
+            showError("Invalid build string: no talents selected.");
+            return;
+        }
+
         if (expansionSelect.value !== targetExpansion) {
             expansionSelect.value = targetExpansion;
             expansionSelect.dispatchEvent(new Event("change"));
@@ -2870,7 +2912,6 @@ function importBuild() {
         versionSelect.value = buildData.version;
         handleVersionChange(true);
 
-        const classKey = buildData.class;
         currentState.version = buildData.version;
         currentState.class = classKey;
         currentState.phase = buildData.phase || 1;
@@ -2948,6 +2989,103 @@ function loadBuilds() {
         currentState.builds = JSON.parse(savedBuilds);
         renderBuildsList();
     }
+}
+
+// ----------------------------
+// PINNED VERSIONS
+// ----------------------------
+
+function loadPinnedVersions() {
+    try { return JSON.parse(localStorage.getItem(PINNED_VERSIONS_KEY)) || []; }
+    catch { return []; }
+}
+
+function savePinnedVersions(pins) {
+    localStorage.setItem(PINNED_VERSIONS_KEY, JSON.stringify(pins));
+}
+
+function activatePinnedVersion(expansion, value) {
+    expansionSelect.value = expansion;
+    expansionSelect.dispatchEvent(new Event("change"));
+    versionSelect.value = value;
+    handleVersionChange();
+}
+
+function renderPinnedVersions() {
+    const panel = document.getElementById("pinned-versions-panel");
+    const list = document.getElementById("pinned-versions-list");
+    if (!panel || !list) return;
+
+    const pins = loadPinnedVersions();
+    if (pins.length === 0) {
+        panel.classList.add("hidden");
+        return;
+    }
+    panel.classList.remove("hidden");
+
+    list.innerHTML = "";
+    pins.forEach(pin => {
+        const label = patchOptions[pin.expansion]?.find(p => p.value === pin.value)?.label ?? pin.value;
+        const expansionLabel = EXPANSION_LABELS[pin.expansion] ?? pin.expansion;
+
+        const row = document.createElement("div");
+        row.className = "flex items-center gap-1";
+
+        const chip = document.createElement("button");
+        chip.className = "flex-1 text-left tf-control rounded px-2 py-1 min-w-0 hover:text-yellow-400 transition-colors";
+        chip.title = `${label} — ${expansionLabel}`;
+        chip.innerHTML = `
+            <div class="text-sm truncate">${label}</div>
+            <div class="text-xs text-gray-400 truncate">${expansionLabel}</div>
+        `;
+        chip.addEventListener("click", () => activatePinnedVersion(pin.expansion, pin.value));
+
+        const unpinBtn = document.createElement("button");
+        unpinBtn.className = "text-gray-500 hover:text-red-400 transition-colors px-1 flex-shrink-0";
+        unpinBtn.title = "Unpin";
+        unpinBtn.innerHTML = '<i class="fa-solid fa-xmark text-xs"></i>';
+        unpinBtn.addEventListener("click", () => {
+            const updated = loadPinnedVersions().filter(p => p.value !== pin.value);
+            savePinnedVersions(updated);
+            renderPinnedVersions();
+            updatePinButton();
+        });
+
+        row.appendChild(chip);
+        row.appendChild(unpinBtn);
+        list.appendChild(row);
+    });
+}
+
+function updatePinButton() {
+    const btn = document.getElementById("pin-version-btn");
+    if (!btn) return;
+    if (!currentState.version) {
+        btn.classList.add("hidden");
+        return;
+    }
+    btn.classList.remove("hidden");
+    const pinned = loadPinnedVersions().some(p => p.value === currentState.version);
+    btn.title = pinned ? "Unpin this version" : "Pin this version";
+    btn.classList.toggle("text-yellow-400", pinned);
+    btn.classList.toggle("text-gray-400", !pinned);
+}
+
+function togglePin() {
+    const version = currentState.version;
+    if (!version) return;
+    const pins = loadPinnedVersions();
+    const idx = pins.findIndex(p => p.value === version);
+    if (idx >= 0) {
+        pins.splice(idx, 1);
+    } else {
+        const expansion = patchToExpansion[version];
+        pins.unshift({ expansion, value: version });
+        if (pins.length > MAX_PINS) pins.pop();
+    }
+    savePinnedVersions(pins);
+    renderPinnedVersions();
+    updatePinButton();
 }
 
 function saveBuildsToStorage() {
@@ -4764,6 +4902,7 @@ function generateBuildString() {
     });
 
     const talentString = treeStrings.join("-");
+    const hasAnyTalents = treeStrings.some(s => s.length > 0);
 
     // === Generate glyph string only for WotLK and Cataclysm ===
     let glyphString = "";
@@ -4779,10 +4918,12 @@ function generateBuildString() {
 
     // Build the full string with phase segment for SoD
     if (version === "1.15") {
+        if (!hasAnyTalents && !runeString) return "";
         return `p${currentState.phase}/${talentString}${runeString}`;
     }
 
     // === Build final formatted string ===
+    if (!hasAnyTalents && !glyphString) return "";
     return `${talentString}${glyphString}${runeString}`;
 }
 
@@ -4855,15 +4996,10 @@ function importBuildString(hash) {
         return;
     }
 
-    const [version, classKey, treesPart] = parts;
-    if (!version || !classKey || !treesPart) {
+    const version = parts[0];
+    const classKey = parts[1];
+    if (!version || !classKey) {
         showError("Invalid build string format.");
-        return;
-    }
-
-    const treeStrings = treesPart.split("-");
-    if (treeStrings.every(str => str === "")) {
-        showError("Invalid build string: no talents selected.");
         return;
     }
 
@@ -4873,23 +5009,121 @@ function importBuildString(hash) {
         return;
     }
 
+    // SoD (1.15) format: version/class/pN/talentString/runeString
+    // Others:             version/class/talentString[/glyphString]
+    let treesPart, runePart = "", glyphOrRunePart = "", phase = currentState.phase || 1;
+    const isSod = version === "1.15" && parts[2]?.startsWith("p");
+    if (isSod) {
+        phase = parseInt(parts[2].slice(1), 10) || 1;
+        treesPart = parts[3] || "";
+        runePart = parts[4] || "";
+    } else {
+        treesPart = parts[2] || "";
+        glyphOrRunePart = parts[3] || "";
+    }
+
+    if (!treesPart && !isSod) {
+        showError("Invalid build string format.");
+        return;
+    }
+
+    const treeStrings = treesPart.split("-");
+    // Reject only when talents are empty AND there are no additional segments
+    // (glyphs for wotlk/cataclysm, runes handled separately above for SoD).
+    // A glyph or rune segment in parts[3]+ is valid even with zero talents.
+    if (!isSod && treeStrings.every(str => str === "") && parts.length <= 3) {
+        showError("Invalid build string: no talents selected.");
+        return;
+    }
+
     currentState.version = version;
     currentState.class = classKey;
     currentState.talents = { [classKey]: {} };
+    if (isSod) {
+        currentState.phase = phase;
+        currentState.pointsTotal = getSoDMaxPoints(phase);
+    }
 
+    const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
     classData.trees.forEach((treeName, i) => {
         const str = treeStrings[i] || "";
         currentState.talents[classKey][treeName] = {};
+        const treeTalents = [...(classTalents[treeName] || [])].sort((a, b) => {
+            if (a.row !== b.row) return a.row - b.row;
+            return a.col - b.col;
+        });
         [...str].forEach((char, j) => {
             const val = parseInt(char, 10);
-            if (!isNaN(val) && val > 0) {
-                currentState.talents[classKey][treeName][j] = val;
+            if (!isNaN(val) && val > 0 && treeTalents[j]) {
+                currentState.talents[classKey][treeName][treeTalents[j].id] = val;
             }
         });
     });
 
-    renderTalentTrees();
-    renderGlyphsContainer();
+    // Recalculate points spent from the restored talent state
+    currentState.pointsSpent = classData.trees.reduce((total, tree) => {
+        return total + Object.values(currentState.talents[classKey]?.[tree] || {}).reduce((s, v) => s + v, 0);
+    }, 0);
+
+    // For Cataclysm, auto-select the dominant spec (same logic as importBuild)
+    const expansion = getExpansionFromPatch(version);
+    if (expansion === "cataclysm") {
+        const dominantTree = classData.trees.reduce((best, tree) => {
+            const pts = Object.values(currentState.talents[classKey]?.[tree] || {})
+                .reduce((s, v) => s + v, 0);
+            return pts > (best.pts || 0) ? { tree, pts } : best;
+        }, {}).tree;
+        if (dominantTree) chosenSpec = dominantTree;
+    }
+
+    // Parse glyphs for WotLK / Cataclysm
+    if (glyphOrRunePart && (expansion === "wotlk" || expansion === "cataclysm")) {
+        const glyphSegments = glyphOrRunePart.split(":");
+        const types = expansion === "cataclysm" ? ["prime", "major", "minor"] : ["major", "minor"];
+        currentState.glyphs = {};
+        types.forEach((type, i) => {
+            const segment = glyphSegments[i] || "";
+            const ids = segment.split("-").map(s => parseInt(s, 10));
+            currentState.glyphs[type] = ids.map(id => {
+                if (!id || isNaN(id)) return null;
+                return findGlyphByIdForBuild(id, expansion, classKey, type);
+            });
+        });
+    }
+
+    // Parse runes for SoD
+    if (isSod && runePart) {
+        currentState.runes = {};
+        const slotOrder = SOD_PHASE_SLOTS[phase] || [];
+        const ids = runePart.split("-");
+        slotOrder.forEach((slot, i) => {
+            const id = parseInt(ids[i], 10);
+            currentState.runes[slot] = (!id || isNaN(id)) ? null : { id };
+        });
+    }
+
+    if (isSod) {
+        renderTalentTrees();
+        renderRunesContainer();
+        loadSavedRunes();
+    } else if (expansion === "cataclysm") {
+        if (chosenSpec) {
+            renderTalentTrees();
+        } else {
+            updatePlaceholder();
+            renderSpecSelectionPanel();
+        }
+        renderGlyphsContainer();
+        loadSavedGlyphs();
+    } else {
+        renderTalentTrees();
+        if (expansion === "wotlk") {
+            renderGlyphsContainer();
+            loadSavedGlyphs();
+        }
+    }
+    updatePointsDisplay();
+    updateURLHash();
 }
 
 // ----------------------------

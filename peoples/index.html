@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TalentForge</title>
+    <title>TalentForge - The Peoples of Azeroth</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
     <link rel="icon" type="image/png" sizes="64x64" href="../assets/icons/favicon-64.png">
@@ -24,8 +24,7 @@
             <h1 class="text-4xl font-bold text-yellow-400 mb-2">
                 <a href="../" class="hover:text-yellow-300 transition-colors">TalentForge</a>
             </h1>
-            <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!
-            </p>
+            <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!</p>
         </header>
 
         <!-- Top Navigation Bar -->
@@ -46,13 +45,13 @@
                     </li>
                     <li>
                         <a href="../db/" data-tab="nav-database"
-                            class="nav-tab text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 transition-colors">
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
                             Database
                         </a>
                     </li>
                     <li>
                         <a href="../peoples/" data-tab="nav-peoples"
-                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            class="nav-tab text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 transition-colors">
                             The Peoples of Azeroth
                         </a>
                     </li>
@@ -66,19 +65,22 @@
             </div>
         </nav>
 
-        <!-- Database Introduction -->
-        <section id="landing-intro" class="tf-panel-flat rounded-lg p-6 mb-6 text-center">
-            <h2 class="text-2xl font-semibold text-yellow-400 mb-4">Welcome to TalentForgeDB!</h2>
-            <div class="text-gray-300 space-y-4">
-                <p>
-                    The database is the core of TalentForge. It features a vast amount of WoW related information, such as in-game items, NPCs, quests, zones and much more.
-                </p>
-            </div>
+        <!-- Page intro -->
+        <section class="tf-panel-flat rounded-lg p-6 mb-8">
+            <h2 class="text-2xl font-semibold text-yellow-400 mb-2">The Peoples of Azeroth</h2>
+            <p class="text-gray-400 text-sm leading-relaxed">
+                A Classic+ design concept exploring a Warcraft where factions have more than two sides and each race carries its own identity, reflecting the spirit of Warcraft III.
+                Multiple distinct factions, each shaped by their own history, culture, and available class paths.
+            </p>
         </section>
 
-    <script type="module" src="../main.js"></script>
-    <script type="module" src="../db/database.js"></script>
+        <!-- Factions -->
+        <div id="peoples-container">
+            <p class="text-gray-400 text-center py-12">Loading...</p>
+        </div>
+    </div>
 
+    <script type="module" src="./peoples.js"></script>
 </body>
 
 </html>

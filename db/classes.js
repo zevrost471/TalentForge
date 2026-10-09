@@ -1,5 +1,4 @@
 export const classes = Object.freeze({
-    // ARTIFICER: "Artificer",
     DEATHKNIGHT: "Death Knight",
     DRUID: "Druid",
     HUNTER: "Hunter",
@@ -10,4 +9,11 @@ export const classes = Object.freeze({
     SHAMAN: "Shaman",
     WARLOCK: "Warlock",
     WARRIOR: "Warrior",
+});
+
+export const customClasses = Object.freeze({
+    // ARTISAN: "Artisan",
+    MARKSMAN: "Marksman", 
+    TINKER: "Tinker",
+    WITCH_DOCTOR: "Witch Doctor",
 });
