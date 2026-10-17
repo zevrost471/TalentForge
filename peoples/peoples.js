@@ -11,7 +11,7 @@ const FACTIONS_TO_SHOW = [
 ];
 
 const RACE_DISPLAY_NAMES = {
-    undead: 'Undead (Human)',
+    darkfallen: 'Undead (Darkfallen)',
 };
 
 const FACTION_STYLES = {
@@ -33,7 +33,7 @@ const FACTION_STYLES = {
         // CSS header
         accent: '#b33a2a', accentDim: 'rgba(179,58,42,0.14)',
         nameColor: '#e06b5a',
-        description: 'Four races comprise the Horde: the brutal orcs, the spiritual tauren, the quick-witted trolls, and the single-minded ogres. Beset by enemies on all sides, these outcasts have forged a union they hope will ensure their mutual survival.',
+        description: 'Four races comprise the Horde: the brutal orcs, the spiritual tauren, the quick-witted trolls, and the single-minded ogres. Beset by enemies on all sides, these proud peoples are bound by strength, honor, and an unyielding will to survive and forge their own destiny.', // Bound by strength, honor, and an unyielding will to survive, these proud peoples stand united against a world that would see them broken. OR Beset by enemies on all sides, these outcasts have forged a union they hope will ensure their mutual survival.
         subHeading: 'text-red-400', subLine: 'border-red-900/50',
     },
     [newFactions.FORSAKEN]: {
@@ -44,7 +44,7 @@ const FACTION_STYLES = {
         // CSS header
         accent: '#7c3aaa', accentDim: 'rgba(124,58,170,0.13)',
         nameColor: '#b97de8',
-        description: 'Two races make up the Forsaken: the wretched undead humans of Lordaeron, freed from the Lich King\'s grasp, and the cursed darkfallen, stripped of their former lives during the devastating Scourge invasion of Quel\'Thalas. Shunned by the living and hunted by the dead, they carve their own path through a world that refuses to forgive what they have become.',
+        description: 'Two races make up the Forsaken: the undead humans of Lordaeron and the fallen elves of Quel\'Thalas, both torn from their former lives by the Scourge and freed from the Lich King\'s grasp. Wretched and twisted by the curse of undeath and forever estranged from their past, they defy the fate imposed upon them in a world that fears and despises them.', // Two races make up the Forsaken: the wretched undead humans of Lordaeron, freed from the Lich King\'s grasp, and the cursed darkfallen, stripped of their former lives during the devastating Scourge invasion of Quel\'Thalas. Shunned by the living and hunted by the dead, they carve their own path through a world that refuses to forgive what they have become.
         subHeading: 'text-purple-400', subLine: 'border-purple-900/50',
     },
     [newFactions.NIGHT_ELVES]: {
@@ -61,7 +61,7 @@ const FACTION_STYLES = {
         // CSS header
         accent: '#16a34a', accentDim: 'rgba(22,163,74,0.13)',
         nameColor: '#4ade80',
-        description: 'Four races answer the call of the Betrayer: night elves and blood elves who forsook their kin to follow Illidan into exile, the serpentine naga risen from the depths to serve his cause, and draenei survivors who joined seeking vengeance of their own. They wage a war no other faction dares to name, sacrificing everything to fight the Burning Legion on their own terms.', /*, no matter the cost.*/
+        description: 'Three races answer the call of the Betrayer: blood elves who fled to Outland looking to sate their hunger for magic, the serpentine naga risen from the depths to serve his cause, and draenei survivors who joined seeking vengeance of their own. They wage a war no other faction dares to name, sacrificing everything to fight the Burning Legion on their own terms.', /*, no matter the cost.*/
         subHeading: 'text-green-400', subLine: 'border-green-900/50',
     },
     [newFactions.NEUTRAL]: {
@@ -100,6 +100,7 @@ function getClassIconUrl(className) {
         'Marksman': 'classicon_hunter',
         'Tinker': 'inv_10_engineering_manufacturedparts_gear_uprez',
         'Witch Doctor': 'inv_staff_goldfeathered_01',
+        'Runemaster': 'spell_fire_sealoffire',
     };
     const key = overrides[className] ?? `classicon_${className.toLowerCase().replace(/\s+/g, '')}`;
     return `https://wow.zamimg.com/images/wow/icons/large/${key}.jpg`;

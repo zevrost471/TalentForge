@@ -16,4 +16,5 @@ export const customClasses = Object.freeze({
     MARKSMAN: "Marksman", 
     TINKER: "Tinker",
     WITCH_DOCTOR: "Witch Doctor",
+    RUNEMASTER: "Runemaster",
 });
