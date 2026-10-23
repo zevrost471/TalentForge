@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TalentForge - Character Creation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.0/css/all.min.css">
+    <link rel="icon" type="image/png" sizes="64x64" href="../../assets/icons/favicon-64.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../../assets/icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../../assets/icons/favicon-16.png">
+    <link rel="shortcut icon" href="../../assets/icons/favicon-16.ico">
+    <script>
+        document.documentElement.dataset.theme =
+            localStorage.getItem("talentforgeTheme") || "original";
+    </script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Philosopher:wght@400;700&display=swap">
+    <link rel="stylesheet" href="../../styles.css">
+</head>
+
+<body class="tf-page min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <header id="main-header" class="text-center mb-8 transition-all duration-500 overflow-hidden">
+            <h1 class="text-4xl font-bold text-yellow-400 mb-2">
+                <a href="../../" class="hover:text-yellow-300 transition-colors">TalentForge</a>
+            </h1>
+            <p id="main-caption" class="text-gray-400">Create and share talent builds or create brand new talent trees!</p>
+        </header>
+
+        <!-- Top Navigation Bar -->
+        <nav class="tf-panel-flat w-full rounded-lg mb-6">
+            <div class="container mx-auto px-4">
+                <ul id="top-nav" class="flex items-center justify-center gap-8 py-3 text-lg font-medium">
+                    <li>
+                        <a href="../../overview/" data-tab="nav-overview"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            Overview
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../tc/" data-tab="nav-talentcalc"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            Talent Calculator
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../db/" data-tab="nav-database"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            Database
+                        </a>
+                    </li>
+                    <li class="relative nav-has-dropdown">
+                        <span class="nav-tab text-yellow-400 font-semibold border-b-2 border-yellow-400 pb-1 transition-colors cursor-default select-none flex items-center gap-1.5">
+                            The Peoples of Azeroth <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </span>
+                        <div class="nav-dropdown" style="position:absolute;left:0;top:100%;z-index:50;min-width:max-content;">
+                            <div class="rounded-md py-1 shadow-xl border border-yellow-900/40" style="background:var(--tf-bg-panel)">
+                                <a href="../playable-races/" class="block px-4 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Playable Races</a>
+                                <a href="./" class="block px-4 py-2 text-yellow-400 font-semibold hover:text-yellow-300 transition-colors">Character Creation</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="../../settings/" data-tab="nav-settings"
+                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
+                            Settings
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Character Creation -->
+        <div class="tf-panel-flat rounded-lg overflow-hidden" style="height:calc(100vh - 240px); min-height:540px;">
+            <div id="charcreate-container" class="h-full">
+                <p class="text-gray-400 text-center py-12">Loading...</p>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="./charcreate.js"></script>
+</body>
+
+</html>
