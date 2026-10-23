@@ -50,11 +50,16 @@
                             Database
                         </a>
                     </li>
-                    <li>
-                        <a href="./peoples/" data-tab="nav-peoples"
-                            class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors">
-                            The Peoples of Azeroth
-                        </a>
+                    <li class="relative nav-has-dropdown">
+                        <span class="nav-tab text-gray-300 hover:text-yellow-400 transition-colors cursor-default select-none flex items-center gap-1.5">
+                            The Peoples of Azeroth <i class="fa-solid fa-chevron-down text-xs"></i>
+                        </span>
+                        <div class="nav-dropdown" style="position:absolute;left:0;top:100%;z-index:50;min-width:max-content;">
+                            <div class="rounded-md py-1 shadow-xl border border-yellow-900/40" style="background:var(--tf-bg-panel)">
+                                <a href="./peoples/playable-races/" class="block px-4 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Playable Races</a>
+                                <a href="./peoples/charcreate/" class="block px-4 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Character Creation</a>
+                            </div>
+                        </div>
                     </li>
                     <li>
                         <a href="./settings/" data-tab="nav-settings"

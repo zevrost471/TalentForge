@@ -161,7 +161,7 @@ export const raceBaseData = Object.freeze({
       },
       {
         gender: "female",
-        icon: "assets/icons/races/achievement_character_dark_ranger_female_2",
+        icon: "assets/icons/races/achievement_character_dark_ranger_female_3",
       },
     ],
   },

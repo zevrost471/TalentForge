@@ -1,5 +1,5 @@
-import { customRacesByFaction, customClassesByRace, raceBaseData } from '../db/custom/races.js';
-import { newFactions } from '../db/custom/factions.js';
+import { customRacesByFaction, customClassesByRace, raceBaseData } from '../../db/custom/races.js';
+import { newFactions, FACTION_DESCRIPTIONS } from '../../db/custom/factions.js';
 
 const FACTIONS_TO_SHOW = [
     newFactions.ALLIANCE,
@@ -20,9 +20,9 @@ const FACTION_STYLES = {
         headerType: 'simple', wc3Race: 'human',
         bg: 'header-back.gif', left: 'header-left.gif', title: 'headers/humans.gif', right: 'header-right.gif',
         // CSS header
-        accent: '#4a90d9', accentDim: 'rgba(74,144,217,0.12)',
-        nameColor: '#7ab8f5',
-        description: 'The Alliance consists of four races: the noble humans, the adventurous dwarves, the ingenious gnomes, and the exiled high elves. Bound by a loathing for all things demonic, they fight to restore order in this war-torn world.',
+        accent: '#213478', accentDim: 'rgba(33,52,120,0.12)',
+        nameColor: '#6a84c8',
+        description: FACTION_DESCRIPTIONS[newFactions.ALLIANCE],
         subHeading: 'text-blue-400', subLine: 'border-blue-800/50',
     },
     [newFactions.HORDE]: {
@@ -31,9 +31,9 @@ const FACTION_STYLES = {
         bg: 'header-bg.gif', leftOuter: 'header-left.gif', leftInner: 'header-mid-left.gif',
         title: 'headers/orcs.gif', rightInner: 'header-mid-right.gif', rightOuter: 'header-right.gif',
         // CSS header
-        accent: '#b33a2a', accentDim: 'rgba(179,58,42,0.14)',
-        nameColor: '#e06b5a',
-        description: 'Four races comprise the Horde: the brutal orcs, the spiritual tauren, the quick-witted trolls, and the single-minded ogres. Beset by enemies on all sides, these proud peoples are bound by strength, honor, and an unyielding will to survive and forge their own destiny.', // Bound by strength, honor, and an unyielding will to survive, these proud peoples stand united against a world that would see them broken. OR Beset by enemies on all sides, these outcasts have forged a union they hope will ensure their mutual survival.
+        accent: '#9c2423', accentDim: 'rgba(156,36,35,0.14)',
+        nameColor: '#d4706f',
+        description: FACTION_DESCRIPTIONS[newFactions.HORDE],
         subHeading: 'text-red-400', subLine: 'border-red-900/50',
     },
     [newFactions.FORSAKEN]: {
@@ -42,33 +42,33 @@ const FACTION_STYLES = {
         bg: 'header-bg-left.gif', leftOuter: 'header-left.gif', leftInner: 'header-left-left.gif',
         title: 'headers/undead.gif', rightInner: 'header-right-right.gif', rightOuter: 'header-right.gif',
         // CSS header
-        accent: '#7c3aaa', accentDim: 'rgba(124,58,170,0.13)',
-        nameColor: '#b97de8',
-        description: 'Two races make up the Forsaken: the undead humans of Lordaeron and the fallen elves of Quel\'Thalas, both torn from their former lives by the Scourge and freed from the Lich King\'s grasp. Wretched and twisted by the curse of undeath and forever estranged from their past, they defy the fate imposed upon them in a world that fears and despises them.', // Two races make up the Forsaken: the wretched undead humans of Lordaeron, freed from the Lich King\'s grasp, and the cursed darkfallen, stripped of their former lives during the devastating Scourge invasion of Quel\'Thalas. Shunned by the living and hunted by the dead, they carve their own path through a world that refuses to forgive what they have become.
-        subHeading: 'text-purple-400', subLine: 'border-purple-900/50',
+        accent: '#272a60', accentDim: 'rgba(39,42,96,0.13)',
+        nameColor: '#7a80cc',
+        description: FACTION_DESCRIPTIONS[newFactions.FORSAKEN],
+        subHeading: 'text-indigo-400', subLine: 'border-indigo-900/50',
     },
     [newFactions.NIGHT_ELVES]: {
         // WC3 image assets
         headerType: 'simple', wc3Race: 'nightelf',
         bg: 'header-back.gif', left: 'header-left.gif', title: 'headers/nightelves.gif', right: 'header-right.gif',
         // CSS header
-        accent: '#2a9d8f', accentDim: 'rgba(42,157,143,0.12)',
-        nameColor: '#5ecfc3',
-        description: 'Two races stand apart as the children of the night: the ancient night elves, guardians of the wild since before memory, and the primal furbolgs, keepers of forgotten groves. Bound by a reverence for nature and a distrust of those who would defile it, they watch over Azeroth\'s wild places with quiet, unyielding resolve.',
-        subHeading: 'text-teal-400', subLine: 'border-teal-900/50',
+        accent: '#3c345b', accentDim: 'rgba(60,52,91,0.12)',
+        nameColor: '#9d8fcc',
+        description: FACTION_DESCRIPTIONS[newFactions.NIGHT_ELVES],
+        subHeading: 'text-purple-400', subLine: 'border-purple-900/50',
     },
     [newFactions.ILLIDARI]: {
         // CSS header
-        accent: '#16a34a', accentDim: 'rgba(22,163,74,0.13)',
-        nameColor: '#4ade80',
-        description: 'Three races answer the call of the Betrayer: blood elves who fled to Outland looking to sate their hunger for magic, the serpentine naga risen from the depths to serve his cause, and draenei survivors who joined seeking vengeance of their own. They wage a war no other faction dares to name, sacrificing everything to fight the Burning Legion on their own terms.', /*, no matter the cost.*/
+        accent: '#23a008', accentDim: 'rgba(35,160,8,0.13)',
+        nameColor: '#5ddb3a',
+        description: FACTION_DESCRIPTIONS[newFactions.ILLIDARI],
         subHeading: 'text-green-400', subLine: 'border-green-900/50',
     },
     [newFactions.NEUTRAL]: {
         // CSS header
-        accent: '#b45309', accentDim: 'rgba(180,83,9,0.12)',
-        nameColor: '#fbbf24',
-        description: 'The neutral goblins pledge allegiance to no king or warchief. Driven by profit and bound by contract alone, they deal with any buyer willing to pay, and will outlast every war they refuse to join.',
+        accent: '#cc943e', accentDim: 'rgba(204,148,62,0.12)',
+        nameColor: '#e8c07a',
+        description: FACTION_DESCRIPTIONS[newFactions.NEUTRAL],
         subHeading: 'text-amber-400', subLine: 'border-amber-900/50',
     },
 };
@@ -90,7 +90,7 @@ function renderHeader(s, factionName) {
 function getRaceIconUrl(icon) {
     if (!icon) return '';
     if (icon.startsWith('http')) return icon;
-    if (icon.startsWith('assets/')) return `../${icon}.jpg`;
+    if (icon.startsWith('assets/')) return `../../${icon}.jpg`;
     return `https://wow.zamimg.com/images/wow/icons/large/${icon}.jpg`;
 }
 

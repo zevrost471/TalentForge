@@ -647,6 +647,15 @@ border-bottom-right-radius: 4px;
     font-size: 12px;
 }
 
+.nav-dropdown {
+    display: none;
+    padding-top: 4px;
+}
+
+.nav-has-dropdown:hover .nav-dropdown {
+    display: block;
+}
+
 .talent-tooltip::after {
     content: "";
     position: absolute;
