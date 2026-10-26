@@ -294,7 +294,7 @@ const baseTreeData = {
             trees: ["Affliction", "Demonology", "Destruction"]
         },
         warrior: { name: "Warrior", trees: ["Arms", "Fury", "Protection"] },
-        deathknight: { name: "Death Knight", trees: ["Blood", "Frost", "Unholy"] }
+        death_knight: { name: "Death Knight", trees: ["Blood", "Frost", "Unholy"] }
     }
 };
 
@@ -327,7 +327,9 @@ const sharedVersions = [
     "1.17.2t",
     "1.60.1.69876",
     "1.60.1.70009",
-    "1.60.1.70170"
+    "1.60.1.70170",
+    "1.60.1.70291",
+    "1.60.1.70425"
 ];
 
 const talentTreeData = {};
@@ -766,7 +768,7 @@ function getResourceText(classKey, spentResource, absoluteSpent, resourceType) {
                 return `${spentResource} Energy`;
             // }
 
-        case "deathknight": 
+        case "death_knight": 
             // if (resourceType === 4) { // Runic Power for dks
                 return `${spentResource} Runic Power`;
             // }
@@ -1036,7 +1038,7 @@ function updatePlaceholder() {
         return;
     }
 
-    if (!currentState.class || (currentState.class === "deathknight" && (currentExpansion !== "wotlk" && currentExpansion !== "cataclysm"))) {
+    if (!currentState.class || (currentState.class === "death_knight" && (currentExpansion !== "wotlk" && currentExpansion !== "cataclysm"))) {
         talentPlaceholder.innerHTML = `
                 <h2 class="text-2xl text-yellow-400 mb-2">Select a class</h2>
                 <p class="text-gray-400">Click on any class icon to start building your talent tree</p>
@@ -1193,7 +1195,7 @@ function renderSpecSelectionPanel() {
     }
     const pointsLeft = currentState.pointsTotal - totalPoints;
 
-    const classIconUrl = `https://wow.zamimg.com/images/wow/icons/large/classicon_${classKey}.jpg`;
+    const classIconUrl = `https://wow.zamimg.com/images/wow/icons/large/classicon_${classKey.replace('_', '')}.jpg`;
     const classColor = classColors[classKey] || "#FFF";
 
     const headerHTML = `
@@ -1482,7 +1484,7 @@ function renderTalentTrees() {
     const minLevel = totalPoints > 0 ? computeRequiredLevel(totalPoints, version) : 10;
 
     // Class icon URL
-    const classIconUrl = `https://wow.zamimg.com/images/wow/icons/large/classicon_${classKey}.jpg`;
+    const classIconUrl = `https://wow.zamimg.com/images/wow/icons/large/classicon_${classKey.replace('_', '')}.jpg`;
     const classColor = classColors[classKey] || "#FFF";
 
     // Build info box
@@ -2188,7 +2190,7 @@ function getClassIndex(classKey) {
         "shaman",
         "warlock",
         "warrior",
-        "deathknight"
+        "death_knight"
     ];
     return classOrder.indexOf(classKey) + 1;
 }

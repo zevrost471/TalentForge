@@ -11,5 +11,5 @@ export const classColors = {
     paladin: "#F58CBA",
     shaman: "#0070DE",
     warlock: "#9482C9",
-    deathknight: "#C41F3B"
+    death_knight: "#C41F3B"
 };

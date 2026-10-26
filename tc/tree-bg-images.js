@@ -18,12 +18,12 @@ const backgroundImageIds = {
     shaman: { Elemental: 261, Enhancement: 263, Restoration: 262 },
     warlock: { Affliction: 302, Demonology: 303, Destruction: 301 },
     warrior: { Arms: 161, Fury: 164, Protection: 163 },
-    deathknight: { Blood: 398, Frost: 399, Unholy: 400 }
+    death_knight: { Blood: 398, Frost: 399, Unholy: 400 }
 };
 
 export const backgroundImages = Object.fromEntries(
     Object.entries(backgroundImageIds).map(([cls, specs]) => {
-        const expansion = cls === "deathknight" ? "wrath" : "classic";
+        const expansion = cls === "death_knight" ? "wrath" : "classic";
         const specEntries = Object.fromEntries(
             Object.entries(specs).map(([spec, id]) => [
                 spec,

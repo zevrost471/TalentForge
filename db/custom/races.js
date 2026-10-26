@@ -4,7 +4,7 @@ import { classes, customClasses } from "../classes.js";
 import { newFactions } from "./factions.js";
 
 // const ARTISAN = classes.ARTISAN;
-const DEATHKNIGHT = classes.DEATHKNIGHT;
+const DEATH_KNIGHT = classes.DEATH_KNIGHT;
 const DRUID = classes.DRUID;
 const HUNTER = classes.HUNTER;
 const MAGE = classes.MAGE;
@@ -438,7 +438,7 @@ export const customClassesByRace = Object.freeze({
   },
   undead: {
     availableAtStart: [MAGE, PRIEST, ROGUE, WARLOCK, WARRIOR, MARKSMAN],
-    availableThroughUnlock: [DEATHKNIGHT],
+    availableThroughUnlock: [DEATH_KNIGHT],
     genderVariants: {
       male: {
         additionalAvailableAtStart: [],
@@ -611,7 +611,7 @@ export const racesByFaction = Object.freeze({
           },
         ],
         availableAtStart: [MAGE, ROGUE, WARLOCK, WARRIOR],
-        availableThroughUnlock: [HUNTER, DEATHKNIGHT],
+        availableThroughUnlock: [HUNTER, DEATH_KNIGHT],
       },
       {
         id: "DWARF",

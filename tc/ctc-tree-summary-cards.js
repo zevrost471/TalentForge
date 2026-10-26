@@ -2,7 +2,7 @@
 
 export const cataSpecCards = {
     cataclysm: {
-        deathknight: {
+        death_knight: {
             Blood: {
                 specIcon: "spell_deathknight_bloodpresence",
                 primary:
