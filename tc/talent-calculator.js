@@ -51,7 +51,10 @@ const {
   mtpName,
   mtpTooltip,
   mtpSlider,
-  mtpRankLabel
+  mtpRankLabel,
+  tcSettingsBtn,
+  classDropdown,
+  tcMainLayout,
 } = getDomElements();
 
 const PINNED_VERSIONS_KEY = "talentforgePinnedVersions";
@@ -111,6 +114,10 @@ applyVersionBtn.addEventListener("click", () => {
 });
 
 let isCollapsed = false;
+let isFixedSidebarHidden = false;
+
+const isSidebarFixed = () =>
+    (localStorage.getItem('tc_sidebarPosition') ?? 'inline') === 'fixed';
 
 toggleSidebarButton.addEventListener('click', () => {
     isCollapsed = !isCollapsed;
@@ -121,18 +128,23 @@ toggleSidebarButton.addEventListener('click', () => {
         sidebarContent.classList.add('hidden');
         toggleSidebarButton.title = "Show Sidebar";
 
-        // Make talent area centered
-        talentSection.classList.remove('lg:w-3/4');
-        talentSection.classList.add('w-full', 'justify-center');
+        if (!isSidebarFixed()) {
+            talentSection.classList.remove('lg:w-3/4');
+            talentSection.classList.add('w-full', 'justify-center');
+        }
+        // document.getElementById('tc-sidebar-resizer')?.style.setProperty('display', 'none');
     } else {
         sidebar.classList.remove('w-12');
         sidebar.classList.add('w-full', 'lg:w-1/4');
         sidebarContent.classList.remove('hidden');
         toggleSidebarButton.title = "Hide Sidebar";
 
-        // Restore talent layout
-        talentSection.classList.remove('w-full', 'justify-center');
-        talentSection.classList.add('lg:w-3/4');
+        if (!isSidebarFixed()) {
+            talentSection.classList.remove('w-full', 'justify-center');
+            talentSection.classList.add('lg:w-3/4');
+        }
+        // updateResizerPosition();
+        // document.getElementById('tc-sidebar-resizer')?.style.removeProperty('display');
     }
 });
 
@@ -1008,6 +1020,7 @@ function handleVersionChange(loadingBuild = false) {
 
     updateURLHash();
     updatePinButton();
+    syncClassDropdown();
 }
 
 // better: build a lookup map once at startup
@@ -3019,6 +3032,7 @@ function renderPinnedVersions() {
     if (!panel || !list) return;
 
     const pins = loadPinnedVersions();
+    updateSidebarTabPinsBtn();
     if (pins.length === 0) {
         panel.classList.add("hidden");
         return;
@@ -3035,7 +3049,6 @@ function renderPinnedVersions() {
 
         const chip = document.createElement("button");
         chip.className = "flex-1 text-left tf-control rounded px-2 py-1 min-w-0 hover:text-yellow-400 transition-colors";
-        chip.title = `${label} — ${expansionLabel}`;
         chip.innerHTML = `
             <div class="text-sm truncate">${label}</div>
             <div class="text-xs text-gray-400 truncate">${expansionLabel}</div>
@@ -5159,3 +5172,311 @@ function handleTalentChange() {
     updateURLHash();
 }
 */
+
+// ─── TC PAGE SETTINGS ────────────────────────────────────────────────────────
+
+function syncClassDropdown() {
+    if (!classDropdown) return;
+    const version = currentState.version;
+    const available = version ? Object.keys(talentsAttributedByVersion[version] || {}) : [];
+    classDropdown.innerHTML = '<option value="" disabled selected>Select class</option>';
+    classDropdown.disabled = available.length === 0;
+
+    document.querySelectorAll('.class-btn').forEach(btn => {
+        const key = btn.dataset.class;
+        if (btn.classList.contains('hidden')) return;
+        const opt = document.createElement('option');
+        opt.value = key;
+        opt.textContent = version
+            ? (talentTreeData[version]?.classes[key]?.name ?? key)
+            : key;
+        opt.disabled = !available.includes(key);
+        if (key === currentState.class) opt.selected = true;
+        classDropdown.appendChild(opt);
+    });
+}
+
+classDropdown?.addEventListener('change', (e) => {
+    const fakeEvent = { currentTarget: { dataset: { class: e.target.value } } };
+    handleClassSelect(fakeEvent);
+    syncClassDropdown();
+});
+
+function applyTCPrefs() {
+    const classMode  = localStorage.getItem('tc_classSelector')  ?? 'buttons';
+    const sidebarPos = localStorage.getItem('tc_sidebarPosition') ?? 'inline';
+
+    const classList   = document.getElementById('class-list');
+    if (classMode === 'dropdown') {
+        classList?.classList.add('hidden');
+        classDropdown?.classList.remove('hidden');
+    } else {
+        classList?.classList.remove('hidden');
+        classDropdown?.classList.add('hidden');
+    }
+
+    if (sidebarPos === 'fixed') {
+        sidebar.classList.add('tc-sidebar-fixed');
+        talentSection.classList.remove('lg:w-3/4');
+        talentSection.classList.add('w-full');
+        setupFixedSidebarUI();
+    } else {
+        sidebar.classList.remove('tc-sidebar-fixed');
+        sidebar.style.transform = '';
+        teardownFixedSidebarUI();
+        if (!isCollapsed) {
+            talentSection.classList.remove('w-full', 'justify-center');
+            talentSection.classList.add('lg:w-3/4');
+        }
+    }
+}
+
+const SIDEBAR_PANEL_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>`;
+
+function setupFixedSidebarUI() {
+    toggleSidebarButton.classList.add('hidden');
+    sidebar.classList.remove('w-12');
+    sidebarContent.classList.remove('hidden');
+
+    if (!document.getElementById('tc-fixed-sidebar-toggle')) {
+        const btn = document.createElement('button');
+        btn.id = 'tc-fixed-sidebar-toggle';
+        btn.title = 'Hide Sidebar';
+        btn.innerHTML = SIDEBAR_PANEL_ICON;
+        sidebar.appendChild(btn);
+        btn.addEventListener('click', toggleFixedSidebar);
+    }
+
+    if (!document.getElementById('tc-sidebar-tab')) {
+        const tab = document.createElement('div');
+        tab.id = 'tc-sidebar-tab';
+        tab.style.display = 'none';
+
+        const tabBtn = document.createElement('button');
+        tabBtn.id = 'tc-sidebar-tab-btn';
+        tabBtn.title = 'Show Sidebar';
+        tabBtn.innerHTML = SIDEBAR_PANEL_ICON;
+        tabBtn.addEventListener('click', toggleFixedSidebar);
+        tab.appendChild(tabBtn);
+
+        const pinsBtn = document.createElement('button');
+        pinsBtn.id = 'tc-sidebar-pins-btn';
+        pinsBtn.title = 'Pinned Versions';
+        pinsBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"/></svg>';
+        pinsBtn.style.display = 'none';
+        pinsBtn.addEventListener('click', openSidebarPinsPopup);
+        tab.appendChild(pinsBtn);
+
+        document.body.appendChild(tab);
+        updateSidebarTabPinsBtn();
+    }
+
+    sidebar.style.transform = isFixedSidebarHidden ? 'translateX(-100%)' : 'translateX(0)';
+}
+
+function teardownFixedSidebarUI() {
+    toggleSidebarButton.classList.remove('hidden');
+    document.getElementById('tc-fixed-sidebar-toggle')?.remove();
+    document.getElementById('tc-sidebar-tab')?.remove();
+    sidebar.style.transform = '';
+    isFixedSidebarHidden = false;
+    if (isCollapsed) {
+        sidebar.classList.remove('w-full', 'lg:w-1/4');
+        sidebar.classList.add('w-12');
+        sidebarContent.classList.add('hidden');
+    } else {
+        sidebar.classList.remove('w-12');
+        sidebar.classList.add('w-full', 'lg:w-1/4');
+        sidebarContent.classList.remove('hidden');
+    }
+}
+
+function toggleFixedSidebar() {
+    isFixedSidebarHidden = !isFixedSidebarHidden;
+    const btn = document.getElementById('tc-fixed-sidebar-toggle');
+    const tab = document.getElementById('tc-sidebar-tab');
+    if (isFixedSidebarHidden) {
+        sidebar.style.transform = 'translateX(-100%)';
+        if (tab) tab.style.display = 'flex';
+        if (btn) btn.title = 'Show Sidebar';
+    } else {
+        sidebar.style.transform = 'translateX(0)';
+        if (tab) tab.style.display = 'none';
+        if (btn) btn.title = 'Hide Sidebar';
+        closeSidebarPinsPopup();
+    }
+}
+
+function updateSidebarTabPinsBtn() {
+    const btn = document.getElementById('tc-sidebar-pins-btn');
+    if (!btn) return;
+    btn.style.display = loadPinnedVersions().length > 0 ? '' : 'none';
+}
+
+function openSidebarPinsPopup() {
+    closeSidebarPinsPopup();
+    const pins = loadPinnedVersions();
+    if (pins.length === 0) return;
+
+    const triggerBtn = document.getElementById('tc-sidebar-pins-btn');
+    const btnRect = triggerBtn?.getBoundingClientRect();
+
+    const popup = document.createElement('div');
+    if (btnRect) popup.style.top = btnRect.top + 'px';
+    popup.id = 'tc-sidebar-pins-popup';
+
+    const title = document.createElement('div');
+    title.style.cssText = 'font-size:.85rem;font-weight:600;color:var(--tf-accent);margin-bottom:8px;';
+    title.textContent = 'Pinned';
+    popup.appendChild(title);
+
+    pins.forEach(pin => {
+        const label = patchOptions[pin.expansion]?.find(p => p.value === pin.value)?.label ?? pin.value;
+        const expansionLabel = EXPANSION_LABELS[pin.expansion] ?? pin.expansion;
+        const chip = document.createElement('button');
+        chip.className = 'tc-pins-chip';
+        chip.style.cssText = '';
+        chip.innerHTML = `<div class="text-sm truncate">${label}</div><div class="text-xs text-gray-400 truncate">${expansionLabel}</div>`;
+        chip.addEventListener('click', () => {
+            activatePinnedVersion(pin.expansion, pin.value);
+            closeSidebarPinsPopup();
+        });
+        popup.appendChild(chip);
+    });
+
+    document.body.appendChild(popup);
+    popup.addEventListener('click', (e) => e.stopPropagation());
+
+    setTimeout(() => {
+        const outsideHandler = (e) => {
+            const pinsBtn = document.getElementById('tc-sidebar-pins-btn');
+            if (e.target !== pinsBtn) {
+                closeSidebarPinsPopup();
+                document.removeEventListener('click', outsideHandler);
+            }
+        };
+        document.addEventListener('click', outsideHandler);
+    }, 0);
+}
+
+function closeSidebarPinsPopup() {
+    document.getElementById('tc-sidebar-pins-popup')?.remove();
+}
+
+/*
+function addSidebarResizer() {
+    if (document.getElementById('tc-sidebar-resizer')) return;
+    const resizer = document.createElement('div');
+    resizer.id = 'tc-sidebar-resizer';
+    document.body.appendChild(resizer);
+    resizer.addEventListener('mousedown', startSidebarResize);
+    updateResizerPosition();
+}
+
+function removeSidebarResizer() {
+    document.getElementById('tc-sidebar-resizer')?.remove();
+}
+
+function updateResizerPosition() {
+    const resizer = document.getElementById('tc-sidebar-resizer');
+    if (!resizer) return;
+    resizer.style.left = (sidebar.offsetWidth - 3) + 'px';
+}
+
+let _resizeStartX = 0;
+let _resizeStartWidth = 0;
+
+function startSidebarResize(e) {
+    _resizeStartX = e.clientX;
+    _resizeStartWidth = sidebar.offsetWidth;
+    document.getElementById('tc-sidebar-resizer')?.classList.add('resizing');
+    document.addEventListener('mousemove', onSidebarResize);
+    document.addEventListener('mouseup', stopSidebarResize);
+    e.preventDefault();
+}
+
+function onSidebarResize(e) {
+    const minWidth = Math.round(window.innerWidth * 0.25);
+    const newWidth = Math.max(minWidth, _resizeStartWidth + (e.clientX - _resizeStartX));
+    sidebar.style.width = newWidth + 'px';
+    updateResizerPosition();
+}
+
+function stopSidebarResize() {
+    document.removeEventListener('mousemove', onSidebarResize);
+    document.removeEventListener('mouseup', stopSidebarResize);
+    document.getElementById('tc-sidebar-resizer')?.classList.remove('resizing');
+    localStorage.setItem('tc_sidebarWidth', sidebar.offsetWidth);
+}
+*/
+
+function openTCSettingsPanel() {
+    document.getElementById('tc-settings-overlay')?.remove();
+    document.getElementById('tc-settings-popup')?.remove();
+
+
+    const overlay = document.createElement('div');
+    overlay.id = 'tc-settings-overlay';
+    overlay.classList.add('glyph-overlay');
+    document.body.appendChild(overlay);
+
+    const popup = document.createElement('div');
+    popup.id = 'tc-settings-popup';
+    popup.classList.add('tc-settings-popup');
+
+    const classMode  = localStorage.getItem('tc_classSelector')  ?? 'buttons';
+    const sidebarPos = localStorage.getItem('tc_sidebarPosition') ?? 'inline';
+
+    popup.innerHTML = `
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+            <span style="font-size:1.1rem;font-weight:600;color:var(--tf-accent)">Settings</span>
+            <button id="tc-settings-close" style="background:none;border:none;color:#aaa;font-size:1.2rem;cursor:pointer;">&#x2715;</button>
+        </div>
+        <div style="margin-bottom:16px;">
+            <div style="margin-bottom:8px;color:var(--tf-text-soft);font-size:.9rem;">Class Selector</div>
+            <div style="display:flex;gap:8px;">
+                <button class="tc-pref-btn ${classMode === 'buttons' ? 'tc-pref-active' : ''}" data-pref="tc_classSelector" data-val="buttons">Icons</button>
+                <button class="tc-pref-btn ${classMode === 'dropdown' ? 'tc-pref-active' : ''}" data-pref="tc_classSelector" data-val="dropdown">Dropdown</button>
+            </div>
+        </div>
+        <div>
+            <div style="margin-bottom:8px;color:var(--tf-text-soft);font-size:.9rem;">Sidebar Position</div>
+            <div style="display:flex;gap:8px;">
+                <button class="tc-pref-btn ${sidebarPos === 'inline' ? 'tc-pref-active' : ''}" data-pref="tc_sidebarPosition" data-val="inline">Inline</button>
+                <button class="tc-pref-btn ${sidebarPos === 'fixed' ? 'tc-pref-active' : ''}" data-pref="tc_sidebarPosition" data-val="fixed">Fixed</button>
+            </div>
+        </div>`;
+
+    document.body.appendChild(popup);
+    popup.addEventListener('click', (e) => e.stopPropagation());
+
+    popup.querySelectorAll('.tc-pref-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            localStorage.setItem(btn.dataset.pref, btn.dataset.val);
+            applyTCPrefs();
+            openTCSettingsPanel();
+        });
+    });
+
+    popup.querySelector('#tc-settings-close').addEventListener('click', closeTCSettingsPanel);
+
+    setTimeout(() => {
+        const outsideHandler = (e) => {
+            if (!popup.contains(e.target) && e.target !== tcSettingsBtn) {
+                closeTCSettingsPanel();
+                document.removeEventListener('click', outsideHandler);
+            }
+        };
+        document.addEventListener('click', outsideHandler);
+    }, 0);
+}
+
+function closeTCSettingsPanel() {
+    document.getElementById('tc-settings-overlay')?.remove();
+    document.getElementById('tc-settings-popup')?.remove();
+    document.body.classList.remove('body-no-scroll');
+}
+
+tcSettingsBtn?.addEventListener('click', openTCSettingsPanel);
+
+applyTCPrefs();

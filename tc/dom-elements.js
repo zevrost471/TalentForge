@@ -41,5 +41,8 @@ export function getDomElements() {
         mtpTooltip: document.getElementById("mtp-tooltip"),
         mtpSlider: document.getElementById("mtp-slider"),
         mtpRankLabel: document.getElementById("mtp-rank-label"),
+        tcSettingsBtn: document.getElementById("tc-settings-btn"),
+        classDropdown: document.getElementById("class-dropdown"),
+        tcMainLayout: document.getElementById("tc-main-layout"),
   };
 }
