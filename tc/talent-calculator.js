@@ -5179,40 +5179,95 @@ function syncClassDropdown() {
     if (!classDropdown) return;
     const version = currentState.version;
     const available = version ? Object.keys(talentsAttributedByVersion[version] || {}) : [];
-    classDropdown.innerHTML = '<option value="" disabled selected>Select class</option>';
-    classDropdown.disabled = available.length === 0;
 
+    const classes = [];
     document.querySelectorAll('.class-btn').forEach(btn => {
-        const key = btn.dataset.class;
         if (btn.classList.contains('hidden')) return;
-        const opt = document.createElement('option');
-        opt.value = key;
-        opt.textContent = version
-            ? (talentTreeData[version]?.classes[key]?.name ?? key)
-            : key;
-        opt.disabled = !available.includes(key);
-        if (key === currentState.class) opt.selected = true;
-        classDropdown.appendChild(opt);
+        const key = btn.dataset.class;
+        const name = version ? (talentTreeData[version]?.classes[key]?.name ?? key) : key;
+        const iconSrc = btn.querySelector('img')?.src ?? '';
+        const borderColor = btn.style.borderColor || btn.style.border?.replace('2px solid ', '') || '';
+        classes.push({ key, name, iconSrc, borderColor, available: available.includes(key) });
     });
-}
 
-classDropdown?.addEventListener('change', (e) => {
-    const fakeEvent = { currentTarget: { dataset: { class: e.target.value } } };
-    handleClassSelect(fakeEvent);
-    syncClassDropdown();
-});
+    const selected = classes.find(c => c.key === currentState.class);
+
+    classDropdown.innerHTML = '';
+
+    // Trigger button
+    const trigger = document.createElement('button');
+    trigger.id = 'class-dropdown-trigger';
+    trigger.className = 'tf-control rounded-md px-3 py-2 flex items-center gap-3';
+    trigger.style.minWidth = '200px';
+    if (available.length === 0) trigger.style.cursor = 'not-allowed';
+    if (selected) {
+        trigger.innerHTML = `
+            <img src="${selected.iconSrc}" style="width:34px;height:34px;border-radius:4px;border:1px solid #6b7280;flex-shrink:0;">
+            <span class="text-lg font-semibold">${selected.name}</span>
+            <i class="fas fa-chevron-down" style="margin-left:auto;font-size:.65rem;opacity:.55;"></i>`;
+    } else {
+        trigger.innerHTML = `
+            <span style="color:var(--tf-text-soft)">Select class</span>
+            <i class="fas fa-chevron-down" style="margin-left:auto;font-size:.65rem;opacity:.55;"></i>`;
+    }
+    classDropdown.appendChild(trigger);
+
+    // Dropdown list
+    const list = document.createElement('div');
+    list.id = 'class-dropdown-list';
+    list.classList.add('hidden');
+
+    classes.forEach(cls => {
+        const item = document.createElement('button');
+        item.className = 'class-dropdown-item';
+        item.style.gap = '14px';
+        if (cls.key === currentState.class) item.classList.add('class-dropdown-item-active');
+        item.disabled = !cls.available;
+        item.innerHTML = `
+            <img src="${cls.iconSrc}" style="width:28px;height:28px;border-radius:4px;border:1px solid #6b7280;flex-shrink:0;">
+            <span class="text-base font-semibold">${cls.name}</span>`;
+        item.addEventListener('click', () => {
+            handleClassSelect({ currentTarget: { dataset: { class: cls.key } } });
+            list.classList.add('hidden');
+            syncClassDropdown();
+        });
+        list.appendChild(item);
+    });
+
+    classDropdown.appendChild(list);
+
+    // Toggle list open/close — only active once a version is loaded
+    if (available.length > 0) {
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const opening = list.classList.contains('hidden');
+            list.classList.toggle('hidden');
+            if (opening) {
+                const closeList = (ev) => {
+                    if (!classDropdown.contains(ev.target)) {
+                        list.classList.add('hidden');
+                        document.removeEventListener('click', closeList);
+                    }
+                };
+                setTimeout(() => document.addEventListener('click', closeList), 0);
+            }
+        });
+    }
+}
 
 function applyTCPrefs() {
     const classMode  = localStorage.getItem('tc_classSelector')  ?? 'buttons';
     const sidebarPos = localStorage.getItem('tc_sidebarPosition') ?? 'inline';
 
-    const classList   = document.getElementById('class-list');
+    const selectClassContainer = document.getElementById('select-class-container');
+    const dropdownBar = document.getElementById('class-dropdown-bar');
     if (classMode === 'dropdown') {
-        classList?.classList.add('hidden');
-        classDropdown?.classList.remove('hidden');
+        selectClassContainer?.classList.add('hidden');
+        dropdownBar?.classList.remove('hidden');
+        syncClassDropdown();
     } else {
-        classList?.classList.remove('hidden');
-        classDropdown?.classList.add('hidden');
+        selectClassContainer?.classList.remove('hidden');
+        dropdownBar?.classList.add('hidden');
     }
 
     if (sidebarPos === 'fixed') {
@@ -5410,10 +5465,15 @@ function stopSidebarResize() {
 }
 */
 
+let _tcSettingsOutsideHandler = null;
+
 function openTCSettingsPanel() {
+    if (_tcSettingsOutsideHandler) {
+        document.removeEventListener('click', _tcSettingsOutsideHandler);
+        _tcSettingsOutsideHandler = null;
+    }
     document.getElementById('tc-settings-overlay')?.remove();
     document.getElementById('tc-settings-popup')?.remove();
-
 
     const overlay = document.createElement('div');
     overlay.id = 'tc-settings-overlay';
@@ -5461,22 +5521,31 @@ function openTCSettingsPanel() {
     popup.querySelector('#tc-settings-close').addEventListener('click', closeTCSettingsPanel);
 
     setTimeout(() => {
-        const outsideHandler = (e) => {
+        _tcSettingsOutsideHandler = (e) => {
             if (!popup.contains(e.target) && e.target !== tcSettingsBtn) {
                 closeTCSettingsPanel();
-                document.removeEventListener('click', outsideHandler);
             }
         };
-        document.addEventListener('click', outsideHandler);
+        document.addEventListener('click', _tcSettingsOutsideHandler);
     }, 0);
 }
 
 function closeTCSettingsPanel() {
+    if (_tcSettingsOutsideHandler) {
+        document.removeEventListener('click', _tcSettingsOutsideHandler);
+        _tcSettingsOutsideHandler = null;
+    }
     document.getElementById('tc-settings-overlay')?.remove();
     document.getElementById('tc-settings-popup')?.remove();
     document.body.classList.remove('body-no-scroll');
 }
 
-tcSettingsBtn?.addEventListener('click', openTCSettingsPanel);
+tcSettingsBtn?.addEventListener('click', () => {
+    if (document.getElementById('tc-settings-popup')) {
+        closeTCSettingsPanel();
+    } else {
+        openTCSettingsPanel();
+    }
+});
 
 applyTCPrefs();
