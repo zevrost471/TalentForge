@@ -3,7 +3,7 @@
 import { classes } from './classes.js';
 import { abilityMasterData } from './baseline-ability-master-data.js';
 
-let DEATHKNIGHT = classes.DEATHKNIGHT;
+let DEATH_KNIGHT = classes.DEATH_KNIGHT;
 let DRUID = classes.DRUID;
 let HUNTER = classes.HUNTER;
 let MAGE = classes.MAGE;
@@ -3757,7 +3757,7 @@ export const baselineClassAbilities = {
         },
     },
     wotlk: {
-        [DEATHKNIGHT]: {
+        [DEATH_KNIGHT]: {
             // deathknight - wotlk
             Blood: [
 
@@ -3940,7 +3940,7 @@ export const baselineClassAbilities = {
         },
     },
     cataclysm: {
-        [DEATHKNIGHT]: {
+        [DEATH_KNIGHT]: {
             // deathknight - cataclysm
             Blood: [
 

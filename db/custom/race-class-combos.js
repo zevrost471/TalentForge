@@ -4,7 +4,7 @@ import { classes } from '../classes.js';
 import { weaponItems } from './weapon-items.js';
 import { armor } from './armor.js';
 
-let DEATHKNIGHT = classes.DEATHKNIGHT;
+let DEATH_KNIGHT = classes.DEATH_KNIGHT;
 let DRUID = classes.DRUID;
 let HUNTER = classes.HUNTER;
 let MAGE = classes.MAGE;

@@ -14,7 +14,7 @@ let RING = runeSlots.RING;
 
 export const runes = Object.freeze({
   base: {
-    deathknight: null,
+    death_knight: null,
     druid: [
       {
         name: "Gale Winds",

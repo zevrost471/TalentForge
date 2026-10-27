@@ -5445,3 +5445,720 @@ replaceTalentFrom("1.60.1.70170", "druid", "Balance", "moonkin_form", {
     "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by 100%, Armor contribution from items by 360%, and all party members within 45 yards have their critical strike chance increased by 3%, exclusive with Leader of the Pack. Also protects the caster from Polymorph effects and prevents the use of healing spells.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
   ],
 });
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Patch 1.60.1.70291 (October 8, 2026)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// === WARRIOR ===
+
+// Arms: Spearing Strike now explicitly dismounts mounted targets.
+replaceTalentFrom("1.60.1.70291", "warrior", "Arms", "spearing_strike", {
+  description: [
+    "A brutal attack that deals 40% weapon damage, plus an additional 80% weapon damage against Giants, Dragonkin, and mounted targets. Mounted targets are dismounted.",
+  ],
+});
+
+// Arms: Impale now requires maximum rank of Deep Wounds as a prerequisite.
+replaceTalentFrom("1.60.1.70291", "warrior", "Arms", "impale", {
+  requiresTalents: "deep_wounds",
+});
+
+// === PALADIN ===
+
+// Protection: Reckoning extra attacks cannot occur more than once every 1.5 seconds.
+replaceTalentFrom("1.60.1.70291", "paladin", "Protection", "reckoning", {
+  description: [
+    "Gives you a {value1}% chance to gain an extra attack after Blocking a melee attack and a {value2}% chance to gain an extra attack after being the victim of a non-periodic critical strike. Extra attacks cannot occur more than once every 1.5 seconds.",
+    {
+      value1: [8, 16, 24, 32, 40],
+      value2: [20, 40, 60, 80, 100],
+    },
+  ],
+});
+
+// === HUNTER ===
+
+// Survival: Expose Prey's Mongoose Bite activation window increased from 5 to 10 seconds.
+replaceTalentFrom("1.60.1.70291", "hunter", "Survival", "expose_prey", {
+  description: [
+    "Your attacks against targets with Hunter's Mark have a {value}% chance to activate your Mongoose Bite for 10 sec.",
+    {
+      value: [5, 10],
+    },
+  ],
+});
+
+// === PRIEST ===
+
+// Discipline: Penance rank 1 mana cost increased from 100 to 150; base damage and healing reduced with lower ranks gaining additional points per level. (Description values pending exact numbers.)
+
+// === SHAMAN ===
+
+// Restoration: Water Shield's 15-second cooldown has been removed.
+replaceTalentFrom("1.60.1.70291", "shaman", "Restoration", "water_shield", {
+  cooldown: null,
+});
+
+// === WARLOCK ===
+
+// Demonology: Demonic Brand now only generates high threat from Shadow damage; Fire damage attacks no longer receive the threat bonus.
+replaceTalentFrom("1.60.1.70291", "warlock", "Demonology", "demonic_brand", {
+  description: [
+    "Your Searing Pain generates {value1}% less threat and brands the target for 10 sec. Your pet's next {value2} attacks against the target deal 65 to 68 Fire or Shadow damage based on the pet. If Shadow damage is dealt, it has high threat.",
+    {
+      value1: [17, 33, 50],
+      value2: [2, 4, 6],
+    },
+  ],
+});
+
+// === DRUID ===
+
+// Feral Combat: Predatory Instincts renamed to Natural Instinct; now also increases healing done by spells by 12/25% of Intellect.
+replaceTalentFrom("1.60.1.70291", "druid", "Feral Combat", "predatory_instincts", {
+  name: "Natural Instinct",
+  description: [
+    "Increases the critical strike damage bonus of your melee abilities by {value1}% and increases your spell healing by {value2}% of your Intellect.",
+    {
+      value1: [10, 20],
+      value2: [12, 25],
+    },
+  ],
+});
+
+// Restoration: Bear Form and Dire Bear Form forfeit stored Cat Form Energy and pause its restoration.
+replaceTalentFrom("1.60.1.70291", "druid", "Restoration", "furor", {
+  description: [
+    "Gives you a {value1}% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores {value1}% of the Energy you had when last in Cat Form, plus {value2} Energy per sec spent outside Cat Form, up to {value1} Energy. Bear Form and Dire Bear Form forfeit this Energy and halt its restoration while active.",
+    {
+      value1: [20, 40, 60, 80, 100],
+      value2: [2, 4, 6, 8, 10],
+    },
+  ],
+});
+
+// ─────────────────────────────────────────────────────────────────────────────
+// Patch 1.60.1.70425 (October 16, 2026)
+// ─────────────────────────────────────────────────────────────────────────────
+
+// === WARRIOR ===
+
+// Arms: Bloodthrill now specifies main hand attacks, not all melee attacks.
+replaceTalentFrom("1.60.1.70425", "warrior", "Arms", "bloodthrill", {
+  description: [
+    "Grants your Main Hand melee attacks against enemies afflicted by your Rend a {value}% chance to allow an activation of Overpower.",
+    {
+      value: [4, 8, 12, 16, 20],
+    },
+  ],
+});
+
+// === PALADIN ===
+
+// Protection: Shield Specialization block mana restore reduced from 6% to 4%.
+replaceTalentFrom("1.60.1.70425", "paladin", "Protection", "shield_specialization", {
+  description: [
+    "Increases the amount of damage absorbed by your shield by {value1}%, and gives your blocks a {value2}% chance to restore 4% of your maximum Mana. May only occur once every 3 sec.",
+    {
+      value1: [10, 20, 30],
+      value2: [33, 66, 100],
+    },
+  ],
+});
+
+// Protection: Reckoning can now store up to 4 extra attacks; the 1.5-second limit applies only to block triggers.
+replaceTalentFrom("1.60.1.70425", "paladin", "Protection", "reckoning", {
+  description: [
+    "Gives you a {value1}% chance after Blocking and a {value2}% chance after receiving a non-periodic critical strike to gain an extra attack. Stores up to 4 extra attacks. Cannot occur from Blocks more than once every 1.5 sec.",
+    {
+      value1: [8, 16, 24, 32, 40],
+      value2: [20, 40, 60, 80, 100],
+    },
+  ],
+});
+
+// Retribution: Champion of the Light values reduced from 20/40/60 to 10/20/30.
+replaceTalentFrom("1.60.1.70425", "paladin", "Retribution", "champion_of_the_light", {
+  description: [
+    "Increases your spell damage by up to {value}% of your Intellect.",
+    {
+      value: [10, 20, 30],
+    },
+  ],
+});
+
+// === HUNTER ===
+
+// Marksmanship: Trueshot Aura now benefits raid members as well as party members.
+replaceTalentFrom("1.60.1.70425", "hunter", "Marksmanship", "trueshot_aura", {
+  description: [
+    "Increases the Ranged Attack Power of party or raid members within 45 yds by 30.",
+  ],
+});
+
+// Marksmanship: Rapid Recuperation description clarified.
+replaceTalentFrom("1.60.1.70425", "hunter", "Marksmanship", "rapid_recuperation", {
+  description: [
+    "Afflicting a target with Serpent Sting allows {value1}% of your Mana Regeneration to continue while casting for 15 sec, increased to {value2}% when Rapid Killing is consumed.",
+    {
+      value1: [25, 50],
+      value2: [50, 100],
+    },
+  ],
+});
+
+// Survival: Predator's Edge now explicitly states critical strike damage of melee abilities.
+replaceTalentFrom("1.60.1.70425", "hunter", "Survival", "predators_edge", {
+  description: [
+    "Increases your melee ability critical strike damage by {value1}% and your Off Hand weapon damage by {value2}%.",
+    {
+      value1: [6, 12, 18, 24, 30],
+      value2: [10, 20, 30, 40, 50],
+    },
+  ],
+});
+
+// Survival: Resourcefulness now specifies melee and ranged ability critical strikes.
+replaceTalentFrom("1.60.1.70425", "hunter", "Survival", "resourcefulness", {
+  description: [
+    "Reduces the Mana cost of your Trap and melee abilities by {value1}%, and grants your melee and ranged ability Critical Strikes a {value2}% chance to allow 50% of your Mana Regeneration to continue while casting for 30 sec.",
+    {
+      value1: [30, 60],
+      value2: [50, 100],
+    },
+  ],
+});
+
+// Survival: Expose Prey now specifies melee and ranged attacks.
+replaceTalentFrom("1.60.1.70425", "hunter", "Survival", "expose_prey", {
+  description: [
+    "Grants your melee and ranged attacks against enemies afflicted by Hunter's Mark a {value}% chance to allow an activation of Mongoose Bite. Lasts 10 sec.",
+    {
+      value: [5, 10],
+    },
+  ],
+});
+
+// Survival: Strider Kick no longer requires a Melee Weapon.
+replaceTalentFrom("1.60.1.70425", "hunter", "Survival", "strider_kick", { 
+  requiresWeapon: 0 
+});
+
+
+// === PRIEST ===
+
+// Discipline: Power in Light now triggers on Holy Fire or Shadow Word: Pain.
+replaceTalentFrom("1.60.1.70425", "priest", "Discipline", "power_in_light", {
+  description: [
+    "Your Smite and Penance spells deal {value}% increased damage to targets afflicted with your Holy Fire or Shadow Word: Pain.",
+    {
+      value: [2, 4, 6, 8, 10],
+    },
+  ],
+});
+
+// Discipline: Silent Resolve now reduces threat from all spells, not just Holy.
+replaceTalentFrom("1.60.1.70425", "priest", "Discipline", "silent_resolve", {
+  description: [
+    "Reduces the threat generated by your spells by {value1}% and reduces the duration of Stun, Fear, and Silence effects inflicted on you by {value2}%.",
+    {
+      value1: [10, 20, 30],
+      value2: [5, 10, 15],
+    },
+  ],
+});
+
+// Discipline: Improved Power Word: Shield moves from row 1 to row 2 (col 2 unchanged).
+moveTalentFrom("1.60.1.70425", "priest", "Discipline", "improved_power_word_shield", 2, 2);
+
+// Discipline: Mental Strength values reduced to 2/4/6/8/10%; moves to row 1 col 2.
+moveTalentFrom("1.60.1.70425", "priest", "Discipline", "mental_strength", 1, 2);
+replaceTalentFrom("1.60.1.70425", "priest", "Discipline", "mental_strength", {
+  description: [
+    "Increases your total Intellect by {value}%.",
+    {
+      value: [2, 4, 6, 8, 10],
+    },
+  ],
+});
+
+// Discipline: Improved Mana Burn moves from col 3 to col 1 (row 3 unchanged).
+moveTalentFrom("1.60.1.70425", "priest", "Discipline", "improved_mana_burn", 3, 1);
+
+// Discipline: Twilight Focus casting time loss prevention clarified.
+replaceTalentFrom("1.60.1.70425", "priest", "Discipline", "twilight_focus", {
+  description: [
+    "Gives your spells a {value}% chance to not lose casting time when you take damage.",
+    {
+      value: [23, 47, 70],
+    },
+  ],
+});
+
+// Discipline: Divine Aegis now only triggers on non-periodic crits and caps at 1200 absorbed.
+replaceTalentFrom("1.60.1.70425", "priest", "Discipline", "divine_aegis", {
+  description: [
+    "Your non-periodic critical heals create a protective shield on the target, absorbing {value}% of the amount healed. Shields up to 1200 damage and lasts 12 sec.",
+    {
+      value: [5, 10, 15],
+    },
+  ],
+});
+
+// Shadow: Shadow Affinity removed; Improved Mind Blast moves from row 2 col 0 to row 1 col 0.
+removeTalentsByIdFrom("1.60.1.70425", "priest", "Shadow", ["shadow_affinity"]);
+moveTalentFrom("1.60.1.70425", "priest", "Shadow", "improved_mind_blast", 1, 0);
+
+// Shadow: Improved Mind Flay now escalates damage per instance.
+replaceTalentFrom("1.60.1.70425", "priest", "Shadow", "improved_mind_flay", {
+  description: [
+    "Each instance of damage of Mind Flay deals {value}% more damage than its previous instance of damage.",
+    {
+      value: [10, 20],
+    },
+  ],
+});
+
+// Shadow: Improved Fade replaced by Dark Inspiration at row 3, col 0.
+removeTalentsByIdFrom("1.60.1.70425", "priest", "Shadow", ["improved_fade"]);
+insertTalentFrom("1.60.1.70425", "priest", "Shadow", {
+  id: "dark_inspiration",
+  name: "Dark Inspiration",
+  icon: "spell_warlock_demonsoul",
+  row: 3,
+  col: 0,
+  ranks: 5,
+  requiresTalents: null,
+  description: [
+    "Your Mind Blast and fully channeled Mind Flay causes Dark Inspiration, increasing yours and your party's Spirit by {value}% for 10 sec.",
+    {
+      value: [3, 6, 9, 12, 15],
+    },
+  ],
+  isActive: false,
+});
+
+// Shadow: Vampiric Embrace cooldown reduced from 60 to 30 seconds.
+replaceTalentFrom("1.60.1.70425", "priest", "Shadow", "vampiric_embrace", {
+  cooldown: 30,
+});
+
+// Shadow: Shadow Weaving now clarifies it increases Shadow damage the target takes from you.
+replaceTalentFrom("1.60.1.70425", "priest", "Shadow", "shadow_weaving", {
+  description: [
+    "Your Shadow damage spells have a {value}% chance to increase the Shadow damage the target takes from you by 2% for 15 sec, stacking up to 5 times.",
+    {
+      value: [33, 67, 100],
+    },
+  ],
+});
+
+// Shadow: Devouring Contagion now spreads to 2 nearby enemies.
+replaceTalentFrom("1.60.1.70425", "priest", "Shadow", "devouring_contagion", {
+  description: [
+    "Reduces the mana cost of your Devouring Plague by {value}%.\n\nTargets that die while Devouring Plague is active spreads it, jumping to 2 nearby enemies within {range} yds for the remaining duration.",
+    {
+      value: [25, 50],
+      range: [5, 10],
+    },
+  ],
+});
+
+// === SHAMAN ===
+
+// Elemental: Major tree restructure. Order of operations matters for positions.
+
+// Elemental: Elemental Warding moves from row 1 col 0 to row 2 col 1 (frees row 1 col 0 for Elemental Devastation).
+moveTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_warding", 2, 1);
+
+// Elemental: Call of Thunder removed.
+removeTalentsByIdFrom("1.60.1.70425", "shaman", "Elemental", ["call_of_thunder"]);
+
+// Elemental: Elemental Devastation moves from row 1 col 3 to row 1 col 0; now specifies direct damage spell crits.
+moveTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_devastation", 1, 0);
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_devastation", {
+  description: [
+    "Your Critical Strikes with direct damage spells increase your chance to get a Critical Strike with melee attacks by {value}% for 10 sec.",
+    {
+      value: [3, 6, 9],
+    },
+  ],
+});
+
+// Elemental: Call of Flame moves from row 1 col 2 to row 1 col 3; now also extends Flame Shock duration.
+moveTalentFrom("1.60.1.70425", "shaman", "Elemental", "call_of_flame", 1, 3);
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "call_of_flame", {
+  description: [
+    "Increases the damage done by your Fire Totems and by your Flame Shock, Fire Nova, and Lava Burst spells by {value}%, as well as increases the duration of your Flame Shock spell by {sec} sec.",
+    {
+      value: [5, 10, 15],
+      sec: [3, 6, 9],
+    },
+  ],
+});
+
+// Elemental: Elemental Alacrity moves from row 5 col 2 to row 1 col 2; prerequisite removed.
+moveTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_alacrity", 1, 2);
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_alacrity", {
+  requiresTalents: null,
+});
+
+// Elemental: Elemental Focus moves from row 2 col 1 to row 2 col 0.
+moveTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_focus", 2, 0);
+
+// Elemental: Improved Fire Nova renamed to Trial by Fire; now also increases Fire Nova damage and reduces cooldown.
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "improved_fire_nova", {
+  name: "Trial by Fire",
+  description: [
+    "Increases the damage done by your Fire Nova spell by {value1}% and reduces its cooldown by {value2} sec, and increases the duration of your Magma Totem by {value3} sec.",
+    {
+      value1: [10, 20],
+      value2: [2, 4],
+      value3: [10, 20],
+    },
+  ],
+});
+
+// Elemental: Eye of the Storm casting time loss prevention clarified.
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "eye_of_the_storm", {
+  description: [
+    "Gives your Lightning Bolt, Chain Lightning, and Lava Burst spells a {value}% chance to not lose casting time when you take damage.",
+    {
+      value: [23, 47, 70],
+    },
+  ],
+});
+
+// Elemental: Elemental Fury now requires Lightning Overload as a prerequisite.
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_fury", {
+  requiresTalents: "lightning_overload",
+});
+
+// Elemental: Earthbound moves from row 4 col 3 to row 3 col 3.
+moveTalentFrom("1.60.1.70425", "shaman", "Elemental", "earthbound", 3, 3);
+
+// Elemental: Elemental Reach now reduces Totemic Projection cooldown instead of extending Flame Shock range.
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "elemental_reach", {
+  description: [
+    "Increases the range of your Lightning Bolt, Chain Lightning, Fire Nova, and Lava Burst spells by {value1} yards and reduces the cooldown of Totemic Projection by {value2} sec.",
+    {
+      value1: [3, 6],
+      value2: [10, 20],
+    },
+  ],
+});
+
+// Elemental: Lightning Overload moves from row 4 col 1 to row 4 col 2; now requires Elemental Alacrity.
+moveTalentFrom("1.60.1.70425", "shaman", "Elemental", "lightning_overload", 4, 2);
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "lightning_overload", {
+  requiresTalents: "elemental_alacrity",
+});
+
+// Elemental: Lava Burst moves from row 6 col 1 to row 4 col 1; no longer requires Lightning Overload; mana cost reduced; damage reduced.
+replaceTalentFrom("1.60.1.70425", "shaman", "Elemental", "lava_burst", {
+  row: 4,
+  col: 1,
+  requiresTalents: null,
+  spentResource: 135,
+  description: [
+    "You hurl molten lava at the target, dealing 114 to 145 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage.",
+  ],
+});
+
+// Elemental: Elemental Mastery — new active talent at row 6 col 1.
+insertTalentFrom("1.60.1.70425", "shaman", "Elemental", {
+  id: "elemental_mastery",
+  name: "Elemental Mastery",
+  icon: "spell_nature_wispheal",
+  row: 6,
+  col: 1,
+  ranks: 1,
+  requiresTalents: "lava_burst",
+  description: [
+    "Gain mastery over Fire and Lightning, reducing the cast time of Lightning Bolt and Lava Burst by 0.5 sec, and removing the cooldown from Chain Lightning. Lasts 15 sec.",
+  ],
+  isActive: true,
+  castTime: null,
+  cooldown: 180,
+  spentResource: null,
+  range: null,
+  requiresWeapon: 0,
+});
+
+// Enhancement: Stormstrike mana cost reduced from 21% to 8% of base mana.
+replaceTalentFrom("1.60.1.70425", "shaman", "Enhancement", "stormstrike", {
+  spentResource: 8,
+  absoluteSpent: false,
+});
+
+// Restoration: Tidal Focus and Totemic Focus swap positions (row 0 ↔ row 1, col 2 unchanged).
+moveTalentFrom("1.60.1.70425", "shaman", "Restoration", "tidal_focus", 0, 2);
+moveTalentFrom("1.60.1.70425", "shaman", "Restoration", "totemic_focus", 1, 2);
+
+// Restoration: Water Shield can now be expended by any spell critical result; globe cooldown text retained.
+replaceTalentFrom("1.60.1.70425", "shaman", "Restoration", "water_shield", {
+  description: [
+    "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds. Lasts 10 min.\n\nOnly one Elemental Shield can be active on the Shaman at any one time.",
+  ],
+});
+
+// Restoration: Healing Focus casting time loss prevention clarified.
+replaceTalentFrom("1.60.1.70425", "shaman", "Restoration", "healing_focus", {
+  description: [
+    "Gives your healing spells a {value}% chance to not lose casting time when you take damage.",
+    {
+      value: [23, 47, 70],
+    },
+  ],
+});
+
+// === MAGE ===
+
+// Arcane: Improved Channeling now also protects Arcane Wrath from casting time loss.
+replaceTalentFrom("1.60.1.70425", "mage", "Arcane", "improved_channeling", {
+  description: [
+    "Gives your Arcane Missiles spell a {value1}% chance and your Arcane Blast and Arcane Wrath spells a {value2}% chance to not lose casting time when you take damage.",
+    {
+      value1: [20, 40, 60, 80, 100],
+      value2: [14, 28, 42, 56, 70],
+    },
+  ],
+});
+
+// Arcane: Arcane Blast cast time reduced; damage and stack behavior updated.
+replaceTalentFrom("1.60.1.70425", "mage", "Arcane", "arcane_blast", {
+  castTime: 1.5,
+  description: [
+    "Blasts the target with energy, dealing 34 to 38 Arcane damage. Each time you cast Arcane Blast, you gain 15% of your Intellect as Spell Damage and the mana cost of Arcane Blast is increased by 175%. Effect stacks up to 4 times and lasts 15 sec from time of initial application.",
+  ],
+});
+
+// Arcane: Missile Barrage now has 2 ranks, moves to row 0 col 3, and also triggers from Arcane Wrath.
+moveTalentFrom("1.60.1.70425", "mage", "Arcane", "missile_barrage", 0, 3);
+replaceTalentFrom("1.60.1.70425", "mage", "Arcane", "missile_barrage", {
+  ranks: 2,
+  description: [
+    "Gives your Arcane Blast spell a {value1}% chance, and your Arcane Wrath, Fireball, Frostbolt, and Frostfire Bolt spells a {value2}% chance to reduce the channeled duration of your next Arcane Missiles spell by 50%, reduce the Mana cost by 100%, and missiles fire every 0.5 sec.",
+    {
+      value1: [20, 40],
+      value2: [10, 20],
+    },
+  ],
+});
+
+// Arcane: Arcane Wrath — new active talent at row 3 col 3. Requires max rank of Arcane Blast.
+insertTalentFrom("1.60.1.70425", "mage", "Arcane", {
+  id: "arcane_wrath",
+  name: "Arcane Wrath",
+  icon: "ability_mage_netherwindpresence",
+  row: 3,
+  col: 3,
+  ranks: 1,
+  requiresTalents: "arcane_blast",
+  description: [
+    "Launches a projectile of pure Arcane energy at the enemy target, causing 122 to 146 Arcane damage. This spell gains additional Spell Damage equal to 5% of your maximum Mana.",
+  ],
+  isActive: true,
+  castTime: 3.5,
+  cooldown: 6,
+  spentResource: 140,
+  absoluteSpent: true,
+  range: 30,
+  requiresWeapon: 0,
+});
+
+// Fire: Wake of Fire renamed to Improved Fire Blast; now reduces cooldown and increases range.
+replaceTalentFrom("1.60.1.70425", "mage", "Fire", "wake_of_fire", {
+  name: "Improved Fire Blast",
+  ranks: 2,
+  description: [
+    "Reduces the cooldown of your Fire Blast spell by {value1} sec and increases its range by {value2} yards.",
+    {
+      value1: [1, 2],
+      value2: [8, 15],
+    },
+  ],
+});
+
+// Fire: Critical Mass gains 2 additional ranks (now 5); values extended to 2/4/6/8/10%.
+replaceTalentFrom("1.60.1.70425", "mage", "Fire", "critical_mass", {
+  ranks: 5,
+  description: [
+    "Increases the critical strike chance of your Fire spells by {value}%.",
+    {
+      value: [2, 4, 6, 8, 10],
+    },
+  ],
+});
+
+// Fire: Fire Power redesigned — scales per Fire effect on the target; capped per rank.
+replaceTalentFrom("1.60.1.70425", "mage", "Fire", "fire_power", {
+  ranks: 3,
+  description: [
+    "Increases the damage done by your Fire spells by {value1}% per your Fire effects on the target, up to a maximum increase of {value2}%. Effects which mix multiple schools of magic do not qualify.",
+    {
+      value1: [1, 2, 3],
+      value2: [4, 8, 12],
+    },
+  ],
+});
+
+// Fire: Heating Up description gains sentence about Fire Blast granting an extra stack.
+replaceTalentFrom("1.60.1.70425", "mage", "Fire", "heating_up", {
+  description: [
+    "Non-periodic critical strikes with Fireball, Frostfire Bolt, Fire Blast, and Scorch reduce the cast time of your next Pyroblast cast within 20 sec by 25%, stacking up to 3 times. Fire Blast grants an additional stack every time it deals damage.",
+  ],
+});
+
+// Fire: Improved Scorch icon updated.
+replaceTalentFrom("1.60.1.70425", "mage", "Fire", "improved_scorch", {
+  icon: "spell_fire_soulburn",
+});
+
+// Frost: Improved Frostbolt now also reduces the cast time of Frost Blast.
+replaceTalentFrom("1.60.1.70425", "mage", "Frost", "improved_frostbolt", {
+  description: [
+    "Reduces the casting time of your Frostbolt and Frost Blast spells by {value} sec.",
+    {
+      value: [0.1, 0.2, 0.3, 0.4, 0.5],
+    },
+  ],
+});
+
+// Frost: Permafrost and Frostbite swap positions (col 1 ↔ col 3, row 1 unchanged).
+moveTalentFrom("1.60.1.70425", "mage", "Frost", "permafrost", 1, 3);
+moveTalentFrom("1.60.1.70425", "mage", "Frost", "frostbite", 1, 1);
+
+// Frost: Ice Lance bonus damage against Frozen targets reduced from 300% to 200%.
+replaceTalentFrom("1.60.1.70425", "mage", "Frost", "ice_lance", {
+  description: [
+    "Deals 28 to 32 Frost damage to an enemy target. Deals 200% increased damage to Frozen targets.",
+  ],
+});
+
+// Frost: Arctic Reach now also increases the range of Frost Blast.
+replaceTalentFrom("1.60.1.70425", "mage", "Frost", "arctic_reach", {
+  description: [
+    "Increases the range of your Frostbolt, Frost Blast, and Blizzard spells and the radius of your Frost Nova and Cone of Cold spells by {value}%.",
+    {
+      value: [10, 20],
+    },
+  ],
+});
+
+// Frost: Winter's Chill redesigned — proc chance scales per rank; buffs Cone of Cold damage.
+replaceTalentFrom("1.60.1.70425", "mage", "Frost", "winters_chill", {
+  description: [
+    "Gives your Frostbolt, Frost Blast, and Fingers of Frost empowered Ice Lance spells a {value}% chance to apply Winter's Chill, increasing the target's damage taken from your next Cone of Cold by 5% and it gains an additional 7% of your spell damage, stacking up to 5 times.",
+    {
+      value: [20, 40, 60, 80, 100],
+    },
+  ],
+});
+
+// === WARLOCK ===
+
+// Affliction: Malediction replaced by Grim Reach at row 1, col 0.
+removeTalentsByIdFrom("1.60.1.70425", "warlock", "Affliction", ["malediction"]);
+insertTalentFrom("1.60.1.70425", "warlock", "Affliction", {
+  id: "grim_reach",
+  name: "Grim Reach",
+  icon: "spell_shadow_callofbone",
+  row: 1,
+  col: 0,
+  ranks: 2,
+  requiresTalents: null,
+  description: [
+    "Increases the range of your Affliction spells by {value}%.",
+    {
+      value: [10, 20],
+    },
+  ],
+  isActive: false,
+});
+
+// Affliction: Fel Concentration covers specific drain/channel spells.
+replaceTalentFrom("1.60.1.70425", "warlock", "Affliction", "fel_concentration", {
+  description: [
+    "Gives your Drain Life, Drain Mana, Drain Soul, and Wrack spells a {value}% chance to not lose casting time when you take damage.",
+    {
+      value: [23, 47, 70],
+    },
+  ],
+});
+
+// Affliction: Shadow Mastery values increased from 1/2/3/4/5% to 2/4/6/8/10%.
+replaceTalentFrom("1.60.1.70425", "warlock", "Affliction", "shadow_mastery", {
+  description: [
+    "Increases the damage dealt or life drained by your Shadow spells by {value}%.",
+    {
+      value: [2, 4, 6, 8, 10],
+    },
+  ],
+});
+
+// Affliction: Amplify Curse Curse of Exhaustion percentage changed.
+replaceTalentFrom("1.60.1.70425", "warlock", "Affliction", "amplify_curse", {
+  description: [
+    "Increases the effect of your next Curse of Weakness or Bane of Agony by 50%, or your next Curse of Exhaustion by ?%. Lasts 30 sec.",
+  ],
+});
+
+// Destruction: Destructive Reach now explicitly applies to Destruction spells only.
+replaceTalentFrom("1.60.1.70425", "warlock", "Destruction", "destructive_reach", {
+  description: [
+    "Increases the range of your Destruction spells by {value}%.",
+    {
+      value: [10, 20],
+    },
+  ],
+});
+
+// Destruction: Intensity casting time loss prevention clarified.
+replaceTalentFrom("1.60.1.70425", "warlock", "Destruction", "intensity", {
+  description: [
+    "Gives your Destruction spells a {value}% chance to not lose casting time when you take damage.",
+    {
+      value: [23, 47, 70],
+    },
+  ],
+});
+
+// === DRUID ===
+
+// Balance: Moonkin Form now benefits party or raid members; specifies spell Critical Strike chance.
+replaceTalentFrom("1.60.1.70425", "druid", "Balance", "moonkin_form", {
+  description: [
+    "Shapeshift into Moonkin Form, increasing Omen of Clarity's chance to trigger by 100%, Armor contribution from items by 360%, and all party or raid members within 45 yards have their spell Critical Strike chance increased by 3%. Also protects the caster from Polymorph effects and prevents the use of healing spells.\n\nThe act of shapeshifting frees the caster of Polymorph and Movement Impairing effects.",
+  ],
+});
+
+// Feral Combat: Leader of the Pack now benefits party or raid members; specifies melee and ranged Critical Strike chance.
+replaceTalentFrom("1.60.1.70425", "druid", "Feral Combat", "leader_of_the_pack", {
+  description: [
+    "While in Cat Form, Bear Form, or Dire Bear Form, the Leader of the Pack increases the melee and ranged Critical Strike chance of all party or raid members within 45 yards by 3%.",
+  ],
+});
+
+// Restoration: Furor Energy accumulation clarified to specify time outside Bear/Dire Bear Form.
+replaceTalentFrom("1.60.1.70425", "druid", "Restoration", "furor", {
+  description: [
+    "Gives you a {value1}% chance to gain 10 Rage when shapeshifting into Bear Form or Dire Bear Form. Shapeshifting into Cat Form restores {value1}% of the Energy you had when last in Cat Form, plus {value2} Energy per second spent outside Bear Form or Dire Bear Form, up to {value1} Energy.",
+    {
+      value1: [20, 40, 60, 80, 100],
+      value2: [2, 4, 6, 8, 10],
+    },
+  ],
+});
+
+// Restoration: Nature's Focus casting time loss prevention clarified.
+replaceTalentFrom("1.60.1.70425", "druid", "Restoration", "natures_focus", {
+  description: [
+    "Gives your Arcane and Nature spells a {value}% chance to not lose casting time when you take damage.",
+    {
+      value: [14, 28, 42, 56, 70],
+    },
+  ],
+});
+

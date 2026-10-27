@@ -2,7 +2,7 @@
 
 export const glyphs = {
     base: {
-        deathknight: {
+        death_knight: {
             prime: [
             
             ],

@@ -2,7 +2,7 @@
 
 export const glyphs = Object.freeze({
     base: {
-        deathknight: {
+        death_knight: {
             major: [
 
             ],
@@ -84,7 +84,7 @@ export const glyphs = Object.freeze({
         }
     },
     wotlk: {
-        deathknight: {
+        death_knight: {
             major: [
                 {
                     name: "Anti-Magic Shell",
@@ -3278,7 +3278,7 @@ export const glyphs = Object.freeze({
         }
     },
     cataclysm: {
-        deathknight: {
+        death_knight: {
             prime: [
                 {
                     name: "Death and Decay",

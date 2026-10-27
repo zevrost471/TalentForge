@@ -3,7 +3,7 @@
 import { classes } from "./classes.js";
 import { schools } from "./schools.js";
 
-let DEATHKNIGHT = classes.DEATHKNIGHT;
+let DEATH_KNIGHT = classes.DEATH_KNIGHT;
 let DRUID = classes.DRUID;
 let HUNTER = classes.HUNTER;
 let MAGE = classes.MAGE;

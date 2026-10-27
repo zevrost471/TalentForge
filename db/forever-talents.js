@@ -2115,7 +2115,14 @@ export const foreverTalents = {
         description: [
           "A powerful kick that deals 100% melee weapon damage."
         ],
-        isActive: true
+        isActive: true,
+        castTime: null,
+        cooldown: 8,
+        spentResource: 5.81,
+        absoluteSpent: false,
+        resourceType: 1,
+        range: 0,
+        requiresWeapon: 1,
       },
       {
         id: "lightning_reflexes",
@@ -6855,7 +6862,13 @@ export const foreverTalents = {
         description: [
           "You hurl molten lava at the target, dealing 106 to 135 Fire damage. If your Flame Shock is on the target, Lava Burst deals 20% increased damage."
         ],
-        isActive: true
+        isActive: true,
+        castTime: 2.5,
+        cooldown: 10,
+        spentResource: 165,
+        absoluteSpent: true,
+        resourceType: 1,
+        range: 30,
       }
     ],
     Enhancement: [
@@ -7128,9 +7141,9 @@ export const foreverTalents = {
         ],
         isActive: true,
         castTime: null,
-        cooldown: 6,
-        spentResource: 21,
-        absoluteSpent: false,
+        cooldown: 8,
+        spentResource: 125,
+        absoluteSpent: true,
         resourceType: 1,
         range: 0,
         requiresWeapon: 0
@@ -7223,7 +7236,8 @@ export const foreverTalents = {
         description: [
           "Increases your melee attack speed and spell casting speed by 30% for 25 sec."
         ],
-        isActive: true
+        isActive: true,
+        cooldown: 180,
       }
     ],
     Restoration: [
@@ -7418,7 +7432,8 @@ export const foreverTalents = {
         description: [
           "The caster is surrounded by 3 globes of water. When a spell, melee, or ranged attack hits the caster or when one of the caster's healing spells gets a critical result, 2% of maximum mana is restored to the caster, expending one water globe. Only one globe will activate every few seconds.  Lasts 10 min.\n\nOnly one Elemental Shield can be active on the Shaman at any one time."
         ],
-        isActive: true
+        isActive: true,
+        cooldown: 15,
       },
       {
         id: "tidal_mastery",
@@ -7563,7 +7578,13 @@ export const foreverTalents = {
         description: [
           "Heals a friendly target for 486 to 534, an additional 445 over 15 sec, and increases the effectiveness of your Chain Heal casts directly on that target by 25%."
         ],
-        isActive: true
+        isActive: true,
+        castTime: null,
+        cooldown: 6,
+        spentResource: 245,
+        absoluteSpent: true,
+        resourceType: 1,
+        range: 40,
       }
     ]
   },

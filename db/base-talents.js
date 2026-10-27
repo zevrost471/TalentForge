@@ -17007,7 +17007,7 @@ export const baseTalents = {
         }
     },
     wotlk: {
-        deathknight: {
+        death_knight: {
             // deathknight - wotlk
             Blood: [
                 {
@@ -30296,7 +30296,7 @@ export const baseTalents = {
         }
     },
     cataclysm: {
-        deathknight: {
+        death_knight: {
             // deathknight - cataclysm
             Blood: [
                 {

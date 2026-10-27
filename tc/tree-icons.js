@@ -50,7 +50,7 @@ export const defaultIcons = {
         Fury: { icon: "ability_warrior_innerrage" },
         Protection: { icon: "ability_warrior_defensivestance" }
     },
-    deathknight: {
+    death_knight: {
         Blood: { icon: "spell_deathknight_bloodpresence" },
         Frost: { icon: "spell_deathknight_frostpresence" },
         Unholy: { icon: "spell_deathknight_unholypresence" }
