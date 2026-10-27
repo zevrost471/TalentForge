@@ -796,6 +796,18 @@ border-bottom-right-radius: 4px;
 
 /* ─── TC Settings Panel ─────────────────────────────────────────────────── */
 
+#tc-page-container {
+    transition: padding-left 0.3s ease;
+}
+
+/* ─── Logo expansion colours ─────────────────────────────────────────────── */
+/* #tf-logo-link[data-expansion="tbc"]           { color: #2da203; } */
+/* #tf-logo-link[data-expansion="tbc"]:hover     { color: #62c907; } */
+/* #tf-logo-link[data-expansion="wotlk"]         { color: #68b9cf; } */
+/* #tf-logo-link[data-expansion="wotlk"]:hover   { color: #8ed6e6; } */
+/* #tf-logo-link[data-expansion="cataclysm"]     { color: #cc4a17; } */
+/* #tf-logo-link[data-expansion="cataclysm"]:hover { color: #e55d27; } */
+
 .tc-settings-popup {
     position: fixed;
     z-index: 9999;
@@ -864,6 +876,22 @@ border-bottom-right-radius: 4px;
     z-index: 1;
     transition: color 0.15s, background 0.15s;
 }
+
+#tc-sidebar-float-tooltip {
+    position: fixed;
+    background: var(--tf-bg-control);
+    color: var(--tf-text);
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.4;
+    white-space: nowrap;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translateX(-50%);
+}
 #tc-fixed-sidebar-toggle:hover {
     color: var(--tf-text);
     background: var(--tf-bg-control);
@@ -889,7 +917,11 @@ border-bottom-right-radius: 4px;
     border: none;
     color: var(--tf-text-soft);
     cursor: pointer;
-    padding: 5px 7px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 6px;
     line-height: 1;
     transition: color 0.15s, background 0.15s;
@@ -904,7 +936,11 @@ border-bottom-right-radius: 4px;
     border: none;
     color: var(--tf-text-soft);
     cursor: pointer;
-    padding: 5px 7px;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 6px;
     margin-top: 16px;
     line-height: 1;
@@ -913,6 +949,38 @@ border-bottom-right-radius: 4px;
 #tc-sidebar-pins-btn:hover {
     color: var(--tf-text);
     background: var(--tf-bg-control);
+}
+
+#tc-sidebar-tab-btn,
+#tc-sidebar-pins-btn {
+    position: relative;
+}
+
+#tc-sidebar-tab-btn::after,
+#tc-sidebar-pins-btn::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    left: calc(100% + 10px);
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--tf-bg-control);
+    color: var(--tf-text);
+    padding: 6px 14px;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-family: inherit;
+    font-weight: normal;
+    line-height: 1.4;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0s;
+    z-index: 100;
+}
+
+#tc-sidebar-tab-btn:hover::after,
+#tc-sidebar-pins-btn:hover::after {
+    opacity: 1;
 }
 
 #tc-sidebar-pins-popup {

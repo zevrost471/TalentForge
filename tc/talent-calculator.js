@@ -920,6 +920,7 @@ function handleVersionChange(loadingBuild = false) {
         // Hide talent points box
         pointsBox.classList.add("hidden");
 
+        updateLogoExpansionColor(null);
         return;
     }
 
@@ -1021,6 +1022,19 @@ function handleVersionChange(loadingBuild = false) {
     updateURLHash();
     updatePinButton();
     syncClassDropdown();
+    updateLogoExpansionColor();
+}
+
+function updateLogoExpansionColor(expansion) {
+    const link = document.getElementById('tf-logo-link');
+    if (!link) return;
+    const exp = expansion !== undefined ? expansion : (patchToExpansion[versionSelect.value] ?? null);
+    const colored = ['tbc', 'wotlk', 'cataclysm'];
+    if (exp && colored.includes(exp)) {
+        link.dataset.expansion = exp;
+    } else {
+        delete link.dataset.expansion;
+    }
 }
 
 // better: build a lookup map once at startup
@@ -1043,7 +1057,7 @@ function updatePlaceholder() {
     if (!currentState.version) {
         talentPlaceholder.innerHTML = `
                 <h2 class="text-2xl text-yellow-400 mb-2">Select a version</h2>
-                <p class="text-gray-400">Use the dropdown to choose a game version</p>
+                <p class="text-gray-400">Use the dropdown in the sidebar or select a pinned version to choose a game version</p>
                 `;
         talentPlaceholder.classList.remove("hidden");
         talentTrees.classList.add("hidden");
@@ -1052,9 +1066,12 @@ function updatePlaceholder() {
     }
 
     if (!currentState.class || (currentState.class === "death_knight" && (currentExpansion !== "wotlk" && currentExpansion !== "cataclysm"))) {
+        const classSelectHint = (localStorage.getItem('tc_classSelector') ?? 'buttons') === 'dropdown'
+            ? 'Use the dropdown above to select a class and start building your talent tree'
+            : 'Click on any class icon to start building your talent tree';
         talentPlaceholder.innerHTML = `
                 <h2 class="text-2xl text-yellow-400 mb-2">Select a class</h2>
-                <p class="text-gray-400">Click on any class icon to start building your talent tree</p>
+                <p class="text-gray-400">${classSelectHint}</p>
                 `;
         talentPlaceholder.classList.remove("hidden");
         talentTrees.classList.add("hidden");
@@ -5289,6 +5306,7 @@ function applyTCPrefs() {
 const SIDEBAR_PANEL_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>`;
 
 function setupFixedSidebarUI() {
+    isFixedSidebarHidden = localStorage.getItem('tc_sidebarHidden') === 'true';
     toggleSidebarButton.classList.add('hidden');
     sidebar.classList.remove('w-12');
     sidebarContent.classList.remove('hidden');
@@ -5296,10 +5314,25 @@ function setupFixedSidebarUI() {
     if (!document.getElementById('tc-fixed-sidebar-toggle')) {
         const btn = document.createElement('button');
         btn.id = 'tc-fixed-sidebar-toggle';
-        btn.title = 'Hide Sidebar';
+        btn.dataset.tooltip = 'Hide Sidebar';
         btn.innerHTML = SIDEBAR_PANEL_ICON;
         sidebar.appendChild(btn);
-        btn.addEventListener('click', toggleFixedSidebar);
+        btn.addEventListener('click', () => {
+            document.getElementById('tc-sidebar-float-tooltip')?.remove();
+            toggleFixedSidebar();
+        });
+        btn.addEventListener('mouseenter', () => {
+            const tip = document.createElement('div');
+            tip.id = 'tc-sidebar-float-tooltip';
+            tip.textContent = btn.dataset.tooltip;
+            document.body.appendChild(tip);
+            const r = btn.getBoundingClientRect();
+            tip.style.left = (r.left + r.width / 2) + 'px';
+            tip.style.top = (r.bottom + 6) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => {
+            document.getElementById('tc-sidebar-float-tooltip')?.remove();
+        });
     }
 
     if (!document.getElementById('tc-sidebar-tab')) {
@@ -5309,14 +5342,14 @@ function setupFixedSidebarUI() {
 
         const tabBtn = document.createElement('button');
         tabBtn.id = 'tc-sidebar-tab-btn';
-        tabBtn.title = 'Show Sidebar';
+        tabBtn.dataset.tooltip = 'Show Sidebar';
         tabBtn.innerHTML = SIDEBAR_PANEL_ICON;
         tabBtn.addEventListener('click', toggleFixedSidebar);
         tab.appendChild(tabBtn);
 
         const pinsBtn = document.createElement('button');
         pinsBtn.id = 'tc-sidebar-pins-btn';
-        pinsBtn.title = 'Pinned Versions';
+        pinsBtn.dataset.tooltip = 'Pinned Versions';
         pinsBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"/></svg>';
         pinsBtn.style.display = 'none';
         pinsBtn.addEventListener('click', openSidebarPinsPopup);
@@ -5327,6 +5360,14 @@ function setupFixedSidebarUI() {
     }
 
     sidebar.style.transform = isFixedSidebarHidden ? 'translateX(-100%)' : 'translateX(0)';
+    _setSidebarPadding(isFixedSidebarHidden ? 0 : 420);
+    const tab = document.getElementById('tc-sidebar-tab');
+    if (tab) tab.style.display = isFixedSidebarHidden ? 'flex' : 'none';
+}
+
+function _setSidebarPadding(px) {
+    const c = document.getElementById('tc-page-container');
+    if (c) c.style.paddingLeft = px > 0 ? px + 'px' : '';
 }
 
 function teardownFixedSidebarUI() {
@@ -5335,6 +5376,8 @@ function teardownFixedSidebarUI() {
     document.getElementById('tc-sidebar-tab')?.remove();
     sidebar.style.transform = '';
     isFixedSidebarHidden = false;
+    localStorage.removeItem('tc_sidebarHidden');
+    _setSidebarPadding(0);
     if (isCollapsed) {
         sidebar.classList.remove('w-full', 'lg:w-1/4');
         sidebar.classList.add('w-12');
@@ -5348,17 +5391,20 @@ function teardownFixedSidebarUI() {
 
 function toggleFixedSidebar() {
     isFixedSidebarHidden = !isFixedSidebarHidden;
+    localStorage.setItem('tc_sidebarHidden', isFixedSidebarHidden);
     const btn = document.getElementById('tc-fixed-sidebar-toggle');
     const tab = document.getElementById('tc-sidebar-tab');
     if (isFixedSidebarHidden) {
         sidebar.style.transform = 'translateX(-100%)';
         if (tab) tab.style.display = 'flex';
-        if (btn) btn.title = 'Show Sidebar';
+        if (btn) btn.dataset.tooltip = 'Show Sidebar';
+        _setSidebarPadding(0);
     } else {
         sidebar.style.transform = 'translateX(0)';
         if (tab) tab.style.display = 'none';
-        if (btn) btn.title = 'Hide Sidebar';
+        if (btn) btn.dataset.tooltip = 'Hide Sidebar';
         closeSidebarPinsPopup();
+        _setSidebarPadding(420);
     }
 }
 
