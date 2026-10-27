@@ -71,15 +71,24 @@
             </div>
         </nav>
 
-        <!-- Class selection row -->
-        <div id="select-class-container" class="tf-bg rounded-lg p-6 mb-4 text-center overflow-visible">
-            <!-- <h2 id="select-class-header" class="text-xl font-semibold mb-4 text-yellow-400">Select Class</h2>  -->
-            <div style="display:flex;justify-content:flex-end;margin-bottom:4px;">
-                <button id="tc-settings-btn" title="Settings"
-                    class="tf-control-flat text-white px-2 py-1 rounded-md">
-                    <i class="fas fa-gear"></i>
-                </button>
+        <!-- TC settings button row -->
+        <div style="display:flex;justify-content:flex-end;margin-bottom:10px;">
+            <button id="tc-settings-btn" title="Settings"
+                class="tf-control-flat text-white px-2 py-1 rounded-md">
+                <i class="fas fa-gear"></i>
+            </button>
+        </div>
+
+        <!-- Class dropdown bar (shown when dropdown selector mode is active) -->
+        <div id="class-dropdown-bar" class="hidden tf-panel-flat w-full rounded-lg mb-4">
+            <div class="px-4 py-3">
+                <div id="class-dropdown" class="relative inline-block"></div>
             </div>
+        </div>
+
+        <!-- Class selection row -->
+        <div id="select-class-container" class="tf-bg rounded-lg px-6 py-1 mb-4 text-center overflow-visible">
+            <!-- <h2 id="select-class-header" class="text-xl font-semibold mb-4 text-yellow-400">Select Class</h2>  -->
             <div id="class-list"
                 class="class-selection p-1 flex flex-nowrap gap-2 justify-start md:justify-center overflow-x-auto overflow-visible scroll-smooth">
                 <button id="deathknight-button"
@@ -143,11 +152,6 @@
                         class="w-12 h-12 rounded-full ">
                 </button>
             </div>
-            <select id="class-dropdown"
-                class="hidden appearance-none tf-control rounded-md px-3 py-2 w-48"
-                disabled>
-                <option value="" disabled selected>Select class</option>
-            </select>
         </div>
 
         <div id="tc-main-layout" class="flex flex-col lg:flex-row gap-8">
