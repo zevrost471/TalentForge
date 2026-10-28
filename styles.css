@@ -983,6 +983,11 @@ border-bottom-right-radius: 4px;
     opacity: 1;
 }
 
+#tc-sidebar-tab-btn:not([data-tooltip])::after,
+#tc-sidebar-pins-btn:not([data-tooltip])::after {
+    display: none;
+}
+
 #tc-sidebar-pins-popup {
     position: fixed;
     left: 56px;
@@ -1082,6 +1087,29 @@ border-bottom-right-radius: 4px;
 
 .class-dropdown-item.class-dropdown-item-active {
     color: var(--tf-accent);
+}
+
+/* ─── Race custom dropdown ──────────────────────────────────────────────── */
+
+#race-dropdown-trigger {
+    user-select: none;
+}
+
+#race-dropdown-list {
+    position: absolute;
+    top: calc(100% + 4px);
+    left: 0;
+    z-index: 9999;
+    min-width: 200px;
+    max-height: 300px;
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid var(--tf-border);
+    background: var(--tf-bg-panel);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.55);
+    padding: 4px;
+    scrollbar-width: thin;
+    scrollbar-color: var(--tf-border) transparent;
 }
 
 /*

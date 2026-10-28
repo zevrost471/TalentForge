@@ -11,6 +11,7 @@ import { defaultIcons, cataOverrides } from './tree-icons.js';
 import { getDomElements } from './dom-elements.js';
 import './talent-patch-changes.js';
 import { baselineClassAbilities } from '../db/baseline-class-abilities.js';
+import { customClassesByRace, raceBaseData, customRacesByFaction } from '../db/custom/races.js';
 
 const {
   headerEl,
@@ -59,12 +60,46 @@ const {
 
 const PINNED_VERSIONS_KEY = "talentforgePinnedVersions";
 const MAX_PINS = 6;
+
+// Full class list in charcreate.js order — includes custom/future classes
+const ALL_TC_CLASSES = [
+    { name: 'Death Knight', slug: 'death_knight' },
+    { name: 'Druid',        slug: 'druid' },
+    { name: 'Hunter',       slug: 'hunter' },
+    { name: 'Mage',         slug: 'mage' },
+    { name: 'Marksman',     slug: 'marksman' },
+    { name: 'Paladin',      slug: 'paladin' },
+    { name: 'Priest',       slug: 'priest' },
+    { name: 'Rogue',        slug: 'rogue' },
+    { name: 'Runemaster',   slug: 'runemaster' },
+    { name: 'Shaman',       slug: 'shaman' },
+    { name: 'Tinker',       slug: 'tinker' },
+    { name: 'Warlock',      slug: 'warlock' },
+    { name: 'Warrior',      slug: 'warrior' },
+    { name: 'Witch Doctor', slug: 'witch_doctor' },
+];
+
+// Mirrors getClassIconUrl() from charcreate.js
+function _getClassIconUrl(className, expansion) {
+    const overrides = {
+        'Marksman':     'classicon_hunter',
+        'Tinker':       'inv_10_engineering_manufacturedparts_gear_uprez',
+        'Witch Doctor': 'inv_staff_goldfeathered_01',
+        'Runemaster':   'spell_fire_sealoffire',
+    };
+    // Hunter uses a spear icon only in Peoples of Azeroth
+    if (className === 'Hunter' && expansion === 'peoples') overrides['Hunter'] = 'inv_spear_02';
+    const key = overrides[className] ?? `classicon_${className.toLowerCase().replace(/\s+/g, '')}`;
+    return `https://wow.zamimg.com/images/wow/icons/large/${key}.jpg`;
+}
+
 const EXPANSION_LABELS = {
     vanilla: "Vanilla",
     tbc: "The Burning Crusade",
     wotlk: "Wrath of the Lich King",
     cataclysm: "Cataclysm",
     forever: "Forever",
+    peoples: "Peoples of Azeroth",
     turtlewow: "Turtle WoW",
     epoch: "Project Epoch",
     custom: "Custom",
@@ -253,6 +288,7 @@ window.addEventListener('DOMContentLoaded', function () {
                         }
                     }
                     updateURLHash();
+                    syncClassDropdown();
                 }
             }
         } else {
@@ -341,7 +377,8 @@ const sharedVersions = [
     "1.60.1.70009",
     "1.60.1.70170",
     "1.60.1.70291",
-    "1.60.1.70425"
+    "1.60.1.70425",
+    "1.70.0"
 ];
 
 const talentTreeData = {};
@@ -1065,13 +1102,28 @@ function updatePlaceholder() {
         return;
     }
 
-    if (!currentState.class || (currentState.class === "death_knight" && (currentExpansion !== "wotlk" && currentExpansion !== "cataclysm"))) {
+    if (!currentState.class || (currentState.class === "death_knight" && (currentExpansion !== "wotlk" && currentExpansion !== "cataclysm" && currentExpansion !== "peoples"))) {
         const classSelectHint = (localStorage.getItem('tc_classSelector') ?? 'buttons') === 'dropdown'
             ? 'Use the dropdown above to select a class and start building your talent tree'
             : 'Click on any class icon to start building your talent tree';
         talentPlaceholder.innerHTML = `
                 <h2 class="text-2xl text-yellow-400 mb-2">Select a class</h2>
                 <p class="text-gray-400">${classSelectHint}</p>
+                `;
+        talentPlaceholder.classList.remove("hidden");
+        talentTrees.classList.add("hidden");
+        cataSpecSelectionPanel.classList.add("hidden");
+        return;
+    }
+
+    // Class selected but no talent tree data for this version yet (custom/future classes)
+    const hasTreeData = !!(talentsAttributedByVersion[currentState.version]?.[currentState.class]);
+    if (!hasTreeData) {
+        const cls = ALL_TC_CLASSES.find(c => c.slug === currentState.class);
+        const displayName = cls?.name ?? currentState.class;
+        talentPlaceholder.innerHTML = `
+                <h2 class="text-2xl text-yellow-400 mb-2">${displayName}</h2>
+                <p class="text-gray-400">Talent trees for ${displayName} are not yet available. They will be added in a future update.</p>
                 `;
         talentPlaceholder.classList.remove("hidden");
         talentTrees.classList.add("hidden");
@@ -1130,6 +1182,15 @@ function handleClassSelect(e) {
     currentState.glyphs = {};
     currentState.runes = {};
 
+    // Guard: class has no talent tree data in this version (custom/future classes, DK outside wotlk/cata/peoples)
+    const hasTrees = !!(talentsAttributedByVersion[currentState.version]?.[newClassKey]);
+    if (!hasTrees) {
+        updatePlaceholder();
+        updateURLHash();
+        syncClassDropdown();
+        return;
+    }
+
     const trees = talentTreeData[currentState.version].classes[newClassKey].trees;
 
     currentState.talents[newClassKey] = {};
@@ -1177,6 +1238,7 @@ function handleClassSelect(e) {
     }
 
     updateURLHash();
+    // syncClassDropdown();
 }
 
 function renderSpecSelectionPanel() {
@@ -5156,6 +5218,7 @@ function importBuildString(hash) {
     }
     updatePointsDisplay();
     updateURLHash();
+    syncClassDropdown();
 }
 
 // ----------------------------
@@ -5197,15 +5260,24 @@ function syncClassDropdown() {
     const version = currentState.version;
     const available = version ? Object.keys(talentsAttributedByVersion[version] || {}) : [];
 
-    const classes = [];
-    document.querySelectorAll('.class-btn').forEach(btn => {
-        if (btn.classList.contains('hidden')) return;
-        const key = btn.dataset.class;
-        const name = version ? (talentTreeData[version]?.classes[key]?.name ?? key) : key;
-        const iconSrc = btn.querySelector('img')?.src ?? '';
-        const borderColor = btn.style.borderColor || btn.style.border?.replace('2px solid ', '') || '';
-        classes.push({ key, name, iconSrc, borderColor, available: available.includes(key) });
-    });
+    const expansion = getCurrentExpansion();
+    const isPeoples = expansion === 'peoples';
+
+    // For peoples: full class list incl. custom classes. For other expansions: standard WoW classes only.
+    const classSource = isPeoples
+        ? ALL_TC_CLASSES
+        : ALL_TC_CLASSES.filter(cls => {
+            if (['marksman', 'tinker', 'witch_doctor', 'runemaster'].includes(cls.slug)) return false;
+            if (cls.slug === 'death_knight' && expansion !== 'wotlk' && expansion !== 'cataclysm') return false;
+            return true;
+        });
+
+    const classes = classSource.map(cls => ({
+        key:      cls.slug,
+        name:     version ? (talentTreeData[version]?.classes[cls.slug]?.name ?? cls.name) : cls.name,
+        iconSrc:  _getClassIconUrl(cls.name, expansion),
+        hasTrees: available.includes(cls.slug),
+    }));
 
     const selected = classes.find(c => c.key === currentState.class);
 
@@ -5216,7 +5288,7 @@ function syncClassDropdown() {
     trigger.id = 'class-dropdown-trigger';
     trigger.className = 'tf-control rounded-md px-3 py-2 flex items-center gap-3';
     trigger.style.minWidth = '200px';
-    if (available.length === 0) trigger.style.cursor = 'not-allowed';
+    if (!version) trigger.style.cursor = 'not-allowed';
     if (selected) {
         trigger.innerHTML = `
             <img src="${selected.iconSrc}" style="width:34px;height:34px;border-radius:4px;border:1px solid #6b7280;flex-shrink:0;">
@@ -5239,7 +5311,7 @@ function syncClassDropdown() {
         item.className = 'class-dropdown-item';
         item.style.gap = '14px';
         if (cls.key === currentState.class) item.classList.add('class-dropdown-item-active');
-        item.disabled = !cls.available;
+        if (!cls.hasTrees) item.style.opacity = '0.45';
         item.innerHTML = `
             <img src="${cls.iconSrc}" style="width:28px;height:28px;border-radius:4px;border:1px solid #6b7280;flex-shrink:0;">
             <span class="text-base font-semibold">${cls.name}</span>`;
@@ -5254,14 +5326,178 @@ function syncClassDropdown() {
     classDropdown.appendChild(list);
 
     // Toggle list open/close — only active once a version is loaded
-    if (available.length > 0) {
+    if (version) {
         trigger.addEventListener('click', (e) => {
             e.stopPropagation();
             const opening = list.classList.contains('hidden');
             list.classList.toggle('hidden');
             if (opening) {
+                document.getElementById('race-dropdown-list')?.classList.add('hidden');
                 const closeList = (ev) => {
                     if (!classDropdown.contains(ev.target)) {
+                        list.classList.add('hidden');
+                        document.removeEventListener('click', closeList);
+                    }
+                };
+                setTimeout(() => document.addEventListener('click', closeList), 0);
+            }
+        });
+    }
+
+    syncRaceDropdown();
+}
+
+// Build reverse map: class slug → race ids (lazy, built once)
+let _classToRaces = null;
+function _getClassToRaces() {
+    if (_classToRaces) return _classToRaces;
+    _classToRaces = {};
+    // Only include races present in customRacesByFaction (mirrors charcreate.js exclusions)
+    const validRaceIds = new Set(
+        Object.values(customRacesByFaction).flatMap(f => [...(f.base ?? []), ...(f.allied ?? [])])
+    );
+    const nameToSlug = (name) => name.toLowerCase().replace(/\s+/g, '_');
+    for (const [raceId, raceData] of Object.entries(customClassesByRace)) {
+        if (!validRaceIds.has(raceId)) continue;
+        const allClasses = [
+            ...(raceData.availableAtStart ?? []),
+            ...(raceData.availableThroughUnlock ?? []),
+        ];
+        // Also include gender-variant additional classes
+        if (raceData.genderVariants) {
+            for (const gv of Object.values(raceData.genderVariants)) {
+                allClasses.push(...(gv.additionalAvailableAtStart ?? []));
+                allClasses.push(...(gv.additionalAvailableThroughUnlock ?? []));
+            }
+        }
+        for (const cls of allClasses) {
+            const slug = nameToSlug(cls);
+            if (!_classToRaces[slug]) _classToRaces[slug] = [];
+            if (!_classToRaces[slug].includes(raceId)) _classToRaces[slug].push(raceId);
+        }
+    }
+    return _classToRaces;
+}
+
+function _getRaceIconSrc(raceId, classSlug) {
+    const race = raceBaseData[raceId];
+    if (!race || !race.genderVariants?.length) return '';
+
+    const nameToSlug = (name) => name.toLowerCase().replace(/\s+/g, '_');
+
+    // Determine which gender to show based on which gender supports the class
+    let genderIdx = 0; // default: first variant (usually male)
+    if (classSlug && customClassesByRace[raceId]) {
+        const raceData = customClassesByRace[raceId];
+        const baseClasses = [
+            ...(raceData.availableAtStart ?? []),
+            ...(raceData.availableThroughUnlock ?? []),
+        ].map(nameToSlug);
+
+        const maleGv = raceData.genderVariants?.male;
+        const femaleGv = raceData.genderVariants?.female;
+        const maleAdditional = maleGv ? [
+            ...(maleGv.additionalAvailableAtStart ?? []),
+            ...(maleGv.additionalAvailableThroughUnlock ?? []),
+        ].map(nameToSlug) : [];
+        const femaleAdditional = femaleGv ? [
+            ...(femaleGv.additionalAvailableAtStart ?? []),
+            ...(femaleGv.additionalAvailableThroughUnlock ?? []),
+        ].map(nameToSlug) : [];
+
+        const inBase = baseClasses.includes(classSlug);
+        const inMale = maleAdditional.includes(classSlug);
+        const inFemale = femaleAdditional.includes(classSlug);
+
+        // Use female icon if class is only accessible via the female variant
+        if (inFemale && !inBase && !inMale) {
+            const femaleIdx = race.genderVariants.findIndex(gv => gv.gender === 'female');
+            if (femaleIdx !== -1) genderIdx = femaleIdx;
+        }
+    }
+
+    const icon = race.genderVariants[genderIdx]?.icon ?? race.genderVariants[0]?.icon;
+    if (!icon) return '';
+    // Local asset path — prefix with ../ since tc/index.html is one level below root
+    if (icon.startsWith('assets/')) return '../' + icon + '.jpg';
+    // Standard achievement icon name — use local copy
+    return `../assets/icons/races/${icon}.jpg`;
+}
+
+function syncRaceDropdown() {
+    const raceDropdownEl = document.getElementById('race-dropdown');
+    if (!raceDropdownEl) return;
+
+    const expansion = getCurrentExpansion();
+    if (expansion !== 'peoples') {
+        raceDropdownEl.classList.add('hidden');
+        return;
+    }
+    raceDropdownEl.classList.remove('hidden');
+
+    const classSlug = currentState.class;
+    const classToRaces = _getClassToRaces();
+    const compatibleRaceIds = classSlug ? (classToRaces[classSlug] ?? []) : [];
+
+    raceDropdownEl.innerHTML = '';
+
+    const trigger = document.createElement('button');
+    trigger.id = 'race-dropdown-trigger';
+    trigger.className = 'tf-control rounded-md px-3 py-2 flex items-center gap-3';
+    trigger.style.minWidth = '200px';
+    if (!classSlug || compatibleRaceIds.length === 0) trigger.style.cursor = 'not-allowed';
+
+    const selectedRaceId = compatibleRaceIds.length > 0 ? compatibleRaceIds[0] : null;
+    if (selectedRaceId) {
+        const race = raceBaseData[selectedRaceId];
+        trigger.innerHTML = `
+            <img src="${_getRaceIconSrc(selectedRaceId, classSlug)}" style="width:34px;height:34px;border-radius:4px;border:1px solid #6b7280;flex-shrink:0;">
+            <span class="text-base font-semibold">${race?.name ?? selectedRaceId}</span>
+            <i class="fas fa-chevron-down" style="margin-left:auto;font-size:.65rem;opacity:.55;"></i>`;
+    } else {
+        trigger.innerHTML = `
+            <span style="color:var(--tf-text-soft)">Select race</span>
+            <i class="fas fa-chevron-down" style="margin-left:auto;font-size:.65rem;opacity:.55;"></i>`;
+    }
+    raceDropdownEl.appendChild(trigger);
+
+    const list = document.createElement('div');
+    list.id = 'race-dropdown-list';
+    list.classList.add('hidden');
+
+    compatibleRaceIds.forEach(raceId => {
+        const race = raceBaseData[raceId];
+        if (!race) return;
+        const iconSrc = _getRaceIconSrc(raceId, classSlug);
+        const item = document.createElement('button');
+        item.className = 'class-dropdown-item';
+        item.style.gap = '14px';
+        item.innerHTML = `
+            <img src="${iconSrc}" style="width:28px;height:28px;border-radius:4px;border:1px solid #6b7280;flex-shrink:0;">
+            <span class="text-base font-semibold">${race.name}</span>`;
+        item.addEventListener('click', () => {
+            list.classList.add('hidden');
+            // Update trigger to show selected race
+            trigger.innerHTML = `
+                <img src="${iconSrc}" style="width:34px;height:34px;border-radius:4px;border:1px solid #6b7280;flex-shrink:0;">
+                <span class="text-base font-semibold">${race.name}</span>
+                <i class="fas fa-chevron-down" style="margin-left:auto;font-size:.65rem;opacity:.55;"></i>`;
+            list.querySelectorAll('.class-dropdown-item').forEach(i => i.classList.remove('class-dropdown-item-active'));
+            item.classList.add('class-dropdown-item-active');
+        });
+        list.appendChild(item);
+    });
+    raceDropdownEl.appendChild(list);
+
+    if (compatibleRaceIds.length > 0) {
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const opening = list.classList.contains('hidden');
+            list.classList.toggle('hidden');
+            if (opening) {
+                document.getElementById('class-dropdown-list')?.classList.add('hidden');
+                const closeList = (ev) => {
+                    if (!raceDropdownEl.contains(ev.target)) {
                         list.classList.add('hidden');
                         document.removeEventListener('click', closeList);
                     }
@@ -5415,11 +5651,15 @@ function updateSidebarTabPinsBtn() {
 }
 
 function openSidebarPinsPopup() {
-    closeSidebarPinsPopup();
+    if (document.getElementById('tc-sidebar-pins-popup')) {
+        closeSidebarPinsPopup();
+        return;
+    }
     const pins = loadPinnedVersions();
     if (pins.length === 0) return;
 
     const triggerBtn = document.getElementById('tc-sidebar-pins-btn');
+    triggerBtn?.removeAttribute('data-tooltip');
     const btnRect = triggerBtn?.getBoundingClientRect();
 
     const popup = document.createElement('div');
@@ -5451,7 +5691,7 @@ function openSidebarPinsPopup() {
     setTimeout(() => {
         const outsideHandler = (e) => {
             const pinsBtn = document.getElementById('tc-sidebar-pins-btn');
-            if (e.target !== pinsBtn) {
+            if (!pinsBtn?.contains(e.target)) {
                 closeSidebarPinsPopup();
                 document.removeEventListener('click', outsideHandler);
             }
@@ -5462,6 +5702,17 @@ function openSidebarPinsPopup() {
 
 function closeSidebarPinsPopup() {
     document.getElementById('tc-sidebar-pins-popup')?.remove();
+    const btn = document.getElementById('tc-sidebar-pins-btn');
+    if (!btn) return;
+    const restore = () => {
+        btn.dataset.tooltip = 'Pinned Versions';
+        btn.removeEventListener('mouseleave', restore);
+    };
+    if (btn.matches(':hover')) {
+        btn.addEventListener('mouseleave', restore);
+    } else {
+        restore();
+    }
 }
 
 /*
