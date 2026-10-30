@@ -136,6 +136,39 @@
     --tf-tooltip-bg: #1a1208;
 }
 
+[data-theme="wowhead"] {
+    --tf-bg: #101010;
+    --tf-bg-soft: #181818;
+    --tf-bg-panel: #202020;
+    --tf-bg-panel-dark: #141414;
+    --tf-bg-control: #262626;
+    --tf-bg-control-hover: #373737;
+
+    --tf-border: #2b2b2b;
+    --tf-border-soft: #444444;
+
+    --tf-text: #dddddd;
+    --tf-text-muted: #6e6e6e;
+    --tf-text-soft: #bbbbbb;
+
+    --tf-accent: #facc15;
+    --tf-accent-hover: #fde047;
+    --tf-accent-text: #101010;
+
+    --tf-danger: #c0392b;
+    --tf-danger-hover: #a93226;
+    --tf-success: #27ae60;
+    --tf-success-hover: #229954;
+    --tf-info: #2980b9;
+    --tf-info-hover: #1a6fa0;
+
+    --tf-tooltip-bg: #0a0a0a;
+    --tf-tooltip-border: #414141;
+
+    --tf-arrow-locked: #444444;
+    --tf-arrow-unlocked: #facc15;
+}
+
 body.tf-page {
     background: var(--tf-bg);
     color: var(--tf-text);
