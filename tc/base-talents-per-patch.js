@@ -2,6 +2,7 @@
 
 import { baseTalents } from '../db/base-talents.js';
 import { foreverTalents } from "../db/forever-talents.js";
+import { peoplesTalents } from '../db/custom/peoples-talents.js';
 
 const versionGroups = {
     vanilla: [
@@ -17,12 +18,16 @@ const versionGroups = {
         "1.60.1.69876", "1.60.1.70009", "1.60.1.70170", 
         "1.60.1.70291", "1.60.1.70425"
     ],
+    peoples: [
+        "1.70.0"
+    ],
     custom: ["custom1"]
 };
 
 const talentSources = {
     vanilla: baseTalents.vanilla,
     forever: foreverTalents,
+    peoples: peoplesTalents,
     tbc: baseTalents.tbc,
     wotlk: baseTalents.wotlk,
     cataclysm: baseTalents.cataclysm,
@@ -61,10 +66,18 @@ function cloneDeep(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
 
+function normalizeClassKeys(expansionData) {
+    const result = {};
+    for (const [classKey, classData] of Object.entries(expansionData ?? {})) {
+        result[classKey.toLowerCase().replace(/\s+/g, '_')] = classData;
+    }
+    return result;
+}
+
 export const talentsAttributedByVersion = Object.entries(versionGroups).reduce(
     (acc, [expansion, versions]) => {
         for (const version of versions) {
-            acc[version] = cloneDeep(talentSources[expansion]);
+            acc[version] = normalizeClassKeys(cloneDeep(talentSources[expansion]));
         }
         return acc;
     },

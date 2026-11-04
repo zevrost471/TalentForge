@@ -48,6 +48,9 @@ export const patchOptions = Object.freeze({
         { value: "1.60.1.70425", label: "Beta 1.60.1.70425" },
         // { value: "1.60.2", label: "Patch 1.16.2: ?" }
     ],
+    peoples: [
+        { value: "1.70.0", label: "Patch 1.70.0: Peoples of Azeroth" },
+    ],
     turtlewow: [
         { value: "1.16.0t", label: "Patch 1.16.0: Mysteries of Azeroth" },
         { value: "1.16.1t", label: "Patch 1.16.1: Hateforge Quarry" },
