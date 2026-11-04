@@ -66,10 +66,18 @@ function cloneDeep(obj) {
     return JSON.parse(JSON.stringify(obj));
 }
 
+function normalizeClassKeys(expansionData) {
+    const result = {};
+    for (const [classKey, classData] of Object.entries(expansionData ?? {})) {
+        result[classKey.toLowerCase().replace(/\s+/g, '_')] = classData;
+    }
+    return result;
+}
+
 export const talentsAttributedByVersion = Object.entries(versionGroups).reduce(
     (acc, [expansion, versions]) => {
         for (const version of versions) {
-            acc[version] = cloneDeep(talentSources[expansion]);
+            acc[version] = normalizeClassKeys(cloneDeep(talentSources[expansion]));
         }
         return acc;
     },
