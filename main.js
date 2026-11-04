@@ -9,15 +9,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function activateTabByURL() {
         const path = window.location.pathname;
-        
-        if (path.includes("overview")) {
+
+        if (path.includes('/overview')) {
             setActive("nav-overview");
-        } 
-        else if (path.includes("talent-calc")) {
+        }
+        else if (path.includes('/tc') || path.includes('talent-calc')) {
             setActive("nav-talentcalc");
         }
-        else if (path.includes("database")) {
+        else if (path.includes('/db')) {
             setActive("nav-database");
+        }
+        else if (path.includes('/settings')) {
+            setActive("nav-settings");
         }
     }
 

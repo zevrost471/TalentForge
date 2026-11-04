@@ -7132,7 +7132,7 @@ export const abilityMasterData = {
         duration: 4,
         mechanic: null,
         dispelType: null,
-        tags: ["melee", "target", "interrupt", "silence", "berserker", "single-target"],
+        tags: ["melee", "target", "interrupt", "silence", "single-target"],
       },
       intimidating_shout: {
         name: "Intimidating Shout",

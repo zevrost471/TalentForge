@@ -1,12 +1,33 @@
 // base-talents.js
 
+import { classes } from "./classes.js";
+import { schools } from "./schools.js";
+
+let DRUID    = classes.DRUID;
+let HUNTER   = classes.HUNTER;
+let MAGE     = classes.MAGE;
+let PALADIN  = classes.PALADIN;
+let PRIEST   = classes.PRIEST;
+let ROGUE    = classes.ROGUE;
+let SHAMAN   = classes.SHAMAN;
+let WARLOCK  = classes.WARLOCK;
+let WARRIOR  = classes.WARRIOR;
+
+let ARCANE   = schools.ARCANE;
+let FIRE     = schools.FIRE;
+let FROST    = schools.FROST;
+let HOLY     = schools.HOLY;
+let NATURE   = schools.NATURE;
+let PHYSICAL = schools.PHYSICAL;
+let SHADOW   = schools.SHADOW;
+
 // ==============================
 // Talents (Base)
 // ==============================
 
 export const baseTalents = {
     vanilla: {
-        druid: {
+        [DRUID]: {
             // druid - vanilla
             Balance: [
                 {
@@ -43,7 +64,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 45,
+                    mechanic: "root",
+                    dispelType: "Magic",
+                    tags: ["self_buff", "proc", "entangling_roots", "balance", "talent"]
                 },
                 {
                     id: "improved_natures_grasp",
@@ -159,7 +187,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 600,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "proc", "clearcasting", "feral", "talent"]
                 },
                 {
                     id: "natures_reach",
@@ -273,7 +308,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 0,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["shapeshift", "spellcrit_aura", "balance", "talent"]
                 }
             ],
             // druid - vanilla
@@ -398,7 +440,14 @@ export const baseTalents = {
                     requiresWeapon: 0,
                     requiresCatForm: false,
                     requiresBearForm: true,
-                    requiresDireBearForm: true
+                    requiresDireBearForm: true,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 4,
+                    mechanic: "root",
+                    dispelType: null,
+                    tags: ["charge", "interrupt", "root", "bear_form_only", "feral", "talent", "single-target"]
                 },
                 {
                     id: "sharpened_claws",
@@ -515,7 +564,14 @@ export const baseTalents = {
                     requiresWeapon: 0,
                     requiresCatForm: true,
                     requiresBearForm: true,
-                    requiresDireBearForm: true
+                    requiresDireBearForm: true,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 40,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["debuff", "armor_reduction", "feral_only", "no_stealth", "single-target"]
                 },
                 {
                     id: "heart_of_the_wild",
@@ -663,7 +719,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 12,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["debuff", "dot", "hit_reduction", "balance", "talent", "single-target"]
                 },
                 {
                     id: "subtlety",
@@ -729,7 +792,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "instant_cast_enabler", "restoration", "talent"]
                 },
                 {
                     id: "gift_of_nature",
@@ -797,11 +867,18 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 40,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["direct_heal", "consume_hot", "restoration", "talent", "single-target"]
                 }
             ]
         },
-        hunter: {
+        [HUNTER]: {
             // hunter - vanilla
             "Beast Mastery": [
                 {
@@ -1013,7 +1090,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 100,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 3,
+                    mechanic: "stun",
+                    dispelType: null,
+                    tags: ["pet_ability", "stun", "beast_mastery", "talent", "single-target"]
                 },
                 {
                     id: "bestial_discipline",
@@ -1065,7 +1149,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 100,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 18,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["pet_buff", "damage_increase", "immune_cc", "beast_mastery", "talent"]
                 }
             ],
             // hunter - vanilla
@@ -1152,7 +1243,14 @@ export const baseTalents = {
                     range: null,
                     minRange: 8,
                     maxRange: 35,
-                    requiresWeapon: 2
+                    requiresWeapon: 2,
+                    school: PHYSICAL,
+                    isInstant: false,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["ranged", "direct_damage", "marksmanship", "talent", "single-target"]
                 },
                 {
                     id: "improved_arcane_shot",
@@ -1236,7 +1334,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 15,
-                    requiresWeapon: 2
+                    requiresWeapon: 2,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 4,
+                    mechanic: "disorient",
+                    dispelType: null,
+                    tags: ["cc", "disorient", "marksmanship", "talent", "single-target"]
                 },
                 {
                     id: "barrage",
@@ -1304,7 +1409,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 0,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["aura", "party_buff", "attack_power", "marksmanship", "talent"]
                 }
             ],
             // hunter - vanilla
@@ -1453,7 +1565,14 @@ export const baseTalents = {
                     cooldown: 300,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 10,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "dodge", "parry", "survival", "talent"]
                 },
                 {
                     id: "trap_mastery",
@@ -1538,7 +1657,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 0,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 5,
+                    mechanic: "root",
+                    dispelType: null,
+                    tags: ["melee", "root", "survival", "talent", "single-target"]
                 },
                 {
                     id: "lightning_reflexes",
@@ -1576,11 +1702,18 @@ export const baseTalents = {
                     range: null,
                     minRange: 8,
                     maxRange: 35,
-                    requiresWeapon: 2
+                    requiresWeapon: 2,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 12,
+                    mechanic: "sleep",
+                    dispelType: "Poison",
+                    tags: ["cc", "sleep", "dot", "survival", "talent", "single-target"]
                 }
             ]
         },
-        mage: {
+        [MAGE]: {
             // mage - vanilla
             Arcane: [
                 {
@@ -1790,7 +1923,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "instant_cast_enabler", "arcane", "talent"]
                 },
                 {
                     id: "arcane_mind",
@@ -1840,7 +1980,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: ARCANE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 15,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "damage_increase", "mana_cost_increase", "arcane", "talent"]
                 }
             ],
             // mage - vanilla
@@ -1975,7 +2122,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 35,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: FIRE,
+                    isInstant: false,
+                    requiresReagent: false,
+                    duration: 12,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["direct_damage", "dot", "fire", "talent", "single-target"]
                 },
                 {
                     id: "burning_soul",
@@ -2076,7 +2230,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: FIRE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 6,
+                    mechanic: "snare",
+                    dispelType: null,
+                    tags: ["aoe", "direct_damage", "snare", "fire", "talent"]
                 },
                 {
                     id: "fire_power",
@@ -2110,7 +2271,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: FIRE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "fire_crit", "fire", "talent"]
                 }
             ],
             // mage - vanilla
@@ -2261,7 +2429,14 @@ export const baseTalents = {
                     cooldown: 300,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: FROST,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["cooldown_reset", "frost", "talent"]
                 },
                 {
                     id: "improved_blizzard",
@@ -2346,7 +2521,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: FROST,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 10,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["immunity", "self_buff", "frost", "talent"]
                 },
                 {
                     id: "improved_cone_of_cold",
@@ -2398,11 +2580,18 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: FROST,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 60,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["absorb_shield", "spell_interrupt_prevention", "frost", "talent"]
                 }
             ]
         },
-        paladin: {
+        [PALADIN]: {
             // paladin - vanilla
             Holy: [
                 {
@@ -2503,7 +2692,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 8,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["aoe", "ground_effect", "direct_damage", "protection", "talent"]
                 },
                 {
                     id: "improved_lay_on_hands",
@@ -2588,7 +2784,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "guaranteed_crit", "holy", "talent"]
                 },
                 {
                     id: "lasting_judgement",
@@ -2640,7 +2843,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 20,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["direct_damage", "direct_heal", "holy", "talent", "single-target"]
                 }
             ],
             // paladin - vanilla
@@ -2744,7 +2954,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 300,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["buff", "all_stats", "protection", "talent", "single-target"]
                 },
                 {
                     id: "improved_righteous_fury",
@@ -2844,7 +3061,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 300,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["buff", "damage_reduction", "protection", "talent", "single-target"]
                 },
                 {
                     id: "reckoning",
@@ -2896,7 +3120,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 10,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "block_chance", "reflect_damage", "protection", "talent"]
                 }
             ],
             // paladin - vanilla
@@ -3032,7 +3263,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 30,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["seal", "melee_proc", "holy_damage", "retribution", "talent"]
                 },
                 {
                     id: "pursuit_of_justice",
@@ -3114,7 +3352,14 @@ export const baseTalents = {
                     cooldown: null,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 0,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["aura", "party_buff", "holy_damage_increase", "retribution", "talent"]
                 },
                 {
                     id: "vengeance",
@@ -3150,11 +3395,18 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 20,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 6,
+                    mechanic: "incapacitate",
+                    dispelType: null,
+                    tags: ["cc", "incapacitate", "humanoid_only", "retribution", "talent", "single-target"]
                 }
             ]
         },
-        priest: {
+        [PRIEST]: {
             // priest - vanilla
             Discipline: [
                 {
@@ -3270,7 +3522,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "free_spell", "guaranteed_crit", "discipline", "talent"]
                 },
                 {
                     id: "meditation",
@@ -3370,7 +3629,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 1800,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["buff", "spirit_increase", "discipline", "talent", "single-target"]
                 },
                 {
                     id: "force_of_will",
@@ -3406,7 +3672,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 15,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["buff", "spellhaste", "mana_reduction", "discipline", "talent", "single-target"]
                 }
             ],
             // priest - vanilla
@@ -3509,7 +3782,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["aoe", "direct_damage", "direct_heal", "holy", "talent"]
                 },
                 {
                     id: "blessed_recovery",
@@ -3670,7 +3950,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: HOLY,
+                    isInstant: false,
+                    requiresReagent: false,
+                    duration: 180,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["summon", "heal_charges", "holy", "talent"]
                 }
             ],
             // priest - vanilla
@@ -3806,7 +4093,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 20,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: false,
+                    requiresReagent: false,
+                    duration: 3,
+                    mechanic: "snare",
+                    dispelType: null,
+                    tags: ["channeled", "dot", "snare", "shadow", "talent", "single-target"]
                 },
                 {
                     id: "improved_fade",
@@ -3874,7 +4168,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 20,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 5,
+                    mechanic: "silence",
+                    dispelType: "Magic",
+                    tags: ["cc", "silence", "shadow", "talent", "single-target"]
                 },
                 {
                     id: "vampiric_embrace",
@@ -3894,7 +4195,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 60,
+                    mechanic: null,
+                    dispelType: "Curse",
+                    tags: ["self_buff", "lifedrain_aura", "shadow", "talent", "single-target"]
                 },
                 {
                     id: "improved_vampiric_embrace",
@@ -3946,11 +4254,18 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 0,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["stance", "shadow_damage_increase", "physical_damage_reduction", "shadow", "talent"]
                 }
             ]
         },
-        rogue: {
+        [ROGUE]: {
             // rogue - vanilla
             Assassination: [
                 {
@@ -4143,7 +4458,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "guaranteed_crit", "assassination", "talent"]
                 },
                 {
                     id: "improved_kidney_shot",
@@ -4323,7 +4645,14 @@ export const baseTalents = {
                     spentResource: 10,
                     resourceType: 3,
                     range: 0,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 6,
+                    mechanic: "disarm",
+                    dispelType: null,
+                    tags: ["melee", "disarm", "combo_point", "combat", "talent", "single-target"]
                 },
                 {
                     id: "improved_sprint",
@@ -4423,7 +4752,14 @@ export const baseTalents = {
                     spentResource: 25,
                     resourceType: 3,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 15,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "cleave", "combat", "talent"]
                 },
                 {
                     id: "sword_specialization",
@@ -4505,7 +4841,14 @@ export const baseTalents = {
                     cooldown: 300,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 15,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "energy_regeneration", "combat", "talent"]
                 }
             ],
             // rogue - vanilla
@@ -4625,7 +4968,14 @@ export const baseTalents = {
                     spentResource: 40,
                     resourceType: 3,
                     range: 0,
-                    requiresWeapon: 1
+                    requiresWeapon: 1,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 7,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["melee", "combo_point", "dodge_buff", "subtlety", "talent", "single-target"]
                 },
                 {
                     id: "improved_ambush",
@@ -4724,7 +5074,14 @@ export const baseTalents = {
                     cooldown: 600,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["cooldown_reset", "subtlety", "talent"]
                 },
                 {
                     id: "dirty_deeds",
@@ -4759,7 +5116,14 @@ export const baseTalents = {
                     spentResource: 35,
                     resourceType: 3,
                     range: 0,
-                    requiresWeapon: 1
+                    requiresWeapon: 1,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 30,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["combo_point", "bleed", "subtlety", "talent", "single-target"]
                 },
                 {
                     id: "deadliness",
@@ -4794,11 +5158,18 @@ export const baseTalents = {
                     spentResource: null,
                     range: 20,
                     requiresWeapon: 0,
-                    requiresStealth: true
+                    requiresStealth: true,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 10,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["combo_point", "stealth_only", "subtlety", "talent", "single-target"]
                 }
             ]
         },
-        shaman: {
+        [SHAMAN]: {
             // shaman - vanilla
             Elemental: [
                 {
@@ -5037,7 +5408,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "instant_cast", "guaranteed_crit", "elemental", "talent"]
                 }
             ],
             // shaman - vanilla
@@ -5300,7 +5678,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 0,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 12,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["melee", "nature_damage_debuff", "enhancement", "talent", "single-target"]
                 }
             ],
             // shaman - vanilla
@@ -5510,7 +5895,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: NATURE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "instant_cast_enabler", "restoration", "talent"]
                 },
                 {
                     id: "purification",
@@ -5547,11 +5939,18 @@ export const baseTalents = {
                     resourceType: 1,
                     range: null,
                     requiresWeapon: 0,
-                    requiresWaterTotem: true
+                    requiresWaterTotem: true,
+                    school: FROST,
+                    isInstant: true,
+                    requiresReagent: true,
+                    duration: 12,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["totem", "mana_restore", "party", "restoration", "talent"]
                 }
             ]
         },
-        warlock: {
+        [WARLOCK]: {
             // warlock - vanilla
             Affliction: [
                 {
@@ -5698,7 +6097,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 30,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["self_buff", "curse_enhancement", "affliction", "talent"]
                 },
                 {
                     id: "grim_reach",
@@ -5766,7 +6172,14 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 30,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["curse", "dot", "life_drain", "affliction", "talent", "single-target"]
                 },
                 {
                     id: "curse_of_exhaustion",
@@ -5786,7 +6199,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 12,
+                    mechanic: "snare",
+                    dispelType: "Curse",
+                    tags: ["curse", "snare", "affliction", "talent", "single-target"]
                 },
                 {
                     id: "improved_curse_of_exhaustion",
@@ -5836,7 +6256,14 @@ export const baseTalents = {
                     cooldown: null,
                     spentResource: null,
                     range: 20,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["mana_restore", "pet_mana_drain", "affliction", "talent"]
                 }
             ],
             // warlock - vanilla
@@ -5971,7 +6398,14 @@ export const baseTalents = {
                     cooldown: 900,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 15,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["instant_summon", "mana_reduce", "demonology", "talent"]
                 },
                 {
                     id: "fel_stamina",
@@ -6054,7 +6488,14 @@ export const baseTalents = {
                     cooldown: null,
                     spentResource: null,
                     range: 100,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 1800,
+                    mechanic: null,
+                    dispelType: "Magic",
+                    tags: ["sacrifice", "self_buff", "demonology", "talent"]
                 },
                 {
                     id: "improved_firestone",
@@ -6108,7 +6549,14 @@ export const baseTalents = {
                     absoluteSpent: false,
                     resourceType: 1,
                     range: 100,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 0,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["toggle", "damage_share", "demonology", "talent"]
                 },
                 {
                     id: "improved_spellstone",
@@ -6262,7 +6710,14 @@ export const baseTalents = {
                     resourceType: 1,
                     range: 20,
                     requiresWeapon: 0,
-                    requiresSoulShard: true
+                    requiresSoulShard: true,
+                    school: SHADOW,
+                    isInstant: true,
+                    requiresReagent: true,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["direct_damage", "soul_shard", "execute", "destruction", "talent", "single-target"]
                 },
                 {
                     id: "intensity",
@@ -6391,11 +6846,18 @@ export const baseTalents = {
                     absoluteSpent: true,
                     resourceType: 1,
                     range: 30,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: FIRE,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["direct_damage", "requires_immolate", "fire", "destruction", "talent", "single-target"]
                 }
             ]
         },
-        warrior: {
+        [WARRIOR]: {
             // warrior - vanilla
             Arms: [
                 {
@@ -6606,7 +7068,14 @@ export const baseTalents = {
                     resourceType: 2,
                     range: null,
                     requiresWeapon: 0,
-                    requiresStance: 1
+                    requiresStance: 1,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 20,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "cleave", "arms", "talent"]
                 },
                 {
                     id: "mace_specialization",
@@ -6689,7 +7158,14 @@ export const baseTalents = {
                     spentResource: 30,
                     resourceType: 2,
                     range: 0,
-                    requiresWeapon: 1
+                    requiresWeapon: 1,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 10,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["melee", "healing_reduction", "wound", "arms", "talent", "single-target"]
                 }
             ],
             // warrior - vanilla
@@ -6793,7 +7269,14 @@ export const baseTalents = {
                     spentResource: 10,
                     resourceType: 2,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 6,
+                    mechanic: "snare",
+                    dispelType: null,
+                    tags: ["aoe", "snare", "fury", "talent"]
                 },
                 {
                     id: "blood_craze",
@@ -6908,7 +7391,14 @@ export const baseTalents = {
                     spentResource: 10,
                     resourceType: 2,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 30,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "damage_increase", "fear_immunity", "fury", "talent"]
                 },
                 {
                     id: "improved_intercept",
@@ -6975,7 +7465,14 @@ export const baseTalents = {
                     spentResource: 30,
                     resourceType: 2,
                     range: 0,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 8,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["melee", "attack_power_scaling", "heal_on_hit", "fury", "talent", "single-target"]
                 }
             ],
             // warrior - vanilla
@@ -7077,7 +7574,14 @@ export const baseTalents = {
                     cooldown: 180,
                     spentResource: null,
                     range: null,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 20,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["self_buff", "hp_boost", "protection", "talent"]
                 },
                 {
                     id: "improved_shield_block",
@@ -7209,7 +7713,14 @@ export const baseTalents = {
                     spentResource: 15,
                     resourceType: 2,
                     range: 0,
-                    requiresWeapon: 1
+                    requiresWeapon: 1,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: 5,
+                    mechanic: "stun",
+                    dispelType: null,
+                    tags: ["melee", "stun", "protection", "talent", "single-target"]
                 },
                 {
                     id: "improved_shield_bash",
@@ -7260,13 +7771,20 @@ export const baseTalents = {
                     spentResource: 20,
                     resourceType: 2,
                     range: 0,
-                    requiresWeapon: 0
+                    requiresWeapon: 0,
+                    school: PHYSICAL,
+                    isInstant: true,
+                    requiresReagent: false,
+                    duration: null,
+                    mechanic: null,
+                    dispelType: null,
+                    tags: ["melee", "shield_required", "dispel_magic", "protection", "talent", "single-target"]
                 }
             ]
         }
     },
     tbc: {
-        druid: {
+        [DRUID]: {
             // druid - tbc
             Balance: [
                 {
@@ -8318,7 +8836,7 @@ export const baseTalents = {
                 }
             ]
         },
-        hunter: {
+        [HUNTER]: {
             // hunter - tbc
             "Beast Mastery": [
                 {
@@ -9394,7 +9912,7 @@ export const baseTalents = {
                 }
             ]
         },
-        mage: {
+        [MAGE]: {
             // mage - tbc
             Arcane: [
                 {
@@ -10520,7 +11038,7 @@ export const baseTalents = {
                 }
             ]
         },
-        paladin: {
+        [PALADIN]: {
             // paladin - tbc
             Holy: [
                 {
@@ -11606,7 +12124,7 @@ export const baseTalents = {
                 }
             ]
         },
-        priest: {
+        [PRIEST]: {
             // priest - tbc
             Discipline: [
                 {
@@ -12689,7 +13207,7 @@ export const baseTalents = {
                 }
             ]
         },
-        rogue: {
+        [ROGUE]: {
             // rogue - tbc
             Assassination: [
                 {
@@ -13803,7 +14321,7 @@ export const baseTalents = {
                 }
             ]
         },
-        shaman: {
+        [SHAMAN]: {
             // shaman - tbc
             Elemental: [
                 {
@@ -14808,7 +15326,7 @@ export const baseTalents = {
                 }
             ]
         },
-        warlock: {
+        [WARLOCK]: {
             // warlock - tbc
             Affliction: [
                 {
@@ -15898,7 +16416,7 @@ export const baseTalents = {
                 }
             ]
         },
-        warrior: {
+        [WARRIOR]: {
             // warrior - tbc
             Arms: [
                 {
@@ -18393,7 +18911,7 @@ export const baseTalents = {
                 }
             ]
         },
-        druid: {
+        [DRUID]: {
             // druid - wotlk
             Balance: [
                 {
@@ -19821,7 +20339,7 @@ export const baseTalents = {
                 }
             ]
         },
-        hunter: {
+        [HUNTER]: {
             // hunter - wotlk
             "Beast Mastery": [
                 {
@@ -21156,7 +21674,7 @@ export const baseTalents = {
                 }
             ]
         },
-        mage: {
+        [MAGE]: {
             // mage - wotlk
             Arcane: [
                 {
@@ -22523,7 +23041,7 @@ export const baseTalents = {
                 }
             ]
         },
-        paladin: {
+        [PALADIN]: {
             // paladin - wotlk
             Holy: [
                 {
@@ -23764,7 +24282,7 @@ export const baseTalents = {
                 }
             ]
         },
-        priest: {
+        [PRIEST]: {
             // priest - wotlk
             Discipline: [
                 {
@@ -25063,7 +25581,7 @@ export const baseTalents = {
                 }
             ]
         },
-        rogue: {
+        [ROGUE]: {
             // rogue - wotlk
             Assassination: [
                 {
@@ -26374,7 +26892,7 @@ export const baseTalents = {
                 }
             ]
         },
-        shaman: {
+        [SHAMAN]: {
             // shaman - wotlk
             Elemental: [
                 {
@@ -27655,7 +28173,7 @@ export const baseTalents = {
                 }
             ]
         },
-        warlock: {
+        [WARLOCK]: {
             // warlock - wotlk
             Affliction: [
                 {
@@ -28939,7 +29457,7 @@ export const baseTalents = {
                 }
             ]
         },
-        warrior: {
+        [WARRIOR]: {
             // warrior - wotlk
             Arms: [
                 {
@@ -31245,7 +31763,7 @@ export const baseTalents = {
                 }
             ]
         },
-        druid: {
+        [DRUID]: {
             // druid - cataclysm
             Balance: [
                 {
@@ -32249,7 +32767,7 @@ export const baseTalents = {
                 }
             ]
         },
-        hunter: {
+        [HUNTER]: {
             // hunter - cataclysm
             "Beast Mastery": [
                 {
@@ -33211,7 +33729,7 @@ export const baseTalents = {
                 }
             ]
         },
-        mage: {
+        [MAGE]: {
             // mage - cataclysm
             Arcane: [
                 {
@@ -34162,7 +34680,7 @@ export const baseTalents = {
                 }
             ]
         },
-        paladin: {
+        [PALADIN]: {
             // paladin - cataclysm
             Holy: [
                 {
@@ -35102,7 +35620,7 @@ export const baseTalents = {
                 }
             ]
         },
-        priest: {
+        [PRIEST]: {
             // priest - cataclysm
             Discipline: [
                 {
@@ -36099,7 +36617,7 @@ export const baseTalents = {
                 }
             ]
         },
-        rogue: {
+        [ROGUE]: {
             // rogue - cataclysm
             Assassination: [
                 {
@@ -37038,7 +37556,7 @@ export const baseTalents = {
                 }
             ]
         },
-        shaman: {
+        [SHAMAN]: {
             // shaman - cataclysm
             Elemental: [
                 {
@@ -37960,7 +38478,7 @@ export const baseTalents = {
                 }
             ]
         },
-        warlock: {
+        [WARLOCK]: {
             // warlock - cataclysm
             Affliction: [
                 {
@@ -38845,7 +39363,7 @@ export const baseTalents = {
                 }
             ]
         },
-        warrior: {
+        [WARRIOR]: {
             // warrior - cataclysm
             Arms: [
                 {

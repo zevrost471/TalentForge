@@ -689,6 +689,14 @@ border-bottom-right-radius: 4px;
     display: block;
 }
 
+.nav-submenu {
+    display: none;
+}
+
+.nav-has-submenu:hover .nav-submenu {
+    display: block;
+}
+
 .talent-tooltip::after {
     content: "";
     position: absolute;
@@ -855,6 +863,7 @@ border-bottom-right-radius: 4px;
     border-radius: 10px;
     box-shadow: 0 0 25px rgba(0, 0, 0, 0.8);
     backdrop-filter: blur(6px);
+    font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 #sidebar.tc-sidebar-fixed {
@@ -1032,6 +1041,7 @@ border-bottom-right-radius: 4px;
     z-index: 51;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
     backdrop-filter: blur(4px);
+    font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
 .tc-pins-chip {
@@ -1310,4 +1320,193 @@ border-bottom-right-radius: 4px;
     width: 62px;
     background: url(https://wow.zamimg.com/images/Icon/large/hilite/default.png) no-repeat 62px 0;
     border-radius: 8px !important;
+}
+
+/* ========================
+   Database Class Pages
+   ======================== */
+
+#top-nav,
+#db-class-root,
+#landing-intro,
+#tc-page-container,
+#tc-page-container h2,
+#tc-page-container p,
+#tc-page-container [data-tooltip],
+#overview-page-container,
+#settings-page-container,
+#races-page-container,
+.tc-settings-popup,
+#tc-sidebar-pins-popup {
+    font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.db-table tbody {
+    font-family: Verdana, "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+
+.db-class-layout {
+    display: flex;
+    gap: 24px;
+    align-items: flex-start;
+}
+
+.db-class-main {
+    flex: 1;
+    min-width: 0;
+}
+
+.db-class-sidebar {
+    width: 360px;
+    flex-shrink: 0;
+}
+
+.db-spec-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.db-related-tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--tf-border);
+    padding-bottom: 0;
+}
+
+.db-related-tab {
+    padding: 6px 14px;
+    font-size: 0.875rem;
+    border: 1px solid transparent;
+    border-bottom: none;
+    border-radius: 4px 4px 0 0;
+    cursor: pointer;
+    color: var(--tf-text);
+    background: transparent;
+    transition: color 0.15s;
+    position: relative;
+    bottom: -1px;
+}
+
+.db-related-tab:hover {
+    color: var(--tf-accent);
+}
+
+.db-related-tab.active {
+    color: var(--tf-accent);
+    border-color: var(--tf-border);
+    border-bottom-color: var(--tf-bg-panel);
+    background: var(--tf-bg-panel);
+}
+
+.db-related-panel.hidden {
+    display: none;
+}
+
+.db-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.db-table td:nth-child(1),
+.db-table td:nth-child(2),
+.db-table td:nth-child(3) {
+    font-size: 0.92rem;
+}
+
+.db-table th {
+    padding: 8px 10px;
+    text-align: left;
+    border-top: 1px solid #181818;
+    border-bottom: 1px solid #181818;
+    background: #303030;
+    color: #ffffff;
+    font-weight: bold;
+}
+
+.db-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid var(--tf-border);
+    color: #bbbbbb;
+    vertical-align: middle;
+}
+
+.db-table tbody tr {
+    cursor: pointer;
+}
+
+.db-table tr:hover td {
+    background: rgba(0, 0, 0, 0.2);
+}
+
+.db-ability-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border-radius: 2px;
+    vertical-align: middle;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.db-type-btn {
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    border: 1px solid var(--tf-border);
+    color: var(--tf-text-soft);
+    cursor: pointer;
+    background: transparent;
+    transition: color 0.15s, border-color 0.15s;
+    line-height: 1.6;
+}
+.db-type-btn:hover { color: var(--tf-text); }
+.db-type-btn.active {
+    color: var(--tf-accent);
+    border-color: var(--tf-accent);
+}
+
+.db-spec-btn {
+    padding: 2px 10px;
+    border-radius: 3px;
+    font-size: 0.8rem;
+    border: 1px solid var(--tf-border);
+    color: var(--tf-text-soft);
+    cursor: pointer;
+    background: transparent;
+    transition: color 0.15s, border-color 0.15s;
+    line-height: 1.6;
+}
+.db-spec-btn:hover { color: var(--tf-text); }
+.db-spec-btn.active {
+    color: var(--tf-accent);
+    border-color: var(--tf-accent);
+}
+
+.db-pagination {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+}
+
+.db-pagination a.db-page-link {
+    color: var(--tf-accent);
+    text-decoration: none;
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: opacity 0.15s;
+}
+
+.db-pagination a.db-page-link:hover {
+    opacity: 0.75;
+}
+
+.db-pagination .db-page-info {
+    color: var(--tf-text-soft);
 }
