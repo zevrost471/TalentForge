@@ -327,8 +327,8 @@ export const customRacesByFaction = Object.freeze({
 
 export const customClassesByRace = Object.freeze({
   human: {
-    availableAtStart: [MAGE, ROGUE, WARRIOR, PRIEST, PALADIN],
-    availableThroughUnlock: [WARLOCK, MARKSMAN],
+    availableAtStart: [MAGE, ROGUE, WARRIOR, PRIEST, PALADIN, MARKSMAN],
+    availableThroughUnlock: [WARLOCK],
     genderVariants: {
       male: {
         additionalAvailableAtStart: [],
