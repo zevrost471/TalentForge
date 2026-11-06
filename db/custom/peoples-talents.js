@@ -853,12 +853,12 @@ export const peoplesTalents = {
                 icon: "ability_hunter_aspectofthemonkey",
                 row: 1,
                 col: 1,
-                ranks: 5,
+                ranks: 3,
                 requiresTalents: null,
                 description: [
                     "Increases the Dodge bonus of your Aspect of the Monkey by {value}%.",
                     {
-                        value: [1, 2, 3, 4, 5]
+                        value: [2, 4, 6]
                     }
                 ],
                 isActive: false
@@ -1021,7 +1021,7 @@ export const peoplesTalents = {
                 description: [
                     "Increases the Focus regeneration of your pets by {value}%.",
                     {
-                        value: [10, 20]
+                        value: [15, 30]
                     }
                 ],
                 isActive: false
@@ -1035,9 +1035,9 @@ export const peoplesTalents = {
                 ranks: 5,
                 requiresTalents: "ferocity",
                 description: [
-                    "Gives your pet a {value}% chance to gain a 30% attack speed increase for 8 sec after dealing a critical strike.",
+                    "Each critical strike your pet deals increases their attack speed by {value}% for 8 sec. This effect will stack up to 3 times. After the duration expires, one stack is removed and the effect refreshes its duration while stacks remain.",
                     {
-                        value: [20, 40, 60, 80, 100]
+                        value: [2, 4, 6, 8, 10]
                     }
                 ],
                 isActive: false
@@ -1091,7 +1091,7 @@ export const peoplesTalents = {
                 description: [
                     "Reduces the Mana cost of your Shots and Stings by {value}%.",
                     {
-                        value: [2, 4, 6, 8, 10]
+                        value: [3, 6, 9, 12, 15]
                     }
                 ],
                 isActive: false
@@ -1105,9 +1105,9 @@ export const peoplesTalents = {
                 ranks: 5,
                 requiresTalents: null,
                 description: [
-                    "Increases the Ranged Attack Power bonus of your Hunter's Mark spell by {value}%.",
+                    "Increases the bonus ranged attack power granted by your Hunter's Mark ability by {value}%.",
                     {
-                        value: [3, 6, 9, 12, 15]
+                        value: [5, 10, 15, 20, 25]
                     }
                 ],
                 isActive: false
@@ -1131,14 +1131,14 @@ export const peoplesTalents = {
             {
                 id: "aimed_shot",
                 name: "Aimed Shot",
-                icon: "inv_spear_07",
+                icon: "ability_hunter_aimedshot",
                 row: 2,
                 col: 0,
                 ranks: 1,
-                requiresTalents: null,
-                description: ["An aimed shot that increases ranged damage by 70."],
+                requiresTalents: "careful_aim",
+                description: ["An aimed shot that increases ranged damage by 40."],
                 isActive: true,
-                castTime: 3,
+                castTime: 2,
                 cooldown: 6,
                 spentResource: 75,
                 absoluteSpent: true,
@@ -1149,9 +1149,30 @@ export const peoplesTalents = {
                 requiresWeapon: 2
             },
             {
+                id: "careful_aim",
+                name: "Careful Aim",
+                icon: "ability_hunter_zenarchery",
+                row: 2,
+                col: 1,
+                ranks: 3,
+                requiresTalents: null,
+                description: [
+                "Increases your ranged attack power by {value}% of your Intellect.",
+                {
+                    value: [
+                    20,
+                    40,
+                    60
+                    ]
+                }
+                ],
+                isActive: false
+            },
+            /*
+            {
                 id: "improved_arcane_shot",
                 name: "Improved Arcane Shot",
-                icon: "ability_impalingbolt",
+                icon: "inv_ammo_arrow_01",
                 row: 2,
                 col: 1,
                 ranks: 5,
@@ -1159,11 +1180,12 @@ export const peoplesTalents = {
                 description: [
                     "Reduces the cooldown of your Arcane Shot by {value} sec.",
                     {
-                        value: [0.2, 0.4, 0.6, 0.8, 1]
+                        value: [0.3, 0.6, 0.9, 1.2, 1.5]
                     }
                 ],
                 isActive: false
             },
+            */
             {
                 id: "hawk_eye",
                 name: "Hawk Eye",
@@ -1181,18 +1203,19 @@ export const peoplesTalents = {
                 isActive: false
             },
             {
-                id: "improved_serpent_sting",
-                name: "Improved Serpent Sting",
-                icon: "ability_hunter_quickshot",
+                id: "improved_stings",
+                name: "Improved Stings",
+                icon: "ability_poisonsting",
                 row: 3,
-                col: 1,
-                ranks: 5,
+                col: 0,
+                ranks: 3,
                 requiresTalents: null,
                 description: [
-                    "Increases the damage done by your Serpent Sting by {value}%.",
-                    {
-                        value: [2, 4, 6, 8, 10]
-                    }
+                "Increased the damage of your Serpent Sting and Wyvern Sting abilities by {value1}%, the mana drained by your Viper Sting ability by {value1}%, and the duration of your Scorpid Sting ability by {value2} sec.",
+                {
+                    value1: [5, 10, 15],
+                    value2: [10, 20, 30]
+                }
                 ],
                 isActive: false
             },
@@ -1208,6 +1231,23 @@ export const peoplesTalents = {
                     "Increases your ranged weapon critical strike damage bonus by {value}%.",
                     {
                         value: [6, 12, 18, 24, 30]
+                    }
+                ],
+                isActive: false
+            },
+            {
+                id: "rapid_killing",
+                name: "Rapid Killing",
+                icon: "ability_hunter_rapidkilling",
+                row: 3,
+                col: 3,
+                ranks: 2,
+                requiresTalents: "mortal_shots",
+                description: [
+                    "Reduces the cooldown of your Rapid Fire ability by {cooldown} min.  In addition, after killing an opponent that yields experience or honor, your next Shot causes {damage}% additional damage.  Lasts 20 sec.",
+                    {
+                        cooldown: [1, 2],
+                        damage: [10, 20]
                     }
                 ],
                 isActive: false
@@ -1233,33 +1273,37 @@ export const peoplesTalents = {
                 requiresWeapon: 2
             },
             {
-                id: "barrage",
-                name: "Barrage",
-                icon: "ability_upgrademoonglaive",
+                id: "trueshot_aura",
+                name: "Trueshot Aura",
+                icon: "ability_trueshot",
                 row: 4,
                 col: 1,
+                ranks: 1,
+                requiresTalents: "careful_aim",
+                description: [
+                    "Increases the ranged attack power of party members within 45 yards by 30. Lasts until cancelled."
+                ],
+                isActive: true,
+                castTime: null,
+                cooldown: null,
+                spentResource: 180,
+                absoluteSpent: true,
+                resourceType: 1,
+                range: null,
+                requiresWeapon: 0
+            },
+            {
+                id: "barrage",
+                name: "Barrage",
+                icon: "ability_hunter_longshots",
+                row: 4,
+                col: 2,
                 ranks: 3,
                 requiresTalents: null,
                 description: [
                     "Increases the damage done by your Multi-Shot and Volley spells by {value}%.",
                     {
                         value: [5, 10, 15]
-                    }
-                ],
-                isActive: false
-            },
-            {
-                id: "improved_scorpid_sting",
-                name: "Improved Scorpid Sting",
-                icon: "ability_hunter_criticalshot",
-                row: 4,
-                col: 2,
-                ranks: 3,
-                requiresTalents: null,
-                description: [
-                    "Reduces the Stamina of targets affected by your Scorpid Sting by {value}% of the amount of Strength reduced.",
-                    {
-                        value: [10, 20, 30]
                     }
                 ],
                 isActive: false
@@ -1281,56 +1325,48 @@ export const peoplesTalents = {
                 isActive: false
             },
             {
-                id: "trueshot_aura",
-                name: "Trueshot Aura",
-                icon: "ability_trueshot",
+                id: "sniper_shot",
+                name: "Sniper Shot",
+                icon: "hunter_pvp_snipershot",
                 row: 6,
                 col: 1,
                 ranks: 1,
-                requiresTalents: "barrage",
+                requiresTalents: "trueshot_aura",
                 description: [
-                    "Increases the attack power of party members within 45 yards by 50. Lasts 30 min."
+                "A steady snipe that increases ranged damage by 160."
                 ],
                 isActive: true,
-                castTime: null,
-                cooldown: null,
-                spentResource: 325,
+                castTime: 4,
+                cooldown: 15,
+                spentResource: 365,
                 absoluteSpent: true,
                 resourceType: 1,
                 range: null,
-                requiresWeapon: 0
+                minRange: 8,
+                maxRange: 35,
+                requiresWeapon: 2
             }
         ],
         Survival: [
             {
-                id: "monster_slaying",
-                name: "Monster Slaying",
+                id: "improved_tracking",
+                name: "Improved Tracking",
                 icon: "inv_misc_head_dragon_black",
                 row: 0,
-                col: 0,
-                ranks: 3,
-                requiresTalents: null,
-                description: [
-                    "Increases all damage caused against Beasts, Giants and Dragonkin targets by {value}% and increases critical damage caused against Beasts, Giants and Dragonkin targets by an additional {value}%.",
-                    {
-                        value: [1, 2, 3]
-                    }
-                ],
-                isActive: false
-            },
-            {
-                id: "humanoid_slaying",
-                name: "Humanoid Slaying",
-                icon: "spell_holy_prayerofhealing",
-                row: 0,
                 col: 1,
-                ranks: 3,
+                ranks: 5,
                 requiresTalents: null,
                 description: [
-                    "Increases all damage caused against Humanoid targets by {value}% and increases critical damage caused against Humanoid targets by an additional {value}%.",
-                    {
-                        value: [1, 2, 3]
-                    }
+                "While tracking Beasts, Demons, Dragonkin, Elementals, Giants, Humanoids, or Undead, all damage you deal to the tracked creature type is increased by {value}%.",
+                {
+                    value: [
+                    1,
+                    2,
+                    3,
+                    4,
+                    5
+                    ]
+                }
                 ],
                 isActive: false
             },
@@ -1359,9 +1395,9 @@ export const peoplesTalents = {
                 ranks: 5,
                 requiresTalents: null,
                 description: [
-                    "Gives your Immolation Trap, Frost Trap, and Explosive Trap a {value}% chance to entrap the target, preventing them from moving for 5 sec.",
+                    "Gives your Immolation Trap, Frost Trap, and Explosive Trap a {value}% chance to entrap all affected targets, preventing them from moving for 3 sec.",
                     {
-                        value: [5, 10, 15, 20, 25]
+                        value: [20, 40, 60, 80, 100]
                     }
                 ],
                 isActive: false
@@ -1388,12 +1424,12 @@ export const peoplesTalents = {
                 icon: "ability_rogue_trip",
                 row: 1,
                 col: 2,
-                ranks: 5,
+                ranks: 3,
                 requiresTalents: null,
                 description: [
                     "Gives your Wing Clip ability a {value}% chance to immobilize the target for 5 sec.",
                     {
-                        value: [4, 8, 12, 16, 20]
+                        value: [7, 13, 20]
                     }
                 ],
                 isActive: false
@@ -1404,12 +1440,12 @@ export const peoplesTalents = {
                 icon: "spell_nature_timestop",
                 row: 2,
                 col: 0,
-                ranks: 2,
+                ranks: 3,
                 requiresTalents: null,
                 description: [
                     "Increases the duration of Freezing and Frost trap effects by {value}% and the damage of Immolation and Explosive trap effects by {value}%.",
                     {
-                        value: [15, 30]
+                        value: [10, 20, 30]
                     }
                 ],
                 isActive: false
@@ -1449,6 +1485,21 @@ export const peoplesTalents = {
                 requiresWeapon: 0
             },
             {
+                id: "improved_mongoose_bite",
+                name: "Improved Mongoose Bite",
+                icon: "ability_hunter_swiftstrike",
+                row: 2,
+                col: 3,
+                ranks: 2,
+                requiresTalents: "deterrence",
+                description: [
+                "Your Mongoose Bite now deals {value}% additional weapon damage.",
+                {
+                    value: [15, 30],
+                },
+                ],
+            },
+            {
                 id: "trap_mastery",
                 name: "Trap Mastery",
                 icon: "ability_ensnare",
@@ -1457,9 +1508,9 @@ export const peoplesTalents = {
                 ranks: 2,
                 requiresTalents: null,
                 description: [
-                    "Decreases the chance enemies will resist trap effects by {value}%.",
+                    "Reduces the cooldown of your trap abilities by {value}%.",
                     {
-                        value: [5, 10]
+                        value: [10, 20]
                     }
                 ],
                 isActive: false
@@ -1482,17 +1533,34 @@ export const peoplesTalents = {
                 isActive: false
             },
             {
-                id: "improved_feign_death",
-                name: "Improved Feign Death",
+                id: "survival_tactics",
+                name: "Survival Tactics",
                 icon: "ability_rogue_feigndeath",
                 row: 3,
                 col: 3,
                 ranks: 2,
                 requiresTalents: null,
                 description: [
-                    "Reduces the chance your Feign Death ability will be resisted by {value}%.",
+                    "Reduces the chance your Feign Death ability and your trap abilities will be resisted by {value}%, and reduces the cooldown of your Disengage ability by {value} sec.",
                     {
                         value: [2, 4]
+                    }
+                ],
+                isActive: false
+            },
+            {
+                id: "resourcefulness",
+                name: "Resourcefulness",
+                icon: "ability_hunter_resourcefulness",
+                row: 4,
+                col: 0,
+                ranks: 3,
+                requiresTalents: null,
+                description: [
+                    "Reduces the mana cost of your trap abilities and melee abilities by {value1}%. In addition, each time one of your trap effects trigger or your Serpent Sting or Wyvern Sting abilities deal critical damage, you have a {value2}% chance to allow 50% of your mana regeneration to continue while casting for 20 sec.",
+                    {
+                        value1: [10, 20, 30],
+                        value2: [33, 66, 100]
                     }
                 ],
                 isActive: false
@@ -1534,21 +1602,6 @@ export const peoplesTalents = {
                 requiresWeapon: 0
             },
             {
-                id: "improved_mongoose_bite",
-                name: "Improved Mongoose Bite",
-                icon: "ability_hunter_swiftstrike",
-                row: 5,
-                col: 0,
-                ranks: 2,
-                requiresTalents: null,
-                description: [
-                "Your Mongoose Bite now deals {value}% additional weapon damage.",
-                {
-                    value: [15, 30],
-                },
-                ],
-            },
-            {
                 id: "lightning_reflexes",
                 name: "Lightning Reflexes",
                 icon: "spell_nature_invisibilty",
@@ -1559,7 +1612,7 @@ export const peoplesTalents = {
                 description: [
                     "Increases your Agility by {value}%.",
                     {
-                        value: [3, 6, 9, 12, 15]
+                        value: [2, 4, 6, 8, 10]
                     }
                 ],
                 isActive: false
@@ -2279,7 +2332,7 @@ export const peoplesTalents = {
                 description: [
                     "Adds a chill effect to your Blizzard spell.  This effect lowers the target's movement speed by {value}%.  Lasts 1.50 sec.",
                     {
-                        value: [30, 50, 65]
+                        value: [15, 25, 40]
                     }
                 ],
                 isActive: false
@@ -5045,9 +5098,9 @@ export const peoplesTalents = {
                 ranks: 5,
                 requiresTalents: null,
                 description: [
-                    "Increases your maximum Mana by {value}%.",
+                    "Increases your Intellect by {value}%.",
                     {
-                        value: [1, 2, 3, 4, 5]
+                        value: [2, 4, 6, 8, 10]
                     }
                 ],
                 isActive: false
@@ -5248,15 +5301,15 @@ export const peoplesTalents = {
                 isActive: false
             },
             {
-                id: "parry",
-                name: "Parry",
+                id: "spirit_weapons",
+                name: "Spirit Weapons",
                 icon: "ability_parry",
                 row: 4,
                 col: 2,
                 ranks: 1,
                 requiresTalents: null,
                 description: [
-                    "Gives a chance to parry enemy melee attacks."
+                    "Gives a chance to parry enemy melee attacks, reduces all threat generated by your melee attacks by 30% while Rockbiter Weapon is not active, and increases all threat generated by your melee attacks 30% while Rockbiter Weapon is active."
                 ],
                 isActive: false
             },
@@ -5279,13 +5332,13 @@ export const peoplesTalents = {
             {
                 id: "stormstrike",
                 name: "Stormstrike",
-                icon: "spell_holy_sealofmight",
+                icon: "ability_shaman_stormstrike",
                 row: 6,
                 col: 1,
                 ranks: 1,
                 requiresTalents: "elemental_weapons",
                 description: [
-                    "Gives you an extra attack.  In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. Lasts 12 sec."
+                    "Instantly strike for normal weapon damage. In addition, the next 2 sources of Nature damage dealt to the target are increased by 20%. Lasts 12 sec."
                 ],
                 isActive: true,
                 castTime: null,
@@ -6019,12 +6072,12 @@ export const peoplesTalents = {
                 icon: "spell_shadow_enslavedemon",
                 row: 4,
                 col: 0,
-                ranks: 5,
+                ranks: 2,
                 requiresTalents: null,
                 description: [
-                    "Reduces the Attack Speed and Casting Speed penalty of your Enslave Demon spell by {value}% and reduces the resist chance by {value}%.",
+                    "Reduces the attack speed and casting speed penalty of your Enslave Demon spell by {value}% and reduces the resist chance by {value}%.",
                     {
-                        value: [2, 4, 6, 8, 10]
+                        value: [5, 10]
                     }
                 ],
                 isActive: false
