@@ -1478,6 +1478,14 @@ const iconOverrideById = {};
     iconOverrideById[id] = sharedIcon;
 });
 
+function resolveIconUrl(icon, talentId) {
+    if (iconOverrideById[talentId]) return iconOverrideById[talentId];
+    if (icon && (icon.startsWith('.') || icon.startsWith('/'))) {
+        return icon.match(/\.\w+$/) ? icon : icon + '.jpg';
+    }
+    return `https://wow.zamimg.com/images/wow/icons/large/${icon}.jpg`;
+}
+
 // const talents = getTalents(currentState.version, currentState.class, treeName);
 
 function renderTalentTrees() {
@@ -1788,9 +1796,7 @@ function renderTalentTrees() {
                         <div class="talent-icon w-full h-full border rounded ${borderClass} hover:brightness-110"
                                 data-tree="${treeName}" data-id="${talent.id}">
                             <img
-                                src="${iconOverrideById[talent.id] ||
-                            `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`
-                            }"
+                                src="${resolveIconUrl(talent.icon, talent.id)}"
                                 class="w-full h-full rounded"
                                 alt="${talent.name}"
                             />
@@ -2625,8 +2631,7 @@ function openMobilePanel(classKey, treeName, talentId) {
 
     mobilePanelTalent = { classKey, treeName, talentId };
 
-    const iconUrl = iconOverrideById?.[talentId] ||
-        `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`;
+    const iconUrl = resolveIconUrl(talent.icon, talentId);
     mtpIcon.src = iconUrl;
     mtpIcon.alt = talent.name;
     mtpName.textContent = talent.name;
@@ -3472,9 +3477,7 @@ function renderLevelTimeline(container) {
     ];
 
     // Helper: get icon URL
-    const getIconUrl = (talent) =>
-        iconOverrideById[talent.id] ||
-        `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`;
+    const getIconUrl = (talent) => resolveIconUrl(talent.icon, talent.id);
 
     if (expansion === "cataclysm") {
         talentOrder.forEach((entry, index) => {
@@ -3650,9 +3653,7 @@ function renderTalentOrderTimeline() {
     // Render grouped entries
     timeline.forEach((entry) => {
         const talent = getTalentById(entry.classKey, entry.tree, entry.id);
-        const iconUrl =
-            iconOverrideById[talent.id] ||
-            `https://wow.zamimg.com/images/wow/icons/large/${talent.icon}.jpg`;
+        const iconUrl = resolveIconUrl(talent.icon, talent.id);
         const levelText =
             entry.startLevel === entry.endLevel
                 ? `${entry.startLevel}`

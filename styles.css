@@ -1337,7 +1337,8 @@ border-bottom-right-radius: 4px;
 #settings-page-container,
 #races-page-container,
 .tc-settings-popup,
-#tc-sidebar-pins-popup {
+#tc-sidebar-pins-popup,
+#class-lore-overlay {
     font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 
