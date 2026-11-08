@@ -1670,7 +1670,9 @@ function renderTalentTrees() {
             numRows = 11; // WotLK
         }
 
-        const grid = Array.from({ length: numRows }, () => Array(4).fill(null));
+        const FIVE_COL_VERSIONS = [];
+        const numCols = FIVE_COL_VERSIONS.includes(version) ? 5 : 4;
+        const grid = Array.from({ length: numRows }, () => Array(numCols).fill(null));
 
         // Organize talents into grid
         talents.forEach((talent) => {
@@ -1681,8 +1683,9 @@ function renderTalentTrees() {
         treeWrapper.className = "flex flex-col items-center";
 
         const treeEl = document.createElement("div");
+        const treeElWidth = numCols === 5 ? "sm:w-[370px] md:w-[410px]" : "sm:w-[300px] md:w-[340px]";
         treeEl.className =
-            "tf-bg h-full p-4 pt-4 pb-1 rounded-lg w-full sm:w-[300px] md:w-[340px] shadow-lg border tf-border flex flex-col items-center";
+            `tf-bg h-full p-4 pt-4 pb-1 rounded-lg w-full ${treeElWidth} shadow-lg border tf-border flex flex-col items-center`;
         treeEl.setAttribute("data-tree-container", treeName);
 
         let isLocked = false;
@@ -1733,7 +1736,8 @@ function renderTalentTrees() {
 
         // ======= NEW: Wrap the grid in a fixed width div to keep cell spacing tight =======
         const gridWrapper = document.createElement("div");
-        gridWrapper.className = "w-[235px] flex flex-col justify-center flex-grow";
+        const gridWrapperWidth = numCols === 5 ? "w-[304px]" : "w-[235px]";
+        gridWrapper.className = `${gridWrapperWidth} flex flex-col justify-center flex-grow`;
 
         // Render each row (7, 9 or 11 rows depending on expansion)
         grid.forEach((row) => {
@@ -3674,10 +3678,51 @@ function renderTalentOrderTimeline() {
 */
 
 function recalculateTalentOrder() {
-    // Assign levels based on order in talentOrder
-    currentState.talentOrder.forEach((entry, index) => {
+    const entries = [...currentState.talentOrder];
+    const result = [];
+    const pending = [];
+    const treePoints = {};
+
+    const canPlace = (entry) => {
+        const talent = getTalentById(entry.classKey, entry.tree, entry.id);
+        const needed = (talent?.row ?? 0) * 5;
+        const key = `${entry.classKey}:${entry.tree}`;
+        return (treePoints[key] ?? 0) >= needed;
+    };
+
+    const place = (entry) => {
+        result.push(entry);
+        const key = `${entry.classKey}:${entry.tree}`;
+        treePoints[key] = (treePoints[key] ?? 0) + 1;
+    };
+
+    const flushPending = () => {
+        let placed = true;
+        while (placed) {
+            placed = false;
+            for (let i = 0; i < pending.length; i++) {
+                if (canPlace(pending[i])) {
+                    place(pending.splice(i, 1)[0]);
+                    placed = true;
+                    break;
+                }
+            }
+        }
+    };
+
+    for (const entry of entries) {
+        pending.push(entry);
+        flushPending();
+    }
+
+    // Append anything still pending (shouldn't occur with a valid build)
+    result.push(...pending);
+
+    result.forEach((entry, index) => {
         entry.level = 10 + index;
     });
+
+    currentState.talentOrder.splice(0, currentState.talentOrder.length, ...result);
 }
 
 /*
