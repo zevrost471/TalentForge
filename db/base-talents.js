@@ -9181,7 +9181,7 @@ export const baseTalents = {
                     ranks: 1,
                     requiresTalents: "bestial_wrath",
                     description: [
-                        "Go into a rage, increasing your damage by 30%.  Your pet also goes into a rage, causing 50% additional damage for 18 sec.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
+                        "When your pet is under the effects of Bestial Wrath, you also go into a rage causing 10% additional damage and reducing mana costs of all spells by 20% for 18 sec.  While enraged, you do not feel pity or remorse or fear and you cannot be stopped unless killed."
                     ],
                     isActive: false
                 }
@@ -20712,7 +20712,7 @@ export const baseTalents = {
                     ranks: 1,
                     requiresTalents: "bestial_wrath",
                     description: [
-                        "Go into a rage, increasing your damage by 30%.  Your pet also goes into a rage, causing 50% additional damage for 18 sec.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed."
+                        "Increases all damage you deal by 10% and while your pet is under the effects of Bestial Wrath, you also go into a rage causing 10% additional damage and reducing mana costs of all spells by 50% for 10 sec.  While enraged, you do not feel pity or remorse or fear and you cannot be stopped unless killed."
                     ],
                     isActive: false
                 },
@@ -28773,7 +28773,13 @@ export const baseTalents = {
                     description: [
                         "Your next Imp, Voidwalker, Succubus, Felhunter or Felguard Summon spell has its casting time reduced by 5.5 sec and its Mana cost reduced by 50%."
                     ],
-                    isActive: true
+                    isActive: true,
+                    castTime: null,
+                    cooldown: 180,
+                    spentResource: null,
+                    resourceType: 1,
+                    range: null,
+                    requiresWeapon: 0
                 },
                 {
                     id: "demonic_aegis",
