@@ -800,15 +800,15 @@ export const peoplesTalents = {
     hunter: {
         "Beast Mastery": [
             {
-                id: "improved_aspect_of_the_hawk",
-                name: "Improved Aspect of the Hawk",
+                id: "primal_rush",
+                name: "Primal Rush",
                 icon: "spell_nature_ravenform",
                 row: 0,
                 col: 1,
                 ranks: 5,
                 requiresTalents: null,
                 description: [
-                    "While Aspect of the Hawk is active, all normal ranged attacks have a {value}% chance of increasing ranged attack speed by 30% for 12 sec.",
+                    "While Aspect of the Hawk is active, all normal ranged attacks have a {value}% chance of increasing ranged attack speed by 30% for 12 sec. While Aspect of the Bear is active, all normal melee attacks have a {value}% chance of increasing melee attack speed by 30% for 12 sec.",
                     {
                         value: [1, 2, 3, 4, 5]
                     }
@@ -974,6 +974,50 @@ export const peoplesTalents = {
                 ],
                 isActive: false
             },
+            /*
+            {
+                id: "kill_command",
+                name: "Kill Command",
+                icon: "ability_hunter_killcommand",
+                row: 3,
+                col: 3,
+                ranks: 1,
+                requiresTalents: "ferocity",
+                description: [
+                    "Give the command to kill, causing your pet to instantly attack for an additional 127 damage.  Can only be used after the Hunter lands a critical strike on the target."
+                ],
+                isActive: true,
+                castTime: null,
+                cooldown: 6,
+                spentResource: 75,
+                absoluteSpent: true,
+                resourceType: 1,
+                range: 45,
+                requiresWeapon: 0
+            },
+            */
+            /*
+            {
+                id: "summon_hawk",
+                name: "Summon Hawk",
+                icon: "ability_hunter_animalhandler",
+                row: 3,
+                col: 3,
+                ranks: 1,
+                requiresTalents: "ferocity",
+                description: [
+                "Command a hawk to dive-bomb your targeted enemy, dealing 32 Physical damage and continuing its assault for 18 sec. Only 2 hawks can be active at once. Summon Hawk shares its cooldown with Arcane Shot."
+                ],
+                isActive: true,
+                castTime: null,
+                cooldown: 6,
+                spentResource: 80,
+                absoluteSpent: true,
+                resourceType: 1,
+                range: 35,
+                requiresWeapon: 0
+            },
+            */
             {
                 id: "spirit_bond_old",
                 name: "Spirit Bond",
@@ -1019,13 +1063,33 @@ export const peoplesTalents = {
                 ranks: 2,
                 requiresTalents: null,
                 description: [
-                    "Increases the Focus regeneration of your pets by {value}%.",
+                    "Increases the Focus regeneration of your pets by {value}%.", 
+                    // In addition, your melee and ranged critical hits cause your pet to generate {value} Focus.
                     {
                         value: [15, 30]
+                        // value: [25, 50]
                     }
                 ],
                 isActive: false
             },
+            /*
+            {
+                id: "bestial_synergy",
+                name: "Bestial Synergy",
+                icon: "ability_hunter_goforthethroat",
+                row: 5,
+                col: 0,
+                ranks: 2,
+                requiresTalents: "spirit_bond_old",
+                description: [
+                    "Your melee and ranged critical hits cause your pet to generate {value} Focus.",
+                    {
+                        value: [25, 50]
+                    }
+                ],
+                isActive: false
+            },
+            */
             {
                 id: "frenzy",
                 name: "Frenzy",
@@ -1242,7 +1306,7 @@ export const peoplesTalents = {
                 row: 3,
                 col: 3,
                 ranks: 2,
-                requiresTalents: "mortal_shots",
+                requiresTalents: null,
                 description: [
                     "Reduces the cooldown of your Rapid Fire ability by {cooldown} min.  In addition, after killing an opponent that yields experience or honor, your next Shot causes {damage}% additional damage.  Lasts 20 sec.",
                     {
@@ -1500,17 +1564,18 @@ export const peoplesTalents = {
                 ],
             },
             {
-                id: "trap_mastery",
-                name: "Trap Mastery",
-                icon: "ability_ensnare",
+                id: "resourcefulness",
+                name: "Resourcefulness",
+                icon: "ability_hunter_resourcefulness",
                 row: 3,
                 col: 0,
-                ranks: 2,
+                ranks: 3,
                 requiresTalents: null,
                 description: [
-                    "Reduces the cooldown of your trap abilities by {value}%.",
+                    "Reduces the mana cost of all your traps and melee abilities by {value}% and reduces the cooldown of all traps by {value}%.",
+                    // "Reduces the mana cost of your trap abilities and melee abilities by {value1}%. In addition, each time one of your trap effects trigger or your Serpent Sting or Wyvern Sting abilities deal critical damage, you have a {value2}% chance to allow 50% of your mana regeneration to continue while casting for 20 sec.",
                     {
-                        value: [10, 20]
+                        value: [10, 20, 30]
                     }
                 ],
                 isActive: false
@@ -1549,19 +1614,15 @@ export const peoplesTalents = {
                 isActive: false
             },
             {
-                id: "resourcefulness",
-                name: "Resourcefulness",
-                icon: "ability_hunter_resourcefulness",
+                id: "trap_mastery",
+                name: "Trap Mastery",
+                icon: "ability_ensnare",
                 row: 4,
                 col: 0,
-                ranks: 3,
+                ranks: 1,
                 requiresTalents: null,
                 description: [
-                    "Reduces the mana cost of your trap abilities and melee abilities by {value1}%. In addition, each time one of your trap effects trigger or your Serpent Sting or Wyvern Sting abilities deal critical damage, you have a {value2}% chance to allow 50% of your mana regeneration to continue while casting for 20 sec.",
-                    {
-                        value1: [10, 20, 30],
-                        value2: [33, 66, 100]
-                    }
+                    "Allows your trap abilities to be usable while in combat.",
                 ],
                 isActive: false
             },
@@ -1613,6 +1674,23 @@ export const peoplesTalents = {
                     "Increases your Agility by {value}%.",
                     {
                         value: [2, 4, 6, 8, 10]
+                    }
+                ],
+                isActive: false
+            },
+            {
+                id: "adaptability",
+                name: "Adaptability",
+                icon: "ability_hunter_mastertactitian",
+                row: 5,
+                col: 3,
+                ranks: 3,
+                requiresTalents: "survival_tactics",
+                description: [
+                    "Reduces the cooldown of your Deterrence ability by {value1} and gives you a {value2}% chance to allow your mana regeneration to continue while casting for 10 sec after one of your trap effects trigger.",
+                    {
+                        value1: ["40 sec", "80 sec", "2 min"],
+                        value2: [33, 66, 100]
                     }
                 ],
                 isActive: false
@@ -5943,7 +6021,7 @@ export const peoplesTalents = {
                 ranks: 2,
                 requiresTalents: null,
                 description: [
-                    "Increases the amount of Health transferred by your Health Funnel spell by {value}%.",
+                    "Increases the amount of Health transferred by your Health Funnel spell by {value}% and reduces all threat your Health Funnel generates by {value}%.",
                     {
                         value: [10, 20]
                     }
@@ -5966,18 +6044,52 @@ export const peoplesTalents = {
                 ],
                 isActive: false
             },
+            /*
             {
                 id: "fel_intellect",
                 name: "Fel Intellect",
                 icon: "spell_holy_magicalsentry",
                 row: 1,
                 col: 2,
+                ranks: 3,
+                requiresTalents: null,
+                description: [
+                    "Increases the Intellect of your Imp, Voidwalker, Succubus, and Felhunter by {value}%.",
+                    {
+                        value: [5, 10, 15]
+                    }
+                ],
+                isActive: false
+            },
+            */
+            {
+                id: "fel_vitality",
+                name: "Fel Vitality",
+                icon: "spell_holy_magicalsentry",
+                row: 1,
+                col: 2,
                 ranks: 5,
                 requiresTalents: null,
                 description: [
-                    "Increases the maximum Mana of your Imp, Voidwalker, Succubus, and Felhunter by {value}%.",
+                    "Increases the Stamina and Intellect of your Imp, Voidwalker, Succubus, and Felhunter by {value}%.",
                     {
                         value: [3, 6, 9, 12, 15]
+                    }
+                ],
+                isActive: false
+            },
+            {
+                id: "demonic_aegis",
+                name: "Demonic Aegis",
+                icon: "spell_shadow_ragingscream",
+                row: 1,
+                col: 3,
+                ranks: 3,
+                requiresTalents: null,
+                description: [
+                    "Increases the effectiveness of your Demon Skin and Demon Armor spells by {value}%.",
+                    {
+                        value: [10, 20, 30]
                     }
                 ],
                 isActive: false
@@ -5987,7 +6099,7 @@ export const peoplesTalents = {
                 name: "Improved Succubus",
                 icon: "spell_shadow_summonsuccubus",
                 row: 2,
-                col: 0,
+                col: 1,
                 ranks: 3,
                 requiresTalents: null,
                 description: [
@@ -6004,7 +6116,7 @@ export const peoplesTalents = {
                 name: "Fel Domination",
                 icon: "spell_nature_removecurse",
                 row: 2,
-                col: 1,
+                col: 2,
                 ranks: 1,
                 requiresTalents: null,
                 description: [
@@ -6012,23 +6124,66 @@ export const peoplesTalents = {
                 ],
                 isActive: true,
                 castTime: null,
-                cooldown: 900,
+                cooldown: 300,
                 spentResource: null,
                 range: null,
                 requiresWeapon: 0
             },
+            /*
             {
                 id: "fel_stamina",
                 name: "Fel Stamina",
                 icon: "spell_shadow_antishadow",
                 row: 2,
                 col: 2,
+                ranks: 3,
+                requiresTalents: null,
+                description: [
+                    "Increases the Stamina of your Imp, Voidwalker, Succubus, and Felhunter by {value}%.",
+                    {
+                        value: [5, 10, 15]
+                    }
+                ],
+                isActive: false
+            },
+            */
+            {
+                id: "improved_felhunter",
+                name: "Improved Felhunter",
+                icon: "spell_shadow_summonfelhunter",
+                row: 3,
+                col: 0,
+                ranks: 3,
+                requiresTalents: null,
+                description: [
+                "Increases the Attack Power reduction of your Felhunter's Tainted Blood, the healing of its Devour Magic, and the detection level of its Paranoia by {value1}%, and reduces the cooldown of its Spell Lock by {value2} sec.",
+                {
+                    value1: [
+                    10,
+                    20,
+                    30
+                    ],
+                    value2: [
+                    2,
+                    4,
+                    6
+                    ]
+                }
+                ],
+                isActive: false
+            },
+            {
+                id: "unholy_power",
+                name: "Unholy Power",
+                icon: "spell_shadow_shadowworddominate",
+                row: 3,
+                col: 1,
                 ranks: 5,
                 requiresTalents: null,
                 description: [
-                    "Increases the maximum Health of your Imp, Voidwalker, Succubus, and Felhunter by {value}%.",
+                    "Increases the damage done by your Voidwalker, Succubus, and Felhunter's melee attacks and your Imp's Firebolt by {value}%.",
                     {
-                        value: [3, 6, 9, 12, 15]
+                        value: [4, 8, 12, 16, 20]
                     }
                 ],
                 isActive: false
@@ -6038,7 +6193,7 @@ export const peoplesTalents = {
                 name: "Master Summoner",
                 icon: "spell_shadow_impphaseshift",
                 row: 3,
-                col: 1,
+                col: 3,
                 ranks: 2,
                 requiresTalents: "fel_domination",
                 description: [
@@ -6046,22 +6201,6 @@ export const peoplesTalents = {
                     {
                         casttime: [2, 4],
                         cost: [20, 40]
-                    }
-                ],
-                isActive: false
-            },
-            {
-                id: "unholy_power",
-                name: "Unholy Power",
-                icon: "spell_shadow_shadowworddominate",
-                row: 3,
-                col: 2,
-                ranks: 5,
-                requiresTalents: null,
-                description: [
-                    "Increases the damage done by your Voidwalker, Succubus, and Felhunter's melee attacks by {value}%.",
-                    {
-                        value: [4, 8, 12, 16, 20]
                     }
                 ],
                 isActive: false
@@ -6083,35 +6222,37 @@ export const peoplesTalents = {
                 isActive: false
             },
             {
-                id: "demonic_sacrifice",
-                name: "Demonic Sacrifice",
-                icon: "spell_shadow_psychicscream",
+                id: "soul_link",
+                name: "Soul Link",
+                icon: "spell_shadow_gathershadows",
                 row: 4,
-                col: 1,
+                col: 2,
                 ranks: 1,
-                requiresTalents: null,
+                requiresTalents: "fel_domination",
                 description: [
-                    "When activated, sacrifices your summoned demon to grant you an effect that lasts 30 min.  The effect is canceled if any Demon is summoned.<br><br>Imp: Increases your Fire damage by 15%.<br><br>Voidwalker: Restores 3% of total Health every 4 sec.<br><br>Succubus: Increases your Shadow damage by 15%.<br><br>Felhunter: Restores 2% of total Mana every 4 sec."
+                    "When active, 20% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, Felhunter, or enslaved demon instead.  In addition, both the demon and master will inflict 5% more damage. Lasts as long as the demon is active and controlled."
                 ],
                 isActive: true,
                 castTime: null,
                 cooldown: null,
-                spentResource: null,
+                spentResource: 20,
+                absoluteSpent: false,
+                resourceType: 1,
                 range: 100,
                 requiresWeapon: 0
             },
             {
-                id: "improved_firestone",
-                name: "Improved Firestone",
-                icon: "inv_ammo_firetar",
+                id: "demonic_pact",
+                name: "Demonic Pact",
+                icon: "spell_shadow_demonicfortitude",
                 row: 4,
                 col: 3,
-                ranks: 2,
+                ranks: 3,
                 requiresTalents: null,
                 description: [
-                    "Increases the bonus Fire damage from Firestones and the Firestone effect by {value}%.",
+                    "Increases your spell damage by an amount equal to {value}% of the total of your active demon's Stamina plus Intellect.",
                     {
-                        value: [15, 30]
+                        value: [4, 8, 12]
                     }
                 ],
                 isActive: false
@@ -6121,7 +6262,7 @@ export const peoplesTalents = {
                 name: "Master Demonologist",
                 icon: "spell_shadow_shadowpact",
                 row: 5,
-                col: 2,
+                col: 1,
                 ranks: 5,
                 requiresTalents: "unholy_power",
                 description: [
@@ -6135,25 +6276,41 @@ export const peoplesTalents = {
                 isActive: false
             },
             {
-                id: "soul_link",
-                name: "Soul Link",
-                icon: "spell_shadow_gathershadows",
+                id: "master_conjuror",
+                name: "Master Conjuror",
+                icon: "inv_ammo_firetar",
+                row: 5,
+                col: 2,
+                ranks: 2,
+                requiresTalents: null,
+                description: [
+                    "Increases the bonus Fire damage from Firestones and the Firestone effect by {value1}%, increases the amount of damage absorbed by your Spellstone by {value1}%, and reduces the cooldown of your Healthstone by {value2}%.",
+                    {
+                        value1: [15, 30],
+                        value2: [10, 20]
+                    }
+                ],
+                isActive: false
+            },
+            {
+                id: "demonic_sacrifice",
+                name: "Demonic Sacrifice",
+                icon: "spell_shadow_psychicscream",
                 row: 6,
                 col: 1,
                 ranks: 1,
-                requiresTalents: "demonic_sacrifice",
+                requiresTalents: null,
                 description: [
-                    "When active, 30% of all damage taken by the caster is taken by your Imp, Voidwalker, Succubus, or Felhunter demon instead.  In addition, both the demon and master will inflict 3% more damage. Lasts as long as the demon is active."
+                    "When activated, sacrifices your summoned demon to grant you an effect that lasts 21 sec.  The effect is not canceled if another Demon is summoned.<br><br>Imp: Increases your Fire damage by 20%.<br><br>Voidwalker: Restores 5% of total Health every 3 sec.<br><br>Succubus: Increases your Shadow damage by 20%.<br><br>Felhunter: Restores 5% of total Mana every 3 sec."
                 ],
                 isActive: true,
                 castTime: null,
-                cooldown: null,
-                spentResource: 20,
-                absoluteSpent: false,
-                resourceType: 1,
+                cooldown: 600,
+                spentResource: null,
                 range: 100,
                 requiresWeapon: 0
             },
+            /*
             {
                 id: "improved_spellstone",
                 name: "Improved Spellstone",
@@ -6170,6 +6327,7 @@ export const peoplesTalents = {
                 ],
                 isActive: false
             }
+            */
         ],
         Destruction: [
             {
