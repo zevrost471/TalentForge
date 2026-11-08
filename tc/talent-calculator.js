@@ -1316,6 +1316,18 @@ function renderSpecSelectionPanel() {
     `;
     cataSpecSelectionPanel.insertAdjacentHTML("beforeend", headerHTML);
 
+    cataSpecSelectionPanel.insertAdjacentHTML("beforeend", `
+        <div class="flex justify-end mt-3">
+            <div class="w-80">
+                <div class="relative">
+                    <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 text-sm pointer-events-none"></i>
+                    <input type="text" disabled placeholder="Search talents..."
+                        class="tf-control w-full rounded-md pl-8 pr-8 py-1 text-sm opacity-40 cursor-not-allowed" />
+                </div>
+            </div>
+        </div>
+    `);
+
     // === Container wrapper for spec summary cards ===
     const container = document.createElement("div");
     container.className = "flex flex-col md:flex-row gap-6 justify-center mt-4";
@@ -1488,6 +1500,9 @@ function resolveIconUrl(icon, talentId) {
 
 // const talents = getTalents(currentState.version, currentState.class, treeName);
 
+// Shared classes for inline tooltips in the talent-trees header
+const HEADER_TOOLTIP_CLS = "hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 p-2 bg-black border border-gray-600 rounded text-sm text-white shadow-lg pointer-events-none";
+
 function renderTalentTrees() {
     talentTrees.innerHTML = "";
 
@@ -1584,7 +1599,7 @@ function renderTalentTrees() {
     const minLevel = totalPoints > 0 ? computeRequiredLevel(totalPoints, version) : 10;
 
     // Class icon URL
-    const classIconUrl = `https://wow.zamimg.com/images/wow/icons/large/classicon_${classKey.replace('_', '')}.jpg`;
+    const classIconUrl = _getClassIconUrl(classData.name, getExpansionFromPatch(version));
     const classColor = classColors[classKey] || "#FFF";
 
     // Build info box
@@ -1612,17 +1627,25 @@ function renderTalentTrees() {
                     </div>
                     <div class="flex gap-4 text-sm items-center">
                         <div class="flex items-center gap-1">
-                            <button id="planned-level-minus" ${plannedLevel <= minLevel ? "disabled" : ""} class="bg-gray-700 hover:enabled:bg-gray-600 disabled:opacity-40 text-white text-sm font-bold w-6 h-[26px] rounded border border-gray-600 flex items-center justify-center">−</button>
+                            <button id="planned-level-minus" ${plannedLevel <= minLevel ? "disabled" : ""} class="bg-gray-700 hover:enabled:bg-gray-600 disabled:opacity-40 text-white text-base font-bold w-8 h-8 rounded border border-gray-600 flex items-center justify-center">−</button>
                             <div class="relative">
                                 <input id="planned-level-input" type="text" inputmode="numeric" pattern="[0-9]*" autocomplete="off"
                                     value="${plannedLevel}"
-                                    class="bg-gray-600 text-white text-sm font-bold border border-gray-500 rounded px-1 h-[26px] w-10 text-center" />
+                                    class="bg-gray-600 text-white text-sm font-bold border border-gray-500 rounded px-1 h-8 w-11 text-center" />
                                 <div id="planned-level-tooltip"
-                                    class="hidden absolute right-0 top-0 translate-x-full -translate-y-full z-50 p-2 bg-black border border-gray-600 rounded w-64 text-sm text-white shadow-lg pointer-events-none">
+                                    class="${HEADER_TOOLTIP_CLS} w-64">
                                     The level this build is planned for. It sets how many talent points there are to spend.
                                 </div>
                             </div>
-                            <button id="planned-level-plus" ${plannedLevel >= maxLevel ? "disabled" : ""} class="bg-gray-700 hover:enabled:bg-gray-600 disabled:opacity-40 text-white text-sm font-bold w-6 h-[26px] rounded border border-gray-600 flex items-center justify-center">+</button>
+                            <button id="planned-level-plus" ${plannedLevel >= maxLevel ? "disabled" : ""} class="bg-gray-700 hover:enabled:bg-gray-600 disabled:opacity-40 text-white text-base font-bold w-8 h-8 rounded border border-gray-600 flex items-center justify-center">+</button>
+                        </div>
+                        <div class="relative">
+                            <button id="header-reset-build-btn" ${totalPoints === 0 ? "disabled" : ""} class="bg-gray-700 hover:enabled:bg-gray-600 disabled:opacity-40 text-white w-8 h-8 rounded border border-gray-600 flex items-center justify-center">
+                                <i class="fas fa-redo text-sm"></i>
+                            </button>
+                            <div id="header-reset-tooltip" class="${HEADER_TOOLTIP_CLS} whitespace-nowrap">
+                                Reset build
+                            </div>
                         </div>
                         ${phaseSelectorHTML}
                         <div>
@@ -2008,6 +2031,9 @@ function updateTalentTreesInPlace(classKey) {
         minusBtn.disabled = (currentState.plannedLevel ?? 0) <= minLevel;
     }
 
+    const headerResetBtn = document.getElementById("header-reset-build-btn");
+    if (headerResetBtn) headerResetBtn.disabled = totalPoints === 0;
+
     trees.forEach((treeName, index) => {
         const pts = treePoints[index];
 
@@ -2227,6 +2253,14 @@ function initPlannedLevelWidget() {
     document.getElementById("planned-level-plus")?.addEventListener("click", () =>
         applyPlannedLevel(parseInt(inputEl.value) + 1));
 
+    const resetBtn = document.getElementById("header-reset-build-btn");
+    const resetTooltip = document.getElementById("header-reset-tooltip");
+    if (resetBtn && resetTooltip) {
+        resetBtn.addEventListener("mouseenter", () => { if (!resetBtn.disabled) resetTooltip.classList.remove("hidden"); });
+        resetBtn.addEventListener("mouseleave", () => resetTooltip.classList.add("hidden"));
+    }
+    resetBtn?.addEventListener("click", resetTalents);
+
     inputEl.addEventListener("change", () => {
         const v = parseInt(inputEl.value);
         if (!isNaN(v)) applyPlannedLevel(v);
@@ -2253,9 +2287,17 @@ function resetTree(treeName) {
 
     // Check if we're in Cataclysm and resetting the chosen spec tree
     if (expansion === "cataclysm" && treeName === chosenSpec) {
-        // Reset all trees instead of just this one
-        resetTalents();
-        return; // Already handled everything
+        const specPoints = Object.values(currentState.talents[classKey]?.[treeName] || {})
+            .reduce((s, v) => s + v, 0);
+        if (specPoints === 0) {
+            chosenSpec = null;
+            updatePlaceholder();
+            renderSpecSelectionPanel();
+            updateURLHash();
+        } else {
+            resetTalents();
+        }
+        return;
     }
 
     // Remove all talents in this tree
@@ -2829,6 +2871,7 @@ function saveBuild() {
         version: currentState.version,
         class: currentState.class,
         phase: currentState.phase,
+        plannedLevel: currentState.plannedLevel,
         talents: structuredClone(currentState.talents),
         pointsSpent: currentState.pointsSpent,
         talentOrder: structuredClone(currentState.talentOrder),
@@ -4732,6 +4775,7 @@ function loadBuild(index) {
     currentState.version = build.version;
     currentState.class = classKey;
     currentState.phase = build.phase || 1; // default to 1 if missing
+    currentState.plannedLevel = build.plannedLevel || null; // restored before renderTalentTrees clamps it
     currentState.talents = structuredClone(build.talents);
 
     // Use the maxPoints for the current version
