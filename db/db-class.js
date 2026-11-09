@@ -18,6 +18,17 @@ let _filterIdCounter = 0;
 const METAL_FRAME = `border:1.5px solid #9a9897;border-bottom-color:#4e4e4c;border-left-color:#4e4e4c;border-right-color:#7b7670;box-shadow:0 0 0 1px #000,-2px 2px 4px rgba(0,0,0,0.9),inset 0 0 0 1px rgba(0,0,0,0.85);background:#050508`;
 const _tabFlat = {}; // { spells: [...], races: [], ... } — populated as tabs are built
 
+let currentExpansion = 'vanilla';
+
+const EXPANSION_STRIP = [
+    { key: 'vanilla',    label: 'Classic'             },
+    { key: 'tbc',        label: 'TBC'                 },
+    { key: 'wotlk',      label: 'WotLK'               },
+    { key: 'cataclysm',  label: 'Cataclysm'           },
+    { key: 'forever',    label: 'Forever'             },
+    { key: 'peoples',    label: 'Peoples of Azeroth'  },
+];
+
 function iconURL(icon, size = 'medium') {
     return `${ICON_BASE}/${size}/${icon}.jpg`;
 }
@@ -102,7 +113,7 @@ function buildSpecGrid(className, meta) {
     const classSpecs = SPECS[className] ?? {};
 
     // Build name → icon lookup from merged baseline + talent ability data
-    const masterEntries = Object.values(abilityData.vanilla?.[className] ?? {});
+    const masterEntries = Object.values(abilityData[currentExpansion]?.[className] ?? {});
     const iconByName = new Map(masterEntries.map(e => [e.name.toLowerCase(), e.icon]));
 
     return meta.specs.map(specName => {
@@ -178,7 +189,7 @@ function buildPaginationBar(tabKey, page) {
 }
 
 function buildSpellsContent(className, meta) {
-    const allAbilitiesObj = baselineClassAbilities.vanilla?.[className] ?? {};
+    const allAbilitiesObj = baselineClassAbilities[currentExpansion]?.[className] ?? {};
     const seenIds   = new Set();
     const seenNames = new Set();
     const flat = [];
@@ -195,8 +206,8 @@ function buildSpellsContent(className, meta) {
     }
 
     // Talent abilities
-    const vanillaTalents = baseTalents.vanilla?.[className] ?? {};
-    for (const [specName, specTalents] of Object.entries(vanillaTalents)) {
+    const classTalents = baseTalents[currentExpansion]?.[className] ?? {};
+    for (const [specName, specTalents] of Object.entries(classTalents)) {
         for (const t of specTalents) {
             if (t.isActive && !seenNames.has(t.name.toLowerCase())) {
                 seenNames.add(t.name.toLowerCase());
@@ -841,6 +852,17 @@ function wireColumnFilter(root) {
     document.addEventListener('click', () => dropdown.classList.add('hidden'));
 }
 
+function wireExpansionStrip(root) {
+    const strip = root.querySelector('#db-expansion-strip');
+    if (!strip) return;
+    strip.addEventListener('click', e => {
+        const btn = e.target.closest('[data-expansion]');
+        if (!btn) return;
+        currentExpansion = btn.dataset.expansion;
+        render();
+    });
+}
+
 function render() {
     const root = document.getElementById('db-class-root');
     if (!root) return;
@@ -866,6 +888,13 @@ function render() {
 
     root.innerHTML = `
     ${buildBreadcrumbs(className)}
+
+    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 border-b border-gray-700">
+        ${EXPANSION_STRIP.map(({ key, label }) => {
+            const active = key === currentExpansion;
+            return `<button data-expansion="${key}" class="px-3 py-1.5 text-sm border-b-2 transition-colors ${active ? 'border-yellow-400 text-yellow-400' : 'border-transparent text-gray-400 hover:text-gray-200'}">${label}</button>`;
+        }).join('')}
+    </div>
 
     <div class="flex items-center gap-4 mb-6">
         ${metalIcon(iconKey, 'large', className)}
@@ -905,6 +934,7 @@ function render() {
     wireColumnFilter(root);
     wireResetAllFilters(root);
     wireMatchMode(root);
+    wireExpansionStrip(root);
 }
 
 render();
