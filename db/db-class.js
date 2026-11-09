@@ -27,7 +27,7 @@ let currentExpansion = 'vanilla';
 const EXPANSION_STRIP = [
     { key: 'vanilla',    label: 'Classic'             },
     { key: 'tbc',        label: 'TBC'                 },
-    { key: 'wotlk',      label: 'WotLK'               },
+    { key: 'wotlk',      label: 'Wrath'               },
     { key: 'cataclysm',  label: 'Cataclysm'           },
     { key: 'forever',    label: 'Forever'             },
     { key: 'peoples',    label: 'Peoples of Azeroth'  },
