@@ -11,8 +11,23 @@ import { classColors } from '../tc/class-colors.js';
 const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons';
 const FALLBACK_ICON = `${ICON_BASE}/medium/inv_misc_questionmark.jpg`;
 const PAGE_SIZE = 50;
+const NUMERIC_FILTER_COLS = new Set(['level']);
+const FILTER_OPERATORS = ['>', '>=', '=', '<=', '<'];
+const COL_FIELD_MAP = { level: 'requiresLevel' };
+let _filterIdCounter = 0;
 const METAL_FRAME = `border:1.5px solid #9a9897;border-bottom-color:#4e4e4c;border-left-color:#4e4e4c;border-right-color:#7b7670;box-shadow:0 0 0 1px #000,-2px 2px 4px rgba(0,0,0,0.9),inset 0 0 0 1px rgba(0,0,0,0.85);background:#050508`;
 const _tabFlat = {}; // { spells: [...], races: [], ... } — populated as tabs are built
+
+let currentExpansion = 'vanilla';
+
+const EXPANSION_STRIP = [
+    { key: 'vanilla',    label: 'Classic'             },
+    { key: 'tbc',        label: 'TBC'                 },
+    { key: 'wotlk',      label: 'WotLK'               },
+    { key: 'cataclysm',  label: 'Cataclysm'           },
+    { key: 'forever',    label: 'Forever'             },
+    { key: 'peoples',    label: 'Peoples of Azeroth'  },
+];
 
 function iconURL(icon, size = 'medium') {
     return `${ICON_BASE}/${size}/${icon}.jpg`;
@@ -98,7 +113,7 @@ function buildSpecGrid(className, meta) {
     const classSpecs = SPECS[className] ?? {};
 
     // Build name → icon lookup from merged baseline + talent ability data
-    const masterEntries = Object.values(abilityData.vanilla?.[className] ?? {});
+    const masterEntries = Object.values(abilityData[currentExpansion]?.[className] ?? {});
     const iconByName = new Map(masterEntries.map(e => [e.name.toLowerCase(), e.icon]));
 
     return meta.specs.map(specName => {
@@ -174,7 +189,7 @@ function buildPaginationBar(tabKey, page) {
 }
 
 function buildSpellsContent(className, meta) {
-    const allAbilitiesObj = baselineClassAbilities.vanilla?.[className] ?? {};
+    const allAbilitiesObj = baselineClassAbilities[currentExpansion]?.[className] ?? {};
     const seenIds   = new Set();
     const seenNames = new Set();
     const flat = [];
@@ -191,8 +206,8 @@ function buildSpellsContent(className, meta) {
     }
 
     // Talent abilities
-    const vanillaTalents = baseTalents.vanilla?.[className] ?? {};
-    for (const [specName, specTalents] of Object.entries(vanillaTalents)) {
+    const classTalents = baseTalents[currentExpansion]?.[className] ?? {};
+    for (const [specName, specTalents] of Object.entries(classTalents)) {
         for (const t of specTalents) {
             if (t.isActive && !seenNames.has(t.name.toLowerCase())) {
                 seenNames.add(t.name.toLowerCase());
@@ -208,6 +223,8 @@ function buildSpellsContent(className, meta) {
     _tabFlat.spellsSpecFilter = 'all';
     _tabFlat.spellsSortCol = null;
     _tabFlat.spellsSortDir = 'asc';
+    _tabFlat.columnFilters = [];
+    _tabFlat.filterMatchMode = 'all';
 
     if (!flat.length) {
         return `<div class="py-8 text-center text-sm" style="color:var(--tf-text-soft)">No spell data available.</div>`;
@@ -233,8 +250,37 @@ function buildSpellsContent(className, meta) {
             ${meta.specs.map(s => `<button class="db-spec-btn" data-spec="${s}" data-label="${s}">${s} (${flat.filter(a => a.spec === s).length})</button>`).join('')}
         </div>
         <div id="db-search-wrapper" class="mb-2 hidden">
-            <input type="text" id="db-related-search" placeholder="Search…"
-                   class="tf-control rounded px-3 py-1.5 text-sm" style="width:260px;max-width:100%">
+            <div class="relative" style="width:260px;max-width:100%">
+                <input type="text" id="db-related-search" placeholder="Search…"
+                       class="tf-control rounded pl-3 pr-8 py-1.5 text-sm w-full">
+                <i class="fas fa-search absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 text-sm pointer-events-none"></i>
+            </div>
+        </div>
+        <div id="db-col-filters-container" class="hidden flex flex-col gap-1 mb-2"></div>
+        <div class="hidden flex items-center gap-4 mb-3" id="db-filter-actions-row">
+            <div id="db-col-filter-wrapper" class="relative inline-block">
+                <button id="db-add-col-filter-btn" class="flex items-center gap-1.5 text-sm">
+                    <i class="fas fa-plus" style="color:#22c55e;font-size:0.7rem"></i>
+                    <span style="color:var(--tf-accent)">Add column filter…</span>
+                </button>
+                <div id="db-col-filter-dropdown" class="hidden absolute left-0 top-full mt-1 z-50 rounded shadow-xl border py-1" style="min-width:160px;background:var(--tf-bg-panel);border-color:var(--tf-border)">
+                </div>
+            </div>
+            <div id="db-match-mode-row" class="hidden flex items-center gap-2 text-sm" style="color:var(--tf-text-soft)">
+                Match:
+                <label class="flex items-center gap-1.5 cursor-pointer select-none">
+                    <input type="radio" name="db-match-mode" value="all" checked style="accent-color:var(--tf-accent)">
+                    <span>All</span>
+                </label>
+                <label class="flex items-center gap-1.5 cursor-pointer select-none">
+                    <input type="radio" name="db-match-mode" value="any" style="accent-color:var(--tf-accent)">
+                    <span>Any</span>
+                </label>
+            </div>
+            <button id="db-reset-all-filters-btn" class="hidden flex items-center gap-1.5 text-sm">
+                <i class="fas fa-times" style="color:#ef4444;font-size:0.7rem"></i>
+                <span style="color:var(--tf-text-soft)">Reset</span>
+            </button>
         </div>
         <div style="overflow-x:auto">
             <table class="db-table" id="db-spells-table">
@@ -417,6 +463,32 @@ function updateButtonCounts(root) {
     });
 }
 
+function buildColFilterTest(f) {
+    const field = COL_FIELD_MAP[f.col] ?? f.col;
+    if (NUMERIC_FILTER_COLS.has(f.col)) {
+        const num = Number(f.value);
+        if (isNaN(num)) return null;
+        return ab => {
+            const v = Number(ab[field] ?? 0);
+            let match;
+            if      (f.op === '>')  match = v >  num;
+            else if (f.op === '>=') match = v >= num;
+            else if (f.op === '=')  match = v === num;
+            else if (f.op === '<=') match = v <= num;
+            else if (f.op === '<')  match = v <  num;
+            else match = true;
+            return f.invert ? !match : match;
+        };
+    } else {
+        if (f.value === '') return null;
+        return ab => {
+            const val = (ab[field] ?? '').toString().toLowerCase();
+            const match = val.includes(f.value.toLowerCase());
+            return f.invert ? !match : match;
+        };
+    }
+}
+
 function applySpellFilters(root) {
     updateButtonCounts(root);
     const typeFilter = _tabFlat.spellsTypeFilter ?? 'all';
@@ -430,10 +502,21 @@ function applySpellFilters(root) {
     let result = _tabFlat.spellsAll ?? [];
     if (typeFilter !== 'all') result = result.filter(ab => ab.type === typeFilter);
     if (specFilter !== 'all') result = result.filter(ab => ab.spec === specFilter);
-    if (q) result = result.filter(ab =>
-        ab.name.toLowerCase().includes(q) ||
-        spellSubLabel(ab).toLowerCase().includes(q)
-    );
+
+    // Build search-phase tests (subject to All/Any match mode)
+    const searchTests = [];
+    if (q) searchTests.push(ab => ab.name.toLowerCase().includes(q) || spellSubLabel(ab).toLowerCase().includes(q));
+    for (const f of (_tabFlat.columnFilters ?? [])) {
+        const test = buildColFilterTest(f);
+        if (test) searchTests.push(test);
+    }
+
+    const matchMode = _tabFlat.filterMatchMode ?? 'all';
+    if (searchTests.length > 0) {
+        result = matchMode === 'any'
+            ? result.filter(ab => searchTests.some(t => t(ab)))
+            : result.filter(ab => searchTests.every(t => t(ab)));
+    }
 
     const sorted = applySort(result);
     updateSortIcons(root);
@@ -446,6 +529,8 @@ function applySpellFilters(root) {
         _tabFlat.spells = sorted;
         goToSpellPage(root, 1);
     }
+    updateResetAllBtn(root);
+    updateMatchModeVisibility(root);
 }
 
 function filterActivePanel(root) {
@@ -455,12 +540,16 @@ function filterActivePanel(root) {
 }
 
 function wireFilterToggle(root) {
-    const btn     = root.querySelector('#db-filter-toggle');
-    const wrapper = root.querySelector('#db-search-wrapper');
-    const input   = root.querySelector('#db-related-search');
+    const btn            = root.querySelector('#db-filter-toggle');
+    const wrapper        = root.querySelector('#db-search-wrapper');
+    const actionsRow     = root.querySelector('#db-filter-actions-row');
+    const filtersContainer = root.querySelector('#db-col-filters-container');
+    const input          = root.querySelector('#db-related-search');
     if (!btn || !wrapper) return;
     btn.addEventListener('click', () => {
         const nowHidden = wrapper.classList.toggle('hidden');
+        actionsRow?.classList.toggle('hidden', nowHidden);
+        filtersContainer?.classList.toggle('hidden', nowHidden);
         btn.style.color       = nowHidden ? '' : 'var(--tf-accent)';
         btn.style.borderColor = nowHidden ? '' : 'var(--tf-accent)';
         if (nowHidden && input) {
@@ -474,6 +563,51 @@ function wireRelatedSearch(root) {
     const input = root.querySelector('#db-related-search');
     if (!input) return;
     input.addEventListener('input', () => filterActivePanel(root));
+}
+
+function updateResetAllBtn(root) {
+    const btn = root.querySelector('#db-reset-all-filters-btn');
+    if (!btn) return;
+    const hasSearch = (root.querySelector('#db-related-search')?.value ?? '') !== '';
+    const hasColFilters = (_tabFlat.columnFilters?.length ?? 0) > 0;
+    btn.classList.toggle('hidden', !(hasSearch || hasColFilters));
+}
+
+function updateMatchModeVisibility(root) {
+    const row = root.querySelector('#db-match-mode-row');
+    if (!row) return;
+    const hasSearch = (root.querySelector('#db-related-search')?.value ?? '') !== '';
+    const count = (hasSearch ? 1 : 0) + (_tabFlat.columnFilters?.length ?? 0);
+    row.classList.toggle('hidden', count < 2);
+}
+
+function wireMatchMode(root) {
+    root.querySelectorAll('input[name="db-match-mode"]').forEach(radio => {
+        radio.addEventListener('change', () => {
+            if (radio.checked) {
+                _tabFlat.filterMatchMode = radio.value;
+                filterActivePanel(root);
+            }
+        });
+    });
+}
+
+function wireResetAllFilters(root) {
+    const btn = root.querySelector('#db-reset-all-filters-btn');
+    if (!btn) return;
+    const label = btn.querySelector('span');
+    btn.addEventListener('mouseenter', () => { if (label) label.style.color = '#fff'; });
+    btn.addEventListener('mouseleave', () => { if (label) label.style.color = 'var(--tf-text-soft)'; });
+    btn.addEventListener('click', () => {
+        const input = root.querySelector('#db-related-search');
+        if (input) input.value = '';
+        _tabFlat.columnFilters = [];
+        _tabFlat.filterMatchMode = 'all';
+        const allRadio = root.querySelector('input[name="db-match-mode"][value="all"]');
+        if (allRadio) allRadio.checked = true;
+        root.querySelector('#db-col-filters-container')?.replaceChildren();
+        filterActivePanel(root);
+    });
 }
 
 function wireTypeFilter(root) {
@@ -523,6 +657,212 @@ function wireResetSort(root) {
     });
 }
 
+function getColsFromPanel(root) {
+    const activePanel = root.querySelector('.db-related-panel:not(.hidden)');
+    return [...(activePanel?.querySelectorAll('table thead th[data-col]') ?? [])].map(th => ({
+        col: th.dataset.col,
+        label: th.childNodes[0]?.textContent?.trim() ?? th.dataset.col,
+    }));
+}
+
+function addColumnFilter(root, col, colLabel) {
+    _tabFlat.columnFilters = _tabFlat.columnFilters ?? [];
+    const filter = { id: ++_filterIdCounter, col, op: '>', value: NUMERIC_FILTER_COLS.has(col) ? '0' : '', invert: false };
+    _tabFlat.columnFilters.push(filter);
+    const container = root.querySelector('#db-col-filters-container');
+    if (container) container.appendChild(buildFilterLine(root, filter));
+    applySpellFilters(root);
+}
+
+function buildFilterLine(root, filter) {
+    const cols = getColsFromPanel(root);
+    const isNumeric = NUMERIC_FILTER_COLS.has(filter.col);
+
+    const line = document.createElement('div');
+    line.className = 'flex items-center gap-2 flex-wrap';
+    line.dataset.filterId = filter.id;
+
+    // Helper: small inline dropdown (trigger + panel)
+    function makeDropdown(triggerHTML, items, getValue, onSelect, headerText = null) {
+        const wrap = document.createElement('div');
+        wrap.className = 'relative';
+
+        const trigger = document.createElement('button');
+        trigger.className = 'tf-control rounded px-2 py-1 text-sm flex items-center gap-1';
+        trigger.innerHTML = triggerHTML;
+        wrap.appendChild(trigger);
+
+        const panel = document.createElement('div');
+        panel.className = 'hidden absolute left-0 top-full mt-1 z-50 rounded shadow-xl border py-1';
+        panel.style.cssText = 'min-width:170px;background:var(--tf-bg-panel);border-color:var(--tf-border)';
+        wrap.appendChild(panel);
+
+        function refreshItems() {
+            const activeVal = getValue();
+            const headerHTML = headerText
+                ? `<div class="px-3 py-1.5 text-sm font-semibold" style="color:#fff">${headerText}</div>`
+                : '';
+            panel.innerHTML = headerHTML + items.map(it => {
+                const checked = it.value === activeVal
+                    ? `<i class="fas fa-check text-xs mr-1" style="color:var(--tf-accent)"></i>`
+                    : `<span style="display:inline-block;width:1.1em"></span>`;
+                return `<button class="db-dd-opt block w-full text-left px-3 py-1.5 text-sm" style="color:var(--tf-text)" data-value="${it.value}">${checked}${it.label}</button>`;
+            }).join('');
+            panel.querySelectorAll('.db-dd-opt').forEach(opt => {
+                opt.addEventListener('mouseenter', () => { opt.style.color = '#fff'; });
+                opt.addEventListener('mouseleave', () => { opt.style.color = 'var(--tf-text)'; });
+                opt.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    panel.classList.add('hidden');
+                    onSelect(opt.dataset.value);
+                });
+            });
+        }
+
+        trigger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            if (!panel.classList.contains('hidden')) { panel.classList.add('hidden'); return; }
+            refreshItems();
+            panel.classList.remove('hidden');
+        });
+        document.addEventListener('click', () => panel.classList.add('hidden'));
+
+        return { wrap, trigger, panel };
+    }
+
+    // — Remove button —
+    const removeBtn = document.createElement('button');
+    removeBtn.className = 'flex items-center justify-center w-5 h-5 rounded';
+    removeBtn.style.cssText = 'color:#ef4444;flex-shrink:0';
+    removeBtn.innerHTML = '<i class="fas fa-times text-xs"></i>';
+    removeBtn.addEventListener('mouseenter', () => { removeBtn.style.color = '#f87171'; });
+    removeBtn.addEventListener('mouseleave', () => { removeBtn.style.color = '#ef4444'; });
+    removeBtn.addEventListener('click', () => {
+        _tabFlat.columnFilters = (_tabFlat.columnFilters ?? []).filter(f => f.id !== filter.id);
+        line.remove();
+        applySpellFilters(root);
+    });
+    line.appendChild(removeBtn);
+
+    // — Column name dropdown —
+    const colItems = cols.map(c => ({ value: c.col, label: c.label }));
+    const colDd = makeDropdown(
+        `${cols.find(c => c.col === filter.col)?.label ?? filter.col} <i class="fas fa-chevron-down text-xs"></i>`,
+        colItems,
+        () => filter.col,
+        (newCol) => {
+            filter.col = newCol;
+            colDd.trigger.innerHTML = `${cols.find(c => c.col === newCol)?.label ?? newCol} <i class="fas fa-chevron-down text-xs"></i>`;
+            const nowNumeric = NUMERIC_FILTER_COLS.has(newCol);
+            opWrap.style.display = nowNumeric ? '' : 'none';
+            if (!nowNumeric) { filter.op = '>'; filter.value = ''; valueInput.value = ''; }
+            applySpellFilters(root);
+        },
+        'Change column…'
+    );
+    line.appendChild(colDd.wrap);
+
+    // — Operator dropdown (numeric only) —
+    const opItems = FILTER_OPERATORS.map(o => ({ value: o, label: o }));
+    const opDd = makeDropdown(
+        `${filter.op} <i class="fas fa-chevron-down text-xs"></i>`,
+        opItems,
+        () => filter.op,
+        (newOp) => {
+            filter.op = newOp;
+            opDd.trigger.innerHTML = `${newOp} <i class="fas fa-chevron-down text-xs"></i>`;
+            applySpellFilters(root);
+        }
+    );
+    const opWrap = opDd.wrap;
+    if (!isNumeric) opWrap.style.display = 'none';
+    line.appendChild(opWrap);
+
+    // — Value input —
+    const valueInput = document.createElement('input');
+    valueInput.type = 'text';
+    valueInput.value = filter.value;
+    valueInput.className = 'tf-control rounded px-2 py-1 text-sm';
+    valueInput.style.width = '70px';
+    const errorSpan = document.createElement('span');
+    errorSpan.className = 'text-xs';
+    errorSpan.style.color = '#ef4444';
+    errorSpan.textContent = 'Invalid filter.';
+    errorSpan.style.display = 'none';
+    valueInput.addEventListener('input', () => {
+        filter.value = valueInput.value;
+        const bad = NUMERIC_FILTER_COLS.has(filter.col) && isNaN(Number(filter.value)) && filter.value !== '';
+        errorSpan.style.display = bad ? '' : 'none';
+        if (!bad) applySpellFilters(root);
+    });
+    line.appendChild(valueInput);
+
+    // — Invert checkbox —
+    const invertLabel = document.createElement('label');
+    invertLabel.className = 'flex items-center gap-1 text-sm cursor-pointer select-none';
+    invertLabel.style.color = 'var(--tf-text-soft)';
+    const invertCb = document.createElement('input');
+    invertCb.type = 'checkbox';
+    invertCb.checked = filter.invert;
+    invertCb.addEventListener('change', () => { filter.invert = invertCb.checked; applySpellFilters(root); });
+    invertLabel.appendChild(invertCb);
+    invertLabel.appendChild(document.createTextNode('Invert'));
+    line.appendChild(invertLabel);
+
+    // — Error span (after invert) —
+    line.appendChild(errorSpan);
+
+    return line;
+}
+
+function wireColumnFilter(root) {
+    const btn      = root.querySelector('#db-add-col-filter-btn');
+    const dropdown = root.querySelector('#db-col-filter-dropdown');
+    if (!btn || !dropdown) return;
+
+    const label = btn.querySelector('span');
+    btn.addEventListener('mouseenter', () => { if (label) label.style.color = '#fff'; });
+    btn.addEventListener('mouseleave', () => { if (label) label.style.color = 'var(--tf-accent)'; });
+
+    btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (!dropdown.classList.contains('hidden')) {
+            dropdown.classList.add('hidden');
+            return;
+        }
+        const activePanel = root.querySelector('.db-related-panel:not(.hidden)');
+        const ths = [...(activePanel?.querySelectorAll('table thead th[data-col]') ?? [])];
+        dropdown.innerHTML = ths.map(th => {
+            const colLabel = th.childNodes[0]?.textContent?.trim() ?? th.dataset.col;
+            return `<button class="db-col-filter-opt block w-full text-left px-4 py-1.5 text-sm" style="color:var(--tf-text)" data-col="${th.dataset.col}">${colLabel}</button>`;
+        }).join('');
+        dropdown.querySelectorAll('.db-col-filter-opt').forEach(opt => {
+            opt.addEventListener('mouseenter', () => { opt.style.color = '#fff'; });
+            opt.addEventListener('mouseleave', () => { opt.style.color = 'var(--tf-text)'; });
+            opt.addEventListener('click', (e) => {
+                e.stopPropagation();
+                dropdown.classList.add('hidden');
+                const colLabel = opt.textContent.trim();
+                addColumnFilter(root, opt.dataset.col, colLabel);
+            });
+        });
+        dropdown.classList.remove('hidden');
+    });
+
+    document.addEventListener('click', () => dropdown.classList.add('hidden'));
+}
+
+function wireExpansionStrip(root) {
+    const strip = root.querySelector('#db-expansion-strip');
+    if (!strip) return;
+    strip.addEventListener('click', e => {
+        const btn = e.target.closest('[data-expansion]');
+        if (!btn) return;
+        currentExpansion = btn.dataset.expansion;
+        render();
+    });
+}
+
 function render() {
     const root = document.getElementById('db-class-root');
     if (!root) return;
@@ -548,6 +888,13 @@ function render() {
 
     root.innerHTML = `
     ${buildBreadcrumbs(className)}
+
+    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 border-b border-gray-700">
+        ${EXPANSION_STRIP.map(({ key, label }) => {
+            const active = key === currentExpansion;
+            return `<button data-expansion="${key}" class="px-3 py-1.5 text-sm border-b-2 transition-colors ${active ? 'border-yellow-400 text-yellow-400' : 'border-transparent text-gray-400 hover:text-gray-200'}">${label}</button>`;
+        }).join('')}
+    </div>
 
     <div class="flex items-center gap-4 mb-6">
         ${metalIcon(iconKey, 'large', className)}
@@ -584,6 +931,10 @@ function render() {
     wireColumnSort(root);
     wireResetSort(root);
     wireRelatedSearch(root);
+    wireColumnFilter(root);
+    wireResetAllFilters(root);
+    wireMatchMode(root);
+    wireExpansionStrip(root);
 }
 
 render();

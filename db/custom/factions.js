@@ -15,7 +15,7 @@ export const newFactions = Object.freeze({
 });
 
 export const FACTION_DESCRIPTIONS = Object.freeze({
-    [newFactions.ALLIANCE]:    'The Alliance consists of four races: the noble humans, the adventurous dwarves, the ingenious gnomes, and the exiled high elves. Bound by a loathing for all things demonic, they fight to restore order in this war-torn world.',
+    [newFactions.ALLIANCE]:    'The Alliance consists of four races: the noble humans, the adventurous dwarves, the exiled high elves, and the ingenious gnomes. Bound by a loathing for all things demonic, they fight to restore order in this war-torn world.',
     [newFactions.HORDE]:       'Four races comprise the Horde: the brutal orcs, the spiritual tauren, the quick-witted trolls, and the single-minded ogres. Beset by enemies on all sides, these proud peoples are bound by strength, honor, and an unyielding will to survive and forge their own destiny.',
     [newFactions.FORSAKEN]:    "Two races make up the Forsaken: the undead humans of Lordaeron and the fallen elves of Quel'Thalas, both torn from their former lives by the Scourge and freed from the Lich King's grasp. Wretched and twisted by the curse of undeath and forever estranged from their past, they defy the fate imposed upon them in a world that fears and despises them.",
     [newFactions.NIGHT_ELVES]: "Two races have kept vigil over Azeroth's ancient places since before memory: the reclusive night elves, also known as \"children of the stars\", and the primal furbolgs, keepers of forgotten groves. Bound by a reverence for nature and a distrust of those who would defile it, they watch over the wild with unyielding resolve.",
