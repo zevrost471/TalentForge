@@ -7,6 +7,10 @@ import { baselineClassAbilities } from './baseline-class-abilities.js';
 import { baseTalents } from './base-talents.js';
 import { abilityData } from './ability-data.js';
 import { classColors } from '../tc/class-colors.js';
+import { getClassScreenshots } from './class-screenshots.js';
+import { expansionIcon, EXPANSION_COLORS } from './expansions.js';
+
+const SCREENSHOTS_BASE = '../../assets/db-screenshots/';
 
 const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons';
 const FALLBACK_ICON = `${ICON_BASE}/medium/inv_misc_questionmark.jpg`;
@@ -299,17 +303,41 @@ function buildSpellsContent(className, meta) {
 const RELATED_TABS = ['Spells', 'Races', 'Skills', 'Trainers', 'Items', 'Quests', 'Screenshots'];
 
 function buildRelated(className, meta) {
+    const screenshots = getClassScreenshots(className, currentExpansion);
+    _tabFlat.screenshots = screenshots;
+
     // Build panels first so _tabFlat gets populated by buildSpellsContent
     const panels = RELATED_TABS.map((tab, i) => {
-        const content = tab === 'Spells'
-            ? buildSpellsContent(className, meta)
-            : `<div class="py-8 text-center text-sm" style="color:var(--tf-text-soft)">Coming soon.</div>`;
+        let content;
+        if (tab === 'Spells') {
+            content = buildSpellsContent(className, meta);
+        } else if (tab === 'Screenshots') {
+            const pageItems = screenshots.slice(0, PAGE_SIZE);
+            const grid = pageItems.length
+                ? `<div id="db-screenshots-grid" class="grid gap-3" style="grid-template-columns:repeat(auto-fill,minmax(220px,1fr))">
+                       ${pageItems.map(file => `
+                           <img src="${SCREENSHOTS_BASE}${file}" alt="${className} screenshot"
+                                data-screenshot="${SCREENSHOTS_BASE}${file}"
+                                style="width:100%;border-radius:6px;display:block;border:1px solid var(--tf-border);cursor:pointer"
+                                onerror="this.style.display='none'">`).join('')}
+                   </div>`
+                : `<div id="db-screenshots-grid" class="py-8 text-center text-sm" style="color:var(--tf-text-soft)">No screenshots yet.</div>`;
+            content = `
+                <div class="flex items-center justify-end gap-2 mb-2">
+                    <div id="db-pagination-screenshots-top" class="db-pagination" style="margin:0">${buildPaginationBar('screenshots', 1)}</div>
+                </div>
+                ${grid}
+                <div id="db-pagination-screenshots-bot" class="db-pagination mt-2">${buildPaginationBar('screenshots', 1)}</div>`;
+        } else {
+            content = `<div class="py-8 text-center text-sm" style="color:var(--tf-text-soft)">Coming soon.</div>`;
+        }
         return `<div class="db-related-panel${i === 0 ? '' : ' hidden'}" data-panel="${tab.toLowerCase()}" style="padding-top:12px">${content}</div>`;
     }).join('');
 
     const counts = {
         spells:      _tabFlat.spells?.length ?? 0,
-        races:       0, skills: 0, trainers: 0, items: 0, quests: 0, screenshots: 0,
+        races:       0, skills: 0, trainers: 0, items: 0, quests: 0,
+        screenshots: screenshots.length,
     };
     _tabFlat.screenshotsCount = counts.screenshots;
 
@@ -356,7 +384,14 @@ function buildSidebar(className, meta, iconKey) {
         </div>
         <div class="border-t pt-4" style="border-color:var(--tf-border)">
             <div class="text-base tf-title mb-3 text-center">Screenshots (${_tabFlat.screenshotsCount ?? 0})</div>
-            <div class="text-xs" style="color:var(--tf-text-soft)">None yet</div>
+            ${(_tabFlat.screenshotsCount ?? 0) > 0
+                ? (() => { const file = getClassScreenshots(className, currentExpansion)[0]; return `
+                    <img src="${SCREENSHOTS_BASE}${file}" alt="${className} screenshot"
+                         data-screenshot="${SCREENSHOTS_BASE}${file}"
+                         class="block w-full rounded cursor-pointer"
+                         style="border:1px solid var(--tf-border)"
+                         onerror="this.style.display='none'">`;})()
+                : `<div class="text-xs" style="color:var(--tf-text-soft)">None yet</div>`}
         </div>
     </aside>`;
 }
@@ -391,6 +426,29 @@ function goToSpellPage(root, page) {
     if (barBot) barBot.innerHTML = html;
 }
 
+function goToScreenshotPage(root, page) {
+    const flat = _tabFlat.screenshots ?? [];
+    if (!flat.length) return;
+    const totalPages = Math.ceil(flat.length / PAGE_SIZE);
+    page = Math.max(1, Math.min(page, totalPages));
+
+    const grid   = root.querySelector('#db-screenshots-grid');
+    const barTop = root.querySelector('#db-pagination-screenshots-top');
+    const barBot = root.querySelector('#db-pagination-screenshots-bot');
+    if (!grid) return;
+
+    const start = (page - 1) * PAGE_SIZE;
+    const html  = buildPaginationBar('screenshots', page);
+    const className = getClassFromURL() ?? '';
+    grid.innerHTML = flat.slice(start, start + PAGE_SIZE).map(file => `
+        <img src="${SCREENSHOTS_BASE}${file}" alt="${className} screenshot"
+             data-screenshot="${SCREENSHOTS_BASE}${file}"
+             style="width:100%;border-radius:6px;display:block;border:1px solid var(--tf-border);cursor:pointer"
+             onerror="this.style.display='none'">`).join('');
+    if (barTop) barTop.innerHTML = html;
+    if (barBot) barBot.innerHTML = html;
+}
+
 function wirePagination(root) {
     root.addEventListener('click', e => {
         const link = e.target.closest('.db-page-link');
@@ -399,6 +457,7 @@ function wirePagination(root) {
         const tab  = link.dataset.tab;
         const page = parseInt(link.dataset.page, 10);
         if (tab === 'spells') goToSpellPage(root, page);
+        else if (tab === 'screenshots') goToScreenshotPage(root, page);
     });
 }
 
@@ -852,6 +911,53 @@ function wireColumnFilter(root) {
     document.addEventListener('click', () => dropdown.classList.add('hidden'));
 }
 
+function openScreenshotLightbox(src, alt) {
+    document.getElementById('db-screenshot-overlay')?.remove();
+    document.getElementById('db-screenshot-lightbox')?.remove();
+
+    const overlay = document.createElement('div');
+    overlay.id = 'db-screenshot-overlay';
+    overlay.classList.add('glyph-overlay');
+    overlay.addEventListener('click', closeScreenshotLightbox);
+    document.body.appendChild(overlay);
+
+    const box = document.createElement('div');
+    box.id = 'db-screenshot-lightbox';
+    box.classList.add('db-screenshot-lightbox');
+    box.innerHTML = `
+        <img src="${src}" alt="${alt}"
+             style="display:block;max-width:min(872px,calc(90vw - 28px));max-height:80vh;object-fit:contain;border-radius:4px 4px 0 0">
+        <div style="display:flex;justify-content:flex-end;padding:10px 12px;background:var(--tf-bg-panel)">
+            <button id="db-screenshot-close"
+                    style="background:none;border:none;color:#aaa;padding:4px 8px;cursor:pointer;font-size:0.85rem;line-height:1;display:inline-flex;align-items:center;gap:5px">
+                <i class="fa-solid fa-xmark" style="font-size:1rem;line-height:1;position:relative;top:0"></i><span>Close</span>
+            </button>
+        </div>`;
+    const closeBtn = box.querySelector('#db-screenshot-close');
+    closeBtn.addEventListener('mouseenter', () => { closeBtn.style.color = '#fff'; });
+    closeBtn.addEventListener('mouseleave', () => { closeBtn.style.color = '#aaa'; });
+    closeBtn.addEventListener('click', closeScreenshotLightbox);
+    document.body.appendChild(box);
+    document.body.classList.add('body-no-scroll');
+
+    const escHandler = e => { if (e.key === 'Escape') closeScreenshotLightbox(); };
+    document.addEventListener('keydown', escHandler, { once: true });
+}
+
+function closeScreenshotLightbox() {
+    document.getElementById('db-screenshot-overlay')?.remove();
+    document.getElementById('db-screenshot-lightbox')?.remove();
+    document.body.classList.remove('body-no-scroll');
+}
+
+function wireScreenshots(root) {
+    root.addEventListener('click', e => {
+        const img = e.target.closest('[data-screenshot]');
+        if (!img) return;
+        openScreenshotLightbox(img.dataset.screenshot, img.alt);
+    });
+}
+
 function wireExpansionStrip(root) {
     const strip = root.querySelector('#db-expansion-strip');
     if (!strip) return;
@@ -889,10 +995,13 @@ function render() {
     root.innerHTML = `
     ${buildBreadcrumbs(className)}
 
-    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 border-b border-gray-700">
+    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 pb-1 border-b border-gray-700">
         ${EXPANSION_STRIP.map(({ key, label }) => {
             const active = key === currentExpansion;
-            return `<button data-expansion="${key}" class="px-3 py-1.5 text-sm border-b-2 transition-colors ${active ? 'border-yellow-400 text-yellow-400' : 'border-transparent text-gray-400 hover:text-gray-200'}">${label}</button>`;
+            const style = active
+                ? `style="background:${EXPANSION_COLORS[key]};color:var(--tf-bg)"`
+                : '';
+            return `<button data-expansion="${key}" ${style} class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-sm border-b-2 transition-colors ${active ? 'border-transparent' : 'border-transparent text-gray-400 hover:text-gray-200'}">${expansionIcon(key, 16, active ? 'var(--tf-bg)' : null)}${label.toUpperCase()}</button>`;
         }).join('')}
     </div>
 
@@ -935,6 +1044,7 @@ function render() {
     wireResetAllFilters(root);
     wireMatchMode(root);
     wireExpansionStrip(root);
+    wireScreenshots(root);
 }
 
 render();
