@@ -281,18 +281,19 @@ function renderRacePanel() {
 }
 
 function renderGenderButtons() {
-    if (!hasGenderVariant(state.raceId)) return `<div style="height:52px;"></div>`;
+    const hasVariant = hasGenderVariant(state.raceId);
 
     return `
         <div style="display:flex; justify-content:center; gap:10px; padding:4px 0;">
             ${['male', 'female'].map(g => {
                 const active = state.gender === g;
+                const disabled = !hasVariant && g === 'female';
                 const src = g === 'male'
                     ? '../../assets/icons/ui/wow/ui_charactercreate_gender_male.jpg'
                     : '../../assets/icons/ui/wow/ui_charactercreate_gender_female.jpg';
                 return `
                     <button data-action="select-gender" data-gender="${g}"
-                            style="position:relative; width:calc((100% - 18px) / 7); aspect-ratio:1/1; border-radius:7px; overflow:hidden; cursor:pointer; border:none; padding:0; transition:all 0.15s;">
+                            style="position:relative; width:calc((100% - 18px) / 7); aspect-ratio:1/1; border-radius:7px; overflow:hidden; cursor:${disabled ? 'not-allowed' : 'pointer'}; border:none; padding:0; transition:all 0.15s; pointer-events:${disabled ? 'none' : 'auto'}; filter:${disabled ? 'brightness(0.15) grayscale(1)' : ''}">
                         <img src="${src}" alt="${g}" style="width:100%; height:100%; object-fit:cover; display:block;"
                              onerror="this.onerror=null;this.parentElement.innerHTML='<span style=\'display:block;text-align:center;font-size:1.6rem;line-height:42px;color:${active ? W.gold : W.dim};\'>${g === 'male' ? '&#9794;' : '&#9792;'}</span>'">
                         ${active ? `<div style="position:absolute;inset:0;box-shadow:inset 0 0 7px rgba(255,215,0,1),inset 0 0 7px rgba(255,215,0,1),inset 0 0 7px rgba(255,215,0,1),inset 0 0 7px rgba(255,215,0,1);pointer-events:none;z-index:1;"></div>` : ''}
