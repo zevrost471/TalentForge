@@ -1423,6 +1423,12 @@ border-bottom-right-radius: 4px;
     display: none;
 }
 
+#db-expansion-strip button {
+    font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+}
+
 .db-table {
     width: 100%;
     border-collapse: collapse;
@@ -1438,10 +1444,10 @@ border-bottom-right-radius: 4px;
 .db-table th {
     padding: 8px 10px;
     text-align: left;
-    border-top: 1px solid #181818;
-    border-bottom: 1px solid #181818;
-    background: #303030;
-    color: #ffffff;
+    border-top: 1px solid var(--tf-bg-panel-dark);
+    border-bottom: 1px solid var(--tf-bg-panel-dark);
+    background: var(--tf-bg-control);
+    color: var(--tf-text);
     font-weight: bold;
 }
 

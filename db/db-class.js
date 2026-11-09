@@ -8,6 +8,7 @@ import { baseTalents } from './base-talents.js';
 import { abilityData } from './ability-data.js';
 import { classColors } from '../tc/class-colors.js';
 import { getClassScreenshots } from './class-screenshots.js';
+import { expansionIcon, EXPANSION_COLORS } from './expansions.js';
 
 const SCREENSHOTS_BASE = '../../assets/db-screenshots/';
 
@@ -994,10 +995,13 @@ function render() {
     root.innerHTML = `
     ${buildBreadcrumbs(className)}
 
-    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 border-b border-gray-700">
+    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 pb-1 border-b border-gray-700">
         ${EXPANSION_STRIP.map(({ key, label }) => {
             const active = key === currentExpansion;
-            return `<button data-expansion="${key}" class="px-3 py-1.5 text-sm border-b-2 transition-colors ${active ? 'border-yellow-400 text-yellow-400' : 'border-transparent text-gray-400 hover:text-gray-200'}">${label}</button>`;
+            const style = active
+                ? `style="background:${EXPANSION_COLORS[key]};color:var(--tf-bg)"`
+                : '';
+            return `<button data-expansion="${key}" ${style} class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-sm border-b-2 transition-colors ${active ? 'border-transparent' : 'border-transparent text-gray-400 hover:text-gray-200'}">${expansionIcon(key, 16, active ? 'var(--tf-bg)' : null)}${label.toUpperCase()}</button>`;
         }).join('')}
     </div>
 
