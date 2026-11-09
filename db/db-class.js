@@ -162,7 +162,7 @@ function buildSpellRow(ab) {
             <div style="display:flex;align-items:center;gap:8px">
                 ${metalIcon(ab.icon, 'medium', ab.name)}
                 <div style="display:flex;flex-direction:column;line-height:1.3">
-                    <span style="color:var(--tf-accent)">${ab.name}</span>
+                    <span class="db-item-name">${ab.name}</span>
                     ${spellSubLabel(ab) ? `<span class="text-xs" style="color:var(--tf-text-soft)">${spellSubLabel(ab)}</span>` : ''}
                 </div>
             </div>
@@ -285,10 +285,10 @@ function buildSpellsContent(className, meta) {
         <div style="overflow-x:auto">
             <table class="db-table" id="db-spells-table">
                 <thead><tr>
-                    <th data-col="name" style="cursor:pointer;user-select:none">Name <i class="fa-solid fa-sort db-sort-icon" style="visibility:hidden;font-size:0.75em;margin-left:4px"></i></th>
-                    <th data-col="level" style="width:80px;text-align:center;cursor:pointer;user-select:none">Level <i class="fa-solid fa-sort db-sort-icon" style="visibility:hidden;font-size:0.75em;margin-left:4px"></i></th>
-                    <th data-col="school" style="width:110px;text-align:center;cursor:pointer;user-select:none">School <i class="fa-solid fa-sort db-sort-icon" style="visibility:hidden;font-size:0.75em;margin-left:4px"></i></th>
-                    <th data-col="type" style="width:100px;text-align:center;cursor:pointer;user-select:none">Type <i class="fa-solid fa-sort db-sort-icon" style="visibility:hidden;font-size:0.75em;margin-left:4px"></i></th>
+                    <th data-col="name" style="cursor:pointer;user-select:none">Name <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
+                    <th data-col="level" style="width:80px;text-align:center;cursor:pointer;user-select:none">Level <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
+                    <th data-col="school" style="width:110px;text-align:center;cursor:pointer;user-select:none">School <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
+                    <th data-col="type" style="width:100px;text-align:center;cursor:pointer;user-select:none">Type <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
                 </tr></thead>
                 <tbody>${flat.slice(0, PAGE_SIZE).map(buildSpellRow).join('')}</tbody>
             </table>
@@ -425,11 +425,11 @@ function updateSortIcons(root) {
         if (!icon) return;
         if (th.dataset.col === col) {
             icon.className = `fa-solid ${dir === 'asc' ? 'fa-sort-up' : 'fa-sort-down'} db-sort-icon`;
-            icon.style.visibility = 'visible';
+            icon.style.display = '';
             icon.style.color = 'var(--tf-accent)';
         } else {
             icon.className = 'fa-solid fa-sort db-sort-icon';
-            icon.style.visibility = 'hidden';
+            icon.style.display = 'none';
             icon.style.color = '';
         }
     });

@@ -1443,6 +1443,14 @@ border-bottom-right-radius: 4px;
     background: rgba(0, 0, 0, 0.2);
 }
 
+.db-item-name {
+    color: var(--tf-accent);
+}
+
+.db-item-name:hover {
+    color: #fff;
+}
+
 .db-ability-icon {
     width: 20px;
     height: 20px;
