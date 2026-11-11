@@ -1306,12 +1306,12 @@ export const baselineClassAbilities = {
                     rank: 1,
                     requiresLevel: 32,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 50-66 damage<br><br>" + 
-                        "  2 points: 86-102 damage<br><br>" + 
-                        "  3 points: 122-138 damage<br><br>" + 
-                        "  4 points: 158-174 damage<br><br>" + 
-                        "  5 points: 194-210 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 50-66 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 86-102 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 122-138 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 158-174 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 194-210 damage<br>",
                     ],
                     trainingCost: 8000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22568/ferocious-bite",
@@ -1323,12 +1323,12 @@ export const baselineClassAbilities = {
                     rank: 2,
                     requiresLevel: 40,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1.5 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 79-103 damage<br><br>" + 
-                        "  2 points: 138-162 damage<br><br>" + 
-                        "  3 points: 197-221 damage<br><br>" + 
-                        "  4 points: 256-280 damage<br><br>" + 
-                        "  5 points: 315-339 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1.5 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 79-103 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 138-162 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 197-221 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 256-280 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 315-339 damage<br>",
                     ],
                     trainingCost: 14000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22827/ferocious-bite",
@@ -1340,12 +1340,12 @@ export const baselineClassAbilities = {
                     rank: 3,
                     requiresLevel: 48,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 122-162 damage<br><br>" + 
-                        "  2 points: 214-254 damage<br><br>" + 
-                        "  3 points: 306-346 damage<br><br>" + 
-                        "  4 points: 398-438 damage<br><br>" + 
-                        "  5 points: 490-530 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 122-162 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 214-254 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 306-346 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 398-438 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 490-530 damage<br>",
                     ],
                     trainingCost: 22000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22828/ferocious-bite",
@@ -1357,12 +1357,12 @@ export const baselineClassAbilities = {
                     rank: 4,
                     requiresLevel: 56,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.5 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 173-223 damage<br><br>" + 
-                        "  2 points: 301-351 damage<br><br>" + 
-                        "  3 points: 429-479 damage<br><br>" + 
-                        "  4 points: 557-607 damage<br><br>" + 
-                        "  5 points: 685-735 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.5 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 173-223 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 301-351 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 429-479 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 557-607 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 685-735 damage<br>",
                     ],
                     trainingCost: 30000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22829/ferocious-bite",
@@ -1374,12 +1374,12 @@ export const baselineClassAbilities = {
                     rank: 5,
                     requiresLevel: 60,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.70000005 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 199-259 damage<br><br>" + 
-                        "  2 points: 346-406 damage<br><br>" + 
-                        "  3 points: 493-553 damage<br><br>" + 
-                        "  4 points: 640-700 damage<br><br>" + 
-                        "  5 points: 787-847 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.70000005 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 199-259 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 346-406 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 493-553 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 640-700 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 787-847 damage<br>",
                     ],
                     taughtBy: "Book of Ferocious Bite V",
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=31018/ferocious-bite",
@@ -1799,12 +1799,12 @@ export const baselineClassAbilities = {
                     rank: 1,
                     requiresLevel: 20,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 42 damage over 12 sec.<br><br>" + 
-                        "  2 points: 66 damage over 12 sec.<br><br>" + 
-                        "  3 points: 90 damage over 12 sec.<br><br>" + 
-                        "  4 points: 114 damage over 12 sec.<br><br>" + 
-                        "  5 points: 138 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 42 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 66 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 90 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 114 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 138 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1819,12 +1819,12 @@ export const baselineClassAbilities = {
                     rank: 2,
                     requiresLevel: 28,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 66 damage over 12 sec.<br><br>" + 
-                        "  2 points: 108 damage over 12 sec.<br><br>" + 
-                        "  3 points: 150 damage over 12 sec.<br><br>" + 
-                        "  4 points: 192 damage over 12 sec.<br><br>" + 
-                        "  5 points: 234 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 66 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 108 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 150 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 192 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 234 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1839,12 +1839,12 @@ export const baselineClassAbilities = {
                     rank: 3,
                     requiresLevel: 36,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 90 damage over 12 sec.<br><br>" + 
-                        "  2 points: 144 damage over 12 sec.<br><br>" + 
-                        "  3 points: 198 damage over 12 sec.<br><br>" + 
-                        "  4 points: 252 damage over 12 sec.<br><br>" + 
-                        "  5 points: 306 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 90 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 144 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 198 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 252 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 306 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1859,12 +1859,12 @@ export const baselineClassAbilities = {
                     rank: 4,
                     requiresLevel: 44,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 138 damage over 12 sec.<br><br>" + 
-                        "  2 points: 222 damage over 12 sec.<br><br>" + 
-                        "  3 points: 306 damage over 12 sec.<br><br>" + 
-                        "  4 points: 390 damage over 12 sec.<br><br>" + 
-                        "  5 points: 474 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 138 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 222 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 306 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 390 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 474 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1879,12 +1879,12 @@ export const baselineClassAbilities = {
                     rank: 5,
                     requiresLevel: 52,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 192 damage over 12 sec.<br><br>" + 
-                        "  2 points: 312 damage over 12 sec.<br><br>" + 
-                        "  3 points: 432 damage over 12 sec.<br><br>" + 
-                        "  4 points: 552 damage over 12 sec.<br><br>" + 
-                        "  5 points: 672 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 192 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 312 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 432 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 552 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 672 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1899,12 +1899,12 @@ export const baselineClassAbilities = {
                     rank: 6,
                     requiresLevel: 60,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 270 damage over 12 sec.<br><br>" + 
-                        "  2 points: 438 damage over 12 sec.<br><br>" + 
-                        "  3 points: 606 damage over 12 sec.<br><br>" + 
-                        "  4 points: 774 damage over 12 sec.<br><br>" + 
-                        "  5 points: 942 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 270 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 438 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 606 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 774 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 942 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
