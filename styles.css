@@ -1474,6 +1474,26 @@ border-bottom-right-radius: 4px;
     color: #fff;
 }
 
+.db-spec-name {
+    color: var(--tf-accent);
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.db-spec-name:hover {
+    color: #fff;
+}
+
+.db-class-icon-name {
+    color: var(--tf-accent);
+    cursor: pointer;
+    transition: color 0.15s;
+}
+
+.db-class-icon-name:hover {
+    color: #fff;
+}
+
 .db-ability-icon {
     width: 20px;
     height: 20px;
