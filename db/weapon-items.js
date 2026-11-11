@@ -13,7 +13,7 @@ export const weaponItems = Object.freeze({
         POLEARM: "Polearm",
         AXE: "Two-Handed Axe",
         MACE: "Two-Handed Mace",
-        STAFF: "Two-Handed Staff",
+        STAFF: "Staff",
         SWORD: "Two-Handed Sword",
         MISCELLANEOUS: "Miscellaneous",
     },
