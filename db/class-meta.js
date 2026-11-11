@@ -33,7 +33,7 @@ export const CLASS_META = Object.freeze({
             { type: MAIL, learnedAt: 40 },
         ],
         resources: [MANA],
-        weapons: [DAGGER, ONE_AXE, TWO_AXE, POLEARM, ONE_SWORD, TWO_SWORD, STAFF, BOW, CROSSBOW, GUN],
+        weapons: [DAGGER, FIST_WEAPON, ONE_AXE, TWO_AXE, POLEARM, ONE_SWORD, TWO_SWORD, STAFF, BOW, CROSSBOW, GUN, THROWN],
         specs: ['Beast Mastery', 'Marksmanship', 'Survival'],
         roles: ['Ranged DPS'],
     },
