@@ -299,7 +299,7 @@ export const baseTalents = {
                     ranks: 1,
                     requiresTalents: null,
                     description: [
-                        "Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin cannot cast healing spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
+                        "Transforms the Druid into Moonkin Form. While in this form the armor contribution from items is increased by 360% and all party members within 30 yards have their spell critical chance increased by 3%. The Moonkin can only cast Balance spells while shapeshifted.<br><br>The act of shapeshifting frees the caster of Polymorph and Movement Impairing effects."
                     ],
                     isActive: true,
                     castTime: null,
@@ -858,7 +858,7 @@ export const baseTalents = {
                     ranks: 1,
                     requiresTalents: "tranquil_spirit",
                     description: [
-                        "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth."
+                        "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec of Rejuvenation or 18 sec of Regrowth."
                     ],
                     isActive: true,
                     castTime: null,
@@ -8770,7 +8770,7 @@ export const baseTalents = {
                     ranks: 1,
                     requiresTalents: "gift_of_nature",
                     description: [
-                        "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth."
+                        "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec of Rejuvenation or 18 sec of Regrowth."
                     ],
                     isActive: true,
                     castTime: null,
@@ -20177,7 +20177,7 @@ export const baseTalents = {
                     ranks: 1,
                     requiresTalents: "gift_of_nature",
                     description: [
-                        "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec. of Rejuvenation or 18 sec. of Regrowth."
+                        "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec of Rejuvenation or 18 sec of Regrowth."
                     ],
                     isActive: true,
                     castTime: null,
