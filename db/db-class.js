@@ -4,23 +4,58 @@ import { CLASS_DESCRIPTIONS } from './classes.js';
 import { CLASS_META } from './class-meta.js';
 import { SPECS } from './specs.js';
 import { baselineClassAbilities } from './baseline-class-abilities.js';
+import { talentClassAbilities } from './talent-class-abilities.js';
 import { baseTalents } from './base-talents.js';
+import { foreverTalents } from './forever-talents.js';
+import { peoplesTalents } from './custom/peoples-talents.js';
 import { abilityData } from './ability-data.js';
 import { classColors } from '../tc/class-colors.js';
 import { getClassScreenshots } from './class-screenshots.js';
 import { expansionIcon, EXPANSION_COLORS } from './expansions.js';
+import { buildAbilityTooltip } from './ability-tooltip.js';
 
 const SCREENSHOTS_BASE = '../../assets/db-screenshots/';
 
 const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons';
 const FALLBACK_ICON = `${ICON_BASE}/medium/inv_misc_questionmark.jpg`;
 const PAGE_SIZE = 50;
+const TOOLTIP_W = 360;
 const NUMERIC_FILTER_COLS = new Set(['level']);
 const FILTER_OPERATORS = ['>', '>=', '=', '<=', '<'];
 const COL_FIELD_MAP = { level: 'requiresLevel' };
 let _filterIdCounter = 0;
 const METAL_FRAME = `border:1.5px solid #9a9897;border-bottom-color:#4e4e4c;border-left-color:#4e4e4c;border-right-color:#7b7670;box-shadow:0 0 0 1px #000,-2px 2px 4px rgba(0,0,0,0.9),inset 0 0 0 1px rgba(0,0,0,0.85);background:#050508`;
 const _tabFlat = {}; // { spells: [...], races: [], ... } — populated as tabs are built
+
+// Resolves a talent's description for a specific rank.
+// Mirrors TC's three description formats:
+//   Case A: ["template {key}", { key: [v1, v2, ...] }]  — old format, fill by rank index
+//   Case B: ["rank1 desc", "rank2 desc", ...]            — per-rank string array
+//   Case C: ["single description"]                       — same for all ranks
+function resolveTalentDescription(talent, rank) {
+    const desc = talent.description;
+    if (!Array.isArray(desc)) return typeof desc === 'string' ? desc : null;
+
+    // Case A
+    if (desc.length === 2 && typeof desc[0] === 'string' && desc[1] !== null && typeof desc[1] === 'object' && !Array.isArray(desc[1])) {
+        const [template, values] = desc;
+        return template.replace(/\{(\w+)\}/g, (_, key) => {
+            const val = values[key];
+            if (Array.isArray(val)) return val[Math.max(0, Math.min(rank - 1, val.length - 1))] ?? '?';
+            if (val?.base !== undefined && val?.perRank !== undefined) return (val.base + val.perRank * (rank - 1)).toFixed(1);
+            return val ?? '?';
+        });
+    }
+
+    // Case B
+    if (desc.length > 1 && desc.every(d => typeof d === 'string')) {
+        return desc[Math.max(0, Math.min(rank - 1, desc.length - 1))];
+    }
+
+    // Case C
+    const textParts = desc.filter(d => typeof d === 'string');
+    return textParts.length ? textParts.join('<br>') : null;
+}
 
 let currentExpansion = 'vanilla';
 
@@ -120,6 +155,21 @@ function buildSpecGrid(className, meta) {
     const masterEntries = Object.values(abilityData[currentExpansion]?.[className] ?? {});
     const iconByName = new Map(masterEntries.map(e => [e.name.toLowerCase(), e.icon]));
 
+    // Build name → rank-1 ability lookup for tooltips
+    const allSpecArrays = Object.values(baselineClassAbilities[currentExpansion]?.[className] ?? {});
+    const rank1Map = new Map();
+    for (const arr of allSpecArrays) {
+        for (const ab of arr) {
+            const key = ab.name.toLowerCase();
+            const existing = rank1Map.get(key);
+            if (!existing || (ab.rank ?? Infinity) < (existing.rank ?? Infinity)) {
+                rank1Map.set(key, ab);
+            }
+        }
+    }
+
+    const tooltipCls = 'hidden fixed z-[9999] pointer-events-none p-2 bg-black border border-gray-600 rounded text-sm shadow-lg';
+
     return meta.specs.map(specName => {
         const specData = classSpecs[specName] ?? {};
         const description = specData.description ?? '';
@@ -131,7 +181,22 @@ function buildSpecGrid(className, meta) {
                <ul class="space-y-1.5">
                    ${keyAbilities.map(name => {
                        const icon = iconByName.get(name.toLowerCase());
-                       return `<li class="flex items-center gap-2">${icon ? metalIcon(icon, 'small', name) : ''}<span class="text-sm" style="color:var(--tf-text)">${name}</span></li>`;
+                       const abData = rank1Map.get(name.toLowerCase());
+                       const tooltipHtml = abData ? buildAbilityTooltip(abData, className, currentExpansion) : '';
+                       const iconSrc = icon ? iconURL(icon, 'large') : null;
+                       return `<li class="flex items-center gap-2">
+                           <div data-has-tooltip style="cursor:pointer">
+                               ${icon ? metalIcon(icon, 'small', name) : ''}
+                               ${abData ? `<div data-tooltip class="${tooltipCls}" style="width:${TOOLTIP_W}px">${tooltipHtml}</div>` : ''}
+                           </div>
+                           <div class="relative" data-has-tooltip style="line-height:1.3;cursor:pointer">
+                               <span class="text-sm db-item-name">${name}</span>
+                               ${abData ? `<div data-tooltip class="${tooltipCls}" style="width:${TOOLTIP_W}px">
+                                   ${iconSrc ? `<img src="${iconSrc}" alt="${name}" class="w-10 h-10 rounded border border-gray-600 absolute top-0 -left-11 z-50 pointer-events-none">` : ''}
+                                   <div>${tooltipHtml}</div>
+                               </div>` : ''}
+                           </div>
+                       </li>`;
                    }).join('')}
                </ul>`
             : `<div class="text-xs" style="color:var(--tf-text-soft)">No ability data available.</div>`;
@@ -140,7 +205,7 @@ function buildSpecGrid(className, meta) {
 
         return `
         <div class="tf-panel-flat rounded-lg p-4">
-            <h4 class="mb-2 flex items-center gap-2" style="color:var(--tf-accent)">
+            <h4 class="mb-2 flex items-center gap-2 db-spec-name">
                 ${specIconHTML}${specName}
             </h4>
             ${description ? `<p class="leading-relaxed mb-3" style="color:var(--tf-text)">${description}</p>` : ''}
@@ -161,13 +226,24 @@ function buildSpellRow(ab) {
     const typeCell = ab.type
         ? `${typeLabel}<br><span style="color:#ffffff;font-size:0.8em">${subLabel}</span>`
         : '—';
+    const className = getClassFromURL() ?? '';
+    const tooltipHtml = buildAbilityTooltip(ab, className, currentExpansion);
+    const iconSrc = iconURL(ab.icon, 'large');
+    const tooltipCls = 'hidden fixed z-[9999] pointer-events-none p-2 bg-black border border-gray-600 rounded text-sm shadow-lg';
     return `<tr data-name="${ab.name.toLowerCase()}">
         <td>
             <div style="display:flex;align-items:center;gap:8px">
-                ${metalIcon(ab.icon, 'medium', ab.name)}
-                <div style="display:flex;flex-direction:column;line-height:1.3">
+                <div class="relative" data-has-tooltip>
+                    ${metalIcon(ab.icon, 'medium', ab.name)}
+                    <div data-tooltip class="${tooltipCls}" style="width:${TOOLTIP_W}px">${tooltipHtml}</div>
+                </div>
+                <div class="relative" data-has-tooltip style="display:flex;flex-direction:column;line-height:1.3">
                     <span class="db-item-name">${ab.name}</span>
                     ${spellSubLabel(ab) ? `<span class="text-xs" style="color:var(--tf-text-soft)">${spellSubLabel(ab)}</span>` : ''}
+                    <div data-tooltip class="${tooltipCls}" style="width:${TOOLTIP_W}px">
+                        <img src="${iconSrc}" alt="${ab.name}" class="w-10 h-10 rounded border border-gray-600 absolute top-0 -left-11 z-50 pointer-events-none">
+                        <div>${tooltipHtml}</div>
+                    </div>
                 </div>
             </div>
         </td>
@@ -209,13 +285,47 @@ function buildSpellsContent(className, meta) {
         }
     }
 
-    // Talent abilities
-    const classTalents = baseTalents[currentExpansion]?.[className] ?? {};
+    // Talent abilities with rank data
+    const allTalentAbilitiesObj = talentClassAbilities[currentExpansion]?.[className] ?? {};
+    for (const spec of meta.specs) {
+        for (const ab of (allTalentAbilitiesObj[spec] ?? [])) {
+            if (!seenIds.has(ab.id)) {
+                seenIds.add(ab.id);
+                seenNames.add(ab.name.toLowerCase());
+                flat.push({ ...ab, type: 'talent', className, spec });
+            }
+        }
+    }
+
+    // All talents from the expansion talent source — one entry per rank, description resolved per rank.
+    // Skips any talent whose name is already covered by talentClassAbilities above.
+    const talentSource = currentExpansion === 'forever' ? foreverTalents
+                       : currentExpansion === 'peoples' ? peoplesTalents
+                       : baseTalents[currentExpansion];
+    const talentKey = (currentExpansion === 'forever' || currentExpansion === 'peoples')
+        ? className.toLowerCase()
+        : className;
+    const classTalents = talentSource?.[talentKey] ?? {};
     for (const [specName, specTalents] of Object.entries(classTalents)) {
         for (const t of specTalents) {
-            if (t.isActive && !seenNames.has(t.name.toLowerCase())) {
-                seenNames.add(t.name.toLowerCase());
-                flat.push({ name: t.name, icon: t.icon, requiresLevel: null, school: t.school ?? null, type: 'talent', className, spec: specName });
+            if (seenNames.has(t.name.toLowerCase())) continue;
+            seenNames.add(t.name.toLowerCase());
+            const totalRanks = t.ranks ?? 1;
+            for (let rank = 1; rank <= totalRanks; rank++) {
+                const id = `${t.id}_r${rank}`;
+                if (seenIds.has(id)) continue;
+                seenIds.add(id);
+                const resolvedDesc = resolveTalentDescription(t, rank);
+                flat.push({
+                    ...t,
+                    id,
+                    rank: totalRanks > 1 ? rank : null,
+                    requiresLevel: null,
+                    type: 'talent',
+                    className,
+                    spec: specName,
+                    description: resolvedDesc ?? null,
+                });
             }
         }
     }
@@ -247,6 +357,7 @@ function buildSpellsContent(className, meta) {
         <div class="flex items-center gap-1 mb-2">
             <button class="db-type-btn active" data-type="all" data-label="All">All (${flat.length})</button>
             <button class="db-type-btn" data-type="ability" data-label="Abilities">Abilities (${flat.filter(a => a.type === 'ability').length})</button>
+            <button class="db-type-btn" data-type="proficiency" data-label="Proficiencies">Proficiencies (${flat.filter(a => a.type === 'proficiency').length})</button>
             <button class="db-type-btn" data-type="talent" data-label="Talents">Talents (${flat.filter(a => a.type === 'talent').length})</button>
         </div>
         <div class="flex items-center gap-1 mb-2">
@@ -357,7 +468,7 @@ function buildSidebar(className, meta, iconKey) {
     const specBullets = meta.specs.map(s => {
         const specIcon = classSpecs[s]?.icon ?? null;
         const iconHTML = specIcon ? metalIcon(specIcon, 'small', s) : '';
-        return `<li class="flex items-center gap-1.5">${sq}${iconHTML}<span style="color:var(--tf-text)">${s}</span></li>`;
+        return `<li class="flex items-center gap-1.5">${sq}${iconHTML}<span class="db-spec-name">${s}</span></li>`;
     }).join('');
 
     return `
@@ -377,8 +488,8 @@ function buildSidebar(className, meta, iconKey) {
                 </div>
                 <div class="flex items-center gap-1.5 flex-wrap">
                     ${sq}<span style="color:var(--tf-text-soft)">Icon: </span>
-                    ${metalIcon(iconKey, 'small', iconKey)}
-                    <span class="text-xs" style="color:var(--tf-text)">${iconKey}</span>
+                    <span style="cursor:pointer">${metalIcon(iconKey, 'small', iconKey)}</span>
+                    <span class="text-xs db-class-icon-name">${iconKey}</span>
                 </div>
             </div>
         </div>
@@ -424,6 +535,7 @@ function goToSpellPage(root, page) {
     tbody.innerHTML = flat.slice(start, start + PAGE_SIZE).map(buildSpellRow).join('');
     if (barTop) barTop.innerHTML = html;
     if (barBot) barBot.innerHTML = html;
+    wireDbTooltips(tbody);
 }
 
 function goToScreenshotPage(root, page) {
@@ -958,6 +1070,28 @@ function wireScreenshots(root) {
     });
 }
 
+function wireDbTooltips(root) {
+    root.querySelectorAll('[data-has-tooltip]').forEach(trigger => {
+        const tip = trigger.querySelector('[data-tooltip]');
+        if (!tip) return;
+        trigger.addEventListener('mouseenter', () => {
+            const rect = trigger.getBoundingClientRect();
+            tip.classList.remove('hidden');
+            const tipH = tip.offsetHeight || 180;
+            const tipW = TOOLTIP_W;
+            const margin = 8;
+            // Horizontal: prefer right of trigger, flip left if it would overflow
+            const leftRight = rect.right + margin;
+            const leftLeft  = rect.left - tipW - margin;
+            tip.style.left = (leftRight + tipW <= window.innerWidth ? leftRight : leftLeft) + 'px';
+            // Vertical: prefer above, fall back to below if not enough room
+            const topAbove = rect.top - tipH;
+            tip.style.top = (topAbove >= margin ? topAbove : rect.bottom + margin) + 'px';
+        });
+        trigger.addEventListener('mouseleave', () => tip.classList.add('hidden'));
+    });
+}
+
 function wireExpansionStrip(root) {
     const strip = root.querySelector('#db-expansion-strip');
     if (!strip) return;
@@ -1045,6 +1179,7 @@ function render() {
     wireMatchMode(root);
     wireExpansionStrip(root);
     wireScreenshots(root);
+    wireDbTooltips(root);
 }
 
 render();
