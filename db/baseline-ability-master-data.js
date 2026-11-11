@@ -572,7 +572,7 @@ export const abilityMasterData = {
         cooldown: 10,
         spentResource: 20,
         resourceType: 3,
-        range: null,
+        range: 0,
         requiresWeapon: null,
         requiresReagent: false,
         requiresCatForm: true,

@@ -1043,7 +1043,7 @@ export const baselineClassAbilities = {
                     rank: 2,
                     requiresLevel: 50,
                     description: [
-                        "Creates a violent storm in the target area causing {{value}} Nature damage to enemies every 1 sec, and increasing the time between attacks of enemies by 25%.\
+                        "Creates a violent storm in the target area causing {{value}} Nature damage to enemies every 1 sec, and increasing the time between attacks by 25%.\
                           Lasts 10 sec.  Druid must channel to maintain the spell.",
                     ],
                     debuffText: [
