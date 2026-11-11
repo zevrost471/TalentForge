@@ -13,6 +13,8 @@ import { classColors } from '../tc/class-colors.js';
 import { getClassScreenshots } from './class-screenshots.js';
 import { expansionIcon, EXPANSION_COLORS } from './expansions.js';
 import { buildAbilityTooltip } from './ability-tooltip.js';
+import { CLASS_SKILLS_PER_CLASS, ADDITIONAL_WEAPON_SKILLS_PER_EXPANSION } from './class-skills.js';
+import { GENERAL_COMBAT_ABILITIES_PER_CLASS, ADDITIONAL_GENERAL_ABILITIES_PER_EXPANSION, COMBAT_ABILITY_DEFS } from './general-abilities.js';
 
 const SCREENSHOTS_BASE = '../../assets/db-screenshots/';
 
@@ -328,6 +330,77 @@ function buildSpellsContent(className, meta) {
                 });
             }
         }
+    }
+
+    // Proficiencies: armor types, weapon types, and general combat abilities.
+    const classDef = CLASS_SKILLS_PER_CLASS[className];
+    if (classDef) {
+        // Armor proficiencies
+        for (const { type: def, learnedAt } of (classDef.armorTypes ?? [])) {
+            const id = `${def.name.toLowerCase().replace(/[\s-]+/g, '_')}_proficiency`;
+            if (seenIds.has(id)) continue;
+            seenIds.add(id);
+            flat.push({
+                id,
+                name: def.name,
+                icon: def.icon,
+                description: def.description,
+                isActive: false,
+                requiresLevel: learnedAt ?? null,
+                type: 'proficiency',
+                className,
+                spec: null,
+            });
+        }
+
+        // Weapon proficiencies (base + expansion additions)
+        const weaponExpAdditions = (ADDITIONAL_WEAPON_SKILLS_PER_EXPANSION[currentExpansion]?.[className] ?? [])
+            .map(def => ({ type: def }));
+        for (const { type: def, requiresTalent } of [...(classDef.weaponTypes ?? []), ...weaponExpAdditions]) {
+            const id = `${def.name.toLowerCase().replace(/[\s-]+/g, '_')}_proficiency`;
+            if (seenIds.has(id)) continue;
+            seenIds.add(id);
+            flat.push({
+                id,
+                name: def.name,
+                icon: def.icon,
+                description: def.description,
+                isActive: false,
+                requiresLevel: null,
+                requiresTalent: requiresTalent ?? false,
+                type: 'proficiency',
+                className,
+                spec: null,
+            });
+        }
+    }
+
+    // General combat abilities (base + expansion additions)
+    const abilityKeyMap = new Map(Object.entries(COMBAT_ABILITY_DEFS).map(([k, v]) => [v, k]));
+    const baseAbilities = (GENERAL_COMBAT_ABILITIES_PER_CLASS[className] ?? [])
+        .map(({ type: def, requiresTalent }) => ({ def, requiresTalent: requiresTalent ?? false }));
+    const expAbilityAdditions = (ADDITIONAL_GENERAL_ABILITIES_PER_EXPANSION[currentExpansion]?.[className] ?? [])
+        .map(({ type: def, requiresTalent }) => ({ def, requiresTalent: requiresTalent ?? false }));
+    for (const { def, requiresTalent } of [...baseAbilities, ...expAbilityAdditions]) {
+        const id = abilityKeyMap.get(def) ?? def.name.toLowerCase().replace(/\s+/g, '_');
+        if (seenIds.has(id)) continue;
+        seenIds.add(id);
+        flat.push({
+            id,
+            name: def.name,
+            icon: def.icon,
+            description: def.description,
+            isActive: def.isActive ?? false,
+            isInstant: def.isInstant ?? false,
+            range: def.range ?? null,
+            minRange: def.minRange ?? null,
+            maxRange: def.maxRange ?? null,
+            requiresTalent,
+            requiresLevel: null,
+            type: 'proficiency',
+            className,
+            spec: null,
+        });
     }
 
     flat.sort((a, b) => a.name.localeCompare(b.name));

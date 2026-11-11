@@ -64,7 +64,7 @@ export const COMBAT_ABILITY_DEFS = {
     },
     attack: {
         name: 'Attack',
-        icon: 'ability_meleeattack',
+        icon: 'inv_sword_04',
         description: ['Initiates combat, dealing weapon damage to the target.'],
         isActive: true,
         isInstant: true,

@@ -45,7 +45,7 @@ export const WEAPON_SKILLS = {
     },
     staves: {
         name: 'Staves',
-        icon: 'inv_staff_13',
+        icon: 'inv_staff_08',
         description: ['Allows you to use staves.'],
     },
     two_handed_swords: {
@@ -65,7 +65,7 @@ export const WEAPON_SKILLS = {
     },
     guns: {
         name: 'Guns',
-        icon: 'inv_weapon_rifle_03',
+        icon: 'inv_weapon_rifle_01',
         description: ['Allows you to use guns.'],
     },
     wands: {
