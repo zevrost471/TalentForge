@@ -47,6 +47,9 @@ function getRequirementText(ab, classKey) {
     if (ab.requiresWeapon === 2) requirements.push('Requires Ranged Weapon');
     if (!ab.requiresWeapon && ab.requires1HWeapon) requirements.push('Requires One-Handed Melee Weapon');
 
+    // Shield requirement
+    if (ab.requiresShield) requirements.push('Requires Shield');
+
     // Druid forms
     if (classKey === 'druid') {
         const druidForms = [];
