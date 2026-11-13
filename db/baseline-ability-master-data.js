@@ -1615,13 +1615,13 @@ export const abilityMasterData = {
         icon: "ability_meleedamage",
         school: PHYSICAL,
         isActive: true,
-        isInstant: true,
+        isInstant: false,
         castTime: null,
+        nextMelee: true,
         cooldown: 6,
         resourceType: 1,
         percentageOfBaseMana: false,
         range: 0,
-        nextMelee: true,  // on next swing
         requiresWeapon: 1, // requires main hand weapon
         requiresReagent: false,
         duration: null,
@@ -1657,7 +1657,7 @@ export const abilityMasterData = {
         resourceType: 1,
         percentageOfBaseMana: false,
         range: 0,
-        requiresWeapon: 1, // requires main hand weapon
+        requiresWeapon: 1, // requires melee weapon
         requiresReagent: false,
         duration: 10,
         mechanic: "Snared",
@@ -6867,7 +6867,9 @@ export const abilityMasterData = {
         icon: "ability_rogue_ambush",
         school: PHYSICAL,
         isActive: true,
-        isInstant: true,
+        isInstant: false,
+        castTime: null,
+        nextMelee: true,
         cooldown: null,
         percentageOfBaseMana: false,
         spentResource: 15,

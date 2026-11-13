@@ -98,7 +98,9 @@ function buildActiveRows(ab, classKey, expansion) {
         lines.push(`<div class="text-sm text-white">${rangeText}</div>`);
     }
     let castText = '';
-    if (ab.isInstant || !ab.castTime) {
+    if (ab.nextMelee) {
+        castText = 'Next Melee';
+    } else if (ab.isInstant || !ab.castTime) {
         castText = 'Instant cast';
     } else if (ab.isChanneled) {
         castText = `Channeled (${ab.castTime} sec cast)`;
