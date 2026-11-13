@@ -22,7 +22,6 @@ export const baselineClassAbilities = {
                 {
                     id: "faerie_fire_1",
                     ...abilityMasterData.vanilla.Druid.faerie_fire,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 18,
                     description: [
@@ -35,7 +34,6 @@ export const baselineClassAbilities = {
                 {
                     id: "faerie_fire_2",
                     ...abilityMasterData.vanilla.Druid.faerie_fire,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -48,7 +46,6 @@ export const baselineClassAbilities = {
                 {
                     id: "faerie_fire_3",
                     ...abilityMasterData.vanilla.Druid.faerie_fire,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 42,
                     description: [
@@ -61,7 +58,6 @@ export const baselineClassAbilities = {
                 {
                     id: "faerie_fire_4",
                     ...abilityMasterData.vanilla.Druid.faerie_fire,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 54,
                     description: [
@@ -74,7 +70,6 @@ export const baselineClassAbilities = {
                 {
                     id: "teleport_moonglade",
                     ...abilityMasterData.vanilla.Druid.teleport_moonglade,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -88,7 +83,6 @@ export const baselineClassAbilities = {
                 {
                     id: "barkskin",
                     ...abilityMasterData.vanilla.Druid.barkskin,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 44,
                     description: [
@@ -108,7 +102,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_1",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 4,
                     description: [
@@ -139,7 +132,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_2",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 10,
                     description: [
@@ -170,7 +162,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_3",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 16,
                     description: [
@@ -201,7 +192,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_4",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 22,
                     description: [
@@ -232,7 +222,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_5",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 28,
                     description: [
@@ -263,7 +252,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_6",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 34,
                     description: [
@@ -294,7 +282,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_7",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 40,
                     description: [
@@ -325,7 +312,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_8",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 46,
                     description: [
@@ -356,7 +342,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_9",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 9,
                     requiresLevel: 52,
                     description: [
@@ -387,7 +372,6 @@ export const baselineClassAbilities = {
                 {
                     id: "moonfire_10",
                     ...abilityMasterData.vanilla.Druid.moonfire,
-                    availabletoRaces: null,
                     rank: 10,
                     requiresLevel: 58,
                     description: [
@@ -418,7 +402,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_1",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 1,
                     description: [
@@ -445,7 +428,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_2",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 6,
                     description: [
@@ -473,7 +455,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_3",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 14,
                     description: [
@@ -501,7 +482,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_4",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 22,
                     description: [
@@ -529,7 +509,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_5",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 30,
                     description: [
@@ -557,7 +536,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_6",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 38,
                     description: [
@@ -585,7 +563,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_7",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 46,
                     description: [
@@ -613,7 +590,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wrath_8",
                     ...abilityMasterData.vanilla.Druid.wrath,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 54,
                     description: [
@@ -641,7 +617,6 @@ export const baselineClassAbilities = {
                 {
                     id: "thorns_1",
                     ...abilityMasterData.vanilla.Druid.thorns,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 6,
                     description: [
@@ -657,7 +632,6 @@ export const baselineClassAbilities = {
                 {
                     id: "thorns_2",
                     ...abilityMasterData.vanilla.Druid.thorns,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 14,
                     description: [
@@ -673,7 +647,6 @@ export const baselineClassAbilities = {
                 {
                     id: "thorns_3",
                     ...abilityMasterData.vanilla.Druid.thorns,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 24,
                     description: [
@@ -689,7 +662,6 @@ export const baselineClassAbilities = {
                 {
                     id: "thorns_4",
                     ...abilityMasterData.vanilla.Druid.thorns,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 34,
                     description: [
@@ -705,7 +677,6 @@ export const baselineClassAbilities = {
                 {
                     id: "thorns_5",
                     ...abilityMasterData.vanilla.Druid.thorns,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 44,
                     description: [
@@ -721,7 +692,6 @@ export const baselineClassAbilities = {
                 {
                     id: "thorns_6",
                     ...abilityMasterData.vanilla.Druid.thorns,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 54,
                     description: [
@@ -737,7 +707,6 @@ export const baselineClassAbilities = {
                 {
                     id: "entangling_roots_1",
                     ...abilityMasterData.vanilla.Druid.entangling_roots,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 8,
                     description: [
@@ -754,7 +723,6 @@ export const baselineClassAbilities = {
                 {
                     id: "entangling_roots_2",
                     ...abilityMasterData.vanilla.Druid.entangling_roots,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 18,
                     description: [
@@ -771,7 +739,6 @@ export const baselineClassAbilities = {
                 {
                     id: "entangling_roots_3",
                     ...abilityMasterData.vanilla.Druid.entangling_roots,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 28,
                     description: [
@@ -788,7 +755,6 @@ export const baselineClassAbilities = {
                 {
                     id: "entangling_roots_4",
                     ...abilityMasterData.vanilla.Druid.entangling_roots,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 38,
                     description: [
@@ -805,7 +771,6 @@ export const baselineClassAbilities = {
                 {
                     id: "entangling_roots_5",
                     ...abilityMasterData.vanilla.Druid.entangling_roots,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 48,
                     description: [
@@ -822,7 +787,6 @@ export const baselineClassAbilities = {
                 {
                     id: "entangling_roots_6",
                     ...abilityMasterData.vanilla.Druid.entangling_roots,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 58,
                     description: [
@@ -839,7 +803,6 @@ export const baselineClassAbilities = {
                 {
                     id: "starfire_1",
                     ...abilityMasterData.vanilla.Druid.starfire,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -866,7 +829,6 @@ export const baselineClassAbilities = {
                 {
                     id: "starfire_2",
                     ...abilityMasterData.vanilla.Druid.starfire,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 26,
                     description: [
@@ -893,7 +855,6 @@ export const baselineClassAbilities = {
                 {
                     id: "starfire_3",
                     ...abilityMasterData.vanilla.Druid.starfire,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 34,
                     description: [
@@ -920,7 +881,6 @@ export const baselineClassAbilities = {
                 {
                     id: "starfire_4",
                     ...abilityMasterData.vanilla.Druid.starfire,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 42,
                     description: [
@@ -947,7 +907,6 @@ export const baselineClassAbilities = {
                 {
                     id: "starfire_5",
                     ...abilityMasterData.vanilla.Druid.starfire,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 50,
                     description: [
@@ -974,7 +933,6 @@ export const baselineClassAbilities = {
                 {
                     id: "starfire_6",
                     ...abilityMasterData.vanilla.Druid.starfire,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 58,
                     description: [
@@ -1001,7 +959,6 @@ export const baselineClassAbilities = {
                 {
                     id: "starfire_7",
                     ...abilityMasterData.vanilla.Druid.starfire,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 60,
                     description: [
@@ -1014,7 +971,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hurricane_1",
                     ...abilityMasterData.vanilla.Druid.hurricane,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 40,
                     description: [
@@ -1039,7 +995,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hurricane_2",
                     ...abilityMasterData.vanilla.Druid.hurricane,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 50,
                     description: [
@@ -1064,7 +1019,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hurricane_3",
                     ...abilityMasterData.vanilla.Druid.hurricane,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 60,
                     description: [
@@ -1081,7 +1035,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hibernate_1",
                     ...abilityMasterData.vanilla.Druid.hibernate,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 18,
                     description: [
@@ -1098,7 +1051,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hibernate_2",
                     ...abilityMasterData.vanilla.Druid.hibernate,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 38,
                     description: [
@@ -1115,7 +1067,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hibernate_3",
                     ...abilityMasterData.vanilla.Druid.hibernate,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 58,
                     description: [
@@ -1132,7 +1083,6 @@ export const baselineClassAbilities = {
                 {
                     id: "soothe_animal_1",
                     ...abilityMasterData.vanilla.Druid.soothe_animal,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 22,
                     description: [
@@ -1148,7 +1098,6 @@ export const baselineClassAbilities = {
                 {
                     id: "soothe_animal_2",
                     ...abilityMasterData.vanilla.Druid.soothe_animal,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 38,
                     description: [
@@ -1164,7 +1113,6 @@ export const baselineClassAbilities = {
                 {
                     id: "soothe_animal_3",
                     ...abilityMasterData.vanilla.Druid.soothe_animal,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 54,
                     description: [
@@ -1183,7 +1131,6 @@ export const baselineClassAbilities = {
                 {
                     id: "cat_form",
                     ...abilityMasterData.vanilla.Druid.cat_form,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 20,
                     description: [
@@ -1200,7 +1147,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aquatic_form",
                     ...abilityMasterData.vanilla.Druid.aquatic_form,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 16,
                     description: [
@@ -1216,7 +1162,6 @@ export const baselineClassAbilities = {
                 {
                     id: "travel_form",
                     ...abilityMasterData.vanilla.Druid.travel_form,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 30,
                     description: [
@@ -1233,7 +1178,6 @@ export const baselineClassAbilities = {
                 {
                     id: "bear_form",
                     ...abilityMasterData.vanilla.Druid.bear_form,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -1261,7 +1205,6 @@ export const baselineClassAbilities = {
                 {
                     id: "dire_bear_form",
                     ...abilityMasterData.vanilla.Druid.dire_bear_form,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 40,
                     description: [
@@ -1290,7 +1233,6 @@ export const baselineClassAbilities = {
                 {
                     id: "feline_grace",
                     ...abilityMasterData.vanilla.Druid.feline_grace,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 40,
                     description: [
@@ -1302,7 +1244,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ferocious_bite_1",
                     ...abilityMasterData.vanilla.Druid.ferocious_bite,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 32,
                     description: [
@@ -1319,7 +1260,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ferocious_bite_2",
                     ...abilityMasterData.vanilla.Druid.ferocious_bite,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 40,
                     description: [
@@ -1336,7 +1276,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ferocious_bite_3",
                     ...abilityMasterData.vanilla.Druid.ferocious_bite,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 48,
                     description: [
@@ -1353,7 +1292,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ferocious_bite_4",
                     ...abilityMasterData.vanilla.Druid.ferocious_bite,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 56,
                     description: [
@@ -1370,7 +1308,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ferocious_bite_5",
                     ...abilityMasterData.vanilla.Druid.ferocious_bite,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 60,
                     description: [
@@ -1387,7 +1324,6 @@ export const baselineClassAbilities = {
                 {
                     id: "dash_1",
                     ...abilityMasterData.vanilla.Druid.dash,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 26,
                     description: [
@@ -1402,7 +1338,6 @@ export const baselineClassAbilities = {
                 {
                     id: "dash_2",
                     ...abilityMasterData.vanilla.Druid.dash,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 46,
                     description: [
@@ -1417,7 +1352,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rake_1",
                     ...abilityMasterData.vanilla.Druid.rake,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 24,
                     description: [
@@ -1432,7 +1366,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rake_2",
                     ...abilityMasterData.vanilla.Druid.rake,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 34,
                     description: [
@@ -1447,7 +1380,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rake_3",
                     ...abilityMasterData.vanilla.Druid.rake,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 44,
                     description: [
@@ -1462,7 +1394,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rake_4",
                     ...abilityMasterData.vanilla.Druid.rake,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 54,
                     description: [
@@ -1477,7 +1408,6 @@ export const baselineClassAbilities = {
                 {
                     id: "maul_1",
                     ...abilityMasterData.vanilla.Druid.maul,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 10,
                     description: [
@@ -1488,7 +1418,6 @@ export const baselineClassAbilities = {
                 {
                     id: "maul_2",
                     ...abilityMasterData.vanilla.Druid.maul,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 18,
                     description: [
@@ -1500,7 +1429,6 @@ export const baselineClassAbilities = {
                 {
                     id: "maul_3",
                     ...abilityMasterData.vanilla.Druid.maul,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 26,
                     description: [
@@ -1512,7 +1440,6 @@ export const baselineClassAbilities = {
                 {
                     id: "maul_4",
                     ...abilityMasterData.vanilla.Druid.maul,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 34,
                     description: [
@@ -1524,7 +1451,6 @@ export const baselineClassAbilities = {
                 {
                     id: "maul_5",
                     ...abilityMasterData.vanilla.Druid.maul,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 42,
                     description: [
@@ -1536,7 +1462,6 @@ export const baselineClassAbilities = {
                 {
                     id: "maul_6",
                     ...abilityMasterData.vanilla.Druid.maul,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 50,
                     description: [
@@ -1548,7 +1473,6 @@ export const baselineClassAbilities = {
                 {
                     id: "maul_7",
                     ...abilityMasterData.vanilla.Druid.maul,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 58,
                     description: [
@@ -1560,7 +1484,6 @@ export const baselineClassAbilities = {
                 {
                     id: "swipe_1",
                     ...abilityMasterData.vanilla.Druid.swipe,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 16,
                     description: [
@@ -1572,7 +1495,6 @@ export const baselineClassAbilities = {
                 {
                     id: "swipe_2",
                     ...abilityMasterData.vanilla.Druid.swipe,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 24,
                     description: [
@@ -1584,7 +1506,6 @@ export const baselineClassAbilities = {
                 {
                     id: "swipe_3",
                     ...abilityMasterData.vanilla.Druid.swipe,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 34,
                     description: [
@@ -1596,7 +1517,6 @@ export const baselineClassAbilities = {
                 {
                     id: "swipe_4",
                     ...abilityMasterData.vanilla.Druid.swipe,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 44,
                     description: [
@@ -1608,7 +1528,6 @@ export const baselineClassAbilities = {
                 {
                     id: "swipe_5",
                     ...abilityMasterData.vanilla.Druid.swipe,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 54,
                     description: [
@@ -1620,7 +1539,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shred_1",
                     ...abilityMasterData.vanilla.Druid.shred,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 22,
                     description: [
@@ -1632,7 +1550,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shred_2",
                     ...abilityMasterData.vanilla.Druid.shred,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -1644,7 +1561,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shred_3",
                     ...abilityMasterData.vanilla.Druid.shred,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 38,
                     description: [
@@ -1656,7 +1572,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shred_4",
                     ...abilityMasterData.vanilla.Druid.shred,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 46,
                     description: [
@@ -1668,7 +1583,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shred_5",
                     ...abilityMasterData.vanilla.Druid.shred,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 54,
                     description: [
@@ -1680,7 +1594,6 @@ export const baselineClassAbilities = {
                 {
                     id: "demoralizing_roar_1",
                     ...abilityMasterData.vanilla.Druid.demoralizing_roar,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 10,
                     description: [
@@ -1703,7 +1616,6 @@ export const baselineClassAbilities = {
                 {
                     id: "demoralizing_roar_2",
                     ...abilityMasterData.vanilla.Druid.demoralizing_roar,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 20,
                     description: [
@@ -1726,7 +1638,6 @@ export const baselineClassAbilities = {
                 {
                     id: "demoralizing_roar_3",
                     ...abilityMasterData.vanilla.Druid.demoralizing_roar,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 32,
                     description: [
@@ -1749,7 +1660,6 @@ export const baselineClassAbilities = {
                 {
                     id: "demoralizing_roar_4",
                     ...abilityMasterData.vanilla.Druid.demoralizing_roar,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 42,
                     description: [
@@ -1772,7 +1682,6 @@ export const baselineClassAbilities = {
                 {
                     id: "demoralizing_roar_5",
                     ...abilityMasterData.vanilla.Druid.demoralizing_roar,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 52,
                     description: [
@@ -1795,7 +1704,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rip_1",
                     ...abilityMasterData.vanilla.Druid.rip,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -1815,7 +1723,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rip_2",
                     ...abilityMasterData.vanilla.Druid.rip,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 28,
                     description: [
@@ -1835,7 +1742,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rip_3",
                     ...abilityMasterData.vanilla.Druid.rip,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 36,
                     description: [
@@ -1855,7 +1761,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rip_4",
                     ...abilityMasterData.vanilla.Druid.rip,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 44,
                     description: [
@@ -1875,7 +1780,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rip_5",
                     ...abilityMasterData.vanilla.Druid.rip,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 52,
                     description: [
@@ -1895,7 +1799,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rip_6",
                     ...abilityMasterData.vanilla.Druid.rip,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 60,
                     description: [
@@ -1915,7 +1818,6 @@ export const baselineClassAbilities = {
                 {
                     id: "claw_1",
                     ...abilityMasterData.vanilla.Druid.claw,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -1927,7 +1829,6 @@ export const baselineClassAbilities = {
                 {
                     id: "claw_2",
                     ...abilityMasterData.vanilla.Druid.claw,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 28,
                     description: [
@@ -1939,7 +1840,6 @@ export const baselineClassAbilities = {
                 {
                     id: "claw_3",
                     ...abilityMasterData.vanilla.Druid.claw,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 38,
                     description: [
@@ -1951,7 +1851,6 @@ export const baselineClassAbilities = {
                 {
                     id: "claw_4",
                     ...abilityMasterData.vanilla.Druid.claw,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 48,
                     description: [
@@ -1963,7 +1862,6 @@ export const baselineClassAbilities = {
                 {
                     id: "claw_5",
                     ...abilityMasterData.vanilla.Druid.claw,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 58,
                     description: [
@@ -1975,7 +1873,6 @@ export const baselineClassAbilities = {
                 {
                     id: "challenging_roar",
                     ...abilityMasterData.vanilla.Druid.challenging_roar,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 28,
                     description: [
@@ -1990,7 +1887,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ravage_1",
                     ...abilityMasterData.vanilla.Druid.ravage,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 32,
                     description: [
@@ -2002,7 +1898,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ravage_2",
                     ...abilityMasterData.vanilla.Druid.ravage,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 42,
                     description: [
@@ -2014,7 +1909,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ravage_3",
                     ...abilityMasterData.vanilla.Druid.ravage,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 50,
                     description: [
@@ -2026,7 +1920,6 @@ export const baselineClassAbilities = {
                 {
                     id: "ravage_4",
                     ...abilityMasterData.vanilla.Druid.ravage,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 58,
                     description: [
@@ -2038,7 +1931,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tigers_fury_1",
                     ...abilityMasterData.vanilla.Druid.tigers_fury,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 24,
                     description: [
@@ -2053,7 +1945,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tigers_fury_2",
                     ...abilityMasterData.vanilla.Druid.tigers_fury,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 36,
                     description: [
@@ -2068,7 +1959,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tigers_fury_3",
                     ...abilityMasterData.vanilla.Druid.tigers_fury,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 48,
                     description: [
@@ -2083,7 +1973,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tigers_fury_4",
                     ...abilityMasterData.vanilla.Druid.tigers_fury,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 60,
                     description: [
@@ -2098,7 +1987,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frenzied_regeneration_1",
                     ...abilityMasterData.vanilla.Druid.frenzied_regeneration,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 36,
                     description: [
@@ -2113,7 +2001,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frenzied_regeneration_2",
                     ...abilityMasterData.vanilla.Druid.frenzied_regeneration,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 46,
                     description: [
@@ -2128,7 +2015,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frenzied_regeneration_3",
                     ...abilityMasterData.vanilla.Druid.frenzied_regeneration,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 56,
                     description: [
@@ -2143,7 +2029,6 @@ export const baselineClassAbilities = {
                 {
                     id: "cower_1",
                     ...abilityMasterData.vanilla.Druid.cower,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 28,
                     description: [
@@ -2155,7 +2040,6 @@ export const baselineClassAbilities = {
                 {
                     id: "cower_2",
                     ...abilityMasterData.vanilla.Druid.cower,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 40,
                     description: [
@@ -2167,7 +2051,6 @@ export const baselineClassAbilities = {
                 {
                     id: "cower_3",
                     ...abilityMasterData.vanilla.Druid.cower,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 52,
                     description: [
@@ -2179,7 +2062,6 @@ export const baselineClassAbilities = {
                 {
                     id: "prowl_1",
                     ...abilityMasterData.vanilla.Druid.prowl,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -2194,7 +2076,6 @@ export const baselineClassAbilities = {
                 {
                     id: "prowl_2",
                     ...abilityMasterData.vanilla.Druid.prowl,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 40,
                     description: [
@@ -2209,7 +2090,6 @@ export const baselineClassAbilities = {
                 {
                     id: "prowl_3",
                     ...abilityMasterData.vanilla.Druid.prowl,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 60,
                     description: [
@@ -2224,7 +2104,6 @@ export const baselineClassAbilities = {
                 {
                     id: "pounce_1",
                     ...abilityMasterData.vanilla.Druid.pounce,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 36,
                     description: [
@@ -2239,7 +2118,6 @@ export const baselineClassAbilities = {
                 {
                     id: "pounce_2",
                     ...abilityMasterData.vanilla.Druid.pounce,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 46,
                     description: [
@@ -2254,7 +2132,6 @@ export const baselineClassAbilities = {
                 {
                     id: "pounce_3",
                     ...abilityMasterData.vanilla.Druid.pounce,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 56,
                     description: [
@@ -2269,7 +2146,6 @@ export const baselineClassAbilities = {
                 {
                     id: "bash_1",
                     ...abilityMasterData.vanilla.Druid.bash,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 14,
                     description: [
@@ -2284,7 +2160,6 @@ export const baselineClassAbilities = {
                 {
                     id: "bash_2",
                     ...abilityMasterData.vanilla.Druid.bash,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -2299,7 +2174,6 @@ export const baselineClassAbilities = {
                 {
                     id: "bash_3",
                     ...abilityMasterData.vanilla.Druid.bash,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 46,
                     description: [
@@ -2314,7 +2188,6 @@ export const baselineClassAbilities = {
                 {
                     id: "growl",
                     ...abilityMasterData.vanilla.Druid.growl,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -2328,7 +2201,6 @@ export const baselineClassAbilities = {
                 {
                     id: "enrage",
                     ...abilityMasterData.vanilla.Druid.enrage,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 12,
                     description: [
@@ -2343,7 +2215,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_humanoids",
                     ...abilityMasterData.vanilla.Druid.track_humanoids,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 32,
                     description: [
@@ -2361,7 +2232,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mark_of_the_wild_1",
                     ...abilityMasterData.vanilla.Druid.mark_of_the_wild,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 1,
                     description: [
@@ -2377,7 +2247,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mark_of_the_wild_2",
                     ...abilityMasterData.vanilla.Druid.mark_of_the_wild,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 10,
                     description: [
@@ -2393,7 +2262,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mark_of_the_wild_3",
                     ...abilityMasterData.vanilla.Druid.mark_of_the_wild,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 20,
                     description: [
@@ -2409,7 +2277,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mark_of_the_wild_4",
                     ...abilityMasterData.vanilla.Druid.mark_of_the_wild,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 30,
                     description: [
@@ -2425,7 +2292,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mark_of_the_wild_5",
                     ...abilityMasterData.vanilla.Druid.mark_of_the_wild,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 40,
                     description: [
@@ -2441,7 +2307,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mark_of_the_wild_6",
                     ...abilityMasterData.vanilla.Druid.mark_of_the_wild,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 50,
                     description: [
@@ -2457,7 +2322,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mark_of_the_wild_7",
                     ...abilityMasterData.vanilla.Druid.mark_of_the_wild,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 60,
                     description: [
@@ -2473,7 +2337,6 @@ export const baselineClassAbilities = {
                 {
                     id: "gift_of_the_wild_1",
                     ...abilityMasterData.vanilla.Druid.gift_of_the_wild,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 50,
                     description: [
@@ -2490,7 +2353,6 @@ export const baselineClassAbilities = {
                 {
                     id: "gift_of_the_wild_2",
                     ...abilityMasterData.vanilla.Druid.gift_of_the_wild,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 60,
                     description: [
@@ -2507,7 +2369,6 @@ export const baselineClassAbilities = {
                 {
                     id: "innervate",
                     ...abilityMasterData.vanilla.Druid.innervate,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 40,
                     description: [
@@ -2525,7 +2386,6 @@ export const baselineClassAbilities = {
                 {
                     id: "remove_curse",
                     ...abilityMasterData.vanilla.Druid.remove_curse,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 24,
                     description: [
@@ -2540,7 +2400,6 @@ export const baselineClassAbilities = {
                 {
                     id: "cure_poison",
                     ...abilityMasterData.vanilla.Druid.cure_poison,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 14,
                     description: [
@@ -2554,7 +2413,6 @@ export const baselineClassAbilities = {
                 {
                     id: "abolish_poison",
                     ...abilityMasterData.vanilla.Druid.abolish_poison,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 26,
                     description: [
@@ -2569,7 +2427,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_1",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 1,
                     description: [
@@ -2592,7 +2449,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_2",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 8,
                     description: [
@@ -2620,7 +2476,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_3",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 14,
                     description: [
@@ -2648,7 +2503,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_4",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 20,
                     description: [
@@ -2676,7 +2530,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_5",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 26,
                     description: [
@@ -2704,7 +2557,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_6",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 32,
                     description: [
@@ -2732,7 +2584,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_7",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 38,
                     description: [
@@ -2760,7 +2611,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_8",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 44,
                     description: [
@@ -2788,7 +2638,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_9",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 9,
                     requiresLevel: 50,
                     description: [
@@ -2816,7 +2665,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_10",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 10,
                     requiresLevel: 56,
                     description: [
@@ -2844,7 +2692,6 @@ export const baselineClassAbilities = {
                 {
                     id: "healing_touch_11",
                     ...abilityMasterData.vanilla.Druid.healing_touch,
-                    availabletoRaces: null,
                     rank: 11,
                     requiresLevel: 60,
                     description: [
@@ -2858,7 +2705,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_1",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 4,
                     description: [
@@ -2874,7 +2720,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_2",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 10,
                     description: [
@@ -2890,7 +2735,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_3",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 16,
                     description: [
@@ -2906,7 +2750,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_4",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 22,
                     description: [
@@ -2922,7 +2765,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_5",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 28,
                     description: [
@@ -2938,7 +2780,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_6",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 34,
                     description: [
@@ -2954,7 +2795,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_7",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 40,
                     description: [
@@ -2970,7 +2810,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_8",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 46,
                     description: [
@@ -2986,7 +2825,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_9",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 9,
                     requiresLevel: 52,
                     description: [
@@ -3002,7 +2840,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_10",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 10,
                     requiresLevel: 58,
                     description: [
@@ -3018,7 +2855,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rejuvenation_11",
                     ...abilityMasterData.vanilla.Druid.rejuvenation,
-                    availabletoRaces: null,
                     rank: 11,
                     requiresLevel: 60,
                     description: [
@@ -3034,7 +2870,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_1",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 12,
                     description: [
@@ -3064,7 +2899,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_2",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 18,
                     description: [
@@ -3094,7 +2928,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_3",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 24,
                     description: [
@@ -3124,7 +2957,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_4",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 30,
                     description: [
@@ -3154,7 +2986,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_5",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 36,
                     description: [
@@ -3184,7 +3015,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_6",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 42,
                     description: [
@@ -3214,7 +3044,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_7",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 48,
                     description: [
@@ -3244,7 +3073,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_8",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 54,
                     description: [
@@ -3274,7 +3102,6 @@ export const baselineClassAbilities = {
                 {
                     id: "regrowth_9",
                     ...abilityMasterData.vanilla.Druid.regrowth,
-                    availabletoRaces: null,
                     rank: 9,
                     requiresLevel: 60,
                     description: [
@@ -3290,7 +3117,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rebirth_1",
                     ...abilityMasterData.vanilla.Druid.rebirth,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -3303,7 +3129,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rebirth_2",
                     ...abilityMasterData.vanilla.Druid.rebirth,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -3316,7 +3141,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rebirth_3",
                     ...abilityMasterData.vanilla.Druid.rebirth,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 40,
                     description: [
@@ -3329,7 +3153,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rebirth_4",
                     ...abilityMasterData.vanilla.Druid.rebirth,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 50,
                     description: [
@@ -3342,7 +3165,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rebirth_5",
                     ...abilityMasterData.vanilla.Druid.rebirth,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 60,
                     description: [
@@ -3355,7 +3177,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tranquility_1",
                     ...abilityMasterData.vanilla.Druid.tranquility,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 30,
                     description: [
@@ -3379,7 +3200,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tranquility_2",
                     ...abilityMasterData.vanilla.Druid.tranquility,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 40,
                     description: [
@@ -3403,7 +3223,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tranquility_3",
                     ...abilityMasterData.vanilla.Druid.tranquility,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 50,
                     description: [
@@ -3427,7 +3246,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tranquility_4",
                     ...abilityMasterData.vanilla.Druid.tranquility,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 60,
                     description: [
@@ -3452,7 +3270,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_beast",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_beast,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 30,
                     description: [
@@ -3468,7 +3285,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_cheetah",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_cheetah,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 20,
                     description: [
@@ -3484,7 +3300,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_hawk_1",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 10,
                     description: [
@@ -3500,7 +3315,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_hawk_2",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 18,
                     description: [
@@ -3516,7 +3330,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_hawk_3",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 28,
                     description: [
@@ -3532,7 +3345,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_hawk_4",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 38,
                     description: [
@@ -3548,7 +3360,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_hawk_5",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 48,
                     description: [
@@ -3564,7 +3375,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_hawk_6",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 58,
                     description: [
@@ -3580,7 +3390,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_hawk_7",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 60,
                     description: [
@@ -3596,7 +3405,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_monkey",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_monkey,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 4,
                     description: [
@@ -3612,7 +3420,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_pack",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_pack,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 40,
                     description: [
@@ -3628,7 +3435,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_wild_1",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_wild,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 46,
                     description: [
@@ -3644,7 +3450,6 @@ export const baselineClassAbilities = {
                 {
                     id: "aspect_of_the_wild_2",
                     ...abilityMasterData.vanilla.Hunter.aspect_of_the_wild,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 56,
                     description: [
@@ -3660,7 +3465,6 @@ export const baselineClassAbilities = {
                 {
                     id: "beast_lore",
                     ...abilityMasterData.vanilla.Hunter.beast_lore,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 24,
                     description: [
@@ -3676,7 +3480,6 @@ export const baselineClassAbilities = {
                 {
                     id: "call_pet",
                     ...abilityMasterData.vanilla.Hunter.call_pet,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -3689,7 +3492,6 @@ export const baselineClassAbilities = {
                 {
                     id: "dismiss_pet",
                     ...abilityMasterData.vanilla.Hunter.dismiss_pet,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -3702,7 +3504,6 @@ export const baselineClassAbilities = {
                 {
                     id: "eagle_eye",
                     ...abilityMasterData.vanilla.Hunter.eagle_eye,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 14,
                     description: [
@@ -3715,7 +3516,6 @@ export const baselineClassAbilities = {
                 {
                     id: "eyes_of_the_beast",
                     ...abilityMasterData.vanilla.Hunter.eyes_of_the_beast,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 14,
                     description: [
@@ -3731,7 +3531,6 @@ export const baselineClassAbilities = {
                 {
                     id: "feed_pet",
                     ...abilityMasterData.vanilla.Hunter.feed_pet,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -3744,7 +3543,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mend_pet_1",
                     ...abilityMasterData.vanilla.Hunter.mend_pet,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 12,
                     description: [
@@ -3760,7 +3558,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mend_pet_2",
                     ...abilityMasterData.vanilla.Hunter.mend_pet,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 20,
                     description: [
@@ -3776,7 +3573,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mend_pet_3",
                     ...abilityMasterData.vanilla.Hunter.mend_pet,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 28,
                     description: [
@@ -3792,7 +3588,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mend_pet_4",
                     ...abilityMasterData.vanilla.Hunter.mend_pet,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 36,
                     description: [
@@ -3808,7 +3603,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mend_pet_5",
                     ...abilityMasterData.vanilla.Hunter.mend_pet,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 44,
                     description: [
@@ -3824,7 +3618,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mend_pet_6",
                     ...abilityMasterData.vanilla.Hunter.mend_pet,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 52,
                     description: [
@@ -3840,7 +3633,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mend_pet_7",
                     ...abilityMasterData.vanilla.Hunter.mend_pet,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 60,
                     description: [
@@ -3856,7 +3648,6 @@ export const baselineClassAbilities = {
                 {
                     id: "revive_pet",
                     ...abilityMasterData.vanilla.Hunter.revive_pet,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -3869,7 +3660,6 @@ export const baselineClassAbilities = {
                 {
                     id: "scare_beast_1",
                     ...abilityMasterData.vanilla.Hunter.scare_beast,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 14,
                     description: [
@@ -3885,7 +3675,6 @@ export const baselineClassAbilities = {
                 {
                     id: "scare_beast_2",
                     ...abilityMasterData.vanilla.Hunter.scare_beast,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -3901,7 +3690,6 @@ export const baselineClassAbilities = {
                 {
                     id: "scare_beast_3",
                     ...abilityMasterData.vanilla.Hunter.scare_beast,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 46,
                     description: [
@@ -3917,7 +3705,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tame_beast",
                     ...abilityMasterData.vanilla.Hunter.tame_beast,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -3933,7 +3720,6 @@ export const baselineClassAbilities = {
                 {
                     id: "tranquilizing_shot",
                     ...abilityMasterData.vanilla.Hunter.tranquilizing_shot,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 60,
                     description: [
@@ -3948,7 +3734,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_1",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 6,
                     description: [
@@ -3961,7 +3746,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_2",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 12,
                     description: [
@@ -3974,7 +3758,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_3",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 20,
                     description: [
@@ -3987,7 +3770,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_4",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 28,
                     description: [
@@ -4000,7 +3782,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_5",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 36,
                     description: [
@@ -4013,7 +3794,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_6",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 44,
                     description: [
@@ -4026,7 +3806,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_7",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 52,
                     description: [
@@ -4039,7 +3818,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_shot_8",
                     ...abilityMasterData.vanilla.Hunter.arcane_shot,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 60,
                     description: [
@@ -4052,7 +3830,6 @@ export const baselineClassAbilities = {
                 {
                     id: "auto_shot",
                     ...abilityMasterData.vanilla.Hunter.auto_shot,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 1,
                     description: [
@@ -4068,7 +3845,6 @@ export const baselineClassAbilities = {
                 {
                     id: "concussive_shot",
                     ...abilityMasterData.vanilla.Hunter.concussive_shot,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 8,
                     description: [
@@ -4084,7 +3860,6 @@ export const baselineClassAbilities = {
                 {
                     id: "distracting_shot_1",
                     ...abilityMasterData.vanilla.Hunter.distracting_shot,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 12,
                     description: [
@@ -4097,7 +3872,6 @@ export const baselineClassAbilities = {
                 {
                     id: "distracting_shot_2",
                     ...abilityMasterData.vanilla.Hunter.distracting_shot,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 20,
                     description: [
@@ -4110,7 +3884,6 @@ export const baselineClassAbilities = {
                 {
                     id: "distracting_shot_3",
                     ...abilityMasterData.vanilla.Hunter.distracting_shot,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 30,
                     description: [
@@ -4123,7 +3896,6 @@ export const baselineClassAbilities = {
                 {
                     id: "distracting_shot_4",
                     ...abilityMasterData.vanilla.Hunter.distracting_shot,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 40,
                     description: [
@@ -4136,7 +3908,6 @@ export const baselineClassAbilities = {
                 {
                     id: "distracting_shot_5",
                     ...abilityMasterData.vanilla.Hunter.distracting_shot,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 50,
                     description: [
@@ -4149,7 +3920,6 @@ export const baselineClassAbilities = {
                 {
                     id: "distracting_shot_6",
                     ...abilityMasterData.vanilla.Hunter.distracting_shot,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 60,
                     description: [
@@ -4162,7 +3932,6 @@ export const baselineClassAbilities = {
                 {
                     id: "flare",
                     ...abilityMasterData.vanilla.Hunter.flare,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 32,
                     description: [
@@ -4178,7 +3947,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hunters_mark_1",
                     ...abilityMasterData.vanilla.Hunter.hunters_mark,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 6,
                     description: [
@@ -4194,7 +3962,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hunters_mark_2",
                     ...abilityMasterData.vanilla.Hunter.hunters_mark,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 22,
                     description: [
@@ -4210,7 +3977,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hunters_mark_3",
                     ...abilityMasterData.vanilla.Hunter.hunters_mark,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 40,
                     description: [
@@ -4226,7 +3992,6 @@ export const baselineClassAbilities = {
                 {
                     id: "hunters_mark_4",
                     ...abilityMasterData.vanilla.Hunter.hunters_mark,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 58,
                     description: [
@@ -4242,7 +4007,6 @@ export const baselineClassAbilities = {
                 {
                     id: "multi_shot_1",
                     ...abilityMasterData.vanilla.Hunter.multi_shot,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 18,
                     description: [
@@ -4255,7 +4019,6 @@ export const baselineClassAbilities = {
                 {
                     id: "multi_shot_2",
                     ...abilityMasterData.vanilla.Hunter.multi_shot,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -4268,7 +4031,6 @@ export const baselineClassAbilities = {
                 {
                     id: "multi_shot_3",
                     ...abilityMasterData.vanilla.Hunter.multi_shot,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 42,
                     description: [
@@ -4281,7 +4043,6 @@ export const baselineClassAbilities = {
                 {
                     id: "multi_shot_4",
                     ...abilityMasterData.vanilla.Hunter.multi_shot,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 54,
                     description: [
@@ -4294,7 +4055,6 @@ export const baselineClassAbilities = {
                 {
                     id: "multi_shot_5",
                     ...abilityMasterData.vanilla.Hunter.multi_shot,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 60,
                     description: [
@@ -4307,7 +4067,6 @@ export const baselineClassAbilities = {
                 {
                     id: "rapid_fire",
                     ...abilityMasterData.vanilla.Hunter.rapid_fire,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 26,
                     description: [
@@ -4323,7 +4082,6 @@ export const baselineClassAbilities = {
                 {
                     id: "scorpid_sting_1",
                     ...abilityMasterData.vanilla.Hunter.scorpid_sting,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 22,
                     description: [
@@ -4339,7 +4097,6 @@ export const baselineClassAbilities = {
                 {
                     id: "scorpid_sting_2",
                     ...abilityMasterData.vanilla.Hunter.scorpid_sting,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 32,
                     description: [
@@ -4355,7 +4112,6 @@ export const baselineClassAbilities = {
                 {
                     id: "scorpid_sting_3",
                     ...abilityMasterData.vanilla.Hunter.scorpid_sting,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 42,
                     description: [
@@ -4371,7 +4127,6 @@ export const baselineClassAbilities = {
                 {
                     id: "scorpid_sting_4",
                     ...abilityMasterData.vanilla.Hunter.scorpid_sting,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 52,
                     description: [
@@ -4387,7 +4142,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_1",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 4,
                     description: [
@@ -4403,7 +4157,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_2",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 10,
                     description: [
@@ -4419,7 +4172,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_3",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 18,
                     description: [
@@ -4435,7 +4187,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_4",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 26,
                     description: [
@@ -4451,7 +4202,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_5",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 34,
                     description: [
@@ -4467,7 +4217,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_6",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 42,
                     description: [
@@ -4483,7 +4232,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_7",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 50,
                     description: [
@@ -4499,7 +4247,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_8",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 58,
                     description: [
@@ -4515,7 +4262,6 @@ export const baselineClassAbilities = {
                 {
                     id: "serpent_sting_9",
                     ...abilityMasterData.vanilla.Hunter.serpent_sting,
-                    availabletoRaces: null,
                     rank: 9,
                     requiresLevel: 60,
                     description: [
@@ -4531,7 +4277,6 @@ export const baselineClassAbilities = {
                 {
                     id: "viper_sting_1",
                     ...abilityMasterData.vanilla.Hunter.viper_sting,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 36,
                     description: [
@@ -4547,7 +4292,6 @@ export const baselineClassAbilities = {
                 {
                     id: "viper_sting_2",
                     ...abilityMasterData.vanilla.Hunter.viper_sting,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 46,
                     description: [
@@ -4563,7 +4307,6 @@ export const baselineClassAbilities = {
                 {
                     id: "viper_sting_3",
                     ...abilityMasterData.vanilla.Hunter.viper_sting,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 56,
                     description: [
@@ -4579,7 +4322,6 @@ export const baselineClassAbilities = {
                 {
                     id: "volley_1",
                     ...abilityMasterData.vanilla.Hunter.volley,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 40,
                     description: [
@@ -4592,7 +4334,6 @@ export const baselineClassAbilities = {
                 {
                     id: "volley_2",
                     ...abilityMasterData.vanilla.Hunter.volley,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 50,
                     description: [
@@ -4605,7 +4346,6 @@ export const baselineClassAbilities = {
                 {
                     id: "volley_3",
                     ...abilityMasterData.vanilla.Hunter.volley,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 58,
                     description: [
@@ -4621,7 +4361,6 @@ export const baselineClassAbilities = {
                 {
                     id: "disengage_1",
                     ...abilityMasterData.vanilla.Hunter.disengage,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -4634,7 +4373,6 @@ export const baselineClassAbilities = {
                 {
                     id: "disengage_2",
                     ...abilityMasterData.vanilla.Hunter.disengage,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 34,
                     description: [
@@ -4647,7 +4385,6 @@ export const baselineClassAbilities = {
                 {
                     id: "disengage_3",
                     ...abilityMasterData.vanilla.Hunter.disengage,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 48,
                     description: [
@@ -4660,7 +4397,6 @@ export const baselineClassAbilities = {
                 {
                     id: "explosive_trap_1",
                     ...abilityMasterData.vanilla.Hunter.explosive_trap,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 34,
                     description: [
@@ -4687,7 +4423,6 @@ export const baselineClassAbilities = {
                 {
                     id: "explosive_trap_2",
                     ...abilityMasterData.vanilla.Hunter.explosive_trap,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 44,
                     description: [
@@ -4714,7 +4449,6 @@ export const baselineClassAbilities = {
                 {
                     id: "explosive_trap_3",
                     ...abilityMasterData.vanilla.Hunter.explosive_trap,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 54,
                     description: [
@@ -4741,7 +4475,6 @@ export const baselineClassAbilities = {
                 {
                     id: "feign_death",
                     ...abilityMasterData.vanilla.Hunter.feign_death,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 30,
                     description: [
@@ -4757,7 +4490,6 @@ export const baselineClassAbilities = {
                 {
                     id: "freezing_trap_1",
                     ...abilityMasterData.vanilla.Hunter.freezing_trap,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -4770,7 +4502,6 @@ export const baselineClassAbilities = {
                 {
                     id: "freezing_trap_2",
                     ...abilityMasterData.vanilla.Hunter.freezing_trap,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 40,
                     description: [
@@ -4783,7 +4514,6 @@ export const baselineClassAbilities = {
                 {
                     id: "freezing_trap_3",
                     ...abilityMasterData.vanilla.Hunter.freezing_trap,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 60,
                     description: [
@@ -4796,7 +4526,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frost_trap",
                     ...abilityMasterData.vanilla.Hunter.frost_trap,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 28,
                     description: [
@@ -4809,7 +4538,6 @@ export const baselineClassAbilities = {
                 {
                     id: "immolation_trap_1",
                     ...abilityMasterData.vanilla.Hunter.immolation_trap,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 16,
                     description: [
@@ -4822,7 +4550,6 @@ export const baselineClassAbilities = {
                 {
                     id: "immolation_trap_2",
                     ...abilityMasterData.vanilla.Hunter.immolation_trap,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 26,
                     description: [
@@ -4835,7 +4562,6 @@ export const baselineClassAbilities = {
                 {
                     id: "immolation_trap_3",
                     ...abilityMasterData.vanilla.Hunter.immolation_trap,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 36,
                     description: [
@@ -4848,7 +4574,6 @@ export const baselineClassAbilities = {
                 {
                     id: "immolation_trap_4",
                     ...abilityMasterData.vanilla.Hunter.immolation_trap,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 46,
                     description: [
@@ -4861,7 +4586,6 @@ export const baselineClassAbilities = {
                 {
                     id: "immolation_trap_5",
                     ...abilityMasterData.vanilla.Hunter.immolation_trap,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 56,
                     description: [
@@ -4874,7 +4598,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mongoose_bite_1",
                     ...abilityMasterData.vanilla.Hunter.mongoose_bite,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 16,
                     description: [
@@ -4887,7 +4610,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mongoose_bite_2",
                     ...abilityMasterData.vanilla.Hunter.mongoose_bite,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -4900,7 +4622,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mongoose_bite_3",
                     ...abilityMasterData.vanilla.Hunter.mongoose_bite,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 44,
                     description: [
@@ -4913,7 +4634,6 @@ export const baselineClassAbilities = {
                 {
                     id: "mongoose_bite_4",
                     ...abilityMasterData.vanilla.Hunter.mongoose_bite,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 58,
                     description: [
@@ -4926,7 +4646,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_1",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 1,
                     description: [
@@ -4939,7 +4658,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_2",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 8,
                     description: [
@@ -4952,7 +4670,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_3",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 16,
                     description: [
@@ -4965,7 +4682,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_4",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 24,
                     description: [
@@ -4978,7 +4694,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_5",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 32,
                     description: [
@@ -4991,7 +4706,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_6",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 40,
                     description: [
@@ -5004,7 +4718,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_7",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 48,
                     description: [
@@ -5017,7 +4730,6 @@ export const baselineClassAbilities = {
                 {
                     id: "raptor_strike_8",
                     ...abilityMasterData.vanilla.Hunter.raptor_strike,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 56,
                     description: [
@@ -5030,7 +4742,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_beasts",
                     ...abilityMasterData.vanilla.Hunter.track_beasts,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 1,
                     description: [
@@ -5046,7 +4757,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_demons",
                     ...abilityMasterData.vanilla.Hunter.track_demons,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 32,
                     description: [
@@ -5062,7 +4772,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_dragonkin",
                     ...abilityMasterData.vanilla.Hunter.track_dragonkin,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 50,
                     description: [
@@ -5078,7 +4787,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_elementals",
                     ...abilityMasterData.vanilla.Hunter.track_elementals,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 26,
                     description: [
@@ -5094,7 +4802,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_giants",
                     ...abilityMasterData.vanilla.Hunter.track_giants,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 40,
                     description: [
@@ -5110,7 +4817,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_hidden",
                     ...abilityMasterData.vanilla.Hunter.track_hidden,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 24,
                     description: [
@@ -5126,7 +4832,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_humanoids",
                     ...abilityMasterData.vanilla.Hunter.track_humanoids,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -5142,7 +4847,6 @@ export const baselineClassAbilities = {
                 {
                     id: "track_undead",
                     ...abilityMasterData.vanilla.Hunter.track_undead,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 18,
                     description: [
@@ -5158,7 +4862,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wing_clip_1",
                     ...abilityMasterData.vanilla.Hunter.wing_clip,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 12,
                     description: [
@@ -5174,7 +4877,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wing_clip_2",
                     ...abilityMasterData.vanilla.Hunter.wing_clip,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 38,
                     description: [
@@ -5190,7 +4892,6 @@ export const baselineClassAbilities = {
                 {
                     id: "wing_clip_3",
                     ...abilityMasterData.vanilla.Hunter.wing_clip,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 60,
                     description: [
@@ -5209,7 +4910,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_resistance_1",
                     ...abilityMasterData.vanilla.Hunter.arcane_resistance,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -5222,7 +4922,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_resistance_2",
                     ...abilityMasterData.vanilla.Hunter.arcane_resistance,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -5235,7 +4934,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_resistance_3",
                     ...abilityMasterData.vanilla.Hunter.arcane_resistance,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 40,
                     description: [
@@ -5248,7 +4946,6 @@ export const baselineClassAbilities = {
                 {
                     id: "arcane_resistance_4",
                     ...abilityMasterData.vanilla.Hunter.arcane_resistance,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 50,
                     description: [
@@ -5261,7 +4958,6 @@ export const baselineClassAbilities = {
                 {
                     id: "beast_training",
                     ...abilityMasterData.vanilla.Hunter.beast_training,
-                    availabletoRaces: null,
                     rank: null,
                     requiresLevel: 10,
                     description: [
@@ -5274,7 +4970,6 @@ export const baselineClassAbilities = {
                 {
                     id: "fire_resistance_1",
                     ...abilityMasterData.vanilla.Hunter.fire_resistance,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -5287,7 +4982,6 @@ export const baselineClassAbilities = {
                 {
                     id: "fire_resistance_2",
                     ...abilityMasterData.vanilla.Hunter.fire_resistance,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -5300,7 +4994,6 @@ export const baselineClassAbilities = {
                 {
                     id: "fire_resistance_3",
                     ...abilityMasterData.vanilla.Hunter.fire_resistance,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 40,
                     description: [
@@ -5313,7 +5006,6 @@ export const baselineClassAbilities = {
                 {
                     id: "fire_resistance_4",
                     ...abilityMasterData.vanilla.Hunter.fire_resistance,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 50,
                     description: [
@@ -5326,7 +5018,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frost_resistance_1",
                     ...abilityMasterData.vanilla.Hunter.frost_resistance,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -5339,7 +5030,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frost_resistance_2",
                     ...abilityMasterData.vanilla.Hunter.frost_resistance,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -5352,7 +5042,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frost_resistance_3",
                     ...abilityMasterData.vanilla.Hunter.frost_resistance,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 40,
                     description: [
@@ -5365,7 +5054,6 @@ export const baselineClassAbilities = {
                 {
                     id: "frost_resistance_4",
                     ...abilityMasterData.vanilla.Hunter.frost_resistance,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 50,
                     description: [
@@ -5378,7 +5066,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_1",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 10,
                     description: [
@@ -5391,7 +5078,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_2",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 12,
                     description: [
@@ -5404,7 +5090,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_3",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 18,
                     description: [
@@ -5417,7 +5102,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_4",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 24,
                     description: [
@@ -5430,7 +5114,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_5",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 30,
                     description: [
@@ -5443,7 +5126,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_6",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 36,
                     description: [
@@ -5456,7 +5138,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_7",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 42,
                     description: [
@@ -5469,7 +5150,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_8",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 48,
                     description: [
@@ -5482,7 +5162,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_9",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 9,
                     requiresLevel: 54,
                     description: [
@@ -5495,7 +5174,6 @@ export const baselineClassAbilities = {
                 {
                     id: "great_stamina_10",
                     ...abilityMasterData.vanilla.Hunter.great_stamina,
-                    availabletoRaces: null,
                     rank: 10,
                     requiresLevel: 60,
                     description: [
@@ -5508,7 +5186,6 @@ export const baselineClassAbilities = {
                 {
                     id: "growl_3",
                     ...abilityMasterData.vanilla.Hunter.growl,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 20,
                     description: [
@@ -5521,7 +5198,6 @@ export const baselineClassAbilities = {
                 {
                     id: "growl_4",
                     ...abilityMasterData.vanilla.Hunter.growl,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 30,
                     description: [
@@ -5534,7 +5210,6 @@ export const baselineClassAbilities = {
                 {
                     id: "growl_5",
                     ...abilityMasterData.vanilla.Hunter.growl,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 40,
                     description: [
@@ -5547,7 +5222,6 @@ export const baselineClassAbilities = {
                 {
                     id: "growl_6",
                     ...abilityMasterData.vanilla.Hunter.growl,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 50,
                     description: [
@@ -5560,7 +5234,6 @@ export const baselineClassAbilities = {
                 {
                     id: "growl_7",
                     ...abilityMasterData.vanilla.Hunter.growl,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 60,
                     description: [
@@ -5573,7 +5246,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_1",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 10,
                     description: [
@@ -5586,7 +5258,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_2",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 12,
                     description: [
@@ -5599,7 +5270,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_3",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 18,
                     description: [
@@ -5612,7 +5282,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_4",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 24,
                     description: [
@@ -5625,7 +5294,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_5",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 5,
                     requiresLevel: 30,
                     description: [
@@ -5638,7 +5306,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_6",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 6,
                     requiresLevel: 36,
                     description: [
@@ -5651,7 +5318,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_7",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 7,
                     requiresLevel: 42,
                     description: [
@@ -5664,7 +5330,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_8",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 8,
                     requiresLevel: 48,
                     description: [
@@ -5677,7 +5342,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_9",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 9,
                     requiresLevel: 54,
                     description: [
@@ -5690,7 +5354,6 @@ export const baselineClassAbilities = {
                 {
                     id: "natural_armor_10",
                     ...abilityMasterData.vanilla.Hunter.natural_armor,
-                    availabletoRaces: null,
                     rank: 10,
                     requiresLevel: 60,
                     description: [
@@ -5703,7 +5366,6 @@ export const baselineClassAbilities = {
                 {
                     id: "nature_resistance_1",
                     ...abilityMasterData.vanilla.Hunter.nature_resistance,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -5716,7 +5378,6 @@ export const baselineClassAbilities = {
                 {
                     id: "nature_resistance_2",
                     ...abilityMasterData.vanilla.Hunter.nature_resistance,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -5729,7 +5390,6 @@ export const baselineClassAbilities = {
                 {
                     id: "nature_resistance_3",
                     ...abilityMasterData.vanilla.Hunter.nature_resistance,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 40,
                     description: [
@@ -5742,7 +5402,6 @@ export const baselineClassAbilities = {
                 {
                     id: "nature_resistance_4",
                     ...abilityMasterData.vanilla.Hunter.nature_resistance,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 50,
                     description: [
@@ -5755,7 +5414,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shadow_resistance_1",
                     ...abilityMasterData.vanilla.Hunter.shadow_resistance,
-                    availabletoRaces: null,
                     rank: 1,
                     requiresLevel: 20,
                     description: [
@@ -5768,7 +5426,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shadow_resistance_2",
                     ...abilityMasterData.vanilla.Hunter.shadow_resistance,
-                    availabletoRaces: null,
                     rank: 2,
                     requiresLevel: 30,
                     description: [
@@ -5781,7 +5438,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shadow_resistance_3",
                     ...abilityMasterData.vanilla.Hunter.shadow_resistance,
-                    availabletoRaces: null,
                     rank: 3,
                     requiresLevel: 40,
                     description: [
@@ -5794,7 +5450,6 @@ export const baselineClassAbilities = {
                 {
                     id: "shadow_resistance_4",
                     ...abilityMasterData.vanilla.Hunter.shadow_resistance,
-                    availabletoRaces: null,
                     rank: 4,
                     requiresLevel: 50,
                     description: [
