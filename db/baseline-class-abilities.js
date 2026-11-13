@@ -1306,12 +1306,12 @@ export const baselineClassAbilities = {
                     rank: 1,
                     requiresLevel: 32,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 50-66 damage<br><br>" + 
-                        "  2 points: 86-102 damage<br><br>" + 
-                        "  3 points: 122-138 damage<br><br>" + 
-                        "  4 points: 158-174 damage<br><br>" + 
-                        "  5 points: 194-210 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 50-66 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 86-102 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 122-138 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 158-174 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 194-210 damage<br>",
                     ],
                     trainingCost: 8000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22568/ferocious-bite",
@@ -1323,12 +1323,12 @@ export const baselineClassAbilities = {
                     rank: 2,
                     requiresLevel: 40,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1.5 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 79-103 damage<br><br>" + 
-                        "  2 points: 138-162 damage<br><br>" + 
-                        "  3 points: 197-221 damage<br><br>" + 
-                        "  4 points: 256-280 damage<br><br>" + 
-                        "  5 points: 315-339 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 1.5 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 79-103 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 138-162 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 197-221 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 256-280 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 315-339 damage<br>",
                     ],
                     trainingCost: 14000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22827/ferocious-bite",
@@ -1340,12 +1340,12 @@ export const baselineClassAbilities = {
                     rank: 3,
                     requiresLevel: 48,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 122-162 damage<br><br>" + 
-                        "  2 points: 214-254 damage<br><br>" + 
-                        "  3 points: 306-346 damage<br><br>" + 
-                        "  4 points: 398-438 damage<br><br>" + 
-                        "  5 points: 490-530 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 122-162 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 214-254 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 306-346 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 398-438 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 490-530 damage<br>",
                     ],
                     trainingCost: 22000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22828/ferocious-bite",
@@ -1357,12 +1357,12 @@ export const baselineClassAbilities = {
                     rank: 4,
                     requiresLevel: 56,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.5 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 173-223 damage<br><br>" + 
-                        "  2 points: 301-351 damage<br><br>" + 
-                        "  3 points: 429-479 damage<br><br>" + 
-                        "  4 points: 557-607 damage<br><br>" + 
-                        "  5 points: 685-735 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.5 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 173-223 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 301-351 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 429-479 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 557-607 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 685-735 damage<br>",
                     ],
                     trainingCost: 30000,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=22829/ferocious-bite",
@@ -1374,12 +1374,12 @@ export const baselineClassAbilities = {
                     rank: 5,
                     requiresLevel: 60,
                     description: [
-                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.70000005 additional damage.  Damage is increased by your Attack Power.<br><br>" + 
-                        "  1 point : 199-259 damage<br><br>" + 
-                        "  2 points: 346-406 damage<br><br>" + 
-                        "  3 points: 493-553 damage<br><br>" + 
-                        "  4 points: 640-700 damage<br><br>" + 
-                        "  5 points: 787-847 damage<br><br>",
+                        "Finishing move that causes damage per combo point and converts each extra point of energy into 2.70000005 additional damage.  Damage is increased by your Attack Power.<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 199-259 damage<br>" + 
+                        "&nbsp;&nbsp;2 points: 346-406 damage<br>" + 
+                        "&nbsp;&nbsp;3 points: 493-553 damage<br>" + 
+                        "&nbsp;&nbsp;4 points: 640-700 damage<br>" + 
+                        "&nbsp;&nbsp;5 points: 787-847 damage<br>",
                     ],
                     taughtBy: "Book of Ferocious Bite V",
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=31018/ferocious-bite",
@@ -1799,12 +1799,12 @@ export const baselineClassAbilities = {
                     rank: 1,
                     requiresLevel: 20,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 42 damage over 12 sec.<br><br>" + 
-                        "  2 points: 66 damage over 12 sec.<br><br>" + 
-                        "  3 points: 90 damage over 12 sec.<br><br>" + 
-                        "  4 points: 114 damage over 12 sec.<br><br>" + 
-                        "  5 points: 138 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 42 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 66 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 90 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 114 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 138 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1819,12 +1819,12 @@ export const baselineClassAbilities = {
                     rank: 2,
                     requiresLevel: 28,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 66 damage over 12 sec.<br><br>" + 
-                        "  2 points: 108 damage over 12 sec.<br><br>" + 
-                        "  3 points: 150 damage over 12 sec.<br><br>" + 
-                        "  4 points: 192 damage over 12 sec.<br><br>" + 
-                        "  5 points: 234 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 66 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 108 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 150 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 192 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 234 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1839,12 +1839,12 @@ export const baselineClassAbilities = {
                     rank: 3,
                     requiresLevel: 36,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 90 damage over 12 sec.<br><br>" + 
-                        "  2 points: 144 damage over 12 sec.<br><br>" + 
-                        "  3 points: 198 damage over 12 sec.<br><br>" + 
-                        "  4 points: 252 damage over 12 sec.<br><br>" + 
-                        "  5 points: 306 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 90 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 144 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 198 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 252 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 306 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1859,12 +1859,12 @@ export const baselineClassAbilities = {
                     rank: 4,
                     requiresLevel: 44,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 138 damage over 12 sec.<br><br>" + 
-                        "  2 points: 222 damage over 12 sec.<br><br>" + 
-                        "  3 points: 306 damage over 12 sec.<br><br>" + 
-                        "  4 points: 390 damage over 12 sec.<br><br>" + 
-                        "  5 points: 474 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 138 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 222 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 306 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 390 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 474 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1879,12 +1879,12 @@ export const baselineClassAbilities = {
                     rank: 5,
                     requiresLevel: 52,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 192 damage over 12 sec.<br><br>" + 
-                        "  2 points: 312 damage over 12 sec.<br><br>" + 
-                        "  3 points: 432 damage over 12 sec.<br><br>" + 
-                        "  4 points: 552 damage over 12 sec.<br><br>" + 
-                        "  5 points: 672 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 192 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 312 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 432 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 552 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 672 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -1899,12 +1899,12 @@ export const baselineClassAbilities = {
                     rank: 6,
                     requiresLevel: 60,
                     description: [
-                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br><br>" + 
-                        "  1 point : 270 damage over 12 sec.<br><br>" + 
-                        "  2 points: 438 damage over 12 sec.<br><br>" + 
-                        "  3 points: 606 damage over 12 sec.<br><br>" + 
-                        "  4 points: 774 damage over 12 sec.<br><br>" + 
-                        "  5 points: 942 damage over 12 sec.",
+                        "Finishing move that causes damage over time.  Damage increases per combo point and by your Attack Power:<br>" + 
+                        "&nbsp;&nbsp;1 point&nbsp;&nbsp;: 270 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;2 points: 438 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;3 points: 606 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;4 points: 774 damage over 12 sec.<br>" + 
+                        "&nbsp;&nbsp;5 points: 942 damage over 12 sec.",
                     ],
                     debuffText: [
                         "Bleed damage every 2 seconds.",
@@ -3449,19 +3449,2348 @@ export const baselineClassAbilities = {
         [HUNTER]: {
             // hunter - vanilla
             "Beast Mastery": [
-
+                {
+                    id: "aspect_of_the_beast",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_beast,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 30,
+                    description: [
+                        "The hunter takes on the aspects of a beast, becoming untrackable.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Untrackable.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13161/aspect-of-the-beast",
+                },
+                {
+                    id: "aspect_of_the_cheetah",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_cheetah,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 20,
+                    description: [
+                        "The hunter takes on the aspects of a cheetah, increasing movement speed by 30%.  If the hunter takes damage, he will be dazed for 4 sec.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "30% increased movement speed.  Dazed if struck.",
+                    ],
+                    spentResource: 40,
+                    trainingCost: 2200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5118/aspect-of-the-cheetah",
+                },
+                {
+                    id: "aspect_of_the_hawk_1",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 10,
+                    description: [
+                        "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 20.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases Ranged Attack Power by 20.",
+                    ],
+                    spentResource: 20,
+                    trainingCost: 400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13165/aspect-of-the-hawk",
+                },
+                {
+                    id: "aspect_of_the_hawk_2",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 18,
+                    description: [
+                        "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 35.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases Ranged Attack Power by 35.",
+                    ],
+                    spentResource: 35,
+                    trainingCost: 2000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14318/aspect-of-the-hawk",
+                },
+                {
+                    id: "aspect_of_the_hawk_3",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 28,
+                    description: [
+                        "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 50.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases Ranged Attack Power by 50.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14319/aspect-of-the-hawk",
+                },
+                {
+                    id: "aspect_of_the_hawk_4",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 38,
+                    description: [
+                        "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 70.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases Ranged Attack Power by 70.",
+                    ],
+                    spentResource: 70,
+                    trainingCost: 16000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14320/aspect-of-the-hawk",
+                },
+                {
+                    id: "aspect_of_the_hawk_5",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 48,
+                    description: [
+                        "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 90.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases Ranged Attack Power by 90.",
+                    ],
+                    spentResource: 90,
+                    trainingCost: 32000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14321/aspect-of-the-hawk",
+                },
+                {
+                    id: "aspect_of_the_hawk_6",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 58,
+                    description: [
+                        "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 110.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases Ranged Attack Power by 110.",
+                    ],
+                    spentResource: 110,
+                    trainingCost: 48000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14322/aspect-of-the-hawk",
+                },
+                {
+                    id: "aspect_of_the_hawk_7",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_hawk,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 60,
+                    description: [
+                        "The hunter takes on the aspects of a hawk, increasing Ranged Attack Power by 120.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases Ranged Attack Power by 120.",
+                    ],
+                    spentResource: 120,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=25296/aspect-of-the-hawk",
+                },
+                {
+                    id: "aspect_of_the_monkey",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_monkey,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 4,
+                    description: [
+                        "The hunter takes on the aspects of a monkey, increasing chance to dodge by 8%.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Increases chance to dodge by 8%.",
+                    ],
+                    spentResource: 20,
+                    trainingCost: 100,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13163/aspect-of-the-monkey",
+                },
+                {
+                    id: "aspect_of_the_pack",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_pack,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 40,
+                    description: [
+                        "The hunter and group members within 30 yards take on the aspects of a pack of cheetahs, increasing movement speed by 30%.  If a pack member takes damage, they will be dazed for 4 sec.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "30% increased movement speed.  Dazed if damage is taken.",
+                    ],
+                    spentResource: 100,
+                    trainingCost: 18000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13159/aspect-of-the-pack",
+                },
+                {
+                    id: "aspect_of_the_wild_1",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_wild,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 46,
+                    description: [
+                        "The hunter and group members within 30 yards take on the aspect of the wild, increasing Nature resistance by 45.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Nature resistance increased by 45.",
+                    ],
+                    spentResource: 90,
+                    trainingCost: 28000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20043/aspect-of-the-wild",
+                },
+                {
+                    id: "aspect_of_the_wild_2",
+                    ...abilityMasterData.vanilla.Hunter.aspect_of_the_wild,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 56,
+                    description: [
+                        "The hunter and group members within 30 yards take on the aspect of the wild, increasing Nature resistance by 60.  Only one Aspect can be active at a time.",
+                    ],
+                    buffText: [
+                        "Nature resistance increased by 60.",
+                    ],
+                    spentResource: 115,
+                    trainingCost: 46000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20190/aspect-of-the-wild",
+                },
+                {
+                    id: "beast_lore",
+                    ...abilityMasterData.vanilla.Hunter.beast_lore,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 24,
+                    description: [
+                        "Gather information about the target beast.  The tooltip will display damage, health, armor, any special resistances, and diet.",
+                    ],
+                    debuffText: [
+                        "Lore revealed.",
+                    ],
+                    spentResource: 40,
+                    trainingCost: 7000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1462/beast-lore",
+                },
+                {
+                    id: "call_pet",
+                    ...abilityMasterData.vanilla.Hunter.call_pet,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 10,
+                    description: [
+                        "Summons your pet to you.",
+                    ],
+                    spentResource: null,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=883/call-pet",
+                },
+                {
+                    id: "dismiss_pet",
+                    ...abilityMasterData.vanilla.Hunter.dismiss_pet,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 10,
+                    description: [
+                        "Dismiss your pet.  Dismissing your pet will reduce its happiness by 50.",
+                    ],
+                    spentResource: null,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2641/dismiss-pet",
+                },
+                {
+                    id: "eagle_eye",
+                    ...abilityMasterData.vanilla.Hunter.eagle_eye,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 14,
+                    description: [
+                        "Zooms in the hunter's vision.  Only usable outdoors.  Lasts 1 min.",
+                    ],
+                    spentResource: 25,
+                    trainingCost: 1200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6197/eagle-eye",
+                },
+                {
+                    id: "eyes_of_the_beast",
+                    ...abilityMasterData.vanilla.Hunter.eyes_of_the_beast,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 14,
+                    description: [
+                        "Take direct control of your pet and see through its eyes for 1 min.",
+                    ],
+                    buffText: [
+                        "Directly controlling pet.",
+                    ],
+                    spentResource: 20,
+                    trainingCost: 1200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1002/eyes-of-the-beast",
+                },
+                {
+                    id: "feed_pet",
+                    ...abilityMasterData.vanilla.Hunter.feed_pet,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 10,
+                    description: [
+                        "Feed your pet the selected item.  Feeding your pet increases happiness.  Using food close to the pet's level will have a better result.",
+                    ],
+                    spentResource: null,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=6991/feed-pet",
+                },
+                {
+                    id: "mend_pet_1",
+                    ...abilityMasterData.vanilla.Hunter.mend_pet,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 12,
+                    description: [
+                        "Heals your pet 20 health every second while you focus.  Lasts 5 sec.",
+                    ],
+                    buffText: [
+                        "Heals 20 every second.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=136/mend-pet",
+                },
+                {
+                    id: "mend_pet_2",
+                    ...abilityMasterData.vanilla.Hunter.mend_pet,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 20,
+                    description: [
+                        "Heals your pet 38 health every second while you focus.  Lasts 5 sec.",
+                    ],
+                    buffText: [
+                        "Heals 38 every second.",
+                    ],
+                    spentResource: 90,
+                    trainingCost: 2200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3111/mend-pet",
+                },
+                {
+                    id: "mend_pet_3",
+                    ...abilityMasterData.vanilla.Hunter.mend_pet,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 28,
+                    description: [
+                        "Heals your pet 68 health every second while you focus.  Lasts 5 sec.",
+                    ],
+                    buffText: [
+                        "Heals 68 every second.",
+                    ],
+                    spentResource: 155,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3661/mend-pet",
+                },
+                {
+                    id: "mend_pet_4",
+                    ...abilityMasterData.vanilla.Hunter.mend_pet,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 36,
+                    description: [
+                        "Heals your pet 103 health every second while you focus.  Lasts 5 sec.",
+                    ],
+                    buffText: [
+                        "Heals 103 every second.",
+                    ],
+                    spentResource: 225,
+                    trainingCost: 14000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3662/mend-pet",
+                },
+                {
+                    id: "mend_pet_5",
+                    ...abilityMasterData.vanilla.Hunter.mend_pet,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 44,
+                    description: [
+                        "Heals your pet 142 health every second while you focus.  Lasts 5 sec.",
+                    ],
+                    buffText: [
+                        "Heals 142 every second.",
+                    ],
+                    spentResource: 300,
+                    trainingCost: 26000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13542/mend-pet",
+                },
+                {
+                    id: "mend_pet_6",
+                    ...abilityMasterData.vanilla.Hunter.mend_pet,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 52,
+                    description: [
+                        "Heals your pet 189 health every second while you focus.  Lasts 5 sec.",
+                    ],
+                    buffText: [
+                        "Heals 189 every second.",
+                    ],
+                    spentResource: 385,
+                    trainingCost: 40000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13543/mend-pet",
+                },
+                {
+                    id: "mend_pet_7",
+                    ...abilityMasterData.vanilla.Hunter.mend_pet,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 60,
+                    description: [
+                        "Heals your pet 245 health every second while you focus.  Lasts 5 sec.",
+                    ],
+                    buffText: [
+                        "Heals 245 every second.",
+                    ],
+                    spentResource: 480,
+                    trainingCost: 50000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13544/mend-pet",
+                },
+                {
+                    id: "revive_pet",
+                    ...abilityMasterData.vanilla.Hunter.revive_pet,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 10,
+                    description: [
+                        "Revive your pet, returning it to life with 15% of its health.",
+                    ],
+                    spentResource: 100,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=982/revive-pet",
+                },
+                {
+                    id: "scare_beast_1",
+                    ...abilityMasterData.vanilla.Hunter.scare_beast,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 14,
+                    description: [
+                        "Scares a beast, causing it to run in fear for up to 10 sec.  Damage caused may interrupt the effect.  Only one beast can be feared at a time.",
+                    ],
+                    debuffText: [
+                        "Feared.",
+                    ],
+                    spentResource: 35,
+                    trainingCost: 1200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1513/scare-beast",
+                },
+                {
+                    id: "scare_beast_2",
+                    ...abilityMasterData.vanilla.Hunter.scare_beast,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Scares a beast, causing it to run in fear for up to 15 sec.  Damage caused may interrupt the effect.  Only one beast can be feared at a time.",
+                    ],
+                    debuffText: [
+                        "Feared.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14326/scare-beast",
+                },
+                {
+                    id: "scare_beast_3",
+                    ...abilityMasterData.vanilla.Hunter.scare_beast,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 46,
+                    description: [
+                        "Scares a beast, causing it to run in fear for up to 20 sec.  Damage caused may interrupt the effect.  Only one beast can be feared at a time.",
+                    ],
+                    debuffText: [
+                        "Feared.",
+                    ],
+                    spentResource: 75,
+                    trainingCost: 28000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14327/scare-beast",
+                },
+                {
+                    id: "tame_beast",
+                    ...abilityMasterData.vanilla.Hunter.tame_beast,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 10,
+                    description: [
+                        "Begins taming a beast to be your companion.  Your armor is reduced by 100% while you focus on taming the beast for 20 sec.  If you lose the beast's attention for any reason, the taming process will fail.  Once tamed, the beast will be very unhappy and disloyal.  Try feeding the pet immediately to make it happy.",
+                    ],
+                    buffText: [
+                        "Taming pet.",
+                    ],
+                    spentResource: 60,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1515/tame-beast",
+                },
+                {
+                    id: "tranquilizing_shot",
+                    ...abilityMasterData.vanilla.Hunter.tranquilizing_shot,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 60,
+                    description: [
+                        "Attempts to remove 1 Frenzy effect from an enemy creature.",
+                    ],
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19801/tranquilizing-shot",
+                },
             ],
             // hunter - vanilla
             Marksmanship: [
-
+                {
+                    id: "arcane_shot_1",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 6,
+                    description: [
+                        "An instant shot that causes 13 Arcane damage.",
+                    ],
+                    spentResource: 25,
+                    trainingCost: 100,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3044/arcane-shot",
+                },
+                {
+                    id: "arcane_shot_2",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 12,
+                    description: [
+                        "An instant shot that causes 21 Arcane damage.",
+                    ],
+                    spentResource: 35,
+                    trainingCost: 600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14281/arcane-shot",
+                },
+                {
+                    id: "arcane_shot_3",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 20,
+                    description: [
+                        "An instant shot that causes 33 Arcane damage.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 2200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14282/arcane-shot",
+                },
+                {
+                    id: "arcane_shot_4",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 28,
+                    description: [
+                        "An instant shot that causes 59 Arcane damage.",
+                    ],
+                    spentResource: 80,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14283/arcane-shot",
+                },
+                {
+                    id: "arcane_shot_5",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 36,
+                    description: [
+                        "An instant shot that causes 83 Arcane damage.",
+                    ],
+                    spentResource: 105,
+                    trainingCost: 14000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14284/arcane-shot",
+                },
+                {
+                    id: "arcane_shot_6",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 44,
+                    description: [
+                        "An instant shot that causes 115 Arcane damage.",
+                    ],
+                    spentResource: 135,
+                    trainingCost: 26000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14285/arcane-shot",
+                },
+                {
+                    id: "arcane_shot_7",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 52,
+                    description: [
+                        "An instant shot that causes 145 Arcane damage.",
+                    ],
+                    spentResource: 160,
+                    trainingCost: 40000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14286/arcane-shot",
+                },
+                {
+                    id: "arcane_shot_8",
+                    ...abilityMasterData.vanilla.Hunter.arcane_shot,
+                    availabletoRaces: null,
+                    rank: 8,
+                    requiresLevel: 60,
+                    description: [
+                        "An instant shot that causes 183 Arcane damage.",
+                    ],
+                    spentResource: 190,
+                    trainingCost: 50000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14287/arcane-shot",
+                },
+                {
+                    id: "auto_shot",
+                    ...abilityMasterData.vanilla.Hunter.auto_shot,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 1,
+                    description: [
+                        "Automatically shoots the target until cancelled.",
+                    ],
+                    buffText: [
+                        "Firing at the target.",
+                    ],
+                    spentResource: null,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=75/auto-shot",
+                },
+                {
+                    id: "concussive_shot",
+                    ...abilityMasterData.vanilla.Hunter.concussive_shot,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 8,
+                    description: [
+                        "Dazes the target, slowing movement speed by 50% for 4 sec.",
+                    ],
+                    debuffText: [
+                        "Movement slowed by 50%.",
+                    ],
+                    spentResource: 8,
+                    trainingCost: 200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5116/concussive-shot",
+                },
+                {
+                    id: "distracting_shot_1",
+                    ...abilityMasterData.vanilla.Hunter.distracting_shot,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 12,
+                    description: [
+                        "Distract the target, causing threat.",
+                    ],
+                    spentResource: 20,
+                    trainingCost: 600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=20736/distracting-shot",
+                },
+                {
+                    id: "distracting_shot_2",
+                    ...abilityMasterData.vanilla.Hunter.distracting_shot,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 20,
+                    description: [
+                        "Distract the target, causing threat.  More effective than Distracting Shot (Rank 1).",
+                    ],
+                    spentResource: 30,
+                    trainingCost: 2200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14274/distracting-shot",
+                },
+                {
+                    id: "distracting_shot_3",
+                    ...abilityMasterData.vanilla.Hunter.distracting_shot,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 30,
+                    description: [
+                        "Distract the target, causing threat.  More effective than Distracting Shot (Rank 2).",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=15629/distracting-shot",
+                },
+                {
+                    id: "distracting_shot_4",
+                    ...abilityMasterData.vanilla.Hunter.distracting_shot,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 40,
+                    description: [
+                        "Distract the target, causing threat.  More effective than Distracting Shot (Rank 3).",
+                    ],
+                    spentResource: 70,
+                    trainingCost: 18000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=15630/distracting-shot",
+                },
+                {
+                    id: "distracting_shot_5",
+                    ...abilityMasterData.vanilla.Hunter.distracting_shot,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 50,
+                    description: [
+                        "Distract the target, causing threat.  More effective than Distracting Shot (Rank 4).",
+                    ],
+                    spentResource: 90,
+                    trainingCost: 36000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=15631/distracting-shot",
+                },
+                {
+                    id: "distracting_shot_6",
+                    ...abilityMasterData.vanilla.Hunter.distracting_shot,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 60,
+                    description: [
+                        "Distract the target, causing threat.  More effective than Distracting Shot (Rank 5).",
+                    ],
+                    spentResource: 110,
+                    trainingCost: 50000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=15632/distracting-shot",
+                },
+                {
+                    id: "flare",
+                    ...abilityMasterData.vanilla.Hunter.flare,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 32,
+                    description: [
+                        "Exposes all hidden and invisible enemies within 10 yards of the targeted area for 30 sec.",
+                    ],
+                    debuffText: [
+                        "Hidden and invisible units are revealed.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 10000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1543/flare",
+                },
+                {
+                    id: "hunters_mark_1",
+                    ...abilityMasterData.vanilla.Hunter.hunters_mark,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 6,
+                    description: [
+                        "Places the Hunter's Mark on the target, increasing the Ranged Attack Power of all attackers against that target by 20.  In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible.  The target also appears on the mini-map.  Lasts for 2 min.",
+                    ],
+                    debuffText: [
+                        "All attackers gain 20 Ranged Attack Power against this target.",
+                    ],
+                    spentResource: 15,
+                    trainingCost: 100,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1130/hunters-mark",
+                },
+                {
+                    id: "hunters_mark_2",
+                    ...abilityMasterData.vanilla.Hunter.hunters_mark,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 22,
+                    description: [
+                        "Places the Hunter's Mark on the target, increasing the Ranged Attack Power of all attackers against that target by 45.  In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible.  The target also appears on the mini-map.  Lasts for 2 min.",
+                    ],
+                    debuffText: [
+                        "All attackers gain 45 Ranged Attack Power against this target.",
+                    ],
+                    spentResource: 30,
+                    trainingCost: 6000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14323/hunters-mark",
+                },
+                {
+                    id: "hunters_mark_3",
+                    ...abilityMasterData.vanilla.Hunter.hunters_mark,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 40,
+                    description: [
+                        "Places the Hunter's Mark on the target, increasing the Ranged Attack Power of all attackers against that target by 75.  In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible.  The target also appears on the mini-map.  Lasts for 2 min.",
+                    ],
+                    debuffText: [
+                        "All attackers gain 75 Ranged Attack Power against this target.",
+                    ],
+                    spentResource: 45,
+                    trainingCost: 18000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14324/hunters-mark",
+                },
+                {
+                    id: "hunters_mark_4",
+                    ...abilityMasterData.vanilla.Hunter.hunters_mark,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 58,
+                    description: [
+                        "Places the Hunter's Mark on the target, increasing the Ranged Attack Power of all attackers against that target by 110.  In addition, the target of this ability can always be seen by the hunter whether it stealths or turns invisible.  The target also appears on the mini-map.  Lasts for 2 min.",
+                    ],
+                    debuffText: [
+                        "All attackers gain 110 Ranged Attack Power against this target.",
+                    ],
+                    spentResource: 60,
+                    trainingCost: 48000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14325/hunters-mark",
+                },
+                {
+                    id: "multi_shot_1",
+                    ...abilityMasterData.vanilla.Hunter.multi_shot,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 18,
+                    description: [
+                        "Fires several missiles, hitting 3 targets.",
+                    ],
+                    spentResource: 100,
+                    trainingCost: 2000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2643/multi-shot",
+                },
+                {
+                    id: "multi_shot_2",
+                    ...abilityMasterData.vanilla.Hunter.multi_shot,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Fires several missiles, hitting 3 targets for an additional 40 damage.",
+                    ],
+                    spentResource: 140,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14288/multi-shot",
+                },
+                {
+                    id: "multi_shot_3",
+                    ...abilityMasterData.vanilla.Hunter.multi_shot,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 42,
+                    description: [
+                        "Fires several missiles, hitting 3 targets for an additional 80 damage.",
+                    ],
+                    spentResource: 175,
+                    trainingCost: 24000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14289/multi-shot",
+                },
+                {
+                    id: "multi_shot_4",
+                    ...abilityMasterData.vanilla.Hunter.multi_shot,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 54,
+                    description: [
+                        "Fires several missiles, hitting 3 targets for an additional 120 damage.",
+                    ],
+                    spentResource: 210,
+                    trainingCost: 42000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14290/multi-shot",
+                },
+                {
+                    id: "multi_shot_5",
+                    ...abilityMasterData.vanilla.Hunter.multi_shot,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 60,
+                    description: [
+                        "Fires several missiles, hitting 3 targets for an additional 150 damage.",
+                    ],
+                    spentResource: 230,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=25294/multi-shot",
+                },
+                {
+                    id: "rapid_fire",
+                    ...abilityMasterData.vanilla.Hunter.rapid_fire,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 26,
+                    description: [
+                        "Increases ranged attack speed by 40% for 15 sec.",
+                    ],
+                    buffText: [
+                        "Increases ranged attack speed by 40%.",
+                    ],
+                    spentResource: 100,
+                    trainingCost: 7000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3045/rapid-fire",
+                },
+                {
+                    id: "scorpid_sting_1",
+                    ...abilityMasterData.vanilla.Hunter.scorpid_sting,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 22,
+                    description: [
+                        "Stings the target, reducing Strength and Agility by 20 for 20 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Strength and Agility reduced by 20.",
+                    ],
+                    spentResource: 70,
+                    trainingCost: 6000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3043/scorpid-sting",
+                },
+                {
+                    id: "scorpid_sting_2",
+                    ...abilityMasterData.vanilla.Hunter.scorpid_sting,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 32,
+                    description: [
+                        "Stings the target, reducing Strength and Agility by 29 for 20 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Strength and Agility reduced by 29.",
+                    ],
+                    spentResource: 90,
+                    trainingCost: 10000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14275/scorpid-sting",
+                },
+                {
+                    id: "scorpid_sting_3",
+                    ...abilityMasterData.vanilla.Hunter.scorpid_sting,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 42,
+                    description: [
+                        "Stings the target, reducing Strength and Agility by 45 for 20 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Strength and Agility reduced by 45.",
+                    ],
+                    spentResource: 125,
+                    trainingCost: 24000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14276/scorpid-sting",
+                },
+                {
+                    id: "scorpid_sting_4",
+                    ...abilityMasterData.vanilla.Hunter.scorpid_sting,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 52,
+                    description: [
+                        "Stings the target, reducing Strength and Agility by 68 for 20 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Strength and Agility reduced by 68.",
+                    ],
+                    spentResource: 165,
+                    trainingCost: 40000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14277/scorpid-sting",
+                },
+                {
+                    id: "serpent_sting_1",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 4,
+                    description: [
+                        "Stings the target, causing 20 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 4 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 15,
+                    trainingCost: 100,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1978/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_2",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 10,
+                    description: [
+                        "Stings the target, causing 40 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 8 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 30,
+                    trainingCost: 400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13549/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_3",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 18,
+                    description: [
+                        "Stings the target, causing 80 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 16 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 2000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13550/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_4",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 26,
+                    description: [
+                        "Stings the target, causing 140 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 28 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 80,
+                    trainingCost: 7000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13551/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_5",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 34,
+                    description: [
+                        "Stings the target, causing 210 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 42 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 115,
+                    trainingCost: 12000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13552/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_6",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 42,
+                    description: [
+                        "Stings the target, causing 290 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 58 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 150,
+                    trainingCost: 24000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13553/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_7",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 50,
+                    description: [
+                        "Stings the target, causing 385 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 77 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 190,
+                    trainingCost: 36000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13554/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_8",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 8,
+                    requiresLevel: 58,
+                    description: [
+                        "Stings the target, causing 490 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 98 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 230,
+                    trainingCost: 48000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13555/serpent-sting",
+                },
+                {
+                    id: "serpent_sting_9",
+                    ...abilityMasterData.vanilla.Hunter.serpent_sting,
+                    availabletoRaces: null,
+                    rank: 9,
+                    requiresLevel: 60,
+                    description: [
+                        "Stings the target, causing 555 Nature damage over 15 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Causes 111 Nature damage every 3 seconds.",
+                    ],
+                    spentResource: 250,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=25295/serpent-sting",
+                },
+                {
+                    id: "viper_sting_1",
+                    ...abilityMasterData.vanilla.Hunter.viper_sting,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 36,
+                    description: [
+                        "Stings the target, draining 616 mana over 8 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Drains 154 mana every 2 seconds.",
+                    ],
+                    spentResource: 135,
+                    trainingCost: 14000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=3034/viper-sting",
+                },
+                {
+                    id: "viper_sting_2",
+                    ...abilityMasterData.vanilla.Hunter.viper_sting,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 46,
+                    description: [
+                        "Stings the target, draining 848 mana over 8 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Drains 212 mana every 2 seconds.",
+                    ],
+                    spentResource: 175,
+                    trainingCost: 28000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14279/viper-sting",
+                },
+                {
+                    id: "viper_sting_3",
+                    ...abilityMasterData.vanilla.Hunter.viper_sting,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 56,
+                    description: [
+                        "Stings the target, draining 1108 mana over 8 sec.  Only one Sting per Hunter can be active on any one target.",
+                    ],
+                    debuffText: [
+                        "Drains 277 mana every 2 seconds.",
+                    ],
+                    spentResource: 215,
+                    trainingCost: 46000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14280/viper-sting",
+                },
+                {
+                    id: "volley_1",
+                    ...abilityMasterData.vanilla.Hunter.volley,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 40,
+                    description: [
+                        "Continuously fires a volley of ammo at the target area, causing 50 Arcane damage to enemy targets within 8 yards every second for 6 sec.",
+                    ],
+                    spentResource: 350,
+                    trainingCost: 18000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1510/volley",
+                },
+                {
+                    id: "volley_2",
+                    ...abilityMasterData.vanilla.Hunter.volley,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 50,
+                    description: [
+                        "Continuously fires a volley of ammo at the target area, causing 65 Arcane damage to enemy targets within 8 yards every second for 6 sec.",
+                    ],
+                    spentResource: 420,
+                    trainingCost: 36000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14294/volley",
+                },
+                {
+                    id: "volley_3",
+                    ...abilityMasterData.vanilla.Hunter.volley,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 58,
+                    description: [
+                        "Continuously fires a volley of ammo at the target area, causing 80 Arcane damage to enemy targets within 8 yards every second for 6 sec.",
+                    ],
+                    spentResource: 490,
+                    trainingCost: 48000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14295/volley",
+                },
             ],
             // hunter - vanilla
             Survival: [
-
+                {
+                    id: "disengage_1",
+                    ...abilityMasterData.vanilla.Hunter.disengage,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Attempts to disengage from the target, reducing threat.  Character exits combat mode.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 2200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=781/disengage",
+                },
+                {
+                    id: "disengage_2",
+                    ...abilityMasterData.vanilla.Hunter.disengage,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 34,
+                    description: [
+                        "Attempts to disengage from the target, reducing threat.  More effective than Disengage (Rank 1).  Character exits combat mode.",
+                    ],
+                    spentResource: 100,
+                    trainingCost: 12000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14272/disengage",
+                },
+                {
+                    id: "disengage_3",
+                    ...abilityMasterData.vanilla.Hunter.disengage,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 48,
+                    description: [
+                        "Attempts to disengage from the target, reducing threat.  More effective than Disengage (Rank 2).  Character exits combat mode.",
+                    ],
+                    spentResource: 150,
+                    trainingCost: 32000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14273/disengage",
+                },
+                {
+                    id: "explosive_trap_1",
+                    ...abilityMasterData.vanilla.Hunter.explosive_trap,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 34,
+                    description: [
+                        "Place a fire trap that explodes when an enemy approaches, causing 104 to 135 Fire damage and 150 additional Fire damage over 20 sec to all within 10 yards.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    scaling: {
+                        min: (level) => {
+                            const values = {
+                            34: 100, 35: 100, 36: 101, 37: 102, 38: 103, 39: 104,
+                            };
+                            return values[level] ?? 104; // 60 = 104
+                        },
+                        max: (level) => {
+                            const values = {
+                            34: 130, 35: 131, 36: 132, 37: 133, 38: 134, 39: 134,
+                            };
+                            return values[level] ?? 135; // 60 = 135
+                        }
+                    },
+                    spentResource: 275,
+                    trainingCost: 12000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13813/explosive-trap",
+                },
+                {
+                    id: "explosive_trap_2",
+                    ...abilityMasterData.vanilla.Hunter.explosive_trap,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 44,
+                    description: [
+                        "Place a fire trap that explodes when an enemy approaches, causing 145 to 193 Fire damage and 240 additional Fire damage over 20 sec to all within 10 yards.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    scaling: {
+                        min: (level) => {
+                            const values = {
+                            44: 139, 45: 140, 46: 141, 47: 142, 48: 143, 49: 144,
+                            };
+                            return values[level] ?? 145; // 60 = 145
+                        },
+                        max: (level) => {
+                            const values = {
+                            44: 187, 45: 188, 46: 189, 47: 190, 48: 191, 49: 192,
+                            };
+                            return values[level] ?? 193; // 60 = 193
+                        }
+                    },
+                    spentResource: 395,
+                    trainingCost: 26000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14316/explosive-trap",
+                },
+                {
+                    id: "explosive_trap_3",
+                    ...abilityMasterData.vanilla.Hunter.explosive_trap,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 54,
+                    description: [
+                        "Place a fire trap that explodes when an enemy approaches, causing 208 to 265 Fire damage and 330 additional Fire damage over 20 sec to all within 10 yards.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    scaling: {
+                        min: (level) => {
+                            const values = {
+                            54: 201, 55: 202, 56: 203, 57: 204, 58: 205, 59: 207,
+                            };
+                            return values[level] ?? 208; // 60 = 208
+                        },
+                        max: (level) => {
+                            const values = {
+                            54: 257, 55: 259, 56: 260, 57: 261, 58: 262, 59: 263,
+                            };
+                            return values[level] ?? 265; // 60 = 265
+                        }
+                    },
+                    spentResource: 520,
+                    trainingCost: 42000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14317/explosive-trap",
+                },
+                {
+                    id: "feign_death",
+                    ...abilityMasterData.vanilla.Hunter.feign_death,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 30,
+                    description: [
+                        "Feign death which may trick enemies into ignoring you.  Lasts up to 6 min.",
+                    ],
+                    buffText: [
+                        "Feigning death.",
+                    ],
+                    spentResource: 80,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5384/feign-death",
+                },
+                {
+                    id: "freezing_trap_1",
+                    ...abilityMasterData.vanilla.Hunter.freezing_trap,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Place a frost trap that freezes the first enemy that approaches, preventing all action for up to 10 sec.  Any damage caused will break the ice.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 2200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1499/freezing-trap",
+                },
+                {
+                    id: "freezing_trap_2",
+                    ...abilityMasterData.vanilla.Hunter.freezing_trap,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 40,
+                    description: [
+                        "Place a frost trap that freezes the first enemy that approaches, preventing all action for up to 15 sec.  Any damage caused will break the ice.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 75,
+                    trainingCost: 18000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14310/freezing-trap",
+                },
+                {
+                    id: "freezing_trap_3",
+                    ...abilityMasterData.vanilla.Hunter.freezing_trap,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 60,
+                    description: [
+                        "Place a frost trap that freezes the first enemy that approaches, preventing all action for up to 20 sec.  Any damage caused will break the ice.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 100,
+                    trainingCost: 50000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14311/freezing-trap",
+                },
+                {
+                    id: "frost_trap",
+                    ...abilityMasterData.vanilla.Hunter.frost_trap,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 28,
+                    description: [
+                        "Place a frost trap that creates an ice slick around itself for 30 sec when the first enemy approaches it.  All enemies within 10 yards will be slowed by 60% while in the area of effect.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 60,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13809/frost-trap",
+                },
+                {
+                    id: "immolation_trap_1",
+                    ...abilityMasterData.vanilla.Hunter.immolation_trap,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 16,
+                    description: [
+                        "Place a fire trap that will burn the first enemy to approach for 105 Fire damage over 15 sec.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 1800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=13795/immolation-trap",
+                },
+                {
+                    id: "immolation_trap_2",
+                    ...abilityMasterData.vanilla.Hunter.immolation_trap,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 26,
+                    description: [
+                        "Place a fire trap that will burn the first enemy to approach for 215 Fire damage over 15 sec.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 90,
+                    trainingCost: 7000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14302/immolation-trap",
+                },
+                {
+                    id: "immolation_trap_3",
+                    ...abilityMasterData.vanilla.Hunter.immolation_trap,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 36,
+                    description: [
+                        "Place a fire trap that will burn the first enemy to approach for 340 Fire damage over 15 sec.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 135,
+                    trainingCost: 14000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14303/immolation-trap",
+                },
+                {
+                    id: "immolation_trap_4",
+                    ...abilityMasterData.vanilla.Hunter.immolation_trap,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 46,
+                    description: [
+                        "Place a fire trap that will burn the first enemy to approach for 510 Fire damage over 15 sec.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 190,
+                    trainingCost: 28000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14304/immolation-trap",
+                },
+                {
+                    id: "immolation_trap_5",
+                    ...abilityMasterData.vanilla.Hunter.immolation_trap,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 56,
+                    description: [
+                        "Place a fire trap that will burn the first enemy to approach for 690 Fire damage over 15 sec.  Trap will exist for 1 min.  Traps can only be placed when out of combat.  Only one trap can be active at a time.",
+                    ],
+                    spentResource: 245,
+                    trainingCost: 46000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14305/immolation-trap",
+                },
+                {
+                    id: "mongoose_bite_1",
+                    ...abilityMasterData.vanilla.Hunter.mongoose_bite,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 16,
+                    description: [
+                        "Counterattack the enemy for 25 damage.  Can only be performed after you dodge.",
+                    ],
+                    spentResource: 30,
+                    trainingCost: 1800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1495/mongoose-bite",
+                },
+                {
+                    id: "mongoose_bite_2",
+                    ...abilityMasterData.vanilla.Hunter.mongoose_bite,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Counterattack the enemy for 45 damage.  Can only be performed after you dodge.",
+                    ],
+                    spentResource: 40,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14269/mongoose-bite",
+                },
+                {
+                    id: "mongoose_bite_3",
+                    ...abilityMasterData.vanilla.Hunter.mongoose_bite,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 44,
+                    description: [
+                        "Counterattack the enemy for 75 damage.  Can only be performed after you dodge.",
+                    ],
+                    spentResource: 50,
+                    trainingCost: 26000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14270/mongoose-bite",
+                },
+                {
+                    id: "mongoose_bite_4",
+                    ...abilityMasterData.vanilla.Hunter.mongoose_bite,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 58,
+                    description: [
+                        "Counterattack the enemy for 115 damage.  Can only be performed after you dodge.",
+                    ],
+                    spentResource: 65,
+                    trainingCost: 48000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14271/mongoose-bite",
+                },
+                {
+                    id: "raptor_strike_1",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 1,
+                    description: [
+                        "A strong attack that increases melee damage by 5.",
+                    ],
+                    spentResource: 15,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2973/raptor-strike",
+                },
+                {
+                    id: "raptor_strike_2",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 8,
+                    description: [
+                        "A strong attack that increases melee damage by 11.",
+                    ],
+                    spentResource: 25,
+                    trainingCost: 200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14260/raptor-strike",
+                },
+                {
+                    id: "raptor_strike_3",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 16,
+                    description: [
+                        "A strong attack that increases melee damage by 21.",
+                    ],
+                    spentResource: 35,
+                    trainingCost: 1800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14261/raptor-strike",
+                },
+                {
+                    id: "raptor_strike_4",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 24,
+                    description: [
+                        "A strong attack that increases melee damage by 34.",
+                    ],
+                    spentResource: 45,
+                    trainingCost: 7000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14262/raptor-strike",
+                },
+                {
+                    id: "raptor_strike_5",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 32,
+                    description: [
+                        "A strong attack that increases melee damage by 50.",
+                    ],
+                    spentResource: 55,
+                    trainingCost: 10000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14263/raptor-strike",
+                },
+                {
+                    id: "raptor_strike_6",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 40,
+                    description: [
+                        "A strong attack that increases melee damage by 80.",
+                    ],
+                    spentResource: 70,
+                    trainingCost: 18000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14264/raptor-strike",
+                },
+                {
+                    id: "raptor_strike_7",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 48,
+                    description: [
+                        "A strong attack that increases melee damage by 110.",
+                    ],
+                    spentResource: 85,
+                    trainingCost: 32000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14265/raptor-strike",
+                },
+                {
+                    id: "raptor_strike_8",
+                    ...abilityMasterData.vanilla.Hunter.raptor_strike,
+                    availabletoRaces: null,
+                    rank: 8,
+                    requiresLevel: 56,
+                    description: [
+                        "A strong attack that increases melee damage by 140.",
+                    ],
+                    spentResource: 100,
+                    trainingCost: 46000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14266/raptor-strike",
+                },
+                {
+                    id: "track_beasts",
+                    ...abilityMasterData.vanilla.Hunter.track_beasts,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 1,
+                    description: [
+                        "Shows the location of all nearby beasts on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Beasts.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 10,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1494/track-beasts",
+                },
+                {
+                    id: "track_demons",
+                    ...abilityMasterData.vanilla.Hunter.track_demons,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 32,
+                    description: [
+                        "Shows the location of all nearby demons on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Demons.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 10000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19878/track-demons",
+                },
+                {
+                    id: "track_dragonkin",
+                    ...abilityMasterData.vanilla.Hunter.track_dragonkin,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 50,
+                    description: [
+                        "Shows the location of all nearby dragonkin on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Dragonkin.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 36000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19879/track-dragonkin",
+                },
+                {
+                    id: "track_elementals",
+                    ...abilityMasterData.vanilla.Hunter.track_elementals,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 26,
+                    description: [
+                        "Shows the location of all nearby elementals on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Elementals.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19880/track-elementals",
+                },
+                {
+                    id: "track_giants",
+                    ...abilityMasterData.vanilla.Hunter.track_giants,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 40,
+                    description: [
+                        "Shows the location of all nearby giants on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Giants.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 18000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19882/track-giants",
+                },
+                {
+                    id: "track_hidden",
+                    ...abilityMasterData.vanilla.Hunter.track_hidden,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 24,
+                    description: [
+                        "Increases stealth detection and shows hidden units within detection range on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Hidden targets.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19885/track-hidden",
+                },
+                {
+                    id: "track_humanoids",
+                    ...abilityMasterData.vanilla.Hunter.track_humanoids,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 10,
+                    description: [
+                        "Shows the location of all nearby humanoids on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Humanoids.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19883/track-humanoids",
+                },
+                {
+                    id: "track_undead",
+                    ...abilityMasterData.vanilla.Hunter.track_undead,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 18,
+                    description: [
+                        "Shows the location of all nearby undead on the minimap.  Only one form of tracking can be active at a time.",
+                    ],
+                    buffText: [
+                        "Tracking Undead.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 2000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19884/track-undead",
+                },
+                {
+                    id: "wing_clip_1",
+                    ...abilityMasterData.vanilla.Hunter.wing_clip,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 12,
+                    description: [
+                        "Inflicts 5 damage and reduces the enemy target's movement speed by 50% for 10 sec.",
+                    ],
+                    debuffText: [
+                        "Movement speed reduced by 50%.",
+                    ],
+                    spentResource: 40,
+                    trainingCost: 600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2974/wing-clip",
+                },
+                {
+                    id: "wing_clip_2",
+                    ...abilityMasterData.vanilla.Hunter.wing_clip,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 38,
+                    description: [
+                        "Inflicts 25 damage and reduces the enemy target's movement speed by 55% for 10 sec.",
+                    ],
+                    debuffText: [
+                        "Movement speed reduced by 55%.",
+                    ],
+                    spentResource: 60,
+                    trainingCost: 16000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14267/wing-clip",
+                },
+                {
+                    id: "wing_clip_3",
+                    ...abilityMasterData.vanilla.Hunter.wing_clip,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 60,
+                    description: [
+                        "Inflicts 50 damage and reduces the enemy target's movement speed by 60% for 10 sec.",
+                    ],
+                    debuffText: [
+                        "Movement speed reduced by 60%.",
+                    ],
+                    spentResource: 80,
+                    trainingCost: 50000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14268/wing-clip",
+                },
             ],
             // hunter - vanilla
             OTHER: [
-
+                {
+                    id: "arcane_resistance_1",
+                    ...abilityMasterData.vanilla.Hunter.arcane_resistance,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Increases Arcane resistance by 30.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 440,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24495/arcane-resistance",
+                },
+                {
+                    id: "arcane_resistance_2",
+                    ...abilityMasterData.vanilla.Hunter.arcane_resistance,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Increases Arcane resistance by 60.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24508/arcane-resistance",
+                },
+                {
+                    id: "arcane_resistance_3",
+                    ...abilityMasterData.vanilla.Hunter.arcane_resistance,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 40,
+                    description: [
+                        "Increases Arcane resistance by 90.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 3600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24509/arcane-resistance",
+                },
+                {
+                    id: "arcane_resistance_4",
+                    ...abilityMasterData.vanilla.Hunter.arcane_resistance,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 50,
+                    description: [
+                        "Increases Arcane resistance by 120.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24510/arcane-resistance",
+                },
+                {
+                    id: "fire_resistance_1",
+                    ...abilityMasterData.vanilla.Hunter.fire_resistance,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Increases Fire resistance by 30.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 440,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24440/fire-resistance",
+                },
+                {
+                    id: "fire_resistance_2",
+                    ...abilityMasterData.vanilla.Hunter.fire_resistance,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Increases Fire resistance by 60.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24441/fire-resistance",
+                },
+                {
+                    id: "fire_resistance_3",
+                    ...abilityMasterData.vanilla.Hunter.fire_resistance,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 40,
+                    description: [
+                        "Increases Fire resistance by 90.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 3600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24463/fire-resistance",
+                },
+                {
+                    id: "fire_resistance_4",
+                    ...abilityMasterData.vanilla.Hunter.fire_resistance,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 50,
+                    description: [
+                        "Increases Fire resistance by 120.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24464/fire-resistance",
+                },
+                {
+                    id: "frost_resistance_1",
+                    ...abilityMasterData.vanilla.Hunter.frost_resistance,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Increases Frost resistance by 30.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 440,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24475/frost-resistance",
+                },
+                {
+                    id: "frost_resistance_2",
+                    ...abilityMasterData.vanilla.Hunter.frost_resistance,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Increases Frost resistance by 60.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24476/frost-resistance",
+                },
+                {
+                    id: "frost_resistance_3",
+                    ...abilityMasterData.vanilla.Hunter.frost_resistance,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 40,
+                    description: [
+                        "Increases Frost resistance by 90.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 3600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24477/frost-resistance",
+                },
+                {
+                    id: "frost_resistance_4",
+                    ...abilityMasterData.vanilla.Hunter.frost_resistance,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 50,
+                    description: [
+                        "Increases Frost resistance by 120.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24478/frost-resistance",
+                },
+                {
+                    id: "great_stamina_1",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 10,
+                    description: [
+                        "Stamina increased by 3.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 10,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4195/great-stamina",
+                },
+                {
+                    id: "great_stamina_2",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 12,
+                    description: [
+                        "Stamina increased by 5.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 120,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4196/great-stamina",
+                },
+                {
+                    id: "great_stamina_3",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 18,
+                    description: [
+                        "Stamina increased by 7.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4197/great-stamina",
+                },
+                {
+                    id: "great_stamina_4",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 24,
+                    description: [
+                        "Stamina increased by 10.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4198/great-stamina",
+                },
+                {
+                    id: "great_stamina_5",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 30,
+                    description: [
+                        "Stamina increased by 13.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4199/great-stamina",
+                },
+                {
+                    id: "great_stamina_6",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 36,
+                    description: [
+                        "Stamina increased by 17.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 2800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4200/great-stamina",
+                },
+                {
+                    id: "great_stamina_7",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 42,
+                    description: [
+                        "Stamina increased by 21.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 4800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4201/great-stamina",
+                },
+                {
+                    id: "great_stamina_8",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 8,
+                    requiresLevel: 48,
+                    description: [
+                        "Stamina increased by 26.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 6400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=4202/great-stamina",
+                },
+                {
+                    id: "great_stamina_9",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 9,
+                    requiresLevel: 54,
+                    description: [
+                        "Stamina increased by 32.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 8400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5048/great-stamina",
+                },
+                {
+                    id: "great_stamina_10",
+                    ...abilityMasterData.vanilla.Hunter.great_stamina,
+                    availabletoRaces: null,
+                    rank: 10,
+                    requiresLevel: 60,
+                    description: [
+                        "Stamina increased by 40.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 10000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5049/great-stamina",
+                },
+                {
+                    id: "growl_3",
+                    ...abilityMasterData.vanilla.Hunter.growl,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 20,
+                    description: [
+                        "Taunt the target, increasing the likelihood the creature will focus attacks on you.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 440,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14923/growl",
+                },
+                {
+                    id: "growl_4",
+                    ...abilityMasterData.vanilla.Hunter.growl,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 30,
+                    description: [
+                        "Taunt the target, increasing the likelihood the creature will focus attacks on you.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14924/growl",
+                },
+                {
+                    id: "growl_5",
+                    ...abilityMasterData.vanilla.Hunter.growl,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 40,
+                    description: [
+                        "Taunt the target, increasing the likelihood the creature will focus attacks on you.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 3600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14925/growl",
+                },
+                {
+                    id: "growl_6",
+                    ...abilityMasterData.vanilla.Hunter.growl,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 50,
+                    description: [
+                        "Taunt the target, increasing the likelihood the creature will focus attacks on you.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14926/growl",
+                },
+                {
+                    id: "growl_7",
+                    ...abilityMasterData.vanilla.Hunter.growl,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 60,
+                    description: [
+                        "Taunt the target, increasing the likelihood the creature will focus attacks on you.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 10000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=14927/growl",
+                },
+                {
+                    id: "natural_armor_1",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 10,
+                    description: [
+                        "Armor increased by 50.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 10,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24547/natural-armor",
+                },
+                {
+                    id: "natural_armor_2",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 12,
+                    description: [
+                        "Armor increased by 100.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 120,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24556/natural-armor",
+                },
+                {
+                    id: "natural_armor_3",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 18,
+                    description: [
+                        "Armor increased by 160.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24557/natural-armor",
+                },
+                {
+                    id: "natural_armor_4",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 24,
+                    description: [
+                        "Armor increased by 240.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24558/natural-armor",
+                },
+                {
+                    id: "natural_armor_5",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 5,
+                    requiresLevel: 30,
+                    description: [
+                        "Armor increased by 330.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24559/natural-armor",
+                },
+                {
+                    id: "natural_armor_6",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 6,
+                    requiresLevel: 36,
+                    description: [
+                        "Armor increased by 430.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 2800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24560/natural-armor",
+                },
+                {
+                    id: "natural_armor_7",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 7,
+                    requiresLevel: 42,
+                    description: [
+                        "Armor increased by 550.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 4800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24561/natural-armor",
+                },
+                {
+                    id: "natural_armor_8",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 8,
+                    requiresLevel: 48,
+                    description: [
+                        "Armor increased by 675.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 6400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24562/natural-armor",
+                },
+                {
+                    id: "natural_armor_9",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 9,
+                    requiresLevel: 54,
+                    description: [
+                        "Armor increased by 810.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 8400,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24631/natural-armor",
+                },
+                {
+                    id: "natural_armor_10",
+                    ...abilityMasterData.vanilla.Hunter.natural_armor,
+                    availabletoRaces: null,
+                    rank: 10,
+                    requiresLevel: 60,
+                    description: [
+                        "Armor increased by 1000.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 10000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24632/natural-armor",
+                },
+                {
+                    id: "nature_resistance_1",
+                    ...abilityMasterData.vanilla.Hunter.nature_resistance,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Increases Nature resistance by 30.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 440,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24494/nature-resistance",
+                },
+                {
+                    id: "nature_resistance_2",
+                    ...abilityMasterData.vanilla.Hunter.nature_resistance,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Increases Nature resistance by 60.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24511/nature-resistance",
+                },
+                {
+                    id: "nature_resistance_3",
+                    ...abilityMasterData.vanilla.Hunter.nature_resistance,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 40,
+                    description: [
+                        "Increases Nature resistance by 90.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 3600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24512/nature-resistance",
+                },
+                {
+                    id: "nature_resistance_4",
+                    ...abilityMasterData.vanilla.Hunter.nature_resistance,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 50,
+                    description: [
+                        "Increases Nature resistance by 120.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24513/nature-resistance",
+                },
+                {
+                    id: "shadow_resistance_1",
+                    ...abilityMasterData.vanilla.Hunter.shadow_resistance,
+                    availabletoRaces: null,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Increases Shadow resistance by 30.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 440,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24490/shadow-resistance",
+                },
+                {
+                    id: "shadow_resistance_2",
+                    ...abilityMasterData.vanilla.Hunter.shadow_resistance,
+                    availabletoRaces: null,
+                    rank: 2,
+                    requiresLevel: 30,
+                    description: [
+                        "Increases Shadow resistance by 60.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24514/shadow-resistance",
+                },
+                {
+                    id: "shadow_resistance_3",
+                    ...abilityMasterData.vanilla.Hunter.shadow_resistance,
+                    availabletoRaces: null,
+                    rank: 3,
+                    requiresLevel: 40,
+                    description: [
+                        "Increases Shadow resistance by 90.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 3600,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24515/shadow-resistance",
+                },
+                {
+                    id: "shadow_resistance_4",
+                    ...abilityMasterData.vanilla.Hunter.shadow_resistance,
+                    availabletoRaces: null,
+                    rank: 4,
+                    requiresLevel: 50,
+                    description: [
+                        "Increases Shadow resistance by 120.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 7200,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=24516/shadow-resistance",
+                },
             ],
         },
         [MAGE]: {
