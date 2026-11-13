@@ -5259,6 +5259,19 @@ export const baselineClassAbilities = {
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=24510/arcane-resistance",
                 },
                 {
+                    id: "beast_training",
+                    ...abilityMasterData.vanilla.Hunter.beast_training,
+                    availabletoRaces: null,
+                    rank: null,
+                    requiresLevel: 10,
+                    description: [
+                        "Lets the Hunter train his pet with various abilities that he has learned.",
+                    ],
+                    spentResource: null,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=5149/beast-training",
+                },
+                {
                     id: "fire_resistance_1",
                     ...abilityMasterData.vanilla.Hunter.fire_resistance,
                     availabletoRaces: null,
