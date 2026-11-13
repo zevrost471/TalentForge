@@ -15,8 +15,11 @@ import { expansionIcon, EXPANSION_COLORS } from './expansions.js';
 import { buildAbilityTooltip } from './ability-tooltip.js';
 import { CLASS_SKILLS_PER_CLASS, ADDITIONAL_WEAPON_SKILLS_PER_EXPANSION } from './class-skills.js';
 import { GENERAL_COMBAT_ABILITIES_PER_CLASS, ADDITIONAL_GENERAL_ABILITIES_PER_EXPANSION, COMBAT_ABILITY_DEFS } from './general-abilities.js';
+import { patchOptions } from './patches.js';
+import { ALL_DB_CLASSES, isClassAvailableInExpansion, EXPANSION_URL_SLUG, URL_SLUG_TO_EXPANSION } from './db-config.js';
+import { updateNavClassesSubmenu } from './db-nav.js';
 
-const SCREENSHOTS_BASE = '../../assets/db-screenshots/';
+const SCREENSHOTS_BASE = '../assets/db-screenshots/';
 
 const ICON_BASE = 'https://wow.zamimg.com/images/wow/icons';
 const FALLBACK_ICON = `${ICON_BASE}/medium/inv_misc_questionmark.jpg`;
@@ -59,7 +62,37 @@ function resolveTalentDescription(talent, rank) {
     return textParts.length ? textParts.join('<br>') : null;
 }
 
-let currentExpansion = 'vanilla';
+const patchToExpansion = {};
+for (const [exp, patches] of Object.entries(patchOptions)) {
+    patches.forEach(p => { patchToExpansion[p.value] = exp; });
+}
+function getExpansionFromPatch(patch) { return patchToExpansion[patch] ?? null; }
+
+// Resolves the hash expansion token (e.g. "classic") back to an expansion key ("vanilla").
+function expansionFromHashToken(token) {
+    return token ? (URL_SLUG_TO_EXPANSION[token] ?? null) : null;
+}
+
+function latestPatchOf(expansion) {
+    const patches = patchOptions[expansion] ?? [];
+    return patches.length ? patches[patches.length - 1].value : null;
+}
+
+let currentExpansion = null;
+let currentVersion   = null;
+let isDbSidebarHidden = false;
+
+const PINNED_VERSIONS_KEY = 'talentforgePinnedVersions';
+const MAX_DB_PINS = 6;
+const DB_EXPANSION_LABELS = {
+    vanilla: 'Vanilla',
+    tbc: 'The Burning Crusade',
+    wotlk: 'Wrath of the Lich King',
+    cataclysm: 'Cataclysm',
+    forever: 'Forever',
+    peoples: 'Peoples of Azeroth',
+};
+const DB_PANEL_ICON = `<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="9" y1="3" x2="9" y2="21"/></svg>`;
 
 const EXPANSION_STRIP = [
     { key: 'vanilla',    label: 'Classic'             },
@@ -69,6 +102,17 @@ const EXPANSION_STRIP = [
     { key: 'forever',    label: 'Forever'             },
     { key: 'peoples',    label: 'Peoples of Azeroth'  },
 ];
+
+const DB_EXPANSION_INTRO = {
+    vanilla:   { title: 'Introduction to the TalentForge Classic Database',     sentence: 'Welcome to the TalentForge Classic database!' },
+    tbc:       { title: 'Introduction to the TalentForge TBC Database',         sentence: 'Welcome to the TalentForge Burning Crusade database!' },
+    wotlk:     { title: 'Introduction to the TalentForge WotLK Database',       sentence: 'Welcome to the TalentForge Wrath of the Lich King database!' },
+    cataclysm: { title: 'Introduction to the TalentForge Cataclysm Database',   sentence: 'Welcome to the TalentForge Cataclysm database!' },
+    forever:   { title: 'Introduction to the TalentForge Forever Database',     sentence: 'Welcome to the TalentForge Forever database!' },
+    peoples:   { title: 'Introduction to the TalentForge PoA Database',         sentence: 'Welcome to the TalentForge Peoples of Azeroth database!' },
+};
+
+const DB_LANDING_BASE_DESCRIPTION = 'The database is the core of TalentForge. It features a vast amount of WoW related information, such as in-game items, NPCs, quests, zones and much more.';
 
 function iconURL(icon, size = 'medium') {
     return `${ICON_BASE}/${size}/${icon}.jpg`;
@@ -96,33 +140,36 @@ function classColor(name) {
     return classColors[name.toLowerCase().replace(/\s+/g, '_')] ?? '#C8B888';
 }
 
-function getClassFromURL() {
-    const segments = window.location.pathname.split('/').filter(Boolean);
-    const dbIdx = segments.findIndex(s => s.toLowerCase() === 'db');
-    if (dbIdx === -1 || dbIdx + 1 >= segments.length) return null;
-    const slug = segments[dbIdx + 1];
-    // index.html or empty segment would be the db main page
-    if (!slug || slug === 'index.html') return null;
-    return slug.charAt(0).toUpperCase() + slug.slice(1);
+// Hash format: #expansion/section/slug  e.g. #classic/classes/rogue, #tbc/classes/hunter
+function parseHash() {
+    const parts = location.hash.slice(1).split('/');
+    return {
+        version: parts[0] || null,
+        section: parts[1] || null,
+        slug:    parts[2] || null,
+    };
+}
+
+function getClassFromHash() {
+    const { section, slug } = parseHash();
+    if (section !== 'classes' || !slug) return null;
+    return slug.split('_').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 function buildBreadcrumbs(className) {
-    const classNames = Object.keys(CLASS_META).sort();
-    const classLinks = classNames.map(name =>
-        `<a href="../${name.toLowerCase()}/" class="block px-4 py-2 text-gray-300 hover:text-yellow-400 transition-colors">${name}</a>`
-    ).join('');
+    const classLinks = ALL_DB_CLASSES
+        .filter(c => isClassAvailableInExpansion(c.slug, currentExpansion))
+        .map(c => `<a href="#${EXPANSION_URL_SLUG[currentExpansion] ?? ''}/classes/${c.slug}" class="block px-4 py-2 text-gray-300 hover:text-yellow-400 transition-colors">${c.name}</a>`)
+        .join('');
 
-    return `
-    <nav class="flex items-center gap-1.5 text-sm mb-5" style="color:var(--tf-text-soft)">
-        <a href="../" class="px-1.5 py-0.5 rounded hover:text-yellow-400 transition-colors">Database</a>
-
-        <i class="fa-solid fa-chevron-right text-xs" style="opacity:0.4"></i>
-
+    // "Database" breadcrumb — always a dropdown listing all DB sections
+    const dbDropdown = `
         <div class="relative nav-has-dropdown">
-            <span class="px-1.5 py-0.5 rounded cursor-default hover:text-yellow-400 transition-colors select-none">Classes</span>
+            <a href="./" class="px-1.5 py-0.5 rounded hover:text-yellow-400 transition-colors flex items-center gap-1">
+                Database
+            </a>
             <div class="nav-dropdown" style="position:absolute;left:0;top:100%;z-index:50;min-width:max-content;padding-top:4px">
                 <div class="rounded-md py-1 shadow-xl border border-yellow-900/40" style="background:var(--tf-bg-panel)">
-                    <a href="../" class="block px-4 py-2 text-gray-300 hover:text-yellow-400 transition-colors">Database</a>
                     <div class="relative nav-has-submenu">
                         <span class="flex items-center justify-between gap-4 px-4 py-2 text-gray-300 hover:text-yellow-400 cursor-default select-none">
                             Classes <i class="fa-solid fa-chevron-right text-xs"></i>
@@ -133,6 +180,25 @@ function buildBreadcrumbs(className) {
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </div>`;
+
+    if (!className) {
+        return `<nav class="flex items-center gap-1.5 text-sm mb-5" style="color:var(--tf-text-soft)">${dbDropdown}</nav>`;
+    }
+
+    return `
+    <nav class="flex items-center gap-1.5 text-sm mb-5" style="color:var(--tf-text-soft)">
+        ${dbDropdown}
+
+        <i class="fa-solid fa-chevron-right text-xs" style="opacity:0.4"></i>
+
+        <div class="relative nav-has-dropdown">
+            <span class="px-1.5 py-0.5 rounded cursor-default hover:text-yellow-400 transition-colors select-none">Classes</span>
+            <div class="nav-dropdown" style="position:absolute;left:0;top:100%;z-index:50;min-width:max-content;padding-top:4px">
+                <div class="rounded-md py-1 shadow-xl border border-yellow-900/40" style="background:var(--tf-bg-panel)">
+                    ${classLinks}
                 </div>
             </div>
         </div>
@@ -228,7 +294,7 @@ function buildSpellRow(ab) {
     const typeCell = ab.type
         ? `${typeLabel}<br><span style="color:#ffffff;font-size:0.8em">${subLabel}</span>`
         : '—';
-    const className = getClassFromURL() ?? '';
+    const className = getClassFromHash() ?? '';
     const tooltipHtml = buildAbilityTooltip(ab, className, currentExpansion);
     const iconSrc = iconURL(ab.icon, 'large');
     const tooltipCls = 'hidden fixed z-[9999] pointer-events-none p-2 bg-black border border-gray-600 rounded text-sm shadow-lg';
@@ -354,8 +420,7 @@ function buildSpellsContent(className, meta) {
         }
 
         // Weapon proficiencies (base + expansion additions)
-        const weaponExpAdditions = (ADDITIONAL_WEAPON_SKILLS_PER_EXPANSION[currentExpansion]?.[className] ?? [])
-            .map(def => ({ type: def }));
+        const weaponExpAdditions = ADDITIONAL_WEAPON_SKILLS_PER_EXPANSION[currentExpansion]?.[className] ?? [];
         for (const { type: def, requiresTalent } of [...(classDef.weaponTypes ?? []), ...weaponExpAdditions]) {
             const id = `${def.name.toLowerCase().replace(/[\s-]+/g, '_')}_proficiency`;
             if (seenIds.has(id)) continue;
@@ -476,7 +541,7 @@ function buildSpellsContent(className, meta) {
                     <th data-col="name" style="cursor:pointer;user-select:none">Name <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
                     <th data-col="level" style="width:80px;text-align:center;cursor:pointer;user-select:none">Level <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
                     <th data-col="school" style="width:110px;text-align:center;cursor:pointer;user-select:none">School <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
-                    <th data-col="type" style="width:100px;text-align:center;cursor:pointer;user-select:none">Type <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
+                    <th data-col="type" style="width:110px;text-align:center;cursor:pointer;user-select:none">Type <i class="fa-solid fa-sort db-sort-icon" style="display:none;font-size:0.75em;margin-left:4px"></i></th>
                 </tr></thead>
                 <tbody>${flat.slice(0, PAGE_SIZE).map(buildSpellRow).join('')}</tbody>
             </table>
@@ -624,7 +689,7 @@ function goToScreenshotPage(root, page) {
 
     const start = (page - 1) * PAGE_SIZE;
     const html  = buildPaginationBar('screenshots', page);
-    const className = getClassFromURL() ?? '';
+    const className = getClassFromHash() ?? '';
     grid.innerHTML = flat.slice(start, start + PAGE_SIZE).map(file => `
         <img src="${SCREENSHOTS_BASE}${file}" alt="${className} screenshot"
              data-screenshot="${SCREENSHOTS_BASE}${file}"
@@ -1170,47 +1235,466 @@ function wireExpansionStrip(root) {
     if (!strip) return;
     strip.addEventListener('click', e => {
         const btn = e.target.closest('[data-expansion]');
-        if (!btn) return;
+        if (!btn || btn.disabled) return;
         currentExpansion = btn.dataset.expansion;
+        // Set version to the latest patch of the clicked expansion
+        const patches = patchOptions[currentExpansion] ?? [];
+        currentVersion = patches.length > 0 ? patches[patches.length - 1].value : null;
+        localStorage.setItem('dbExpansion', currentExpansion);
+        if (currentVersion) localStorage.setItem('dbVersion', currentVersion);
+        updateURLHash();
+        updateNavClassesSubmenu(currentExpansion);
         render();
+        // initSidebar();
     });
+}
+
+let currentClassSlug = null;
+
+function updateURLHash() {
+    if (!currentExpansion) return;
+    const slug = EXPANSION_URL_SLUG[currentExpansion] ?? currentExpansion;
+    if (currentClassSlug) {
+        history.replaceState(null, '', `#${slug}/classes/${currentClassSlug}`);
+    } else {
+        history.replaceState(null, '', `#${slug}`);
+    }
+}
+
+function buildDbSidebar() {
+    const expansionOptions = [
+        { value: 'vanilla',   label: 'Vanilla' },
+        { value: 'tbc',       label: 'The Burning Crusade' },
+        { value: 'wotlk',     label: 'Wrath of the Lich King' },
+        { value: 'cataclysm', label: 'Cataclysm' },
+        { value: 'forever',   label: 'Forever' },
+        { value: 'peoples',   label: 'Peoples of Azeroth' },
+    ];
+    const patchOpts = currentExpansion ? (patchOptions[currentExpansion] ?? []) : [];
+    const pins = loadDbPins();
+    const isPinned = currentVersion ? pins.some(p => p.value === currentVersion) : false;
+    return `
+    <div class="db-sidebar-content mt-10">
+        <div id="db-pinned-versions-panel" class="tf-panel-flat rounded-lg p-4 mb-6${pins.length === 0 ? ' hidden' : ''}">
+            <h2 class="text-xl font-semibold mb-3 text-yellow-400">Pinned</h2>
+            <div id="db-pinned-versions-list" class="space-y-1"></div>
+        </div>
+        <div class="tf-panel-flat rounded-lg p-4 mb-6">
+            <div class="flex items-center justify-between mb-4">
+                <h2 class="text-xl font-semibold text-yellow-400">Game Version</h2>
+                <button id="db-pin-version-btn" class="${currentVersion ? '' : 'hidden '}${isPinned ? 'text-yellow-400' : 'text-gray-400'} hover:text-yellow-400 transition-colors" title="${isPinned ? 'Unpin this version' : 'Pin this version'}">
+                    <i class="fa-solid fa-thumbtack"></i>
+                </button>
+            </div>
+            <div class="space-y-3">
+                <select id="db-expansion-select" class="appearance-none tf-control w-full rounded-md px-3 py-2">
+                    <option value="" disabled ${!currentExpansion ? 'selected' : ''}>Select expansion</option>
+                    ${expansionOptions.map(e =>
+                        `<option value="${e.value}"${currentExpansion === e.value ? ' selected' : ''}>${e.label}</option>`
+                    ).join('')}
+                </select>
+                <select id="db-version-select" class="appearance-none tf-control w-full rounded-md px-3 py-2"${patchOpts.length === 0 ? ' disabled' : ''}>
+                    <option value="" disabled${!currentVersion ? ' selected' : ''}>Select patch</option>
+                    ${patchOpts.map(p =>
+                        `<option value="${p.value}"${currentVersion === p.value ? ' selected' : ''}>${p.label}</option>`
+                    ).join('')}
+                </select>
+                <button id="db-apply-version"
+                    class="${currentVersion ? '' : 'hidden '}flex items-center justify-center gap-1 bg-blue-600 border border-blue-800 hover:bg-blue-700 text-white px-2 py-2 rounded-md mt-2 w-32">
+                    Apply
+                </button>
+            </div>
+        </div>
+    </div>`;
+}
+
+function initSidebar() {
+    const sidebarEl = document.getElementById('db-sidebar');
+    if (!sidebarEl) return;
+    sidebarEl.innerHTML = buildDbSidebar();
+    wireDbSidebar();
+    renderDbPinnedVersions();
+    setupDbFixedSidebar();
+}
+
+function wireDbSidebar() {
+    const expSel   = document.getElementById('db-expansion-select');
+    const verSel   = document.getElementById('db-version-select');
+    const applyBtn = document.getElementById('db-apply-version');
+    if (!expSel) return;
+
+    expSel.addEventListener('change', () => {
+        const exp = expSel.value;
+        verSel.innerHTML = '<option value="" disabled selected>Select patch</option>';
+        (patchOptions[exp] ?? []).forEach(p => {
+            const opt = document.createElement('option');
+            opt.value = p.value;
+            opt.textContent = p.label;
+            verSel.appendChild(opt);
+        });
+        verSel.disabled = false;
+        applyBtn?.classList.add('hidden');
+    });
+
+    verSel.addEventListener('change', () => {
+        if (expSel.value && verSel.value) applyBtn?.classList.remove('hidden');
+    });
+
+    applyBtn?.addEventListener('click', () => {
+        const ver = verSel.value;
+        const exp = getExpansionFromPatch(ver);
+        if (!exp) return;
+        currentVersion   = ver;
+        currentExpansion = exp;
+        localStorage.setItem('dbVersion',   ver);
+        localStorage.setItem('dbExpansion', exp);
+        updateURLHash();
+        updateNavClassesSubmenu(exp);
+        render();
+        updateDbPinButton();
+        renderDbPinnedVersions();
+    });
+
+    document.getElementById('db-pin-version-btn')?.addEventListener('click', toggleDbPin);
+    updateDbPinButton();
+}
+
+function loadDbPins() {
+    try { return JSON.parse(localStorage.getItem(PINNED_VERSIONS_KEY)) || []; }
+    catch { return []; }
+}
+
+function saveDbPins(pins) {
+    localStorage.setItem(PINNED_VERSIONS_KEY, JSON.stringify(pins));
+}
+
+function activateDbPinnedVersion(expansion, value) {
+    const expSel = document.getElementById('db-expansion-select');
+    if (!expSel) return;
+    expSel.value = expansion;
+    expSel.dispatchEvent(new Event('change'));
+    const verSel = document.getElementById('db-version-select');
+    if (verSel) verSel.value = value;
+    const exp = getExpansionFromPatch(value) || expansion;
+    currentVersion   = value;
+    currentExpansion = exp;
+    localStorage.setItem('dbVersion',   value);
+    localStorage.setItem('dbExpansion', exp);
+    updateURLHash();
+    updateNavClassesSubmenu(exp);
+    render();
+    updateDbPinButton();
+    renderDbPinnedVersions();
+}
+
+function renderDbPinnedVersions() {
+    const panel = document.getElementById('db-pinned-versions-panel');
+    const list  = document.getElementById('db-pinned-versions-list');
+    if (!panel || !list) return;
+
+    const pins = loadDbPins();
+    updateDbSidebarTabPinsBtn();
+    if (pins.length === 0) {
+        panel.classList.add('hidden');
+        return;
+    }
+    panel.classList.remove('hidden');
+
+    list.innerHTML = '';
+    pins.forEach(pin => {
+        const label = patchOptions[pin.expansion]?.find(p => p.value === pin.value)?.label ?? pin.value;
+        const expansionLabel = DB_EXPANSION_LABELS[pin.expansion] ?? pin.expansion;
+
+        const row = document.createElement('div');
+        row.className = 'flex items-center gap-1';
+
+        const chip = document.createElement('button');
+        chip.className = 'flex-1 text-left tf-control rounded px-2 py-1 min-w-0 hover:text-yellow-400 transition-colors';
+        chip.innerHTML = `<div class="text-sm truncate">${label}</div><div class="text-xs text-gray-400 truncate">${expansionLabel}</div>`;
+        chip.addEventListener('click', () => activateDbPinnedVersion(pin.expansion, pin.value));
+
+        const unpinBtn = document.createElement('button');
+        unpinBtn.className = 'text-gray-500 hover:text-red-400 transition-colors px-1 flex-shrink-0';
+        unpinBtn.title = 'Unpin';
+        unpinBtn.innerHTML = '<i class="fa-solid fa-xmark text-xs"></i>';
+        unpinBtn.addEventListener('click', () => {
+            const updated = loadDbPins().filter(p => p.value !== pin.value);
+            saveDbPins(updated);
+            renderDbPinnedVersions();
+            updateDbPinButton();
+        });
+
+        row.appendChild(chip);
+        row.appendChild(unpinBtn);
+        list.appendChild(row);
+    });
+}
+
+function updateDbPinButton() {
+    const btn = document.getElementById('db-pin-version-btn');
+    if (!btn) return;
+    if (!currentVersion) {
+        btn.classList.add('hidden');
+        return;
+    }
+    btn.classList.remove('hidden');
+    const pinned = loadDbPins().some(p => p.value === currentVersion);
+    btn.title = pinned ? 'Unpin this version' : 'Pin this version';
+    btn.classList.toggle('text-yellow-400', pinned);
+    btn.classList.toggle('text-gray-400', !pinned);
+}
+
+function toggleDbPin() {
+    if (!currentVersion) return;
+    const pins = loadDbPins();
+    const idx = pins.findIndex(p => p.value === currentVersion);
+    if (idx >= 0) {
+        pins.splice(idx, 1);
+    } else {
+        const expansion = getExpansionFromPatch(currentVersion) ?? currentExpansion;
+        pins.unshift({ expansion, value: currentVersion });
+        if (pins.length > MAX_DB_PINS) pins.pop();
+    }
+    saveDbPins(pins);
+    renderDbPinnedVersions();
+    updateDbPinButton();
+}
+
+function setDbSidebarPadding(px) {
+    const c = document.getElementById('db-page-container');
+    if (c) c.style.paddingLeft = px + 'px';
+}
+
+function updateDbSidebarTabPinsBtn() {
+    const btn = document.getElementById('db-sidebar-pins-btn');
+    if (!btn) return;
+    btn.style.display = loadDbPins().length > 0 ? '' : 'none';
+}
+
+function openDbSidebarPinsPopup() {
+    if (document.getElementById('db-sidebar-pins-popup')) {
+        closeDbSidebarPinsPopup();
+        return;
+    }
+    const pins = loadDbPins();
+    if (pins.length === 0) return;
+
+    const triggerBtn = document.getElementById('db-sidebar-pins-btn');
+    triggerBtn?.removeAttribute('data-tooltip');
+    const btnRect = triggerBtn?.getBoundingClientRect();
+
+    const popup = document.createElement('div');
+    if (btnRect) popup.style.top = btnRect.top + 'px';
+    popup.id = 'db-sidebar-pins-popup';
+
+    const title = document.createElement('div');
+    title.style.cssText = 'font-size:.85rem;font-weight:600;color:var(--tf-accent);margin-bottom:8px;';
+    title.textContent = 'Pinned';
+    popup.appendChild(title);
+
+    pins.forEach(pin => {
+        const label = patchOptions[pin.expansion]?.find(p => p.value === pin.value)?.label ?? pin.value;
+        const expansionLabel = DB_EXPANSION_LABELS[pin.expansion] ?? pin.expansion;
+        const chip = document.createElement('button');
+        chip.className = 'tc-pins-chip';
+        chip.innerHTML = `<div class="text-sm truncate">${label}</div><div class="text-xs text-gray-400 truncate">${expansionLabel}</div>`;
+        chip.addEventListener('click', () => {
+            activateDbPinnedVersion(pin.expansion, pin.value);
+            closeDbSidebarPinsPopup();
+        });
+        popup.appendChild(chip);
+    });
+
+    document.body.appendChild(popup);
+    popup.addEventListener('click', (e) => e.stopPropagation());
+
+    setTimeout(() => {
+        const outsideHandler = (e) => {
+            const pinsBtn = document.getElementById('db-sidebar-pins-btn');
+            if (!pinsBtn?.contains(e.target)) {
+                closeDbSidebarPinsPopup();
+                document.removeEventListener('click', outsideHandler);
+            }
+        };
+        document.addEventListener('click', outsideHandler);
+    }, 0);
+}
+
+function closeDbSidebarPinsPopup() {
+    document.getElementById('db-sidebar-pins-popup')?.remove();
+    const btn = document.getElementById('db-sidebar-pins-btn');
+    if (!btn) return;
+    const restore = () => {
+        btn.dataset.tooltip = 'Pinned Versions';
+        btn.removeEventListener('mouseleave', restore);
+    };
+    if (btn.matches(':hover')) {
+        btn.addEventListener('mouseleave', restore);
+    } else {
+        restore();
+    }
+}
+
+function setupDbFixedSidebar() {
+    const sidebar = document.getElementById('db-sidebar');
+    if (!sidebar) return;
+    delete document.documentElement.dataset.dbSidebarHidden;
+    isDbSidebarHidden = localStorage.getItem('db_sidebarHidden') === 'true';
+
+    if (!document.getElementById('db-fixed-sidebar-toggle')) {
+        const btn = document.createElement('button');
+        btn.id = 'db-fixed-sidebar-toggle';
+        btn.dataset.tooltip = 'Hide Sidebar';
+        btn.innerHTML = DB_PANEL_ICON;
+        sidebar.appendChild(btn);
+        btn.addEventListener('click', () => {
+            document.getElementById('db-sidebar-float-tooltip')?.remove();
+            toggleDbSidebar();
+        });
+        btn.addEventListener('mouseenter', () => {
+            const tip = document.createElement('div');
+            tip.id = 'db-sidebar-float-tooltip';
+            tip.textContent = btn.dataset.tooltip;
+            document.body.appendChild(tip);
+            const r = btn.getBoundingClientRect();
+            tip.style.left = (r.left + r.width / 2) + 'px';
+            tip.style.top  = (r.bottom + 6) + 'px';
+        });
+        btn.addEventListener('mouseleave', () => {
+            document.getElementById('db-sidebar-float-tooltip')?.remove();
+        });
+    }
+
+    if (!document.getElementById('db-sidebar-tab')) {
+        const tab = document.createElement('div');
+        tab.id = 'db-sidebar-tab';
+        tab.style.display = 'none';
+
+        const tabBtn = document.createElement('button');
+        tabBtn.id = 'db-sidebar-tab-btn';
+        tabBtn.dataset.tooltip = 'Show Sidebar';
+        tabBtn.innerHTML = DB_PANEL_ICON;
+        tabBtn.addEventListener('click', toggleDbSidebar);
+        tab.appendChild(tabBtn);
+
+        const pinsBtn = document.createElement('button');
+        pinsBtn.id = 'db-sidebar-pins-btn';
+        pinsBtn.dataset.tooltip = 'Pinned Versions';
+        pinsBtn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="17" x2="12" y2="22"/><path d="M5 17h14v-1.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V6h1a2 2 0 0 0 0-4H8a2 2 0 0 0 0 4h1v4.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24Z"/></svg>';
+        pinsBtn.style.display = 'none';
+        pinsBtn.addEventListener('click', openDbSidebarPinsPopup);
+        tab.appendChild(pinsBtn);
+
+        document.body.appendChild(tab);
+        updateDbSidebarTabPinsBtn();
+    }
+
+    sidebar.style.transform = isDbSidebarHidden ? 'translateX(-100%)' : 'translateX(0)';
+    setDbSidebarPadding(isDbSidebarHidden ? 0 : 420);
+    const tab = document.getElementById('db-sidebar-tab');
+    if (tab) tab.style.display = isDbSidebarHidden ? 'flex' : 'none';
+}
+
+function toggleDbSidebar() {
+    isDbSidebarHidden = !isDbSidebarHidden;
+    localStorage.setItem('db_sidebarHidden', isDbSidebarHidden);
+    const sidebar = document.getElementById('db-sidebar');
+    const btn = document.getElementById('db-fixed-sidebar-toggle');
+    const tab = document.getElementById('db-sidebar-tab');
+    if (isDbSidebarHidden) {
+        if (sidebar) sidebar.style.transform = 'translateX(-100%)';
+        if (tab) tab.style.display = 'flex';
+        if (btn) btn.dataset.tooltip = 'Show Sidebar';
+        setDbSidebarPadding(0);
+    } else {
+        if (sidebar) sidebar.style.transform = 'translateX(0)';
+        if (tab) tab.style.display = 'none';
+        if (btn) btn.dataset.tooltip = 'Hide Sidebar';
+        closeDbSidebarPinsPopup();
+        setDbSidebarPadding(420);
+    }
 }
 
 function render() {
     const root = document.getElementById('db-class-root');
     if (!root) return;
+    delete document.documentElement.dataset.dbExpansion;
 
-    const className = getClassFromURL();
+    const className = getClassFromHash();
+    currentClassSlug = className ? className.toLowerCase().replace(/\s+/g, '_') : null;
+
+    const placeholderEl = document.getElementById('db-version-placeholder');
+
     if (!className) {
-        root.innerHTML = `<div class="text-center py-12" style="color:var(--tf-text-soft)">Class not found.</div>`;
+        const homepageStripHTML = `
+        <div id="db-expansion-strip" class="flex gap-0.5 mb-5 pb-1 border-b border-gray-700">
+            ${EXPANSION_STRIP.map(({ key, label }) => {
+                const active = key === currentExpansion;
+                const style  = active ? `style="background:${EXPANSION_COLORS[key]};color:var(--tf-bg)"` : '';
+                return `<button data-expansion="${key}" ${style} class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-sm border-b-2 transition-colors border-transparent ${active ? '' : 'text-gray-400'} hover:text-gray-200">${expansionIcon(key, 16, active ? 'var(--tf-bg)' : null)}${label.toUpperCase()}</button>`;
+            }).join('')}
+        </div>`;
+
+        const landingEl = document.getElementById('landing-intro');
+        if (currentExpansion) {
+            if (placeholderEl) placeholderEl.style.display = 'none';
+            if (landingEl) {
+                const intro = DB_EXPANSION_INTRO[currentExpansion];
+                if (intro) {
+                    const ps = landingEl.querySelectorAll('p');
+                    landingEl.querySelector('h2').textContent = intro.title;
+                    ps[0].textContent = intro.sentence;
+                    ps[1].textContent = DB_LANDING_BASE_DESCRIPTION;
+                }
+                landingEl.style.display = 'block';
+            }
+        } else {
+            if (placeholderEl) placeholderEl.style.display = 'block';
+            if (landingEl) landingEl.style.display = 'none';
+        }
+        root.innerHTML = homepageStripHTML + buildBreadcrumbs(null);
+        root.querySelector('nav')?.style.setProperty('display', currentExpansion ? '' : 'none');
+        wireExpansionStrip(root);
         return;
     }
+
+    // Class selected: hide placeholder and intro
+    if (placeholderEl) placeholderEl.style.display = 'none';
+    const landingEl = document.getElementById('landing-intro');
+    if (landingEl) landingEl.style.display = 'none';
 
     const meta = CLASS_META[className];
     const description = CLASS_DESCRIPTIONS[className];
 
+    const iconKey = classIconKey(className);
+    const color = classColor(className);
+    const classSlug = className.toLowerCase().replace(/\s+/g, '_');
+
+    document.title = `TalentForge — ${className}`;
+    updateURLHash();
+
+    const expansionStripHTML = `
+    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 pb-1 border-b border-gray-700">
+        ${EXPANSION_STRIP.map(({ key, label }) => {
+            const active     = key === currentExpansion;
+            const available  = isClassAvailableInExpansion(classSlug, key);
+            const style      = active ? `style="background:${EXPANSION_COLORS[key]};color:var(--tf-bg)"` : '';
+            const disabledCls = available ? 'hover:text-gray-200' : 'opacity-50 cursor-not-allowed pointer-events-none';
+            return `<button data-expansion="${key}" ${style} ${!available ? 'disabled' : ''} class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-sm border-b-2 transition-colors border-transparent ${active ? '' : 'text-gray-400'} ${disabledCls}">${expansionIcon(key, 16, active ? 'var(--tf-bg)' : null)}${label.toUpperCase()}</button>`;
+        }).join('')}
+    </div>`;
+
     if (!meta || !description) {
-        root.innerHTML = `<div class="text-center py-12" style="color:var(--tf-text-soft)">No data for class "${className}".</div>`;
+        root.innerHTML = expansionStripHTML + buildBreadcrumbs(className) +
+            `<div class="text-center py-12" style="color:var(--tf-text-soft)">No data available for ${className} in this version.</div>`;
+        wireExpansionStrip(root);
         return;
     }
 
-    const iconKey = classIconKey(className);
-    const color = classColor(className);
-
-    document.title = `TalentForge — ${className}`;
-
     root.innerHTML = `
-    ${buildBreadcrumbs(className)}
+    ${expansionStripHTML}
 
-    <div id="db-expansion-strip" class="flex gap-0.5 mb-5 pb-1 border-b border-gray-700">
-        ${EXPANSION_STRIP.map(({ key, label }) => {
-            const active = key === currentExpansion;
-            const style = active
-                ? `style="background:${EXPANSION_COLORS[key]};color:var(--tf-bg)"`
-                : '';
-            return `<button data-expansion="${key}" ${style} class="flex items-center gap-1.5 px-3 py-1.5 text-sm font-semibold rounded-sm border-b-2 transition-colors ${active ? 'border-transparent' : 'border-transparent text-gray-400 hover:text-gray-200'}">${expansionIcon(key, 16, active ? 'var(--tf-bg)' : null)}${label.toUpperCase()}</button>`;
-        }).join('')}
-    </div>
+    ${buildBreadcrumbs(className)}
 
     <div class="flex items-center gap-4 mb-6">
         ${metalIcon(iconKey, 'large', className)}
@@ -1255,4 +1739,29 @@ function render() {
     wireDbTooltips(root);
 }
 
-render();
+document.addEventListener('DOMContentLoaded', () => {
+    const { version: token } = parseHash();
+    const expansion = expansionFromHashToken(token);
+    if (expansion) {
+        currentExpansion = expansion;
+        currentVersion   = latestPatchOf(expansion);
+        localStorage.setItem('dbExpansion', currentExpansion);
+        if (currentVersion) localStorage.setItem('dbVersion', currentVersion);
+    }
+    // initSidebar();
+    render();
+});
+
+window.addEventListener('hashchange', () => {
+    const { version: token } = parseHash();
+    const expansion = expansionFromHashToken(token);
+    if (expansion) {
+        currentExpansion = expansion;
+        currentVersion   = latestPatchOf(expansion);
+        localStorage.setItem('dbExpansion', currentExpansion);
+        if (currentVersion) localStorage.setItem('dbVersion', currentVersion);
+    }
+    render();
+    // initSidebar();
+    updateNavClassesSubmenu(currentExpansion);
+});
