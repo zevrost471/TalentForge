@@ -465,7 +465,7 @@ export const customClassesByRace = Object.freeze({
     },
   },
   night_elf: {
-    availableAtStart: [/*WARRIOR,*/ HUNTER],
+    availableAtStart: [/*WARRIOR,*/ ],
     availableThroughUnlock: [],
     genderVariants: {
       male: {
@@ -473,7 +473,7 @@ export const customClassesByRace = Object.freeze({
         additionalAvailableThroughUnlock: [],
       },
       female: {
-        additionalAvailableAtStart: [WARRIOR, MARKSMAN, ROGUE, PRIEST],
+        additionalAvailableAtStart: [WARRIOR, ROGUE, MARKSMAN, HUNTER, PRIEST],
         additionalAvailableThroughUnlock: [],
       },
     },
@@ -537,7 +537,7 @@ export const customClassesByRace = Object.freeze({
     },
   },
   draenei: {
-    availableAtStart: [ROGUE, SHAMAN, /*WARLOCK,*/ WARRIOR, PRIEST],
+    availableAtStart: [ROGUE, SHAMAN, /*WARLOCK,*/ WARRIOR, PRIEST, HUNTER],
     availableThroughUnlock: [],
     /*
     genderVariants: {

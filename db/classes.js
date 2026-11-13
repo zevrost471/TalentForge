@@ -49,3 +49,7 @@ export const CUSTOM_CLASS_DESCRIPTIONS = Object.freeze({
     [customClasses.WITCH_DOCTOR]: "Witch Doctors are practitioners of an ancient and nefarious craft. Through wards planted at the edges of battle and dark rites, they excel at neutralizing their enemies while protecting and augmenting their allies. Their potent rites work directly upon the body - driving companions past the limits of endurance - to extract a power no conventional magic can replicate. What they offer as salvation seldom feels like it.",
     [customClasses.RUNEMASTER]:   "Runemasters are warriors who have turned their own bodies into weapons. Through mystic tattoos inscribed across skin and muscle, they channel arcane energies directly into each strike - every rune a conduit of power drawn from the ley lines that run unseen beneath the world. They do not wield magic; they become it, overlaying flesh and bone with the same patterns of force that govern the land itself. Free-spirited and more at home in the wild than in any city, their art is considered primitive by most - a judgment that rarely survives first contact.",
 });    
+
+// Druids are the keepers of the world. Locked in slumber for generations, they awoke to meet the threat of the Burning Legion during its recent invasion.
+// After Archimonde's defeat, the Druids chose to remain in the waking world and help to rebuild their shattered lands.
+// The Legion's attack left a terrible scar on the natural order, and the Druids seek to heal it.
