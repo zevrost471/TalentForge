@@ -5599,6 +5599,10 @@ function syncRaceDropdown() {
 }
 
 function applyTCPrefs() {
+    delete document.documentElement.dataset.tcClass;
+    delete document.documentElement.dataset.tcSidebar;
+    delete document.documentElement.dataset.tcSidebarHidden;
+
     const classMode  = localStorage.getItem('tc_classSelector')  ?? 'buttons';
     const sidebarPos = localStorage.getItem('tc_sidebarPosition') ?? 'inline';
 
