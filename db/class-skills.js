@@ -207,18 +207,33 @@ export const CLASS_SKILLS_PER_CLASS = {
 export const ADDITIONAL_WEAPON_SKILLS_PER_EXPANSION = {
     wotlk: {
         Druid: [
-            CLASS_SKILLS.WEAPON_SKILLS.polearms,
+            { type: CLASS_SKILLS.WEAPON_SKILLS.polearms },
         ],
         Rogue: [
-            CLASS_SKILLS.WEAPON_SKILLS.one_handed_axes,
+            { type: CLASS_SKILLS.WEAPON_SKILLS.one_handed_axes },
         ],
     },
     cataclysm: {
         Druid: [
-            CLASS_SKILLS.WEAPON_SKILLS.polearms,
+            { type: CLASS_SKILLS.WEAPON_SKILLS.polearms },
         ],
         Rogue: [
-            CLASS_SKILLS.WEAPON_SKILLS.one_handed_axes,
+            { type: CLASS_SKILLS.WEAPON_SKILLS.one_handed_axes },
+        ],
+    },
+    forever: {
+        Druid: [
+            { type: CLASS_SKILLS.WEAPON_SKILLS.polearms },
+        ],
+        Rogue: [
+            { type: CLASS_SKILLS.WEAPON_SKILLS.one_handed_axes },
+        ],
+    },
+    peoples: {
+        Warlock: [
+            { type: CLASS_SKILLS.ARMOR_SKILLS.leather, requiresRace: ["orc"], requiresTalent: true },
+            { type: CLASS_SKILLS.ARMOR_SKILLS.mail, requiresRace: ["orc"], requiresTalent: true },
+            { type: CLASS_SKILLS.ARMOR_SKILLS.shield, requiresRace: ["orc"], requiresTalent: true },
         ],
     },
 };
