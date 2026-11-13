@@ -201,7 +201,7 @@ export const talentAbilityMasterData = {
       bestial_wrath: {
         name: "Bestial Wrath",
         icon: "ability_druid_ferociousbite",
-        school: NATURE,
+        school: PHYSICAL,
         isActive: true,
         isInstant: true,
         cooldown: 120,
