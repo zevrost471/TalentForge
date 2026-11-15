@@ -78,6 +78,16 @@ function getRequirementText(ab, classKey) {
     // Warlock reagents
     if (classKey === 'warlock' && ab.requiresSoulShard) requirements.push('Reagents:<br>&nbsp;&nbsp;Soul Shard');
 
+    // Item reagents. Each entry is a string, or { name, count } for quantities > 1.
+    if (ab.reagent) {
+        const reagents = (Array.isArray(ab.reagent) ? ab.reagent : [ab.reagent]).map(r =>
+            typeof r === 'string' ? r : (r.count > 1 ? `${r.name} (${r.count})` : r.name)
+        );
+        if (reagents.length) {
+            requirements.push(`Reagents:<br>&nbsp;&nbsp;${reagents.join(', ')}`);
+        }
+    }
+
     // Shaman tools
     if (classKey === 'shaman') {
         if (ab.requiresWaterTotem) requirements.push('Tools:<br>&nbsp;&nbsp;Water Totem');
@@ -104,7 +114,7 @@ function buildActiveRows(ab, classKey, expansion) {
     if (ab.nextMelee) {
         castText = 'Next Melee';
     } else if (ab.isInstant || !ab.castTime) {
-        castText = 'Instant cast';
+        castText = 'Instant'; // 'Instant cast'
     } else if (ab.isChanneled) {
         castText = `Channeled (${ab.castTime} sec cast)`;
     } else {

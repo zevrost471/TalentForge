@@ -5530,7 +5530,54 @@ export const baselineClassAbilities = {
             ],
             // rogue - vanilla
             OTHER: [
-
+                {
+                    id: "instant_poison",
+                    ...abilityMasterData.vanilla.Rogue.instant_poison,
+                    rank: 1,
+                    requiresLevel: 20,
+                    description: [
+                        "Coats a weapon with poison that lasts for 30 minutes.<br>Each strike has a 20% chance of poisoning the enemy which instantly inflicts 19 to 25 Nature damage.&nbsp;&nbsp;40 charges.",
+                    ],
+                    spentResource: null,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8681/instant-poison",
+                },
+                {
+                    id: "instant_poison_2",
+                    ...abilityMasterData.vanilla.Rogue.instant_poison_2,
+                    rank: 2,
+                    requiresLevel: 28,
+                    description: [
+                        "Coats a weapon with poison that lasts for 30 minutes.<br>Each strike has a 20% chance of poisoning the enemy which instantly inflicts 30 to 38 Nature damage.&nbsp;&nbsp;55 charges.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 8000,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=8687/instant-poison-ii",
+                },
+                {
+                    id: "pick_lock",
+                    ...abilityMasterData.vanilla.Rogue.pick_lock,
+                    rank: null,
+                    requiresLevel: 1,
+                    description: [
+                        "Allows opening of locked chests and doors.",
+                    ],
+                    spentResource: null,
+                    trainingCost: 1800,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=1804/pick-lock",
+                },
+                {
+                    id: "poisons",
+                    ...abilityMasterData.vanilla.Rogue.poisons,
+                    rank: null,
+                    requiresLevel: 20,
+                    description: [
+                        "You can create and mix poisons, with both found and storebought ingredients.",
+                    ],
+                    spentResource: null,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=2842/poisons",
+                },
             ],
         },
         [SHAMAN]: {
