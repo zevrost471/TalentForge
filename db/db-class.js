@@ -223,8 +223,11 @@ function buildSpecGrid(className, meta) {
     const masterEntries = Object.values(abilityData[currentExpansion]?.[className] ?? {});
     const iconByName = new Map(masterEntries.map(e => [e.name.toLowerCase(), e.icon]));
 
-    // Build name → rank-1 ability lookup for tooltips
-    const allSpecArrays = Object.values(baselineClassAbilities[currentExpansion]?.[className] ?? {});
+    // Build name → rank-1 ability lookup for tooltips (baseline + talent abilities)
+    const allSpecArrays = [
+        ...Object.values(baselineClassAbilities[currentExpansion]?.[className] ?? {}),
+        ...Object.values(talentClassAbilities[currentExpansion]?.[className] ?? {}),
+    ];
     const rank1Map = new Map();
     for (const arr of allSpecArrays) {
         for (const ab of arr) {
@@ -285,12 +288,43 @@ function buildSpecGrid(className, meta) {
 function spellSubLabel(ab) {
     if (ab.tags?.includes('shapeshift')) return 'Shapeshift';
     if (ab.rank) return `Rank ${ab.rank}`;
+    if (ab.type === 'proficiency' && ab.isActive !== true) return 'Passive';
     return '';
 }
 
+// Default "Others" category label per class, used when an ability doesn't set its own otherCategory.
+// Classes with a single Others category (e.g. Hunter) can rely on this default; classes with
+// multiple categories (e.g. Rogue: Poisons / Lockpicking) set otherCategory per ability instead.
+const OTHER_CATEGORY_LABEL = {
+    Hunter: 'Beast Training',
+};
+
+// Sub-label for spec-less rows: the ability's own otherCategory, else the class default (proficiencies get none).
+function othersCategoryLabel(ab) {
+    if (ab.type === 'proficiency') return '';
+    return ab.otherCategory ?? OTHER_CATEGORY_LABEL[ab.className] ?? '';
+}
+
+function typeCategoryLabel(ab) {
+    if (ab.type === 'proficiency') {
+        return ab.profKind === 'weapon' ? 'Weapons'
+            : ab.profKind === 'armor'  ? 'Armor'
+            : ab.profKind === 'general' ? 'General'
+            : '';
+    }
+    return ab.spec ?? (othersCategoryLabel(ab) || ab.className) ?? '';
+}
+
 function buildSpellRow(ab) {
-    const typeLabel = ab.type === 'ability' ? 'Abilities' : ab.type === 'talent' ? 'Talents' : '—';
-    const subLabel = (_tabFlat.spellsSpecFilter ?? 'all') !== 'all' ? (ab.spec ?? '') : (ab.className ?? '');
+    const typeLabel = ab.type === 'ability' ? 'Abilities'
+        : ab.type === 'talent' ? 'Talents'
+        : ab.type === 'proficiency' ? 'Proficiencies'
+        : '—';
+    const typeFilterActive = (_tabFlat.spellsTypeFilter ?? 'all') !== 'all';
+    const specFilterActive = (_tabFlat.spellsSpecFilter ?? 'all') !== 'all';
+    const subLabel = typeFilterActive ? typeCategoryLabel(ab)
+        : specFilterActive ? (ab.spec ?? othersCategoryLabel(ab))
+        : (ab.className ?? '');
     const typeCell = ab.type
         ? `${typeLabel}<br><span style="color:#ffffff;font-size:0.8em">${subLabel}</span>`
         : '—';
@@ -353,6 +387,15 @@ function buildSpellsContent(className, meta) {
         }
     }
 
+    // Baseline OTHER (non-spec) abilities
+    for (const ab of (allAbilitiesObj.OTHER ?? [])) {
+        if (!seenIds.has(ab.id)) {
+            seenIds.add(ab.id);
+            seenNames.add(ab.name.toLowerCase());
+            flat.push({ ...ab, type: 'ability', className, spec: null });
+        }
+    }
+
     // Talent abilities with rank data
     const allTalentAbilitiesObj = talentClassAbilities[currentExpansion]?.[className] ?? {};
     for (const spec of meta.specs) {
@@ -362,6 +405,15 @@ function buildSpellsContent(className, meta) {
                 seenNames.add(ab.name.toLowerCase());
                 flat.push({ ...ab, type: 'talent', className, spec });
             }
+        }
+    }
+
+    // Talent OTHER (non-spec) abilities
+    for (const ab of (allTalentAbilitiesObj.OTHER ?? [])) {
+        if (!seenIds.has(ab.id)) {
+            seenIds.add(ab.id);
+            seenNames.add(ab.name.toLowerCase());
+            flat.push({ ...ab, type: 'talent', className, spec: null });
         }
     }
 
@@ -414,6 +466,7 @@ function buildSpellsContent(className, meta) {
                 isActive: false,
                 requiresLevel: learnedAt ?? null,
                 type: 'proficiency',
+                profKind: 'armor',
                 className,
                 spec: null,
             });
@@ -434,6 +487,7 @@ function buildSpellsContent(className, meta) {
                 requiresLevel: null,
                 requiresTalent: requiresTalent ?? false,
                 type: 'proficiency',
+                profKind: 'weapon',
                 className,
                 spec: null,
             });
@@ -449,6 +503,8 @@ function buildSpellsContent(className, meta) {
     for (const { def, requiresTalent } of [...baseAbilities, ...expAbilityAdditions]) {
         const id = abilityKeyMap.get(def) ?? def.name.toLowerCase().replace(/\s+/g, '_');
         if (seenIds.has(id)) continue;
+        // Shield-dependent abilities (e.g. Block) only apply if the class has Shield proficiency.
+        if (def.requiresShield && !seenIds.has('shield_proficiency')) continue;
         seenIds.add(id);
         flat.push({
             id,
@@ -461,8 +517,12 @@ function buildSpellsContent(className, meta) {
             minRange: def.minRange ?? null,
             maxRange: def.maxRange ?? null,
             requiresTalent,
+            requiresWeapon: def.requiresWeapon ?? null,
+            requires1HWeapon: def.requires1HWeapon ?? false,
+            requiresShield: def.requiresShield ?? false,
             requiresLevel: null,
             type: 'proficiency',
+            profKind: 'general',
             className,
             spec: null,
         });
@@ -500,7 +560,9 @@ function buildSpellsContent(className, meta) {
         </div>
         <div class="flex items-center gap-1 mb-2">
             <button class="db-spec-btn active" data-spec="all" data-label="All">All (${flat.length})</button>
+            ${/* <button class="db-spec-btn" data-spec="__general__" data-label="General">General (${flat.filter(a => a.type === 'proficiency').length})</button> */ ''}
             ${meta.specs.map(s => `<button class="db-spec-btn" data-spec="${s}" data-label="${s}">${s} (${flat.filter(a => a.spec === s).length})</button>`).join('')}
+            <button class="db-spec-btn" data-spec="__others__" data-label="Others">Others (${flat.filter(a => a.spec == null && a.type !== 'proficiency').length})</button>
         </div>
         <div id="db-search-wrapper" class="mb-2 hidden">
             <div class="relative" style="width:260px;max-width:100%">
@@ -746,6 +808,13 @@ function updateSortIcons(root) {
     if (resetBtn) resetBtn.classList.toggle('hidden', !col);
 }
 
+function specMatches(ab, specFilter) {
+    if (specFilter === 'all') return true;
+    if (specFilter === '__general__') return ab.type === 'proficiency';
+    if (specFilter === '__others__') return ab.spec == null && ab.type !== 'proficiency';
+    return ab.spec === specFilter;
+}
+
 function updateButtonCounts(root) {
     const typeFilter = _tabFlat.spellsTypeFilter ?? 'all';
     const specFilter = _tabFlat.spellsSpecFilter ?? 'all';
@@ -756,7 +825,7 @@ function updateButtonCounts(root) {
         const label = btn.dataset.label ?? type;
         const count = all.filter(ab =>
             (type  === 'all' || ab.type === type) &&
-            (specFilter === 'all' || ab.spec === specFilter)
+            specMatches(ab, specFilter)
         ).length;
         btn.textContent = `${label} (${count})`;
     });
@@ -765,7 +834,7 @@ function updateButtonCounts(root) {
         const spec  = btn.dataset.spec;
         const label = btn.dataset.label ?? spec;
         const count = all.filter(ab =>
-            (spec  === 'all' || ab.spec === spec) &&
+            specMatches(ab, spec) &&
             (typeFilter === 'all' || ab.type === typeFilter)
         ).length;
         btn.textContent = `${label} (${count})`;
@@ -810,7 +879,7 @@ function applySpellFilters(root) {
 
     let result = _tabFlat.spellsAll ?? [];
     if (typeFilter !== 'all') result = result.filter(ab => ab.type === typeFilter);
-    if (specFilter !== 'all') result = result.filter(ab => ab.spec === specFilter);
+    if (specFilter !== 'all') result = result.filter(ab => specMatches(ab, specFilter));
 
     // Build search-phase tests (subject to All/Any match mode)
     const searchTests = [];
@@ -1719,8 +1788,8 @@ function render() {
                 </div>
             </section>
         </div>
-
-        ${buildSidebar(className, meta, iconKey)}
+        
+        ${/* buildSidebar(className, meta, iconKey) */ ''}
     </div>`;
 
     wireRelatedTabs(root);

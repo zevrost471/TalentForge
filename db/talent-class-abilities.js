@@ -267,6 +267,7 @@ export const talentClassAbilities = {
                     description: [
                         "Consumes a Rejuvenation or Regrowth effect on a friendly target to instantly heal them an amount equal to 12 sec of Rejuvenation or 18 sec of Regrowth.",
                     ],
+                    spentResource: 20,
                     trainingCost: null,
                     linkToWoWHead: "https://www.wowhead.com/classic/spell=18562/swiftmend",
                 },
@@ -279,7 +280,21 @@ export const talentClassAbilities = {
         [HUNTER]: {
             // hunter - vanilla
             "Beast Mastery": [
-
+                {
+                    id: "bestial_wrath",
+                    ...talentAbilityMasterData.vanilla.Hunter.bestial_wrath,
+                    rank: null,
+                    requiresLevel: null,
+                    description: [
+                        "Send your pet into a rage causing 50% additional damage for 18 sec.  While enraged, the beast does not feel pity or remorse or fear and it cannot be stopped unless killed.",
+                    ],
+                    buffText: [
+                        "Enraged.",
+                    ],
+                    spentResource: 12,
+                    trainingCost: null,
+                    linkToWoWHead: "https://www.wowhead.com/classic/spell=19574/bestial-wrath",
+                },
             ],
             // hunter - vanilla
             Marksmanship: [
