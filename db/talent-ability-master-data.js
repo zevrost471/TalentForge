@@ -205,7 +205,7 @@ export const talentAbilityMasterData = {
         isActive: true,
         isInstant: true,
         cooldown: 120,
-        percentageOfBaseMana: false,
+        percentageOfBaseMana: true,
         resourceType: 1,
         range: 100,
         requiresWeapon: null,
