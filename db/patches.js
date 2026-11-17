@@ -41,12 +41,16 @@ export const patchOptions = Object.freeze({
         // ...
     ],
     forever: [
+        { value: "1.60.0", label: "Alpha 1.60.0" },
         { value: "1.60.1.69876", label: "Beta 1.60.1.69876" },
         { value: "1.60.1.70009", label: "Beta 1.60.1.70009" },
         { value: "1.60.1.70170", label: "Beta 1.60.1.70170" },
         { value: "1.60.1.70291", label: "Beta 1.60.1.70291" },
         { value: "1.60.1.70425", label: "Beta 1.60.1.70425" },
-        // { value: "1.60.2", label: "Patch 1.16.2: ?" }
+        { value: "1.60.1.70707", label: "Beta 1.60.1.70707" },
+        { value: "1.60.1.70755", label: "Beta 1.60.1.70755" },
+        { value: "1.60.1.70888", label: "Beta 1.60.1.70888" },
+        // { value: "1.60.2", label: "Patch 1.60.2: ?" }
     ],
     peoples: [
         { value: "1.70.0", label: "Patch 1.70.0: Peoples of Azeroth" },
