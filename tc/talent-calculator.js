@@ -20,6 +20,11 @@ import {
     formatTalentTooltipDescription,
     capitalize,
 } from './tooltip-format.js';
+import {
+    generateBuildStringFromBuild,
+    generateGlyphString,
+    generateRuneString,
+} from './build-codec.js';
 
 const {
   headerEl,
@@ -4721,7 +4726,12 @@ function exportBuild(index) {
             throw new Error("Cannot export: invalid build data.");
         }
 
-        const buildString = generateBuildStringFromBuild(build);
+        const trees = talentTreeData[build.version]?.classes?.[build.class]?.trees || [];
+        const buildString = generateBuildStringFromBuild(build, {
+            trees,
+            expansion: getExpansionFromPatch(build.version),
+            sodPhaseSlots: SOD_PHASE_SLOTS,
+        });
 
         if (!buildString.replace(/-/g, "")) {
             throw new Error("Cannot export: no talents selected.");
@@ -4749,92 +4759,6 @@ function showMessage(message, isError = false) {
     setTimeout(() => {
         msgBox.remove();
     }, 3000); // auto-hide after 3 seconds
-}
-
-function generateBuildStringFromBuild(build) {
-    const { version, class: classKey, talents, glyphs, runes } = build;
-    const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
-
-    // Get actual talent definitions (with row/col info)
-    const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
-
-    const treeStrings = trees.map((tree) => {
-        const treeTalents = classTalents[tree] || [];
-        const invested = talents[classKey]?.[tree] || {};
-
-        // Sort by row first, then col
-        const sorted = [...treeTalents].sort((a, b) => {
-            if (a.row !== b.row) return a.row - b.row;
-            return a.col - b.col;
-        });
-
-        let s = "";
-        let lastNonZero = -1;
-
-        sorted.forEach((talent, idx) => {
-            const val = invested[talent.id] || 0;
-            s += val;
-            if (val > 0) lastNonZero = idx;
-        });
-
-        // Trim trailing zeros
-        return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
-    });
-
-    const talentString = treeStrings.join("-");
-
-    // === Glyph String ===
-    const expansion = getExpansionFromPatch(version);
-
-    let glyphString = "";
-    if (expansion === "wotlk" || expansion === "cataclysm") {
-        glyphString = generateGlyphString(glyphs, expansion);
-    }
-
-    // Use build's own phase, not currentState.phase
-    let runeString = "";
-    if (version === "1.15") {
-        const phase = build.phase || 1;
-        runeString = generateRuneString(runes, phase);
-        return `p${phase}/${talentString}${runeString}`;
-    }
-
-    return `${talentString}${glyphString}${runeString}`;
-}
-
-function decompressBuild(str) {
-    const [meta, talentStr] = str.split(":");
-    const [version, classKey] = meta.split("/");
-
-    const trees = talentStr.split(";");
-    const talents = {
-        [classKey]: {}
-    };
-
-    trees.forEach((treeBlock) => {
-        const [treeName, talentsList] = treeBlock.split("=");
-        talents[classKey][treeName] = {};
-
-        if (talentsList) {
-            talentsList.split(",").forEach((entry) => {
-                const [id, points] = entry.split(".");
-                talents[classKey][treeName][id] = parseInt(points, 10);
-            });
-        }
-    });
-
-    // Infer max talent points from the version, fallback to 51 if unknown
-    const pointsTotal = talentTreeData[version]?.maxPoints || 51;
-
-    return {
-        name: "Imported Build",
-        version,
-        class: classKey,
-        pointsTotal, // You can infer from version if needed
-        talents,
-        glyphs,
-        runes
-    };
 }
 
 function deleteBuild(index) {
@@ -4912,7 +4836,7 @@ function generateBuildString() {
     // Rune string for 1.15
     let runeString = "";
     if (version === "1.15") {
-        runeString = generateRuneString(currentState.runes, currentState.phase);
+        runeString = generateRuneString(currentState.runes, currentState.phase, SOD_PHASE_SLOTS);
     }
 
     // Build the full string with phase segment for SoD
@@ -4924,57 +4848,6 @@ function generateBuildString() {
     // === Build final formatted string ===
     if (!hasAnyTalents && !glyphString) return "";
     return `${talentString}${glyphString}${runeString}`;
-}
-
-function generateGlyphString(glyphs, expansion) {
-    let types = [];
-
-    if (expansion === "cataclysm") {
-        types = ["prime", "major", "minor"];
-    } else if (expansion === "wotlk") {
-        types = ["major", "minor"];
-    } else {
-        return "";
-    }
-
-    // let hasAnyGlyph = false;
-
-    const segments = types.map(type => {
-        const arr = glyphs[type] || [];
-
-        // Always 3 slots
-        const ids = [
-            arr[0] ? arr[0].id.toString() : "",
-            arr[1] ? arr[1].id.toString() : "",
-            arr[2] ? arr[2].id.toString() : "",
-        ];
-        // if (ids.length > 0) hasAnyGlyph = true;
-
-        return ids.join("-"); // join with "-" between slots
-    });
-    // if (!hasAnyGlyph) return "";
-
-    const glyphString = segments.join(":");
-
-    return `/${glyphString}`;
-}
-
-function generateRuneString(runes, phase) {
-    if (!runes || !phase) return "";
-
-    const slotOrder = SOD_PHASE_SLOTS[phase] || [];
-
-    // Collect IDs in slot order
-    const ids = slotOrder.map(slotKey => {
-        const rune = runes[slotKey];
-        if (!rune || !rune.id) return "";
-        return rune.id.toString();
-    });
-
-    // Join with "-" between slots
-    const runeString = ids.join("-");
-
-    return `/${runeString}`;
 }
 
 // ----------------------------
