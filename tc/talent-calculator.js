@@ -25,6 +25,12 @@ import {
     generateGlyphString,
     generateRuneString,
 } from './build-codec.js';
+import {
+    getSoDMaxPoints,
+    computeRequiredLevel,
+    levelToPoints,
+    getMaxLevelForVersion,
+} from './leveling.js';
 
 const {
   headerEl,
@@ -1416,7 +1422,7 @@ function renderTalentTrees() {
     const pointsLeft = currentState.pointsTotal - totalPoints;
 
     // Resolve planned level (default to version max when not set or over-cap)
-    const maxLevel = getMaxLevelForVersion(version, currentState.phase);
+    const maxLevel = getMaxLevelForVersion(version, currentState.phase, talentTreeData[version]?.maxPoints);
     if (!currentState.plannedLevel || currentState.plannedLevel > maxLevel) {
         currentState.plannedLevel = maxLevel;
     }
@@ -1916,7 +1922,7 @@ function initPhaseSelect() {
         const newPhase = Number(e.target.value);
         // const oldPhase = currentState.phase;
 
-        const newPhaseMaxLevel = getMaxLevelForVersion("1.15", newPhase);
+        const newPhaseMaxLevel = getMaxLevelForVersion("1.15", newPhase, talentTreeData["1.15"]?.maxPoints);
         const newPointsTotal = levelToPoints(newPhaseMaxLevel, "1.15");
 
         if (getTotalPointsSpent() > newPointsTotal) {
@@ -1953,47 +1959,10 @@ function initPhaseSelect() {
     });
 }
 
-function getSoDMaxPoints(phase) {
-    const SOD_PHASE_MAX_POINTS = {
-        1: 16, // phase 1 max points (approx. level 25)
-        2: 31, // phase 2 max points (approx. level 40)
-        3: 41, // phase 3 max points (approx. level 50)
-        4: 51  // phase 4 max points (vanilla cap)
-    };
-    return SOD_PHASE_MAX_POINTS[phase] || 51;
-}
-
-function computeRequiredLevel(totalPoints, version) {
-    if (version.startsWith("4.")) {
-        const map = [10,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,82,83,84,85];
-        if (totalPoints === 0) return "-";
-        return map[Math.min(totalPoints - 1, map.length - 1)];
-    }
-    return totalPoints === 0 ? "-" : 9 + totalPoints;
-}
-
-function levelToPoints(level, version) {
-    if (version.startsWith("4.")) {
-        const map = [10,11,13,15,17,19,21,23,25,27,29,31,33,35,37,39,41,43,45,47,49,51,53,55,57,59,61,63,65,67,69,71,73,75,77,79,81,82,83,84,85];
-        let pts = 0;
-        for (let i = 0; i < map.length; i++) {
-            if (map[i] <= level) pts = i + 1; else break;
-        }
-        return pts;
-    }
-    return Math.max(0, level - 9);
-}
-
-function getMaxLevelForVersion(version, phase) {
-    if (version === "1.15") return { 1: 25, 2: 40, 3: 50, 4: 60 }[phase] ?? 60;
-    const maxPoints = talentTreeData[version]?.maxPoints;
-    return maxPoints ? computeRequiredLevel(maxPoints, version) : 60;
-}
-
 function applyPlannedLevel(level) {
     const version = currentState.version;
     if (!version) return;
-    const maxLevel = getMaxLevelForVersion(version, currentState.phase);
+    const maxLevel = getMaxLevelForVersion(version, currentState.phase, talentTreeData[version]?.maxPoints);
     const totalSpent = getTotalPointsSpent();
     const minLevel = totalSpent > 0 ? computeRequiredLevel(totalSpent, version) : 10;
     level = Math.max(minLevel, Math.min(maxLevel, Math.round(level)));
