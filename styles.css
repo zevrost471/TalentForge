@@ -1358,7 +1358,7 @@ border-bottom-right-radius: 4px;
 .tc-settings-popup,
 #tc-sidebar-pins-popup,
 #db-sidebar-pins-popup,
-#class-lore-overlay {
+#lore-overlay {
     font-family: "Open Sans", Arial, "Helvetica Neue", Helvetica, sans-serif;
 }
 

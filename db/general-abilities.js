@@ -158,4 +158,9 @@ export const ADDITIONAL_GENERAL_ABILITIES_PER_EXPANSION = {
             { type: COMBAT_ABILITY_DEFS.dual_wield, requiresTalent: true },
         ],
     },
+    peoples: {
+        Warlock: [
+            { type: COMBAT_ABILITY_DEFS.block, requiresRace: ["orc"], requiresTalent: true },
+        ],
+    },
 };
