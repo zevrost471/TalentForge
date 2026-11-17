@@ -1,4 +1,4 @@
-import { customRacesByFaction, customClassesByRace, raceBaseData } from '../../db/custom/races.js';
+import { customRacesByFaction, customClassesByRace, raceBaseData, RACE_DESCRIPTIONS } from '../../db/custom/races.js';
 import { newFactions, FACTION_DESCRIPTIONS } from '../../db/custom/factions.js';
 
 const FACTIONS_TO_SHOW = [
@@ -21,7 +21,7 @@ const RACE_CLASS_DESCRIPTIONS = {
     'human:Priest': "The Church of the Holy Light has stood at the heart of human civilization since the First War, maintaining hospitals, temples, and sanctuaries throughout Alliance territory even in the darkest of times. Its priests serve not only as healers but as counselors, moral authorities, and spiritual anchors for communities shaped by generations of war. The Light offers genuine comfort to the living and is genuinely lethal to the undead - a dual nature that has made human priests as valued on the battlefield as in the abbey. Their healers are among the most numerous and reliable in the Alliance.",
     'human:Rogue': "Human society has always harbored those who operate in the shadows of its ambitions. SI:7, Stormwind's intelligence agency, gives the rogue's trade a measure of institutional respectability - but where the Crown's agents go, freelance cutpurses, assassins, and spies are never far behind. Humans adapt to the demands of city life, where politics and sharp blades often matter more than open valor. Whether serving the Crown or serving themselves, human rogues navigate the world between law and necessity with practiced ease.",
     'human:Warrior': "The human soldier is the backbone of the Alliance - disciplined, trained, and battle-hardened through generations of war against the Horde, the Scourge, and the Legion. From the footmen who held the gates of Lordaeron to the veterans who rebuilt Stormwind from rubble, warriors represent the enduring will of humanity. No class is more central to the human story than those who take up sword and shield and meet the world's evils at the front line.",
-    'human:Marksman': "Marksmanship finds a natural home among the organized armies of the Alliance, where holding a line and picking off threats at range has saved countless lives since the First War. Crossbowmen served in Stormwind's ranks from the very beginning - steady and dependable across every major campaign. Human marksmen have shaped the outcome of many battles, their patience and precision turning the tide before swords are ever drawn.",
+    'human:Marksman': "Marksmanship once held a natural place among the organized armies of Stormwind, where holding a line and picking off threats at range saved countless lives. Crossbowmen served in the city's ranks from the very beginning - steady and dependable, their patience and precision turning the tide of many battles. Though this practice was lost when Stormwind fell in the First War, it has now found its way back. The affinity their allies hold for marksmanship has inspired the humans to raise ranks of archers of their own once more.",
     'human:Warlock': "Warlocks are forbidden by the Church of the Holy Light and hunted by SI:7 - and yet they endure. The temptation of power is a human failing, and demonic magic offers power in terrible abundance. Most human warlocks practice in secret, telling themselves their arts are a necessary weapon against the Legion. A few serve the Crown directly as demonologists, their talents too useful to waste - though they are kept under strict watch. Trust is extended carefully, and withdrawn the moment it is abused.",
 
     'dwarf:Hunter': "Dwarves have hunted the peaks and valleys of Khaz Modan for as long as their clans have stood. The mountains demand patience, endurance, and an intimate knowledge of the creatures that share them - qualities that come naturally to a people shaped by stone and cold. Dwarven hunters are expert trackers and trappers, their understanding of terrain and animal behavior honed across generations of working the highland passes.",
@@ -269,32 +269,27 @@ function renderClassSection(raceId, gender) {
     `;
 }
 
-function closeClassLorePopup() {
-    document.getElementById('class-lore-overlay')?.remove();
+function closeLorePopup() {
+    document.getElementById('lore-overlay')?.remove();
 }
 
-function openClassLorePopup(raceId, className, isUnlock) {
-    closeClassLorePopup();
-
-    const loreKey = `${raceId}:${className}`;
-    const lore = RACE_CLASS_DESCRIPTIONS[loreKey];
-    const raceName = RACE_DISPLAY_NAMES[raceId] ?? raceBaseData[raceId]?.name ?? raceId;
-    const classIconSrc = getClassIconUrl(className);
+function openLorePopup({ iconSrc, title, subtitle, lore }) {
+    closeLorePopup();
 
     const overlay = document.createElement('div');
-    overlay.id = 'class-lore-overlay';
+    overlay.id = 'lore-overlay';
     overlay.style.cssText = 'position:fixed;inset:0;z-index:9999;display:flex;align-items:center;justify-content:center;background:rgba(0,0,0,0.72);';
 
     const popup = document.createElement('div');
     popup.style.cssText = 'position:relative;background:var(--tf-bg-panel);border:1px solid var(--tf-border-soft);border-radius:0.75rem;padding:1.5rem;max-width:480px;width:90%;box-shadow:0 8px 32px rgba(0,0,0,0.7);';
 
     popup.innerHTML = `
-        <button id="class-lore-close" style="position:absolute;top:0.75rem;right:0.75rem;background:none;border:none;color:#9ca3af;font-size:1.2rem;cursor:pointer;line-height:1;" aria-label="Close">✕</button>
+        <button id="lore-close" style="position:absolute;top:0.75rem;right:0.75rem;background:none;border:none;color:#9ca3af;font-size:1.2rem;cursor:pointer;line-height:1;" aria-label="Close">✕</button>
         <div style="display:flex;align-items:center;gap:0.875rem;margin-bottom:1.1rem;">
-            <img src="${classIconSrc}" style="width:3.25rem;height:3.25rem;border-radius:0.375rem;border:1px solid var(--tf-border-soft);flex-shrink:0;" onerror="this.style.display='none'">
+            <img src="${iconSrc}" style="width:3.25rem;height:3.25rem;border-radius:0.375rem;border:1px solid var(--tf-border-soft);flex-shrink:0;" onerror="this.style.display='none'">
             <div>
-                <div style="font-size:1.1rem;font-weight:700;color:#facc15;line-height:1.2;">${className}</div>
-                <div style="font-size:0.8rem;color:#9ca3af;margin-top:0.2rem;">${raceName}${isUnlock === 'true' ? ' <span style="font-style:italic;">(unlock)</span>' : ''}</div>
+                <div style="font-size:1.1rem;font-weight:700;color:#facc15;line-height:1.2;">${title}</div>
+                ${subtitle ? `<div style="font-size:0.8rem;color:#9ca3af;margin-top:0.2rem;">${subtitle}</div>` : ''}
             </div>
         </div>
         <p style="font-size:0.875rem;line-height:1.75;color:rgba(209,213,219,0.85);margin:0;">${lore ?? '<em style="color:#6b7280;">Lore coming soon.</em>'}</p>
@@ -303,13 +298,34 @@ function openClassLorePopup(raceId, className, isUnlock) {
     overlay.appendChild(popup);
     document.body.appendChild(overlay);
 
-    popup.querySelector('#class-lore-close').addEventListener('click', closeClassLorePopup);
-    overlay.addEventListener('click', e => { if (e.target === overlay) closeClassLorePopup(); });
+    popup.querySelector('#lore-close').addEventListener('click', closeLorePopup);
+    overlay.addEventListener('click', e => { if (e.target === overlay) closeLorePopup(); });
 
     const escHandler = e => {
-        if (e.key === 'Escape') { closeClassLorePopup(); document.removeEventListener('keydown', escHandler); }
+        if (e.key === 'Escape') { closeLorePopup(); document.removeEventListener('keydown', escHandler); }
     };
     document.addEventListener('keydown', escHandler);
+}
+
+function openClassLorePopup(raceId, className, isUnlock) {
+    const raceName = RACE_DISPLAY_NAMES[raceId] ?? raceBaseData[raceId]?.name ?? raceId;
+    openLorePopup({
+        iconSrc: getClassIconUrl(className),
+        title: className,
+        subtitle: `${raceName}${isUnlock === 'true' ? ' <span style="font-style:italic;">(unlock)</span>' : ''}`,
+        lore: RACE_CLASS_DESCRIPTIONS[`${raceId}:${className}`],
+    });
+}
+
+function openRaceLorePopup(raceId) {
+    const base = raceBaseData[raceId];
+    const variants = base?.genderVariants || [];
+    const maleVariant = variants.find(v => v.gender === 'male') || variants[0];
+    openLorePopup({
+        iconSrc: getRaceIconUrl(maleVariant?.icon),
+        title: RACE_DISPLAY_NAMES[raceId] ?? base?.name ?? raceId,
+        lore: RACE_DESCRIPTIONS[raceId],
+    });
 }
 
 function renderRaceCard(raceId, isAllied) {
@@ -358,13 +374,16 @@ function renderRaceCard(raceId, isAllied) {
     return `
         <div class="tf-panel-flat rounded-lg p-4 flex flex-col gap-3">
             <div class="flex items-center gap-3">
-                <img class="race-icon w-12 h-12 rounded border border-gray-600 object-contain bg-gray-800"
-                     src="${maleIconUrl}"
-                     data-male-icon="${maleIconUrl}"
-                     data-female-icon="${femaleIconUrl}"
-                     data-race="${raceId}"
-                     alt="${base.name}"
-                     onerror="this.onerror=null;this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                <button class="race-icon-btn relative group" data-race="${raceId}"
+                        style="background:none;border:none;padding:0;cursor:pointer;">
+                    <img class="race-icon w-12 h-12 rounded border border-gray-600 group-hover:border-yellow-400 transition-colors object-contain bg-gray-800"
+                         src="${maleIconUrl}"
+                         data-male-icon="${maleIconUrl}"
+                         data-female-icon="${femaleIconUrl}"
+                         data-race="${raceId}"
+                         alt="${base.name}"
+                         onerror="this.onerror=null;this.src='https://wow.zamimg.com/images/wow/icons/large/inv_misc_questionmark.jpg'">
+                </button>
                 <div>
                     <div class="flex items-center flex-wrap gap-1">
                         <span class="font-semibold text-gray-100">${RACE_DISPLAY_NAMES[raceId] ?? base.name}</span>
@@ -427,6 +446,12 @@ function init() {
         const classBtn = e.target.closest('.class-icon-btn');
         if (classBtn) {
             openClassLorePopup(classBtn.dataset.race, classBtn.dataset.class, classBtn.dataset.unlock);
+            return;
+        }
+
+        const raceBtn = e.target.closest('.race-icon-btn');
+        if (raceBtn) {
+            openRaceLorePopup(raceBtn.dataset.race);
             return;
         }
 
