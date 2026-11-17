@@ -31,6 +31,7 @@ import {
     levelToPoints,
     getMaxLevelForVersion,
 } from './leveling.js';
+import { currentState } from './state.js';
 
 const {
   headerEl,
@@ -437,19 +438,7 @@ const mageTrees = ["Arcane", "Frost", "Fire"];
     talentTreeData[version].classes.mage.trees = mageTrees;
 });
 
-let currentState = {
-    version: null,
-    class: null,
-    phase: 1, // default for 1.15
-    pointsSpent: 0,
-    pointsTotal: 51,
-    plannedLevel: null,
-    talents: {},
-    builds: [],
-    talentOrder: [],
-    glyphs: {},
-    runes: {}
-};
+// currentState (shared mutable calculator state) now lives in ./state.js
 
 // const talents = talentsAttributedByVersion[currentState.version]?.[currentState.class]?.[treeName] || [];
 
