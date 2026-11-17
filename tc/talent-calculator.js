@@ -12,6 +12,14 @@ import { getDomElements } from './dom-elements.js';
 import './talent-patch-changes.js';
 import { baselineClassAbilities } from '../db/baseline-class-abilities.js';
 import { customClassesByRace, raceBaseData, customRacesByFaction } from '../db/custom/races.js';
+import {
+    getResourceText,
+    getRangeText,
+    formatCooldown,
+    getRequirementText,
+    formatTalentTooltipDescription,
+    capitalize,
+} from './tooltip-format.js';
 
 const {
   headerEl,
@@ -497,6 +505,7 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
     if (!talent) return "";
 
     const lines = [];
+    const expansion = getCurrentExpansion();
 
     // === HEADER ===
     // 1. Talent Name
@@ -508,7 +517,7 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
     if (talent.isActive) {
 
         // 3. Resource spent & range
-        const resourceText = getResourceText(classKey, talent.spentResource, talent.absoluteSpent, talent.resourceType);
+        const resourceText = getResourceText(expansion, classKey, talent.spentResource, talent.absoluteSpent, talent.resourceType);
         const rangeText = getRangeText(talent.range, talent.minRange, talent.maxRange);
 
         // flex container: resource spent on left, range on right
@@ -564,7 +573,7 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
     lines.push(`<div class="text-sm text-white">Requires ${classDisplayName}</div>`);
 
     // 6. Weapon requirement
-    const weaponReqText = getRequirementText(talent);
+    const weaponReqText = getRequirementText(talent, classKey);
     if (weaponReqText) {
         lines.push(`<div class="text-sm text-white">${weaponReqText}</div>`);
     }
@@ -592,12 +601,12 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
             };
 
             const currentDesc = getFilledDescription(currentRank || 1);
-            lines.push(formatTalentTooltipDescription(currentDesc));
+            lines.push(formatTalentTooltipDescription(currentDesc, expansion));
 
             if (showNextRank && currentRank > 0 && currentRank < talent.ranks) {
                 const nextDesc = getFilledDescription(currentRank + 1);
                 lines.push(`<div class="mt-2 text-sm text-white">Next rank:</div>`);
-                lines.push(formatTalentTooltipDescription(nextDesc));
+                lines.push(formatTalentTooltipDescription(nextDesc, expansion));
             }
         }
         // Case B: Full per-rank string array (new)
@@ -605,23 +614,23 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
             const rankIndex = Math.max(0, Math.min((currentRank || 1) - 1, talent.description.length - 1));
             const currentDesc = talent.description[rankIndex];
 
-            lines.push(formatTalentTooltipDescription(currentDesc));
+            lines.push(formatTalentTooltipDescription(currentDesc, expansion));
 
             // Only show next rank if showNextRank === true
             if (showNextRank && currentRank > 0 && currentRank < talent.ranks) {
                 const nextDesc = talent.description[rankIndex + 1];
                 lines.push(`<div class="mt-2 text-sm text-white">Next rank:</div>`);
-                lines.push(formatTalentTooltipDescription(nextDesc));
+                lines.push(formatTalentTooltipDescription(nextDesc, expansion));
             }
         }
         // Case C: Fallback for unexpected formats
         else {
-            lines.push(formatTalentTooltipDescription(talent.description.join("<br>")));
+            lines.push(formatTalentTooltipDescription(talent.description.join("<br>"), expansion));
         }
     }
     // Case D: Simple string
     else if (typeof talent.description === "string") {
-        lines.push(formatTalentTooltipDescription(talent.description));
+        lines.push(formatTalentTooltipDescription(talent.description, expansion));
     }
 
     // 8. Lock requirements
@@ -656,64 +665,13 @@ function getTalentTooltip(talent, currentRank, classKey, treeName, showNextRank 
     return lines.join("\n");
 }
 
-function parseTooltipLines(html) {
-    // normalize all <br> variants to single \n
-    return html.replace(/<br\s*\/?>/gi, '\n')
-               .split('\n')
-               .map(l => l.trim());
-}
-
-function isSubheaderLine(line) {
-    const currentExpansion = getCurrentExpansion();
-
-    if (currentExpansion !== "cataclysm") {
-        // Only Cataclysm has subheaders
-        return false;
-    }
-
-    // Subheaders never end with punctuation
-    if (/[.!?:]$/.test(line)) return false;
-
-    // Subheaders never start with "-"
-    if (line.startsWith('-')) return false;
-
-    // Subheaders never start with a digit
-    if (/^\d/.test(line)) return false;
-
-    // Must contain letters
-    if (!/[a-zA-Z]/.test(line)) return false;
-
-    // Avoid very long paragraphs
-    if (line.length > 55) return false;
-
-    return true;
-}
-
-function formatTalentTooltipDescription(html) {
-    const lines = parseTooltipLines(html);
-    const out = [];
-
-    for (const line of lines) {
-        if (!line) {
-            // single paragraph break
-            out.push('<br>'); 
-            continue;
-        }
-
-        if (isSubheaderLine(line)) {
-            out.push(`<div class="text-sm text-white">${line}</div>`);
-        } else {
-            out.push(`<div class="text-sm text-yellow-300">${line}</div>`);
-        }
-    }
-
-    return out.join("\n");
-}
+// parseTooltipLines, isSubheaderLine and formatTalentTooltipDescription moved to tooltip-format.js
 
 function getCataBaseTalentTooltip(talent, classKey) {
     if (!talent) return "";
 
     const lines = [];
+    const expansion = getCurrentExpansion();
 
     // 1. Talent Name
     let talentName = talent.name || "";
@@ -728,7 +686,7 @@ function getCataBaseTalentTooltip(talent, classKey) {
     if (talent.isActive) {
 
         // 3. Resource spent & range
-        const resourceText = getResourceText(classKey, talent.spentResource, null, null);
+        const resourceText = getResourceText(expansion, classKey, talent.spentResource, null, null);
         const rangeText = getRangeText(talent.range, null, null);
 
         // flex container: resource spent on left, range on right
@@ -785,7 +743,7 @@ function getCataBaseTalentTooltip(talent, classKey) {
 
     // 6. Weapon requirement
     if (talent.requiresWeapon) {
-        const weaponReqText = getRequirementText(talent);
+        const weaponReqText = getRequirementText(talent, classKey);
         if (weaponReqText) {
             lines.push(`<div class="text-sm text-white">${weaponReqText}</div>`);
         }
@@ -801,148 +759,6 @@ function getCataBaseTalentTooltip(talent, classKey) {
     }
 
     return lines.join("\n");
-}
-
-// helper to get resource name
-function getResourceText(classKey, spentResource, absoluteSpent, resourceType) {
-
-    const currentExpansion = getCurrentExpansion();
-    
-    if (!spentResource) return "";
-    
-    switch (classKey) {
-        case "warrior": 
-            // if (resourceType === 2) { // Rage for warriors
-                return `${spentResource} Rage`;
-            // }
-
-        case "rogue": 
-            // if (resourceType === 3) { // Energy for rogues
-                return `${spentResource} Energy`;
-            // }
-
-        case "death_knight": 
-            // if (resourceType === 4) { // Runic Power for dks
-                return `${spentResource} Runic Power`;
-            // }
-
-        case "hunter": 
-            if (currentExpansion === "cataclysm") {
-                return `${spentResource} Focus`;
-            } 
-            // fall through to default (mana) if not Cataclysm
-        
-        case "druid":
-            if (resourceType === 2) { // Rage for druids (Feral)
-                return `${spentResource} Rage`;
-            }
-            // fall through to default if not Rage
-        
-        default:
-            // If absoluteSpent is true → show absolute mana cost
-            if (absoluteSpent) {
-                return `${spentResource} Mana`;
-            }
-            // Otherwise → show percentage-based mana cost
-            return `${spentResource}% of base mana`;
-    }
-}
-
-// helper to get range text
-function getRangeText(range, minRange, maxRange) {
-
-    // Prefer min/max range when defined
-    if (range === null) {
-        if (minRange && maxRange) {
-            return `${minRange} - ${maxRange} yd range`;
-        }
-    }
-
-    if (range === 0) return "Melee Range";
-    if (range > 0) return `${range} yd range`;
-    return "";
-}
-
-// helper to format cooldowns
-function formatCooldown(cd) {
-    if (!cd) return "";
-    if (cd % 60 === 0) {
-        // whole minutes
-        const minutes = cd / 60;
-        return `${minutes} min cooldown`;
-    } else if (cd > 60) {
-        // fractional minutes (e.g. 90 -> 1.5 min)
-        const minutes = (cd / 60).toFixed(1);
-        return `${minutes} min cooldown`;
-    } else {
-        // seconds
-        return `${cd} sec cooldown`;
-    }
-}
-
-function getRequirementText(talent) {
-    const requirements = [];
-
-    // Weapon requirements
-    if (talent.requiresWeapon === 1) requirements.push("Requires Melee Weapon");
-    if (talent.requiresWeapon === 2) requirements.push("Requires Ranged Weapon");
-    if (!talent.requiresWeapon && talent.requires1HWeapon) requirements.push("Requires One-Handed Melee Weapon");
-
-    // Druid forms
-    if (currentState.class === 'druid') {
-        const druidForms = [];
-        if (talent.requiresCatForm) druidForms.push("Cat Form");
-        if (talent.requiresBearForm) druidForms.push("Bear Form");
-        if (talent.requiresDireBearForm) druidForms.push("Dire Bear Form");
-        if (talent.requiresMoonkinForm) druidForms.push("Moonkin Form");
-        if (druidForms.length > 0) requirements.push(`Requires ${druidForms.join(", ")}`);
-    }
-
-    // Warrior stances
-    if (currentState.class === 'warrior') {
-        if (Array.isArray(talent.requiresStance) && talent.requiresStance.length > 0) {
-            const stanceNames = talent.requiresStance.map(s => {
-                switch (s) {
-                    case 1: return "Battle Stance";
-                    case 2: return "Defensive Stance";
-                    case 3: return "Berserker Stance";
-                    default: return null;
-                }
-            }).filter(Boolean);
-            if (stanceNames.length > 0) requirements.push(`Requires ${stanceNames.join(", ")}`);
-        } else if (typeof talent.requiresStance === "number") {
-            switch (talent.requiresStance) {
-                case 1: requirements.push("Requires Battle Stance"); break;
-                case 2: requirements.push("Requires Defensive Stance"); break;
-                case 3: requirements.push("Requires Berserker Stance"); break;
-            }
-        }
-    }
-
-    // Priest shadowform
-    if (currentState.class === 'priest') {
-        if (talent.requiresShadowform) requirements.push("Requires Shadowform");
-    }
-
-    // Rogue stealth
-    if (currentState.class === 'rogue') {
-        if (talent.requiresStealth) requirements.push("Requires Stealth");
-    }
-
-    // Warlock reagents
-    if (currentState.class === 'warlock') {
-        if (talent.requiresSoulShard) requirements.push("Reagents:<br>&nbsp;&nbsp;Soul Shard");
-    }
-
-    // Shaman tools
-    if (currentState.class === 'shaman') {
-        if (talent.requiresWaterTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Water Totem");
-        if (talent.requiresFireTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Fire Totem");
-        if (talent.requiresAirTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Air Totem");
-        if (talent.requiresEarthTotem) requirements.push("Tools:<br>&nbsp;&nbsp;Earth Totem");
-    }
-
-    return requirements.join("<br>");
 }
 
 let previousExpansion = null;
@@ -2538,7 +2354,7 @@ function getSearchableText(talent, classKey, treeName) {
         if (req) parts.push(req.name);
     }
 
-    const reqText = getRequirementText(talent);
+    const reqText = getRequirementText(talent, classKey);
     if (reqText) parts.push(reqText);
 
     return parts.join(" ").toLowerCase();
@@ -4261,11 +4077,6 @@ function removeGlyph(glyphType, slotIndex) {
     slot.appendChild(placeholderText);
 
     updateURLHash();
-}
-
-function capitalize(str) {
-    if (!str) return "";
-    return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
 function formatSlotName(slotKey) {
