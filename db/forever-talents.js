@@ -1,4 +1,4 @@
-// WoW Forever 1.60.1 talents
+﻿// WoW Forever 1.60.1 talents
 export const foreverTalents = {
   druid: {
     Balance: [
@@ -157,7 +157,7 @@ export const foreverTalents = {
       {
         id: "natures_splendor",
         name: "Nature's Splendor",
-        icon: "spell_nature_natureresistancetotem",
+        icon: "spell_nature_naturesblessing",
         row: 2,
         col: 2,
         ranks: 1,
@@ -331,6 +331,20 @@ export const foreverTalents = {
         resourceType: 1,
         range: null,
         requiresWeapon: 0
+      },
+      {
+        id: "balance_of_nature",
+        name: "Balance of Nature",
+        icon: "ability_druid_balanceofpower",
+        row: 2,
+        col: 3,
+        ranks: 5,
+        requiresTalents: null,
+        description: [
+          "Each time you cast a Nature spell, your next Arcane damage spell within 10 sec deals {value}% increased damage. Each time you cast an Arcane spell, your next Nature damage spell within 10 sec deals {value}% increased damage.",
+          { value: [1, 2, 3, 4, 5] }
+        ],
+        isActive: false
       }
     ],
     "Feral Combat": [
@@ -395,7 +409,7 @@ export const foreverTalents = {
       {
         id: "feral_swiftness",
         name: "Feral Swiftness",
-        icon: "spell_nature_spiritwolf",
+        icon: "ability_druid_dash",
         row: 1,
         col: 0,
         ranks: 2,
@@ -1761,7 +1775,7 @@ export const foreverTalents = {
       {
         id: "sniper_shot",
         name: "Sniper Shot",
-        icon: "hunter_pvp_snipershot",
+        icon: "ability_hunter_snipershot",
         row: 6,
         col: 1,
         ranks: 1,
@@ -1785,7 +1799,7 @@ export const foreverTalents = {
       {
         id: "improved_tracking",
         name: "Improved Tracking",
-        icon: "inv_misc_head_dragon_black",
+        icon: "ability_hunter_improvedtracking",
         row: 0,
         col: 1,
         ranks: 5,
@@ -2323,7 +2337,7 @@ export const foreverTalents = {
       {
         id: "arcane_geometry",
         name: "Arcane Geometry",
-        icon: "inv_ability_mage_radiantspark",
+        icon: "spell_arcane_arcane01",
         row: 2,
         col: 0,
         ranks: 2,
@@ -2740,7 +2754,7 @@ export const foreverTalents = {
       {
         id: "improved_scorch",
         name: "Improved Scorch",
-        icon: "spell_fire_windsofwoe",
+        icon: "spell_fire_soulburn",
         row: 3,
         col: 0,
         ranks: 3,
@@ -3301,7 +3315,7 @@ export const foreverTalents = {
       {
         id: "improved_holy_strike",
         name: "Improved Holy Strike",
-        icon: "classicon_paladin",
+        icon: "spell_holy_crusaderstrike",
         row: 0,
         col: 0,
         ranks: 2,
@@ -3460,7 +3474,7 @@ export const foreverTalents = {
       {
         id: "reverence",
         name: "Reverence",
-        icon: "spell_holy_divineillumination",
+        icon: "spell_holy_mindvision",
         row: 2,
         col: 1,
         ranks: 3,
@@ -3652,7 +3666,7 @@ export const foreverTalents = {
       {
         id: "lights_vigil",
         name: "Light's Vigil",
-        icon: "ability_paladin_judgementofthepure",
+        icon: "spell_holy_holyguidance",
         row: 6,
         col: 1,
         ranks: 1,
@@ -3783,7 +3797,7 @@ export const foreverTalents = {
       {
         id: "improved_seal_of_fury",
         name: "Improved Seal of Fury",
-        icon: "spell_holy_righteousnessaura",
+        icon: "spell_holy_sealoffury",
         row: 2,
         col: 0,
         ranks: 1,
@@ -3864,7 +3878,7 @@ export const foreverTalents = {
       {
         id: "swift_judgement",
         name: "Swift Judgement",
-        icon: "ability_paladin_judgementred",
+        icon: "spell_holy_righteousfury",
         row: 3,
         col: 0,
         ranks: 1,
@@ -4086,7 +4100,7 @@ export const foreverTalents = {
       {
         id: "holy_conduit",
         name: "Holy Conduit",
-        icon: "spell_holy_devineaegis",
+        icon: "spell_holy_divineillumination",
         row: 1,
         col: 1,
         ranks: 2,
@@ -4638,7 +4652,7 @@ export const foreverTalents = {
       {
         id: "soul_warding",
         name: "Soul Warding",
-        icon: "spell_holy_pureofheart",
+        icon: "spell_holy_powerwordshield",
         row: 3,
         col: 2,
         ranks: 1,
@@ -4995,7 +5009,7 @@ export const foreverTalents = {
       {
         id: "litany_of_light",
         name: "Litany of Light",
-        icon: "inv_scroll_07",
+        icon: "spell_holy_holyguidance",
         row: 4,
         col: 0,
         ranks: 2,
@@ -5277,7 +5291,7 @@ export const foreverTalents = {
       {
         id: "improved_mind_flay",
         name: "Improved Mind Flay",
-        icon: "spell_shadow_soulleech_2",
+        icon: "spell_shadow_siphonmana",
         row: 2,
         col: 3,
         ranks: 2,
@@ -5744,7 +5758,7 @@ export const foreverTalents = {
       {
         id: "mutilate",
         name: "Mutilate",
-        icon: "ability_rogue_deadlybrew",
+        icon: "ability_rogue_shadowstrikes",
         row: 4,
         col: 1,
         ranks: 1,
@@ -5967,7 +5981,7 @@ export const foreverTalents = {
         row: 2,
         col: 1,
         ranks: 1,
-        requiresTalents: "deflection",
+        requiresTalents: null,
         description: [
           "A strike that becomes active after parrying an opponent's attack.  This attack deals 150% weapon damage and disarms the target for 6 sec."
         ],
@@ -6018,15 +6032,15 @@ export const foreverTalents = {
         isActive: false
       },
       {
-        id: "flawless_execution",
-        name: "Flawless Execution",
-        icon: "inv_sword_35",
+        id: "restless_blades",
+        name: "Restless Blades",
+        icon: "ability_rogue_restlessblades",
         row: 3,
         col: 1,
         ranks: 1,
         requiresTalents: null,
         description: [
-          "Reduces the Energy cost of your Eviscerate ability by 10."
+          "Your damaging finishing moves reduce the remaining cooldown of your Adrenaline Rush, Blade Flurry, Evasion, Sprint, and Vanish abilities by 2 sec per combo point."
         ],
         isActive: false
       },
@@ -6114,7 +6128,7 @@ export const foreverTalents = {
         row: 5,
         col: 1,
         ranks: 2,
-        requiresTalents: "blade_flurry",
+        requiresTalents: null,
         description: [
           "Reduces the chance for your attacks to be Dodged or Parried by {value}%.",
           {
@@ -6133,7 +6147,7 @@ export const foreverTalents = {
         row: 5,
         col: 2,
         ranks: 3,
-        requiresTalents: null,
+        requiresTalents: "hack_and_slash",
         description: [
           "Increases the damage of your Sinister Strike, Backstab, and Eviscerate abilities by {value}%.",
           {
@@ -6500,11 +6514,11 @@ export const foreverTalents = {
       {
         id: "quietus",
         name: "Quietus",
-        icon: "ability_rogue_garrote",
+        icon: "ability_rogue_quickrecovery",
         row: 5,
         col: 0,
         ranks: 5,
-        requiresTalents: "dirty_deeds",
+        requiresTalents: null,
         description: [
           "Your Sinister Strike, Ghostly Strike, and Hemorrhage abilities cause {value}% more damage against targets below 35% health.",
           {
@@ -6583,7 +6597,7 @@ export const foreverTalents = {
       {
         id: "concussion",
         name: "Concussion",
-        icon: "spell_nature_earthshock",
+        icon: "spell_fire_fireball",
         row: 0,
         col: 2,
         ranks: 5,
@@ -6667,7 +6681,7 @@ export const foreverTalents = {
       {
         id: "elemental_devastation",
         name: "Elemental Devastation",
-        icon: "spell_fire_elementaldevastation",
+        icon: "classic_spell_fire_elementaldevastation",
         row: 1,
         col: 3,
         ranks: 3,
@@ -6821,7 +6835,7 @@ export const foreverTalents = {
       {
         id: "earthbound",
         name: "Earthbound",
-        icon: "spell_nature_stranglevines",
+        icon: "spell_nature_strengthofearthtotem02",
         row: 4,
         col: 3,
         ranks: 1,
@@ -7164,7 +7178,7 @@ export const foreverTalents = {
       {
         id: "mental_quickness",
         name: "Mental Quickness",
-        icon: "spell_nature_sleep",
+        icon: "spell_nature_mentalquickness",
         row: 4,
         col: 1,
         ranks: 2,
@@ -7267,8 +7281,8 @@ export const foreverTalents = {
         id: "totemic_focus",
         name: "Totemic Focus",
         icon: "spell_nature_moonglow",
-        row: 0,
-        col: 2,
+        row: 3,
+        col: 0,
         ranks: 5,
         requiresTalents: null,
         description: [
@@ -7439,8 +7453,8 @@ export const foreverTalents = {
         id: "tidal_mastery",
         name: "Tidal Mastery",
         icon: "spell_nature_tranquility",
-        row: 3,
-        col: 0,
+        row: 0,
+        col: 2,
         ranks: 5,
         requiresTalents: null,
         description: [
@@ -7510,7 +7524,7 @@ export const foreverTalents = {
       {
         id: "healing_way",
         name: "Healing Way",
-        icon: "spell_nature_healingway",
+        icon: "classic_spell_nature_healingway",
         row: 4,
         col: 1,
         ranks: 3,
@@ -7692,7 +7706,7 @@ export const foreverTalents = {
       {
         id: "soul_harvesting",
         name: "Soul Harvesting",
-        icon: "inv_elemental_primal_shadow",
+        icon: "spell_shadow_soulgem",
         row: 1,
         col: 1,
         ranks: 2,
@@ -7711,7 +7725,7 @@ export const foreverTalents = {
       {
         id: "improved_drains",
         name: "Improved Drains",
-        icon: "spell_shadow_haunting",
+        icon: "spell_shadow_lifedrain02",
         row: 1,
         col: 2,
         ranks: 3,
@@ -7889,7 +7903,7 @@ export const foreverTalents = {
       {
         id: "soul_siphon",
         name: "Soul Siphon",
-        icon: "spell_shadow_lifedrain02",
+        icon: "spell_shadow_soulleech_3",
         row: 4,
         col: 2,
         ranks: 3,
@@ -7934,15 +7948,15 @@ export const foreverTalents = {
         isActive: false
       },
       {
-        id: "wrack",
-        name: "Wrack",
-        icon: "ability_deathknight_hemorrhagicfever",
+        id: "drain_hope",
+        name: "Drain Hope",
+        icon: "spell_shadow_haunting",
         row: 6,
         col: 1,
         ranks: 1,
         requiresTalents: "siphon_life",
         description: [
-          "Tears the target apart from within, dealing 36 Shadow damage every 1 sec and increasing the damage they take from your other Shadow damage over time effects by 10%. Lasts 6 sec."
+          "Drains all hope from the target, dealing 52 Shadow damage every 1 sec and increasing all other Shadow damage over time you deal to that target by 10%. Lasts 6 sec."
         ],
         isActive: true,
         castTime: 6,
@@ -8114,7 +8128,7 @@ export const foreverTalents = {
       {
         id: "demonic_energies",
         name: "Demonic Energies",
-        icon: "spell_shadow_felmending",
+        icon: "spell_shadow_demonicempathy",
         row: 1,
         col: 3,
         ranks: 2,
@@ -8355,7 +8369,7 @@ export const foreverTalents = {
       {
         id: "demonic_pact",
         name: "Demonic Pact",
-        icon: "inv_ability_soulharvesterwarlock_demonicsoul",
+        icon: "spell_shadow_demonicpact",
         row: 6,
         col: 1,
         ranks: 1,
@@ -8598,7 +8612,7 @@ export const foreverTalents = {
         row: 3,
         col: 2,
         ranks: 1,
-        requiresTalents: null,
+        requiresTalents: "shadowburn",
         description: [
           "Ignites a target that is already afflicted by your Immolate spell, dealing 88 to 111 Fire damage and consuming your Immolate effect."
         ],
@@ -8666,7 +8680,7 @@ export const foreverTalents = {
       {
         id: "shadow_and_flame",
         name: "Shadow and Flame",
-        icon: "spell_fire_playingwithfire",
+        icon: "spell_shadow_shadowandflame",
         row: 5,
         col: 2,
         ranks: 5,
@@ -8933,7 +8947,7 @@ export const foreverTalents = {
       {
         id: "bloodthrill",
         name: "Bloodthrill",
-        icon: "inv_sword_01",
+        icon: "ability_warrior_bloodfrenzy",
         row: 4,
         col: 0,
         ranks: 5,
@@ -9575,7 +9589,7 @@ export const foreverTalents = {
       {
         id: "master_of_defense",
         name: "Master of Defense",
-        icon: "ability_warrior_shieldguard",
+        icon: "ability_defend",
         row: 2,
         col: 1,
         ranks: 2,
@@ -9674,7 +9688,7 @@ export const foreverTalents = {
       {
         id: "vanguard",
         name: "Vanguard",
-        icon: "ability_warrior_shieldcharge",
+        icon: "ability_warrior_shieldguard",
         row: 3,
         col: 2,
         ranks: 1,
@@ -9744,9 +9758,9 @@ export const foreverTalents = {
       {
         id: "bastion",
         name: "Bastion",
-        icon: "inv_shield_04",
-        row: 4,
-        col: 3,
+        icon: "ability_warrior_shieldmastery",
+        row: 5,
+        col: 2,
         ranks: 5,
         requiresTalents: null,
         description: [
@@ -9768,7 +9782,7 @@ export const foreverTalents = {
         name: "Focused Rage",
         icon: "ability_warrior_focusedrage",
         row: 5,
-        col: 2,
+        col: 0,
         ranks: 3,
         requiresTalents: null,
         description: [
@@ -9801,6 +9815,20 @@ export const foreverTalents = {
         resourceType: 2,
         range: 0,
         requiresWeapon: 0
+      },
+      {
+        id: "vitality",
+        name: "Vitality",
+        icon: "ability_warrior_strengthofarms",
+        row: 4,
+        col: 3,
+        ranks: 5,
+        requiresTalents: null,
+        description: [
+          "Increases your Stamina and Strength by {value}%.",
+          { value: [2, 4, 6, 8, 10] }
+        ],
+        isActive: false
       }
     ]
   }
