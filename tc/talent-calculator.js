@@ -32,6 +32,7 @@ import {
     getMaxLevelForVersion,
 } from './leveling.js';
 import { currentState } from './state.js';
+import { getExpansionFromPatch, getCurrentExpansion } from './version-util.js';
 
 const {
   headerEl,
@@ -804,7 +805,7 @@ function handleVersionChange(loadingBuild = false) {
     else currentExpansion = "custom";
     */
 
-    currentExpansion = patchToExpansion[version] ?? "";
+    currentExpansion = getExpansionFromPatch(version) ?? "";
 
     if (currentExpansion === "wotlk" || currentExpansion === "cataclysm") {
         document.getElementById("deathknight-button").classList.remove("hidden");
@@ -885,7 +886,7 @@ function handleVersionChange(loadingBuild = false) {
 function updateLogoExpansionColor(expansion) {
     const link = document.getElementById('tf-logo-link');
     if (!link) return;
-    const exp = expansion !== undefined ? expansion : (patchToExpansion[versionSelect.value] ?? null);
+    const exp = expansion !== undefined ? expansion : getExpansionFromPatch(versionSelect.value);
     const colored = ['tbc', 'wotlk', 'cataclysm'];
     if (exp && colored.includes(exp)) {
         link.dataset.expansion = exp;
@@ -894,19 +895,7 @@ function updateLogoExpansionColor(expansion) {
     }
 }
 
-// better: build a lookup map once at startup
-const patchToExpansion = {};
-for (const [expansion, patches] of Object.entries(patchOptions)) {
-    patches.forEach(p => { patchToExpansion[p.value] = expansion; });
-}
-
-function getExpansionFromPatch(patch) {
-    return patchToExpansion[patch] ?? null;
-}
-
-function getCurrentExpansion() {
-    return patchToExpansion[currentState.version] ?? null;
-}
+// patchToExpansion / getExpansionFromPatch / getCurrentExpansion moved to ./version-util.js
 
 function updatePlaceholder() {
     const currentExpansion = getCurrentExpansion();
@@ -3008,7 +2997,7 @@ function togglePin() {
     if (idx >= 0) {
         pins.splice(idx, 1);
     } else {
-        const expansion = patchToExpansion[version];
+        const expansion = getExpansionFromPatch(version);
         pins.unshift({ expansion, value: version });
         if (pins.length > MAX_PINS) pins.pop();
     }
