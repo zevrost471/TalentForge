@@ -3,12 +3,15 @@
 // Serialization of talent builds, glyphs, and runes into the compact build-string
 // format used by import/export and URL hashes. Extracted from talent-calculator.js.
 //
-// These functions take their data as arguments rather than reading shared module
-// state: `trees` (ordered tree-name list, from talentTreeData), `expansion`
-// (from getExpansionFromPatch), and `sodPhaseSlots` (SOD_PHASE_SLOTS) are passed
-// in by the caller. `talentsAttributedByVersion` is a static data import.
+// generateBuildStringFromBuild serializes an arbitrary build object (all data passed
+// in); generateBuildString serializes the current live state (reading currentState /
+// talentTreeData) and suppresses an all-empty build so the URL stays clean. Both share
+// the talent-tree encoding via encodeTalentTrees.
 
 import { talentsAttributedByVersion } from './base-talents-per-patch.js';
+import { currentState, talentTreeData } from './state.js';
+import { getCurrentExpansion } from './version-util.js';
+import { SOD_PHASE_SLOTS } from './sod-data.js';
 
 // Glyph segment, e.g. "/123-0-456:0-0-0:789-0-0" (WotLK/Cataclysm only).
 export function generateGlyphString(glyphs, expansion) {
@@ -60,20 +63,14 @@ export function generateRuneString(runes, phase, sodPhaseSlots) {
     return `/${runeString}`;
 }
 
-// Full build string from a saved build object.
-// opts: { trees, expansion, sodPhaseSlots }
-//   trees        - ordered tree names for this version/class (from talentTreeData)
-//   expansion    - expansion key for the build's version (from getExpansionFromPatch)
-//   sodPhaseSlots - SOD_PHASE_SLOTS map (only needed for SoD / version "1.15")
-export function generateBuildStringFromBuild(build, { trees, expansion, sodPhaseSlots }) {
-    const { version, class: classKey, talents, glyphs, runes } = build;
-
-    // Get actual talent definitions (with row/col info)
+// Encode invested talents into the compact per-tree digit string (trees joined by
+// "-"), e.g. "5-503-5500535". `talents` is the {classKey: {tree: {id: rank}}} map.
+function encodeTalentTrees(version, classKey, trees, talents) {
     const classTalents = talentsAttributedByVersion[version]?.[classKey] || {};
 
     const treeStrings = trees.map((tree) => {
         const treeTalents = classTalents[tree] || [];
-        const invested = talents[classKey]?.[tree] || {};
+        const invested = talents?.[classKey]?.[tree] || {};
 
         // Sort by row first, then col
         const sorted = [...treeTalents].sort((a, b) => {
@@ -94,7 +91,18 @@ export function generateBuildStringFromBuild(build, { trees, expansion, sodPhase
         return lastNonZero >= 0 ? s.substring(0, lastNonZero + 1) : "";
     });
 
-    const talentString = treeStrings.join("-");
+    return treeStrings.join("-");
+}
+
+// Full build string from a saved build object.
+// opts: { trees, expansion, sodPhaseSlots }
+//   trees        - ordered tree names for this version/class (from talentTreeData)
+//   expansion    - expansion key for the build's version (from getExpansionFromPatch)
+//   sodPhaseSlots - SOD_PHASE_SLOTS map (only needed for SoD / version "1.15")
+export function generateBuildStringFromBuild(build, { trees, expansion, sodPhaseSlots }) {
+    const { version, class: classKey, talents, glyphs, runes } = build;
+
+    const talentString = encodeTalentTrees(version, classKey, trees, talents);
 
     // === Glyph String ===
     let glyphString = "";
@@ -110,5 +118,41 @@ export function generateBuildStringFromBuild(build, { trees, expansion, sodPhase
         return `p${phase}/${talentString}${runeString}`;
     }
 
+    return `${talentString}${glyphString}${runeString}`;
+}
+
+// Build string for the current live state, or "" when nothing is invested (so the
+// URL stays as version/class instead of version/class/----).
+export function generateBuildString() {
+    if (!currentState.version || !currentState.class) return "";
+
+    const classKey = currentState.class;
+    const version = currentState.version;
+    const expansion = getCurrentExpansion();
+    const trees = talentTreeData[version]?.classes?.[classKey]?.trees || [];
+
+    const talentString = encodeTalentTrees(version, classKey, trees, currentState.talents);
+    const hasAnyTalents = talentString.replace(/-/g, "").length > 0;
+
+    // === Generate glyph string only for WotLK and Cataclysm ===
+    let glyphString = "";
+    if (expansion === "wotlk" || expansion === "cataclysm") {
+        glyphString = generateGlyphString(currentState.glyphs, expansion);
+    }
+
+    // Rune string for 1.15
+    let runeString = "";
+    if (version === "1.15") {
+        runeString = generateRuneString(currentState.runes, currentState.phase, SOD_PHASE_SLOTS);
+    }
+
+    // Build the full string with phase segment for SoD
+    if (version === "1.15") {
+        if (!hasAnyTalents && !runeString) return "";
+        return `p${currentState.phase}/${talentString}${runeString}`;
+    }
+
+    // === Build final formatted string ===
+    if (!hasAnyTalents && !glyphString) return "";
     return `${talentString}${glyphString}${runeString}`;
 }
