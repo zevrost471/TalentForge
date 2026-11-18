@@ -18,3 +18,8 @@ export const currentState = {
     glyphs: {},
     runes: {}
 };
+
+// Per-version resolved talent-tree data (classes, trees, maxPoints, ...), populated
+// at runtime by the calculator. Like currentState, it is only mutated, never
+// reassigned, so modules share this one reference.
+export const talentTreeData = {};
