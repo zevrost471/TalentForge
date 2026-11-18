@@ -33,6 +33,7 @@ import {
 } from './leveling.js';
 import { currentState } from './state.js';
 import { getExpansionFromPatch, getCurrentExpansion } from './version-util.js';
+import { SOD_PHASE_SLOTS, getSoDPhaseIndex, formatSlotName } from './sod-data.js';
 
 const {
   headerEl,
@@ -4031,21 +4032,7 @@ function removeGlyph(glyphType, slotIndex) {
     updateURLHash();
 }
 
-function formatSlotName(slotKey) {
-    // Handle ring slots explicitly
-    if (slotKey.startsWith("ring")) {
-        const number = slotKey.replace("ring", "");
-        return `Ring ${number}`;
-    }
-    return slotKey.charAt(0).toUpperCase() + slotKey.slice(1);
-}
-
-const SOD_PHASE_SLOTS = {
-    1: ["chest", "hands", "legs"],
-    2: ["chest", "hands", "waist", "legs", "feet"],
-    3: ["head", "chest", "wrist", "hands", "waist", "legs", "feet"],
-    4: ["head", "back", "chest", "wrist", "hands", "waist", "legs", "feet", "ring1", "ring2"]
-};
+// SOD_PHASE_SLOTS, formatSlotName and getSoDPhaseIndex moved to ./sod-data.js
 
 function initCurrentRunes() {
     if (!currentState.runes) {
@@ -4149,11 +4136,6 @@ function renderRunesContainer() {
 function openRuneSelection(slotKey, playerClass) {
     const runeList = getAvailableRunesForSlot(playerClass, slotKey);
     renderRuneSelectionList(runeList, slotKey);
-}
-
-function getSoDPhaseIndex() {
-    // p1 → 0, p2 → 1, p3 → 2, p4 → 3
-    return Math.max(0, (currentState.phase || 1) - 1);
 }
 
 function getAvailableRunesForSlot(playerClass, slotKey) {
